@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>告警模块测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>告警模块测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-03-23 17:33:27</p>
+<p class='attribute'><strong>Duration:</strong> 0:13:45.916240</p>
+<p class='attribute'><strong>Status:</strong> Pass 5 Failure 1 Error 2</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_138_alarm_overview_search.TestCase138AlarmOverviewSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_138_alarm_overview_search</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_139_alarm_overview_operation.TestCse139AlarmOverviewOperation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_139_alarm_overview_operation</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_140_alarm_detail_search.TestCase140AlarmDetailSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_140_alarm_detail_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: [&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{3a2b1f1e-c8d2-46af-bd69-7547e8fba51e}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{7a8ea56d-ecd2-423f-bffa-31625b04a944}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{57b512ad-7651-4280-b598-558703e58c86}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{90e44029-a420-49b3-8182-75283ef32f43}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{12b546e3-f9c0-4b5b-af79-20f2d2f5fb9c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{af25fdf9-949f-42d4-9b98-cbc94c68e6c6}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{671c0302-3c3e-439e-8dc0-7b963034b01c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{aa6d324b-9deb-4e03-9751-cc944a41620b}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{0307c2aa-39ee-44ed-bf90-1b2ec506d579}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{dfaea41c-2899-4b50-bf54-3257582fc128}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{bf63dd65-1885-43b1-8030-08cf5bba6791}")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{3a2b1f1e-c8d2-46af-bd69-7547e8fba51e}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{7a8ea56d-ecd2-423f-bffa-31625b04a944}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{57b512ad-7651-4280-b598-558703e58c86}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{90e44029-a420-49b3-8182-75283ef32f43}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{12b546e3-f9c0-4b5b-af79-20f2d2f5fb9c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{af25fdf9-949f-42d4-9b98-cbc94c68e6c6}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{671c0302-3c3e-439e-8dc0-7b963034b01c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{aa6d324b-9deb-4e03-9751-cc944a41620b}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{0307c2aa-39ee-44ed-bf90-1b2ec506d579}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{dfaea41c-2899-4b50-bf54-3257582fc128}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{bf63dd65-1885-43b1-8030-08cf5bba6791}")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{6b6c8d29-f6fb-42ef-9870-d9d5f33a7d76}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{51763a27-0721-40e0-8099-21ddda4b7e95}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{3b69f1ab-1992-43e9-889b-4e7cfb3f9e09}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{b7fe2e8d-794b-418c-846a-4776693c1533}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{6451ab8f-83b3-4e79-b118-81903579e9dd}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{9f189f57-20a5-4234-ba1c-8fe4ab0352ac}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{eb99f3b0-6498-4827-82f9-79091ae8624e}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{5afe9a02-4c03-44fd-9eca-c66295bb22ec}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{2f3412fa-4012-4626-9a34-c54bade2d37c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{bfa1b377-e14f-4c7e-85b7-c49be8b21517}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{c57f4866-8644-4bbc-973f-b675b0adf975}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{1fa82e88-ed85-4658-b385-542888027920}")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{24263020-c7c0-440c-95cd-56784b8556ad}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{afc88143-16be-4cf4-bdee-c4ffe24ffa9c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{27906cfd-2063-45e4-be88-fafd5c8ff9c5}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{346087f0-d620-4ff7-8ef5-001164999835}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{95c4a742-c5c8-4905-b05a-9f92525350cf}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{6106f6a0-990a-4d0c-ab99-0377cd4d34e3}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{426b9b37-9057-47cb-8252-1655028ff926}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{de569ab4-3729-4c0c-a240-04c1fda9ebf7}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{01a60d58-9e3c-47fa-9336-9133dd09014d}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{8526aded-0bf5-4de6-9a30-8ec03faed59c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{b57a0a49-ff9c-4c77-981c-7e3430bfd7f0}")&gt;]
+12
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{24263020-c7c0-440c-95cd-56784b8556ad}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{afc88143-16be-4cf4-bdee-c4ffe24ffa9c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{27906cfd-2063-45e4-be88-fafd5c8ff9c5}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{346087f0-d620-4ff7-8ef5-001164999835}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{95c4a742-c5c8-4905-b05a-9f92525350cf}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{6106f6a0-990a-4d0c-ab99-0377cd4d34e3}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{426b9b37-9057-47cb-8252-1655028ff926}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{de569ab4-3729-4c0c-a240-04c1fda9ebf7}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{01a60d58-9e3c-47fa-9336-9133dd09014d}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{8526aded-0bf5-4de6-9a30-8ec03faed59c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{b57a0a49-ff9c-4c77-981c-7e3430bfd7f0}")&gt;]
+当前最后一页记录共：6
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{e7ce7346-31f5-4df8-8b4c-aa8956166b3a}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{8f0e3d51-e3ba-4247-84d6-cac9a508431e}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{02c5f9b9-1ea0-42b1-910a-0fcbd88363c3}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{39fdf627-681d-4df1-93e2-98aaf5afcc48}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{4d756623-54f0-4f23-b714-45c6ab914faf}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{5ba58678-9121-4361-9766-1b89087f95da}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{21d529fa-e3bf-4cf9-ba96-3d2a5ace8b43}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{f9fc8df9-d8a2-4d26-8965-d6ea8645ff5c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{7c2bc122-cdae-4671-aaf5-2026c6a0674a}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{18bf6ff7-6e0e-4e67-a15e-903127759c2c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{666aee94-b84e-4ea7-b02d-aa4cd560d8e0}")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{e7ce7346-31f5-4df8-8b4c-aa8956166b3a}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{8f0e3d51-e3ba-4247-84d6-cac9a508431e}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{02c5f9b9-1ea0-42b1-910a-0fcbd88363c3}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{39fdf627-681d-4df1-93e2-98aaf5afcc48}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{4d756623-54f0-4f23-b714-45c6ab914faf}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{5ba58678-9121-4361-9766-1b89087f95da}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{21d529fa-e3bf-4cf9-ba96-3d2a5ace8b43}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{f9fc8df9-d8a2-4d26-8965-d6ea8645ff5c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{7c2bc122-cdae-4671-aaf5-2026c6a0674a}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{18bf6ff7-6e0e-4e67-a15e-903127759c2c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{666aee94-b84e-4ea7-b02d-aa4cd560d8e0}")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{32361cd9-928d-4386-9c22-27027cc5ea38}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{67e5fd05-5079-4e8f-989d-9479ac196d0d}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{6639e138-91b7-42fb-b10a-40cff45f04fe}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{b4ccad96-571a-4632-9d94-b2375a25dcea}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{ffb7365d-f85b-4367-bbd3-af34b9ebd09d}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{61ce3e9c-8042-4ba3-ba55-f0d88413a23e}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{771eafdd-bd62-41af-8b10-ea0e202e569c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{fd1ca8f1-54c3-4caa-824c-61fe215f13ee}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{fc2a1bc6-52ab-447f-9030-9f8c9bdf8751}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{c5c166ba-a0ee-4e04-8485-0e40a845fbe8}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{5ecc8fbe-6317-47a8-9ef3-aec48726398d}")&gt;]
+7
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{32361cd9-928d-4386-9c22-27027cc5ea38}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{67e5fd05-5079-4e8f-989d-9479ac196d0d}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{6639e138-91b7-42fb-b10a-40cff45f04fe}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{b4ccad96-571a-4632-9d94-b2375a25dcea}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{ffb7365d-f85b-4367-bbd3-af34b9ebd09d}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{61ce3e9c-8042-4ba3-ba55-f0d88413a23e}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{771eafdd-bd62-41af-8b10-ea0e202e569c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{fd1ca8f1-54c3-4caa-824c-61fe215f13ee}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{fc2a1bc6-52ab-447f-9030-9f8c9bdf8751}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{c5c166ba-a0ee-4e04-8485-0e40a845fbe8}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3d07b8f0-bf89-4656-a1b0-726a212580e9", element="{5ecc8fbe-6317-47a8-9ef3-aec48726398d}")&gt;]
+当前最后一页记录共：4
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_141_alarm_detail_handle.TestCase141AlarmDetailHandle</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_case_141_alarm_detail_handle</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: 请选择告警信息
+选择的设备已经处理
+无数据
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\alarm_info\test_case_141_alarm_detail_handle.py", line 81, in test_case_141_alarm_detail_handle
+    self.alarm_info_page.add_data_to_search_alarm_detail(data)
+  File "E:\git\tuqiangOL\pages\alarm_info\alarm_info_page.py", line 504, in add_data_to_search_alarm_detail
+    self.driver.click_element('x,//*[@id="userTreeName2"]')
+  File "E:\git\tuqiangOL\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "E:\git\tuqiangOL\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//*[@id=\"userTreeName2\"]"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpn7088gun/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at fxdriver.Timer.prototype.setTimeout/&lt;.notify (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpn7088gun/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_142_alarm_set_up.TestCase142AlarmSetUp</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_142_alarm_set_up</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_143_enclosure_set_up_add_enclosure.TestTase143EnclosureSetUpAddEnclosure</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_143_enclosure_set_up_add_enclosure</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_144_enclosure_set_up_operation.TestCase144EnclosureSetUpOperation</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='ft7.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_case_144_enclosure_set_up_operation</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        error</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\alarm_info\test_case_144_enclosure_set_up_operation.py", line 148, in test_case_144_enclosure_set_up_operation
+    self.alarm_info_page.add_data_to_set_up_alarm(set_up_alarm_data)
+  File "E:\git\tuqiangOL\pages\alarm_info\alarm_info_page.py", line 311, in add_data_to_set_up_alarm
+    'x,/html/body/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/ul/li/ul/li[2]/a/span[2]')
+  File "E:\git\tuqiangOL\automate_driver\automate_driver.py", line 98, in click_element
+    element.click()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotVisibleException: Message: Element is not currently visible and so may not be interacted with
+Stacktrace:
+    at fxdriver.preconditions.visible (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmp87zrarjz/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+    at DelayedCommand.prototype.checkPreconditions_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmp87zrarjz/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+    at DelayedCommand.prototype.executeInternal_/h (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmp87zrarjz/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at fxdriver.Timer.prototype.setTimeout/&lt;.notify (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmp87zrarjz/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_case_145_enclosure_set_up_paging_function.TestCase145EnclosureSetUpPagingFunction</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='ft8.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_case_145_enclosure_set_up_paging_function</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
+        fail</a>
+
+    <div id='div_ft8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.1: [&lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{352a526b-7b7a-4ffe-bb30-a394554689f2}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{fb9e2646-fdf3-4e09-a5f1-36127461078a}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{27e62991-3373-4cc9-ac35-11debbf5e3b1}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{24933e3b-30ef-49ab-bfec-4de96fdfdb99}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{48a9cb01-2e68-4d96-acc7-cfbdb090103b}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{af47ca00-f555-4c99-b394-64040b30081d}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{e29f3700-93b6-463b-b257-09b0615d4199}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{a9f5fd83-0b15-44b5-99b7-88fd9b3b47c6}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{101ce134-5dc7-4ce5-9b74-2b7671f364e2}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{1b4d2225-50c5-4f3e-b0fa-9f4ca5e474c6}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{4e2fbfb1-7dee-4a11-ada0-b342c9b78fec}")&gt;]
+点击下一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{bf4339cb-6736-4881-ad45-0e85d70b0792}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{39de55d2-441d-4a96-b92a-641c1cbe952a}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{fb0c3af1-9d15-421c-b544-8b89d7eec33d}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{630cb313-d530-4cdb-b4cb-e7be953d0211}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{8109b2f0-8db5-4843-9476-4872b7cdf92c}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{bbdaf7d2-1f46-4233-b66c-4107e1cd7ae2}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{1bcc48f5-7050-484e-bd0b-800dcceb7175}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{6f2c75a2-d0c2-4246-9b91-1e186139c4c0}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{aa5b64fa-855a-4581-bc87-0a0c30982ffc}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{abc00f06-feea-4301-bd10-149fdffa7e2a}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{1a27e128-5884-4a71-b2c8-f0f5600a876c}")&gt;]
+8
+点击上一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{489ff7c4-ec42-4c12-8ece-04b539c4c13f}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{abf9b190-9b61-453d-8c6c-b537fe4f3d58}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{4ec0baeb-9391-40a4-b6c5-63265ea25718}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{1604d75e-7a88-4d21-ad70-b4a08fef7bd3}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{9e60353d-d68b-46aa-b5b4-a9fc4e308fa3}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{0584a3a7-e77c-4716-9f03-088ccd1e20ea}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{b47f5f72-0717-4e28-86dd-695f37efc77b}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{538b9f00-2e24-4609-a761-38a6d8de5d79}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{1f4bd674-e28c-47f1-a2fb-593048d838ca}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{0ebba86c-dc7d-4ac5-abb3-3b73e6323160}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{51306e32-0d72-4529-a3ee-21a506cebe35}")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{489ff7c4-ec42-4c12-8ece-04b539c4c13f}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{abf9b190-9b61-453d-8c6c-b537fe4f3d58}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{4ec0baeb-9391-40a4-b6c5-63265ea25718}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{1604d75e-7a88-4d21-ad70-b4a08fef7bd3}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{9e60353d-d68b-46aa-b5b4-a9fc4e308fa3}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{0584a3a7-e77c-4716-9f03-088ccd1e20ea}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{b47f5f72-0717-4e28-86dd-695f37efc77b}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{538b9f00-2e24-4609-a761-38a6d8de5d79}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{1f4bd674-e28c-47f1-a2fb-593048d838ca}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{0ebba86c-dc7d-4ac5-abb3-3b73e6323160}")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="bb5c10de-a28a-4d1f-9aaf-7992bd2110ab", element="{51306e32-0d72-4529-a3ee-21a506cebe35}")&gt;]
+8
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\alarm_info\test_case_145_enclosure_set_up_paging_function.py", line 67, in test_case_145_enclosure_set_up_paging_function
+    self.assertEqual('上一页', self.base_paging_function.check_current_page_text_after_click_skip())
+AssertionError: '上一页' != '2'
+- 上一页
++ 2
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>8</td>
+    <td>5</td>
+    <td>1</td>
+    <td>2</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

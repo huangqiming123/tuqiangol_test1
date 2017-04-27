@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>登录模块测试报告</title>
+    <meta name="generator" content="HtmlTestRunner 0.8.4"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+<style type="text/css" media="screen">
+
+/* -- css div popup ------------------------------------------------------------------------ */
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #99CCFF;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 10pt;
+    width: 500px;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+
+#show_detail_line .label {
+    font-size: 85%;
+    cursor: pointer;
+}
+
+#show_detail_line {
+    margin: 2em auto 1em auto;
+}
+
+#total_row  { font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+</style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class="container">
+    <div class='heading'>
+<h1>登录模块测试报告</h1>
+<p><strong>Start Time:</strong> 2017-03-30 14:06:32</p>
+<p><strong>Duration:</strong> 0:00:40.654325</p>
+<p><strong>Status:</strong> <span class="text text-warning">Error <strong>8</strong></span></p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+    
+<p id='show_detail_line'>
+<span class="label label-primary" onclick="showCase(0)">Summary</span>
+<span class="label label-danger" onclick="showCase(1)">Failed</span>
+<span class="label label-default" onclick="showCase(2)">All</span>
+</p>
+<table id='result_table' class="table">
+    <thead>
+        <tr id='header_row'>
+            <th>Test Group/Test case</td>
+            <th>Count</td>
+            <th>Pass</td>
+            <th>Fail</td>
+            <th>Error</td>
+            <th>View</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr class='text text-warning'>
+    <td>test_case_001_login_success_with_sales_and_agent.TestCase001LoginSuccessWithSalesAndAgent</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_sales_and_agent_login_by_csv: 通过csv测试销售和代理商账户成功登录和成功退出功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\login\test_case_001_login_success_with_sales_and_agent.py", line 16, in setUp
+    self.driver = AutomateDriver()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 15, in __init__
+    self.driver = browser('chrome')
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\driver\driver_choose.py", line 7, in browser
+    driver = webdriver.Chrome()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: chrome failed to start
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-warning'>
+    <td>test_case_002_login_success_with_ordinary_user.TestCase002LoginSuccessWithOrdinaryUser</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_ordinary_user_login_by_csv: 通过csv测试普通用户账户成功登录和成功退出功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\login\test_case_002_login_success_with_ordinary_user.py", line 15, in setUp
+    self.driver = AutomateDriver()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 15, in __init__
+    self.driver = browser('chrome')
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\driver\driver_choose.py", line 7, in browser
+    driver = webdriver.Chrome()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: chrome failed to start
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-warning'>
+    <td>test_case_003_login_with_logout_dismiss.TestCase003LoginWithLogoutDismiss</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_login_and_logout_dismiss: 测试成功登录的用户取消退出</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\login\test_case_003_login_with_logout_dismiss.py", line 14, in setUp
+    self.driver = AutomateDriver()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 15, in __init__
+    self.driver = browser('chrome')
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\driver\driver_choose.py", line 7, in browser
+    driver = webdriver.Chrome()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: chrome failed to start
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-warning'>
+    <td>test_case_004_login_with_remember_me.TestCase004LoginWithRememberMe</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_login_with_remember_me: 测试登录时勾选记住我</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\login\test_case_004_login_with_remember_me.py", line 14, in setUp
+    self.driver = AutomateDriver()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 15, in __init__
+    self.driver = browser('chrome')
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\driver\driver_choose.py", line 7, in browser
+    driver = webdriver.Chrome()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: chrome failed to start
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-warning'>
+    <td>test_case_005_login_forget_passwd.TestCase005LoginForgetPasswd</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_login_forget_passwd: 测试忘记密码功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\login\test_case_005_login_forget_passwd.py", line 13, in setUp
+    self.driver = AutomateDriver()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 15, in __init__
+    self.driver = browser('chrome')
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\driver\driver_choose.py", line 7, in browser
+    driver = webdriver.Chrome()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: chrome failed to start
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-warning'>
+    <td>test_case_006_login_change_language.TestCase006LoginChangeLanguage</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_change_language: 测试登录切换语言</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        error</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\login\test_case_006_login_change_language.py", line 13, in setUp
+    self.driver = AutomateDriver()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 15, in __init__
+    self.driver = browser('chrome')
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\driver\driver_choose.py", line 7, in browser
+    driver = webdriver.Chrome()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: chrome failed to start
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-warning'>
+    <td>test_case_007_login_enter_third_website.TestCase007LoginEnterThirdWebsite</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='ft7.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_third_website: 测试登录页底部第三方链接</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        error</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\login\test_case_007_login_enter_third_website.py", line 13, in setUp
+    self.driver = AutomateDriver()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 15, in __init__
+    self.driver = browser('chrome')
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\driver\driver_choose.py", line 7, in browser
+    driver = webdriver.Chrome()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: chrome failed to start
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-warning'>
+    <td>test_case_008_login_taste.TestCase008LoginTaste</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='ft8.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_login_taste: 测试我要体验功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
+        error</a>
+
+    <div id='div_ft8.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\login\test_case_008_login_taste.py", line 14, in setUp
+    self.driver = AutomateDriver()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 15, in __init__
+    self.driver = browser('chrome')
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\driver\driver_choose.py", line 7, in browser
+    driver = webdriver.Chrome()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: chrome failed to start
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    </tbody>
+    <tfoot>
+        <tr id='total_row'>
+            <td>Total</td>
+            <td>8</td>
+            <td class="text text-success">0</td>
+            <td class="text text-danger">0</td>
+            <td class="text text-warning">8</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tfoot>
+</table>
+
+    <div id='ending'>&nbsp;</div>
+</div>
+
+</body>
+</html>

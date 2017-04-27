@@ -1,0 +1,3 @@
+轨迹回放,/trackreplay/locus?imei=874544562356463
+实时跟踪,/trackpreset/tracking/874544562356463?isTracking=0
+查看告警,/deviceReport/statisticalReport

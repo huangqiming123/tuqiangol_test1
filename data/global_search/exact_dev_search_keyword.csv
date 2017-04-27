@@ -1,0 +1,8 @@
+874544562356607,轨迹回放,/trackreplay/locus?imei=874544562356607
+,实时跟踪,/trackpreset/tracking/874544562356607?isTracking=0
+,查看告警,/deviceReport/statisticalReport
+,查看位置,/index
+,控制台1,/index
+,查看1,/customer/toSearch
+,控制台2,/index
+,查看2,/customer/toSearch

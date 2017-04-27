@@ -1,0 +1,42 @@
+import unittest
+
+from automate_driver.automate_driver import AutomateDriver
+from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
+from pages.base.base_page import BasePage
+from pages.base.lon_in_base import LogInBase
+from pages.login.login_page import LoginPage
+
+
+# 登录时勾选记住我
+# author:孙燕妮
+
+class TestCase004LoginWithRememberMe(unittest.TestCase):
+    def setUp(self):
+        self.driver = AutomateDriver()
+        self.base_url = self.driver.base_url
+        self.base_page = BasePage(self.driver, self.base_url)
+        self.login_page = LoginPage(self.driver, self.base_url)
+        self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
+        self.log_in_base = LogInBase(self.driver, self.base_url)
+        self.driver.set_window_max()
+        self.driver.wait(1)
+
+    def tearDown(self):
+        self.driver.quit_browser()
+
+    def test_login_with_remember_me(self):
+        '''测试登录时勾选记住我'''
+        # 打开途强在线首页-登录页
+        self.base_page.open_page()
+        self.log_in_base.log_in()
+        # 判断登录成功后跳转页面是否正确
+        actual_url = self.driver.get_current_url()
+        expect_url = self.base_url + "/customer/toAccountCenter"
+        self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")
+        # 成功退出系统
+        self.account_center_page_navi_bar.usr_logout()
+        # 判断是否成功退出系统
+        self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "退出系统失败")
+        # 验证退出系统后“记住我”是否是已勾选状态
+        box_status = self.login_page.check_remember_me()
+        self.assertEqual(True, box_status, '记住密码失败')

@@ -1,0 +1,1689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>全局搜索模块测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>全局搜索模块测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-03-28 19:13:35</p>
+<p class='attribute'><strong>Duration:</strong> 0:50:52.203821</p>
+<p class='attribute'><strong>Status:</strong> Pass 32 Failure 1 Error 2</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_025_glob_dev_exact_search.TestCase025GlobDevExactSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_global_dev_exact_search: 通过csv测试全局搜索-搜索栏设备精确查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户中设备名称为ET210-12357的记录共：1条!
+当前登录账户与其所有下级账户中设备imei为123456780012355的记录共：1条!
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户中设备名称为912845678012373的记录共：1条!
+当前登录账户与其所有下级账户中设备imei为123456780012354的记录共：1条!
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_026_glob_dev_like_search.TestCase026GlobDevLikeSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_global_dev_like_search: 通过csv测试全局搜索-搜索栏设备模糊查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户中设备名称为ET210的记录共：29条!
+当前登录账户与其所有下级账户中设备imei为1234567800的记录共：30条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-9")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-9")&gt;]
+当前最后一页记录共：9
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-27")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.024452967702079276-27")&gt;]
+当前最后一页记录共：10
+您确定要退出系统吗?
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户中设备名称为ET210-1236的记录共：11条!
+当前登录账户与其所有下级账户中设备imei为12120的记录共：5条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-8")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-8")&gt;]
+当前最后一页记录共：1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-16")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="632ab5a240b9511d40859b3351fed9cf", element="0.8352454031507717-16")&gt;]
+当前仅一页记录共：5
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_027_glob_dev_no_keyword_search.TestCase027GlobDevNoKeywordSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_global_dev_no_keyword_search: 测试全局搜索-搜索栏设备不输入搜索信息查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户中搜有设备共：45!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-11")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f0f6b3703f838a604e3c8ef8c7c9f7f4", element="0.42394912510374216-11")&gt;]
+当前最后一页记录共：5
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_028_glob_dev_exact_search_details_user_relation.TestCase028GlobDevExactSearchDetailsUserRelation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_dev_exact_search_details_user_relation: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-用户关系模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: 您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_029_glob_dev_exact_search_details_dev_info.TestCase029GlobDevExactSearchDetailsDevInfo</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_dev_exact_search_details_dev_info: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备信息-基本信息模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: 您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_030_glob_dev_exact_search_details_dev_install_info.TestCase029GlobDevExactSearchDetailsDevInfo</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_dev_exact_search_details_dev_info: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备信息-客户信息模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: 您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_031_glob_dev_exact_search_details_dev_trans.TestCase030GlobDevExactSearchDetailsDevTrans</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_dev_exact_search_details_dev_trans: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备转移模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: 您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_032_glob_dev_exact_search_details_dev_instr.TestCase031GlobDevExactSearchDetailsDevInstr</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='ft8.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_glob_dev_exact_search_details_dev_instr: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备指令模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
+        error</a>
+
+    <div id='div_ft8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\global_search\test_case_032_glob_dev_exact_search_details_dev_instr.py", line 63, in test_glob_dev_exact_search_details_dev_instr
+    hint = self.global_dev_search_page.get_no_act_dev_hint()
+  File "E:\git\tuqiangOL\pages\global_search\global_dev_search_page.py", line 380, in get_no_act_dev_hint
+    hint = self.driver.get_element("c,layui-layer-content").text
+  File "E:\git\tuqiangOL\automate_driver\automate_driver.py", line 67, in get_element
+    element = self.driver.find_element_by_class_name(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 413, in find_element_by_class_name
+    return self.find_element(by=By.CLASS_NAME, value=name)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"class name","selector":"layui-layer-content"}
+  (Session info: chrome=56.0.2924.87)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\global_search\test_case_032_glob_dev_exact_search_details_dev_instr.py", line 67, in test_glob_dev_exact_search_details_dev_instr
+    self.global_dev_search_page.dev_instr_type_edit(dev_instr_info["instr_type"])
+  File "E:\git\tuqiangOL\pages\global_search\global_dev_search_page.py", line 386, in dev_instr_type_edit
+    self.driver.click_element("x,//*[@id='type-div']/div/div/span[2]")
+  File "E:\git\tuqiangOL\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "E:\git\tuqiangOL\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='type-div']/div/div/span[2]"}
+  (Session info: chrome=56.0.2924.87)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_033_glob_dev_search_list.TestCase027GlobDevNoKeywordSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_global_dev_no_keyword_search: 测试全局搜索-搜索栏设备不输入搜索信息查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: 您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_034_glob_account_exact_search.TestCase034GlobAccountExactSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_global_account_exact_search: 通过csv测试全局搜索-搜索栏用户精确查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: 您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_035_glob_account_like_search.TestCase035GlobAccountLikeSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_global_account_like_search: 通过csv测试全局搜索-搜索栏用户模糊查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户中账户为t的记录共：11条!
+当前登录账户与其所有下级账户中用户名称为yan的记录共：1条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-8")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.694824573749315-8")&gt;]
+当前最后一页记录共：1
+您确定要退出系统吗?
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户中账户为test的记录共：5条!
+当前登录账户与其所有下级账户中用户名称为a的记录共：8条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-7")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-7")&gt;]
+当前仅一页记录共：5
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-19")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3ed138ca0ddb316c956d5a5897baefa1", element="0.5704695727933977-19")&gt;]
+当前仅一页记录共：8
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_036_glob_account_no_keyword_search.TestCase027GlobAccountNoKeywordSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_global_account_no_keyword_search: 测试全局搜索-搜索栏用户不输入搜索信息查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户中搜有设备共：12!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-8")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="dc22f1ab3d8ddf8dee5e9c403cef58ad", element="0.41882837121045324-8")&gt;]
+当前最后一页记录共：2
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_037_glob_account_exact_search_details_user_relation.TestCase037GlobAccountExactSearchDetailsUserRelation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_account_exact_search_details_user_relation: 通过csv测试全局搜索-精确查找用户结果唯一用户详情页面-用户关系模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.1')" >
+        pass</a>
+
+    <div id='div_pt13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.1: 您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_038_glob_account_exact_search_details_user_info.TestCase038GlobAccountExactSearchDetailsUserInfo</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_account_exact_search_details_user_info: 通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-用户信息模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: 您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_039_glob_account_exact_search_details_dev_sale.TestCase039GlobAccountExactSearchDetailsDevSale</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_account_exact_search_details_dev_sale: 通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-销售设备模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt15.1')" >
+        pass</a>
+
+    <div id='div_pt15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt15.1: 您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_040_glob_account_exact_search_details_add_lower_acc.TestCase040GlobAccountExactSearchDetailsAddLowerAcc</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='ft16.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_glob_account_exact_search_details_add_lower_acc: 通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-新增下级用户模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
+        error</a>
+
+    <div id='div_ft16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.1: 您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\global_search\test_case_040_glob_account_exact_search_details_add_lower_acc.py", line 89, in test_glob_account_exact_search_details_add_lower_acc
+    self.global_acc_search_page.add_acc_instr_limit_modi()
+  File "E:\git\tuqiangOL\pages\global_search\global_account_search_page.py", line 398, in add_acc_instr_limit_modi
+    self.driver.click_element("x,//*[@id='complex_addUser_form']/div[5]/div[2]/label[1]/div/ins")
+  File "E:\git\tuqiangOL\automate_driver\automate_driver.py", line 98, in click_element
+    element.click()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=56.0.2924.87)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 6.1.7600 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_041_glob_account_exact_search_details_acc_trans.TestCase041GlobAccountExactSearchDetailsAccTrans</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_account_exact_search_details_acc_trans: 通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-转移用户模块的操作功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.1')" >
+        pass</a>
+
+    <div id='div_pt17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt17.1: 您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_042_glob_account_search_list.TestCase042GlobAccountSearchList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_account_search_list: 测试全局搜索-用户搜索-不输入搜索信息查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt18.1')" >
+        pass</a>
+
+    <div id='div_pt18.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt18.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt18.1: 您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_043_glob_complex_search_by_acc.TestCase043GlobComplexSearchByAcc</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_acc: 测试全局搜索-高级搜索-通过选择用户单一查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt19.1')" >
+        pass</a>
+
+    <div id='div_pt19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt19.1: 用户test_01的设备共：9条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-15")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-15")&gt;]
+当前仅一页记录共：9
+用户web_autotest的设备共：9条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-30")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-30")&gt;]
+当前仅一页记录共：9
+用户test_02的设备共：11条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-43")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-44")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-45")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-43")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-44")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="beb47372bbb2ab73967de26a0b0df1a7", element="0.5112227748176121-45")&gt;]
+当前最后一页记录共：1
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_044_glob_complex_search_by_basic_info.TestCase044GlobComplexSearchByBasicInfo</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='pt20.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_basic_info: 测试全局搜索-高级搜索-通过选择基本信息单一查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt20.1')" >
+        pass</a>
+
+    <div id='div_pt20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt20.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+imei = 123456780012352的设备共：1条!
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+vehicleNumber = 86666的设备共：2条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-13")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-13")&gt;]
+当前仅一页记录共：2
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+mcType = BD309W的设备共：1条!
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+sn = 123的设备共：6条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-24")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-24")&gt;]
+当前仅一页记录共：6
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+carFrame = 111的设备共：2条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-35")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-35")&gt;]
+当前仅一页记录共：2
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+sim = 1的设备共：13条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-43")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-43")&gt;]
+当前最后一页记录共：3
+('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+deviceName = ET210的设备共：29条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-49")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-50")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-51")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-52")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-53")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-54")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-49")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-50")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-51")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-52")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-53")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="6bff4b75d2f82fdfde9597060a52e22d", element="0.9296927178360239-54")&gt;]
+当前最后一页记录共：9
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_045_glob_complex_search_by_date_type.TestCase045GlobComplexSearchByDateType</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='pt21.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_date_type: 测试全局搜索-高级搜索-通过日期类型单一查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt21.1')" >
+        pass</a>
+
+    <div id='div_pt21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt21.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前所选激活时间匹配的设备共：5条!
+[('519876810593038',), ('991234578123656',), ('991234578123657',)]
+当前所选用户到期时间匹配的设备共：3条!
+当前所选平台到期时间匹配的设备共：10条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-12")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-12")&gt;]
+当前仅一页记录共：5
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-23")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-23")&gt;]
+当前仅一页记录共：3
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-30")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-31")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-30")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7b6772ef8172f62e65bfbc281bfcf704", element="0.034295615655371536-31")&gt;]
+当前仅一页记录共：10
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_046_glob_complex_search_by_dev_status.TestCase046GlobComplexSearchByDevStatus</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_dev_status: 测试全局搜索-高级搜索-通过设备状态单一查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt22.1')" >
+        pass</a>
+
+    <div id='div_pt22.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt22.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt22.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前所选欠费状态的设备共：2条!
+当前所选未激活状态的设备共：35条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-8")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-8")&gt;]
+当前仅一页记录共：2
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-19")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5e496f664406743b4846a35f07004757", element="0.15141586259785123-19")&gt;]
+当前最后一页记录共：5
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_047_glob_complex_search_by_acc_and_basic_info.TestCase047GlobComplexSearchByAccAndBasicInfo</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
+</tr>
+
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_acc_and_basic_info: 测试全局搜索-高级搜索-通过选择用户+基本信息双组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.1')" >
+        pass</a>
+
+    <div id='div_pt23.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt23.1: (('test_02', '40412', 'test_02'),)
+40412
+用户test_02imei = 8001235的设备共：3条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-14")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-14")&gt;]
+当前仅一页记录共：3
+(('account_01', '40414', 'account_01'),)
+40414
+用户account_01vehicleNumber = 86666的设备共：1条!
+(('account_04', '40419', 'account_4'),)
+40419
+用户account_04deviceName = ET210的设备共：3条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-27")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="154720c9afc85c6f1a33928f0be862c6", element="0.029119854491756136-27")&gt;]
+当前仅一页记录共：3
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_048_glob_complex_search_by_acc_and_date_type.TestCase048GlobComplexSearchByAccAndDateType</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
+</tr>
+
+<tr id='pt24.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_acc_and_date_type: 测试全局搜索-高级搜索-通过选择用户+日期类型双组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.1')" >
+        pass</a>
+
+    <div id='div_pt24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.1: 当前所选用户+激活时间匹配的设备共：2条!
+当前所选用户+用户到期时间匹配的设备共：3条!
+当前所选用户+平台到期时间匹配的设备共：2条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-16")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-16")&gt;]
+当前仅一页记录共：2
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-25")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-25")&gt;]
+当前仅一页记录共：3
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-31")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-34")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-31")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8de8344cd91f39e29a51ed84bc75b125", element="0.7450913568526238-34")&gt;]
+当前仅一页记录共：2
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_049_glob_complex_search_by_acc_and_dev_status.TestCase049GlobComplexSearchByAccAndDevStatus</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c25',1)">Detail</a></td>
+</tr>
+
+<tr id='pt25.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_acc_and_dev_status: 测试全局搜索-高级搜索-通过选择用户+设备状态双组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt25.1')" >
+        pass</a>
+
+    <div id='div_pt25.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt25.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt25.1: 当前所选用户+欠费状态匹配的设备共：1条!
+当前所选用户+未激活状态匹配的设备共：9条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8ce9a2daf8adbc0068a275a52db2b7e1", element="0.9386952122735985-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8ce9a2daf8adbc0068a275a52db2b7e1", element="0.9386952122735985-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8ce9a2daf8adbc0068a275a52db2b7e1", element="0.9386952122735985-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8ce9a2daf8adbc0068a275a52db2b7e1", element="0.9386952122735985-16")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8ce9a2daf8adbc0068a275a52db2b7e1", element="0.9386952122735985-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8ce9a2daf8adbc0068a275a52db2b7e1", element="0.9386952122735985-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8ce9a2daf8adbc0068a275a52db2b7e1", element="0.9386952122735985-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8ce9a2daf8adbc0068a275a52db2b7e1", element="0.9386952122735985-16")&gt;]
+当前仅一页记录共：9
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_050_glob_complex_search_by_basic_info_and_date_type.TestCase050GlobComplexSearchByBasicInfoAndDateType</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c26',1)">Detail</a></td>
+</tr>
+
+<tr id='pt26.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_basic_info_and_date_type: 测试全局搜索-高级搜索-通过选择基本信息+日期类型双组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt26.1')" >
+        pass</a>
+
+    <div id='div_pt26.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt26.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt26.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前所选基本信息+激活时间匹配的设备共：5条!
+当前所选基本信息+平台到期时间匹配的设备共：7条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-15")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-15")&gt;]
+当前仅一页记录共：5
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-27")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1a6dbbab0eac84494bd07f887a5abdfb", element="0.6938840190520799-27")&gt;]
+当前仅一页记录共：7
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_051_glob_complex_search_by_basic_info_and_dev_status.TestCase051GlobComplexSearchByBasicInfoAndDevStatus</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c27',1)">Detail</a></td>
+</tr>
+
+<tr id='pt27.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_basic_info_and_dev_status: 测试全局搜索-高级搜索-通过选择基本信息+设备状态双组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt27.1')" >
+        pass</a>
+
+    <div id='div_pt27.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt27.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt27.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前所选基本信息+欠费状态的设备共：2条!
+当前所选基本信息+未激活状态的设备共：27条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-11")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-11")&gt;]
+当前仅一页记录共：2
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-22")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="56de7fd04ed541c9e7f32cfa43bc8208", element="0.3647937141361006-22")&gt;]
+当前最后一页记录共：7
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_052_glob_complex_search_by_date_type_and_dev_status.TestCase052GlobComplexSearchByDateTypeAndDevStatus</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c28',1)">Detail</a></td>
+</tr>
+
+<tr id='pt28.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_date_type_and_dev_status: 测试全局搜索-高级搜索-通过日期类型+设备状态双组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.1')" >
+        pass</a>
+
+    <div id='div_pt28.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前所选激活时间+欠费状态的设备共：2条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8252ce3a25c4c6b51829f94565151e28", element="0.3621590845594278-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8252ce3a25c4c6b51829f94565151e28", element="0.3621590845594278-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8252ce3a25c4c6b51829f94565151e28", element="0.3621590845594278-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8252ce3a25c4c6b51829f94565151e28", element="0.3621590845594278-13")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="8252ce3a25c4c6b51829f94565151e28", element="0.3621590845594278-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8252ce3a25c4c6b51829f94565151e28", element="0.3621590845594278-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8252ce3a25c4c6b51829f94565151e28", element="0.3621590845594278-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="8252ce3a25c4c6b51829f94565151e28", element="0.3621590845594278-13")&gt;]
+当前仅一页记录共：2
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_053_glob_complex_search_by_acc_and_basic_info_and_date_type.TestCase053GlobComplexSearchByAccAndBasicInfoAndDateType</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c29',1)">Detail</a></td>
+</tr>
+
+<tr id='pt29.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_acc_and_basic_info_and_date_type: 测试全局搜索-高级搜索-通过选择用户+基本信息+日期类型三组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt29.1')" >
+        pass</a>
+
+    <div id='div_pt29.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt29.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt29.1: 当前所选用户+基本信息+激活时间匹配的设备共：2条!
+当前所选用户+基本信息+平台到期时间匹配的设备共：1条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="f27c2b3a1789af05fa1785ecf698df27", element="0.9275829687607269-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f27c2b3a1789af05fa1785ecf698df27", element="0.9275829687607269-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f27c2b3a1789af05fa1785ecf698df27", element="0.9275829687607269-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f27c2b3a1789af05fa1785ecf698df27", element="0.9275829687607269-19")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="f27c2b3a1789af05fa1785ecf698df27", element="0.9275829687607269-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f27c2b3a1789af05fa1785ecf698df27", element="0.9275829687607269-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f27c2b3a1789af05fa1785ecf698df27", element="0.9275829687607269-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f27c2b3a1789af05fa1785ecf698df27", element="0.9275829687607269-19")&gt;]
+当前仅一页记录共：2
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_054_glob_complex_search_by_acc_and_basic_info_and_dev_status.TestCase054GlobComplexSearchByAccAndBasicInfoAndDevStatus</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c30',1)">Detail</a></td>
+</tr>
+
+<tr id='pt30.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_acc_and_basic_info_and_dev_status: 测试全局搜索-高级搜索-通过选择用户+基本信息+设备状态三组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt30.1')" >
+        pass</a>
+
+    <div id='div_pt30.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt30.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt30.1: 当前所选用户+基本信息+欠费状态的设备共：1条!
+当前所选用户+基本信息+未激活状态的设备共：2条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="87f73a4548c95c661463effe86275225", element="0.37158961267805335-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="87f73a4548c95c661463effe86275225", element="0.37158961267805335-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="87f73a4548c95c661463effe86275225", element="0.37158961267805335-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="87f73a4548c95c661463effe86275225", element="0.37158961267805335-20")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="87f73a4548c95c661463effe86275225", element="0.37158961267805335-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="87f73a4548c95c661463effe86275225", element="0.37158961267805335-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="87f73a4548c95c661463effe86275225", element="0.37158961267805335-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="87f73a4548c95c661463effe86275225", element="0.37158961267805335-20")&gt;]
+当前仅一页记录共：2
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_055_glob_complex_search_by_acc_and_date_type_and_dev_status.TestCase055GlobComplexSearchByAccAndDateTypeAndDevStatus</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c31',1)">Detail</a></td>
+</tr>
+
+<tr id='pt31.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_acc_and_date_type_and_dev_status: 测试全局搜索-高级搜索-通过选择用户+日期类型+设备状态三组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt31.1')" >
+        pass</a>
+
+    <div id='div_pt31.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt31.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt31.1: 当前所选用户+激活时间+欠费状态的设备共：1条!
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_056_glob_complex_search_by_basic_info_and_date_type_and_dev_status.TestCase056GlobComplexSearchByBasicInfoAndDateTypeAndDevStatus</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c32',1)">Detail</a></td>
+</tr>
+
+<tr id='pt32.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_basic_info_and_date_type_and_dev_status: 测试全局搜索-高级搜索-通过基本信息+日期类型+设备状态三组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt32.1')" >
+        pass</a>
+
+    <div id='div_pt32.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt32.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt32.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前所选基本信息+激活时间+欠费状态的设备共：2条!
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="f2839ef357d64f97cef147612174bee4", element="0.11951910178346448-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f2839ef357d64f97cef147612174bee4", element="0.11951910178346448-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f2839ef357d64f97cef147612174bee4", element="0.11951910178346448-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f2839ef357d64f97cef147612174bee4", element="0.11951910178346448-16")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="f2839ef357d64f97cef147612174bee4", element="0.11951910178346448-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f2839ef357d64f97cef147612174bee4", element="0.11951910178346448-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f2839ef357d64f97cef147612174bee4", element="0.11951910178346448-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="f2839ef357d64f97cef147612174bee4", element="0.11951910178346448-16")&gt;]
+当前仅一页记录共：2
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_057_glob_complex_search_by_all_condi.TestCase057GlobComplexSearchByAllCondi</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c33',1)">Detail</a></td>
+</tr>
+
+<tr id='pt33.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_complex_search_by_all_condi: 测试全局搜索-高级搜索-通过选择用户-基本信息+日期类型+设备状态全组合查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt33.1')" >
+        pass</a>
+
+    <div id='div_pt33.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt33.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt33.1: 当前所选基本信息+激活时间+欠费状态的设备共：1条!
+您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_case_058_glob_app_account_exact_search_and_details.TestCase058GlobAppAccountExactSearch</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c34',1)">Detail</a></td>
+</tr>
+
+<tr id='ft34.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_glob_app_account_exact_search: 测试全局搜索-App用户搜索-精确查找功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft34.1')" >
+        fail</a>
+
+    <div id='div_ft34.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft34.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft34.1: Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\global_search\test_case_058_glob_app_account_exact_search_and_details.py", line 84, in test_glob_app_account_exact_search
+    self.assertEqual(expect_url, current_url, link_info["link_name"] + "页面跳转错误!")
+AssertionError: 'http://tuqiangol.com/trackreplay/locus?imei=123456780012370' != 'http://tuqiangol.com/trackreplay/locus?imei=123456780012368'
+- http://tuqiangol.com/trackreplay/locus?imei=123456780012370
+?                                                          ^^
++ http://tuqiangol.com/trackreplay/locus?imei=123456780012368
+?                                                          ^^
+ : 轨迹回放页面跳转错误!
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_059_glob_app_account_search_list.TestCase058GlobAppAccountSearchList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c35',1)">Detail</a></td>
+</tr>
+
+<tr id='pt35.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_glob_app_account_search_list: 测试全局搜索-App用户搜索-不输入搜索信息查找，列表操作</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt35.1')" >
+        pass</a>
+
+    <div id='div_pt35.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt35.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt35.1: 您确定要退出系统吗?
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>35</td>
+    <td>32</td>
+    <td>1</td>
+    <td>2</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

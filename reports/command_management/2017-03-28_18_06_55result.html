@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>指令管理模块测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>指令管理模块测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-03-28 18:06:55</p>
+<p class='attribute'><strong>Duration:</strong> 0:23:04.844208</p>
+<p class='attribute'><strong>Status:</strong> Pass 14</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_124_work_type_template_management_creat_template.TestCase124WorkTypeTemplateManagementCreatTemplate</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_124_work_type_template_management_creat_template</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_125_work_type_template_management_operation.TestCase125WorkTypeTemplateManagementOperation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_125_work_type_template_management_operation</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_126_work_type_template_management_paging_function.TestCase126WorkTypeTemplateManagementPagingFunction</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_126_work_type_template_management_paging_function</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: [&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-8")&gt;]
+点击下一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-15")&gt;]
+暂无数据！
+点击上一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-21")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-21")&gt;]
+2
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-29")&gt;]
+暂无数据！
+0
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-29")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-29")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-31")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-34")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-36")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="ba28ae6ada9760afd542eb63fa5574a3", element="0.686339401233065-39")&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_127_issued_work_type_task_management_search.TestCase127IssuedWorkTypetTaskManagementSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_127_issued_work_type_task_management_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: [&lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-11")&gt;]
+2
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-11")&gt;]
+当前最后一页记录共：9
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-25")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-25")&gt;]
+当前仅一页记录共：1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-30")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-30")&gt;]
+当前仅一页记录共：2
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-35")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-36")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-35")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="4f371a6d8afa924b16f259aa2a496691", element="0.6164446923146729-36")&gt;]
+当前仅一页记录共：1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_128_issued_work_type_task_management_operation.TestCase128IssuedWorkTaskManagementOperation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_128_issued_work_type_task_management_operation</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_129_issued_work_type_task_management_paging_function.TestCase129IssuedWorkTypeTaskManagementPagingFunction</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_129_issued_work_type_task_management_paging_function</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: [&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-8")&gt;]
+点击下一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-15")&gt;]
+暂无数据！
+点击上一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-21")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-21")&gt;]
+2
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-29")&gt;]
+暂无数据！
+0
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-29")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-29")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-31")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-34")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-36")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="fba2b48c70b81e5892953ef44c587f88", element="0.5977176225496832-39")&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_130_issued_work_type_management_search.TestCase130IssuedWorkTypeManagementSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_130_issued_work_type_management_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: [&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-21")&gt;]
+
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-21")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-21")&gt;]
+
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-21")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-21")&gt;]
+
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-21")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-21")&gt;]
+
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-21")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-30")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-31")&gt;]
+2
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-30")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-31")&gt;]
+当前最后一页记录共：6
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-43")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-43")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-43")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-43")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-43")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-43")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-43")&gt;]
+暂无数据！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="32b3f1694b9f1ce6c372f24bd6dbddcc", element="0.2396698026264541-43")&gt;]
+暂无数据！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_131_issued_work_type_management_operation.TestCase113IssuedWorkTypeManagementOperation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_131_issued_work_type_management_operation</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_132_issued_work_task_management_paging_function.TestCase132IssuedWorkTaskManagementPagingFunction</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_132_issued_work_task_management_paging_function</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: []
+点击下一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-16")&gt;]
+25
+点击上一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-29")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-29")&gt;]
+25
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-35")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-36")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-41")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-42")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-43")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-44")&gt;]
+25
+0
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-71")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-72")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-73")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-74")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-75")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-76")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-77")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-78")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-79")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-80")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-81")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-71")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-72")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-73")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-74")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-75")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-76")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-77")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-78")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-79")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-80")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-81")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-83")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-84")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-85")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-86")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-87")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-88")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-89")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-90")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-91")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-92")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-93")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-95")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-96")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-97")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-98")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-99")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-100")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-101")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="73c8221e09a7befe2eba3b7ce16f67a9", element="0.20202872892721668-102")&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_133_issued_command_task_management_search.TestCase133IssuedCommandTaskManagementSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_133_issued_command_task_management_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: ('62967', '13047', '12939', '14914', '62961', '63129', '65206', '63127', '62931')
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-10")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-10")&gt;]
+当前仅一页记录共：1
+('62967', '13047', '12939', '14914', '62961', '63129', '65206', '63127', '62931')
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-15")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-15")&gt;]
+当前仅一页记录共：0
+('62967', '13047', '12939', '14914', '62961', '63129', '65206', '63127', '62931')
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-19")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-19")&gt;]
+当前仅一页记录共：0
+('62967', '13047', '12939', '14914', '62961', '63129', '65206', '63127', '62931')
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-23")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-23")&gt;]
+当前仅一页记录共：0
+('62967', '13047', '12939', '14914', '62961', '63129', '65206', '63127', '62931')
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-27")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-27")&gt;]
+当前仅一页记录共：0
+('62967', '13047', '12939', '14914', '62961', '63129', '65206', '63127', '62931')
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-30")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-31")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-28")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-29")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-30")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-31")&gt;]
+当前仅一页记录共：0
+('62967', '13047', '12939', '14914', '62961', '63129', '65206', '63127', '62931')
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-35")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-35")&gt;]
+当前仅一页记录共：1
+('62967', '13047', '12939', '14914', '62961', '63129', '65206', '63127', '62931')
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-40")&gt;]
+1
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="5abc1c530f7e2cedb098467903740193", element="0.2797604990595086-40")&gt;]
+当前仅一页记录共：0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_134_issued_command_task_management_operation.TestCase134IssuedCommandTaskManagementOperation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_134_issued_command_task_management_operation</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_135_issued_command_task_management_paging_function.TestCase135IssuedCommandTaskManagementPagingFunction</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_135_issued_command_task_management_paging_function</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: [&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-10")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-11")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-12")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-14")&gt;]
+点击下一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-19")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-20")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-21")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-27")&gt;]
+12
+点击上一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-30")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-31")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-35")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-36")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-40")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-30")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-31")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-32")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-35")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-36")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-39")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-40")&gt;]
+12
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-45")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-46")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-47")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-48")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-49")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-50")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-51")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-52")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-53")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-54")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-55")&gt;]
+12
+0
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-69")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-70")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-71")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-72")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-73")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-74")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-75")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-76")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-77")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-78")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-79")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-69")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-70")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-71")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-72")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-73")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-74")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-75")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-76")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-77")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-78")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-79")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-81")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-82")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-83")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-84")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-85")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-86")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-87")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-89")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-90")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-91")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-92")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-93")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1938a26036cbdc3dd46bbbf346f46cb6", element="0.7968087148834697-94")&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_136_issued_command_management_search.TestCase136IssuedCommandManagementSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_136_issued_command_management_search</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case_137_issued_command_management_paging_function.TestCase137IssuedCommandManagementPagingFunction</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_case_137_issued_command_management_paging_function</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: [&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-7")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-9")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-10")&gt;]
+点击下一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-13")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-14")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-15")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-17")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-19")&gt;]
+4
+点击上一页成功！
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-28")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-22")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-28")&gt;]
+4
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-34")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-35")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-36")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-37")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-39")&gt;]
+4
+0
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-45")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-46")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-47")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-48")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-49")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-50")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-51")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-45")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-46")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-47")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-48")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-49")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-50")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-51")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-53")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-54")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-55")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-56")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-57")&gt;]
+[&lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-59")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-60")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-61")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="cfa34eb8a45de84815da7df6df8c7820", element="0.2625678224056449-62")&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>14</td>
+    <td>14</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

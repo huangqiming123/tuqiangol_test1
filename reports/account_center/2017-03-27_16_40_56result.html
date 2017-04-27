@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>账户中心模块测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>账户中心模块测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-03-27 16:40:56</p>
+<p class='attribute'><strong>Duration:</strong> 0:48:46.167368</p>
+<p class='attribute'><strong>Status:</strong> Error 16</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_009_account_center_modify_info.TestCase009AccountCenterModifyInfo</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_modify_info: 通过csv测试修改资料功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmphl2muwps\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_009_account_center_modify_info.py", line 54, in test_account_center_modify_info
+    user_to_modify_info["email"])
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_navi_bar_page.py", line 134, in modify_usr_info
+    self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[2]/a[1]")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmphl2muwps/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_010_account_center_modify_passwd.TestCase010AccountCenterModifyPasswd</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_modify_info: 通过csv测试修改密码功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmp_7ktlceg\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_010_account_center_modify_passwd.py", line 56, in test_account_center_modify_info
+    user_to_modify_passwd["passwd_again"])
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_navi_bar_page.py", line 154, in modify_user_passwd
+    self.driver.click_element("s,body &gt; div.wrapper &gt; header &gt; div &gt; div.navbar-collapse.collapse &gt; div &gt; div.system-setting &gt; a.js-change-password")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 55, in get_element
+    element = self.driver.find_element_by_css_selector(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 437, in find_element_by_css_selector
+    return self.find_element(by=By.CSS_SELECTOR, value=css_selector)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmp_7ktlceg/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_011_account_center_feedback.TestCase011AccountCenterFeedback</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_feedback: 测试招呼栏帮助-意见反馈功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmp5zdqhblj\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_011_account_center_feedback.py", line 41, in test_account_center_feedback
+    self.account_center_page_navi_bar.to_help()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_navi_bar_page.py", line 262, in to_help
+    self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[1]/a[1]")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmp5zdqhblj/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_012_account_center_oper_device_log.TestCase012AccountCenterOperDeviceLog</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_oper_device_log: 测试招呼栏业务日志-设备管理日志查询功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户的设备分配记录共：95条!
+((datetime.date(2017, 3, 27),),)
+2017-03-27
+在当前系统日期的20时为止操作人为当前登录账户的设备分配记录共：95条!
+在当前系统日期的20时为止操作人为当前登录账户的设备修改记录共：155条!
+[WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmp53jyd0dv\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_012_account_center_oper_device_log.py", line 146, in test_account_center_oper_device_log
+    self.account_center_page_operation_log.business_log()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_operation_log_page.py", line 17, in business_log
+    self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[1]/a[2]")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmp53jyd0dv/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_013_account_center_oper_cust_log.TestCase013AccountCenterOperCustLog</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_oper_cust_log: 测试招呼栏业务日志-客户管理日志查询功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+select * from operation_log l where l.created_by in ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')and l.serviceType = '1' AND l.operType = '5';
+当前登录账户与其所有下级账户的客户修改记录共：79条!
+当前登录账户与其所有下级账户的客户新增记录共：41条!
+当前登录账户与其所有下级账户的客户删除记录共：35条!
+当前登录账户与其所有下级账户的客户修改密码记录共：57条!
+((datetime.date(2017, 3, 27),),)
+2017-03-27
+在当前系统日期的20时为止操作人为当前登录账户的客户重置密码记录共：36条!
+[WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpq59i0wm8\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_013_account_center_oper_cust_log.py", line 172, in test_account_center_oper_cust_log
+    self.account_center_page_operation_log.business_log()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_operation_log_page.py", line 17, in business_log
+    self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[1]/a[2]")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpq59i0wm8/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_014_account_center_oper_login_log.TestCase014AccountCenterOperLoginLog</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_login_log: 测试招呼栏业务日志-登录日志查询功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        error</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: ('40409', '57278', '69693', '40413', '40412', '40419', '69695', '40410', '69691', '40414', '40416', '40418')
+当前登录账户与其所有下级账户的登录记录共：72条!
+((datetime.date(2017, 3, 27),),)
+2017-03-27
+在2017-02-07到当前系统日期的20时内账户为当前登录账户的登录记录共：10条!
+[WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpintgom63\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_014_account_center_oper_login_log.py", line 120, in test_account_center_login_log
+    self.account_center_page_operation_log.business_log()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_operation_log_page.py", line 17, in business_log
+    self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[1]/a[2]")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpintgom63/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_015_account_center_overview.TestCase015AccountCenterOverview</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='ft7.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_overview: 通过csv测试账户详情-账户总览</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        error</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpq70kvjh_\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_015_account_center_overview.py", line 43, in test_account_center_overview
+    account_center_handle = self.driver.get_current_window_handle()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 122, in get_current_window_handle
+    handle = self.driver.current_window_handle
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 532, in current_window_handle
+    return self.execute(Command.GET_CURRENT_WINDOW_HANDLE)['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpq70kvjh_/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_016_account_center_fast_sale_reset.TestCase016AccountCenterFastSaleReset</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='ft8.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_fast_sale_reset: 通过csv测试账户详情-快捷销售-删除设备、重置功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
+        error</a>
+
+    <div id='div_ft8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpg41gmq93\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_016_account_center_fast_sale_reset.py", line 58, in test_account_center_fast_sale_reset
+    self.account_center_page_details.fast_sales()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_details_page.py", line 93, in fast_sales
+    self.driver.click_element("x,//*[@id='eSales']/a")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpg41gmq93/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_017_account_center_fast_sale.TestCase017AccountCenterFastSaleReset</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='ft9.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_fast_sale: 通过csv测试账户详情-快捷销售-精确查找账户及imei成功销售功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        error</a>
+
+    <div id='div_ft9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft9.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmperw0zscb\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_017_account_center_fast_sale.py", line 64, in test_account_center_fast_sale
+    self.account_center_page_details.fast_sales()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_details_page.py", line 93, in fast_sales
+    self.driver.click_element("x,//*[@id='eSales']/a")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmperw0zscb/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_018_account_center_fast_sale_add_cust.TestCase018AccountCenterFastSaleAddCust</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='ft10.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_fast_sale_add_cust: 通过csv测试账户详情-快捷销售-新增客户并成功销售设备给新客户</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
+        error</a>
+
+    <div id='div_ft10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft10.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpb8s6dbvt\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_018_account_center_fast_sale_add_cust.py", line 66, in test_account_center_fast_sale_add_cust
+    self.account_center_page_details.fast_sales()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_details_page.py", line 93, in fast_sales
+    self.driver.click_element("x,//*[@id='eSales']/a")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpb8s6dbvt/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_019_account_center_fast_sale_add_cust_dev_sale_and_del.TestCase019AccountCenterFastSaleAddCustDevSaleAndDel</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='ft11.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_fast_sale_add_cust_dev_sale_and_del: 通过csv测试账户详情-快捷销售-新增客户销售设备-删除新增客户</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.1')" >
+        error</a>
+
+    <div id='div_ft11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft11.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmppgoy4ci0\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_019_account_center_fast_sale_add_cust_dev_sale_and_del.py", line 69, in test_account_center_fast_sale_add_cust_dev_sale_and_del
+    account_center_handle = self.driver.get_current_window_handle()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 122, in get_current_window_handle
+    handle = self.driver.current_window_handle
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 532, in current_window_handle
+    return self.execute(Command.GET_CURRENT_WINDOW_HANDLE)['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmppgoy4ci0/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_020_account_center_msg_unread.TestCase020AccountCenterMsgUnread</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='ft12.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_msg_unread: 通过csv验证消息中心-未读消息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.1')" >
+        error</a>
+
+    <div id='div_ft12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft12.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmprdtu735n\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_020_account_center_msg_unread.py", line 53, in test_account_center_msg_unread
+    self.account_center_page_msg_center.enter_msg_center()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_msg_center_page.py", line 16, in enter_msg_center
+    self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/ul/li[2]/a")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmprdtu735n/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_021_account_center_msg_set_read.TestCase021AccountCenterMsgSetRead</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
+</tr>
+
+<tr id='ft13.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_msg_set_read: 通过csv测试消息中心-设置消息为已读功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.1')" >
+        error</a>
+
+    <div id='div_ft13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft13.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpf9wd3z2z\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_021_account_center_msg_set_read.py", line 53, in test_account_center_msg_set_read
+    self.account_center_page_msg_center.enter_msg_center()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_msg_center_page.py", line 16, in enter_msg_center
+    self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/ul/li[2]/a")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpf9wd3z2z/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_022_account_center_msg_search.TestCase022AccountCenterMsgSearch</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='ft14.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_msg_search: 通过mysql测试消息中心-根据搜索条件来搜索消息功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.1')" >
+        error</a>
+
+    <div id='div_ft14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft14.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpk59rx_jy\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_022_account_center_msg_search.py", line 60, in test_account_center_msg_search
+    self.account_center_page_msg_center.enter_msg_center()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_msg_center_page.py", line 16, in enter_msg_center
+    self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/ul/li[2]/a")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpk59rx_jy/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_023_account_center_visual_account.TestCase023AccountCenterVisualAccount</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='ft15.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_visual_account: 通过csv测试虚拟账户管理功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
+        error</a>
+
+    <div id='div_ft15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpmkhy76tx\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_023_account_center_visual_account.py", line 41, in test_account_center_visual_account
+    self.account_center_page_visual_account.enter_visual_account()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_visual_account_page.py", line 13, in enter_visual_account
+    self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/ul/li[3]/a")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpmkhy76tx/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_case_024_account_center_visu_edit_and_del.TestCase024AccountCenterVisuEditAndDel</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='ft16.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_center_visu_edit_and_del: 通过csv测试虚拟账户管理-编辑、删除功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
+        error</a>
+
+    <div id='div_ft16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.1: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Windows\\TEMP\\tmpl_gh4cfh\\cert8.db'
+Traceback (most recent call last):
+  File "E:\git\tuqiangOL\testcases\account_center\test_case_024_account_center_visu_edit_and_del.py", line 41, in test_account_center_visu_edit_and_del
+    self.account_center_page_visual_account.enter_visual_account()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\pages\account_center\account_center_visual_account_page.py", line 13, in enter_visual_account
+    self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/ul/li[3]/a")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 97, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiangol\automate_driver\automate_driver.py", line 58, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207
+Message: Unexpected modal dialog (text: 此页面的某个脚本可能正忙，或者已停止响应。您可以立即终止该脚本、在调试器中打开该脚本，或者继续等待该脚本完成。
+
+脚本： http://tuqiangol.com/resource/…oadify/jquery.uploadify.min.js:207) The alert could not be closed. The browser may be in a wildly inconsistent state, and the alert may still be open. This is not good. If you can reliably reproduce this, please report a new issue at https://github.com/SeleniumHQ/selenium/issues with reproduction steps. Exception message: TypeError: a.document.getElementsByTagName(...)[0].getButton is not a function
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.confirmEx (resource://gre/components/nsPrompter.js:694)
+    at ObservingAlert.prototype.confirmEx (file:///C:/Windows/TEMP/tmpl_gh4cfh/extensions/fxdriver@googlecode.com/components/prompt-service.js:4761)
+    at Y/&lt; (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:207)
+    at Y (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:196)
+    at aN (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:184)
+    at aP (http://tuqiangol.com/resource/plugins/uploadify/jquery.uploadify.min.js:149)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>16</td>
+    <td>0</td>
+    <td>0</td>
+    <td>16</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

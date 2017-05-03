@@ -44,12 +44,12 @@ class TestCase162AccountCenterOverviewAlarm(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 sleep(2)
                 expect_url = self.driver.get_current_url()
-                actual_url = self.base_url + '/alarmInfo/toAlarmInfo'
+                actual_url = self.base_url + '/deviceReport/statisticalReport?modularId=alarmDdetails'
                 self.assertEqual(expect_url, actual_url, '点击告警后，实际的url和期望的不一样！')
                 sleep(2)
 
                 actual_text = self.account_center_page_details.get_actual_text_after_click_alarms()
-                self.assertEqual('告警总览', actual_text, '点击告警后，页面没有跳转到告警总览页面上')
+                self.assertEqual('告警详情', actual_text, '点击告警后，页面没有跳转到告警总览页面上')
 
                 self.driver.close_current_page()
                 # 回到账户中心窗口

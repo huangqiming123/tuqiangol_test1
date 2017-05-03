@@ -47,10 +47,10 @@ class TestCase157AccountCenterOverviewAlarm(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 sleep(2)
                 expect_url = self.driver.get_current_url()
-                actual_url = self.base_url + '/alarmInfo/toAlarmInfo?viewFlag=2'
+                actual_url = self.base_url + '/safearea/geozonemap?flag=0'
                 self.assertEqual(expect_url, actual_url, '点击围栏后，实际的url和期望的不一样！')
                 actual_text = self.account_center_page_details.get_actual_text_after_click_alarm()
-                self.assertEqual('围栏设置', actual_text, '点击围栏后，页面没有跳转到围栏设置页面')
+                self.assertEqual('区域预警', actual_text, '点击围栏后，页面没有跳转到围栏设置页面')
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

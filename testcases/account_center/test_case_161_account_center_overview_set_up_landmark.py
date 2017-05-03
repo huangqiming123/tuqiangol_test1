@@ -47,12 +47,12 @@ class TestCase161AccountCenterOverviewSetUpLandmark(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 sleep(2)
                 expect_url = self.driver.get_current_url()
-                actual_url = self.base_url + '/setup/toSetUp?viewFlag=2'
+                actual_url = self.base_url + '/safearea/geozonemap?flag=1'
                 self.assertEqual(expect_url, actual_url, '点击地标设置后，实际的url和期望的不一样！')
                 sleep(2)
 
                 actual_text = self.account_center_page_details.get_actual_text_after_click_set_up_landmark()
-                self.assertEqual('地标设置', actual_text, '点击地标设置后，页面没有跳转到地标设置页面上')
+                self.assertEqual('标注点', actual_text, '点击地标设置后，页面没有跳转到地标设置页面上')
 
                 self.driver.close_current_page()
                 # 回到账户中心窗口

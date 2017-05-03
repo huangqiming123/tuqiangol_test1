@@ -254,6 +254,7 @@ class AccountCenterOperationLogPage(BasePage):
 
         elif search_data['type'] == '4':
             self.driver.click_element('x,//*[@id="custDiv"]/button[5]')
+        sleep(5)
 
         # 填写开始时间，结束时间
         js = 'document.getElementById("createTimeStart_fp").removeAttribute("readonly")'

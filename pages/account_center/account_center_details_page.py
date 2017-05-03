@@ -275,7 +275,7 @@ class AccountCenterDetailsPage(BasePage):
         return self.driver.get_text('x,//*[@id="repertory2"]')
 
     def get_actual_text_after_click_alarm(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div/div[4]/div[1]/div/b')
+        return self.driver.get_text('x,//*[@id="safemenu"]/li[1]/a')
 
     def get_current_account_next(self):
         # 获取左侧列表的下级用户总数
@@ -295,10 +295,14 @@ class AccountCenterDetailsPage(BasePage):
         return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div[5]/div[1]/div/b')
 
     def get_actual_text_after_click_set_up_landmark(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div/div[1]/div[1]/div/b')
+        return self.driver.get_text('x,//*[@id="marktab"]')
 
     def get_actual_text_after_click_alarms(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div/div[1]/div[1]/div/b')
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+        a = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
+        self.driver.default_frame()
+        return a
+
 
     def get_current_account_total_online(self):
         return self.driver.get_text('x,//*[@id="onLine2"]')
@@ -341,9 +345,10 @@ class AccountCenterDetailsPage(BasePage):
 
         self.driver.click_element(
             'x,/html/body/div[2]/div[5]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[5]/div/div/button')
-
+        sleep(1)
         self.driver.click_element(
             'x,/html/body/div[2]/div[5]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[6]/div[4]/div/div/span[2]')
+        sleep(2)
         self.driver.click_element(
             'x,/html/body/div[2]/div[5]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[6]/div[4]/div/div/div/ul/li[2]')
 
@@ -365,12 +370,13 @@ class AccountCenterDetailsPage(BasePage):
 
         self.driver.click_element(
             'x,/html/body/div[2]/div[5]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[6]/div[4]/div/div/span[2]')
+        sleep(2)
         self.driver.click_element(
             'x,/html/body/div[2]/div[5]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[6]/div[4]/div/div/div/ul/li[3]')
 
         self.driver.click_element(
             'x,/html/body/div[2]/div[5]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[5]/div/button')
-        sleep(3)
+        sleep(6)
         new_paging = NewPaging(self.driver, self.base_url)
         return new_paging.get_total_number('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
 

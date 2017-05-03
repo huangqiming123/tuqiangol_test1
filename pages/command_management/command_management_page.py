@@ -160,21 +160,21 @@ class CommandManagementPage(BasePage):
 
             # 选择星期几
             self.driver.click_element(
-                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[1]/div/ul/li[%s]/a/label/div/ins' %
-                    work_template_time_data['week'])
+                'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[1]/div/ul/li[%s]/a/label/div/ins' %
+                work_template_time_data['week'])
 
             self.driver.click_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[2]/div/input')
             self.driver.click_element('x,//*[@id="timePicker"]/div[2]/button[2]')
 
             if work_template_time_data['circulation1'] == '0':
                 self.driver.click_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/label[2]/div/ins')
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/label[2]/div/ins')
             elif work_template_time_data['circulation1'] == '1':
                 self.driver.click_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/label[1]/div/ins')
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/label[1]/div/ins')
                 self.driver.operate_input_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/input',
-                        work_template_time_data['circulation_day1'])
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/input',
+                    work_template_time_data['circulation_day1'])
 
         elif work_template_time_data['type'] == '3':
             # 普通模式
@@ -183,42 +183,42 @@ class CommandManagementPage(BasePage):
             self.driver.click_element('x,//*[@id="timePicker"]/div[2]/button[2]')
 
             self.driver.click_element(
-                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[2]/div/div/div/span[3]')
+                'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[2]/div/div/div/span[3]')
             self.driver.click_element(
-                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/ul/li[%s]' %
-                    work_template_time_data['jiange'])
+                'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/ul/li[%s]' %
+                work_template_time_data['jiange'])
 
             if work_template_time_data['circulation2'] == '0':
                 self.driver.click_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/label[2]/div/ins')
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/label[2]/div/ins')
             elif work_template_time_data['circulation2'] == '1':
                 self.driver.click_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/label[1]/div/ins')
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/label[1]/div/ins')
                 self.driver.operate_input_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/input',
-                        work_template_time_data['circulation_day2'])
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/input',
+                    work_template_time_data['circulation_day2'])
         else:
             # 选择多少天一次
             self.driver.click_element(self.CREATE_WORK_TEMPLATE_CHOOSE_TIME_SELECTOR)
             self.driver.click_element(self.CREATE_WORK_TEMPLATE_CHOOSE_TIMES_SELECTOR % work_template_time_data['day'])
 
             self.driver.click_element(
-                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[1]/div/div[2]/span/div/span[3]')
+                'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[1]/div/div[2]/span/div/span[3]')
             self.driver.click_element(
-                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[1]/div/div[2]/span/div/div/ul/li')
+                'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[1]/div/div[2]/span/div/div/ul/li')
 
             self.driver.click_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[2]/div/ul/li/input')
             self.driver.click_element('x,//*[@id="timePicker"]/div[2]/button[2]')
 
             if work_template_time_data['circulation'] == '0':
                 self.driver.click_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[2]/div/ins')
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[2]/div/ins')
             elif work_template_time_data['circulation'] == '1':
                 self.driver.click_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[1]/div/ins')
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[1]/div/ins')
                 self.driver.operate_input_element(
-                        'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/input',
-                        work_template_time_data['circulation_day'])
+                    'x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/input',
+                    work_template_time_data['circulation_day'])
         # 退出frame
         self.driver.default_frame()
 
@@ -281,7 +281,7 @@ class CommandManagementPage(BasePage):
     def actual_title_text_after_click_issued_command(self):
         # 点击下发指令后，获取下发指令框的文本
         actual_text = self.driver.get_text(
-                self.CREATE_WORK_TEMPLATE_TITLE_TEXT_AFTER_CLICK_ISSUED_COMMAND_BUTTON_SELECTOR)
+            self.CREATE_WORK_TEMPLATE_TITLE_TEXT_AFTER_CLICK_ISSUED_COMMAND_BUTTON_SELECTOR)
         return actual_text
 
     def close_issued_command(self):
@@ -342,8 +342,8 @@ class CommandManagementPage(BasePage):
             elif type == 'issued_work_task':
                 number = self.total_num(self.base_paging_function.get_actual_paging_sum('issued_work_task'),
                                         self.last_page_logs_num(
-                                                'x,//*[@id="issuedStageBody"]',
-                                                'x,//*[@id="issuedStegePaging"]'))
+                                            'x,//*[@id="issuedStageBody"]',
+                                            'x,//*[@id="issuedStegePaging"]'))
 
                 return number
 
@@ -385,65 +385,65 @@ class CommandManagementPage(BasePage):
         sleep(3)
         if search_data['execute_state'] == '5':
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[2]')
 
         elif search_data['execute_state'] == '1':
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(3)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[3]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[3]')
 
         elif search_data['execute_state'] == '2':
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[4]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[4]')
 
         elif search_data['execute_state'] == '3':
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[5]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[5]')
 
         elif search_data['execute_state'] == '4':
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[6]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[6]')
         else:
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[1]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[1]')
 
         # 选择状态
 
         if search_data['state'] == '1':
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[2]')
         elif search_data['state'] == '2':
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[3]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[3]')
         else:
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[1]')
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[1]')
 
         # 输入imei
         self.driver.click_element('x,//*[@id="searchIssuedTemplateIMEI"]')
@@ -474,7 +474,7 @@ class CommandManagementPage(BasePage):
     def actual_click_list_input_issued_work_type(self):
         # 点击框框后，返回true or false
         actual = self.driver.get_element(
-                'x,//*[@id="issuedStageTableHeader"]/thead/tr/th[1]/span/div/input').is_selected()
+            'x,//*[@id="issuedStageTableHeader"]/thead/tr/th[1]/span/div/input').is_selected()
         return actual
 
     def actual_click_list_input_issued(self):
@@ -611,3 +611,39 @@ class CommandManagementPage(BasePage):
             new_paging = NewPaging(self.driver, self.base_url)
             total = new_paging.get_total_number('x,//*[@id="issuedTemplatePaging"]', 'x,//*[@id="issuedTemplateBody"]')
             return total
+
+    def search_sql(self, current_user_next, search_data):
+        sql = "SELECT b.id FROM business_command_logs AS b"
+
+        if search_data['batch'] == '':
+            sql += " where b.createdBy IN %s" % str(current_user_next)
+
+            if search_data['imei'] != '':
+                sql += " and b.receiveDevice like '%" + search_data['imei'] + "%'"
+
+            if search_data['statue'] == '5':
+                sql += " and b.isOffLine = '0'"
+
+            if search_data['statue'] == '6':
+                sql += " and b.isOffLine = '1'"
+
+            if search_data['statue'] != '5' and search_data['statue'] != '6' and search_data['statue'] != '':
+                sql += " and b.IsExecute = '%s'" % search_data['statue']
+
+        elif search_data['batch'] != '':
+            sql += " INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN %s" % str(current_user_next)
+            sql += " and b.taskId like '%" + search_data['batch'] + "%'"
+            if search_data['imei'] != '':
+                sql += " and b.receiveDevice like '%" + search_data['imei'] + "%'"
+
+            if search_data['statue'] == '5':
+                sql += " and b.isOffLine = '0'"
+
+            if search_data['statue'] == '6':
+                sql += " and b.isOffLine = '1'"
+
+            if search_data['statue'] != '5' and search_data['statue'] != '6' and search_data['statue'] != '':
+                sql += " and b.IsExecute = '%s'" % search_data['statue']
+
+        sql += ";"
+        return sql

@@ -113,105 +113,12 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
                         current_account_list.append(range2)
 
                 current_user_next = tuple(current_account_list)
-                print(current_user_next)
                 # 判断搜索条件
-
-
-
-                if search_data['imei'] != '' and search_data['batch'] == '' and search_data['statue'] == '':
-                    # 条件1：iemi不为空
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.receiveDevice=" + search_data['imei'] + ";"
-
-                elif search_data['imei'] == '' and search_data['batch'] != '' and search_data['statue'] == '':
-                    # 条件2 ： 批次号不为空
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.taskId=" + search_data['batch'] + ";"
-
-                elif search_data['imei'] == '' and search_data['batch'] == '' and search_data['statue'] == '5':
-                    # 条件3,： 状态不为空，且为设备在线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.isOffLine = 0;"
-
-                elif search_data['imei'] == '' and search_data['batch'] == '' and search_data['statue'] == '6':
-                    # 条件4,： 状态不为空，且为设备离线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.isOffLine = 1;"
-
-                elif search_data['imei'] == '' and search_data['batch'] == '' and search_data['statue'] != '6' and \
-                                search_data['statue'] != '5' and search_data['statue'] != '':
-                    # 条件5，状态不为空，切不是在线和离线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.IsExecute = " + search_data['statue'] + ";"
-
-                elif search_data['imei'] != '' and search_data['batch'] != '' and search_data['statue'] == '':
-                    # 条件6，imei不为空，批次号不为空
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.taskId=" + search_data['batch'] + " and b.receiveDevice=" + \
-                                   search_data['imei'] + ";"
-
-                elif search_data['imei'] != '' and search_data['batch'] == '' and search_data['statue'] == '5':
-                    # 条件7,： imei 不为空 切状态不为空，且为设备在线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.isOffLine = 0 and b.receiveDevice=" + search_data['imei'] + ";"
-
-                elif search_data['imei'] != '' and search_data['batch'] == '' and search_data['statue'] == '6':
-                    # 条件8 imei 不为空 切状态不为空，且为设备离线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.isOffLine = 1 and b.receiveDevice=" + search_data['imei'] + ";"
-
-                elif search_data['imei'] != '' and search_data['batch'] == '' and search_data['statue'] != '6' and \
-                                search_data['statue'] != '5' and search_data['statue'] != '':
-                    # 条件9，状态不为空，切不是在线和离线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.IsExecute = " + search_data[
-                                       'statue'] + " and b.receiveDevice=" + \
-                                   search_data['imei'] + ";"
-
-                elif search_data['imei'] == '' and search_data['batch'] != '' and search_data['statue'] == '5':
-                    # 条件10，批次号和状态为在线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.taskId=" + search_data['batch'] + " and b.isOffLine= 0 ;"
-
-                elif search_data['imei'] == '' and search_data['batch'] != '' and search_data['statue'] == '6':
-                    # 条件10，批次号和状态为离线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.taskId=" + search_data['batch'] + " and b.isOffLine= 1 ;"
-
-                elif search_data['imei'] != '' and search_data['batch'] == '' and search_data['statue'] != '6' and \
-                                search_data['statue'] != '5' and search_data['statue'] != '':
-                    # 条件11，批次号 和状态都不为空  切状态不是在线和离线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.taskId=" + search_data['batch'] + " and b.IsExecute = " + \
-                                   search_data['statue'] + ";"
-
-                elif search_data['imei'] != '' and search_data['batch'] != '' and search_data['statue'] == '5':
-                    # 条件12 批次号，IMEI 和状态为在线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.taskId=" + search_data[
-                                       'batch'] + " and b.isOffLine= 0 and b.receiveDevice=" + search_data['imei'] + ";"
-
-                elif search_data['imei'] != '' and search_data['batch'] != '' and search_data['statue'] == '5':
-                    # 条件13 批次号，IMEI 和状态为离线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.taskId=" + search_data[
-                                       'batch'] + " and b.isOffLine= 1 and b.receiveDevice=" + search_data['imei'] + ";"
-
-                elif search_data['imei'] != '' and search_data['batch'] == '' and search_data['statue'] != '6' and \
-                                search_data['statue'] != '5' and search_data['statue'] != '':
-                    # 条件14，批次号，IMEI 和状态且不为在线和离线
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b INNER JOIN command_task AS c ON b.taskId = c.id WHERE b.createdBy IN " + str(
-                            current_user_next) + " and b.taskId=" + search_data[
-                                       'batch'] + " and b.IsExecute = " + search_data[
-                                       'statue'] + " and b.receiveDevice=" + search_data['imei'] + ";"
-
-                elif search_data['imei'] == '' and search_data['batch'] == '' and search_data['statue'] == '':
-                    # 条件15 都为空
-                    self.get_sql = "SELECT b.id FROM business_command_logs AS b WHERE b.createdBy IN " + str(
-                            current_user_next) + ";"
-
+                get_sql = self.command_management_page.search_sql(current_user_next, search_data)
                 # 执行sql
-                cursor.execute(self.get_sql)
+                print(get_sql)
+                cursor.execute(get_sql)
+
                 current_total = cursor.fetchall()
                 total_list = []
                 for range1 in current_total:

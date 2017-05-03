@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eee.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_139_alarm_overview_operation.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_141_alarm_detail_handle.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_142_alarm_set_up.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_143_enclosure_set_up_add_enclosure.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_144_enclosure_set_up_operation.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_145_enclosure_set_up_paging_function.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_138_alarm_overview_search.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_138_alarm_overview_search.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_139_alarm_overview_operation.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_139_alarm_overview_operation.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_140_alarm_detail_search.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_140_alarm_detail_search.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_141_alarm_detail_handle.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_141_alarm_detail_handle.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_142_alarm_set_up.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_142_alarm_set_up.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_143_enclosure_set_up_add_enclosure.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_143_enclosure_set_up_add_enclosure.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_144_enclosure_set_up_operation.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_144_enclosure_set_up_operation.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/alarm_info/test_case_145_enclosure_set_up_paging_function.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_145_enclosure_set_up_paging_function.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -196,24 +193,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="command_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testcases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alarm_info" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -556,7 +535,13 @@
       <option name="project" value="LOCAL" />
       <updated>1493801972653</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修改代码">
+      <created>1493802275161</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1493802275161</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -731,6 +716,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44313148">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#22#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1016,9 +1004,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5448505">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>

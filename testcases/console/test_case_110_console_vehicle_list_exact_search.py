@@ -84,13 +84,9 @@ class TestCase110ConsoleVehicleListExactSearch(unittest.TestCase):
             imei = self.console_page.get_dev_imei_search_result()
 
             # 验证获取的imei与搜素输入的imei是否一致
-            self.assertEqual(search_info["imei"],imei,"获取的imei与搜素输入的imei不一致")
+            self.assertEqual(search_info["imei"], imei, "获取的imei与搜素输入的imei不一致")
 
         csv_file.close()
 
-
-
-
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()
-

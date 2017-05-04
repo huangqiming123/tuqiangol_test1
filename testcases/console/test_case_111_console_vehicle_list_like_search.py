@@ -123,6 +123,8 @@ class TestCase111ConsoleVehicleListLikeSearch(unittest.TestCase):
 
             # 验证搜索结果总数与数据库搜索结果数是否一致
             self.assertEqual(login_user_dev_count, dev_num, "搜索结果总数与数据库搜索结果数不一致")
+            cur.close()
+            connect.close()
 
         csv_file.close()
 

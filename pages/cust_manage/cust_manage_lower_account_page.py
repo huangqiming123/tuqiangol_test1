@@ -269,6 +269,7 @@ class CustManageLowerAccountPage(BasePage):
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[2]')
         elif search_data['account_type'] == '用户':
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[3]')
+        sleep(3)
 
         self.driver.operate_input_element('x,//*[@id="searchAccount"]', search_data['info'])
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[2]/div/div/span/button')

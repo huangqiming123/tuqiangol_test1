@@ -9,23 +9,20 @@ from pages.base.new_paging import NewPaging
 
 
 class CustManageMyDevPage(BasePage):
-    def __init__(self,driver:AutomateDriver,base_url):
-        super().__init__(driver,base_url)
-        self.base_page = BasePage(self.driver,self.base_url)
-
+    def __init__(self, driver: AutomateDriver, base_url):
+        super().__init__(driver, base_url)
+        self.base_page = BasePage(self.driver, self.base_url)
 
     # 点击进入“我的设备”
     def enter_my_dev(self):
         self.driver.click_element("markDev")
         self.driver.wait()
 
-
-
     # 获取当前的设备个数
     def count_curr_dev_num(self):
-        new_paging = NewPaging(self.driver,self.base_url)
+        new_paging = NewPaging(self.driver, self.base_url)
         try:
-            total = new_paging.get_total_number("x,//*[@id='paging-dev']","x,//*[@id='markDevTable']")
+            total = new_paging.get_total_number("x,//*[@id='paging-dev']", "x,//*[@id='markDevTable']")
             return total
         except:
             return 0
@@ -41,7 +38,7 @@ class CustManageMyDevPage(BasePage):
         return count'''
 
     # 选择搜索条件-分组
-    def select_group(self,group_name):
+    def select_group(self, group_name):
         # 点击分组下拉框
         self.driver.click_element("markGroup")
         self.driver.wait()
@@ -53,51 +50,55 @@ class CustManageMyDevPage(BasePage):
             self.driver.click_element("x,//*[@id='markGroup']/div/div/ul/li[3]")
         self.driver.wait(1)
 
-
     # 选择搜索条件-激活状态
-    def select_active_status(self,active_status):
+    def select_active_status(self, active_status):
         # 点击激活状态下拉框
         self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[1]/span[2]")
         self.driver.wait()
         if active_status == '激活状态':
-            self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[1]/div/ul/li[1]")
+            self.driver.click_element(
+                "x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[1]/div/ul/li[1]")
         elif active_status == '已激活':
-            self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[1]/div/ul/li[2]")
+            self.driver.click_element(
+                "x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[1]/div/ul/li[2]")
         elif active_status == '未激活':
-            self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[1]/div/ul/li[3]")
+            self.driver.click_element(
+                "x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[1]/div/ul/li[3]")
         self.driver.wait(1)
 
     # 选择搜索条件-绑定状态
-    def select_band_status(self,band_status):
+    def select_band_status(self, band_status):
         # 点击绑定状态下拉框
         self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[2]/span[2]")
         self.driver.wait()
         if band_status == '绑定状态':
-            self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[2]/div/ul/li[1]")
+            self.driver.click_element(
+                "x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[2]/div/ul/li[1]")
         elif band_status == '已绑定':
-            self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[2]/div/ul/li[2]")
+            self.driver.click_element(
+                "x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[2]/div/ul/li[2]")
         elif band_status == '未绑定':
-            self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[2]/div/ul/li[3]")
+            self.driver.click_element(
+                "x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[2]/div/ul/li[3]")
         self.driver.wait(1)
 
-
     # 选择搜索条件-搜索类型SIM/IMEI，并输入对应号码
-    def select_search_type(self,type,number):
+    def select_search_type(self, type, number):
         if type == 'IMEI':
             self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[2]/label[1]/div/ins")
             self.driver.wait(1)
             # 输入IMEI
-            self.driver.operate_input_element("searchSnImeiVal",number)
+            self.driver.operate_input_element("searchSnImeiVal", number)
         elif type == 'SIM':
             self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[2]/label[2]/div/ins")
             self.driver.wait(1)
             # 输入SIM
-            self.driver.operate_input_element("searchSnImeiVal",number)
+            self.driver.operate_input_element("searchSnImeiVal", number)
         self.driver.wait(1)
 
     # 输入imei进行搜索
-    def search_dev_by_imei(self,imei):
-        self.driver.operate_input_element("searchSnImeiVal",imei)
+    def search_dev_by_imei(self, imei):
+        self.driver.operate_input_element("searchSnImeiVal", imei)
         self.driver.wait(1)
 
     # 点击搜索
@@ -138,7 +139,6 @@ class CustManageMyDevPage(BasePage):
         # os.system("E:\\autoIt_script\\upfile.exe")
         # self.driver.wait()
 
-
     # 批量编辑-点击确定
     def click_confirm_btn(self):
         self.driver.click_element("x,//*[@id='updateTemplate']/div/div/div[3]/button[1]")
@@ -175,7 +175,7 @@ class CustManageMyDevPage(BasePage):
         return selected_num
 
     # 批量销售-输入设备imei
-    def input_dev_imei(self,imei):
+    def input_dev_imei(self, imei):
         self.driver.get_element("sale_imei_batchSaleid").clear()
         self.driver.get_element("sale_imei_batchSaleid").send_keys(imei)
         self.driver.click_element("x,//*[@id='complex_user_sale_batchSaleid']/div[1]/div/div[1]/div/div[3]/button[1]")
@@ -205,7 +205,7 @@ class CustManageMyDevPage(BasePage):
                 "x,//*[@id='complex_user_sale_batchSaleid']/div[3]/div[1]/span/div/div/ul/li[7]")
 
     # 右侧搜索框搜索销售用户并选中
-    def select_sale_acc(self,user_name):
+    def select_sale_acc(self, user_name):
         self.driver.operate_input_element("batchSaleid_globalSearch_input", user_name)
         # 点击搜索按钮
         self.driver.click_element("batchSaleid_globalSearch_btn")
@@ -267,15 +267,13 @@ class CustManageMyDevPage(BasePage):
         list_size = len(pict_list)
         return list_size
 
-
-
     # 单个设备操作(yanni/第一个)
     # 编辑
 
     def dev_edit(self):
         # 点击编辑按钮
-        self.driver.click_element("x,/html/body/div[2]/div[5]/div/div/div[2]/div/div[2]/div[1]/div[2]/div[1]/"
-                                  "div[3]/table/tbody/tr[1]/td[10]/a[1]")
+        self.driver.click_element(
+            "x,/html/body/div[2]/div[5]/div/div/div[2]/div/div[2]/div[1]/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[10]/a[1]")
         self.driver.wait()
 
     # 编辑基本信息
@@ -355,8 +353,6 @@ class CustManageMyDevPage(BasePage):
         # 填写电动/发动机号
         self.driver.operate_input_element("engineNumber", engine_num)
 
-
-
     # 客户信息-安装信息
     def dev_install_info_edit(self, install_com, install_pers, install_addr, install_posi):
         # 将滚动条滚动至保存按钮处
@@ -385,7 +381,6 @@ class CustManageMyDevPage(BasePage):
         self.driver.click_element("laydate_ok")
         self.driver.wait(1)
 
-
     # 客户信息-安装信息-上传安装图片
     def dev_install_pict_upload(self):
 
@@ -403,7 +398,6 @@ class CustManageMyDevPage(BasePage):
         self.driver.execute_script(save_butt_ele)
         self.driver.get_element("c,p-pic")
         self.driver.wait(1)
-
 
     # 设备编辑-保存
     def dev_info_save(self):
@@ -426,7 +420,6 @@ class CustManageMyDevPage(BasePage):
         self.driver.click_element("x,//*[@id='markDevTable']/tr/td[10]/a[2]")
         self.driver.wait()
 
-
     # 查看位置
     def dev_site(self):
         # 点击查看位置
@@ -434,9 +427,8 @@ class CustManageMyDevPage(BasePage):
                                   "table/tbody/tr[1]/td[10]/a[3]")
         self.driver.wait()
 
-
     # 更多
-    def dev_more(self,more_info):
+    def dev_more(self, more_info):
         if more_info == '轨迹回放':
             # 点击更多
             self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[10]/a[4]')
@@ -456,7 +448,7 @@ class CustManageMyDevPage(BasePage):
             self.driver.click_element("l,下发指令")
             self.driver.wait()
             # 填写sos号码1
-            self.driver.operate_input_element("text_0","111")
+            self.driver.operate_input_element("text_0", "111")
             self.driver.wait(1)
             # 点击发送指令
             self.driver.click_element("instruction-send-btn")
@@ -494,11 +486,3 @@ class CustManageMyDevPage(BasePage):
             self.driver.wait()
             self.driver.click_element("l,查看告警")
             self.driver.wait()
-
-
-
-
-
-
-
-

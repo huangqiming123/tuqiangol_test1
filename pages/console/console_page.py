@@ -467,30 +467,29 @@ class ConsolePage(BasePage):
 
     # 设备详情
     def map_dev_info(self, dev_name, sim, content, vehicle_num, install_pers):
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div/div/div[3]/a[4]')
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div/div/div[3]/a[4]')
         self.driver.wait()
         # 编辑基本信息
+        self.driver.switch_to_frame('x,//*[@id="commModal_iframe"]')
         # 修改设备名称
-        self.driver.operate_input_element(
-            "x,/html/body/div[12]/div/div/div[2]/div/form/div[1]/fieldset/div[2]/div[1]/input", dev_name)
+        self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[1]/input', dev_name)
         # 编辑sim
-        self.driver.operate_input_element(
-            "x,/html/body/div[12]/div/div/div[2]/div/form/div[1]/fieldset/div[2]/div[2]/input", sim)
+        self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[2]/input', sim)
         # 编辑备注
         self.driver.operate_input_element("reMark", content)
         # 点击客户信息
-        self.driver.click_element("x,/html/body/div[12]/div/div/div[2]/div/div/ul/li[2]/a")
+        self.driver.click_element('x,/html/body/div[1]/ul/li[2]/a')
         self.driver.wait(1)
         # 编辑客户信息
         # 编辑车牌号
-        self.driver.operate_input_element(
-            "x,/html/body/div[12]/div/div/div[2]/div/form/div[2]/fieldset/div[2]/div[2]/input", vehicle_num)
+        self.driver.operate_input_element('x,//*[@id="device_info_b"]/fieldset/div[2]/div[1]/input', vehicle_num)
         # 编辑安装人员
-        self.driver.operate_input_element(
-            "x,/html/body/div[12]/div/div/div[2]/div/form/div[2]/fieldset/fieldset/fieldset/div[3]/div/input",
-            install_pers)
+        self.driver.operate_input_element('x,//*[@id="device_info_b"]/fieldset/fieldset/fieldset/div[3]/div/input',
+                                          install_pers)
+        self.driver.default_frame()
         # 保存
-        self.driver.click_element("x,/html/body/div[12]/div/div/div[3]/button[1]")
+        self.driver.click_element('x,//*[@id="commModal_submit_btn"]')
         self.driver.wait(1)
 
     # 电子围栏

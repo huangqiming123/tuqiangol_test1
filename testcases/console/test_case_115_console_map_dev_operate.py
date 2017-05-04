@@ -187,7 +187,7 @@ class TestCase115ConsoleVehicleListDevOperate(unittest.TestCase):
                 self.driver.wait(1)
                 # 获取告警页面的url
                 curr_url = self.driver.get_current_url()
-                expect_url = self.base_url + '/alarmInfo/toAlarmInfo'
+                expect_url = self.base_url + '/deviceReport/statisticalReport'
                 # 验证两者是否一致
                 self.assertEqual(expect_url, curr_url, "当前页面跳转错误")
                 # 关闭当前窗口

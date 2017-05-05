@@ -129,6 +129,7 @@ class SafeAreaPage(BasePage):
 
     def click_detele_button_with_mark(self):
         self.driver.click_element('x,//*[@id="deletesafe"]')
+        sleep(2)
 
     def click_edit_button_in_list(self):
         self.driver.click_element('x,//*[@id="marktbody"]/tr[1]/td[2]/a[1]')

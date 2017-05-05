@@ -56,7 +56,7 @@ class TestCase083CustManageLowerAccountOperate(unittest.TestCase):
         self.cust_manage_lower_account_page.enter_lower_acc()
 
         # 点击单个用户的重置密码
-        self.driver.operate_input_element('x,//*[@id="searchAccount"]', 'user_test_010201')
+        self.driver.operate_input_element('x,//*[@id="searchAccount"]', 'user_test_10011')
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[2]/div/div/span/button')
         sleep(3)
         self.cust_manage_lower_account_page.acc_reset_passwd()
@@ -102,7 +102,7 @@ class TestCase083CustManageLowerAccountOperate(unittest.TestCase):
 
         # 点击单个用户的删除
         self.cust_manage_lower_account_page.delete_acc()
-        self.driver.click_element('x,/html/body/div[31]/div[3]/a[1]')
+        self.driver.click_element('x,/html/body/div[28]/div[3]/a[1]')
         # 进入账户中心页面
         self.cust_manage_basic_info_and_add_cust_page.enter_account_center()
 

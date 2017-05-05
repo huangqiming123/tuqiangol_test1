@@ -115,9 +115,10 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
             # 创建游标
             cursor_02 = connect_02.cursor()
 
-            get_total_sql = "SELECT b.imei FROM(SELECT a.IMEI,a.CREATETIME FROM alarm_info AS a WHERE a.CREATETIME BETWEEN  '" + self.alarm_info_page.get_first_time() + "' AND  '" + self.alarm_info_page.get_second_time() + "' and a.imei in " + str(
-                current_user_all_equipment) + " and a.USER_ID = " + user_id + " GROUP BY a.IMEI) b"
+            get_total_sql = "SELECT b.imei FROM(SELECT a.IMEI,a.USER_ID FROM alarm_info_user AS a WHERE a.CREATETIME BETWEEN  '" + self.alarm_info_page.get_first_time() + "' AND  '" + self.alarm_info_page.get_second_time() + "' and a.imei in " + str(
+                current_user_all_equipment) + " GROUP BY a.IMEI) b  where b.USER_ID = '%s'" % user_id
             # 执行sql
+            print(get_total_sql)
             cursor_02.execute(get_total_sql)
             get_total = cursor_02.fetchall()
             total_list = []

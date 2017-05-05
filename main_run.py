@@ -105,4 +105,4 @@ for t in thread_list:
 run_08_test_account_center()
 # 运行后自动关机
 sleep(10)
-os.system('shutdown -s -f')
+# os.system('shutdown -s -f')

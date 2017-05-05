@@ -459,6 +459,7 @@ class AlarmInfoPage(BasePage):
 
         # 点击设备搜索
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
+        sleep(2)
 
         all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_alarmOverview"]/li'))
         all_group_num = len(all_group_list)
@@ -473,6 +474,7 @@ class AlarmInfoPage(BasePage):
         # 选择全部设备
         self.driver.click_element('x,//*[@id="treeModal_alarmOverview"]/div[2]/label/div/ins')
         # 点击确定
+        sleep(2)
         self.driver.click_element('x,//*[@id="treeModal_alarmOverview"]/div[2]/div/button[1]')
         sleep(2)
         # 选择日期
@@ -500,9 +502,13 @@ class AlarmInfoPage(BasePage):
         else:
             self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/div/ul/li[1]')
             # 填写开始时
+            js = 'document.getElementById("startTime_alarmReport").removeAttribute("readonly")'
+            self.driver.execute_js(js)
             self.driver.operate_input_element('x,//*[@id="startTime_alarmReport"]', data['began_time'])
 
             # 填写结束时间
+            js = 'document.getElementById("endTime_alarmReport").removeAttribute("readonly")'
+            self.driver.execute_js(js)
             self.driver.operate_input_element('x,//*[@id="endTime_alarmReport"]', data['end_time'])
         sleep(3)
         # 点击选择报警类型

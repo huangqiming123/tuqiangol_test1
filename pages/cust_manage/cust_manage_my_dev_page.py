@@ -411,8 +411,8 @@ class CustManageMyDevPage(BasePage):
 
     # 设备编辑-销售
     def dev_sale(self):
-        self.driver.click_element("x,/html/body/div[2]/div[5]/div/div/div[2]/div/div[2]/div[1]/div[2]/div[1]/"
-                                  "div[3]/table/tbody/tr[1]/td[10]/a[2]")
+        self.driver.click_element(
+            "x,/html/body/div[2]/div[5]/div/div/div[2]/div/div[2]/div[1]/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[10]/a[2]")
         self.driver.wait()
 
     # 列表仅有一个设备时-销售

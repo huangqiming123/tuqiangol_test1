@@ -1,5 +1,6 @@
 import csv
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -71,6 +72,7 @@ class TestCase039GlobAccountExactSearchDetailsDevSale(unittest.TestCase):
             self.assertEqual("1", add_num, "设备添加失败")
 
             # 删除
+            sleep(2)
             self.global_acc_search_page.del_add_imei()
             self.driver.wait()
             # 获取当前已选设备个数

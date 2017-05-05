@@ -51,6 +51,7 @@ class TestCase042GlobAccountSearchList(unittest.TestCase):
 
         # 点击用户搜索对话框的搜索按钮
         self.global_acc_search_page.click_account_dial_search()
+        first_account = self.global_acc_search_page.get_first_account()
 
         csv_file = self.global_search_page_read_csv.read_csv('acc_list_link.csv')
         csv_data = csv.reader(csv_file)
@@ -124,30 +125,24 @@ class TestCase042GlobAccountSearchList(unittest.TestCase):
         # 关闭当前设备搜索对话框
         self.global_acc_search_page.close_dev_search()
 
-
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()
 
-
         # 用已重置的账号登录系统-account_01
-        self.login_page.user_login("534534535","888888")
+        self.login_page.user_login(first_account, "888888")
         self.driver.wait()
 
         # 验证是否成功登录跳转至首页
         expect_url = self.base_url + "/customer/toAccountCenter"
 
-        self.assertEqual(expect_url,self.driver.get_current_url(),"页面跳转错误")
+        self.assertEqual(expect_url, self.driver.get_current_url(), "页面跳转错误")
 
         # 重置密码后首次登录强制修改密码
         self.base_page.force_reset_passwd("jimi123")
 
         # 验证重置状态
         reset_stat = self.base_page.reset_passwd_stat_cont()
-        self.assertIn("密码修改成功",reset_stat,"密码强制修改成功")
+        self.assertIn("密码修改成功", reset_stat, "密码强制修改成功")
 
         # 点击弹框确定
         self.base_page.reset_passwd_succ_ensure()
-
-
-
-

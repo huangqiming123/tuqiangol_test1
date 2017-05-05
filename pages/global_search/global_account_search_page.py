@@ -309,8 +309,7 @@ class GlobalAccountSearchPage(BasePage):
 
     # 用户详情-销售设备-删除已添加的设备
     def del_add_imei(self):
-        self.driver.click_element("x,/html/body/div[13]/div/div/div[2]/div[3]/div[2]/div[2]/div[3]/div/div[1]/div/"
-                                  "div[3]/table/tbody/tr/td[4]/a")
+        self.driver.click_element('x,//*[@id="sale_tbody_complexSale"]/tr/td[4]/a')
         self.driver.wait(1)
 
     # 用户详情-销售设备-点击销售
@@ -525,3 +524,6 @@ class GlobalAccountSearchPage(BasePage):
                                           account)
         self.driver.click_element('x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/span/button[1]')
         sleep(4)
+
+    def get_first_account(self):
+        return self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[1]/td[4]')

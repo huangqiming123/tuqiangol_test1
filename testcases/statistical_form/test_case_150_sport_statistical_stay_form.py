@@ -302,27 +302,27 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
             # 判断查询条件
             if search_data['choose_date'] == 'today':
                 self.get_total_sql = "SELECT s.CREATETIME,s.DURSECOND FROM report_stop_segment AS s WHERE s.IMEI in " + str(
-                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_today_begin_date() + "' and '" + self.statistical_form_page.get_today_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_today_begin_date() + "' and '" + self.statistical_form_page.get_today_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_today_begin_date() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_today_end_time() + "')) GROUP BY s.CREATETIME;"
+                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_today_begin_date() + "' and '" + self.statistical_form_page.get_today_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_today_begin_date() + "' and '" + self.statistical_form_page.get_today_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_today_begin_date() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_today_end_time() + "')) and s.acc = '0';"
 
             elif search_data['choose_date'] == 'yesterday':
                 self.get_total_sql = "SELECT s.CREATETIME,s.DURSECOND FROM report_stop_segment AS s WHERE s.IMEI in " + str(
-                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' and '" + self.statistical_form_page.get_yesterday_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' and '" + self.statistical_form_page.get_yesterday_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_yesterday_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_yesterday_end_time() + "')) GROUP BY s.CREATETIME;"
+                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' and '" + self.statistical_form_page.get_yesterday_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' and '" + self.statistical_form_page.get_yesterday_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_yesterday_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_yesterday_end_time() + "')) and s.acc = '0';"
 
             elif search_data['choose_date'] == 'this_week':
                 self.get_total_sql = "SELECT s.CREATETIME,s.DURSECOND FROM report_stop_segment AS s WHERE s.IMEI in " + str(
-                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' and '" + self.statistical_form_page.get_this_week_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' and '" + self.statistical_form_page.get_this_week_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_this_week_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_this_week_end_time() + "')) GROUP BY s.CREATETIME;"
+                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' and '" + self.statistical_form_page.get_this_week_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' and '" + self.statistical_form_page.get_this_week_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_this_week_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_this_week_end_time() + "')) and s.acc = '0';"
 
             elif search_data['choose_date'] == 'last_week':
                 self.get_total_sql = "SELECT s.CREATETIME,s.DURSECOND FROM report_stop_segment AS s WHERE s.IMEI in " + str(
-                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' and '" + self.statistical_form_page.get_last_week_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' and '" + self.statistical_form_page.get_last_week_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_last_week_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_last_week_end_time() + "')) GROUP BY s.CREATETIME;"
+                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' and '" + self.statistical_form_page.get_last_week_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' and '" + self.statistical_form_page.get_last_week_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_last_week_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_last_week_end_time() + "')) and s.acc = '0';"
 
             elif search_data['choose_date'] == 'this_month':
                 self.get_total_sql = "SELECT s.CREATETIME,s.DURSECOND FROM report_stop_segment AS s WHERE s.IMEI in " + str(
-                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' and '" + self.statistical_form_page.get_this_month_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' and '" + self.statistical_form_page.get_this_month_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_this_month_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_this_month_end_time() + "')) GROUP BY s.CREATETIME;"
+                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' and '" + self.statistical_form_page.get_this_month_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' and '" + self.statistical_form_page.get_this_month_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_this_month_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_this_month_end_time() + "')) and s.acc = '0';"
 
             elif search_data['choose_date'] == 'last_month':
                 self.get_total_sql = "SELECT s.CREATETIME,s.DURSECOND FROM report_stop_segment AS s WHERE s.IMEI in " + str(
-                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' and '" + self.statistical_form_page.get_last_month_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' and '" + self.statistical_form_page.get_last_month_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_last_month_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_last_month_end_time() + "')) GROUP BY s.CREATETIME;"
+                    current_user_all_equipment) + " AND (s.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' and '" + self.statistical_form_page.get_last_month_end_time() + "' or s.ENDTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' and '" + self.statistical_form_page.get_last_month_end_time() + "' or (s.STARTTIME <= '" + self.statistical_form_page.get_last_month_begin_time() + "' and s.ENDTIME >= '" + self.statistical_form_page.get_last_month_end_time() + "')) and s.acc = '0';"
 
             elif search_data['choose_date'] == '':
                 self.get_total_sql = "SELECT s.CREATETIME,s.DURSECOND FROM report_stop_segment AS s WHERE s.IMEI in " + str(
@@ -331,8 +331,9 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
                                          'end_time'] + "' or s.ENDTIME BETWEEN '" + search_data[
                                          'begin_time'] + "' and '" + search_data[
                                          'end_time'] + "' or (s.STARTTIME <= '" + search_data[
-                                         'begin_time'] + "' and s.ENDTIME >= '" + search_data['end_time'] + "')) GROUP BY s.CREATETIME;"
-
+                                         'begin_time'] + "' and s.ENDTIME >= '" + search_data[
+                                         'end_time'] + "')) and s.acc = '0';"
+            print(self.get_total_sql)
             cursor_02.execute(self.get_total_sql)
             get_total = cursor_02.fetchall()
 
@@ -340,8 +341,6 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
             for range1 in get_total:
                 for range2 in range1:
                     total_list.append(range2)
-
-            print(total_list)
             # 拆分列表
             total_number_list = []
             total_time_list = []

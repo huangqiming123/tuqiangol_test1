@@ -28,9 +28,9 @@ class GlobalDevSearchPage(BasePage):
             self.driver.operate_input_element('x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/input',
                                               search_keyword)
             # 点击搜索设备按钮
-            self.driver.click_element(
+        self.driver.click_element(
                 'x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/span/button[1]')
-            sleep(5)
+        sleep(10)
 
     # 设备搜索对话框-设备搜索按钮
     def click_dev_dial_search(self):
@@ -657,7 +657,10 @@ class GlobalDevSearchPage(BasePage):
 
         elif search_data['is_date'] == '1':
             # 选择时间段
+            self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[4]/label[2]/div/ins')
+            sleep(2)
             self.driver.operate_input_element('x,//*[@id="advancedSearchSelectStartTime"]', begin_time)
+            sleep(2)
             self.driver.operate_input_element('x,//*[@id="advancedSearchSelectEndTime"]', end_time)
 
         # 选择欠费
@@ -670,7 +673,7 @@ class GlobalDevSearchPage(BasePage):
 
         # 点击搜索
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[6]/button[1]')
-        sleep(5)
+        sleep(10)
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[6]/button[2]')
 
     def device_easy_searchs(self, param):

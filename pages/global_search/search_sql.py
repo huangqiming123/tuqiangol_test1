@@ -50,11 +50,11 @@ class SearchSql(object):
         if search_data['is_date'] == '':
             if search_data['date_type'] == '激活时间':
                 if begin_time != '':
-                    sql += " and d.activationTime = '%s'" % begin_time
+                    sql += " and DATEDIFF(d.activationTime,'" + begin_time + "') = 0"
 
             elif search_data['date_type'] == '平台到期时间':
                 if begin_time != '':
-                    sql += " and d.expiration = '%s'" % begin_time
+                    sql += " and DATEDIFF(d.expiration,'" + begin_time + "') = 0"
 
         elif search_data['is_date'] == '1':
             if search_data['date_type'] == '激活时间':
@@ -70,7 +70,7 @@ class SearchSql(object):
                     sql += " and d.expiration <= '%s'" % end_time
 
         if search_data['arrearage'] != '':
-            sql += " and d.expiration < CURDATE()"
+            sql += " and d.expiration <= CURDATE()"
 
         if search_data['no_active'] != '':
             sql += " and d.activationTime is NULL"

@@ -33,11 +33,12 @@ class TestCase008LoginTaste(unittest.TestCase):
         # 判断登入的页面是否正确
         self.assertEqual(self.base_url + "/index", self.driver.get_current_url(), "体验账号登入跳转页面错误")
         # 验证体检账号的四个权限
-        self.assertEqual(4, self.login_page.get_number_permission_after_click_tester_button())
+        self.assertEqual(5, self.login_page.get_number_permission_after_click_tester_button())
         self.assertEqual(' 控制台', self.login_page.get_first_text_after_log_in_tester_account())
         self.assertEqual(' 统计报表', self.login_page.get_second_text_after_log_in_tester_account())
         self.assertEqual(' 安全区域', self.login_page.get_third_text_after_log_in_tester_account())
         self.assertEqual(' 设备管理', self.login_page.get_four_text_after_log_in_tester_account())
+        self.assertEqual(' 设备分布', self.login_page.get_fifth_text_after_log_in_tester_account())
         # 退出体验账号
         self.account_center_page_navi_bar.taste_usr_logout()
         # 判断是否成功退出到登录页

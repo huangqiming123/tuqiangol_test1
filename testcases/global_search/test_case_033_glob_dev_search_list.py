@@ -47,6 +47,7 @@ class TestCase027GlobDevNoKeywordSearch(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
         # 点击设备搜索对话框的搜索按钮
         self.global_dev_search_page.click_dev_dial_search()
+        sleep(10)
 
         csv_file = self.global_search_page_read_csv.read_csv('dev_list_link.csv')
         csv_data = csv.reader(csv_file)

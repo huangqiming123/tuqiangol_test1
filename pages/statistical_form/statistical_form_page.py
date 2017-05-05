@@ -275,6 +275,7 @@ class StatisticalFormPage(BasePage):
 
         # 选择日期
         self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/span[2]')
+        sleep(2)
         if search_data['choose_date'] == 'yesterday':
                 # 选择昨天
             self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[3]')

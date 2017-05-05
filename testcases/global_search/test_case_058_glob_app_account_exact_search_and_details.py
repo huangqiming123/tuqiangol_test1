@@ -46,13 +46,13 @@ class TestCase058GlobAppAccountExactSearch(unittest.TestCase):
         self.global_app_account_search_page.click_app_account_search()
 
         # 在APP用户搜索对话框输入搜索关键词进行搜索
-        self.global_app_account_search_page.account_dial_search("13715311395")
+        self.global_app_account_search_page.account_dial_search("13880322437")
 
         # 获取搜索结果
         name_text = self.global_app_account_search_page.get_exact_search_name()
 
         # 验证搜素结果账户与搜索输入的关键词账户是否一致
-        self.assertIn("13715311395", name_text, "搜索结果与输入的搜索词不一致")
+        self.assertIn("13880322437", name_text, "搜索结果与输入的搜索词不一致")
 
         csv_file_01 = self.global_search_page_read_csv.read_csv('app_account_link.csv')
         csv_data_01 = csv.reader(csv_file_01)

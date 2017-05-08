@@ -1,14 +1,10 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
-
 from pages.base.base_page_server import BasePageServer
-
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.console.console_page import ConsolePage
-
 from pages.dev_manage.dev_manage_page import DevManagePage
 
 

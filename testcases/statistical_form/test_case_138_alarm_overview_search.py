@@ -1,10 +1,6 @@
 import csv
 import unittest
-
 import time
-
-import pymysql
-
 from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.alarm_info.alarm_info_page import AlarmInfoPage
@@ -12,7 +8,6 @@ from pages.base.base_page import BasePage
 from pages.base.base_paging_function import BasePagingFunction
 from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
-from pages.login.login_page import LoginPage
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 

@@ -193,15 +193,10 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
 import csv
 import unittest
 from time import sleep
-
-import pymysql
-
 from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
-
-from pages.login.login_page import LoginPage
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 

@@ -1,5 +1,4 @@
 import unittest
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -8,10 +7,7 @@ from pages.cust_manage.cust_manage_basic_info_and_add_cust_page import CustManag
 from pages.cust_manage.cust_manage_cust_list_page import CustManageCustListPage
 from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAccountPage
 from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
-
 from pages.login.login_page import LoginPage
-
-
 # 客户管理-我的设备-批量编辑
 
 # author:孙燕妮

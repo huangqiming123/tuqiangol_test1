@@ -1,6 +1,5 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer

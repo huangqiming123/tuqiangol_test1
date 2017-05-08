@@ -1,11 +1,8 @@
 import csv
 import unittest
-
-from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
-from pages.base.base_page import BasePage
 from pages.base.base_page_server import BasePageServer
 from pages.login.log_in_page_read_csv import LogInPageReadCsv
 from pages.login.login_page import LoginPage

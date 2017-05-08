@@ -40,7 +40,7 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
         for row in csv_data:
             user_to_login = {
                 "account": row[0],
-                "passwd": row[1],
+                "passwd": row[1]
             }
 
             # 打开途强在线首页-登录页

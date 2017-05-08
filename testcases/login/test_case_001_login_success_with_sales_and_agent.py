@@ -42,7 +42,7 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
                 continue
             user_to_login = {
                 "account": row[0],
-                "passwd": row[1],
+                "passwd": row[1]
             }
             # 打开途强在线首页-登录页
             self.base_page.open_page()

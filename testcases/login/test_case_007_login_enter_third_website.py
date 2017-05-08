@@ -19,7 +19,6 @@ class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
         self.driver.set_window_max()
         self.driver.wait(1)
 
-
     def tearDown(self):
         self.driver.quit_browser()
 
@@ -27,7 +26,6 @@ class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
         '''测试登录页底部第三方链接'''
 
         websites = ["可信网站", "网络警察", "公共信息网络安全监察", "不良信息举报中心"]
-
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
@@ -49,8 +47,6 @@ class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
                 # 判断当前第三方链接跳转是否正确
                 self.assertEqual(expect_url_00, web_url_00, "当前第三方链接跳转错误")'''
 
-
-
         # 点击底部第三方链接-01
         expect_url_01 = "http://www.cyberpolice.cn/wfjb/"
         self.login_page.enter_third_party_website(websites[1])
@@ -63,14 +59,12 @@ class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
                 self.driver.wait(1)
                 web_url_01 = self.driver.get_current_url()
                 # 判断当前第三方链接跳转是否正确
-                self.assertEqual(expect_url_01,web_url_01,"当前第三方链接跳转错误")
+                self.assertEqual(expect_url_01, web_url_01, "当前第三方链接跳转错误")
                 self.driver.wait()
-
-
 
         # 点击底部第三方链接-02
         self.driver.switch_to_window(tuqiang_handle)
-        self.assertEqual(self.base_url + "/",self.driver.get_current_url(),"回到原窗口失败")
+        self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "回到原窗口失败")
 
         expect_url_02 = "http://www.500wan.com/pages/info/about/wangan/index.htm"
         self.login_page.enter_third_party_website(websites[2])
@@ -85,8 +79,6 @@ class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
                 # 判断当前第三方链接跳转是否正确
                 self.assertEqual(expect_url_02, web_url_02, "当前第三方链接跳转错误")
                 self.driver.wait()
-
-
 
         # 点击底部第三方链接-03
         self.driver.switch_to_window(tuqiang_handle)
@@ -108,9 +100,3 @@ class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
 
         self.driver.switch_to_window(tuqiang_handle)
         self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "回到原窗口失败")
-
-
-
-
-
-

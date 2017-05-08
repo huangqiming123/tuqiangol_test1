@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
@@ -488,3 +489,15 @@ class CustManageMyDevPage(BasePageServer):
             self.driver.wait()
             self.driver.click_element("l,查看告警")
             self.driver.wait()
+
+    def acc_easy_search(self, search_keyword):
+        # 在设备名称/imei/账号输入框内输入搜索关键词信息
+        self.driver.operate_input_element("basicKeyword", search_keyword)
+        # 点击搜索用户按钮
+        self.driver.click_element("x,//*[@id='complexQuery']/div/button[1]")
+        self.driver.wait(3)
+
+    def view_search_cust(self):
+        sleep(2)
+        self.driver.click_element('x,//*[@id="complex_user_relation_tbody"]/tr[2]/td[7]/a[4]')
+        self.driver.wait()

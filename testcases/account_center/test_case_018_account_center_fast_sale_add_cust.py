@@ -1,15 +1,15 @@
 import csv
 import unittest
 
-from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.account_center.account_center_operation_log_page import AccountCenterOperationLogPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.account_center.search_sql import SearchSql
-from pages.base.base_page import BasePage
-from pages.base.lon_in_base import LogInBase
+from pages.base.base_page_server import BasePageServer
+from pages.base.lon_in_base_server import LogInBaseServer
 from pages.cust_manage.cust_manage_basic_info_and_add_cust_page import CustManageBasicInfoAndAddCustPage
 from pages.cust_manage.cust_manage_cust_list_page import CustManageCustListPage
 from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
@@ -21,9 +21,9 @@ from pages.login.login_page import LoginPage
 
 class TestCase018AccountCenterFastSaleAddCust(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriver()
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
-        self.base_page = BasePage(self.driver, self.base_url)
+        self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
         self.account_center_page_operation_log = AccountCenterOperationLogPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
@@ -35,7 +35,7 @@ class TestCase018AccountCenterFastSaleAddCust(unittest.TestCase):
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.connect_sql = ConnectSql()
         self.search_sql = SearchSql()
-        self.log_in_base = LogInBase(self.driver, self.base_page)
+        self.log_in_base = LogInBaseServer(self.driver, self.base_page)
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)

@@ -1,13 +1,16 @@
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
 # 账户中心页面-虚拟账号管理的元素及操作
 # author:孙燕妮
+from pages.base.base_page_server import BasePageServer
 
-class AccountCenterVisualAccountPage(BasePage):
-    def __init__(self,driver:AutomateDriver,base_url):
+
+class AccountCenterVisualAccountPage(BasePageServer):
+    def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver,base_url)
 
     # 点击虚拟账号管理

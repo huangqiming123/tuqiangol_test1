@@ -1,15 +1,17 @@
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
 # 账户中心页面-账户详情的元素及操作
 # author:孙燕妮
+from pages.base.base_page_server import BasePageServer
 from pages.base.new_paging import NewPaging
 
 
-class AccountCenterDetailsPage(BasePage):
-    def __init__(self, driver: AutomateDriver, base_url):
+class AccountCenterDetailsPage(BasePageServer):
+    def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
 
     # 账户总览页面跳转

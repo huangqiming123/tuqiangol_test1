@@ -2,9 +2,11 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page import BasePage
+from pages.base.base_page_server import BasePageServer
 from pages.login.login_page import LoginPage
 
 
@@ -13,9 +15,9 @@ from pages.login.login_page import LoginPage
 
 class TestCase163AccountCenterOverviewOnline(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriver()
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
-        self.base_page = BasePage(self.driver, self.base_url)
+        self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
         self.account_center_page_details = AccountCenterDetailsPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)

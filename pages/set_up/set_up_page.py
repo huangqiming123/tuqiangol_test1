@@ -4,10 +4,11 @@ from pages.base.base_page import BasePage
 
 # 设置页面
 # author:zhangAo
+from pages.base.base_page_server import BasePageServer
 from pages.base.new_paging import NewPaging
 
 
-class SetUpPage(BasePage):
+class SetUpPage(BasePageServer):
     # 常量
     # 控制台和设置元素的selector
     CONTROL_SELECTOR = 'x,//*[@id="index"]/a'

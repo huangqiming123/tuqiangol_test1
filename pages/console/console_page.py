@@ -4,14 +4,17 @@ from time import sleep
 from selenium.webdriver.support.select import Select
 
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
 
 # 控制台页面
 # author:孙燕妮
+from pages.base.base_page_server import BasePageServer
 
-class ConsolePage(BasePage):
-    def __init__(self, driver: AutomateDriver, base_url):
+
+class ConsolePage(BasePageServer):
+    def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
 
     # 当前登录账户库存及总数

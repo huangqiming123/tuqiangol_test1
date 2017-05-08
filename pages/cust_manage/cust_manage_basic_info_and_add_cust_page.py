@@ -1,12 +1,15 @@
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
 
 # 客户管理页面-客户基本信息及新增客户
 # author:孙燕妮
+from pages.base.base_page_server import BasePageServer
 
-class CustManageBasicInfoAndAddCustPage(BasePage):
-    def __init__(self, driver: AutomateDriver, base_url):
+
+class CustManageBasicInfoAndAddCustPage(BasePageServer):
+    def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
 
     # 点击进入客户管理页面

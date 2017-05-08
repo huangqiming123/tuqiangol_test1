@@ -1,15 +1,17 @@
 import os
 
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
 # 客户管理页面-我的设备
 # author:孙燕妮
+from pages.base.base_page_server import BasePageServer
 from pages.base.new_paging import NewPaging
 
 
-class CustManageMyDevPage(BasePage):
-    def __init__(self, driver: AutomateDriver, base_url):
+class CustManageMyDevPage(BasePageServer):
+    def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
         self.base_page = BasePage(self.driver, self.base_url)
 

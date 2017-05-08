@@ -1,12 +1,15 @@
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
 
 # 账户中心页面-招呼栏的元素及操作
 # author:孙燕妮
+from pages.base.base_page_server import BasePageServer
 
-class AccountCenterNaviBarPage(BasePage):
-    def __init__(self, driver: AutomateDriver, base_url):
+
+class AccountCenterNaviBarPage(BasePageServer):
+    def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
 
     # 招呼栏用户名

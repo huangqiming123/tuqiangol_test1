@@ -1,7 +1,9 @@
 import unittest
 
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
+from pages.base.base_page_server import BasePageServer
 from pages.login.login_page import LoginPage
 
 
@@ -10,9 +12,9 @@ from pages.login.login_page import LoginPage
 
 class TestCase006LoginChangeLanguage(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriver()
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
-        self.base_page = BasePage(self.driver, self.base_url)
+        self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
         self.driver.set_window_max()
         self.driver.wait(1)
@@ -26,15 +28,12 @@ class TestCase006LoginChangeLanguage(unittest.TestCase):
         '''测试登录切换语言'''
         language = ["English", "España", "Portugal", "Polska", "Deutschland"]
 
-
         # 打开途强在线首页-登录页
         self.base_page.open_page()
 
-
-
         # 通过登录按钮的文本内容判断默认是否为中文
         login_button_text = self.login_page.login_button_text()
-        self.assertEqual("登录",login_button_text,"默认语言不是简体中文")
+        self.assertEqual("登录", login_button_text, "默认语言不是简体中文")
 
         # 切换语言
 
@@ -62,6 +61,3 @@ class TestCase006LoginChangeLanguage(unittest.TestCase):
 
         # 通过登录按钮的文本内容判断默认是否与所切换的语言一致
         self.assertEqual("Einloggen", login_button_text, "语言与所切换语言不一致")
-
-
-

@@ -1,12 +1,15 @@
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
 
 # 登录页面的元素及操作
 # author:孙燕妮
+from pages.base.base_page_server import BasePageServer
 
-class LoginPage(BasePage):
-    def __init__(self, driver: AutomateDriver, base_url):
+
+class LoginPage(BasePageServer):
+    def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
 
     # 用户名输入框

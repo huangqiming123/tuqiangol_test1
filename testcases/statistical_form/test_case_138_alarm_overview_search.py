@@ -29,7 +29,6 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
-        self.log_in_page = LoginPage(self.driver, self.base_url)
         self.command_management_page = CommandManagementPage(self.driver, self.base_url)
         self.base_paging_function = BasePagingFunction(self.driver, self.base_url)
         self.alarm_info_page = AlarmInfoPage(self.driver, self.base_url)

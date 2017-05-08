@@ -2,13 +2,11 @@ import csv
 import unittest
 
 from automate_driver.automate_driver import AutomateDriver
-from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
+from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.global_search.global_app_account_search_page import GlobalAppAccountSearchPage
 from pages.global_search.global_search_page_read_csv import GlobleSearchPageReadCsv
-from pages.login.login_page import LoginPage
-
 
 # 全局搜索-App用户搜索-精确查找
 
@@ -19,9 +17,8 @@ class TestCase058GlobAppAccountExactSearch(unittest.TestCase):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
-        self.login_page = LoginPage(self.driver, self.base_url)
         self.global_app_account_search_page = GlobalAppAccountSearchPage(self.driver, self.base_url)
-        self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
+        self.account_center_page_navi_bar = AccountCenterNaviBarPages(self.driver, self.base_url)
         self.driver.set_window_max()
 
         self.global_search_page_read_csv = GlobleSearchPageReadCsv()
@@ -40,7 +37,7 @@ class TestCase058GlobAppAccountExactSearch(unittest.TestCase):
         self.base_page.open_page()
 
         # 登录
-        self.login_page.user_login("jimitest", "jimi123")
+        self.log_in_base.log_in_jimitest()
 
         # 全局搜索栏-APP用户搜索
         self.global_app_account_search_page.click_app_account_search()

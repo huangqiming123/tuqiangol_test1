@@ -2,8 +2,6 @@ import csv
 import unittest
 from time import sleep
 
-import pymysql
-
 from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
@@ -11,7 +9,6 @@ from pages.base.base_paging_function import BasePagingFunction
 from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
-from pages.login.login_page import LoginPage
 
 
 class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
@@ -32,7 +29,6 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
-        self.log_in_page = LoginPage(self.driver, self.base_url)
         self.command_management_page = CommandManagementPage(self.driver, self.base_url)
         self.base_paging_function = BasePagingFunction(self.driver, self.base_url)
         self.command_management_page_read_csv = CommandManagementPageReadCsv()

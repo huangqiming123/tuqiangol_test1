@@ -1,17 +1,12 @@
 import csv
 import unittest
 from time import sleep
-
-import pymysql
-
 from automate_driver.automate_driver import AutomateDriver
-from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
+from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
-from pages.dev_manage.dev_manage_page import DevManagePage
 from pages.dev_manage.dev_manage_page_read_csv import DevManagePageReadCsv
-
-from pages.login.login_page import LoginPage
+from pages.dev_manage.dev_manage_pages import DevManagePages
 
 
 # 设备管理-单个设备操作-编辑、查看位置、查看告警
@@ -23,9 +18,8 @@ class TestCase102DevManageDevOperate(unittest.TestCase):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
-        self.login_page = LoginPage(self.driver, self.base_url)
-        self.dev_manage_page = DevManagePage(self.driver, self.base_url)
-        self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
+        self.dev_manage_page = DevManagePages(self.driver, self.base_url)
+        self.account_center_page_navi_bar = AccountCenterNaviBarPages(self.driver, self.base_url)
         self.driver.set_window_max()
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.dev_manage_page_read_csv = DevManagePageReadCsv()

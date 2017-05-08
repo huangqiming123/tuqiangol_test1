@@ -7,7 +7,6 @@ from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
-from pages.login.login_page import LoginPage
 
 
 class TestCase124WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
@@ -27,7 +26,6 @@ class TestCase124WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
-        self.log_in_page = LoginPage(self.driver, self.base_url)
         self.command_management_page = CommandManagementPage(self.driver, self.base_url)
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.command_management_page_read_csv = CommandManagementPageReadCsv()

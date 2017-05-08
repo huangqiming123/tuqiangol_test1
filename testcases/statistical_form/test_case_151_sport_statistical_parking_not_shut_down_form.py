@@ -26,7 +26,6 @@ class TestCase151SportStatisticalPakingNotShutDownForm(unittest.TestCase):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
-        self.log_in_page = LoginPage(self.driver, self.base_url)
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.statistical_form_page_read_csv = StatisticalFormPageReadCsv()
         self.log_in_base = LogInBase(self.driver,self.base_url)

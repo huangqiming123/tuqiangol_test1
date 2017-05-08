@@ -2,12 +2,11 @@ import csv
 import unittest
 
 from automate_driver.automate_driver import AutomateDriver
-from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
+from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.global_search.global_account_search_page import GlobalAccountSearchPage
 from pages.global_search.global_search_page_read_csv import GlobleSearchPageReadCsv
-from pages.login.login_page import LoginPage
 
 
 # 全局搜索-精确查找用户结果唯一用户详情页面-用户关系模块的操作
@@ -18,9 +17,8 @@ class TestCase037GlobAccountExactSearchDetailsUserRelation(unittest.TestCase):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
-        self.login_page = LoginPage(self.driver, self.base_url)
         self.global_acc_search_page = GlobalAccountSearchPage(self.driver, self.base_url)
-        self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
+        self.account_center_page_navi_bar = AccountCenterNaviBarPages(self.driver, self.base_url)
         self.driver.set_window_max()
         self.global_search_page_read_csv = GlobleSearchPageReadCsv()
         self.log_in_base = LogInBase(self.driver, self.base_url)
@@ -106,7 +104,7 @@ class TestCase037GlobAccountExactSearchDetailsUserRelation(unittest.TestCase):
         self.account_center_page_navi_bar.usr_logout()
 
         # 用已重置的账号登录系统-account_01
-        self.login_page.user_login(account[0], "888888")
+        self.log_in_base.log_in_with_csv(account[0], "888888")
         self.driver.wait()
 
         # 验证是否成功登录跳转至首页

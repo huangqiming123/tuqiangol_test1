@@ -1,7 +1,4 @@
-import csv
 import unittest
-from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase

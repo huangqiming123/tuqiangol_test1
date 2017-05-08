@@ -1,4 +1,3 @@
-import csv
 import unittest
 from time import sleep
 

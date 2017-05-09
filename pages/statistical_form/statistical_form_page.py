@@ -73,7 +73,7 @@ class StatisticalFormPage(BasePage):
         sleep(2)
 
         self.driver.click_element('x,//*[@id="runForm"]/div[1]/div/div/div/span[2]')
-        sleep(1)
+        sleep(2)
         if search_data['choose_date'] == 'yesterday':
             # 选择昨天
             self.driver.click_element('x,//*[@id="runForm"]/div[1]/div/div/div/div/ul/li[2]')
@@ -83,10 +83,10 @@ class StatisticalFormPage(BasePage):
         elif search_data['choose_date'] == 'last_week':
             # 上周
             self.driver.click_element('x,//*[@id="runForm"]/div[1]/div/div/div/div/ul/li[4]')
-        elif search_data['choose_date'] == 'this_mouth':
+        elif search_data['choose_date'] == 'this_month':
             # 本月
             self.driver.click_element('x,//*[@id="runForm"]/div[1]/div/div/div/div/ul/li[5]')
-        elif search_data['choose_date'] == 'last_mouth':
+        elif search_data['choose_date'] == 'last_month':
             # 上月
             self.driver.click_element('x,//*[@id="runForm"]/div[1]/div/div/div/div/ul/li[6]')
         elif search_data['choose_date'] == '':
@@ -97,7 +97,7 @@ class StatisticalFormPage(BasePage):
             self.driver.operate_input_element('x,//*[@id="endTime_sport"]', search_data['end_time'])
 
         self.driver.click_element('x,//*[@id="runForm"]/div[4]/button')
-        sleep(5)
+        sleep(10)
 
         self.driver.default_frame()
         '''
@@ -255,7 +255,7 @@ class StatisticalFormPage(BasePage):
 
         # 选择设备
         self.driver.clear_input('x,//*[@id="imeiInput_mileageReport"]')
-        sleep(1)
+        sleep(2)
         self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(1)
 
@@ -264,39 +264,39 @@ class StatisticalFormPage(BasePage):
         for n in range(1, all_group_num):
             sleep(1)
             self.driver.click_element(
-                    'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
-                        n + 1))
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
         self.driver.click_element('x,//*[@id="treeModal_mileageReport"]/div[2]/label/div/ins')
         self.driver.click_element('x,//*[@id="treeModal_mileageReport"]/div[2]/div/button[1]')
 
         # 选择类型
         if search_data['type'] == 'day':
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[2]/label[3]/div/ins')
+            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[3]/label[3]/div/ins')
 
         # 选择日期
         self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/span[2]')
         sleep(2)
         if search_data['choose_date'] == 'yesterday':
-                # 选择昨天
+            # 选择昨天
             self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[3]')
         elif search_data['choose_date'] == 'this_week':
-                # 选择这周
+            # 选择这周
             self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[4]')
         elif search_data['choose_date'] == 'last_week':
-                # 上周
-                self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[5]')
+            # 上周
+            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[5]')
         elif search_data['choose_date'] == 'this_month':
-                # 本月
+            # 本月
             self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[6]')
         elif search_data['choose_date'] == 'last_month':
-                # 上月
+            # 上月
             self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[7]')
         elif search_data['choose_date'] == '':
-                # 填写
+            # 填写
             self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[1]')
-                # 填写开始时间
+            # 填写开始时间
             self.driver.operate_input_element('x,//*[@id="startTime_mileage"]', search_data['begin_time'])
-                # 填写结束时间
+            # 填写结束时间
             self.driver.operate_input_element('x,//*[@id="endTime_mileage"]', search_data['end_time'])
         elif search_data['choose_date'] == 'today':
             self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[2]')
@@ -410,7 +410,7 @@ class StatisticalFormPage(BasePage):
         # 选择用户
         self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
-        self.driver.operate_input_element('x,//*[@id="search_user_text"]',search_data['search_user'])
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
         sleep(2)
         self.driver.click_element('c,autocompleter-item')
@@ -427,8 +427,8 @@ class StatisticalFormPage(BasePage):
         for n in range(1, all_group_num):
             sleep(1)
             self.driver.click_element(
-                    'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
-                        n + 1))
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
         self.driver.click_element('x,//*[@id="treeModal_overSpeedReport"]/div[2]/label/div/ins')
         self.driver.click_element('x,//*[@id="treeModal_overSpeedReport"]/div[2]/div/button[1]')
 
@@ -538,10 +538,10 @@ class StatisticalFormPage(BasePage):
         # 获取搜索出来的超速的条数
         try:
             total = self.total_num(self.get_actual_pages_number(
-                    'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/div[1]'),
-                    self.last_page_logs_num(
-                            'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/table/tbody',
-                            'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/div[1]'))
+                'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/div[1]'),
+                self.last_page_logs_num(
+                    'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/table/tbody',
+                    'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/div[1]'))
             return total
 
         except:
@@ -565,7 +565,7 @@ class StatisticalFormPage(BasePage):
         # 选择用户
         self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
-        self.driver.operate_input_element('x,//*[@id="search_user_text"]',search_data['search_user'])
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
         sleep(2)
         self.driver.click_element('c,autocompleter-item')
@@ -582,8 +582,8 @@ class StatisticalFormPage(BasePage):
         for n in range(1, all_group_num):
             sleep(1)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
-                        n + 1))
+                'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
         self.driver.click_element('x,//*[@id="treeModal_stopCar"]/div[2]/label/div/ins')
         self.driver.click_element('x,//*[@id="treeModal_stopCar"]/div[2]/div/button[1]')
         # 选择日期
@@ -711,7 +711,7 @@ class StatisticalFormPage(BasePage):
         # 选择用户
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
-        self.driver.operate_input_element('x,//*[@id="search_user_text"]',search_data['search_user'])
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
         sleep(2)
         self.driver.click_element('c,autocompleter-item')
@@ -723,14 +723,15 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(1)
 
-        all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_stopCar"]/li'))
+        all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_stopNotOff"]/li'))
         all_group_num = len(all_group_list)
         for n in range(1, all_group_num):
-            sleep(1)
+            sleep(2)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
-                        n + 1))
+                'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
         self.driver.click_element('x,//*[@id="treeModal_stopNotOff"]/div[2]/label/div/ins')
+        sleep(2)
         self.driver.click_element('x,//*[@id="treeModal_stopNotOff"]/div[2]/div/button[1]')
         # 选择日期
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[1]/div[1]/div/div/div/span[2]')
@@ -763,6 +764,7 @@ class StatisticalFormPage(BasePage):
         # 点击搜索
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[3]/button')
         sleep(5)
+        self.driver.default_frame()
         '''
         if search_data['search_user'] != '':
             self.driver.operate_input_element('x,//*[@id="cusTreeKey"]', search_data['search_user'])
@@ -831,9 +833,7 @@ class StatisticalFormPage(BasePage):
         # 获取停车未熄火查询出的条数
         try:
             self.new_paging = NewPaging(self.driver, self.base_url)
-            num = self.new_paging.get_total_number(
-                    'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[5]/div[2]/div[3]/div[2]',
-                    'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[5]/div[2]/div[3]/table/tbody')
+            num = self.new_paging.get_total_number('x,//*[@id="paging-stopNotOff"]', 'x,//*[@id="stopNotOff-tbody"]')
             return num
         except:
             return 0
@@ -856,7 +856,7 @@ class StatisticalFormPage(BasePage):
         # 选择用户
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
-        self.driver.operate_input_element('x,//*[@id="search_user_text"]',search_data['search_user'])
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
         sleep(2)
         self.driver.click_element('c,autocompleter-item')
@@ -865,7 +865,8 @@ class StatisticalFormPage(BasePage):
         # 选择设备
         self.driver.clear_input('x,//*[@id="imeiInput_acc"]')
         sleep(1)
-        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[1]/span/button/i')
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[1]/span/button/i')
         sleep(1)
 
         all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_acc"]/li'))
@@ -873,8 +874,8 @@ class StatisticalFormPage(BasePage):
         for n in range(1, all_group_num):
             sleep(1)
             self.driver.click_element(
-                    'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
-                        n + 1))
+                'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
         self.driver.click_element('x,//*[@id="treeModal_acc"]/div[2]/label/div/ins')
         self.driver.click_element('x,//*[@id="treeModal_acc"]/div[2]/div/button[1]')
         # 选择日期
@@ -906,7 +907,7 @@ class StatisticalFormPage(BasePage):
             # 填写结束时间
             self.driver.operate_input_element('x,//*[@id="endTime_acc"]', search_data['end_time'])
 
-                # 选择状态
+            # 选择状态
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[3]/div/span/div/span[2]')
         sleep(1)
         if search_data['status'] == '':
@@ -1124,11 +1125,8 @@ class StatisticalFormPage(BasePage):
 
     def click_export_mileage_form(self):
         # 点击导出里程报表
-        try:
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[4]/button')
-            sleep(3)
-        except:
-            print('查询无数据，无法导出')
+        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[4]/button')
+        sleep(3)
 
     def click_export_over_form(self):
         # 点击导出超速报表
@@ -1140,11 +1138,9 @@ class StatisticalFormPage(BasePage):
 
     def click_export_stay_form(self):
         # 点击导出停留报表
-        try:
-            self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[4]/button')
-            sleep(3)
-        except:
-            print('查询无数据，无法导出')
+
+        self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[4]/button')
+        sleep(3)
 
     def click_export_paking_not_shut_down(self):
         # 点击停车未熄火报表

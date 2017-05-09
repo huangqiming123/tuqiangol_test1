@@ -5,6 +5,7 @@ from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
+from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
@@ -23,8 +24,9 @@ class TestCase147SportStatisticalOverview(unittest.TestCase):
         self.base_page = BasePage(self.driver, self.base_url)
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.statistical_form_page_read_csv = StatisticalFormPageReadCsv()
-        self.log_in_base = LogInBase(self.driver,self.base_url)
+        self.log_in_base = LogInBase(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
+        self.search_sql = SearchSql()
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
         self.driver.set_window_max()
@@ -67,100 +69,19 @@ class TestCase147SportStatisticalOverview(unittest.TestCase):
             self.statistical_form_page.add_data_to_search_sport_overview(search_data)
 
             # 连接数据库
-            # 连接数据库
-            connect = self.connect_sql.connect_tuqiang_sql()
-            # 创建游标
-            cursor = connect.cursor()
-            # 查询搜索用户的uesrID
-            get_user_id_sql = "SELECT user_organize.userId FROM user_organize WHERE user_organize.account ='" + \
-                              search_data[
-                                  'search_user'] + "';"
-            # 执行sql
-            cursor.execute(get_user_id_sql)
-            get_user_id = cursor.fetchall()
-            user_id = get_user_id[0][0]
-
-            # 当前用户下设置
-            get_current_user_all_equipment = "SELECT a.imei FROM assets_device AS a WHERE a.userId = " + user_id + " and a.expiration > CURDATE();"
-            cursor.execute(get_current_user_all_equipment)
-            all_equipment = cursor.fetchall()
-
-            all_equipment_list = []
-            for range1 in all_equipment:
-                for range2 in range1:
-                    all_equipment_list.append(range2)
-
-            current_user_all_equipment = tuple(all_equipment_list)
-
-            cursor.close()
-            connect.close()
+            all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
 
             # 连接另一个数据库
             connect_02 = self.connect_sql.connect_tuqiang_form()
             # 创建游标
             cursor_02 = connect_02.cursor()
             # 判断查询的条件
-            if search_data['choose_date'] == '':
-                # 如果输入时间
-                self.get_total_sql = "select b.IMEI from (SELECT s.IMEI FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + search_data['begin_time'] + "' AND '" + \
-                                     search_data['end_time'] + "' GROUP BY s.IMEI) b ;"
-
-                self.get_sum_total = "SELECT s.MILEAGE,s.OVERSPEEDTIMES,s.STOPTIMES FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + search_data['begin_time'] + "' AND '" + \
-                                     search_data['end_time'] + "';"
-
-            elif search_data['choose_date'] == 'yesterday':
-                # 时间是昨天
-                self.get_total_sql = "select b.IMEI from (SELECT s.IMEI FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_yesterday_end_time() + "' GROUP BY s.IMEI) b ;"
-
-                self.get_sum_total = "SELECT s.MILEAGE,s.OVERSPEEDTIMES,s.STOPTIMES FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_yesterday_end_time() + "';"
-
-            elif search_data['choose_date'] == 'this_week':
-                # 选择这周
-                self.get_total_sql = "select b.IMEI from (SELECT s.IMEI FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_this_week_end_time() + "' GROUP BY s.IMEI) b ;"
-
-                self.get_sum_total = "SELECT s.MILEAGE,s.OVERSPEEDTIMES,s.STOPTIMES FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_this_week_end_time() + "';"
-
-            elif search_data['choose_date'] == 'last_week':
-                # 上周
-                self.get_total_sql = "select b.IMEI from (SELECT s.IMEI FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_last_week_end_time() + "' GROUP BY s.IMEI) b ;"
-
-                self.get_sum_total = "SELECT s.MILEAGE,s.OVERSPEEDTIMES,s.STOPTIMES FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_last_week_end_time() + "';"
-
-            elif search_data['choose_date'] == 'this_mouth':
-                # 本月
-                self.get_total_sql = "SELECT b.IMEI from (select s.IMEI FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_this_month_end_time() + "' GROUP BY s.IMEI) b ;"
-
-                self.get_sum_total = "select s.MILEAGE,s.OVERSPEEDTIMES,s.STOPTIMES FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_this_month_end_time() + "';"
-
-            elif search_data['choose_date'] == 'last_mouth':
-                # 上月
-                self.get_total_sql = "select b.IMEI from (SELECT s.IMEI FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_last_month_end_time() + "' GROUP BY s.IMEI) b ;"
-
-                self.get_sum_total = "SELECT s.MILEAGE,s.OVERSPEEDTIMES,s.STOPTIMES FROM day_run_summary AS s WHERE s.IMEI IN " + str(
-                    current_user_all_equipment) + " AND s.ATDAY BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' AND '" + \
-                                     self.statistical_form_page.get_last_month_end_time() + "';"
+            get_total_sql = self.search_sql.search_sport_overview_sql(all_dev, search_data)
+            print(get_total_sql)
+            get_sum_total = self.search_sql.search_sum_sport_overview_sql(all_dev, search_data)
+            print(get_sum_total)
             # 计算多少条数据
-            cursor_02.execute(self.get_total_sql)
+            cursor_02.execute(get_total_sql)
             get_total = cursor_02.fetchall()
             total_list = []
             for range1 in get_total:
@@ -169,7 +90,7 @@ class TestCase147SportStatisticalOverview(unittest.TestCase):
             total = len(total_list)
 
             # 计算总里程，超速，停留次数
-            cursor_02.execute(self.get_sum_total)
+            cursor_02.execute(get_sum_total)
             get_sum_total = cursor_02.fetchall()
             data_list = []
             for range1 in get_sum_total:
@@ -208,7 +129,7 @@ class TestCase147SportStatisticalOverview(unittest.TestCase):
 
             # 断言总里程数
             web_mlie_total = self.statistical_form_page.get_total_search_mile_total()
-            self.assertAlmostEqual(total_mlie/1000, float(web_mlie_total))
+            self.assertAlmostEqual(total_mlie / 1000, float(web_mlie_total))
 
             # 断言总的超速数
             web_over_speed_total = self.statistical_form_page.get_total_search_over_speed_total()

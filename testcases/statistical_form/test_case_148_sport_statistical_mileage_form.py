@@ -5,6 +5,7 @@ from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
+from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
@@ -23,8 +24,9 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
         self.base_page = BasePage(self.driver, self.base_url)
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.statistical_form_page_read_csv = StatisticalFormPageReadCsv()
-        self.log_in_base = LogInBase(self.driver,self.base_url)
+        self.log_in_base = LogInBase(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
+        self.seasrch_sql = SearchSql()
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
         self.driver.set_window_max()
@@ -72,32 +74,7 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
 
             # 连接数据库
             # 连接数据库
-            connect = self.connect_sql.connect_tuqiang_sql()
-            # 创建游标
-            cursor = connect.cursor()
-            # 查询搜索用户的uesrID
-            get_user_id_sql = "SELECT user_organize.userId FROM user_organize WHERE user_organize.account ='" + \
-                              search_data[
-                                  'search_user'] + "';"
-            # 执行sql
-            cursor.execute(get_user_id_sql)
-            get_user_id = cursor.fetchall()
-            user_id = get_user_id[0][0]
-
-            # 当前用户下设置
-            get_current_user_all_equipment = "SELECT a.imei FROM assets_device AS a WHERE a.userId = " + user_id + " and a.expiration > CURDATE();"
-            cursor.execute(get_current_user_all_equipment)
-            all_equipment = cursor.fetchall()
-
-            all_equipment_list = []
-            for range1 in all_equipment:
-                for range2 in range1:
-                    all_equipment_list.append(range2)
-
-            current_user_all_equipment = tuple(all_equipment_list)
-
-            cursor.close()
-            connect.close()
+            all_dev = self.seasrch_sql.search_current_account_equipment(search_data['search_user'])
 
             # 连接另一个数据库
             connect_02 = self.connect_sql.connect_tuqiang_form()
@@ -106,136 +83,22 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
             # 判断查询的条件
 
             # 判断查询条件
-            if search_data['type'] == "mile":
-                if search_data['choose_date'] == 'today':
-                    self.get_total_sql = "SELECT m.IMEI FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_today_begin_date() + "' and '" + self.statistical_form_page.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_today_begin_date() + "' and '" + self.statistical_form_page.get_today_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_today_begin_date() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_today_end_time() + "'));"
-
-                    self.get_all_mile_and_time_sql = "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_today_begin_date() + "' and '" + self.statistical_form_page.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_today_begin_date() + "' and '" + self.statistical_form_page.get_today_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_today_begin_date() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_today_end_time() + "'));"
-
-                elif search_data['choose_date'] == 'yesterday':
-                    self.get_total_sql = "SELECT m.IMEI FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' and '" + self.statistical_form_page.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' and '" + self.statistical_form_page.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_yesterday_end_time() + "'));"
-
-                    self.get_all_mile_and_time_sql = "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' and '" + self.statistical_form_page.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' and '" + self.statistical_form_page.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_yesterday_end_time() + "'));"
-
-                elif search_data['choose_date'] == 'this_week':
-                    self.get_total_sql = "SELECT m.IMEI FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' and '" + self.statistical_form_page.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' and '" + self.statistical_form_page.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_this_week_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_this_week_end_time() + "'));"
-
-                    self.get_all_mile_and_time_sql = "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' and '" + self.statistical_form_page.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' and '" + self.statistical_form_page.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_this_week_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_this_week_end_time() + "'));"
-
-                elif search_data['choose_date'] == 'last_week':
-                    self.get_total_sql = "SELECT m.IMEI FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' and '" + self.statistical_form_page.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' and '" + self.statistical_form_page.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_last_week_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_last_week_end_time() + "'));"
-
-                    self.get_all_mile_and_time_sql = "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' and '" + self.statistical_form_page.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' and '" + self.statistical_form_page.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_last_week_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_last_week_end_time() + "'));"
-
-                elif search_data['choose_date'] == 'this_month':
-                    self.get_total_sql = "SELECT m.IMEI FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' and '" + self.statistical_form_page.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' and '" + self.statistical_form_page.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_this_month_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_this_month_end_time() + "'));"
-
-                    self.get_all_mile_and_time_sql = "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' and '" + self.statistical_form_page.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' and '" + self.statistical_form_page.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_this_month_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_this_month_end_time() + "'));"
-
-                elif search_data['choose_date'] == 'last_month':
-                    self.get_total_sql = "SELECT m.IMEI FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' and '" + self.statistical_form_page.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' and '" + self.statistical_form_page.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_last_month_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_last_month_end_time() + "'));"
-
-                    self.get_all_mile_and_time_sql = "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' and '" + self.statistical_form_page.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' and '" + self.statistical_form_page.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.statistical_form_page.get_last_month_begin_time() + "' and m.ENDTIME >= '" + self.statistical_form_page.get_last_month_end_time() + "'));"
-
-                elif search_data['choose_date'] == '':
-                    self.get_total_sql = "SELECT m.IMEI FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + search_data[
-                                             'begin_time'] + "' and '" + search_data[
-                                             'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data[
-                                             'begin_time'] + "' and '" + search_data[
-                                             'end_time'] + "' or (m.STARTTIME <= '" + search_data[
-                                             'begin_time'] + "' and m.ENDTIME >= '" + search_data['end_time'] + "'));"
-
-                    self.get_all_mile_and_time_sql = "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND (m.STARTTIME BETWEEN '" + search_data[
-                                                         'begin_time'] + "' and '" + search_data[
-                                                         'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data[
-                                                         'begin_time'] + "' and '" + search_data[
-                                                         'end_time'] + "' or (m.STARTTIME <= '" + search_data[
-                                                         'begin_time'] + "' and m.ENDTIME >= '" + search_data[
-                                                         'end_time'] + "'));"
-
-                self.web_total = self.statistical_form_page.get_total_search_mileage_form()
-
-            elif search_data['type'] == 'day':
-                if search_data['choose_date'] == 'yesterday':
-                    self.get_total_sql = "SELECT m.IMEI FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' AND '" + self.statistical_form_page.get_yesterday_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_yesterday_begin_time() + "' AND '" + self.statistical_form_page.get_yesterday_end_time() + "';"
-
-                    self.get_all_mile_sql = "SELECT m.DISTANCE FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_yesterday_begin_time() + "' AND '" + self.statistical_form_page.get_yesterday_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_yesterday_begin_time() + "' AND '" + self.statistical_form_page.get_yesterday_end_time() + "';"
-
-                elif search_data['choose_date'] == 'this_week':
-                    self.get_total_sql = "SELECT m.IMEI FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' AND '" + self.statistical_form_page.get_this_week_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_this_week_begin_time() + "' AND '" + self.statistical_form_page.get_this_week_end_time() + "';"
-
-                    self.get_all_mile_sql = "SELECT m.DISTANCE FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_week_begin_time() + "' AND '" + self.statistical_form_page.get_this_week_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_this_week_begin_time() + "' AND '" + self.statistical_form_page.get_this_week_end_time() + "';"
-
-                elif search_data['choose_date'] == 'last_week':
-                    self.get_total_sql = "SELECT m.IMEI FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' AND '" + self.statistical_form_page.get_last_week_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_last_week_begin_time() + "' AND '" + self.statistical_form_page.get_last_week_end_time() + "';"
-
-                    self.get_all_mile_sql = "SELECT m.DISTANCE FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_week_begin_time() + "' AND '" + self.statistical_form_page.get_last_week_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_last_week_begin_time() + "' AND '" + self.statistical_form_page.get_last_week_end_time() + "';"
-
-                elif search_data['choose_date'] == 'this_month':
-                    self.get_total_sql = "SELECT m.IMEI FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' AND '" + self.statistical_form_page.get_this_month_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_this_month_begin_time() + "' AND '" + self.statistical_form_page.get_this_month_end_time() + "';"
-
-                    self.get_all_mile_sql = "SELECT m.DISTANCE FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_this_month_begin_time() + "' AND '" + self.statistical_form_page.get_this_month_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_this_month_begin_time() + "' AND '" + self.statistical_form_page.get_this_month_end_time() + "';"
-
-                elif search_data['choose_date'] == 'last_month':
-                    self.get_total_sql = "SELECT m.IMEI FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' AND '" + self.statistical_form_page.get_last_month_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_last_month_begin_time() + "' AND '" + self.statistical_form_page.get_last_month_end_time() + "';"
-
-                    self.get_all_mile_sql = "SELECT m.DISTANCE FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + self.statistical_form_page.get_last_month_begin_time() + "' AND '" + self.statistical_form_page.get_last_month_end_time() + "'  AND m.ENDTIME BETWEEN  '" + self.statistical_form_page.get_last_month_begin_time() + "' AND '" + self.statistical_form_page.get_last_month_end_time() + "';"
-
-                elif search_data['choose_date'] == '':
-                    self.get_total_sql = "SELECT m.IMEI FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + search_data[
-                                             'begin_time'] + "' AND '" + search_data[
-                                             'end_time'] + "'  AND m.ENDTIME BETWEEN  '" + search_data[
-                                             'begin_time'] + "' AND '" + search_data['end_time'] + "';"
-                    self.get_all_mile_sql = "SELECT m.DISTANCE FROM day_mileage_summary AS m WHERE m.IMEI IN " + str(
-                        current_user_all_equipment) + " AND m.STARTTIME BETWEEN '" + search_data[
-                                                'begin_time'] + "' AND '" + search_data[
-                                                'end_time'] + "'  AND m.ENDTIME BETWEEN  '" + search_data[
-                                                'begin_time'] + "' AND '" + search_data['end_time'] + "';"
-                self.web_total = self.statistical_form_page.get_total_search_mileage_form_with_day()
-
-            cursor_02.execute(self.get_total_sql)
-            get_total = cursor_02.fetchall()
-            total_list = []
-            for range1 in get_total:
-                for range2 in range1:
-                    total_list.append(range2)
-            total = len(total_list)
-            self.assertEqual(total, self.web_total)
+            get_total_sql = self.seasrch_sql.search_sport_mile_sql(all_dev, search_data)
+            print(get_total_sql)
 
             # 判断查询的条件
             if search_data['type'] == 'mile':
                 # 查询的选择里程
-                cursor_02.execute(self.get_all_mile_and_time_sql)
+                cursor_02.execute(get_total_sql)
                 get_all_mlie_and_time = cursor_02.fetchall()
                 get_all_mlie_and_time_list = []
                 for range1 in get_all_mlie_and_time:
                     for range2 in range1:
                         get_all_mlie_and_time_list.append(range2)
+
+                total = len(get_all_mlie_and_time_list) / 2
+                web_total = self.statistical_form_page.get_total_search_mileage_form()
+                self.assertEqual(total, web_total)
 
                 # 拆分列表
                 all_mile_list = []
@@ -259,18 +122,24 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
                 self.assertEqual(chang_total_time_type, web_total_time)
 
                 # 计算总油耗
-                get_total_oil = total_mile / 1000 / 100 * 8
-                total_oil = '%.2f' % get_total_oil
-                self.assertEqual(str(total_oil), self.statistical_form_page.get_mileage_total_oil())
+                if total_mile == 0:
+                    self.assertEqual('0', self.statistical_form_page.get_mileage_total_oil())
+                else:
+                    get_total_oil = total_mile / 1000 / 100 * 8
+                    total_oil = '%.2f' % get_total_oil
+                    self.assertEqual(str(total_oil), self.statistical_form_page.get_mileage_total_oil())
 
             elif search_data['type'] == 'day':
                 # 如果选择天
-                cursor_02.execute(self.get_all_mile_sql)
+                cursor_02.execute(get_total_sql)
                 get_all_mile_data = cursor_02.fetchall()
                 get_all_mile_list = []
                 for range1 in get_all_mile_data:
                     for range2 in range1:
                         get_all_mile_list.append(range2)
+                total = len(get_all_mile_list)
+                web_total = self.statistical_form_page.get_total_search_mileage_form_with_day()
+                self.assertEqual(total, web_total)
 
                 total_mile_with_day = sum(get_all_mile_list)
                 # 断言

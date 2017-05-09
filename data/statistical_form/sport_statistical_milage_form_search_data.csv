@@ -1,3 +1,8 @@
 搜索账号,统计方式,时间选择,开始时间,结束时间
-jimitest,mile,last_week,,
+jimitest,mile,yesterday,,
+jimitest,mile,last_month,,
+jimitest,mile,today,,
+jimitest,day,yesterday,,
+jimitest,mile,this_week,,
+jimitest,day,this_month,,
 hqjtest,day,,2017-02-05 11:11,2017-3-20 9:30

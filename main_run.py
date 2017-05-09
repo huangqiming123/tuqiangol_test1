@@ -55,7 +55,7 @@ def run_08_test_account_center():
 
 
 # 设置运行时间
-start_time = datetime.datetime(2017, 4, 11, 19, 0, 0)
+start_time = datetime.datetime(2017, 5, 8, 19, 0, 0)
 while datetime.datetime.now() < start_time:
     sleep(5)
 
@@ -105,4 +105,4 @@ for t in thread_list:
 run_08_test_account_center()
 # 运行后自动关机
 sleep(10)
-# os.system('shutdown -s -f')
+os.system('shutdown -s -f')

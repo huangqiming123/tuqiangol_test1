@@ -1,3 +1,8 @@
 搜索用户,速度,时间选择,开始时间,结束时间
 jimitest,10,last_month,,
+jimitest,,today,,
+jimitest,1,yesterday,,
+jimitest,10,this_week,,
+jimitest,,last_week,,
+jimitest,10,this_month,,
 hqjtest,1,,2017-02-05 11:11,2017-3-20 9:30

@@ -8,6 +8,7 @@ from pages.base.base_page import BasePage
 from pages.base.base_paging_function import BasePagingFunction
 from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
+from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
@@ -28,9 +29,10 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
         self.base_paging_function = BasePagingFunction(self.driver, self.base_url)
         self.alarm_info_page = AlarmInfoPage(self.driver, self.base_url)
         self.statistical_form_page_read_csv = StatisticalFormPageReadCsv()
-        self.log_in_base = LogInBase(self.driver,self.base_url)
+        self.log_in_base = LogInBase(self.driver, self.base_url)
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
+        self.search_sql = SearchSql()
 
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
@@ -109,113 +111,12 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
             connect_02 = self.connect_sql.connect_tuqiang_form()
             # 创建游标
             cursor_02 = connect_02.cursor()
-            '''# 判断查询条件
-            if data['alarm_begin_time'] != '' and data['alarm_end_time'] != '' and data['push_begin_time'] != '' and \
-                                data['push_end_time'] != '' and data['next_user'] == '1':
-                    # 条件1，告警时间和定位时间都不为空，且勾选包含下级
-                self.get_total_sql = "SELECT count(*) FROM alarm_info AS a WHERE a.CREATETIME BETWEEN '" + self.alarm_info.get_alarm_first_time() + "' AND '" + self.alarm_info.get_alarm_second_time() + "' AND a.PUSHTIME BETWEEN '" + self.alarm_info.get_push_first_time() + "' AND '" + self.alarm_info.get_push_second_time() + "' AND a.USER_ID IN " + str(
-                        current_user_next) + " and a.imei in " + str(all_next_user_epuipment) + ";"
-
-            elif data['alarm_begin_time'] != '' and data['alarm_end_time'] != '' and data[
-                    'push_begin_time'] != '' and \
-                                data['push_end_time'] != '' and data['next_user'] == '0':
-                    # 条件2，告警时间和定位时间都不为空，不勾选包含下级
-                self.get_total_sql = "SELECT count(*) FROM alarm_info AS a WHERE a.CREATETIME BETWEEN " + self.alarm_info.get_alarm_first_time() + " AND " + self.alarm_info.get_alarm_second_time() + " AND a.PUSHTIME BETWEEN " + self.alarm_info.get_push_first_time() + " AND " + self.alarm_info.get_push_second_time() + " AND a.USER_ID = " + user_id + " and a.imei in " + str(
-                        current_user_all_equipment) + ";"
-
-            elif data['alarm_begin_time'] != '' and data['alarm_end_time'] != '' and data[
-                    'push_begin_time'] == '' and \
-                                data['push_end_time'] == '' and data['next_user'] == '1':
-                    # 条件3，告警时间不为空，定位时间为空，且勾选包含下级
-                self.get_total_sql = "SELECT count(*) FROM alarm_info AS a WHERE a.CREATETIME BETWEEN " + self.alarm_info.get_alarm_first_time() + " AND " + self.alarm_info.get_alarm_second_time() + " AND a.USER_ID IN " + str(
-                        current_user_next) + " and a.imei in " + str(all_next_user_epuipment) + ";"
-
-            elif data['alarm_begin_time'] != '' and data['alarm_end_time'] != '' and data[
-                    'push_begin_time'] == '' and \
-                                data['push_end_time'] == '' and data['next_user'] == '0':
-                    # 条件4，告警时间不为空、定位时间为空，且不勾选包含下级
-                self.get_total_sql = "SELECT count(*) FROM alarm_info AS a WHERE a.CREATETIME BETWEEN " + self.alarm_info.get_alarm_first_time() + " AND " + self.alarm_info.get_alarm_second_time() + " AND a.USER_ID = " + user_id + " and a.imei in " + str(
-                        current_user_all_equipment) + ";"
-
-            elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data[
-                    'push_begin_time'] != '' and \
-                                data['push_end_time'] != '' and data['next_user'] == '1':
-                    # 条件5，告警时间为空、定位时间不为空，且勾选包含下级
-                self.get_total_sql = "SELECT count(*) FROM alarm_info AS a WHERE a.PUSHTIME BETWEEN " + self.alarm_info.get_push_first_time() + " AND " + self.alarm_info.get_push_second_time() + " AND a.USER_ID IN " + str(
-                        current_user_next) + " and a.imei in " + str(all_next_user_epuipment) + ";"
-
-            elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data[
-                    'push_begin_time'] != '' and \
-                                data['push_end_time'] != '' and data['next_user'] == '0':
-                    # 条件6，告警时间为空、定位时间为不空，且不勾选包含下级
-                self.get_total_sql = "SELECT count(*) FROM alarm_info AS a WHERE a.PUSHTIME BETWEEN " + self.alarm_info.get_push_first_time() + " AND " + self.alarm_info.get_push_second_time() + " AND a.USER_ID = " + user_id + " and a.imei in " + str(
-                        current_user_all_equipment) + ";"
-
-            elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data[
-                    'push_begin_time'] == '' and \
-                                data['push_end_time'] == '' and data['next_user'] == '1':
-                    # 条件7，告警时间为空、定位时间为空，且勾选包含下级
-                self.get_total_sql = "SELECT count(*) FROM alarm_info AS a WHERE a.USER_ID IN " + str(current_user_next) + " and a.imei in " + str(all_next_user_epuipment) + ";"
-
-
-            elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data[
-                    'push_begin_time'] == '' and \
-                                data['push_end_time'] == '' and data['next_user'] == '0':
-                    # 条件8，告警时间为空、定位时间为空，且不勾选包含下级
-                self.get_total_sql = "SELECT count(*) FROM alarm_info AS a WHERE a.USER_ID = " + user_id + " and a.imei in " + str(
-                        current_user_all_equipment) + ";"'''
             # 判断查询条件
-            if data['alarm_begin_time'] != '' and data['alarm_end_time'] != '' and data['push_begin_time'] != '' and \
-                            data['push_end_time'] != '' and data['next_user'] == '0':
-                # 条件1，告警时间不为空，定位时间不为空，不包含下级用户
-                self.get_total_sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.CREATETIME BETWEEN '" + self.alarm_info_page.get_alarm_first_time() + "' AND '" + self.alarm_info_page.get_alarm_second_time() + "' AND a.PUSHTIME BETWEEN '" + self.alarm_info_page.get_push_first_time() + "' AND '" + self.alarm_info_page.get_push_second_time() + "' and a.imei in " + str(
-                    current_user_all_equipment) + " and a.USER_ID = " + user_id + ";"
 
-            elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data['push_begin_time'] == '' and \
-                            data['push_end_time'] == '' and data['next_user'] == '0':
-                #条件2，告警时间为空，定位时间为空，不包含下级用户
-                self.get_total_sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.imei in " + str(
-                    current_user_all_equipment) + " and a.USER_ID=" + user_id + ";"
-
-            elif data['alarm_begin_time'] != '' and data['alarm_end_time'] != '' and data['push_begin_time'] == '' and \
-                            data['push_end_time'] == '' and data['next_user'] == '0':
-                #条件3，告警时间不为空，定位时间为空，不包含下级用户
-                self.get_total_sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.CREATETIME BETWEEN '" + self.alarm_info_page.get_alarm_first_time() + "' AND '" + self.alarm_info_page.get_alarm_second_time() + "' and a.imei in " + str(
-                    current_user_all_equipment) + " and a.USER_ID = " + user_id + ";"
-
-            elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data['push_begin_time'] != '' and \
-                            data['push_end_time'] != '' and data['next_user'] == '0':
-                # 条件4，告警时间为空，定位时间不为空，不包含下级用户
-                self.get_total_sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.PUSHTIME BETWEEN '" + self.alarm_info_page.get_push_first_time() + "' AND '" + self.alarm_info_page.get_push_second_time() + "' and a.imei in " + str(
-                    current_user_all_equipment) + " and a.USER_ID = " + user_id + ";"
-
-            elif data['alarm_begin_time'] != '' and data['alarm_end_time'] != '' and data['push_begin_time'] != '' and \
-                            data['push_end_time'] != '' and data['next_user'] == '1':
-                # 条件5，告警时间不为空，定位时间不为空，包含下级用户
-                self.get_total_sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.CREATETIME BETWEEN '" + self.alarm_info_page.get_alarm_first_time() + "' AND '" + self.alarm_info_page.get_alarm_second_time() + "' AND a.PUSHTIME BETWEEN '" + self.alarm_info_page.get_push_first_time() + "' AND '" + self.alarm_info_page.get_push_second_time() + "' and a.imei in " + str(
-                    current_user_all_equipment) + ";"
-
-            elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data['push_begin_time'] == '' and \
-                            data['push_end_time'] == '' and data['next_user'] == '1':
-                # 条件6，告警时间为空，定位时间为空，包含下级用户
-                self.get_total_sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.imei in " + str(
-                    current_user_all_equipment) + ";"
-
-            elif data['alarm_begin_time'] != '' and data['alarm_end_time'] != '' and data['push_begin_time'] == '' and \
-                            data['push_end_time'] == '' and data['next_user'] == '1':
-                # 条件7，告警时间不为空，定位时间为空，包含下级用户
-                self.get_total_sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.CREATETIME BETWEEN '" + self.alarm_info_page.get_alarm_first_time() + "' AND '" + self.alarm_info_page.get_alarm_second_time() + "' and a.imei in " + str(
-                    current_user_all_equipment) + ";"
-
-            elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data['push_begin_time'] != '' and \
-                            data['push_end_time'] != '' and data['next_user'] == '1':
-                # 条件8，告警时间为空，定位时间不为空，不包含下级用户
-                self.get_total_sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.PUSHTIME BETWEEN '" + self.alarm_info_page.get_push_first_time() + "' AND '" + self.alarm_info_page.get_push_second_time() + "' and a.imei in " + str(
-                    current_user_all_equipment) + ";"
-
+            get_total_sql = self.search_sql.search_alarm_details_sql(user_id, current_user_all_equipment, data)
             # 执行sql
-            print(self.get_total_sql)
-            cursor_02.execute(self.get_total_sql)
+            print(get_total_sql)
+            cursor_02.execute(get_total_sql)
             get_total = cursor_02.fetchall()
             total_list = []
             for range1 in get_total:

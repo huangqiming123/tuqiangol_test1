@@ -84,6 +84,9 @@ class SetUpPage(BasePageServer):
 
         for handle in all_handle:
             if handle != current_handle:
+                self.driver.switch_to_window(current_handle)
+                self.driver.close_window()
+                sleep(2)
                 self.driver.switch_to_window(handle)
                 self.driver.click_element(self.SET_UP_SELECTOR)
 

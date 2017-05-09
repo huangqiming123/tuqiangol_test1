@@ -65,6 +65,8 @@ class TestCase060CustManageBasicInfo(unittest.TestCase):
             self.type = "代理商"
         elif current_user_info[0] == 9:
             self.type = "用户"
+        elif current_user_info[0] == 11:
+            self.type = "销售"
         usr_info_type = self.cust_manage_cust_list_page.usr_info_type()
         self.assertEqual(self.type, usr_info_type, "账户总览左下方显示的客户类型错误")
 

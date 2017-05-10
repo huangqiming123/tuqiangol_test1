@@ -53,8 +53,7 @@ class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
                 "account": row[0],
                 "device_imei": row[1],
                 "imei_count": row[2],
-                "selected_dev": row[2],
-                "account_expired_time": row[3]
+                "selected_dev": row[2]
             }
             # 进入快捷销售页面
             self.account_center_page_details.fast_sales()

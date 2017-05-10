@@ -79,7 +79,7 @@ class TestCase022AccountCenterMsgSearch(unittest.TestCase):
                     total_list.append(range2)
             total = len(total_list)
             print('本次查询数据库的条数为：%s' % total)
-            web_total = self.account_center_page_operation_log.count_curr_busi_cust_log_num()
+            web_total = self.account_center_page_operation_log.get_msg_number()
             print('本次查询页面的条数是：%s' % web_total)
             self.assertEqual(total, web_total)
             cur.close()

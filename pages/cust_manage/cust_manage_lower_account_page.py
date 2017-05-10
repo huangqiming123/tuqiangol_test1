@@ -267,10 +267,12 @@ class CustManageLowerAccountPage(BasePageServer):
     def add_data_to_search_account(self, search_data):
         if search_data['account_type'] == '':
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[1]')
-        elif search_data['account_type'] == '代理商':
+        elif search_data['account_type'] == '销售':
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[2]')
-        elif search_data['account_type'] == '用户':
+        elif search_data['account_type'] == '代理商':
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[3]')
+        elif search_data['account_type'] == '用户':
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[4]')
         sleep(3)
 
         self.driver.operate_input_element('x,//*[@id="searchAccount"]', search_data['info'])

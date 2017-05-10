@@ -1,11 +1,6 @@
 import os
 from time import sleep
-
-from selenium.webdriver.support.select import Select
-
-from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
-from pages.base.base_page import BasePage
 
 # 客户管理页面-客户列表
 # author:孙燕妮
@@ -503,21 +498,19 @@ class CustManageCustListPage(BasePageServer):
         # 搜索设备
         self.driver.operate_input_element('x,//*[@id="treeDemo_cusTreeKey"]', search_data['account'])
         self.driver.click_element('x,//*[@id="treeDemo_cusTreeSearchBtn"]')
-        sleep(2)
+        sleep(3)
         self.driver.click_element('c,autocompleter-item')
         sleep(3)
 
         # 选择组别
-        a = self.driver.get_element('x,//*[@id="markGroup"]').get_attribute('style')
-        if a == 'display: inline-block;':
-            self.driver.click_element('x,//*[@id="markGroup"]/div/span[2]')
-            sleep(1)
-            if search_data['group'] == '':
-                self.driver.click_element('x,//*[@id="markGroup"]/div/div/ul/li[1]')
+        self.driver.click_element('x,//*[@id="markGroup"]/div/span[2]')
+        sleep(1)
+        if search_data['group'] == '':
+            self.driver.click_element('x,//*[@id="markGroup"]/div/div/ul/li[1]')
 
-            elif search_data['group'] == '默认组':
-                self.driver.click_element('x,//*[@id="markGroup"]/div/div/ul/li[2]')
-            sleep(3)
+        elif search_data['group'] == '默认组':
+            self.driver.click_element('x,//*[@id="markGroup"]/div/div/ul/li[2]')
+        sleep(3)
         # 激活状态
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div[1]/div[2]/div[3]/span[2]/div[1]/span[2]')
         sleep(1)

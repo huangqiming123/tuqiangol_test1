@@ -65,7 +65,6 @@ class TestCase077CustManageMyDevMore(unittest.TestCase):
         except:
             print('该设备未配备指令')
 
-        self.driver.click_element('x,//*[@id="command-modal"]/div/div[1]/button')
 
         # 获取当前窗口句柄
         account_center_handle = self.driver.get_current_window_handle()
@@ -92,7 +91,7 @@ class TestCase077CustManageMyDevMore(unittest.TestCase):
                     self.driver.wait(1)
                     current_url = self.driver.get_current_url()
 
-                    self.assertEqual(self.base_url + expect_url, current_url, "查看位置页面跳转错误!")
+                    self.assertIn(self.base_url + expect_url, current_url, "查看位置页面跳转错误!")
                     # 关闭当前窗口
                     self.driver.close_current_page()
                     # 回到账户中心窗口

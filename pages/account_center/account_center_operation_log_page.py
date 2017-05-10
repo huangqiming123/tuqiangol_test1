@@ -271,14 +271,14 @@ class AccountCenterOperationLogPage(BasePageServer):
         self.driver.operate_input_element('x,//*[@id="selectUserName_fp"]', search_data['more'])
 
         self.driver.click_element('x,//*[@id="search_fp"]')
-        sleep(5)
+        sleep(10)
 
     def add_data_to_search_log_in_log(self, search_data):
         self.driver.operate_input_element('x,//*[@id="loginAccount_sport"]', search_data['account'])
         self.driver.operate_input_element('x,//*[@id="startTime_sport"]', search_data['begin_time'])
         self.driver.operate_input_element('x,//*[@id="endTime_sport"]', search_data['end_time'])
         self.driver.click_element('x,//*[@id="tab_con_command"]/div/div[1]/form/div/div/span/button')
-        sleep(5)
+        sleep(10)
 
     def add_data_to_search_massages(self, search_data):
         # 搜索消息
@@ -293,7 +293,7 @@ class AccountCenterOperationLogPage(BasePageServer):
         elif search_data['type'] == '1':
             self.driver.click_element(
                 'x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[3]')
-        elif search_data['type'] == '0':
+        elif search_data['type'] == '2':
             self.driver.click_element(
                 'x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[2]')
 
@@ -311,4 +311,13 @@ class AccountCenterOperationLogPage(BasePageServer):
                 'x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[3]')
 
         self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/button')
-        sleep(5)
+        sleep(10)
+
+    def get_msg_number(self):
+        a = self.driver.get_element('x,//*[@id="msg_paging"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="msg_paging"]', 'x,//*[@id="msg_tbody"]')
+            return total
+        elif a == 'display: none;':
+            return 0

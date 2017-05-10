@@ -36,6 +36,9 @@ class SearchSql(object):
         elif search_data['account_type'] == '用户':
             sql += " and u.type = '9'"
 
+        elif search_data['account_type'] == '销售':
+            sql += " and u.type = '11'"
+
         if search_data['info'] != '':
             sql += " and (u.account like '%" + search_data['info'] + "%' or u.nickName like '%" + search_data[
                 'info'] + "%')"

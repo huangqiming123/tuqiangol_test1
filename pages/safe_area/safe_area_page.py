@@ -89,9 +89,11 @@ class SafeAreaPage(BasePage):
         self.driver.operate_input_element('x,//*[@id="stayTimeOut"]', data['time_02'])
 
         if data['email'] == '1':
-            self.driver.click_element('x,//*[@id="acc_configure_form"]/div[3]/div/label/div/ins')
-            self.driver.operate_input_element('x,//*[@id="acc_configure_form"]/div[3]/div/ul/li[1]/input',
-                                              '123@123.com')
+            a = self.driver.get_element('x,//*[@id="accEmailSend"]').is_selected()
+            if a == False:
+                self.driver.click_element('x,//*[@id="acc_configure_form"]/div[3]/div/label/div/ins')
+                self.driver.operate_input_element('x,//*[@id="acc_configure_form"]/div[3]/div/ul/li[1]/input',
+                                                  '123@123.com')
 
         self.driver.click_element('x,//*[@id="setdeviceModal"]/div/div/div[3]/button[1]')
         sleep(2)
@@ -139,8 +141,8 @@ class SafeAreaPage(BasePage):
         sleep(2)
 
     def click_ensure_edit_in_list(self, param, param1):
-        self.driver.operate_input_element('x,//*[@id="geonameHtml"]',param)
-        self.driver.operate_input_element('x,//*[@id="descriptionHtml"]',param1)
+        self.driver.operate_input_element('x,//*[@id="geonameHtml"]', param)
+        self.driver.operate_input_element('x,//*[@id="descriptionHtml"]', param1)
         self.driver.click_element('x,//*[@id="createModal"]/div/div/div[3]/button[1]')
         sleep(2)
 
@@ -181,4 +183,3 @@ class SafeAreaPage(BasePage):
     def clcik_first_page_mark(self):
         self.driver.click_element('x,//*[@id="markTablePage"]/a[1]')
         sleep(2)
-

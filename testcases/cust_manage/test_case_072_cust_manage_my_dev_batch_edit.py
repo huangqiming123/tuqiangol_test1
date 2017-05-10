@@ -8,6 +8,8 @@ from pages.cust_manage.cust_manage_cust_list_page import CustManageCustListPage
 from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAccountPage
 from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
 from pages.login.login_page import LoginPage
+
+
 # 客户管理-我的设备-批量编辑
 
 # author:孙燕妮

@@ -457,6 +457,8 @@ class CustManageMyDevPage(BasePageServer):
             self.driver.click_element("instruction-send-btn")
             self.driver.wait(1)
             # 关闭窗口
+            self.driver.click_element('l,确定')
+            sleep(3)
             self.driver.click_element("x,//*[@id='command-modal']/div/div[1]/button")
             self.driver.wait()
         elif more_info == '行车记录':

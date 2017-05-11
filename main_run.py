@@ -36,6 +36,7 @@ def run_04_test_dev_manage():
 def run_05_test_console_and_set_up():
     os.system('python -m test_runner.tuqiangOL_test_runner_console')
     sleep(10)
+    os.system('python -m test_runner.tuqiangOL_test_runner_alarm_manager')
 
 
 def run_06_test_command_management():

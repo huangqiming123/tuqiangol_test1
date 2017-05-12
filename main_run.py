@@ -1,8 +1,6 @@
-
 import os
 import threading
 from time import sleep
-
 import datetime
 
 '''
@@ -47,6 +45,9 @@ def run_06_test_command_management():
 def run_07_test_alarm_info_and_form():
     os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
     sleep(10)
+
+
+def run_09_test_report():
     os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form')
 
 
@@ -56,7 +57,7 @@ def run_08_test_account_center():
 
 
 # 设置运行时间
-start_time = datetime.datetime(2017, 5, 8, 19, 0, 0)
+start_time = datetime.datetime(2017, 4, 11, 19, 0, 0)
 while datetime.datetime.now() < start_time:
     sleep(5)
 
@@ -96,6 +97,11 @@ for i7 in range(1):
     t7 = threading.Thread(target=run_07_test_alarm_info_and_form)
     t7.setDaemon(True)
     thread_list.append(t7)
+
+for i8 in range(1):
+    t8 = threading.Thread(target=run_09_test_report)
+    t8.setDaemon(True)
+    thread_list.append(t8)
 
 for t in thread_list:
     t.start()

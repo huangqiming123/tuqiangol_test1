@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automate_driver/automate_driver_server.py" afterPath="$PROJECT_DIR$/automate_driver/automate_driver_server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_run.py" afterPath="$PROJECT_DIR$/main_run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_alarm_manager.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_alarm_manager.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_command_management.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_command_management.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_console.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_console.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_cust_manage.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_cust_manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_dev_manage.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_dev_manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_global_search.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_global_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_safe_area.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_safe_area.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_set_up.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_set_up.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_statistical_form.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_statistical_form.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/test_runner_path.py" afterPath="$PROJECT_DIR$/test_runner/test_runner_path.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,87 +38,29 @@
         <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_dev_manage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-              <folding />
+              <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tuqiangOL_test_runner_console.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_console.py">
+      <file leaf-file-name="html_test_runner.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_runner/html_test_runner.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="94" column="59" selection-start-line="94" selection-start-column="59" selection-end-line="94" selection-end-column="59" />
+              <caret line="579" column="31" selection-start-line="579" selection-start-column="31" selection-end-line="579" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tuqiangOL_test_runner_alarm_manager.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_alarm_manager.py">
+      <file leaf-file-name="test_runner_path.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_runner/test_runner_path.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tuqiangOL_test_runner_account_center.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56473213">
-              <caret line="107" column="59" selection-start-line="107" selection-start-column="59" selection-end-line="107" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tuqiangOL_test_runner_global_search.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_global_search.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tuqiangOL_test_runner_login.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tuqiangOL_test_runner_safe_area.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_safe_area.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="112" column="62" selection-start-line="112" selection-start-column="62" selection-end-line="112" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tuqiangOL_test_runner_set_up.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_set_up.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tuqiangOL_test_runner_statistical_form.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_statistical_form.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.033519555">
+              <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -151,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/console/test_case_114_console_vehicle_list_dev_operate.py" />
         <option value="$PROJECT_DIR$/testcases/console/test_case_115_console_map_dev_operate.py" />
         <option value="$PROJECT_DIR$/testcases/cust_manage/test_case_072_cust_manage_my_dev_batch_edit.py" />
         <option value="$PROJECT_DIR$/testcases/dev_manage/test_case_104_dev_manage_dev_batch_send_instr_many.py" />
@@ -202,6 +131,7 @@
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_console.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_alarm_manager.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center.py" />
+        <option value="$PROJECT_DIR$/test_runner/test_runner_path.py" />
       </list>
     </option>
   </component>
@@ -721,7 +651,13 @@
       <option name="project" value="LOCAL" />
       <updated>1494473462754</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="修改代码">
+      <created>1494557678201</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1494557678201</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -762,6 +698,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20179136" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116883" sideWeight="0.50842994" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -769,7 +706,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -999,13 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/html_test_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.544134">
-          <caret line="579" column="31" selection-start-line="579" selection-start-column="31" selection-end-line="579" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_160_account_center_overview_command.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1073,14 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7036247">
           <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/test_runner_path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053097345">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,34 +1089,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_dev_manage.py">
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.09497207">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_alarm_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20111732">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_console.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.33072627">
           <caret line="94" column="59" selection-start-line="94" selection-start-column="59" selection-end-line="94" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_alarm_manager.py">
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_dev_manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/html_test_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="579" column="31" selection-start-line="579" selection-start-column="31" selection-end-line="579" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center.py">
+    <entry file="file://$PROJECT_DIR$/test_runner/test_runner_path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56473213">
-          <caret line="107" column="59" selection-start-line="107" selection-start-column="59" selection-end-line="107" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.033519555">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
           <folding />
         </state>
       </provider>

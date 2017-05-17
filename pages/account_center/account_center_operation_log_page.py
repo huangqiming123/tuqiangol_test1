@@ -29,8 +29,10 @@ class AccountCenterOperationLogPage(BasePageServer):
 
     # 点击客户管理（默认-修改）
     def log_cust_modify(self):
-        self.driver.click_element("x,//*[@id='tab_nav_business']/li[2]/a")
-        self.driver.wait(5)
+        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
+        self.driver.click_element('x,//*[@id="tab_nav_business"]/li[2]/a')
+        sleep(2)
+        self.driver.default_frame()
 
     # 点击客户管理-添加
     def log_cust_add(self):
@@ -106,46 +108,31 @@ class AccountCenterOperationLogPage(BasePageServer):
 
     # 获取当前的业务日志个数
     def count_curr_busi_log_num(self):
-
-        new_paging = NewPaging(self.driver, self.base_url)
-        try:
-            total = new_paging.get_total_number("x,//*[@id='paging_xf']", "x,//*[@id='logslist_xf']")
+        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="paging_xf"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="paging_xf"]', 'x,//*[@id="logslist_xf"]')
+            self.driver.default_frame()
             return total
-        except:
+        elif a == 'display: none;':
+            self.driver.default_frame()
             return 0
-        '''
-        # 设置列表底部每页共10条
-        self.base_page.select_per_page_number(10)
-        # 获取结果共分几页
-        total_pages_num = self.base_page.get_actual_pages_number("x,//*[@id='paging_xf']")
-        print(total_pages_num)
-        # 获取最后一页有几条记录
-        last_page_num = self.base_page.last_page_logs_num("x,//*[@id='logslist_xf']", "x,//*[@id='paging_xf']")
-        # 计算当前结果共几条
-        count = self.base_page.total_num(total_pages_num, last_page_num)
-        return count'''
 
     # 获取当前的业务日志-客户管理日志个数
     def count_curr_busi_cust_log_num(self):
         # 设置列表底部每页共10条
-        new_paging = NewPaging(self.driver, self.base_url)
-        try:
-            total = new_paging.get_total_number("x,//*[@id='paging_fp']", "x,//*[@id='logslist_fp']")
+        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="paging_fp"]').get_attribute('style')
+
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="paging_fp"]', 'x,//*[@id="logslist_fp"]')
+            self.driver.default_frame()
             return total
-        except:
+        elif a == 'display: none;':
+            self.driver.default_frame()
             return 0
-        '''try:
-            self.base_page.select_per_page_number(10)
-            # 获取结果共分几页
-            total_pages_num = self.base_page.get_actual_pages_number("x,//*[@id='paging_fp']")
-            print(total_pages_num)
-            # 获取最后一页有几条记录
-            last_page_num = self.base_page.last_page_logs_num("x,//*[@id='logslist_fp']", "x,//*[@id='paging_fp']")
-            # 计算当前结果共几条
-            count = self.base_page.total_num(total_pages_num, last_page_num)
-            return count
-        except:
-            return 0'''
 
     # 获取当前的业务日志个数
     def count_curr_busi_log_num_span(self):
@@ -214,15 +201,21 @@ class AccountCenterOperationLogPage(BasePageServer):
 
     def get_log_in_log_total(self):
         # 获取登录日志的条数
-        new_paging = NewPaging(self.driver, self.base_url)
-        try:
-            total = new_paging.get_total_number("x,//*[@id='paging_login_log']", "x,//*[@id='loginLog-tbody']")
+        self.driver.switch_to_frame('x,//*[@id="loginReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="paging_login_log"]').get_attribute('style')
+
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="paging_login_log"]', 'x,//*[@id="loginLog-tbody"]')
+            self.driver.default_frame()
             return total
-        except:
+        elif a == 'display: none;':
+            self.driver.default_frame()
             return 0
 
     def add_data_to_search_equipment_manager_log(self, search_data):
         # 搜索设备管理日志
+        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
         if search_data['type'] == '1':
             self.driver.click_element('x,//*[@id="devDiv_modify_1"]')
 
@@ -240,8 +233,10 @@ class AccountCenterOperationLogPage(BasePageServer):
 
         self.driver.click_element('x,//*[@id="search_xf"]')
         sleep(5)
+        self.driver.default_frame()
 
     def add_data_to_search_cus_manager_log(self, search_data):
+        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
         if search_data['type'] == '0':
             # 添加
             self.driver.click_element('x,//*[@id="custDiv"]/button[2]')
@@ -272,13 +267,19 @@ class AccountCenterOperationLogPage(BasePageServer):
 
         self.driver.click_element('x,//*[@id="search_fp"]')
         sleep(10)
+        self.driver.default_frame()
 
     def add_data_to_search_log_in_log(self, search_data):
+        self.driver.switch_to_frame('x,//*[@id="loginReportFrame"]')
         self.driver.operate_input_element('x,//*[@id="loginAccount_sport"]', search_data['account'])
+        sleep(1)
         self.driver.operate_input_element('x,//*[@id="startTime_sport"]', search_data['begin_time'])
+        sleep(1)
         self.driver.operate_input_element('x,//*[@id="endTime_sport"]', search_data['end_time'])
-        self.driver.click_element('x,//*[@id="tab_con_command"]/div/div[1]/form/div/div/span/button')
+        sleep(1)
+        self.driver.click_element('x,/html/body/div/div/div[2]/div/div[1]/form/div/div/span/button')
         sleep(10)
+        self.driver.default_frame()
 
     def add_data_to_search_massages(self, search_data):
         # 搜索消息
@@ -321,3 +322,15 @@ class AccountCenterOperationLogPage(BasePageServer):
             return total
         elif a == 'display: none;':
             return 0
+
+    def click_help_button(self):
+        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/a[2]')
+        sleep(2)
+
+    def click_business_log(self):
+        self.driver.click_element('x,//*[@id="servicelogReport"]/a')
+        sleep(2)
+
+    def click_log_in_log(self):
+        self.driver.click_element('x,//*[@id="loginReport"]/a')
+        sleep(2)

@@ -92,7 +92,6 @@ class TestCase017AccountCenterFastSaleReset(unittest.TestCase):
             # 搜索已销售的imei
             self.cust_manage_my_dev_page.search_dev_by_imei(search_account["device_imei"])
             self.cust_manage_my_dev_page.click_search_btn()
-            self.driver.wait()
             # 点击销售
             self.cust_manage_my_dev_page.one_dev_sale()
             # 选中当前登录账户

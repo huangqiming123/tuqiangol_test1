@@ -129,7 +129,6 @@ class TestCase152SportStatisticalAccForm(unittest.TestCase):
             self.assertEqual(total_times, web_all_time_total)
 
             # 点击导出报表
-            self.statistical_form_page.click_export_acc_form()
             self.driver.default_frame()
             cursor_02.close()
             connect_02.close()

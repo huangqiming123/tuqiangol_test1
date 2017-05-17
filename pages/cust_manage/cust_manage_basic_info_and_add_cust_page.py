@@ -1,7 +1,8 @@
+from time import sleep
+
 from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
-
 
 # 客户管理页面-客户基本信息及新增客户
 # author:孙燕妮
@@ -14,8 +15,8 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 点击进入客户管理页面
     def enter_cust_manage(self):
-        self.driver.click_element("customerManagement")
-        self.driver.wait(3)
+        self.driver.click_element('x,//*[@id="customer"]/a')
+        self.driver.wait(1)
 
     # 点击进入账户中心页面
     def enter_account_center(self):
@@ -172,9 +173,8 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     # 新增用户-保存
     def acc_add_save(self):
         # 将滚动条滚动至保存按钮处
-        ele = self.driver.get_element("addUserBtn")
-        self.driver.execute_script(ele)
-        self.driver.click_element("addUserBtn")
+
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait(1)
 
     # 当前账户-编辑用户-保存成功操作状态
@@ -184,6 +184,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 当前账户-编辑用户-搜索客户名称/账户
     def acc_search(self, keyword):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         # 将滚动条滚动至搜索输入框处
         ele = self.driver.get_element("treeDemo2_cusTreeKey")
         self.driver.execute_script(ele)
@@ -194,11 +195,12 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.wait(1)
         # 选择列表中第一个搜索结果
         self.driver.click_element('c,autocompleter-item')
+        self.driver.default_frame()
 
     # 新增客户
     def add_acc(self):
         # 点击新增客户
-        self.driver.click_element("x,/html/body/div[2]/div[5]/div/div/div[1]/div/div[1]/a/i")
+        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[2]/div/button[1]')
         self.driver.wait()
 
     # 当前账户-新增用户-编辑用户输入框信息
@@ -227,3 +229,72 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         # 编辑公司名
         self.driver.operate_input_element("companyName", com)
         self.driver.wait(1)
+
+    def click_tran_account(self):
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[5]')
+        sleep(2)
+
+    def choose_up_account(self, account):
+        self.driver.switch_to_frame('x,//*[@id="layui-layer-iframe13"]')
+        self.driver.operate_input_element('x,//*[@id="treeDemo2_cusTreeKey"]', account)
+        self.driver.click_element('x,//*[@id="treeDemo2_cusTreeSearchBtn"]')
+        sleep(2)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)
+
+    def click_ensure_tran(self):
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(2)
+
+    def get_account_text(self):
+        return self.driver.get_text('x,//*[@id="customerlist"]/tr[1]/td[4]')
+
+    def close_add_account(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def add_data_to_search_account(self, data):
+        self.driver.operate_input_element('x,//*[@id="treeDemo_cusTreeKey"]', data['account'])
+
+        self.driver.click_element('x,//*[@id="treeDemo_cusTreeSearchBtn"]')
+        sleep(3)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)
+
+    def get_account_type(self):
+        return self.driver.get_text('x,//*[@id="userType"]')
+
+    def get_account(self):
+        return self.driver.get_text('x,//*[@id="userAccount"]')
+
+    def get_account_phone(self):
+        return self.driver.get_text('x,//*[@id="user_phone"]')
+
+    def get_account_name(self):
+        return self.driver.get_text('x,//*[@id="user_account"]')
+
+    def click_monitoring_account_button(self):
+        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
+        sleep(2)
+
+    def get_text_after_click(self):
+        text = self.driver.get_text('x,//*[@id="account"]')
+        return text.split('(')[0]
+
+    def edit_button_style_value(self):
+        a = self.driver.get_element('x,//*[@id="editUserFast"]').get_attribute('style')
+        return a
+
+    def click_edit_account_button(self):
+        self.driver.click_element('x,//*[@id="editUserFast"]/button')
+        sleep(2)
+
+    def click_close_edit_accunt_button(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def get_account_name_after_click_edit(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_element('x,//*[@id="topUser"]').get_attribute('value')
+        self.driver.default_frame()
+        return text

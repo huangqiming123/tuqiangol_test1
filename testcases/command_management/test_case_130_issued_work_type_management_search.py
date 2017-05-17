@@ -8,6 +8,7 @@ from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
+from pages.command_management.search_sql import SearchSql
 
 
 class TestCase130IssuedWorkTypeManagementSearch(unittest.TestCase):
@@ -31,6 +32,7 @@ class TestCase130IssuedWorkTypeManagementSearch(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.command_management_page_read_csv = CommandManagementPageReadCsv()
         self.connect_sql = ConnectSql()
+        self.search_sql = SearchSql()
 
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
@@ -88,7 +90,7 @@ class TestCase130IssuedWorkTypeManagementSearch(unittest.TestCase):
             # 创建游标
             cursor = connect.cursor()
             # 获取登录账号的ID
-            get_current_user_id_sql = "select o.account,o.userId from user_organize o where o.account = '" + self.current_account + "';"
+            get_current_user_id_sql = "select o.account,o.userId from user_info o where o.account = '" + self.current_account + "';"
             cursor.execute(get_current_user_id_sql)
             user_relation = cursor.fetchall()
             for row in user_relation:
@@ -99,7 +101,7 @@ class TestCase130IssuedWorkTypeManagementSearch(unittest.TestCase):
 
                 # 查询数据库有多少条记录
                 # 判断查询的条件
-                if search_data['batch'] != '' and search_data['state'] == '' and search_data['imei'] == '' and \
+                '''if search_data['batch'] != '' and search_data['state'] == '' and search_data['imei'] == '' and \
                                 search_data['execute_state'] == '':
                     self.get_total_count_sql = "select c.id from command_issued_stage c where c.createdBy = " + \
                                                user_id[
@@ -250,13 +252,15 @@ class TestCase130IssuedWorkTypeManagementSearch(unittest.TestCase):
                                                search_data[
                                                    'batch'] + " AND DATEDIFF(c.endTime,CURDATE()) < 7 AND DATEDIFF(c.endTime,CURDATE()) >= 0;"
                 else:
-                    self.get_total_count_sql = "select c.id from command_issued_stage c where c.createdBy = " + \
+                    self.get_total_count_sql = "select c.id from command_issued_stage c where c.createdB =y " + \
                                                user_id[
                                                    'user_id'] + " and c.imei=" + search_data[
                                                    'imei'] + " and c.issuedTemplateId= " + \
                                                search_data['batch'] + " and c.exectueState=" + search_data[
-                                                   'execute_state'] + " and DATEDIFF(c.endTime,CURDATE())<0;"
-                cursor.execute(self.get_total_count_sql)
+                                                  'execute_state'] + " and DATEDIFF(c.endTime,CURDATE())<0;"'''
+                get_total_count_sql = self.search_sql.search_issued_work_template_sql(user_id['user_id'], search_data)
+                print(get_total_count_sql)
+                cursor.execute(get_total_count_sql)
                 current_total = cursor.fetchall()
                 total_list = []
                 for range1 in current_total:

@@ -51,7 +51,7 @@ class TestCase158AccountCenterOverviewNextGuest(unittest.TestCase):
                 connect = self.connect_sql.connect_tuqiang_sql()
                 cur = connect.cursor()
                 # 执行sql脚本查询当前登录账号的userId,fullParent
-                get_id_sql = "select userId from user_organize where account = '" + current_account + "';"
+                get_id_sql = "select userId from user_info where account = '" + current_account + "';"
                 cur.execute(get_id_sql)
                 # 读取数据
                 user_relation = cur.fetchall()

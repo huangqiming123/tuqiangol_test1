@@ -1,7 +1,8 @@
+from time import sleep
+
 from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
-
 
 # 账户中心页面-招呼栏的元素及操作
 # author:孙燕妮
@@ -14,7 +15,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 招呼栏用户名
     def hello_user_account(self):
-        hello_usr = self.driver.get_element("x,/html/body/div[1]/header/div/div[3]/div/div[2]/span/b").text
+        hello_usr = self.driver.get_element("x,/html/body/div[1]/header/div/div[2]/div/div[1]/span/b").text
         return hello_usr
 
     # 账户总览左下方用户信息
@@ -79,7 +80,9 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏退出系统
     def usr_logout(self):
         # 点击退出系统
-        self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[2]/a[3]")
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a'))
+        sleep(2)
+        self.driver.click_element('p,退出系统')
         self.driver.wait()
         # 定位到弹出框内容
         logout_text = self.driver.get_element("c,layui-layer-content").text
@@ -115,7 +118,9 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏退出系统-取消
     def usr_logout_dismiss(self):
         # 点击退出系统
-        self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[2]/a[3]")
+        self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a")
+        sleep(2)
+        self.driver.click_element('p,退出系统')
         self.driver.wait()
         # 定位到弹出框内容
         logout_text = self.driver.get_element("c,layui-layer-content").text
@@ -126,9 +131,12 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 招呼栏修改资料
     def modify_usr_info(self, user_name, phone, email):
+        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        sleep(1)
         # 点击招呼栏的修改资料
-        self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[2]/a[1]")
-        self.driver.wait(1)
+
+        self.driver.click_element("p,修改资料")
+        sleep(3)
         # 个人资料修改框的客户名称输入
         self.driver.operate_input_element("x,//*[@id='edit-modal-nickName']", user_name)
         # 个人资料修改框的电话输入
@@ -146,7 +154,9 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏修改密码
     def modify_user_passwd(self, old_passwd, new_passwd):
         # 点击招呼栏的修改密码
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[3]/div/div[2]/a[2]')
+        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        sleep(1)
+        self.driver.click_element('p,修改密码')
         self.driver.wait(1)
         # 输入旧密码
         self.driver.operate_input_element("oldPwd", old_passwd)
@@ -155,7 +165,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         # 确认新密码
         self.driver.operate_input_element("renewPwd", new_passwd)
         # 点击保存按钮
-        self.driver.click_element("save")
+        self.driver.click_element('x,//*[@id="save"]')
         self.driver.wait(1)
         # 获取修改密码成功状态对话框的文本内容
         modify_status = self.driver.get_element("c,layui-layer-content").text
@@ -245,7 +255,8 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏帮助
     def to_help(self):
         # 点击招呼栏的帮助
-        self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[1]/a[1]")
+        sleep(2)
+        self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/a[2]")
         self.driver.wait(1)
 
     # 帮助-意见反馈
@@ -377,3 +388,16 @@ class AccountCenterNaviBarPage(BasePageServer):
             # 获取保存成功弹框文本内容
             save_status_08 = self.driver.get_element("c,layui-layer-content").text
             return save_status_08
+
+    def usr_log_out(self):
+        # 点击退出系统
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div/div[2]/span/a'))
+        sleep(2)
+        self.driver.click_element('p,退出系统')
+        self.driver.wait()
+        # 定位到弹出框内容
+        logout_text = self.driver.get_element("c,layui-layer-content").text
+        print(logout_text)
+        # 点击确定
+        self.driver.click_element("c,layui-layer-btn0")
+        self.driver.wait()

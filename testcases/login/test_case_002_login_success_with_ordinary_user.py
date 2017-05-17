@@ -56,7 +56,7 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
 
             connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()
-            get_account_user_info_sql = "SELECT r.parentId from user_organize o INNER JOIN user_relation r ON o.userId = r.userId WHERE o.account = '" + \
+            get_account_user_info_sql = "SELECT o.parentId from user_info o WHERE o.account = '" + \
                                         user_to_login['account'] + "'"
             cursor.execute(get_account_user_info_sql)
             get_account_user_info = cursor.fetchall()
@@ -65,7 +65,7 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
                 for range2 in range1:
                     current_user_info.append(range2)
             print(current_user_info)
-            get_up_account_info_sql = "SELECT o.account,o.nickName,o.phone FROM user_organize o WHERE o.userId = '" + \
+            get_up_account_info_sql = "SELECT o.account,o.nickName,o.phone FROM user_info o WHERE o.userId = '" + \
                                       current_user_info[0] + "'"
             cursor.execute(get_up_account_info_sql)
             get_up_user_info = cursor.fetchall()
@@ -100,7 +100,7 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
             self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")'''
 
             # 成功退出系统
-            self.account_center_page_navi_bar.usr_logout()
+            self.account_center_page_navi_bar.usr_log_out()
 
             # 判断是否成功退出到登录页
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "退出系统失败")

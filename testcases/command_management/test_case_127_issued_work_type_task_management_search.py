@@ -84,7 +84,7 @@ class TestCase127IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
             # 创建游标
             cursor = connect.cursor()
             # 获取当前登录账号的usedID
-            get_current_user_id_sql = "select o.account,o.userId from user_organize o where o.account = '" + self.current_account + "';"
+            get_current_user_id_sql = "select o.account,o.userId from user_info o where o.account = '" + self.current_account + "';"
             cursor.execute(get_current_user_id_sql)
 
             user_relation = cursor.fetchall()
@@ -109,58 +109,6 @@ class TestCase127IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
                 web_total = self.command_management_page.search_total_number_work_task_manage()
                 print('本次查询页面的条数是：%s' % web_total)
                 self.assertEqual(total, web_total)
-
-            '''# 点击查询
-            self.command_management_page.issued_work_type_task_management_search('', '')
-            get_total_sql = "select c.id from command_issued_template c where c.createdBy=" + user_id['user_id'] + ";"
-            cursor.execute(get_total_sql)
-            curr_total = cursor.fetchall()
-            total_list = []
-            for range1 in curr_total:
-                for range2 in range1:
-                    total_list.append(range2)
-            total = len(total_list)
-            web_total = self.command_management_page.search_total_number('issued_work_type_task')
-            self.assertEqual(total, web_total)
-
-            self.command_management_page.issued_work_type_task_management_search('20170406162659880', '')
-            get_total_sql = "select c.id from command_issued_template c where c.id='20170406162659880' and c.createdBy=" + \
-                            user_id['user_id'] + ";"
-            cursor.execute(get_total_sql)
-            curr_total = cursor.fetchall()
-            total_list = []
-            for range1 in curr_total:
-                for range2 in range1:
-                    total_list.append(range2)
-            total = len(total_list)
-            web_total = self.command_management_page.search_total_number('issued_work_type_task')
-            self.assertEqual(total, web_total)
-
-            self.command_management_page.issued_work_type_task_management_search('', '多阶段2')
-            get_total_sql = "select c.id from command_issued_template c where c.name='多阶段2' and c.createdBy=" + user_id[
-                'user_id'] + ";"
-            cursor.execute(get_total_sql)
-            curr_total = cursor.fetchall()
-            total_list = []
-            for range1 in curr_total:
-                for range2 in range1:
-                    total_list.append(range2)
-            total = len(total_list)
-            web_total = self.command_management_page.search_total_number_with_issued_work_task()
-            self.assertEqual(total, web_total)
-
-            self.command_management_page.issued_work_type_task_management_search('20170401170006651', '多阶段2')
-            get_total_sql = "select c.id from command_issued_template c where c.name='多阶段2' and c.id= '20170401170006651' and c.createdBy=" + \
-                            user_id['user_id'] + ";"
-            cursor.execute(get_total_sql)
-            curr_total = cursor.fetchall()
-            total_list = []
-            for range1 in curr_total:
-                for range2 in range1:
-                    total_list.append(range2)
-            total = len(total_list)
-            web_total = self.command_management_page.search_total_number('issued_work_type_task')
-            self.assertEqual(total, web_total)'''
             cursor.close()
             connect.close()
         csv_file.close()

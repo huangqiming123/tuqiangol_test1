@@ -111,7 +111,6 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
             self.assertEqual(chang_total_time_type, web_total_time)
 
             # 点击导出停留报表
-            self.statistical_form_page.click_export_stay_form()
             self.driver.default_frame()
             cursor_02.close()
             connect_02.close()

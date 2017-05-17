@@ -88,12 +88,12 @@ class SearchSql(object):
         connect = connect_sql.connect_tuqiang_sql()
         cursor = connect.cursor()
 
-        get_user_id_sql = "select u.userId from user_organize u where u.account = '%s';" % user_account
+        get_user_id_sql = "select u.userId from user_info u where u.account = '%s';" % user_account
         cursor.execute(get_user_id_sql)
         user_id_list = cursor.fetchall()
         user_id = user_id_list[0][0]
 
-        get_account_dev_sql = "select a.imei from assets_device a where a.userId = '%s' and DATEDIFF(a.expiration,CURDATE())>=0;" % user_id
+        get_account_dev_sql = "select a.imei from equipment_mostly a where a.userId = '%s' and DATEDIFF(a.expiration,CURDATE())>=0;" % user_id
         cursor.execute(get_account_dev_sql)
         get_all_dev = cursor.fetchall()
         dev_list = []

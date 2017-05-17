@@ -1,24 +1,14 @@
 from time import sleep
 
 from pages.base.base_page import BasePage
+from pages.base.base_page_server import BasePageServer
 
 
-class SafeAreaPage(BasePage):
+class SafeAreaPage(BasePageServer):
     def click_control_after_click_safe_area(self):
         # 点击控制台后点击指令管理
-        current_handle = self.driver.get_current_window_handle()
-        self.driver.click_element('x,//*[@id="index"]/a')
+        self.driver.click_element('x,//*[@id="geozone"]/a')
         sleep(2)
-
-        all_handle = self.driver.get_all_window_handles()
-
-        for handle in all_handle:
-            if handle != current_handle:
-                self.driver.switch_to_window(current_handle)
-                self.driver.close_window()
-                sleep(2)
-                self.driver.switch_to_window(handle)
-                self.driver.click_element('x,//*[@id="safetyManagement"]/a')
 
     def click_all_select_button(self):
         # 点击列表的全选按钮
@@ -28,26 +18,26 @@ class SafeAreaPage(BasePage):
         self.driver.click_element('x,//*[@id="deletesafe"]')
 
     def click_cancel_detele_button(self):
-        self.driver.click_element('x,/html/body/div[10]/div[3]/a[2]')
+        self.driver.click_element('c,layui-layer-btn1')
 
     def click_close_detele_button(self):
-        self.driver.click_element('x,/html/body/div[10]/span/a')
+        self.driver.click_element('c,layui-layer-btn1')
 
     def click_list_edit_button(self):
         self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[2]/a[1]')
         sleep(2)
 
     def get_text_after_click_edit(self):
-        return self.driver.get_text('x,/html/body/div[2]/div/div/div[1]/h4')
+        return self.driver.get_text('x,/html/body/div[2]/div[1]')
 
     def ensure_edit_list(self, param, param1):
         self.driver.operate_input_element('x,//*[@id="geonameHtml"]', param)
         self.driver.operate_input_element('x,//*[@id="descriptionHtml"]', param1)
-        self.driver.click_element('x,//*[@id="createModal"]/div/div/div[3]/button[1]')
+        self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
 
     def click_cancel_edit(self):
-        self.driver.click_element('x,//*[@id="createModal"]/div/div/div[3]/button[3]')
+        self.driver.click_element('c,layui-layer-btn1')
         sleep(2)
 
     def click_close_edit(self):
@@ -143,11 +133,11 @@ class SafeAreaPage(BasePage):
     def click_ensure_edit_in_list(self, param, param1):
         self.driver.operate_input_element('x,//*[@id="geonameHtml"]', param)
         self.driver.operate_input_element('x,//*[@id="descriptionHtml"]', param1)
-        self.driver.click_element('x,//*[@id="createModal"]/div/div/div[3]/button[1]')
+        self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
 
     def click_cancel_edit_in_list(self):
-        self.driver.click_element('x,//*[@id="createModal"]/div/div/div[3]/button[3]')
+        self.driver.click_element('c,layui-layer-btn1')
         sleep(2)
 
     def click_close_edit_in_list(self):

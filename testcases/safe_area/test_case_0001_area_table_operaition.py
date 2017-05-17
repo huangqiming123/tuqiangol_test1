@@ -1,18 +1,17 @@
 import unittest
 from time import sleep
-
-from automate_driver.automate_driver import AutomateDriver
-from pages.base.base_page import BasePage
-from pages.base.lon_in_base import LogInBase
+from automate_driver.automate_driver_server import AutomateDriverServer
+from pages.base.base_page_server import BasePageServer
+from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
 
 
 class TestCase0001AreaTableOperaition(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriver()
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
-        self.base_page = BasePage(self.driver, self.base_url)
-        self.log_in_base = LogInBase(self.driver, self.base_url)
+        self.base_page = BasePageServer(self.driver, self.base_url)
+        self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.safe_area_page = SafeAreaPage(self.driver, self.base_url)
 
         self.base_page.open_page()
@@ -35,12 +34,6 @@ class TestCase0001AreaTableOperaition(unittest.TestCase):
         sleep(1)
         # 点击取消删除
         self.safe_area_page.click_cancel_detele_button()
-        # 点击删除
-        self.safe_area_page.click_delete_button()
-        sleep(1)
-        # 点击关闭删除
-        self.safe_area_page.click_close_detele_button()
-        sleep(2)
 
         # 点击列表中的编辑
         self.safe_area_page.click_list_edit_button()
@@ -56,12 +49,6 @@ class TestCase0001AreaTableOperaition(unittest.TestCase):
         # 输入内容保存
         self.safe_area_page.click_cancel_edit()
 
-        # 点击列表中的编辑
-        self.safe_area_page.click_list_edit_button()
-        # 断言
-        self.assertEqual('编辑', self.safe_area_page.get_text_after_click_edit())
-        # 输入内容保存
-        self.safe_area_page.click_close_edit()
 
         # 点击列表中的删除
         self.safe_area_page.click_list_delete_button()

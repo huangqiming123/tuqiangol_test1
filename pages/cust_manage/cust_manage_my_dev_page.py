@@ -101,12 +101,12 @@ class CustManageMyDevPage(BasePageServer):
 
     # 输入imei进行搜索
     def search_dev_by_imei(self, imei):
-        self.driver.operate_input_element("searchSnImeiVal", imei)
+        self.driver.operate_input_element('x,//*[@id="searchIMEI"]', imei)
         self.driver.wait(1)
 
     # 点击搜索
     def click_search_btn(self):
-        self.driver.click_element("x,//*[@id='allDev']/div[2]/div[1]/div[1]/div[2]/div[1]/div/span/button")
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
         self.driver.wait(5)
 
     # 获取搜索结果的Imei号
@@ -420,7 +420,7 @@ class CustManageMyDevPage(BasePageServer):
 
     # 列表仅有一个设备时-销售
     def one_dev_sale(self):
-        self.driver.click_element("x,//*[@id='markDevTable']/tr/td[10]/a[2]")
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[2]')
         self.driver.wait()
 
     # 查看位置

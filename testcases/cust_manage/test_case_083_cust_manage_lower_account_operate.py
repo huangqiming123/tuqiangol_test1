@@ -48,21 +48,17 @@ class TestCase083CustManageLowerAccountOperate(unittest.TestCase):
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+        account = self.cust_manage_basic_info_and_add_cust_page.get_account_text()
 
-        # 点击进入下级客户
-        self.cust_manage_lower_account_page.enter_lower_acc()
 
         # 点击单个用户的重置密码
-        self.driver.operate_input_element('x,//*[@id="searchAccount"]', 'user_test_01')
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[2]/div/div/span/button')
-        sleep(3)
         self.cust_manage_lower_account_page.acc_reset_passwd()
 
         # 获取重置密码弹框文本内容
         text = self.cust_manage_lower_account_page.reset_passwd_content()
 
         # 验证重置密码弹框文本内容是否正确显示
-        self.assertIn("重置后密码为:888888", text, "重置密码弹框文本内容显示错误")
+        self.assertIn("您确定要重置密码？", text, "重置密码弹框文本内容显示错误")
 
         # 确定重置密码
         self.cust_manage_lower_account_page.reset_passwd_ensure()
@@ -91,6 +87,8 @@ class TestCase083CustManageLowerAccountOperate(unittest.TestCase):
                 current_url = self.driver.get_current_url()
 
                 self.assertEqual(expect_url, current_url, "控制台页面跳转错误!")
+                get_account = self.cust_manage_lower_account_page.get_account_after_click_conlson()
+                self.assertEqual(account, get_account)
                 # 关闭当前窗口
                 self.driver.close_current_page()
                 # 回到账户中心窗口
@@ -99,9 +97,4 @@ class TestCase083CustManageLowerAccountOperate(unittest.TestCase):
 
         # 点击单个用户的删除
         self.cust_manage_lower_account_page.delete_acc()
-        self.driver.click_element('x,/html/body/div[28]/div[3]/a[1]')
-        # 进入账户中心页面
-        self.cust_manage_basic_info_and_add_cust_page.enter_account_center()
-
-        # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
+        self.driver.click_element('c,layui-layer-btn1')

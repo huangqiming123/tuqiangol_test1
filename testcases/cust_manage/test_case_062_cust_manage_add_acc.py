@@ -1,7 +1,9 @@
 import csv
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
@@ -32,6 +34,7 @@ class TestCase062CustManageAddAcc(unittest.TestCase):
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.cust_manage_page_read_csv = CustManagePageReadCsv()
+        self.connect_sql = ConnectSql()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -50,6 +53,9 @@ class TestCase062CustManageAddAcc(unittest.TestCase):
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+
+        self.cust_manage_basic_info_and_add_cust_page.add_acc()
+        self.cust_manage_basic_info_and_add_cust_page.close_add_account()
 
         csv_file = self.cust_manage_page_read_csv.read_csv('acc_add.csv')
         csv_data = csv.reader(csv_file)
@@ -72,9 +78,11 @@ class TestCase062CustManageAddAcc(unittest.TestCase):
 
             # 点击新增用户
             self.cust_manage_basic_info_and_add_cust_page.add_acc()
+            sleep(2)
             # 右侧搜索栏中搜索并选中作为上级用户
             self.cust_manage_basic_info_and_add_cust_page.acc_search(add_info["keyword"])
             # 选择客户类型
+            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
             self.cust_manage_basic_info_and_add_cust_page.acc_type_choose(add_info["acc_type"])
             # 编辑用户输入框信息
             self.cust_manage_basic_info_and_add_cust_page.add_acc_input_info_edit(add_info["acc_name"],
@@ -86,14 +94,14 @@ class TestCase062CustManageAddAcc(unittest.TestCase):
                                                                                   add_info["com"])
             # 修改用户登录权限
             self.cust_manage_basic_info_and_add_cust_page.acc_login_limit_modi()
+            self.driver.default_frame()
             self.cust_manage_basic_info_and_add_cust_page.acc_add_save()
+
             # 获取保存操作状态
             status = self.cust_manage_basic_info_and_add_cust_page.acc_info_save_status()
             # 验证是否操作成功
             self.assertIn("操作成功", status, "操作失败")
 
-            # 进入当前登录账户的下级账户模块
-            self.cust_manage_lower_account_page.enter_lower_acc()
 
             # 搜索新增客户
             self.cust_manage_lower_account_page.input_search_info(add_info["account"])
@@ -114,9 +122,3 @@ class TestCase062CustManageAddAcc(unittest.TestCase):
             self.assertIn("操作成功", del_status, "操作失败")
 
         csv_file.close()
-
-        # 进入账户中心页面
-        self.cust_manage_basic_info_and_add_cust_page.enter_account_center()
-
-        # 退出登录
-        self.account_center_page_navi_bar.usr_logout()

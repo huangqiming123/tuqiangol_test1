@@ -38,26 +38,6 @@ class TestCase102DevManageDevOperate(unittest.TestCase):
 
         # 登录
         self.log_in_base.log_in()
-
-        # 获取当前窗口句柄
-        account_center_handle = self.driver.get_current_window_handle()
-
-        # 点击进入控制台
-        self.dev_manage_page.enter_console()
-
-        # 获取当前所有窗口句柄
-        all_handles = self.driver.get_all_window_handles()
-        for handle in all_handles:
-            if handle != account_center_handle:
-                # 切换到账户中心窗口
-                self.driver.switch_to_window(account_center_handle)
-                self.driver.wait(1)
-                # 关闭账户中心窗口
-                self.driver.close_current_page()
-                # 回到控制台窗口
-                self.driver.switch_to_window(handle)
-                self.driver.wait()
-
         # 点击进入设备管理
         self.dev_manage_page.enter_dev_manage()
 

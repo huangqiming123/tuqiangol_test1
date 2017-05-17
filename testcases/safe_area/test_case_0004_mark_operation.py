@@ -1,19 +1,19 @@
 import unittest
 from time import sleep
 
-from automate_driver.automate_driver import AutomateDriver
-from pages.base.base_page import BasePage
-from pages.base.lon_in_base import LogInBase
+from automate_driver.automate_driver_server import AutomateDriverServer
+from pages.base.base_page_server import BasePageServer
+from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
 from pages.safe_area.safe_area_page_read_csv import SafeAreaPageReadCsv
 
 
 class TestCase0004MarkOperation(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriver()
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
-        self.base_page = BasePage(self.driver, self.base_url)
-        self.log_in_base = LogInBase(self.driver, self.base_url)
+        self.base_page = BasePageServer(self.driver, self.base_url)
+        self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.safe_area_page = SafeAreaPage(self.driver, self.base_url)
 
         self.base_page.open_page()
@@ -55,10 +55,6 @@ class TestCase0004MarkOperation(unittest.TestCase):
         # 点击保存
         self.safe_area_page.click_cancel_edit_in_list()
 
-        # 点击列表的编辑
-        self.safe_area_page.click_edit_button_in_list()
-        # 点击保存
-        self.safe_area_page.click_close_edit_in_list()
 
         # 点击列表中的删除
         self.safe_area_page.click_delete_button_in_list()

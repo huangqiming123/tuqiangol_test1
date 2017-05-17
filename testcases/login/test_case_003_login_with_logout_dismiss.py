@@ -38,4 +38,4 @@ class TestCase003LoginWithLogoutDismiss(unittest.TestCase):
         # 成功退出系统
         self.account_center_page_navi_bar.usr_logout_dismiss()
         # 判断是否仍停留在当前账户首页，并未退出系统
-        self.assertEqual(self.base_url + "/customer/toAccountCenter", self.driver.get_current_url(), "取消退出系统失败")
+        self.assertEqual(self.base_url + "/customer/toAccountCenter#", self.driver.get_current_url(), "取消退出系统失败")

@@ -9,6 +9,7 @@ from pages.base.base_paging_function import BasePagingFunction
 from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
+from pages.command_management.search_sql import SearchSql
 
 
 class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
@@ -34,13 +35,14 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
         self.command_management_page_read_csv = CommandManagementPageReadCsv()
         self.connect_sql = ConnectSql()
         self.log_in_base = LogInBase(self.driver, self.base_url)
+        self.search_sql = SearchSql()
 
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
-        self.log_in_base.log_in_jimitest()
+        self.log_in_base.log_in()
         self.current_account = self.log_in_base.get_log_in_account()
 
         # 登录之后点击控制台，然后点击指令管理
@@ -86,7 +88,7 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
             # 建立游标
             cursor = connect.cursor()
             # 查询登录用户的ID 和 父ID
-            get_current_user_id = "select o.userId,r.fullParent from user_relation r inner join user_organize o on r.userId = o.userId where o.account = '" + self.current_account + "';"
+            get_current_user_id = "select o.userId,o.fullParentId from user_info o where o.account = '" + self.current_account + "';"
             # 执行
             cursor.execute(get_current_user_id)
             user = cursor.fetchall()
@@ -96,7 +98,7 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
                     'fullparent': row[1]
                 }
                 # 查询当前登录用户的全部下级
-                get_next_id_sql = "select userId from user_relation where fullParent like" + \
+                get_next_id_sql = "select userId from user_info where fullParentId like" + \
                                   "'" + user_info["fullparent"] + user_info["id"] + "%'" + ";"
                 # 执行sql脚本
                 cursor.execute(get_next_id_sql)
@@ -111,7 +113,7 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
                 print(current_user_next)
 
                 # 查询数据库
-                if search_data['batch'] == '' and search_data['name'] == '':
+                '''if search_data['batch'] == '' and search_data['name'] == '':
                     self.search_sql = "SELECT t.id FROM command_task AS t WHERE t.createdBy IN " + str(
                             current_user_next) + ";"
 
@@ -127,9 +129,11 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
                     self.search_sql = "SELECT t.id FROM command_task AS t WHERE t.createdBy IN " + str(
                             current_user_next) + " and t.id= " + search_data['batch'] + " and t.insName like '%" + \
                                       search_data[
-                                          'name'] + "' ;"
+                                          'name'] + "' ;"'''
                 # 执行sql
-                cursor.execute(self.search_sql)
+                search_sql = self.search_sql.search_issued_command_task_management_sql(current_user_next, search_data)
+                print(search_sql)
+                cursor.execute(search_sql)
                 current_total = cursor.fetchall()
                 total_list = []
                 for range1 in current_total:

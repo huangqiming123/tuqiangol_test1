@@ -1,5 +1,7 @@
 import csv
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -56,7 +58,7 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
 
             connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()
-            get_account_user_info_sql = "SELECT o.type,o.phone,r.parentId,o.nickName from user_organize o INNER JOIN user_relation r ON o.userId = r.userId WHERE o.account = '" + \
+            get_account_user_info_sql = "SELECT o.type,o.phone,o.parentId,o.nickName from user_info o WHERE o.account = '" + \
                                         user_to_login['account'] + "'"
             cursor.execute(get_account_user_info_sql)
             get_account_user_info = cursor.fetchall()
@@ -69,6 +71,8 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
                 self.type = "代理商"
             elif current_user_info[0] == 9:
                 self.type = "用户"
+            elif current_user_info[0] == 11:
+                self.type = "销售"
             usr_info_type = self.account_center_page_navi_bar.usr_info_type()
             self.assertEqual(self.type, usr_info_type, "账户总览左下方显示的客户类型错误")
 
@@ -80,7 +84,7 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
             expect_usr_info_phone = current_user_info[1]
             self.assertEqual(expect_usr_info_phone, usr_info_phone, "账户总览左下方显示的客户电话错误")
 
-            get_up_account_info_sql = "SELECT o.account,o.nickName,o.phone FROM user_organize o WHERE o.userId = '" + \
+            get_up_account_info_sql = "SELECT o.account,o.nickName,o.phone FROM user_info o WHERE o.userId = '" + \
                                       current_user_info[2] + "'"
             cursor.execute(get_up_account_info_sql)
             get_up_user_info = cursor.fetchall()
@@ -105,42 +109,8 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
             cursor.close()
             connect.close()
             # 成功退出系统
+            sleep(2)
             self.account_center_page_navi_bar.usr_logout()
             # 判断是否成功退出到登录页
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "退出系统失败")
         csv_file.close()
-
-        '''# 判断登录成功后招呼栏的用户名是否正确
-            hello_usr = self.account_center_page_navi_bar.hello_user_account()
-            expect_usr = user_to_login["account"]
-            self.assertEqual(expect_usr, hello_usr, "登录成功后招呼栏账户名显示错误")
-
-            # 判断登录成功后账户总览左下方显示的用户信息是否正确
-            usr_info_name = self.account_center_page_navi_bar.usr_info_name()
-            expect_usr_info_name = user_to_login["name"]
-            self.assertEqual(expect_usr_info_name, usr_info_name, "账户总览左下方显示的用户名错误")
-
-            usr_info_account = self.account_center_page_navi_bar.usr_info_account()
-            expect_usr_info_account = user_to_login["account"]
-            self.assertEqual(expect_usr_info_account, usr_info_account, "账户总览左下方显示的账户错误")
-
-            usr_info_type = self.account_center_page_navi_bar.usr_info_type()
-            expect_usr_info_type = user_to_login["type"]
-            self.assertEqual(expect_usr_info_type, usr_info_type, "账户总览左下方显示的客户类型错误")
-
-            usr_info_phone = self.account_center_page_navi_bar.usr_info_phone()
-            expect_usr_info_phone = user_to_login["phone"]
-            self.assertEqual(expect_usr_info_phone, usr_info_phone, "账户总览左下方显示的客户电话错误")
-
-            # 判断登录成功后账户总览下方显示的“我的服务商”信息是否正确
-            usr_service_provider = self.account_center_page_navi_bar.sales_usr_service_provider()
-            expect_usr_service_provider = user_to_login["service_provider"]
-            self.assertIn(expect_usr_service_provider, usr_service_provider, "服务商显示错误")
-
-            service_provider_connect = self.account_center_page_navi_bar.sales_usr_service_provider_connect()
-            expect_service_provider_connect = user_to_login["service_provider_connect"]
-            self.assertIn(expect_service_provider_connect, service_provider_connect, "联系人显示错误")
-
-            service_provider_phone = self.account_center_page_navi_bar.sales_usr_service_provider_phone()
-            expect_service_provider_phone = user_to_login["service_provider_phone"]
-            self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")'''

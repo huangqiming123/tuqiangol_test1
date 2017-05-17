@@ -51,16 +51,20 @@ class TestCase170AccountCenterOverviewAttention(unittest.TestCase):
                 # 创建数据库游标
                 cur = connect.cursor()
                 # 执行sql脚本查询当前登录账号的userId,fullParent
-                get_id_sql = "select userId from user_organize where account = '" + current_account + "' ;"
+                get_id_sql = "select userId from user_info where account = '" + current_account + "' ;"
                 cur.execute(get_id_sql)
                 # 读取数据
                 user_relation = cur.fetchall()
                 user_id = user_relation[0][0]
-                actual_url = self.base_url + '/index?userId=%s&viewFlag=4' % user_id
+                actual_url = self.base_url + '/console?userId=%s&viewFlag=4' % user_id
                 cur.close()
                 connect.close()
                 self.assertEqual(expect_url, actual_url, '点击重点关注车辆后，实际的url和期望的不一样！')
                 sleep(2)
+
+                # 断言已关注被选中
+                self.assertEqual('active', self.driver.get_element('x,//*[@id="FOLLOW"]').get_attribute('class'))
+
                 expect_total_inactive = self.account_center_page_details.get_total_all_attention_equipment()
                 self.assertEqual(actual_total_attention, expect_total_inactive, '账号重点关注车辆数量错误')
                 self.driver.close_current_page()

@@ -473,16 +473,20 @@ class GlobalAccountSearchPage(BasePage):
 
     def easy_search_results(self):
         # 获取用户搜索的结果
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('style')
         b = self.driver.get_element('x,//*[@id="complex_user_table_nodata"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
             total = new_paging.get_total_number("x,//*[@id='complex_paging_user']", "x,//*[@id='complex_user_tbody']")
+            self.driver.default_frame()
             return total
         else:
             if a == 'display: none;' and b == 'display: none;':
+                self.driver.default_frame()
                 return 1
             elif a == 'display: none;' and b == 'display: block;':
+                self.driver.default_frame()
                 return 0
 
     def click_search_button(self):
@@ -527,3 +531,22 @@ class GlobalAccountSearchPage(BasePage):
 
     def get_first_account(self):
         return self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[1]/td[4]')
+
+    def app_easy_search_results(self):
+        # 获取用户搜索的结果
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]').get_attribute('style')
+        b = self.driver.get_element('x,//*[@id="complex_mobileUser_table_nodata"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="complex_paging_mobileUser"]',
+                                                'x,//*[@id="complex_mobileUser_tbody"]')
+            self.driver.default_frame()
+            return total
+        else:
+            if a == 'display: none;' and b == 'display: none;':
+                self.driver.default_frame()
+                return 1
+            elif a == 'display: none;' and b == 'display: block;':
+                self.driver.default_frame()
+                return 0

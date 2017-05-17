@@ -1,5 +1,6 @@
 import csv
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
@@ -21,7 +22,6 @@ class TestCase086DevManageDevSearchByIMEI(unittest.TestCase):
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
         self.dev_manage_page = DevManagePages(self.driver, self.base_url)
-        self.account_center_page_navi_bar = AccountCenterNaviBarPages(self.driver, self.base_url)
         self.driver.set_window_max()
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.dev_manage_page_read_csv = DevManagePageReadCsv()
@@ -40,25 +40,6 @@ class TestCase086DevManageDevSearchByIMEI(unittest.TestCase):
 
         # 登录
         self.log_in_base.log_in()
-
-        # 获取当前窗口句柄
-        account_center_handle = self.driver.get_current_window_handle()
-
-        # 点击进入控制台
-        self.dev_manage_page.enter_console()
-
-        # 获取当前所有窗口句柄
-        all_handles = self.driver.get_all_window_handles()
-        for handle in all_handles:
-            if handle != account_center_handle:
-                # 切换到账户中心窗口
-                self.driver.switch_to_window(account_center_handle)
-                self.driver.wait(1)
-                # 关闭账户中心窗口
-                self.driver.close_current_page()
-                # 回到控制台窗口
-                self.driver.switch_to_window(handle)
-                self.driver.wait()
 
         # 点击进入设备管理
         self.dev_manage_page.enter_dev_manage()
@@ -96,6 +77,3 @@ class TestCase086DevManageDevSearchByIMEI(unittest.TestCase):
             self.assertEqual(search_info["imei"], imei, "搜索结果imei与输入的imei不一致")
 
         csv_file.close()
-
-        # 退出登录
-        self.account_center_page_navi_bar.dev_manage_usr_logout()

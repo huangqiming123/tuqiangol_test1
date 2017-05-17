@@ -1,5 +1,6 @@
 import csv
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
@@ -42,7 +43,11 @@ class TestCase026GlobAccountSearch(unittest.TestCase):
         self.log_in_base.log_in()
         current_account = self.log_in_base.get_log_in_account()
         self.global_dev_search_page.click_easy_search()
-        self.global_dev_search_page.select_account_search()
+        # 关闭
+        self.global_dev_search_page.close_search()
+        sleep(2)
+
+        self.global_dev_search_page.click_easy_search()
 
         # 度数据
         csv_file = self.global_search_page_read_csv.read_csv('global_search_account_data.csv')
@@ -63,7 +68,7 @@ class TestCase026GlobAccountSearch(unittest.TestCase):
             cur = connect.cursor()
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.account,o.userId,r.fullParent from user_relation r inner join user_organize o on r.userId = o.userId where o.account = '" + current_account + "' ;"
+            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "' ;"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
@@ -76,7 +81,7 @@ class TestCase026GlobAccountSearch(unittest.TestCase):
                 }
 
                 # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
-                get_lower_account_sql = "select userId from user_relation where fullParent like" + \
+                get_lower_account_sql = "select userId from user_info where fullParentId like" + \
                                         "'" + user_relation_id["fullParent"] + user_relation_id["userId"] + "%'" + ";"
                 cur.execute(get_lower_account_sql)
                 # 读取数据
@@ -107,7 +112,4 @@ class TestCase026GlobAccountSearch(unittest.TestCase):
             connect.close()
 
         csv_file.close()
-        # 关闭当前设备搜索对话框
-        self.global_dev_search_page.close_dev_search()
-        # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
+        self.global_dev_search_page.close_search()

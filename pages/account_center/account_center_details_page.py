@@ -286,12 +286,12 @@ class AccountCenterDetailsPage(BasePageServer):
 
     def get_actual_current_account_next(self):
         a = self.driver.get_element('x,//*[@id="pagingCustomer"]').get_attribute("style")
-        if a == 'display: none;':
-            return 0
-        else:
+        if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_number('x,//*[@id="pagingCustomer"]', 'x,//*[@id="markUserTable"]')
+            total = new_paging.get_total_number('x,//*[@id="pagingCustomer"]', 'x,//*[@id="customerlist"]')
             return total
+        else:
+            return 0
 
     def get_actual_text_after_click_command(self):
         return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div[5]/div[1]/div/b')
@@ -304,7 +304,6 @@ class AccountCenterDetailsPage(BasePageServer):
         a = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
         self.driver.default_frame()
         return a
-
 
     def get_current_account_total_online(self):
         return self.driver.get_text('x,//*[@id="onLine2"]')
@@ -386,4 +385,32 @@ class AccountCenterDetailsPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="followNum"]')
 
     def get_total_all_attention_equipment(self):
-        return self.driver.get_text('x,//*[@id="attentions"]')
+        return self.driver.get_text('x,//*[@id="followTotal"]')
+
+    def get_total_dev_number_after_ckick_all_dev_number(self):
+        # 获取点击总进货数后，库存数量
+        a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
+            return total
+        elif a == 'display: none;':
+            return 0
+
+    def click_report_after_text(self):
+        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div/div[1]/div/b')
+
+    def click_safearea_get_vaule(self):
+        return self.driver.get_element('x,//*[@id="safemenu"]/li[1]').get_attribute('class')
+
+    def click_dev_manage_get_text(self):
+        return self.driver.get_text('x,//*[@id="allDev"]/div[1]/div/b')
+
+    def get_coming_overtime_number(self):
+        return self.driver.get_text('x,//*[@id="devExpiring2"]')
+
+    def click_coming_overtime_get_text(self):
+        return self.driver.get_text('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[1]/div/div/span[2]')
+
+    def get_overtime_number(self):
+        return self.driver.get_text('x,//*[@id="devExpired2"]')

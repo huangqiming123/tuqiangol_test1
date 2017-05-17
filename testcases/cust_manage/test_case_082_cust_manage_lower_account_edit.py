@@ -52,11 +52,6 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
 
-
-        # 点击进入下级客户
-        self.cust_manage_lower_account_page.enter_lower_acc()
-
-
         csv_file = self.cust_manage_page_read_csv.read_csv('lower_acc_edit.csv')
         csv_data = csv.reader(csv_file)
 
@@ -76,6 +71,7 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
 
             # 选择客户类型
             sleep(3)
+            self.driver.switch_to_frame('x,/html/body/div[6]/div[2]/iframe')
             self.cust_manage_lower_account_page.acc_type_choose(edit_info["acc_type"])
             # 编辑信息
             self.cust_manage_lower_account_page.edit_acc_input_info_edit(edit_info["acc_name"],
@@ -85,6 +81,7 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
                                                                          edit_info["com"])
 
             # 保存
+            self.driver.default_frame()
             self.cust_manage_lower_account_page.edit_info_save()
 
             # 获取操作状态
@@ -92,13 +89,4 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
 
             # 验证是否操作成功
             self.assertIn("操作成功", status, "操作失败")
-
-
-
-
-        # 进入账户中心页面
-        self.cust_manage_basic_info_and_add_cust_page.enter_account_center()
-
-        # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
 

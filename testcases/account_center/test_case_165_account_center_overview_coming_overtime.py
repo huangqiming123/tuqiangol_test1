@@ -34,6 +34,7 @@ class TestCase165AccountCenterOverviewComingOvertime(unittest.TestCase):
         # 登录账号
         self.log_in_base.log_in()
         sleep(2)
+        number = self.account_center_page_details.get_coming_overtime_number()
         account_center_handle = self.driver.get_current_window_handle()
         # 点击库存
         self.account_center_page_details.account_overview('即将到期')
@@ -43,11 +44,18 @@ class TestCase165AccountCenterOverviewComingOvertime(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 sleep(2)
                 expect_url = self.driver.get_current_url()
-                actual_url = self.base_url + '/customer/toSearch?viewFlag=2'
+                actual_url = self.base_url + '/device/toDeviceManage?statusFlag=aboutToExpirate&lowerDevFlag=1'
                 self.assertEqual(expect_url, actual_url, '点击即将到期后，实际的url和期望的不一样！')
                 sleep(2)
-                expect_text = self.account_center_page_details.get_actual_text_after_click_overtime()
-                self.assertEqual('即将到期', expect_text, '点击即将到期后，实际的查询不一致')
+
+                get_text = self.account_center_page_details.click_coming_overtime_get_text()
+                self.assertEqual('即将过期', get_text)
+
+                self.assertEqual(True, self.driver.get_element('x,//*[@id="lowerFlag"]/div/input').is_selected())
+
+                self.assertEqual(number,
+                                 str(
+                                     self.account_center_page_details.get_total_dev_number_after_ckick_all_dev_number()))
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

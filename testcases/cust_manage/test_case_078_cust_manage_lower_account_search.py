@@ -56,8 +56,6 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
 
-        # 点击进入下级客户
-        self.cust_manage_lower_account_page.enter_lower_acc()
 
         csv_file = self.cust_manage_page_read_csv.read_csv('acc_search.csv')
         csv_data = csv.reader(csv_file)
@@ -67,8 +65,9 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
                 is_header = False
                 continue
             search_data = {
-                "account_type": row[0],
-                "info": row[1]
+                'account': row[0],
+                "account_type": row[1],
+                "info": row[2]
             }
             self.cust_manage_lower_account_page.add_data_to_search_account(search_data)
             connect = self.connect_sql.connect_tuqiang_sql()
@@ -76,7 +75,8 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
             cur = connect.cursor()
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.account,o.userId,r.fullParent from user_relation r inner join user_organize o on r.userId = o.userId where o.account = '" + current_account + "' ;"
+            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + search_data[
+                'account'] + "' ;"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
@@ -88,7 +88,7 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
                     "fullParent": row[2]
                 }
                 # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
-                get_lower_account_sql = "select userId from user_relation where fullParent = " + \
+                get_lower_account_sql = "select userId from user_info where fullParentId = " + \
                                         "'" + user_relation_id["fullParent"] + user_relation_id[
                                             "userId"] + ",'" + ";"
                 cur.execute(get_lower_account_sql)
@@ -121,9 +121,3 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
             connect.close()
 
         csv_file.close()
-
-        # 进入账户中心页面
-        self.cust_manage_basic_info_and_add_cust_page.enter_account_center()
-
-        # 退出登录
-        self.account_center_page_navi_bar.usr_logout()

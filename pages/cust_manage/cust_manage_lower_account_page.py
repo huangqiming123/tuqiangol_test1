@@ -41,12 +41,12 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 搜索框输入客户名称或账号
     def input_search_info(self, keyword):
-        self.driver.operate_input_element("searchAccount", keyword)
+        self.driver.operate_input_element('x,//*[@id="searchaccount"]', keyword)
         self.driver.wait(1)
 
     # 点击搜索
     def click_search_btn(self):
-        self.driver.click_element("x,//*[@id='allDev']/div[2]/div[2]/div[1]/div[2]/div/div/span/button")
+        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
         self.driver.wait()
 
     # 获取搜索结果账号
@@ -155,7 +155,7 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 单个用户操作-编辑
     def click_acc_edit(self):
-        self.driver.click_element("x,//*[@id='markUserTable']/tr[1]/td[8]/a[2]")
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[2]')
         self.driver.wait()
 
     # 单个用户操作-编辑信息
@@ -178,7 +178,7 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 单个用户操作-编辑信息-保存
     def edit_info_save(self):
-        self.driver.click_element("updateUserBtn")
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait(1)
 
     # 单个用户操作-编辑信息-保存状态
@@ -188,13 +188,12 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 单个用户操作-控制台
     def enter_console(self):
-        self.driver.click_element("x,/html/body/div[2]/div[5]/div/div/div[2]/div/div[2]/div[1]/div[2]/div[2]/div[3]/"
-                                  "table/tbody/tr[1]/td[8]/a[1]")
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[1]')
         self.driver.wait()
 
     # 单个用户操作-重置密码
     def acc_reset_passwd(self):
-        self.driver.click_element("x,//*[@id='markUserTable']/tr[1]/td[8]/a[3]")
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[4]')
         self.driver.wait()
 
     # 单个用户操作-“重置密码”弹框文本内容
@@ -219,7 +218,7 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 单个用户操作-删除
     def delete_acc(self):
-        self.driver.click_element("x,//*[@id='markUserTable']/tr[1]/td[8]/a[4]")
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[3]')
         self.driver.wait(1)
 
     # 单个用户操作-删除-确定
@@ -265,18 +264,35 @@ class CustManageLowerAccountPage(BasePageServer):
         return status
 
     def add_data_to_search_account(self, search_data):
+
+        self.driver.operate_input_element('x,//*[@id="treeDemo_cusTreeKey"]', search_data['account'])
+        sleep(2)
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="treeDemo_cusTreeSearchBtn"]')
+        sleep(4)
+        # 选择列表中搜索结果
+        self.driver.click_element("c,autocompleter-item")
+        sleep(2)
+
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/span[2]')
+        sleep(2)
         if search_data['account_type'] == '':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[1]')
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[1]')
         elif search_data['account_type'] == '销售':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[2]')
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[4]')
         elif search_data['account_type'] == '代理商':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[3]')
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[2]')
         elif search_data['account_type'] == '用户':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[1]/div/button[4]')
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[3]')
         sleep(3)
 
-        self.driver.operate_input_element('x,//*[@id="searchAccount"]', search_data['info'])
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div[1]/div[2]/div/div/span/button')
+        self.driver.operate_input_element('x,//*[@id="searchaccount"]', search_data['info'])
+        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
         sleep(5)
 
     def get_account_number(self):
@@ -284,7 +300,11 @@ class CustManageLowerAccountPage(BasePageServer):
         a = self.driver.get_element('x,//*[@id="pagingCustomer"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            number = new_paging.get_total_number('x,//*[@id="pagingCustomer"]', 'x,//*[@id="markUserTable"]')
+            number = new_paging.get_total_number('x,//*[@id="pagingCustomer"]', 'x,//*[@id="customerlist"]')
             return number
         elif a == 'display: none;':
             return 0
+
+    def get_account_after_click_conlson(self):
+        text = self.driver.get_text('x,//*[@id="account"]')
+        return text.split('(')[0]

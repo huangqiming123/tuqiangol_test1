@@ -50,15 +50,7 @@ class TestCase153AccountCenterOverviewStock(unittest.TestCase):
                 sleep(2)
                 expect_url = self.driver.get_current_url()
                 connect = self.connect_sql.connect_tuqiang_sql()
-                # 创建数据库游标
-                cur = connect.cursor()
-                # 执行sql脚本查询当前登录账号的userId,fullParent
-                get_id_sql = "select userId from user_organize where account = '" + current_account + "' ;"
-                cur.execute(get_id_sql)
-                # 读取数据
-                user_relation = cur.fetchall()
-                user_id = user_relation[0][0]
-                actual_url = self.base_url + '/customer/toSearch?userId=%s' % user_id
+                actual_url = self.base_url + '/device/toDeviceManage'
                 self.assertEqual(expect_url, actual_url, '点击库存后，实际的url和期望的不一样！')
                 actual_total = self.account_center_page_details.get_actual_current_account_all_equipment()
                 self.assertEqual(expect_total, str(actual_total), '当前用户库存的总数和实际不一致！')
@@ -66,7 +58,5 @@ class TestCase153AccountCenterOverviewStock(unittest.TestCase):
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)
                 self.driver.wait()
-                cur.close()
-                connect.close()
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()

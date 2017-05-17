@@ -1,21 +1,21 @@
 import csv
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.global_search.global_account_search_page import GlobalAccountSearchPage
-from pages.global_search.global_complex_search_page import GlobalComplexSearchPage
 from pages.global_search.global_dev_search_page import GlobalDevSearchPage
 from pages.global_search.global_search_page_read_csv import GlobleSearchPageReadCsv
 from pages.global_search.search_sql import SearchSql
 
 
-# 全局搜索-高级搜索
 # author:孙燕妮
 
-class TestCase057GlobComplexSearchByAllCondi(unittest.TestCase):
+class TestCase029GlobAppAccountSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
@@ -27,7 +27,6 @@ class TestCase057GlobComplexSearchByAllCondi(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.global_search_page_read_csv = GlobleSearchPageReadCsv()
         self.search_sql = SearchSql()
-        self.global_complex_search_page = GlobalComplexSearchPage(self.driver, self.base_url)
         self.driver.wait(1)
         self.connect_sql = ConnectSql()
         self.driver.clear_cookies()
@@ -36,41 +35,40 @@ class TestCase057GlobComplexSearchByAllCondi(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_glob_complex_search_by_all_condi(self):
-        '''测试全局搜索-高级搜索-通过选择用户-基本信息+日期类型+设备状态全组合查找功能'''
-
+    def test_global_app_account_search(self):
+        '''通过csv测试全局搜索-搜索栏设备精确查找功能'''
         # 打开途强在线首页-登录页
         self.base_page.open_page()
-        # 登录
-        self.log_in_base.log_in()
+        self.log_in_base.log_in_jimitest()
         current_account = self.log_in_base.get_log_in_account()
-        # 点击全局搜索栏-高级搜素按钮
-        self.global_complex_search_page.click_complex_search()
+        self.global_dev_search_page.click_easy_search()
+        # 关闭
+        self.global_dev_search_page.close_search()
+        sleep(2)
 
-        csv_file = self.global_search_page_read_csv.read_csv('complex_search_data.csv')
+        self.global_dev_search_page.click_easy_search()
+        self.global_dev_search_page.click_app_account_search()
+
+        # 度数据
+        csv_file = self.global_search_page_read_csv.read_csv('global_search_app_account_data.csv')
         csv_data = csv.reader(csv_file)
+
         is_header = True
         for row in csv_data:
             if is_header:
                 is_header = False
                 continue
             search_data = {
-                'account': row[0],
-                'base_info': row[1],
-                'info': row[2],
-                'date_type': row[3],
-                'date': row[4],
-                'is_date': row[5],
-                'arrearage': row[6],
-                'no_active': row[7]
+                'account_info': row[0]
             }
-            self.global_dev_search_page.add_data_to_search_complex(search_data)
+            self.global_dev_search_page.app_account_easy_search(search_data)
+
             connect = self.connect_sql.connect_tuqiang_sql()
             # 创建数据库游标
             cur = connect.cursor()
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.account,o.userId,r.fullParent from user_relation r inner join user_organize o on r.userId = o.userId where o.account = '" + search_data['account'] + "' ;"
+            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "' ;"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
@@ -81,7 +79,34 @@ class TestCase057GlobComplexSearchByAllCondi(unittest.TestCase):
                     "userId": row[1],
                     "fullParent": row[2]
                 }
-                get_total_sql = self.search_sql.search_complex_sql(user_relation_id['userId'], search_data)
+
+                # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
+                get_lower_account_sql = "select userId from user_info where fullParentId like" + \
+                                        "'" + user_relation_id["fullParent"] + user_relation_id["userId"] + "%'" + ";"
+                print(get_lower_account_sql)
+                cur.execute(get_lower_account_sql)
+                # 读取数据
+                lower_account = cur.fetchall()
+                lower_account_list = [user_relation_id["userId"]]
+                for range1 in lower_account:
+                    for range2 in range1:
+                        lower_account_list.append(range2)
+                lower_account_tuple = tuple(lower_account_list)
+
+                # 搜索下级用户绑定的所有app用户
+                get_app_account_sql = "SELECT m.bindUserId FROM equipment_mostly m WHERE m.userId in %s and m.bindUserId is not NULL " % str(
+                    lower_account_tuple)
+                print(get_app_account_sql)
+                cur.execute(get_app_account_sql)
+                # 读取数据
+                lower_app_account = cur.fetchall()
+                lower_app_account_list = []
+                for range1 in lower_app_account:
+                    for range2 in range1:
+                        lower_app_account_list.append(range2)
+                lower_app_account_tuple = tuple(lower_app_account_list)
+
+                get_total_sql = self.search_sql.search_account_sql(lower_app_account_tuple, search_data)
                 print(get_total_sql)
                 cur.execute(get_total_sql)
                 # 读取数据
@@ -93,7 +118,7 @@ class TestCase057GlobComplexSearchByAllCondi(unittest.TestCase):
                         total_list.append(range2)
                 total = len(total_list)
                 print('本次查询数据库的条数为：%s' % total)
-                web_total = self.global_complex_search_page.complex_search_result()
+                web_total = self.global_account_search_page.app_easy_search_results()
                 print('本次查询页面的条数是：%s' % web_total)
                 self.assertEqual(total, web_total)
 
@@ -101,7 +126,4 @@ class TestCase057GlobComplexSearchByAllCondi(unittest.TestCase):
             connect.close()
 
         csv_file.close()
-        # 关闭当前设备搜索对话框
-        self.global_dev_search_page.close_dev_search()
-        # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
+        self.global_dev_search_page.close_search()

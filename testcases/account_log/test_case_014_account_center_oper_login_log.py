@@ -1,5 +1,6 @@
 import csv
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
@@ -12,10 +13,10 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
-# 账户中心招呼栏业务日志-客户管理日志查询
+# 账户中心招呼栏业务日志-登录日志查询
 # author:孙燕妮
 
-class TestCase013AccountCenterOperCustLog(unittest.TestCase):
+class TestCase014AccountCenterOperLoginLog(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -35,21 +36,20 @@ class TestCase013AccountCenterOperCustLog(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_account_center_oper_cust_log(self):
+    def test_account_center_login_log(self):
         self.base_page.open_page()
         self.log_in_base.log_in()
         # 获取登录账号的用户名
         current_account = self.log_in_base.get_log_in_account()
 
         # 点击招呼栏-业务日志
-        self.account_center_page_operation_log.business_log()
+        self.account_center_page_operation_log.click_help_button()
+        self.account_center_page_operation_log.click_log_in_log()
         # 判断当前页面是否正确跳转至业务日志页面
-        expect_url = self.base_url + "/business/ConmmandLogs/toBusinessLog"
+        expect_url = self.base_url + "/userFeedback/toHelp"
         self.assertEqual(expect_url, self.driver.get_current_url(), "当前页面跳转错误")
-        # 点击客户管理
-        self.account_center_page_operation_log.log_cust_modify()
 
-        csv_file = self.account_center_page_read_csv.read_csv('search_cus_manager_log_data.csv')
+        csv_file = self.account_center_page_read_csv.read_csv('search_log_in_log_data.csv')
         csv_data = csv.reader(csv_file)
         is_header = True
         for row in csv_data:
@@ -57,19 +57,18 @@ class TestCase013AccountCenterOperCustLog(unittest.TestCase):
                 is_header = False
                 continue
             search_data = {
-                'type': row[0],
+                'account': row[0],
                 'begin_time': row[1],
-                'end_time': row[2],
-                'more':row[3]
+                'end_time': row[2]
             }
-            self.account_center_page_operation_log.add_data_to_search_cus_manager_log(search_data)
+            self.account_center_page_operation_log.add_data_to_search_log_in_log(search_data)
 
             connect = self.connect_sql.connect_tuqiang_sql()
             # 创建数据库游标
             cur = connect.cursor()
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.account,o.userId,r.fullParent from user_relation r inner join user_organize o on r.userId = o.userId where o.account = '" + current_account + "' ;"
+            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "' ;"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
@@ -82,7 +81,7 @@ class TestCase013AccountCenterOperCustLog(unittest.TestCase):
                 }
 
                 # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
-                get_lower_account_sql = "select userId from user_relation where fullParent like" + \
+                get_lower_account_sql = "select userId from user_info where fullParentId like" + \
                                         "'" + user_relation_id["fullParent"] + user_relation_id["userId"] + "%'" + ";"
                 cur.execute(get_lower_account_sql)
                 # 读取数据
@@ -92,7 +91,7 @@ class TestCase013AccountCenterOperCustLog(unittest.TestCase):
                     for range2 in range1:
                         lower_account_list.append(range2)
                 lower_account_tuple = tuple(lower_account_list)
-                get_total_sql = self.search_sql.search_cus_manager_sql(lower_account_tuple, search_data)
+                get_total_sql = self.search_sql.search_log_in_sql(lower_account_tuple, search_data)
                 print(get_total_sql)
                 cur.execute(get_total_sql)
                 # 读取数据
@@ -104,7 +103,7 @@ class TestCase013AccountCenterOperCustLog(unittest.TestCase):
                         total_list.append(range2)
                 total = len(total_list)
                 print('本次查询数据库的条数为：%s' % total)
-                web_total = self.account_center_page_operation_log.count_curr_busi_cust_log_num()
+                web_total = self.account_center_page_operation_log.get_log_in_log_total()
                 print('本次查询页面的条数是：%s' % web_total)
                 self.assertEqual(total, web_total)
 

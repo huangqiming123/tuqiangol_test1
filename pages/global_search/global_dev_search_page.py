@@ -16,21 +16,19 @@ class GlobalDevSearchPage(BasePage):
 
     # 全局搜索栏-设备搜索按钮
     def click_easy_search(self):
-        self.driver.click_element("x,//*[@id='complexQuery']/div/div/button")
+        self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/div[1]/a")
         self.driver.wait(1)
 
     # 全局搜索栏-设备搜索
     def device_easy_search(self, search_keyword):
-        if search_keyword == '':
-            pass
-        else:
-            # 在设备名称/imei输入框内输入搜索关键词信息
-            self.driver.operate_input_element('x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/input',
-                                              search_keyword)
-            # 点击搜索设备按钮
-        self.driver.click_element(
-                'x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/span/button[1]')
-        sleep(10)
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+
+        # 在设备名称/imei输入框内输入搜索关键词信息
+        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_keyword)
+        # 点击搜索设备按钮
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        sleep(5)
+        self.driver.default_frame()
 
     # 设备搜索对话框-设备搜索按钮
     def click_dev_dial_search(self):
@@ -54,33 +52,21 @@ class GlobalDevSearchPage(BasePage):
     # 设备搜索-获取搜索结果共多少条
     def easy_search_result(self):
         # 当搜索结果只有一条时，必可获取到用户关系--一级用户--查看
-        try:
-            # 获取用户关系
-            self.driver.get_element("x,//*[@id='complex_device_user_realtion_tbody']/tr[1]/td[7]/a[2]")
-            result_num = 1
-            return result_num
-        # 当搜索结果大于1条时
-        except:
-            '''
-            # 将滚动条拖动到分页栏
-            target = self.driver.get_element("complex_paging_device")
-            self.driver.execute_script(target)  # 拖动到可见的元素去
-
-            # 设置每页10条
-            self.base_page.select_per_page_number(10)
-            # 获取搜索结果共分几页
-            total_pages_num =  self.base_page.get_total_pages_num("x,//*[@id='complex_paging_device']")
-            # 获取搜索结果最后一页有几条
-            last_page_logs_num = self.base_page.last_page_logs_num("x,//*[@id='complex_device_tbody']",
-                                                                   "x,//*[@id='complex_paging_device']")
-            # 计算当前搜索结果共几条
-            total_num = self.base_page.total_num(total_pages_num,last_page_logs_num)'''
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="complex_paging_device"]').get_attribute('style')
+        b = self.driver.get_element('x,//*[@id="complex_device_table_nodata"]').get_attribute('style')
+        if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            try:
-                total = new_paging.get_total_number("x,//*[@id='complex_paging_device']",
-                                                    "x,//*[@id='complex_device_tbody']")
-                return total
-            except:
+            total = new_paging.get_total_number('x,//*[@id="complex_paging_device"]',
+                                                'x,//*[@id="complex_device_tbody"]')
+            self.driver.default_frame()
+            return total
+        else:
+            if a == 'display: none;' and b == 'display: none;':
+                self.driver.default_frame()
+                return 1
+            elif a == 'display: none;' and b == 'display: block;':
+                self.driver.default_frame()
                 return 0
 
     # 设备详情-用户关系操作
@@ -558,10 +544,11 @@ class GlobalDevSearchPage(BasePage):
 
     def account_easy_search(self, search_data):
         # 填写用户搜索的条件，进行搜索
-        self.driver.operate_input_element('x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/input',
-                                          search_data['account_info'])
-        self.driver.click_element('x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/span/button[1]')
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_data['account_info'])
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
         sleep(5)
+        self.driver.default_frame()
 
     def get_account_before_reset_password(self):
         # 获取重置密码的用户名
@@ -572,6 +559,7 @@ class GlobalDevSearchPage(BasePage):
 
     def add_data_to_search_complex(self, search_data):
         # 增加数据去搜索高级
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
         # 点击选择用户
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[2]/div/div[1]/span/button')
         sleep(1)
@@ -580,7 +568,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.click_element('x,//*[@id="complex_globalSearch_btn"]')
         sleep(2)
         # 点击搜索结果
-        self.driver.click_element("c,autocompleter-item")
+        self.driver.click_element('c,autocompleter-item')
         sleep(2)
 
         # 选择基本信息
@@ -631,11 +619,10 @@ class GlobalDevSearchPage(BasePage):
                                               search_data['info'])
 
         elif search_data['base_info'] == '':
-            self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/div/ul/li[7]')
-            sleep(1)
             self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/span[2]')
 
         # 选择日期类型
+        sleep(3)
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[4]/div/div/span[2]')
         sleep(1)
         if search_data['date_type'] == '':
@@ -676,8 +663,42 @@ class GlobalDevSearchPage(BasePage):
         sleep(10)
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[6]/button[2]')
 
+        self.driver.default_frame()
+
     def device_easy_searchs(self, param):
         self.driver.operate_input_element('x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/input',
                                           param)
         self.driver.click_element('x,//*[@id="searchUserEquipment"]/div/div/div[2]/div[1]/div[1]/div/span/button[1]')
         sleep(4)
+
+    def close_search(self):
+        self.driver.click_element('c,layui-layer-ico')
+
+    def click_dev_search(self):
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[2]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_senior_search_button(self):
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[2]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_app_account_search(self):
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def app_account_easy_search(self, search_data):
+        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_data['account_info'])
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/button')
+        sleep(5)
+        self.driver.default_frame()

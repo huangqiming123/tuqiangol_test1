@@ -46,6 +46,10 @@ class TestCase156AccountCenterOverviewForm(unittest.TestCase):
                 expect_url = self.driver.get_current_url()
                 actual_url = self.base_url + '/deviceReport/statisticalReport'
                 self.assertEqual(expect_url, actual_url, '点击统计报表后，实际的url和期望的不一样！')
+
+                # 验证文本
+                actual_text = self.account_center_page_details.click_report_after_text()
+                self.assertEqual('统计报表', actual_text)
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

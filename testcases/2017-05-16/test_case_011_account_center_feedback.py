@@ -52,6 +52,7 @@ class TestCase011AccountCenterFeedback(unittest.TestCase):
                 "contact": row[2],
                 "phone": row[3]
             }
+            self.driver.switch_to_frame('x,//*[@id="feedbackReportFrame"]')
 
             # 提交意见反馈
             submit_status = self.account_center_page_navi_bar.help_feedback(feedback_data["suggest_type"],
@@ -60,6 +61,7 @@ class TestCase011AccountCenterFeedback(unittest.TestCase):
                                                                             feedback_data["phone"])
 
             # 判断反馈意见提交状态是否成功
+            self.driver.default_frame()
             expect_status = '感谢你的反馈意见'
             self.assertEqual(expect_status, submit_status, "提交状态有误")
 

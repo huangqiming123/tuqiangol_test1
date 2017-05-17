@@ -44,7 +44,7 @@ class TestCase155AccountCenterOverviewControl(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 sleep(2)
                 expect_url = self.driver.get_current_url()
-                actual_url = self.base_url + '/index'
+                actual_url = self.base_url + '/console'
                 self.assertEqual(expect_url, actual_url, '点击控制台后，实际的url和期望的不一样！')
                 self.driver.close_current_page()
                 # 回到账户中心窗口

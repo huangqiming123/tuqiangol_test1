@@ -6,6 +6,7 @@ import datetime
 import math
 
 from pages.base.base_page import BasePage
+from pages.base.base_page_server import BasePageServer
 from pages.base.new_paging import NewPaging
 
 
@@ -18,19 +19,9 @@ class StatisticalFormPage(BasePage):
 
     def click_control_after_click_statistical_form_page(self):
         # 点击控制中心之后点击设置
-        current_handle = self.driver.get_current_window_handle()
-        self.driver.click_element('x,//*[@id="index"]/a')
+
+        self.driver.click_element('x,//*[@id="reportsManagement"]/a')
         sleep(2)
-
-        all_handle = self.driver.get_all_window_handles()
-
-        for handle in all_handle:
-            if handle != current_handle:
-                self.driver.switch_to_window(current_handle)
-                self.driver.close_window()
-                sleep(2)
-                self.driver.switch_to_window(handle)
-                self.driver.click_element('x,//*[@id="reportsManagement"]/a')
 
     def actual_url_after_statistical_form(self):
         # 获取真实的url ，点击统计报表之后

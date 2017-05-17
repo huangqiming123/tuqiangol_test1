@@ -1,5 +1,6 @@
 import csv
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
@@ -89,6 +90,8 @@ class TestCase018AccountCenterFastSaleAddCust(unittest.TestCase):
             # 验证是否操作成功
             self.assertIn("操作成功", status, "操作失败")
 
+            self.driver.click_element('x,//*[@id="addRole"]/div/div/div[3]/button[2]')
+            sleep(2)
             # 查找新增成功的客户
             self.account_center_page_details.search_cust(add_info["account"])
 
@@ -106,6 +109,26 @@ class TestCase018AccountCenterFastSaleAddCust(unittest.TestCase):
             # 通过弹出框状态验证是否销售成功
             sale_status_text = self.account_center_page_details.get_sale_status()
             self.assertIn("操作成功", sale_status_text, "销售失败")
+
+            # 转移设备
+            self.driver.click_element('x,//*[@id="device"]/a')
+            sleep(2)
+            self.driver.operate_input_element('x,//*[@id="treeDemo_cusTreeKey"]', add_info['account'])
+            # 搜索
+            self.driver.click_element('x,//*[@id="treeDemo_cusTreeSearchBtn"]')
+            self.driver.wait()
+            # 选中查询结果
+            self.driver.click_element("c,autocompleter-item")
+            self.driver.wait(1)
+
+            self.driver.operate_input_element('x,//*[@id="searchIMEI"]', search_info['device_imei'])
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+            sleep(3)
+
+            self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[2]')
+            sleep(2)
+
+
         csv_file.close()
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()

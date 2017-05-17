@@ -3,6 +3,7 @@ from time import sleep
 import datetime
 
 from pages.base.base_page import BasePage
+from pages.base.base_page_server import BasePageServer
 from pages.base.new_paging import NewPaging
 
 
@@ -451,10 +452,12 @@ class AlarmInfoPage(BasePage):
         self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
         # 点击搜索
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[3]/div/div[1]/span/button')
+        sleep(2)
         # 输入数据
         self.driver.operate_input_element('x,//*[@id="cusTreeKey"]', data['user_name'])
         self.driver.click_element('x,//*[@id="cusTreeSearchBtn"]')
         # 点击搜索的第一个
+        sleep(2)
         self.driver.click_element('c,autocompleter-item')
 
         # 点击设备搜索

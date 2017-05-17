@@ -44,12 +44,17 @@ class TestCase168AccountCenterOverviewInactive(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 sleep(2)
                 expect_url = self.driver.get_current_url()
-                actual_url = self.base_url + '/device/toDevices?flag=inactive'
+                actual_url = self.base_url + '/device/toDeviceManage?statusFlag=inactive&lowerDevFlag=1'
                 self.assertEqual(expect_url, actual_url, '点击未激活后，实际的url和期望的不一样！')
                 sleep(2)
 
-                expect_total_inactive = self.account_center_page_details.get_total_all_inactive_equipment()
+                self.assertEqual('未激活', self.driver.get_text(
+                    'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/span[2]'))
+                self.assertEqual(True, self.driver.get_element('x,//*[@id="lowerFlag"]/div/input').is_selected())
+
+                expect_total_inactive = self.account_center_page_details.get_total_dev_number_after_ckick_all_dev_number()
                 self.assertEqual(actual_total_inctive, str(expect_total_inactive), '账号总览统计未激活数量错误')
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

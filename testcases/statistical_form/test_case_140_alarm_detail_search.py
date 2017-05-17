@@ -5,9 +5,7 @@ from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.alarm_info.alarm_info_page import AlarmInfoPage
 from pages.base.base_page import BasePage
-from pages.base.base_paging_function import BasePagingFunction
 from pages.base.lon_in_base import LogInBase
-from pages.command_management.command_management_page import CommandManagementPage
 from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
@@ -25,8 +23,7 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
-        self.command_management_page = CommandManagementPage(self.driver, self.base_url)
-        self.base_paging_function = BasePagingFunction(self.driver, self.base_url)
+
         self.alarm_info_page = AlarmInfoPage(self.driver, self.base_url)
         self.statistical_form_page_read_csv = StatisticalFormPageReadCsv()
         self.log_in_base = LogInBase(self.driver, self.base_url)
@@ -85,7 +82,7 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
             # 创建游标
             cursor = connect.cursor()
             # 查询搜索用户的uesrID
-            get_user_id_sql = "SELECT user_organize.userId FROM user_organize WHERE user_organize.account ='" + data[
+            get_user_id_sql = "SELECT userId FROM user_info WHERE account ='" + data[
                 'user_name'] + "';"
             # 执行sql
             cursor.execute(get_user_id_sql)
@@ -93,7 +90,7 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
             user_id = get_user_id[0][0]
 
             # 当前用户下设置
-            get_current_user_all_equipment = "SELECT a.imei FROM assets_device AS a WHERE a.userId = " + user_id + " and a.expiration > CURDATE();"
+            get_current_user_all_equipment = "SELECT a.imei FROM equipment_mostly AS a WHERE a.userId = " + user_id + " and a.expiration > CURDATE();"
             cursor.execute(get_current_user_all_equipment)
             all_equipment = cursor.fetchall()
 

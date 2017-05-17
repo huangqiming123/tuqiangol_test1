@@ -1,7 +1,7 @@
 class SearchSql(object):
     def search_equipment_manager_sql(self, lower_account_tuple, search_data):
         # 搜索设备管理的sql语句
-        sql = "select l.id from operation_log l INNER JOIN user_organize o ON l.created_by = o.userId where l.created_by in %s and l.serviceType = '1'" % str(
+        sql = "select l.id from operation_log l INNER JOIN user_info o ON l.created_by = o.userId where l.created_by in %s and l.serviceType = '1'" % str(
             lower_account_tuple)
         if search_data['type'] == '5':
             sql += " and l.operType = '5'"
@@ -31,7 +31,7 @@ class SearchSql(object):
 
     def search_cus_manager_sql(self, lower_account_tuple, search_data):
         # 客户管理日志
-        sql = "select l.id from operation_log l INNER JOIN user_organize o ON l.created_by = o.userId where l.created_by in " + str(
+        sql = "select l.id from operation_log l INNER JOIN user_info o ON l.created_by = o.userId where l.created_by in " + str(
             lower_account_tuple) + " and l.serviceType = '2' and l.operType = '" + search_data['type'] + "'"
 
         if search_data['begin_time'] != '':
@@ -65,7 +65,7 @@ class SearchSql(object):
 
     def search_massage_sql(self, current_account, search_data):
         # 搜索消息的sql
-        sql = "select m.id from user_message m inner join user_organize o on o.userId = m.userId where o.account = '%s'" % current_account
+        sql = "select m.id from user_message m inner join user_info o on o.userId = m.userId where o.account = '%s'" % current_account
 
         if search_data['imei'] != '':
             sql += " and m.imeis like '%" + search_data['imei'] + "%'"

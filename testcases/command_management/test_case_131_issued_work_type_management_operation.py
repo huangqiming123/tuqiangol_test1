@@ -67,17 +67,3 @@ class TestCase113IssuedWorkTypeManagementOperation(unittest.TestCase):
         expect_title_text_click_issued_work_type = '下发工作模式'
         self.assertEqual(expect_title_text_click_issued_work_type,
                          self.command_management_page.actual_text_click_look_equipment())
-
-        # 点击序号前面的框
-        self.command_management_page.click_list_input_issued_work_type()
-        # 检查框框有没有被选中
-        try:
-            self.assertEqual(True,self.command_management_page.actual_click_list_input_issued_work_type())
-        except:
-            print('无操作')
-
-        # 点击选中取消指令
-        self.command_management_page.click_cancel_issued()
-
-        # 点击本次查询全部取消
-        self.command_management_page.click_cancel_all_issued()

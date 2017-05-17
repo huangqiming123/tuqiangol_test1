@@ -1,10 +1,11 @@
+from time import sleep
+
 from automate_driver.automate_driver import AutomateDriver
-from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
 # 账户中心页面-招呼栏的元素及操作
 # author:孙燕妮
-from pages.base.base_page_server import BasePageServer
+
 
 
 class AccountCenterNaviBarPages(BasePage):
@@ -89,8 +90,10 @@ class AccountCenterNaviBarPages(BasePage):
 
     # 设备管理-退出系统
     def dev_manage_usr_logout(self):
-        # 点击退出系统
-        self.driver.click_element("p,退出系统")
+        sleep(2)
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[2]/header/div/div[2]/div[2]/div[2]/span/a'))
+        sleep(2)
+        self.driver.click_element('p,退出系统')
         self.driver.wait()
         # 定位到弹出框内容
         logout_text = self.driver.get_element("c,layui-layer-content").text

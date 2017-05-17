@@ -147,7 +147,6 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
                                        float(self.statistical_form_page.get_mileage_with_day_total_mile()))
 
             # 点击导出
-            self.statistical_form_page.click_export_mileage_form()
             self.driver.default_frame()
             cursor_02.close()
             connect_02.close()

@@ -1,6 +1,7 @@
 from time import sleep
 
 from pages.base.base_page import BasePage
+from pages.base.base_page_server import BasePageServer
 from pages.base.base_paging_function import BasePagingFunction
 from pages.base.new_paging import NewPaging
 
@@ -74,19 +75,9 @@ class CommandManagementPage(BasePage):
 
     def click_control_after_click_command_management(self):
         # 点击控制台后点击指令管理
-        current_handle = self.driver.get_current_window_handle()
-        self.driver.click_element(self.CONTROL_SELECTOR)
-        sleep(2)
 
-        all_handle = self.driver.get_all_window_handles()
+        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/a[1]')
 
-        for handle in all_handle:
-            if handle != current_handle:
-                self.driver.switch_to_window(current_handle)
-                self.driver.close_window()
-                sleep(2)
-                self.driver.switch_to_window(handle)
-                self.driver.click_element(self.COMMAND_MANAGEMENT_SELECTOR)
 
     def actual_url_click_command_management(self):
         # 获取点击指令管理之后的url
@@ -234,7 +225,7 @@ class CommandManagementPage(BasePage):
         # 删除新建的模板
         self.driver.click_element('x,//*[@id="templateBody"]/tr[1]/td[5]/a[2]')
         sleep(1)
-        self.driver.click_element('x,/html/body/div[10]/div[3]/a[1]')
+        self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
 
     def work_template_operation_revise(self):
@@ -255,17 +246,17 @@ class CommandManagementPage(BasePage):
 
     def actual_text_after_click_delete(self):
         # 点击删除之后，获取删除框的文本
-        actual_text = self.driver.get_text('x,/html/body/div[10]/div[3]/a[1]')
+        actual_text = self.driver.get_text('c,layui-layer-btn0')
         return actual_text
 
     def cancel_work_template_operation_delete(self):
         # 点击取消删除
-        self.driver.click_element('x,/html/body/div[10]/div[3]/a[2]')
+        self.driver.click_element('c,layui-layer-btn1')
         sleep(3)
 
     def close_work_template_operation_delete(self):
         # 点击关闭删除
-        self.driver.click_element('x,/html/body/div[10]/span/a')
+        self.driver.click_element('c,layui-layer-setwin')
         sleep(3)
 
     def ensure_work_template_operation_delete(self):

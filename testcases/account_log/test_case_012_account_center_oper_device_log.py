@@ -40,9 +40,10 @@ class TestCase012AccountCenterOperDeviceLog(unittest.TestCase):
         current_account = self.log_in_base.get_log_in_account()
 
         # 点击招呼栏-业务日志
-        self.account_center_page_operation_log.business_log()
+        self.account_center_page_operation_log.click_help_button()
+        self.account_center_page_operation_log.click_business_log()
         # 判断当前页面是否正确跳转至业务日志页面
-        expect_url = self.base_url + "/business/ConmmandLogs/toBusinessLog"
+        expect_url = self.base_url + "/userFeedback/toHelp"
         self.assertEqual(expect_url, self.driver.get_current_url(), "当前页面跳转错误")
 
         csv_file = self.account_center_page_read_csv.read_csv('search_equipment_manager_log_data.csv')
@@ -65,7 +66,7 @@ class TestCase012AccountCenterOperDeviceLog(unittest.TestCase):
             cur = connect.cursor()
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.account,o.userId,r.fullParent from user_relation r inner join user_organize o on r.userId = o.userId where o.account = '" + current_account + "' ;"
+            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "' ;"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
@@ -78,7 +79,7 @@ class TestCase012AccountCenterOperDeviceLog(unittest.TestCase):
                 }
 
                 # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
-                get_lower_account_sql = "select userId from user_relation where fullParent like" + \
+                get_lower_account_sql = "select userId from user_info where fullParentId like" + \
                                         "'" + user_relation_id["fullParent"] + user_relation_id["userId"] + "%'" + ";"
                 cur.execute(get_lower_account_sql)
                 # 读取数据

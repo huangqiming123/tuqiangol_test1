@@ -111,7 +111,6 @@ class TestCase151SportStatisticalPakingNotShutDownForm(unittest.TestCase):
             self.assertEqual(chang_total_time_type, web_total_time)
 
             # 点击导出
-            self.statistical_form_page.click_export_paking_not_shut_down()
             self.driver.default_frame()
             cursor_02.close()
             connect_02.close()

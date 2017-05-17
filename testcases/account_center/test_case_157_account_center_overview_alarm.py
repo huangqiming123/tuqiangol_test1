@@ -48,6 +48,10 @@ class TestCase157AccountCenterOverviewAlarm(unittest.TestCase):
                 self.assertEqual(expect_url, actual_url, '点击围栏后，实际的url和期望的不一样！')
                 actual_text = self.account_center_page_details.get_actual_text_after_click_alarm()
                 self.assertEqual('区域预警', actual_text, '点击围栏后，页面没有跳转到围栏设置页面')
+
+                # 验证区域预警有没有被选中
+                value = self.account_center_page_details.click_safearea_get_vaule()
+                self.assertEqual('active', value)
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

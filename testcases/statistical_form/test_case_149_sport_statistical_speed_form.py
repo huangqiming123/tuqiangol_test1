@@ -71,7 +71,6 @@ class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
             }
             self.statistical_form_page.add_data_to_search_over_speed(search_data)
             self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
-
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
 
             # 连接另一个数据库
@@ -92,7 +91,6 @@ class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
             self.assertEqual(total, web_total)
 
             # 点击导出
-            self.statistical_form_page.click_export_over_form()
             self.driver.default_frame()
             cursor_02.close()
             connect_02.close()

@@ -50,6 +50,9 @@ class TestCase161AccountCenterOverviewSetUpLandmark(unittest.TestCase):
                 actual_text = self.account_center_page_details.get_actual_text_after_click_set_up_landmark()
                 self.assertEqual('标注点', actual_text, '点击地标设置后，页面没有跳转到地标设置页面上')
 
+                self.assertEqual('active',
+                                 self.driver.get_element('x,//*[@id="safemenu"]/li[2]').get_attribute('class'))
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

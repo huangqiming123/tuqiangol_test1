@@ -42,27 +42,8 @@ class TestCase101DevManageDevComplexSearch(unittest.TestCase):
         # 登录
         self.log_in_base.log_in()
         current_account = self.log_in_base.get_log_in_account()
-        # 获取当前窗口句柄
-        account_center_handle = self.driver.get_current_window_handle()
-        # 点击进入控制台
-        self.dev_manage_page.enter_console()
-        # 获取当前所有窗口句柄
-        all_handles = self.driver.get_all_window_handles()
-        for handle in all_handles:
-            if handle != account_center_handle:
-                # 切换到账户中心窗口
-                self.driver.switch_to_window(account_center_handle)
-                self.driver.wait(1)
-                # 关闭账户中心窗口
-                self.driver.close_current_page()
-                # 回到控制台窗口
-                self.driver.switch_to_window(handle)
-                self.driver.wait()
 
-        # 点击进入设备管理
         self.dev_manage_page.enter_dev_manage()
-        # 点击更多筛选条件
-        self.dev_manage_page.more_search_info()
 
         csv_file = self.dev_manage_page_read_csv.read_csv('dev_search_info.csv')
         csv_data = csv.reader(csv_file)
@@ -82,7 +63,11 @@ class TestCase101DevManageDevComplexSearch(unittest.TestCase):
                 'choose_time': row[7],
                 'begin_time': row[8],
                 'end_time': row[9],
-                'next': row[10]
+                'next': row[10],
+                'band_status': row[11],
+                'dev_mold': row[12],
+                'dev_group': row[13],
+                'sn': row[14]
             }
             self.dev_manage_page.add_data_to_search_dev(search_data)
             connect = self.connect_sql.connect_tuqiang_sql()
@@ -90,7 +75,7 @@ class TestCase101DevManageDevComplexSearch(unittest.TestCase):
             cur = connect.cursor()
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.account,o.userId,r.fullParent from user_relation r inner join user_organize o on r.userId = o.userId where o.account = '" + current_account + "' ;"
+            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "' ;"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
@@ -103,7 +88,7 @@ class TestCase101DevManageDevComplexSearch(unittest.TestCase):
                 }
 
                 # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
-                get_lower_account_sql = "select userId from user_relation where fullParent like" + \
+                get_lower_account_sql = "select userId from user_info where fullParentId like" + \
                                         "'" + user_relation_id["fullParent"] + user_relation_id["userId"] + "%'" + ";"
                 cur.execute(get_lower_account_sql)
                 # 读取数据
@@ -130,6 +115,6 @@ class TestCase101DevManageDevComplexSearch(unittest.TestCase):
                 print('本次查询页面的条数是：%s' % web_total)
                 self.assertEqual(total, web_total)
 
+            cur.close()
+            connect.close()
         csv_file.close()
-        # 退出登录
-        self.account_center_page_navi_bar.dev_manage_usr_logout()

@@ -2,9 +2,12 @@ import csv
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver
+from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
+from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base import LogInBase
+from pages.base.lon_in_base_server import LogInBaseServer
 from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
@@ -139,7 +142,6 @@ class TestCase147SportStatisticalOverview(unittest.TestCase):
             web_stay_total = self.statistical_form_page.get_total_search_stay_total()
             self.assertEqual(str(total_stay), web_stay_total)
             # 导出
-            self.statistical_form_page.export_sport_overview_data()
             self.driver.default_frame()
             cursor_02.close()
             connect_02.close()

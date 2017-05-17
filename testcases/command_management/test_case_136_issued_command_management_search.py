@@ -39,7 +39,7 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
-        self.log_in_base.log_in_jimitest()
+        self.log_in_base.log_in()
         self.current_account = self.log_in_base.get_log_in_account()
 
         # 登录之后点击控制台，然后点击指令管理
@@ -87,7 +87,7 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
             # 建立游标
             cursor = connect.cursor()
             # 查询登录用户的ID 和 父ID
-            get_current_user_id = "select o.userId,r.fullParent from user_relation r inner join user_organize o on r.userId = o.userId where o.account = '" + self.current_account + "';"
+            get_current_user_id = "select o.userId,o.fullParentId from user_info o where o.account = '" + self.current_account + "';"
             # 执行
             cursor.execute(get_current_user_id)
             user = cursor.fetchall()
@@ -97,7 +97,7 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
                     'fullparent': row[1]
                 }
                 # 查询当前登录用户的全部下级
-                get_next_id_sql = "select userId from user_relation where fullParent like" + \
+                get_next_id_sql = "select userId from user_info where fullParentId like" + \
                                   "'" + user_info["fullparent"] + user_info["id"] + "%'" + ";"
                 # 执行sql脚本
                 cursor.execute(get_next_id_sql)

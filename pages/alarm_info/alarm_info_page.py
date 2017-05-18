@@ -455,10 +455,12 @@ class AlarmInfoPage(BasePage):
         sleep(2)
         # 输入数据
         self.driver.operate_input_element('x,//*[@id="cusTreeKey"]', data['user_name'])
+        sleep(1)
         self.driver.click_element('x,//*[@id="cusTreeSearchBtn"]')
         # 点击搜索的第一个
         sleep(2)
         self.driver.click_element('c,autocompleter-item')
+        sleep(2)
 
         # 点击设备搜索
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
@@ -482,7 +484,7 @@ class AlarmInfoPage(BasePage):
         sleep(2)
         # 选择日期
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/span[2]')
-        sleep(1)
+        sleep(2)
         if data['choose_date'] == 'today':
             # 今天
             self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/div/ul/li[2]')
@@ -639,9 +641,9 @@ class AlarmInfoPage(BasePage):
         self.driver.click_element('x,/html/body/div/div[2]/div[3]/div[2]/div[3]/table/thead/tr/th/span')
         sleep(1)
         self.driver.default_frame()
-        self.driver.click_element('x,//*[@id="serAlarmTypeModal"]/div/div/div[2]/div/div/div/label/div/ins')
+        self.driver.click_element('x,//*[@id="serAlarmTypeModal"]/div/label/div/ins')
         sleep(1)
-        self.driver.click_element('x,//*[@id="serAlarmTypeModal"]/div/div/div[3]/button[1]')
+        self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
 
     def get_alarm_first_time(self):

@@ -38,9 +38,7 @@ class TestCase062CustManageCheckAccount(unittest.TestCase):
         self.driver.quit_browser()
 
     def test_cust_manage_check_account(self):
-        '''测试客户管理-新增用户'''
 
-        # 打开途强在线首页-登录页
         self.base_page.open_page()
 
         # 登录

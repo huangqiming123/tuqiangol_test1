@@ -24,7 +24,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
         self.base_page = BasePage(self.driver, self.base_url)
         self.alarm_info_page = AlarmInfoPage(self.driver, self.base_url)
         self.statistical_form_page_read_csv = StatisticalFormPageReadCsv()
-        self.log_in_base = LogInBase(self.driver,self.base_url)
+        self.log_in_base = LogInBase(self.driver, self.base_url)
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
 
@@ -105,8 +105,8 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
             # 创建游标
             cursor_02 = connect_02.cursor()
 
-            get_total_sql = "SELECT b.imei FROM(SELECT a.IMEI,a.USER_ID FROM alarm_info_user AS a WHERE a.CREATETIME BETWEEN  '" + self.alarm_info_page.get_first_time() + "' AND  '" + self.alarm_info_page.get_second_time() + "' and a.imei in " + str(
-                current_user_all_equipment) + " GROUP BY a.IMEI) b  where b.USER_ID = '%s'" % user_id
+            get_total_sql = "SELECT a.IMEI,a.USER_ID FROM alarm_info_user AS a WHERE a.CREATETIME BETWEEN  '" + self.alarm_info_page.get_first_time() + "' AND  '" + self.alarm_info_page.get_second_time() + "' and a.imei in " + str(
+                current_user_all_equipment) + " and a.USER_ID = " + user_id + " GROUP BY a.IMEI ;"
             # 执行sql
             print(get_total_sql)
             cursor_02.execute(get_total_sql)
@@ -115,7 +115,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
             for range1 in get_total:
                 for range2 in range1:
                     total_list.append(range2)
-            total = len(total_list)
+            total = len(total_list) / 2
 
             # 查询web端的总条数
             web_total = self.alarm_info_page.get_web_total_in_overview_search()

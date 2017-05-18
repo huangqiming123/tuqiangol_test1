@@ -57,6 +57,16 @@ class TestCase154AccountCenterOverviewTotal(unittest.TestCase):
 
                 dev_count = self.account_center_page_details.get_total_dev_number_after_ckick_all_dev_number()
                 self.assertEqual(expect_total, str(dev_count), '当前总进货数和实际数据库不一致！')
+
+                # 验证清空按钮
+                self.account_center_page_details.click_clear_all_button()
+                lower_user_input_value = self.account_center_page_details.get_lower_input_value()
+                self.assertEqual(False, lower_user_input_value)
+                # 点搜索
+                self.account_center_page_details.click_search_button()
+                lower_user_input_value_again = self.account_center_page_details.get_lower_input_value()
+                self.assertEqual(False, lower_user_input_value_again)
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

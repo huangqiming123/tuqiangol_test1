@@ -414,3 +414,17 @@ class AccountCenterDetailsPage(BasePageServer):
 
     def get_overtime_number(self):
         return self.driver.get_text('x,//*[@id="devExpired2"]')
+
+    def click_clear_all_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[2]')
+        sleep(2)
+
+    def get_lower_input_value(self):
+        return self.driver.get_element('x,//*[@id="lowerFlag"]/div/input').is_selected()
+
+    def click_search_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        sleep(2)
+
+    def click_active_get_text(self):
+        return self.driver.get_text('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/span[2]')

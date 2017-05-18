@@ -98,7 +98,6 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
                     total_time_list.append(total_list[n])
 
             # 断言查询的条
-            print(total_number_list)
             total = len(total_number_list)
             sleep(3)
             web_total = self.statistical_form_page.get_total_search_stay_form_number()

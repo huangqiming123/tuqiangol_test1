@@ -268,32 +268,60 @@ class StatisticalFormPage(BasePage):
             self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[3]/label[3]/div/ins')
 
         # 选择日期
-        self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/span[2]')
-        sleep(2)
-        if search_data['choose_date'] == 'yesterday':
-            # 选择昨天
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[3]')
-        elif search_data['choose_date'] == 'this_week':
-            # 选择这周
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[4]')
-        elif search_data['choose_date'] == 'last_week':
-            # 上周
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[5]')
-        elif search_data['choose_date'] == 'this_month':
-            # 本月
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[6]')
-        elif search_data['choose_date'] == 'last_month':
-            # 上月
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[7]')
-        elif search_data['choose_date'] == '':
-            # 填写
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[1]')
-            # 填写开始时间
-            self.driver.operate_input_element('x,//*[@id="startTime_mileage"]', search_data['begin_time'])
-            # 填写结束时间
-            self.driver.operate_input_element('x,//*[@id="endTime_mileage"]', search_data['end_time'])
-        elif search_data['choose_date'] == 'today':
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[1]/div/div/div/div/ul/li[2]')
+        if search_data['type'] == 'mile':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+            sleep(2)
+            if search_data['choose_date'] == 'yesterday':
+                # 选择昨天
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[3]')
+            elif search_data['choose_date'] == 'this_week':
+                # 选择这周
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[4]')
+            elif search_data['choose_date'] == 'last_week':
+                # 上周
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[5]')
+            elif search_data['choose_date'] == 'this_month':
+                # 本月
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[6]')
+            elif search_data['choose_date'] == 'last_month':
+                # 上月
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[7]')
+            elif search_data['choose_date'] == '':
+                # 填写
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[1]')
+                # 填写开始时间
+                self.driver.operate_input_element('x,//*[@id="startTime_mileage"]', search_data['begin_time'])
+                # 填写结束时间
+                self.driver.operate_input_element('x,//*[@id="endTime_mileage"]', search_data['end_time'])
+            elif search_data['choose_date'] == 'today':
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[2]')
+
+        elif search_data['type'] == 'day':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+            sleep(2)
+            if search_data['choose_date'] == 'yesterday':
+                # 选择昨天
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[2]')
+            elif search_data['choose_date'] == 'this_week':
+                # 选择这周
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[3]')
+            elif search_data['choose_date'] == 'last_week':
+                # 上周
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[4]')
+            elif search_data['choose_date'] == 'this_month':
+                # 本月
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[5]')
+            elif search_data['choose_date'] == 'last_month':
+                # 上月
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[6]')
+            elif search_data['choose_date'] == '':
+                # 填写
+                self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[1]')
+                # 填写开始时间
+                self.driver.operate_input_element('x,//*[@id="startTime_mileage"]', search_data['begin_time'])
+                # 填写结束时间
+                self.driver.operate_input_element('x,//*[@id="endTime_mileage"]', search_data['end_time'])
+
 
         # 点击搜索
         self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[3]/button')

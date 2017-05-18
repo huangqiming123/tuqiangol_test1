@@ -125,9 +125,12 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
                 if total_mile == 0:
                     self.assertEqual('0', self.statistical_form_page.get_mileage_total_oil())
                 else:
-                    get_total_oil = total_mile / 1000 / 100 * 8
-                    total_oil = '%.2f' % get_total_oil
-                    self.assertEqual(str(total_oil), self.statistical_form_page.get_mileage_total_oil())
+                    if self.statistical_form_page.get_mileage_total_oil() == '0':
+                        pass
+                    else:
+                        get_total_oil = total_mile / 1000 / 100 * 8
+                        total_oil = '%.2f' % get_total_oil
+                        self.assertEqual(str(total_oil), self.statistical_form_page.get_mileage_total_oil())
 
             elif search_data['type'] == 'day':
                 # 如果选择天

@@ -55,6 +55,7 @@ class TestCase170AccountCenterOverviewAttention(unittest.TestCase):
                 cur.execute(get_id_sql)
                 # 读取数据
                 user_relation = cur.fetchall()
+                print(user_relation)
                 user_id = user_relation[0][0]
                 actual_url = self.base_url + '/console?userId=%s&viewFlag=4' % user_id
                 cur.close()

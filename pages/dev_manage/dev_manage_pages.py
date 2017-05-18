@@ -953,10 +953,9 @@ class DevManagePages(BasePage):
         self.driver.operate_input_element('x,//*[@id="device_info_b"]/fieldset[2]/div[3]/div/input',
                                           data['install_preson'])
 
-        self.driver.click_element('x,//*[@id="device_info_form"]/div[3]/div/button')
-        sleep(3)
-
         self.driver.default_frame()
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(3)
 
     def get_dev_name(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')

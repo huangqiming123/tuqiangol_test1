@@ -54,6 +54,20 @@ class TestCase167AccountCenterOverviewActived(unittest.TestCase):
 
                 expect_total_actived = self.account_center_page_details.get_total_dev_number_after_ckick_all_dev_number()
                 self.assertEqual(actual_total_actived, str(expect_total_actived), '账号总览统计激活数量错误')
+
+                # 验证清空按钮
+                self.account_center_page_details.click_clear_all_button()
+                lower_user_input_value = self.account_center_page_details.get_lower_input_value()
+                self.assertEqual(False, lower_user_input_value)
+                get_text = self.account_center_page_details.click_active_get_text()
+                self.assertEqual('激活状态', get_text)
+                # 点搜索
+                self.account_center_page_details.click_search_button()
+                lower_user_input_value_again = self.account_center_page_details.get_lower_input_value()
+                self.assertEqual(False, lower_user_input_value_again)
+                get_text = self.account_center_page_details.click_active_get_text()
+                self.assertEqual('激活状态', get_text)
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

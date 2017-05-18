@@ -565,8 +565,9 @@ class GlobalDevSearchPage(BasePage):
         sleep(1)
         # 输入客户名称/账号
         self.driver.operate_input_element('x,//*[@id="complex_globalSearch_input"]', search_data['account'])
-        self.driver.click_element('x,//*[@id="complex_globalSearch_btn"]')
         sleep(2)
+        self.driver.click_element('x,//*[@id="complex_globalSearch_btn"]')
+        sleep(3)
         # 点击搜索结果
         self.driver.click_element('c,autocompleter-item')
         sleep(2)
@@ -699,6 +700,6 @@ class GlobalDevSearchPage(BasePage):
     def app_account_easy_search(self, search_data):
         self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_data['account_info'])
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/button')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/span/button')
         sleep(5)
         self.driver.default_frame()

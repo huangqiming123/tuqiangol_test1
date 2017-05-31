@@ -228,7 +228,7 @@ class StatisticalFormPage(BasePage):
 
     def click_mileage_form_button(self):
         # 点击里程报表按钮
-        self.driver.click_element('x,//*[@id="mileageReport"]/a')
+        self.driver.click_element('x,//*[@id="tracelReport"]/a')
         sleep(3)
 
     def actual_text_after_click_mileage_form_button(self):
@@ -237,9 +237,9 @@ class StatisticalFormPage(BasePage):
         return actual_text
 
     def add_data_to_search_mileage_form(self, search_data):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
         # 选择用户
-        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
         self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
@@ -248,24 +248,24 @@ class StatisticalFormPage(BasePage):
         sleep(2)
 
         # 选择设备
-        self.driver.clear_input('x,//*[@id="imeiInput_mileageReport"]')
+        self.driver.clear_input('x,//*[@id="imeiInput_travelReport"]')
         sleep(2)
-        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(1)
 
-        all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_mileageReport"]/li'))
+        all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_travelReport"]/li'))
         all_group_num = len(all_group_list)
         for n in range(1, all_group_num):
             sleep(1)
             self.driver.click_element(
                 'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
                     n + 1))
-        self.driver.click_element('x,//*[@id="treeModal_mileageReport"]/div[2]/label/div/ins')
-        self.driver.click_element('x,//*[@id="treeModal_mileageReport"]/div[2]/div/button[1]')
+        self.driver.click_element('x,//*[@id="treeModal_travelReport"]/div[2]/label/div/ins')
+        self.driver.click_element('x,//*[@id="treeModal_travelReport"]/div[2]/div/button[1]')
 
         # 选择类型
         if search_data['type'] == 'day':
-            self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[3]/label[3]/div/ins')
+            self.driver.click_element('x,//*[@id="TravelFrom"]/div[1]/div[3]/label[3]/div/ins')
 
         # 选择日期
         if search_data['type'] == 'mile':
@@ -290,9 +290,9 @@ class StatisticalFormPage(BasePage):
                 # 填写
                 self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[1]')
                 # 填写开始时间
-                self.driver.operate_input_element('x,//*[@id="startTime_mileage"]', search_data['begin_time'])
+                self.driver.operate_input_element('x,//*[@id="startTime_travel"]', search_data['begin_time'])
                 # 填写结束时间
-                self.driver.operate_input_element('x,//*[@id="endTime_mileage"]', search_data['end_time'])
+                self.driver.operate_input_element('x,//*[@id="endTime_travel"]', search_data['end_time'])
             elif search_data['choose_date'] == 'today':
                 self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[2]')
 
@@ -318,13 +318,13 @@ class StatisticalFormPage(BasePage):
                 # 填写
                 self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[1]')
                 # 填写开始时间
-                self.driver.operate_input_element('x,//*[@id="startTime_mileage"]', search_data['begin_time'])
+                self.driver.operate_input_element('x,//*[@id="startTime_travel"]', search_data['begin_time'])
                 # 填写结束时间
-                self.driver.operate_input_element('x,//*[@id="endTime_mileage"]', search_data['end_time'])
+                self.driver.operate_input_element('x,//*[@id="endTime_travel"]', search_data['end_time'])
 
 
         # 点击搜索
-        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[3]/button')
+        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[3]/button')
         sleep(5)
         self.driver.default_frame()
         '''

@@ -2,157 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_1101_account_center_modify_info_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_1102_account_center_modify_password_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_1103_account_center_visual_account_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_1104_account_center_visual_edit_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_1105_account_center_overview_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_1106_account_center_msg_edit_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_1101_command_manage_create_template.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_1102_command_manage_create_template_week_patterns.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_1103_command_manage_create_template_normal_mode.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_1104_command_manage_create_template_modify_template.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_1105_command_manage_issued_command.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_1101_cust_manage_add_cust_expection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_1102_cust_manage_add_cust_expection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_1103_cust_manage_search_cust.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_1104_cust_manage_edit_cust_expection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_1105_cust_manage_edit_cust_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_1106_cust_manage_transfer_cust_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_1107_cust_manage_batch_transfer_cust_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_1108_cust_manage_all_select.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1101_dev_manage_search_customer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1102_dev_manage_batch_upload_pictures.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1103_dev_manage_batch_sale.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1104_dev_manage_select_issued_command.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1105_dev_manage_batch_issued_command.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1106_dev_manage_select_set_up_work_command.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1107_dev_manage_all_set_up_work_command.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1108_dev_manage_edit_dev.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1109_dev_manage_sale_in_list.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1110_dev_manage_shut_down.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1111_dev_manage_starting_up.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1112_dev_manage_shut_down_by_next_user.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1113_dev_manage_starting_up_by_next_user.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_1114_dev_manage_unbundle_dev.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_1101_glob_search_check_marked_words.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_1102_glob_search_app_user_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_1103_glob_search_app_detail_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_1104_glob_search_user_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_1105_glob_search_user_detail.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_1106_glob_search_dev_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_1107_glob_search_dev_detail.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_1108_glob_search_dev_search_higher.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/login/test_case_1101_login_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/login/test_case_1102_login_forget_password_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_1101_safearea_switch.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_1102_safearea_paging.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_1103_safearea_expertion.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_1104_safearea_relevance.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_1105_safearea_mark_point_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_1106_safearea_mark_point_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_1101_sport_statistical_sport_overview_exception_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_1102_sport_statistical_mileage_form_exception_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_1103_sport_statistical_speed_form_exception_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_1104_sport_statistical_stay_form_exception_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_1105_sport_statistical_parking_form_exception_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_1106_sport_statistical_acc_form_exception_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_1107_alarm_overview_exception_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2101_statistical_form_mile_fom_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2102_statistical_form_over_speed_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2103_statistical_form_stay_form_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2105_statistical_form_acc_form_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2106_statistical_form_alarm_overview.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2107_statistical_form_alarm_detail.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automate_driver/automate_driver_server.py" afterPath="$PROJECT_DIR$/automate_driver/automate_driver_server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/connect_sql.py" afterPath="$PROJECT_DIR$/model/connect_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_page_read_csv.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_page_read_csv.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/search_sql.py" afterPath="$PROJECT_DIR$/pages/account_center/search_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py" afterPath="$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/command_management/command_management_page.py" afterPath="$PROJECT_DIR$/pages/command_management/command_management_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" afterPath="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/cust_manage_lower_account_page.py" afterPath="$PROJECT_DIR$/pages/cust_manage/cust_manage_lower_account_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/dev_manage/dev_manage_pages.py" afterPath="$PROJECT_DIR$/pages/dev_manage/dev_manage_pages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/global_search/global_account_search_page.py" afterPath="$PROJECT_DIR$/pages/global_search/global_account_search_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/global_search/global_dev_search_page.py" afterPath="$PROJECT_DIR$/pages/global_search/global_dev_search_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login/log_in_page_read_csv.py" afterPath="$PROJECT_DIR$/pages/login/log_in_page_read_csv.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login/login_page.py" afterPath="$PROJECT_DIR$/pages/login/login_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" afterPath="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/search_sql.py" afterPath="$PROJECT_DIR$/pages/statistical_form/search_sql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/statistical_form/alarm_detail_search_data.csv" afterPath="$PROJECT_DIR$/data/statistical_form/alarm_detail_search_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/statistical_form/alarm_overview_search_data.csv" afterPath="$PROJECT_DIR$/data/statistical_form/alarm_overview_search_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/statistical_form/sport_statistical_acc_search_data.csv" afterPath="$PROJECT_DIR$/data/statistical_form/sport_statistical_acc_search_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/statistical_form/sport_statistical_milage_form_search_data.csv" afterPath="$PROJECT_DIR$/data/statistical_form/sport_statistical_milage_form_search_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/statistical_form/sport_statistical_over_speed_search_dara.csv" afterPath="$PROJECT_DIR$/data/statistical_form/sport_statistical_over_speed_search_dara.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/statistical_form/sport_statistical_paking_not_shut_down_search_data.csv" afterPath="$PROJECT_DIR$/data/statistical_form/sport_statistical_paking_not_shut_down_search_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/statistical_form/sport_statistical_sport_overview_search_data.csv" afterPath="$PROJECT_DIR$/data/statistical_form/sport_statistical_sport_overview_search_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/statistical_form/sport_statistical_stay_search_data.csv" afterPath="$PROJECT_DIR$/data/statistical_form/sport_statistical_stay_search_data.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page_read_csv.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page_read_csv.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-04-21/test_case_139_alarm_overview_operation.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_139_alarm_overview_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-04-21/test_case_140_alarm_detail_search.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_140_alarm_detail_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-04-21/test_case_141_alarm_detail_handle.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_141_alarm_detail_handle.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-04-21/test_case_142_alarm_set_up.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_142_alarm_set_up.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-04-21/test_case_143_enclosure_set_up_add_enclosure.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_143_enclosure_set_up_add_enclosure.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-04-21/test_case_144_enclosure_set_up_operation.py" afterPath="$PROJECT_DIR$/testcases/2017-04-21/test_case_144_enclosure_set_up_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-12/test_case_075_cust_manage_my_dev_edit.py" afterPath="$PROJECT_DIR$/testcases/2017-05-12/test_case_075_cust_manage_my_dev_edit.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-12/test_case_077_cust_manage_my_dev_more.py" afterPath="$PROJECT_DIR$/testcases/2017-05-12/test_case_077_cust_manage_my_dev_more.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_109_console_dev_info_count_with_select_user.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_109_console_dev_info_count_with_select_user.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_110_console_vehicle_list_exact_search.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_110_console_vehicle_list_exact_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_111_console_vehicle_list_like_search.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_111_console_vehicle_list_like_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_114_console_vehicle_list_dev_operate.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_114_console_vehicle_list_dev_operate.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_115_console_map_dev_operate.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/console/test_case_115_console_map_dev_operate.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/set_up/test_case_121_black_car_address_library_add_black_car_address.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/set_up/test_case_121_black_car_address_library_add_black_car_address.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/set_up/test_case_122_black_car_address_library_list_operation.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/set_up/test_case_122_black_car_address_library_list_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/test_case_018_account_center_fast_sale_add_cust.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/test_case_018_account_center_fast_sale_add_cust.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/test_case_105_dev_manage_dev_batch_set_mode_single.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/test_case_105_dev_manage_dev_batch_set_mode_single.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-15/test_case_106_dev_manage_dev_batch_set_mode_many.py" afterPath="$PROJECT_DIR$/testcases/2017-05-15/test_case_106_dev_manage_dev_batch_set_mode_many.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-16/test_case_029_glob_dev_exact_search_details_dev_info.py" afterPath="$PROJECT_DIR$/testcases/2017-05-16/test_case_029_glob_dev_exact_search_details_dev_info.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-16/test_case_031_glob_dev_exact_search_details_dev_trans.py" afterPath="$PROJECT_DIR$/testcases/2017-05-16/test_case_031_glob_dev_exact_search_details_dev_trans.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-16/test_case_032_glob_dev_exact_search_details_dev_instr.py" afterPath="$PROJECT_DIR$/testcases/2017-05-16/test_case_032_glob_dev_exact_search_details_dev_instr.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-16/test_case_033_glob_dev_search_list.py" afterPath="$PROJECT_DIR$/testcases/2017-05-16/test_case_033_glob_dev_search_list.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-16/test_case_039_glob_account_exact_search_details_dev_sale.py" afterPath="$PROJECT_DIR$/testcases/2017-05-16/test_case_039_glob_account_exact_search_details_dev_sale.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-16/test_case_041_glob_account_exact_search_details_acc_trans.py" afterPath="$PROJECT_DIR$/testcases/2017-05-16/test_case_041_glob_account_exact_search_details_acc_trans.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-16/test_case_058_glob_app_account_exact_search_and_details.py" afterPath="$PROJECT_DIR$/testcases/2017-05-16/test_case_058_glob_app_account_exact_search_and_details.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2017-05-16/test_case_171_global_search_dev_arrearage_opeartion.py" afterPath="$PROJECT_DIR$/testcases/2017-05-16/test_case_171_global_search_dev_arrearage_opeartion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_009_account_center_modify_info.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_009_account_center_modify_info.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_023_account_center_visual_account.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_023_account_center_visual_account.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_153_account_center_overview_stock.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_153_account_center_overview_stock.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_154_account_center_overview_total.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_154_account_center_overview_total.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_155_account_center_overview_control.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_155_account_center_overview_control.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_156_account_center_overview_form.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_156_account_center_overview_form.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_157_account_center_overview_alarm.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_157_account_center_overview_alarm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_158_account_center_overview_next_guest.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_158_account_center_overview_next_guest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_159_account_center_overview_equipment_manager.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_159_account_center_overview_equipment_manager.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_160_account_center_overview_command.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_160_account_center_overview_command.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_161_account_center_overview_set_up_landmark.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_161_account_center_overview_set_up_landmark.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_162_account_center_overview_alarms.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_162_account_center_overview_alarms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_165_account_center_overview_coming_overtime.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_165_account_center_overview_coming_overtime.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_166_account_center_overtime.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_166_account_center_overtime.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_167_account_center_overview_actived.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_167_account_center_overview_actived.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_168_account_center_overview_inactive.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_168_account_center_overview_inactive.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_170_account_center_overview_attention.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_170_account_center_overview_attention.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_log/test_case_013_account_center_oper_cust_log.py" afterPath="$PROJECT_DIR$/testcases/account_log/test_case_013_account_center_oper_cust_log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_log/test_case_014_account_center_oper_login_log.py" afterPath="$PROJECT_DIR$/testcases/account_log/test_case_014_account_center_oper_login_log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_130_issued_work_type_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_130_issued_work_type_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_061_cust_manage_check_account.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_061_cust_manage_check_account.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_083_cust_manage_lower_account_operate.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_083_cust_manage_lower_account_operate.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/dev_manage/test_case_086_dev_manage_dev_search_by_imei.py" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_086_dev_manage_dev_search_by_imei.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/dev_manage/test_case_101_dev_manage_dev_complex_search.py" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_101_dev_manage_dev_complex_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/dev_manage/test_case_102_dev_manage_dev_operation_active_and_start.py" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_102_dev_manage_dev_operation_active_and_start.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/dev_manage/test_case_103_dev_manage_dev_operation_active_and_stop.py" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_103_dev_manage_dev_operation_active_and_stop.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/dev_manage/test_case_104_dev_manage_dev_operation_noactive_and_start.py" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_104_dev_manage_dev_operation_noactive_and_start.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/dev_manage/test_case_105_dev_manage_dev_operation_noactive_and_stop.py" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_105_dev_manage_dev_operation_noactive_and_stop.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/global_search/test_case_026_glob_account_search.py" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_026_glob_account_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/global_search/test_case_027_glob_dev_search.py" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_027_glob_dev_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/global_search/test_case_028_glob_complex_search.py" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_028_glob_complex_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/global_search/test_case_029_glob_app_account_search.py" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_029_glob_app_account_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_0004_mark_operation.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_0004_mark_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_138_alarm_overview_search.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_138_alarm_overview_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_140_alarm_detail_search.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_140_alarm_detail_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_148_sport_statistical_mileage_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_148_sport_statistical_mileage_form.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -187,17 +48,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_140_alarm_detail_search.py" />
-        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_138_alarm_overview_search.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_009_account_center_modify_info.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_155_account_center_overview_control.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_156_account_center_overview_form.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_153_account_center_overview_stock.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_154_account_center_overview_total.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_157_account_center_overview_alarm.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_158_account_center_overview_next_guest.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_159_account_center_overview_equipment_manager.py" />
         <option value="$PROJECT_DIR$/testcases/account_center/test_case_160_account_center_overview_command.py" />
         <option value="$PROJECT_DIR$/testcases/account_center/test_case_161_account_center_overview_set_up_landmark.py" />
         <option value="$PROJECT_DIR$/testcases/account_center/test_case_162_account_center_overview_alarms.py" />
@@ -238,6 +88,17 @@
         <option value="$PROJECT_DIR$/pages/safe_area/safe_area_page_read_csv.py" />
         <option value="$PROJECT_DIR$/pages/set_up/set_up_page_read_csv.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page_read_csv.py" />
+        <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_148_sport_statistical_mileage_form.py" />
+        <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
+        <option value="$PROJECT_DIR$/data/statistical_form/alarm_detail_search_data.csv" />
+        <option value="$PROJECT_DIR$/data/statistical_form/alarm_overview_search_data.csv" />
+        <option value="$PROJECT_DIR$/data/statistical_form/sport_statistical_acc_search_data.csv" />
+        <option value="$PROJECT_DIR$/data/statistical_form/sport_statistical_milage_form_search_data.csv" />
+        <option value="$PROJECT_DIR$/data/statistical_form/sport_statistical_over_speed_search_dara.csv" />
+        <option value="$PROJECT_DIR$/data/statistical_form/sport_statistical_paking_not_shut_down_search_data.csv" />
+        <option value="$PROJECT_DIR$/data/statistical_form/sport_statistical_sport_overview_search_data.csv" />
+        <option value="$PROJECT_DIR$/data/statistical_form/sport_statistical_stay_search_data.csv" />
       </list>
     </option>
   </component>
@@ -302,6 +163,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statistical_form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -334,11 +227,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="set_up" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,155 +241,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="safe_area" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="global_search" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cust_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="console" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="command_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alarm_manager" />
+              <option name="myItemId" value="statistical_form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -529,7 +274,7 @@
       <recent name="E:\git\tuqiangol_test\testcases\2017-05-12" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase028GlobComplexSearchByAllCondi.test_glob_complex_search_by_all_condi">
+  <component name="RunManager" selected="Python tests.Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form">
     <configuration default="false" name="Unittest TestCase026GlobAccountSearch.test_global_account_search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -545,28 +290,6 @@
       <option name="METHOD_NAME" value="test_global_account_search" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in TestCase026GlobAccountSearch" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/global_search" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/global_search/test_case_026_glob_account_search.py" />
-      <option name="CLASS_NAME" value="TestCase026GlobAccountSearch" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -626,6 +349,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/global_search/test_case_028_glob_complex_search.py" />
       <option name="CLASS_NAME" value="TestCase028GlobComplexSearchByAllCondi" />
       <option name="METHOD_NAME" value="test_glob_complex_search_by_all_condi" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangOL" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_148_sport_statistical_mileage_form.py" />
+      <option name="CLASS_NAME" value="TestCase148SportStatisticalMileageForm" />
+      <option name="METHOD_NAME" value="test_case_148_sport_statistical_mileage_form" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -759,18 +504,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase026GlobAccountSearch.test_global_account_search" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase026GlobAccountSearch" />
-      <item index="2" class="java.lang.String" itemvalue="Python.main_run" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase102DevManageDevOperationActiveAndStart.test_dev_manage_dev_operation_active_and_start" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase028GlobComplexSearchByAllCondi.test_glob_complex_search_by_all_condi" />
+      <item index="1" class="java.lang.String" itemvalue="Python.main_run" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase102DevManageDevOperationActiveAndStart.test_dev_manage_dev_operation_active_and_start" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase028GlobComplexSearchByAllCondi.test_glob_complex_search_by_all_condi" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase028GlobComplexSearchByAllCondi.test_glob_complex_search_by_all_condi" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase102DevManageDevOperationActiveAndStart.test_dev_manage_dev_operation_active_and_start" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main_run" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase026GlobAccountSearch.test_global_account_search" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase026GlobAccountSearch" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase028GlobComplexSearchByAllCondi.test_glob_complex_search_by_all_condi" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase102DevManageDevOperationActiveAndStart.test_dev_manage_dev_operation_active_and_start" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main_run" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase026GlobAccountSearch.test_global_account_search" />
       </list>
     </recent_temporary>
   </component>
@@ -953,25 +698,16 @@
       <option name="project" value="LOCAL" />
       <updated>1495093098320</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="修改代码">
+      <created>1496197228096</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1496197228096</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase026GlobAccountSearch_test_global_account_search - 2017.05.19 at 20h 44m 06s.xml">
-      <configuration name="Unittest TestCase026GlobAccountSearch.test_global_account_search" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase026GlobAccountSearch_test_global_account_search - 2017.05.19 at 20h 48m 34s.xml">
-      <configuration name="Unittest TestCase026GlobAccountSearch.test_global_account_search" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase026GlobAccountSearch_test_global_account_search - 2017.05.19 at 20h 49m 16s.xml">
-      <configuration name="Unittest TestCase026GlobAccountSearch.test_global_account_search" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase026GlobAccountSearch_test_global_account_search - 2017.05.19 at 20h 49m 39s.xml">
-      <configuration name="Unittest TestCase026GlobAccountSearch.test_global_account_search" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase028GlobComplexSearchByAllCondi_test_glob_complex_search_by_all_condi - 2017.05.19 at 21h 34m 02s.xml">
-      <configuration name="Unittest TestCase028GlobComplexSearchByAllCondi.test_glob_complex_search_by_all_condi" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase028GlobComplexSearchByAllCondi_test_glob_complex_search_by_all_condi - 2017.05.19 at 21h 35m 01s.xml">
       <configuration name="Unittest TestCase028GlobComplexSearchByAllCondi.test_glob_complex_search_by_all_condi" configurationId="tests" />
     </history-entry>
@@ -980,6 +716,21 @@
     </history-entry>
     <history-entry file="Unittest_TestCase102DevManageDevOperationActiveAndStart_test_dev_manage_dev_operation_active_and_start - 2017.05.19 at 21h 15m 32s.xml">
       <configuration name="Unittest TestCase102DevManageDevOperationActiveAndStart.test_dev_manage_dev_operation_active_and_start" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase148SportStatisticalMileageForm_test_case_148_sport_statistical_mileage_form - 2017.05.31 at 10h 25m 17s.xml">
+      <configuration name="Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase148SportStatisticalMileageForm_test_case_148_sport_statistical_mileage_form - 2017.05.31 at 10h 28m 05s.xml">
+      <configuration name="Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase148SportStatisticalMileageForm_test_case_148_sport_statistical_mileage_form - 2017.05.31 at 10h 40m 26s.xml">
+      <configuration name="Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase148SportStatisticalMileageForm_test_case_148_sport_statistical_mileage_form - 2017.05.31 at 10h 44m 14s.xml">
+      <configuration name="Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase148SportStatisticalMileageForm_test_case_148_sport_statistical_mileage_form - 2017.05.31 at 10h 48m 44s.xml">
+      <configuration name="Unittest TestCase148SportStatisticalMileageForm.test_case_148_sport_statistical_mileage_form" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_TestCase026GlobAccountSearch - 2017.05.19 at 20h 47m 28s.xml">
       <configuration name="Unittests in TestCase026GlobAccountSearch" configurationId="tests" />
@@ -992,24 +743,24 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20916754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18598525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116883" sideWeight="0.50842994" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26190478" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26623377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29220778" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26623377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1021,9 +772,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29220778" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26190478" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20916754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18598525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1050,18 +801,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/connect_sql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6028881">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/mysql_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1088,7 +832,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1124,7 +868,7 @@
         <state vertical-scroll-proportion="0.3013393">
           <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1154,14 +898,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/safe_area/safe_area_page_read_csv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06696428">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/login/log_in_page_read_csv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06696428">
           <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
@@ -1206,6 +942,132 @@
         <state vertical-scroll-proportion="0.06696428">
           <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/global_search/global_dev_search_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/login/log_in_page_read_csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06703911">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/connect_sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40223464">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1843576">
+          <caret line="202" column="20" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#22#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3323124">
+          <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/statistical_form_left_user_search.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/sport_statistical_stay_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32159266">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/sport_statistical_sport_overview_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27565083">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/sport_statistical_paking_not_shut_down_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32159266">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/sport_statistical_over_speed_search_dara.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32159266">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/sport_statistical_milage_form_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32159266">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/sport_statistical_acc_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32159266">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/alarm_overview_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32159266">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/alarm_detail_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.091883615">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_148_sport_statistical_mileage_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79173046">
+          <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

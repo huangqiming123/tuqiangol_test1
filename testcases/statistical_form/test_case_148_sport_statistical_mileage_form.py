@@ -12,7 +12,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 class TestCase148SportStatisticalMileageForm(unittest.TestCase):
     '''
-    用例第148条，运动统计 里程报表
+    用例第148条，运动统计 行程报表
     author:zhangAo
     '''
 
@@ -50,8 +50,8 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
         # 点击里程报表
         self.statistical_form_page.click_mileage_form_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
-        self.assertEqual('里程报表', self.statistical_form_page.actual_text_after_click_mileage_form_button())
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.assertEqual('行程报表', self.statistical_form_page.actual_text_after_click_mileage_form_button())
         self.driver.default_frame()
 
         # 读取查询数据
@@ -70,7 +70,7 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
                 'end_time': row[4]
             }
             self.statistical_form_page.add_data_to_search_mileage_form(search_data)
-            self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+            self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
 
             # 连接数据库
             # 连接数据库

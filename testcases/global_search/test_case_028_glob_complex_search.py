@@ -14,9 +14,6 @@ from pages.global_search.global_search_page_read_csv import GlobleSearchPageRead
 from pages.global_search.search_sql import SearchSql
 
 
-# 全局搜索-高级搜索
-# author:孙燕妮
-
 class TestCase028GlobComplexSearchByAllCondi(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
@@ -38,9 +35,7 @@ class TestCase028GlobComplexSearchByAllCondi(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_glob_complex_search_by_all_condi(self):
-        '''测试全局搜索-高级搜索-通过选择用户-基本信息+日期类型+设备状态全组合查找功能'''
-
+    def test_glob_complex_search_complex_search(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录
@@ -52,7 +47,6 @@ class TestCase028GlobComplexSearchByAllCondi(unittest.TestCase):
         sleep(2)
 
         self.global_dev_search_page.click_easy_search()
-        self.global_dev_search_page.click_dev_search()
 
         self.global_dev_search_page.click_senior_search_button()
 

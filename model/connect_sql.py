@@ -5,11 +5,11 @@ class ConnectSql(object):
     def connect_tuqiang_sql(self):
         # 连接图强测试环境的第一台数据库
         connect = pymysql.connect(
-            host='172.16.0.100',
+            host='172.16.0.110',
             port=3306,
-            user='tracker',
-            passwd='tracker',
-            db='tracker-web-mimi',
+            user='root',
+            passwd='123456',
+            db='tracker-web',
             charset='utf8'
         )
         return connect

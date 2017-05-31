@@ -54,19 +54,22 @@ class TestCase121BlackCarAddressLibraryAddBlackCarAddress(unittest.TestCase):
         sleep(2)
 
         # 断言右侧页面左上角的文本
-        expect_text_after_click_black_car_address='黑车地址库'
-        self.assertEqual(expect_text_after_click_black_car_address,self.set_up_page.check_text_after_click_black_car_address())
+        expect_text_after_click_black_car_address = '黑车地址库'
+        self.assertEqual(expect_text_after_click_black_car_address,
+                         self.set_up_page.check_text_after_click_black_car_address())
 
         # 点击创建黑车地址库
         self.set_up_page.click_add_black_car_address()
 
         # 断言打开的地图title的文本
-        expect_title_text_after_click_add_black_car_address='创建黑车地址'
-        self.assertEqual(expect_title_text_after_click_add_black_car_address,self.set_up_page.check_title_text_after_click_add_black_address())
+        expect_title_text_after_click_add_black_car_address = '创建黑车地址'
+        self.assertEqual(expect_title_text_after_click_add_black_car_address,
+                         self.set_up_page.check_title_text_after_click_add_black_address())
 
         # 点击关闭创建黑车地址库
         self.set_up_page.click_close_add_black_car_address()
 
         # 断言是否关闭成功
-        expect_text_after_click_black_car_address='黑车地址库'
-        self.assertEqual(expect_text_after_click_black_car_address,self.set_up_page.check_text_after_click_black_car_address())
+        expect_text_after_click_black_car_address = '黑车地址库'
+        self.assertEqual(expect_text_after_click_black_car_address,
+                         self.set_up_page.check_text_after_click_black_car_address())

@@ -16,12 +16,12 @@ class AccountCenterMsgCenterPage(BasePageServer):
 
     # 点击进入“消息中心”
     def enter_msg_center(self):
-        self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/ul/li[2]/a")
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[2]/a')
         self.driver.wait(1)
 
     # 获取“消息中心”title
     def get_msg_center_title(self):
-        msg_center_title = self.driver.get_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[1]/div/b").text
+        msg_center_title = self.driver.get_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[1]/div/b').text
         return msg_center_title
 
     # 获取左侧栏目-消息中心-x条未读
@@ -133,3 +133,63 @@ class AccountCenterMsgCenterPage(BasePageServer):
             return total
         except:
             return 0
+
+    # 取长度
+    def get_length(self, element):
+        len = int(self.driver.get_element(element).get_attribute("maxlength"))
+        return len
+
+    # 消息中心--编辑--获取长度
+    def get_message_edit_element_len(self):
+        # 点击第一条的imei
+        self.driver.click_element("x,//*[@id='msg_tbody']/tr[1]/td[4]/div/a")
+        self.driver.wait(3)
+        # 切换到iframe
+        self.driver.switch_to_iframe("commModal_iframe")
+
+        # 基本信息
+        device_name = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[1]/input")
+        sim = self.get_length("x,//*[@id='device_info_a']/fieldset/div[2]/div[2]/input")
+        remark = self.get_length("reMark")
+
+        # 点击客户信息
+        self.driver.click_element("x,/html/body/div[1]/ul/li[2]/a")
+        self.driver.wait()
+
+        # 客户信息
+        driver_name = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[1]/div[1]/input")
+        vehicle_number = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[1]/input")
+        sn = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[3]/div[1]/input")
+        engine_number = self.get_length("x,//*[@id='engineNumber']")
+        phone = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[1]/div[2]/input")
+        id_card = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[2]/input")
+        car_frame = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[3]/div[2]/input")
+
+        # 安装信息
+        install_company = self.get_length("x,//*[@id='device_info_b']/fieldset[2]/div[2]/div[1]/input")
+        install_personnel = self.get_length("x,//*[@id='device_info_b']/fieldset[2]/div[3]/div/input")
+        install_address = self.get_length("x,//*[@id='device_info_b']/fieldset[2]/div[1]/div[2]/input")
+        install_position = self.get_length("x,//*[@id='device_info_b']/fieldset[2]/div[2]/div[2]/input")
+        all_len = {
+            "device_name": device_name,
+            "sim": sim,
+            "remark": remark,
+            "driver_name": driver_name,
+            "vehicle_number": vehicle_number,
+            "sn": sn,
+            "engine_number": engine_number,
+            "phone": phone,
+            "id_card": id_card,
+            "car_frame": car_frame,
+            "install_company": install_company,
+            "install_personnel": install_personnel,
+            "install_address": install_address,
+            "install_position": install_position
+        }
+        print(all_len)
+        # 退出frame
+        self.driver.default_frame()
+        # 点保存
+        self.driver.click_element("commModal_submit_btn")
+
+        return all_len

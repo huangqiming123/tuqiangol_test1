@@ -44,6 +44,7 @@ class TestCase103DevManageDevOperationActiveAndStop(unittest.TestCase):
 
         # 选择已激活和开机的设备
         self.dev_manage_page.choose_dev_active_and_stop()
+        self.dev_manage_page.click_ensure()
         imei = self.dev_manage_page.get_imei_number()
         self.dev_manage_page.click_edit_button()
         self.dev_manage_page.click_close_edit_button()
@@ -106,21 +107,6 @@ class TestCase103DevManageDevOperationActiveAndStop(unittest.TestCase):
 
                 text = self.dev_manage_page.click_street_scape_get_text()
                 self.assertEqual('实时跟踪', text)
-                self.driver.close_current_page()
-                self.driver.switch_to_window(current_handle)
-                sleep(2)
-        # 点查看告警
-        self.dev_manage_page.click_look_alarm_button()
-        all_handles = self.driver.get_all_window_handles()
-        for handle in all_handles:
-            if handle != current_handle:
-                self.driver.switch_to_window(handle)
-                sleep(2)
-                expect_url = self.base_url + "/deviceReport/statisticalReport"
-                self.assertEqual(expect_url, self.driver.get_current_url())
-
-                text = self.dev_manage_page.click_look_alarm_get_text()
-                self.assertEqual('告警详情', text)
                 self.driver.close_current_page()
                 self.driver.switch_to_window(current_handle)
                 sleep(2)

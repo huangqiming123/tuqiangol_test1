@@ -93,7 +93,7 @@ class SearchSql(object):
         user_id_list = cursor.fetchall()
         user_id = user_id_list[0][0]
 
-        get_account_dev_sql = "select a.imei from equipment_mostly a where a.userId = '%s' and DATEDIFF(a.expiration,CURDATE())>=0;" % user_id
+        get_account_dev_sql = "select a.imei from equipment_mostly a where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>=0;" % user_id
         cursor.execute(get_account_dev_sql)
         get_all_dev = cursor.fetchall()
         dev_list = []

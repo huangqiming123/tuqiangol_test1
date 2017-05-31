@@ -9,6 +9,7 @@ from pages.base.lon_in_base import LogInBase
 from pages.global_search.global_dev_search_page import GlobalDevSearchPage
 from pages.global_search.global_search_page_read_csv import GlobleSearchPageReadCsv
 
+
 # 全局搜索-搜索栏设备不输入搜索信息查找功能
 # author:孙燕妮
 

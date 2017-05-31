@@ -43,7 +43,6 @@ class TestCase106DevManageDevBatchSetModeMany(unittest.TestCase):
         # 点击进入控制台
         self.dev_manage_page.enter_console()
 
-
         # 获取当前所有窗口句柄
         all_handles = self.driver.get_all_window_handles()
         for handle in all_handles:
@@ -57,10 +56,8 @@ class TestCase106DevManageDevBatchSetModeMany(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 self.driver.wait()
 
-
         # 点击进入设备管理
         self.dev_manage_page.enter_dev_manage()
-
 
         # 获取当前窗口句柄
         account_center_handle = self.driver.get_current_window_handle()
@@ -71,10 +68,8 @@ class TestCase106DevManageDevBatchSetModeMany(unittest.TestCase):
         # 点击选中设置工作模式
         self.dev_manage_page.click_selected_set_mode()
 
-
         # 关闭发送工作模式弹框
         self.dev_manage_page.close_set_mode()
-
 
         # 点击本次查询全部设置工作模式
         self.dev_manage_page.click_all_set_mode()
@@ -95,8 +90,6 @@ class TestCase106DevManageDevBatchSetModeMany(unittest.TestCase):
 
         except:
             print("当前设备列表中没有设备支持发送所选中的工作模式")
-
-
 
         # 点击本次查询全部设置工作模式
         self.dev_manage_page.click_all_set_mode()
@@ -122,7 +115,5 @@ class TestCase106DevManageDevBatchSetModeMany(unittest.TestCase):
                 self.assertEqual(expect_url, current_url, "工作模式模板管理页面跳转错误!")
                 self.driver.wait()
 
-
         # 退出登录
         self.account_center_page_navi_bar.dev_manage_usr_logout()
-

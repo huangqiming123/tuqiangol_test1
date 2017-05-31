@@ -43,7 +43,6 @@ class TestCase105DevManageDevBatchSetModeSingle(unittest.TestCase):
         # 点击进入控制台
         self.dev_manage_page.enter_console()
 
-
         # 获取当前所有窗口句柄
         all_handles = self.driver.get_all_window_handles()
         for handle in all_handles:
@@ -57,10 +56,8 @@ class TestCase105DevManageDevBatchSetModeSingle(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 self.driver.wait()
 
-
         # 点击进入设备管理
         self.dev_manage_page.enter_dev_manage()
-
 
         # 选中单条设备
         self.dev_manage_page.select_single_check_box_mode()
@@ -84,10 +81,5 @@ class TestCase105DevManageDevBatchSetModeSingle(unittest.TestCase):
         except:
             print("当前设备不支持发送所选中的工作模式")
 
-
-
-
-
         # 退出登录
         self.account_center_page_navi_bar.dev_manage_usr_logout()
-

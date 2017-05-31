@@ -68,6 +68,14 @@ class TestCase170AccountCenterOverviewAttention(unittest.TestCase):
 
                 expect_total_inactive = self.account_center_page_details.get_total_all_attention_equipment()
                 self.assertEqual(actual_total_attention, expect_total_inactive, '账号重点关注车辆数量错误')
+
+                # 查看控制台告警设置能否打开
+                self.account_center_page_navi_bar.click_alarm_button_in_console()
+                # 断言
+                get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
+                self.assertEqual(' 报警管理', get_text)
+                self.account_center_page_navi_bar.close_alarm_in_console()
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

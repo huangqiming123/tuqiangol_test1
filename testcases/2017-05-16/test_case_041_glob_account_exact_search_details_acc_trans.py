@@ -8,6 +8,7 @@ from pages.base.lon_in_base import LogInBase
 from pages.global_search.global_account_search_page import GlobalAccountSearchPage
 from pages.global_search.global_search_page_read_csv import GlobleSearchPageReadCsv
 
+
 # 全局搜索-精确查找设备结果唯一用户详情页面-转移用户的操作
 # 运行前需修改csv中的转移账户
 # author:孙燕妮

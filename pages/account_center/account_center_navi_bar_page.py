@@ -401,3 +401,131 @@ class AccountCenterNaviBarPage(BasePageServer):
         # 点击确定
         self.driver.click_element("c,layui-layer-btn0")
         self.driver.wait()
+
+    def click_modify_usr_info(self):
+        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        sleep(1)
+        # 点击招呼栏的修改资料
+        self.driver.click_element("p,修改资料")
+        sleep(3)
+
+    def cancel_modify_user_info(self):
+        self.driver.click_element('x,//*[@id="editInformationModal"]/div/div/div[1]/button/span')
+        sleep(2)
+
+    def close_modify_user_info(self):
+        self.driver.click_element('x,//*[@id="editInformationModal"]/div/div/div[3]/button[2]')
+        sleep(2)
+
+    def check_next_user_input_value(self):
+        return self.driver.get_element('x,//*[@id="lowerFlag"]/div/input').is_selected()
+
+    def get_all_dev_button_value(self):
+        return self.driver.get_element('x,//*[@id="NORMAL"]').get_attribute('class')
+
+    def get_console_class_value(self):
+        return self.driver.get_element('x,//*[@id="console"]').get_attribute('class')
+
+    def click_alarm_button_in_console(self):
+        self.driver.click_element('x,//*[@id="gaojing"]')
+        sleep(2)
+
+    def get_text_after_click_alarm_button(self):
+        return self.driver.get_text('x,//*[@id="alarmMessage"]/div[1]/h5')
+
+    def close_alarm_in_console(self):
+        self.driver.click_element('x,//*[@id="alarmMessage"]/div[1]/a[1]')
+        sleep(2)
+
+    def get_value_sport_statistiacl_value(self):
+        return self.driver.get_element('x,//*[@id="ReportTab"]/ul/li[1]').get_attribute('class')
+
+    def get_value_sport_overview_value(self):
+        return self.driver.get_element('x,//*[@id="sportOverview"]').get_attribute('class')
+
+    def get_text_after_report(self):
+        self.driver.switch_to_frame('x,//*[@id="sportOverviewFrame"]')
+        text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
+        self.driver.default_frame()
+        return text
+
+    # 取提示语
+    def get_modify_prompt(self, select):
+        try:
+            prompt = self.driver.get_text(select)
+            return prompt
+        except:
+            prompt = ""
+            return prompt
+
+    # 修改资料---错误提示
+    def get_modify_info_exception_prompt(self, data):
+        # 客户名称、电话、邮箱,,
+        self.driver.operate_input_element("x,//*[@id='edit-modal-nickName']", data["name"])
+        self.driver.operate_input_element("x,//*[@id='edit-modal-phone']", data["phone"])
+        self.driver.operate_input_element("x,//*[@id='edit-modal-email']", data["email"])
+        # 点击保存按钮
+        self.driver.click_element("saveUserInformation")
+        self.driver.wait()
+        # 获取错误提示
+        name_prompt = self.get_modify_prompt("x,//*[@id='edit-modal-userForm']/div[2]/div/label")
+        phone_prompt = self.get_modify_prompt("x,//*[@id='edit-modal-userForm']/div[3]/div/label")
+        email_prompt = self.get_modify_prompt("x,//*[@id='edit-modal-userForm']/div[4]/div/label")
+        all_prompt = {"name": name_prompt,
+                      "phone": phone_prompt,
+                      "email": email_prompt
+                      }
+        print(all_prompt)
+        return all_prompt
+
+    # 修改资料--取长度
+    def get_modifgy_info_element_len(self):
+        phone_len = int(self.driver.get_element("x,//*[@id='edit-modal-phone']").get_attribute("maxlength"))
+        email_len = int(self.driver.get_element("x,//*[@id='edit-modal-email']").get_attribute("maxlength"))
+        len = {"phone_len": phone_len,
+               "email_len": email_len
+               }
+        return len
+
+
+        # 点击招呼栏的修改密码
+
+    def click_modify_usr_password(self):
+        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        sleep(2)
+        # 点击招呼栏的修改密码
+        self.driver.click_element("p,修改密码")
+        sleep(3)
+
+    # 修改密码--取消
+    def click_password_cancel(self):
+        self.driver.click_element("x,//*[@id='changePasswordModal']/div/div/div[3]/button[2]")
+        self.driver.wait(1)
+
+    # 修改密码---错误提示
+    def get_modify_pwd_exception_prompt(self, data):
+        # 旧密码、新密码、确认新密码
+        self.driver.operate_input_element("oldPwd", data["old_password"])
+        self.driver.operate_input_element("newPwd", data["new_password"])
+        self.driver.operate_input_element("renewPwd", data["new_password2"])
+        # 点击保存按钮
+        self.driver.click_element("save")
+        self.driver.wait()
+
+        # 获取弹出框的提示
+        try:
+            text = self.driver.get_element("c,layui-layer-content").text
+        except:
+            text = ""
+        # 获取错误提示
+        old_Pwd = self.get_modify_prompt("x,//*[@id='editpwd-form']/div[1]/div/label")
+        new_Pwd = self.get_modify_prompt("x,//*[@id='editpwd-form']/div[2]/div/label")
+        new_Pwd2 = self.get_modify_prompt("x,//*[@id='editpwd-form']/div[3]/div/label")
+
+        all_prompt = {"old_Pwd": old_Pwd,
+                      "new_Pwd": new_Pwd,
+                      "new_Pwd2": new_Pwd2,
+                      "text": text
+                      }
+        print(all_prompt)
+        return all_prompt

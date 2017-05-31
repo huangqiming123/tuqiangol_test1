@@ -1,5 +1,7 @@
 from time import sleep
 
+from selenium.webdriver.common.keys import Keys
+
 from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
@@ -200,7 +202,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     # 新增客户
     def add_acc(self):
         # 点击新增客户
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[2]/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[2]/div/button[1]')
         self.driver.wait()
 
     # 当前账户-新增用户-编辑用户输入框信息
@@ -274,7 +276,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="user_account"]')
 
     def click_monitoring_account_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[1]/div/button')
         sleep(2)
 
     def get_text_after_click(self):
@@ -296,5 +298,233 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     def get_account_name_after_click_edit(self):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         text = self.driver.get_element('x,//*[@id="topUser"]').get_attribute('value')
+        self.driver.default_frame()
+        return text
+
+    def cancel_add_account(self):
+        self.driver.click_element('c,layui-layer-btn1')
+
+    def get_up_account_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        value = self.driver.get_element('x,//*[@id="topUser"]').get_attribute('readonly')
+        self.driver.default_frame()
+        return value
+
+    def get_account_name_input(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="nickName"]').get_attribute('readonly')
+        self.driver.default_frame()
+        return a
+
+    def add_account_name(self, param):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="nickName"]', param)
+        self.driver.default_frame()
+
+    def get_add_account_name_exception_text(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="userForm"]/div[3]/div/label')
+        self.driver.default_frame()
+        return text
+
+    def add_account(self, param):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="account"]', param)
+        self.driver.default_frame()
+
+    def get_add_account_exception_text(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="userForm"]/div[4]/div/label')
+        self.driver.default_frame()
+        return text
+
+    def get_account_name_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="nickName"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def click_ensure(self):
+        self.driver.click_element('c,layui-layer-btn0')
+
+    def get_account_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="account"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def add_password_first(self, param):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="password"]', param)
+        self.driver.default_frame()
+
+    def add_password_second(self, param):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="pswAgain"]', param)
+        self.driver.default_frame()
+
+    def get_text_first_password(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="markPassword"]/div[1]/div/label')
+        self.driver.default_frame()
+        return text
+
+    def get_text_second_password(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="markPswAgain"]/div/label')
+        self.driver.default_frame()
+        return text
+
+    def get_phone_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="phone"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_email_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="email"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_connect_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="contact"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_comp_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="companyName"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def add_email_format(self, param):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="email"]', param)
+        self.driver.default_frame()
+
+    def get_text_email_text(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="userForm"]/div[7]/div/label')
+        self.driver.default_frame()
+        return text
+
+    def search_cust(self, param):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="treeDemo2_cusTreeKey"]', param)
+        self.driver.click_element('x,//*[@id="treeDemo2_cusTreeSearchBtn"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_search_no_data_text(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="treeRoleBox"]/div[1]/div[1]/span')
+        self.driver.default_frame()
+        return text
+
+    def search_customer(self, param):
+        self.driver.operate_input_element('x,//*[@id="treeDemo_cusTreeKey"]', param)
+        self.driver.click_element('x,//*[@id="treeDemo_cusTreeSearchBtn"]')
+        sleep(2)
+
+    def get_search_customer_no_data_text(self):
+        return self.driver.get_text(
+            's,body > div.wrapper > div.main.oh > div > div > div.customer-leftsidebar > div > div > div.p-tb10.js-side-tree-box.show-userlist > div.tree-search > div.autocompleter-nodata > span')
+
+    def click_edit_customer(self):
+        self.driver.click_element('s,#customerlist > tr:nth-child(1) > td:nth-child(8) > a:nth-child(2)')
+        sleep(2)
+
+    def get_cust_type(self):
+        text = self.driver.get_text('s,#customerlist > tr:nth-child(1) > td:nth-child(3)')
+        return text
+
+    def get_cust_account(self):
+        text = self.driver.get_text('s,#customerlist > tr:nth-child(1) > td:nth-child(2)')
+        return text
+
+    def get_account_after_edit(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_element('s,#account').get_attribute('value')
+        self.driver.default_frame()
+        return text
+
+    def click_cancel_edit(self):
+        self.driver.click_element('c,layui-layer-btn1')
+        sleep(2)
+
+    def get_up_account_after_edit(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_element('s,#topUser').get_attribute('value')
+        self.driver.default_frame()
+        return text
+
+    def get_account_type_after_edit(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        a = self.driver.get_element('s,#labelSale > div > input[type="radio"]').is_selected()
+        b = self.driver.get_element('s,#labelDistributor > div > input[type="radio"]').is_selected()
+        c = self.driver.get_element('s,#labelUser > div > input[type="radio"]').is_selected()
+
+        if a == True:
+            self.driver.default_frame()
+            return " 销售"
+
+        elif b == True:
+            self.driver.default_frame()
+            return " 代理商"
+
+        elif c == True:
+            self.driver.default_frame()
+            return " 用户"
+
+    def get_up_input_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_element('s,#topUser').get_attribute('readonly')
+        self.driver.default_frame()
+        return text
+
+    def get_account_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_element('s,#account').get_attribute('disabled')
+        self.driver.default_frame()
+        return text
+
+    def click_transfer_customer(self):
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[5]')
+        sleep(2)
+
+    def click_first_account(self):
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[1]/span/div/ins')
+        sleep(2)
+
+    def click_batch_transfer_customer(self):
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[2]/div/button[2]')
+        sleep(2)
+
+    def click_all_select_button(self):
+        self.driver.click_element('x,//*[@id="customertableheader"]/thead/tr/th[1]/span/div/ins')
+        sleep(2)
+
+    def get_all_select_value(self):
+        return self.driver.get_element('x,//*[@id="userAllCheck"]').is_selected()
+
+    def get_per_account_number(self):
+        number = len(list(self.driver.get_elements('x,//*[@id="customerlist"]')))
+        return number
+
+    def click_cancel_select_list(self):
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[1]/span/div/ins')
+        sleep(2)
+
+    def select_per_page_numbers(self):
+        self.driver.click_element('c,page-select')
+        sleep(2)
+        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
+        sleep(2)
+
+    def get_texts_email_text(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="userForm"]/div[6]/div/label')
         self.driver.default_frame()
         return text

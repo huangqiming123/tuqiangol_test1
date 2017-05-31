@@ -48,7 +48,7 @@ class TestCase166AccountCenterOverviewOvertime(unittest.TestCase):
                 actual_url = self.base_url + '/device/toDeviceManage?statusFlag=expirated&lowerDevFlag=1'
                 self.assertEqual(expect_url, actual_url, '点击已过期后，实际的url和期望的不一样！')
                 sleep(2)
-
+                self.account_center_page_details.click_more_in_dev_manage()
                 get_text = self.account_center_page_details.click_coming_overtime_get_text()
                 self.assertEqual('已过期', get_text)
 
@@ -70,6 +70,13 @@ class TestCase166AccountCenterOverviewOvertime(unittest.TestCase):
                 self.assertEqual(False, lower_user_input_value_again)
                 get_text = self.account_center_page_details.click_coming_overtime_get_text()
                 self.assertEqual('过期状态', get_text)
+
+                # 查看控制台告警设置能否打开
+                self.account_center_page_navi_bar.click_alarm_button_in_console()
+                # 断言
+                get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
+                self.assertEqual(' 报警管理', get_text)
+                self.account_center_page_navi_bar.close_alarm_in_console()
 
                 self.driver.close_current_page()
                 # 回到账户中心窗口

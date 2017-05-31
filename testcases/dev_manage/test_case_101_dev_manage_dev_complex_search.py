@@ -44,6 +44,7 @@ class TestCase101DevManageDevComplexSearch(unittest.TestCase):
         current_account = self.log_in_base.get_log_in_account()
 
         self.dev_manage_page.enter_dev_manage()
+        self.dev_manage_page.click_more_button()
 
         csv_file = self.dev_manage_page_read_csv.read_csv('dev_search_info.csv')
         csv_data = csv.reader(csv_file)

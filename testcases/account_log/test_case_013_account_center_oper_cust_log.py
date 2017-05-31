@@ -61,7 +61,7 @@ class TestCase013AccountCenterOperCustLog(unittest.TestCase):
                 'type': row[0],
                 'begin_time': row[1],
                 'end_time': row[2],
-                'more':row[3]
+                'more': row[3]
             }
             self.account_center_page_operation_log.add_data_to_search_cus_manager_log(search_data)
 

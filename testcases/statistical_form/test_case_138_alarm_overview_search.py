@@ -86,7 +86,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
             user_id = get_user_id[0][0]
 
             # 当前用户下设置
-            get_current_user_all_equipment = "SELECT a.imei FROM equipment_mostly AS a WHERE a.userId = " + user_id + " and a.expiration > CURDATE();"
+            get_current_user_all_equipment = "SELECT a.imei FROM equipment_mostly AS a WHERE a.status = 'NORMAL' and a.userId = " + user_id + " and a.expiration > CURDATE();"
             cursor.execute(get_current_user_all_equipment)
             all_equipment = cursor.fetchall()
 

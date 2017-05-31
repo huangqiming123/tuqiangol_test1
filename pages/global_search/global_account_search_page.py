@@ -475,10 +475,12 @@ class GlobalAccountSearchPage(BasePage):
         # 获取用户搜索的结果
         self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('style')
+        print(a)
         b = self.driver.get_element('x,//*[@id="complex_user_table_nodata"]').get_attribute('style')
+        print(b)
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_number("x,//*[@id='complex_paging_user']", "x,//*[@id='complex_user_tbody']")
+            total = new_paging.get_total_number('x,//*[@id="complex_paging_user"]', 'x,//*[@id="complex_user_tbody"]')
             self.driver.default_frame()
             return total
         else:

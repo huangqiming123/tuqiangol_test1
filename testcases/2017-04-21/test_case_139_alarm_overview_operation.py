@@ -87,7 +87,7 @@ class TestCse139AlarmOverviewOperation(unittest.TestCase):
                 pass
             else:
                 self.assertEqual(True, self.driver.get_element(
-                    'x,//*[@id="alarmTypeReport"]/li[%s]/label/div/input' %number).is_selected())
+                    'x,//*[@id="alarmTypeReport"]/li[%s]/label/div/input' % number).is_selected())
 
         # 点击关闭
         self.alarm_info_page.click_alarm_type('ensure')

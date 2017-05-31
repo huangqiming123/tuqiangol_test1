@@ -54,10 +54,6 @@ class TestCase023AccountCenterVisualAccount(unittest.TestCase):
             }
             # 添加虚拟账户
             self.account_center_page_visual_account.add_visual_account(acc_to_add["account"], acc_to_add["passwd"])
-            # 选择权限-修改数据
-            self.account_center_page_visual_account.choose_assign_comm_limit()
-            # 选择权限-下发指令
-            self.account_center_page_visual_account.choose_assign_comm_limit()
             # 保存
             self.account_center_page_visual_account.save_add_info()
             # 验证是否保存成功

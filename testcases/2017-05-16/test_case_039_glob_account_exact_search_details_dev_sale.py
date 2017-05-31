@@ -9,6 +9,7 @@ from pages.base.lon_in_base import LogInBase
 from pages.global_search.global_account_search_page import GlobalAccountSearchPage
 from pages.global_search.global_search_page_read_csv import GlobleSearchPageReadCsv
 
+
 # 全局搜索-精确查找设备结果唯一用户详情页面-销售设备模块的操作
 # 运行需提前修改csv中imei账号
 # author:孙燕妮
@@ -44,7 +45,7 @@ class TestCase039GlobAccountExactSearchDetailsDevSale(unittest.TestCase):
 
         for row in csv_data:
             sale_info = {
-                'account':row[0],
+                'account': row[0],
                 "imei": row[1]
             }
             self.global_acc_search_page.search_account(sale_info['account'])

@@ -1179,3 +1179,477 @@ class StatisticalFormPage(BasePage):
             sleep(3)
         except:
             print('查询无数据，无法导出')
+
+    def click_customer_in_mile_form(self, n):
+        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_search_dev_button(self):
+        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_group_number_in_mile_form(self):
+        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="dev_tree_mileageReport"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_mileageReport"]/li')))
+            self.driver.default_frame()
+            return number
+        else:
+            self.driver.default_frame()
+            return 0
+
+    def click_defalut_group_in_mile_form(self):
+        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.driver.click_element('x,//*[@id="dev_tree_mileageReport_1_switch"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_in_mile_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        text = self.driver.get_text(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        self.driver.default_frame()
+        return number
+
+    def click_per_group_in_mile_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.driver.click_element(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_list_in_mile_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        self.driver.default_frame()
+        return number
+
+    def click_customer_in_over_speed_form(self, n):
+        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_search_dev_button_in_over_speed_form(self):
+        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_group_number_in_over_speed_form(self):
+        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="dev_tree_overSpeedReport"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_overSpeedReport"]/li')))
+            self.driver.default_frame()
+            return number
+        else:
+            self.driver.default_frame()
+            return 0
+
+    def click_defalut_group_in_over_speed_form(self):
+        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.driver.click_element('x,//*[@id="dev_tree_overSpeedReport_1_switch"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_in_over_speed_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        text = self.driver.get_text(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        self.driver.default_frame()
+        return number
+
+    def click_per_group_in_over_speed_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.driver.click_element(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_list_in_over_speed_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        self.driver.default_frame()
+        return number
+
+    def click_customer_in_stay_form(self, n):
+        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_search_dev_button_in_stay_form(self):
+        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_group_number_in_stay_form(self):
+        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="dev_tree_stopCar"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_stopCar"]/li')))
+            self.driver.default_frame()
+            return number
+        else:
+            self.driver.default_frame()
+            return 0
+
+    def click_defalut_group_in_stay_form(self):
+        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.driver.click_element('x,//*[@id="dev_tree_stopCar_1_switch"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_in_stay_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        text = self.driver.get_text(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        self.driver.default_frame()
+        return number
+
+    def click_per_group_in_stay_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.driver.click_element(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_list_in_stay_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        self.driver.default_frame()
+        return number
+
+    def click_customer_in_stay_not_shut_down_form(self, n):
+        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_search_dev_button_in_stay_not_shut_down(self):
+        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_group_number_in_stay_not_shut_down(self):
+        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="dev_tree_stopNotOff"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_stopNotOff"]/li')))
+            self.driver.default_frame()
+            return number
+        else:
+            self.driver.default_frame()
+            return 0
+
+    def click_defalut_group_in_stay_not_shut_down(self):
+        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.driver.click_element('x,//*[@id="dev_tree_stopNotOff_1_switch"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_in_stay_not_shut_down(self, m):
+        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        text = self.driver.get_text(
+            'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        self.driver.default_frame()
+        return number
+
+    def click_per_group_in_stay_not_shut_down(self, m):
+        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_list_in_stay_not_shut_down(self, m):
+        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        self.driver.default_frame()
+        return number
+
+    def click_customer_in_acc_form(self, n):
+        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[1]/div/div[1]/span/button')
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_search_dev_button_in_acc_form(self):
+        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_group_number_in_acc_form(self):
+        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="dev_tree_acc"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_acc"]/li')))
+            self.driver.default_frame()
+            return number
+        else:
+            self.driver.default_frame()
+            return 0
+
+    def click_defalut_group_in_acc_form(self):
+        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.driver.click_element('x,//*[@id="dev_tree_acc_1_switch"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_in_acc_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        text = self.driver.get_text(
+            'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        self.driver.default_frame()
+        return number
+
+    def click_per_group_in_acc_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_list_in_acc_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        self.driver.default_frame()
+        return number
+
+    def click_customer_in_alarm_overview(self, n):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[3]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="treeDemo_%s_span"]' % str(n + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_search_dev_button_alarm_form(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_group_number_in_alarm_overview_form(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        a = self.driver.get_element('x,//*[@id="dev_tree_alarmOverview"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_alarmOverview"]/li')))
+            self.driver.default_frame()
+            return number
+        else:
+            self.driver.default_frame()
+            return 0
+
+    def click_defalut_group_in_alarm_overview_form(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        self.driver.click_element('x,//*[@id="dev_tree_alarmOverview_1_switch"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_in_alarm_overview_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        text = self.driver.get_text(
+            'x,/html/body/div/div[2]/div[1]/form/div/div[4]/div/div[1]/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        self.driver.default_frame()
+        return number
+
+    def click_per_group_in_alarm_overview_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        self.driver.click_element(
+            'x,/html/body/div/div[2]/div[1]/form/div/div[4]/div/div[1]/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_list_in_alarm_overview_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div/div[2]/div[1]/form/div/div[4]/div/div[1]/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        self.driver.default_frame()
+        return number
+
+    def click_customer_in_alarm_detail_form(self, n):
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_search_dev_button_in_alarm_detail(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/span/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_group_number_in_alarm_detail_form(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+        a = self.driver.get_element('x,//*[@id="dev_tree_alarmDetail"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_alarmDetail"]/li')))
+            self.driver.default_frame()
+            return number
+        else:
+            self.driver.default_frame()
+            return 0
+
+    def click_defalut_group_in_alarm_detail_form(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+        self.driver.click_element('x,//*[@id="dev_tree_alarmDetail_1_switch"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_in_alarm_detail_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+        text = self.driver.get_text(
+            'x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        self.driver.default_frame()
+        return number
+
+    def click_per_group_in_alarm_detail_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_list_in_alarm_detail_form(self, m):
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        self.driver.default_frame()
+        return number
+
+    def click_off_line_form_button(self):
+        self.driver.click_element('x,//*[@id="offlineReport"]/a')
+        sleep(2)
+
+    def get_text_after_click_off_line_form_button(self):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
+        self.driver.default_frame()
+        return text
+
+    def add_off_time_in_off_line_form(self, off_time):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        self.driver.operate_input_element('x,//*[@id="customizeDay"]', off_time)
+        self.driver.default_frame()
+
+    def click_search_button_in_off_line_form(self):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        self.driver.click_element('x,//*[@id="OffLineFrom"]/div[2]/div[3]/button[1]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_text_after_click_search(self):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        text = self.driver.get_text('c,layui-layer-content')
+        self.driver.default_frame()
+        return text
+
+    def click_customer_in_off_line(self, n):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        self.driver.click_element('x,//*[@id="OffLineFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 2))
+        sleep(2)
+        self.driver.default_frame()
+
+    def add_data_to_search_customer_in_off_line(self, search_data):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        self.driver.click_element('x,//*[@id="OffLineFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data)
+        self.driver.click_element('x,//*[@id="search_user_btn"]')
+        sleep(3)
+        self.driver.default_frame()
+
+    def get_text_after_click_search_in_off_line(self):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        text = self.driver.get_text('x,//*[@id="OffLineFrom"]/div[2]/div[1]/div/div[2]/div[1]/div/span')
+        self.driver.default_frame()
+        return text
+
+    def click_on_line_form_button(self):
+        self.driver.click_element('x,//*[@id="onlineReport"]/a')
+        sleep(2)
+
+    def get_text_after_click_on_line_form_button(self):
+        self.driver.switch_to_frame('x,//*[@id="onlineReportFrame"]')
+        text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
+        self.driver.default_frame()
+        return text
+
+    def click_customer_in_on_line(self, n):
+        self.driver.switch_to_frame('x,//*[@id="onlineReportFrame"]')
+        self.driver.click_element('x,//*[@id="OnLineFrom"]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 2))
+        sleep(2)
+        self.driver.default_frame()
+
+    def add_data_to_search_customer_in_on_line(self, param):
+        self.driver.switch_to_frame('x,//*[@id="onlineReportFrame"]')
+        self.driver.click_element('x,//*[@id="OnLineFrom"]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', param)
+        self.driver.click_element('x,//*[@id="search_user_btn"]')
+        sleep(3)
+        self.driver.default_frame()
+
+    def get_text_after_click_search_in_on_line(self):
+        self.driver.switch_to_frame('x,//*[@id="onlineReportFrame"]')
+        text = self.driver.get_text('x,//*[@id="OnLineFrom"]/div[1]/div/div[2]/div[1]/div/span')
+        self.driver.default_frame()
+        return text

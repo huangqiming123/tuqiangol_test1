@@ -87,7 +87,7 @@ class TestCase141AlarmDetailHandle(unittest.TestCase):
                 self.alarm_info_page.click_handle_meun('read')
                 sleep(1)
                 # 断言
-                self.assertEqual('操作成功',self.base_page.reset_passwd_stat_cont())
+                self.assertEqual('操作成功', self.base_page.reset_passwd_stat_cont())
             except:
                 print('请选择告警信息')
 
@@ -108,7 +108,7 @@ class TestCase141AlarmDetailHandle(unittest.TestCase):
             # 断言
             try:
                 sleep(1)
-                self.assertEqual('操作成功',self.base_page.reset_passwd_stat_cont())
+                self.assertEqual('操作成功', self.base_page.reset_passwd_stat_cont())
             except:
                 pass
             # 点击全部处理

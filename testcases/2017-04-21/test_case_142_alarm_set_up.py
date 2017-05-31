@@ -67,7 +67,7 @@ class TestCase142AlarmSetUp(unittest.TestCase):
                 pass
             else:
                 self.assertEqual(True, self.driver.get_element(
-                        'x,//*[@id="alarm_appSet_tbody"]/tr[%s]/td[4]/label[2]/div/input' % number).is_selected())
+                    'x,//*[@id="alarm_appSet_tbody"]/tr[%s]/td[4]/label[2]/div/input' % number).is_selected())
 
         # 点击关闭APP推送
         self.alarm_info_page.click_menu('close_app')
@@ -76,7 +76,7 @@ class TestCase142AlarmSetUp(unittest.TestCase):
                 pass
             else:
                 self.assertEqual(False, self.driver.get_element(
-                        'x,//*[@id="alarm_appSet_tbody"]/tr[%s]/td[4]/label[2]/div/input' % number).is_selected())
+                    'x,//*[@id="alarm_appSet_tbody"]/tr[%s]/td[4]/label[2]/div/input' % number).is_selected())
 
         # 点击查看全部告警
         self.alarm_info_page.click_menu('look_all')
@@ -85,7 +85,7 @@ class TestCase142AlarmSetUp(unittest.TestCase):
                 pass
             else:
                 self.assertEqual(True, self.driver.get_element(
-                        'x,//*[@id="alarm_appSet_tbody"]/tr[%s]/td[4]/label[1]/div/input' % number).is_selected())
+                    'x,//*[@id="alarm_appSet_tbody"]/tr[%s]/td[4]/label[1]/div/input' % number).is_selected())
 
         self.alarm_info_page.click_menu('close_all')
         for number in range(total + 1):
@@ -93,29 +93,29 @@ class TestCase142AlarmSetUp(unittest.TestCase):
                 pass
             else:
                 self.assertEqual(False, self.driver.get_element(
-                        'x,//*[@id="alarm_appSet_tbody"]/tr[%s]/td[4]/label[1]/div/input' % number).is_selected())
+                    'x,//*[@id="alarm_appSet_tbody"]/tr[%s]/td[4]/label[1]/div/input' % number).is_selected())
 
         # 全部设置邮件发送
         self.alarm_info_page.click_menu('email')
         # 断言
-        expect_text='设置邮件发送'
-        self.assertEqual(expect_text,self.alarm_info_page.actual_text_ater_set_up_email())
+        expect_text = '设置邮件发送'
+        self.assertEqual(expect_text, self.alarm_info_page.actual_text_ater_set_up_email())
         # 点击关闭
         self.alarm_info_page.set_up_email_operation('close')
 
         # 全部设置邮件发送
         self.alarm_info_page.click_menu('email')
         # 断言
-        expect_text='设置邮件发送'
-        self.assertEqual(expect_text,self.alarm_info_page.actual_text_ater_set_up_email())
+        expect_text = '设置邮件发送'
+        self.assertEqual(expect_text, self.alarm_info_page.actual_text_ater_set_up_email())
         # 点击取消
         self.alarm_info_page.set_up_email_operation('cancel')
 
         # 全部设置邮件发送
         self.alarm_info_page.click_menu('email')
         # 断言
-        expect_text='设置邮件发送'
-        self.assertEqual(expect_text,self.alarm_info_page.actual_text_ater_set_up_email())
+        expect_text = '设置邮件发送'
+        self.assertEqual(expect_text, self.alarm_info_page.actual_text_ater_set_up_email())
         self.alarm_info_page.add_email_to_set_up('123@abc.com')
         # 点击关闭
         self.alarm_info_page.set_up_email_operation('ensure')
@@ -124,25 +124,25 @@ class TestCase142AlarmSetUp(unittest.TestCase):
         # 点击告警时间设置
         self.alarm_info_page.click_menu('time')
         # 断言
-        expect_text='告警时间设置'
-        self.assertEqual(expect_text,self.alarm_info_page.actual_text_after_click_alarm_time())
+        expect_text = '告警时间设置'
+        self.assertEqual(expect_text, self.alarm_info_page.actual_text_after_click_alarm_time())
         # 点击关闭
         self.alarm_info_page.set_up_alarm_time_operation('close')
 
         # 点击告警时间设置
         self.alarm_info_page.click_menu('time')
         # 断言
-        expect_text='告警时间设置'
-        self.assertEqual(expect_text,self.alarm_info_page.actual_text_after_click_alarm_time())
+        expect_text = '告警时间设置'
+        self.assertEqual(expect_text, self.alarm_info_page.actual_text_after_click_alarm_time())
         # 点击取消
         self.alarm_info_page.set_up_alarm_time_operation('cancel')
 
         # 点击告警时间设置
         self.alarm_info_page.click_menu('time')
         # 断言
-        expect_text='告警时间设置'
-        self.assertEqual(expect_text,self.alarm_info_page.actual_text_after_click_alarm_time())
-        self.alarm_info_page.add_data_to_set_up_alarm_time('100','100')
+        expect_text = '告警时间设置'
+        self.assertEqual(expect_text, self.alarm_info_page.actual_text_after_click_alarm_time())
+        self.alarm_info_page.add_data_to_set_up_alarm_time('100', '100')
         # 点击保存
         self.alarm_info_page.set_up_alarm_time_operation('ensure')
 

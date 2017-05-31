@@ -38,7 +38,9 @@ class TestCase062CustManageCheckAccount(unittest.TestCase):
         self.driver.quit_browser()
 
     def test_cust_manage_check_account(self):
+        '''测试客户管理-新增用户'''
 
+        # 打开途强在线首页-登录页
         self.base_page.open_page()
 
         # 登录
@@ -103,8 +105,6 @@ class TestCase062CustManageCheckAccount(unittest.TestCase):
                     expect_url = self.base_url + '/index'
                     self.assertEqual(expect_url, self.driver.get_current_url())
 
-                    expect_text = self.cust_manage_basic_info_and_add_cust_page.get_text_after_click()
-                    self.assertEqual(expect_text, account_name)
                     self.driver.close_current_page()
                     sleep(2)
                     self.driver.switch_to_window(current_window)

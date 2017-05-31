@@ -9,7 +9,6 @@ from pages.console.console_page_read_csv import ConsolePageReadCsv
 from pages.dev_manage.dev_manage_page import DevManagePage
 
 
-
 # 控制台-车辆列表的单个设备操作（关注、轨迹回放、更多）
 
 # author:孙燕妮

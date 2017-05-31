@@ -77,7 +77,7 @@ class DevManagePages(BasePage):
 
     # 点击搜索按钮
     def click_search_btn(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         self.driver.wait(3)
 
     # 搜索条件-输入imei
@@ -747,7 +747,7 @@ class DevManagePages(BasePage):
 
     def add_data_to_search_dev(self, search_data):
         # 填写数据搜索设备
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/button')
         sleep(2)
         # 设备名称
         self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[2]/input', search_data['dev_name'])
@@ -763,54 +763,54 @@ class DevManagePages(BasePage):
         sleep(2)
 
         # 选择过期状态
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
         sleep(2)
         if search_data['past_due'] == '':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[1]/div/div/div/ul/li[1]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/div/ul/li[1]')
         elif search_data['past_due'] == '即将过期':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[1]/div/div/div/ul/li[2]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/div/ul/li[2]')
         elif search_data['past_due'] == '已过期':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[1]/div/div/div/ul/li[3]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/div/ul/li[3]')
         sleep(2)
 
         # 填写车牌号
-        self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[1]/input',
+        self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[1]/input',
                                           search_data['plate_numbers'])
         # 填写车架号
-        self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[2]/input',
+        self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[2]/input',
                                           search_data['frame_number'])
         # 填写sim卡号
-        self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[3]/input',
+        self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[3]/input',
                                           search_data['sim'])
 
         # 选择激活状态
         self.driver.click_element(
-            'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/span[2]')
+            'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]')
         sleep(2)
         if search_data['active'] == '':
             self.driver.click_element(
-                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/div/ul/li[1]')
+                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/div/ul/li[1]')
         elif search_data['active'] == '已激活':
             self.driver.click_element(
-                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/div/ul/li[2]')
+                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/div/ul/li[2]')
         elif search_data['active'] == '未激活':
             self.driver.click_element(
-                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/div/ul/li[3]')
+                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/div/ul/li[3]')
         sleep(2)
 
         # 选择时间并填写
         self.driver.click_element(
-            'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[5]/div[1]/div/div/span[2]')
+            'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[5]/div[1]/div/div/span[2]')
         sleep(2)
         if search_data['choose_time'] == '':
             self.driver.click_element(
-                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[5]/div[1]/div/div/span[2]')
+                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[5]/div[1]/div/div/span[2]')
         elif search_data['choose_time'] == '激活时间':
             self.driver.click_element(
-                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[5]/div[1]/div/div/div/ul/li[1]')
+                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[5]/div[1]/div/div/div/ul/li[1]')
         elif search_data['choose_time'] == '平台到期时间':
             self.driver.click_element(
-                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[5]/div[1]/div/div/div/ul/li[2]')
+                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[5]/div[1]/div/div/div/ul/li[2]')
         sleep(2)
         self.driver.operate_input_element('x,//*[@id="startTime_input"]', search_data['begin_time'])
         self.driver.operate_input_element('x,//*[@id="endTime_input"]', search_data['end_time'])
@@ -822,44 +822,45 @@ class DevManagePages(BasePage):
             self.driver.click_element('x,//*[@id="lowerFlag"]/div/ins')
 
         # 绑定状态
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[3]/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/span[2]')
         sleep(2)
         if search_data['band_status'] == '':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[3]/div/div/div/ul/li[1]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/div/ul/li[1]')
 
         elif search_data['band_status'] == '已绑定':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[3]/div/div/div/ul/li[2]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/div/ul/li[2]')
 
         elif search_data['band_status'] == '未绑定':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[3]/div/div/div/ul/li[3]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/div/ul/li[3]')
 
-        # 设备类型
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[4]/div/div/span[2]')
+        '''# 设备类型
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[4]/div/div/span[2]')
         sleep(2)
         if search_data['dev_mold'] == '':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[4]/div/div/div/ul/li[1]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[4]/div/div/div/ul/li[1]')
 
         elif search_data['dev_mold'] == '有线':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[4]/div/div/div/ul/li[2]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[4]/div/div/div/ul/li[2]')
 
         elif search_data['dev_mold'] == '电池':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[4]/div/div/div/ul/li[3]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[4]/div/div/div/ul/li[3]')'''
 
         # 分组
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[5]/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[5]/div/div/span[2]')
         sleep(2)
         if search_data['dev_group'] == '所有分组':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[5]/div/div/div/ul/li[1]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[5]/div/div/div/ul/li[1]')
 
         elif search_data['dev_group'] == '默认组':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[5]/div/div/div/ul/li[2]')
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[5]/div/div/div/ul/li[2]')
 
-        self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[4]/input',
+        self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[4]/input',
                                           search_data['sn'])
 
         # 点击搜索
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
+
 
     def get_dev_number(self):
         a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
@@ -887,18 +888,24 @@ class DevManagePages(BasePage):
         self.driver.wait()
 
     def choose_dev_active_and_statr(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
         sleep(2)
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/div/ul/li[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/div/ul/li[2]')
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
         sleep(1)
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/button[11]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[11]')
         sleep(3)
+
+    def click_ensure(self):
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(2)
 
     def click_edit_button(self):
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[1]')
@@ -958,7 +965,7 @@ class DevManagePages(BasePage):
         sleep(3)
 
     def get_dev_name(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(2)
         return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[2]')
 
@@ -968,7 +975,7 @@ class DevManagePages(BasePage):
 
     def get_dev_name_after_click_console(self):
         return self.driver.get_text(
-            'x,/html/body/div[1]/div[4]/div/div[1]/div[2]/div[3]/div/div[3]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
+            'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[3]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
 
     def click_track_playback_button(self):
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
@@ -1001,45 +1008,51 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="mapview"]/div[3]/div/div[1]/b')
 
     def choose_dev_active_and_stop(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
         sleep(2)
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/div/ul/li[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/div/ul/li[2]')
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
         sleep(1)
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/button[9]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
         sleep(3)
 
     def choose_dev_noactive_and_statr(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
         sleep(2)
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/div/ul/li[3]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/div/ul/li[3]')
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
         sleep(1)
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/button[11]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[11]')
         sleep(3)
 
     def choose_dev_noactive_and_stop(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
         sleep(2)
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/div/ul/li[3]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/div/ul/li[3]')
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
         sleep(1)
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/button[9]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
         sleep(3)
 
     def choose_dev_overtime(self):
@@ -1066,3 +1079,496 @@ class DevManagePages(BasePage):
         text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
         self.driver.default_frame()
         return text
+
+    def search_customer(self, param):
+        self.driver.operate_input_element('x,//*[@id="deviceManage_cusTreeKey"]', param)
+        self.driver.click_element('x,//*[@id="deviceManage_cusTreeSearchBtn"]')
+        sleep(2)
+
+    def get_search_customer_no_data_text(self):
+        return self.driver.get_text('x,/html/body/div[2]/div[6]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/span')
+
+    def click_batch_sale_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[3]')
+        sleep(2)
+
+    def click_close_batch_sale_button(self):
+        self.driver.click_element('x,//*[@id="batchSales"]/div/div/div[1]/button/span')
+
+    def get_select_account_name(self):
+        return self.driver.get_text('x,//*[@id="device_sale_to"]')
+
+    def search_customer_after_click_batch_sale_dev(self, param):
+        self.driver.operate_input_element('x,//*[@id="device_sale_globalSearch_input"]', param)
+        self.driver.click_element('x,//*[@id="device_sale_globalSearch_btn"]')
+        sleep(2)
+
+    def get_search_customer_no_data_text_after_batch_sale_dev(self):
+        return self.driver.get_text('x,//*[@id="device_sale_id"]/div[2]/div/div/div/div/span')
+
+    def get_select_dev_number(self):
+        return len(list(self.driver.get_elements('x,//*[@id="sale_tbody_device_sale_id"]/tr')))
+
+    def get_dev_numbers(self):
+        return self.driver.get_text('x,//*[@id="sale_count_device_sale_id"]')
+
+    def click_batch_issued_command_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[6]')
+        sleep(2)
+
+    def click_close_batch_batch_issued_command_button(self):
+        self.driver.click_element('x,//*[@id="sendCommandModal"]/div/div/div[1]/button/span')
+        sleep(2)
+
+    def get_dev_number_after_click_issued_command(self):
+        return len(list(self.driver.get_elements('x,//*[@id="check-row-tbody"]/tr')))
+
+    def get_count_number_after_click_issued_command(self):
+        return self.driver.get_text('x,//*[@id="check-total"]')
+
+    def get_imei_input_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[1]/input[2]').get_attribute(
+            'disabled')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_type_input_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[2]/input[2]').get_attribute(
+            'disabled')
+        self.driver.default_frame()
+        return a
+
+    def get_active_time_input_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[3]/div[2]/input').get_attribute('disabled')
+        self.driver.default_frame()
+        return a
+
+    def get_expire_time_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[4]/div[2]/input').get_attribute('disabled')
+        self.driver.default_frame()
+        return a
+
+    def get_iccid_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[5]/div[1]/input').get_attribute('disabled')
+        self.driver.default_frame()
+        return a
+
+    def get_imsi_value(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[5]/div[2]/input').get_attribute('disabled')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_name_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[1]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_sim_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[2]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_remark_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="reMark"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def click_cust_info_button(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.driver.click_element('x,/html/body/div[1]/ul/li[2]/a')
+        self.driver.default_frame()
+
+    def get_driver_name_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[1]/div[1]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def click_driver_phone_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[1]/div[2]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def driver_vehicle_number_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[2]/div[1]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_driver_iccid_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[2]/div[2]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_driver_sn_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[3]/div[1]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def driver_car_frame_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[3]/div[2]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_driver_engine_number_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="engineNumber"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_install_address_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[2]/div[1]/div[2]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_install_company_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[2]/div[2]/div[1]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_install_position_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[2]/div[2]/div[2]/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_install_personnel_max_len(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[2]/div[3]/div/input').get_attribute(
+            'maxlength')
+        self.driver.default_frame()
+        return a
+
+    def get_imei_in_list(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[3]')
+
+    def get_active_time_in_list(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[5]')
+
+    def get_expire_time_in_list(self):
+        a = self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[7]')
+        b = a.split(' ')[0]
+        return b
+
+    def get_imei_in_detail(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[1]/input[2]').get_attribute('value')
+        self.driver.default_frame()
+        return a
+
+    def get_active_time_in_detail(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[3]/div[2]/input').get_attribute('value')
+        self.driver.default_frame()
+        return a
+
+    def get_expire_time_in_detail(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[4]/div[2]/input').get_attribute('value')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_type_in_list(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[4]')
+
+    def get_dev_name_in_list(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[2]')
+
+    def get_dev_sim_in_list(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[6]')
+
+    def get_dev_group_in_list(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[9]')
+
+    def get_dev_type_in_detail(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[2]/input[2]').get_attribute('value')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_name_in_detail(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[1]/input').get_attribute('value')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_sim_in_detail(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[2]/input').get_attribute('value')
+        self.driver.default_frame()
+        return a
+
+    def get_dev_group_in_detail(self):
+        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        a = self.driver.get_text('x,//*[@id="device_info_a"]/fieldset/div[3]/div[1]/span/div/span[2]')
+        self.driver.default_frame()
+        return a
+
+    def click_sale_in_list_button(self):
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[2]')
+        sleep(2)
+
+    def click_close_sale_in_list_button(self):
+        self.driver.click_element('x,//*[@id="batchSales"]/div/div/div[1]/button/span')
+        sleep(2)
+
+    def get_imei_in_sale(self):
+        return self.driver.get_element('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[1]').text
+
+    def get_dev_type_in_sale(self):
+        return self.driver.get_element('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[2]').text
+
+    def get_dev_account_name(self):
+        return self.driver.get_text('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[3]')
+
+    def click_sale_button(self):
+        self.driver.click_element('x,//*[@id="device_sale_id"]/div[3]/div[2]/button[3]')
+        sleep(2)
+
+    def get_fail_text(self):
+        return self.driver.get_text('c,layui-layer-content')
+
+    def click_detele_dev(self):
+        self.driver.click_element('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[4]/a')
+        sleep(2)
+
+    def add_dev_to_sale(self, imei):
+        self.driver.click_element('x,//*[@id="sale_imei_device_sale_id"]')
+        self.driver.operate_input_element('x,//*[@id="sale_imei_device_sale_id"]', imei)
+        self.driver.click_element('x,//*[@id="device_sale_id"]/div[1]/div/div[1]/div/div[3]/button[1]')
+        sleep(2)
+
+    def get_imei_after_add_fail(self):
+        return self.driver.get_text('x,//*[@id="device_sale_add_result_div"]/div[2]/table/tbody/tr/td[1]')
+
+    def get_status_after_add_fail(self):
+        return self.driver.get_text('x,//*[@id="device_sale_add_result_div"]/div[2]/table/tbody/tr/td[2]/span')
+
+    def get_fail_reason(self):
+        return self.driver.get_text('x,//*[@id="device_sale_add_result_div"]/div[2]/table/tbody/tr/td[3]')
+
+    def click_close_fail(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def click_batch_upload_pictures_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[2]')
+        sleep(2)
+
+    def click_close_batch_upload_pictures_button(self):
+        self.driver.click_element('x,//*[@id="uploadModal"]/div/div/div[1]/button/span')
+        sleep(2)
+
+    def click_cancel_batch_upload_pictures_button(self):
+        self.driver.click_element('x,//*[@id="uploadModal"]/div/div/div[3]/button[2]')
+        sleep(2)
+
+    def click_ensure_upload(self):
+        self.driver.click_element('x,//*[@id="uploadModal"]/div/div/div[3]/button[1]')
+        sleep(2)
+
+    def click_all_set_up_work_command(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[8]')
+        sleep(2)
+
+    def click_close_all_set_up_work_command(self):
+        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[1]/button/span')
+        sleep(2)
+
+    def click_cancel_all_set_up_work_command(self):
+        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[3]/button[2]')
+        sleep(2)
+
+    def get_list_number(self):
+        return len(list(self.driver.get_elements('x,//*[@id="checkTbody"]/tr')))
+
+    def get_count_number(self):
+        return self.driver.get_text('x,//*[@id="check-workMode-total"]')
+
+    def delete_dev(self):
+        self.driver.click_element('x,//*[@id="checkTbody"]/tr[1]/td[5]/a')
+        sleep(2)
+
+    def click_issued_command_button(self):
+        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[3]/button[1]')
+        sleep(2)
+
+    def click_work_command(self):
+        self.driver.click_element('x,//*[@id="workModeView"]/label[1]/div/ins')
+        sleep(2)
+
+    def click_dev_in_list(self):
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
+        sleep(2)
+
+    def check_input_value(self):
+        return self.driver.get_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/input').is_selected()
+
+    def click_select_send_command(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[5]')
+        sleep(2)
+
+    def click_close_select_send_command(self):
+        self.driver.click_element('x,//*[@id="sendCommandModal"]/div/div/div[1]/button/span')
+        sleep(2)
+
+    def click_cancel_select_send_command(self):
+        self.driver.click_element('x,//*[@id="sendCommandModal"]/div/div/div[3]/button[3]')
+        sleep(2)
+
+    def get_imei_in_send_command(self):
+        return self.driver.get_text('x,//*[@id="check-row-tbody"]/tr/td[1]')
+
+    def get_dev_type_in_send_command(self):
+        return self.driver.get_text('x,//*[@id="check-row-tbody"]/tr/td[2]')
+
+    def get_dev_user_in_send_command(self):
+        return self.driver.get_text('x,//*[@id="check-row-tbody"]/tr/td[3]')
+
+    def get_dev_number_in_send_command(self):
+        return len(list(self.driver.get_elements('x,//*[@id="check-row-tbody"]/tr')))
+
+    def get_dev_count_number_in_send_command(self):
+        return self.driver.get_text('x,//*[@id="check-total"]')
+
+    def click_detele_dev_in_send_command(self):
+        self.driver.click_element('x,//*[@id="check-row-tbody"]/tr/td[6]')
+        sleep(2)
+
+    def click_send_command_in_send_command(self):
+        self.driver.click_element('x,//*[@id="toSendBatchIns"]')
+        sleep(2)
+
+    def click_select_set_up_work_command(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[7]')
+        sleep(2)
+
+    def click_close_set_up_work_command(self):
+        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[1]/button/span')
+        sleep(2)
+
+    def click_cancel_set_up_work_command(self):
+        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[3]/button[2]')
+        sleep(2)
+
+    def get_imei_in_set_up_work_command(self):
+        return self.driver.get_text('x,//*[@id="checkTbody"]/tr/td[1]')
+
+    def get_dev_number_in_work_command(self):
+        return len(list(self.driver.get_elements('x,//*[@id="checkTbody"]/tr')))
+
+    def get_dev_count_number_in_work_command(self):
+        return self.driver.get_text('x,//*[@id="check-workMode-total"]')
+
+    def get_dev_type_in_work_command(self):
+        return self.driver.get_text('x,//*[@id="checkTbody"]/tr/td[2]')
+
+    def get_dev_user_in_work_command(self):
+        return self.driver.get_text('x,//*[@id="checkTbody"]/tr/td[3]')
+
+    def get_dev_status_in_list(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[8]')
+
+    def click_select_shut_down(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
+        sleep(2)
+
+    def click_cancel(self):
+        self.driver.click_element('c,layui-layer-btn1')
+        sleep(2)
+
+    def click_close(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def click_all_shut_down(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[10]')
+        sleep(2)
+
+    def get_all_pages(self):
+        a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
+        if a == "display: block;":
+            new_paging = NewPaging(self.driver, self.base_page)
+            page = new_paging.get_total_page('x,//*[@id="paging-dev"]')
+            return page
+        else:
+            return 0
+
+    def click_per_page(self, n):
+        self.driver.click_element('l,%s' % str(n))
+
+    def get_per_number(self):
+        new_paging = NewPaging(self.driver, self.base_page)
+        number = new_paging.get_last_page_number('x,//*[@id="markDevTable"]')
+        return number
+
+    def get_text_dev_status(self, m):
+        text = self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[8]' % str(m))
+        return text
+
+    def click_select_starting_up(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[11]')
+        sleep(2)
+
+    def click_all_starting_up(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[12]')
+        sleep(2)
+
+    def search_dev(self):
+        self.driver.click_element('x,//*[@id="lowerFlag"]/div/ins')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
+        sleep(5)
+
+    def search_account(self, param):
+        self.driver.operate_input_element('x,//*[@id="deviceManage_cusTreeKey"]', param)
+        self.driver.click_element('x,//*[@id="deviceManage_cusTreeSearchBtn"]')
+        sleep(3)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)
+
+    def search_bundle_dev(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/div/ul/li[2]')
+        self.driver.click_element('x,//*[@id="lowerFlag"]/div/ins')
+
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
+        sleep(3)
+
+    def click_unbundle_dev(self):
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
+        sleep(2)
+        self.driver.click_element('l,解绑')
+        sleep(2)
+
+    def click_more_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
+        sleep(2)

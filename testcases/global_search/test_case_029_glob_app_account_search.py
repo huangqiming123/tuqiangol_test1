@@ -13,8 +13,6 @@ from pages.global_search.global_search_page_read_csv import GlobleSearchPageRead
 from pages.global_search.search_sql import SearchSql
 
 
-# author:孙燕妮
-
 class TestCase029GlobAppAccountSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
@@ -36,7 +34,6 @@ class TestCase029GlobAppAccountSearch(unittest.TestCase):
         self.driver.quit_browser()
 
     def test_global_app_account_search(self):
-        '''通过csv测试全局搜索-搜索栏设备精确查找功能'''
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.log_in_base.log_in_jimitest()

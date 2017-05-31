@@ -189,7 +189,7 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
 
             elif data['alarm_begin_time'] == '' and data['alarm_end_time'] == '' and data['push_begin_time'] == '' and \
                             data['push_end_time'] == '' and data['next_user'] == '0':
-                #条件2，告警时间为空，定位时间为空，不包含下级用户
+                # 条件2，告警时间为空，定位时间为空，不包含下级用户
                 self.get_total_sql = "SELECT a.imei FROM alarm_info AS a WHERE a.imei in " + str(
                     current_user_all_equipment) + " and a.USER_ID=" + user_id + ";"
 

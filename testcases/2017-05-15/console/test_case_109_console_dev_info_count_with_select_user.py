@@ -8,6 +8,7 @@ from pages.console.console_page import ConsolePage
 from pages.console.console_page_read_csv import ConsolePageReadCsv
 from pages.dev_manage.dev_manage_page import DevManagePage
 
+
 # 控制台-当前选中客户设备的各类数据统计验证
 
 # author:孙燕妮

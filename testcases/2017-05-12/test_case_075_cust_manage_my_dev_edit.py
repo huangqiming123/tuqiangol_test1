@@ -114,7 +114,7 @@ class TestCase075CustManageMyDevEdit(unittest.TestCase):
                                                                edit_info["install_addr"],
                                                                edit_info["install_posi"])
             # 选择安装时间
-            #self.cust_manage_my_dev_page.select_install_time()
+            # self.cust_manage_my_dev_page.select_install_time()
             self.driver.default_frame()
             # 保存
             self.cust_manage_my_dev_page.dev_info_save()

@@ -52,6 +52,14 @@ class TestCase159AccountCenterOverviewEquipmentManager(unittest.TestCase):
                 # 验证文本
                 text = self.account_center_page_details.click_dev_manage_get_text()
                 self.assertEqual('全部设备', text)
+
+                # 查看控制台告警设置能否打开
+                self.account_center_page_navi_bar.click_alarm_button_in_console()
+                # 断言
+                get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
+                self.assertEqual(' 报警管理', get_text)
+                self.account_center_page_navi_bar.close_alarm_in_console()
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

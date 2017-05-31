@@ -48,5 +48,13 @@ class TestCase009AccountCenterModifyInfo(unittest.TestCase):
             # 判断是否修改成功
             self.assertEqual("操作成功", save_status, "修改失败")
         csv_file.close()
+
+        # 点击关闭
+        self.account_center_page_navi_bar.click_modify_usr_info()
+        self.account_center_page_navi_bar.cancel_modify_user_info()
+
+        # 点击取消
+        self.account_center_page_navi_bar.click_modify_usr_info()
+        self.account_center_page_navi_bar.close_modify_user_info()
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()

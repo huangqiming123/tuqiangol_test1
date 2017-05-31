@@ -129,16 +129,16 @@ class TestCase144EnclosureSetUpOperation(unittest.TestCase):
         self.alarm_info_page.click_set_up_alarm_operation('cancel')
 
         csv_file = open('E:\git\\tuqiangol_test\data\\alarm_info\set_up_alarm_data.csv', 'r', encoding='utf8')
-        csv_data=csv.reader(csv_file)
-        is_header=True
+        csv_data = csv.reader(csv_file)
+        is_header = True
         for row in csv_data:
-            if is_header :
+            if is_header:
                 is_header = False
                 continue
-            set_up_alarm_data={
-                'search':row[0],
-                'time_01':row[1],
-                'time_02':row[2]
+            set_up_alarm_data = {
+                'search': row[0],
+                'time_01': row[1],
+                'time_02': row[2]
             }
             # 点击告警设置
             self.alarm_info_page.set_up_enclosure_list_operation('set_up')

@@ -60,7 +60,7 @@ class TestTase143EnclosureSetUpAddEnclosure(unittest.TestCase):
         # 点击创建围栏
         self.alarm_info_page.click_add_enclosure()
         # 断言
-        expect_text='创建围栏'
-        self.assertEqual(expect_text,self.alarm_info_page.actual_text_after_click_add_enclosure())
+        expect_text = '创建围栏'
+        self.assertEqual(expect_text, self.alarm_info_page.actual_text_after_click_add_enclosure())
         # 点击关闭创建围栏
         self.alarm_info_page.click_close_add_enclosure()

@@ -87,8 +87,7 @@ class TestCase083CustManageLowerAccountOperate(unittest.TestCase):
                 current_url = self.driver.get_current_url()
 
                 self.assertEqual(expect_url, current_url, "控制台页面跳转错误!")
-                get_account = self.cust_manage_lower_account_page.get_account_after_click_conlson()
-                self.assertEqual(account, get_account)
+
                 # 关闭当前窗口
                 self.driver.close_current_page()
                 # 回到账户中心窗口

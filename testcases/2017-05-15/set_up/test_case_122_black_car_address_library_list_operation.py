@@ -105,7 +105,6 @@ class TestCase122BlackCarAddressLibraryListOperation(unittest.TestCase):
         self.assertEqual(expect_text_after_click_black_car_address,
                          self.set_up_page.check_text_after_click_black_car_address())
 
-
         # 点击删除黑车地址库
         self.set_up_page.black_car_address_operation_delete()
         # 断言是否打开

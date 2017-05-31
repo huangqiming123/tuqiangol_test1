@@ -19,75 +19,75 @@ class AccountCenterDetailsPage(BasePageServer):
     def account_overview(self, link_name):
 
         if link_name == '库存':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[1]/a/i")
+            self.driver.click_element(
+                "x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[1]/div/div[1]/a")
             self.driver.wait(1)
         elif link_name == '总进货数':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[2]/a")
             self.driver.wait(1)
         elif link_name == '在线':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[3]/a/i")
             self.driver.wait(1)
         elif link_name == '离线':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[4]/a")
             self.driver.wait(1)
         elif link_name == '即将到期':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[5]/a")
             self.driver.wait(1)
         elif link_name == '已过期':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[6]/a")
             self.driver.wait(1)
         elif link_name == '已激活':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[7]/a")
             self.driver.wait(1)
         elif link_name == '未激活':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[8]/a")
             self.driver.wait(1)
         elif link_name == '告警车辆':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[9]/a")
             self.driver.wait(1)
         elif link_name == '重点关注车辆':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[1]/div/div[10]/a")
             self.driver.wait(1)
         elif link_name == '控制台':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[2]/div/div[1]/a")
             self.driver.wait(1)
         elif link_name == '统计报表':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[2]/div/div[2]/a")
             self.driver.wait(1)
         elif link_name == '围栏':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[2]/div/div[3]/a")
             self.driver.wait(1)
         elif link_name == '下级客户管理':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[2]/div/div[4]/a")
             self.driver.wait(1)
         elif link_name == '设备管理':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[2]/div/div[5]/a")
             self.driver.wait(1)
         elif link_name == '指令管理':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[2]/div/div[6]/a")
             self.driver.wait(1)
         elif link_name == '地标设置':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[2]/div/div[7]/a")
             self.driver.wait(1)
         elif link_name == '告警':
-            self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/"
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
                                       "div[1]/div/div[2]/div/div[8]/a")
             self.driver.wait(1)
 
@@ -294,7 +294,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
 
     def get_actual_text_after_click_command(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div[5]/div[1]/div/b')
+        return self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[5]/div[1]/div/b')
 
     def get_actual_text_after_click_set_up_landmark(self):
         return self.driver.get_text('x,//*[@id="marktab"]')
@@ -398,7 +398,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
 
     def click_report_after_text(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div/div[1]/div/b')
+        return self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[1]/div/b')
 
     def click_safearea_get_vaule(self):
         return self.driver.get_element('x,//*[@id="safemenu"]/li[1]').get_attribute('class')
@@ -410,21 +410,98 @@ class AccountCenterDetailsPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="devExpiring2"]')
 
     def click_coming_overtime_get_text(self):
-        return self.driver.get_text('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[1]/div/div/span[2]')
+        return self.driver.get_text('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
 
     def get_overtime_number(self):
         return self.driver.get_text('x,//*[@id="devExpired2"]')
 
     def click_clear_all_button(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[2]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/button')
         sleep(2)
 
     def get_lower_input_value(self):
         return self.driver.get_element('x,//*[@id="lowerFlag"]/div/input').is_selected()
 
     def click_search_button(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[7]/button[1]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(2)
 
     def click_active_get_text(self):
-        return self.driver.get_text('x,//*[@id="allDev"]/div[2]/div[1]/div/div[4]/div[6]/div[2]/div/div/span[2]')
+        return self.driver.get_text('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]')
+
+    # 快捷销售--点击添加按钮
+    def click_add_button(self):
+        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/"
+                                  "div/div[2]/div[1]/div[1]/div[2]/button")
+        self.driver.wait(1)
+
+    # 快捷销售-新增客户--异常提示
+    def get_add_user_exception_prompt(self, add_data):
+        # 编辑客户名称、登录账号、密码、确认密码、电话、邮箱、联系人、公司名称
+        self.driver.operate_input_element("nickName", add_data["name"])
+        self.driver.operate_input_element("account", add_data["account"])
+        self.driver.operate_input_element("passWord", add_data["password"])
+        self.driver.operate_input_element("pswAgain", add_data["confirm_pwd"])
+        self.driver.operate_input_element("email", add_data["email"])
+        # 保存
+        self.driver.click_element("addUserBtn")
+        self.driver.wait()
+
+        # 取已存在账号的提示
+        try:
+            text = self.driver.get_element("c,layui-layer-content").text
+        except:
+            text = ""
+        # 客户名称--错误提示
+        name_prompt2 = self.get_prompt("x,//*[@id='addRole_userForm']/div[3]/div/label")
+        account_prompt2 = self.get_prompt("x,//*[@id='addRole_userForm']/div[4]/div/label")
+        pwd_prompt2 = self.get_prompt("x,//*[@id='markPassword']/div[1]/div/label")
+        pwd2_prompt2 = self.get_prompt("x,//*[@id='markPswAgain']/div/label")
+        email_prompt2 = self.get_prompt("x,//*[@id='addRole_userForm']/div[7]/div/label")
+
+        all_prompt = {
+            "name_prompt2": name_prompt2,
+            "account_prompt2": account_prompt2,
+            "pwd_prompt2": pwd_prompt2,
+            "pwd2_prompt2": pwd2_prompt2,
+            "email_prompt2": email_prompt2,
+            "text2": text
+        }
+        print(all_prompt)
+        return all_prompt
+
+    # 快速销售（新增客户）--取消
+    def click_add_cancel_button(self):
+        self.driver.click_element("x,//*[@id='addRole']/div/div/div[3]/button[2]")
+
+    # 账户详情---取提示语
+    def get_prompt(self, select):
+        try:
+            prompt = self.driver.get_text(select)
+            return prompt
+        except:
+            prompt = ""
+            return prompt
+
+    # 快速销售（新增客户）--获取长度
+    def get_add_user_element_len(self):
+        name_len = int(self.driver.get_element("nickName").get_attribute("maxlength"))
+        account_len = int(self.driver.get_element("account").get_attribute("maxlength"))
+        phone_len = int(self.driver.get_element("phone").get_attribute("maxlength"))
+        email_len = int(self.driver.get_element("email").get_attribute("maxlength"))
+        contact_len = int(self.driver.get_element("contact").get_attribute("maxlength"))
+        companyName_len = int(self.driver.get_element("companyName").get_attribute("maxlength"))
+        all_len = {
+            "name_len": name_len,
+            "account_len": account_len,
+            "phone_len": phone_len,
+            "email_len": email_len,
+            "contact_len": contact_len,
+            "companyName_len": companyName_len,
+        }
+        print(all_len)
+        return all_len
+
+    def click_more_in_dev_manage(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
+        sleep(2)

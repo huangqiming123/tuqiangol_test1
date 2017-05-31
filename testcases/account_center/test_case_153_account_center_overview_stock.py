@@ -49,11 +49,32 @@ class TestCase153AccountCenterOverviewStock(unittest.TestCase):
                 self.driver.switch_to_window(handle)
                 sleep(2)
                 expect_url = self.driver.get_current_url()
-                connect = self.connect_sql.connect_tuqiang_sql()
                 actual_url = self.base_url + '/device/toDeviceManage'
                 self.assertEqual(expect_url, actual_url, '点击库存后，实际的url和期望的不一样！')
+
+                # 判断包涵下级的input框未被勾选上
+                input_value = self.account_center_page_navi_bar.check_next_user_input_value()
+                self.assertEqual(False, input_value)
+
                 actual_total = self.account_center_page_details.get_actual_current_account_all_equipment()
                 self.assertEqual(expect_total, str(actual_total), '当前用户库存的总数和实际不一致！')
+
+                # 验证清空按钮
+                self.account_center_page_details.click_clear_all_button()
+                lower_user_input_value = self.account_center_page_details.get_lower_input_value()
+                self.assertEqual(False, lower_user_input_value)
+                # 点搜索
+                self.account_center_page_details.click_search_button()
+                lower_user_input_value_again = self.account_center_page_details.get_lower_input_value()
+                self.assertEqual(False, lower_user_input_value_again)
+
+                # 查看控制台告警设置能否打开
+                self.account_center_page_navi_bar.click_alarm_button_in_console()
+                # 断言
+                get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
+                self.assertEqual(' 报警管理', get_text)
+                self.account_center_page_navi_bar.close_alarm_in_console()
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

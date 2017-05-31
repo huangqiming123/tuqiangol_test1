@@ -8,6 +8,7 @@ from pages.base.lon_in_base import LogInBase
 from pages.global_search.global_complex_search_page import GlobalComplexSearchPage
 from pages.global_search.global_search_page_read_csv import GlobleSearchPageReadCsv
 
+
 # 全局搜索-高级搜索- 欠费设备的操作(下发指令)
 
 # author:zhangao

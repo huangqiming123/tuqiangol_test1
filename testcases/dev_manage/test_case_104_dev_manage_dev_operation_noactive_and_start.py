@@ -44,6 +44,7 @@ class TestCase104DevManageDevOperationNOActiveAndStart(unittest.TestCase):
 
         # 选择已激活和开机的设备
         self.dev_manage_page.choose_dev_noactive_and_statr()
+        self.dev_manage_page.click_ensure()
         imei = self.dev_manage_page.get_imei_number()
         self.dev_manage_page.click_edit_button()
         self.dev_manage_page.click_close_edit_button()

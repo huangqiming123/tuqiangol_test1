@@ -124,3 +124,50 @@ class LoginPage(BasePageServer):
 
     def get_fifth_text_after_log_in_tester_account(self):
         return self.driver.get_text('x,//*[@id="deviceDistribution"]/a')
+
+    def get_exception_text(self):
+        return self.driver.get_text('x,//*[@id="tipsmsg"]')
+
+    # 找回密码--异常验证
+    def get_forget_pwd_error_prompt(self, data):
+        self.forget_passwd_account(data["account"])
+        self.forget_passwd_phone(data["phone"])
+        self.driver.operate_input_element("x,//*[@id='validmessage-form']/div[3]/div[1]/input", data["verify_code"])
+        if data["type"] == "下一步":
+            # 点击下一步
+            self.driver.click_element("validSmsCode")
+            self.driver.wait()
+
+        elif data["type"] == "获取验证码":
+            # 点击验证码
+            self.driver.click_element("getValidCodeBtn")
+            self.driver.wait()
+
+        # 获取弹框提示语
+        try:
+            text = self.driver.get_element("c,layui-layer-content").text
+        except:
+            text = ""
+
+        # 获取账号提示语
+        account_prompt = self.get_login_prompt("x,//*[@id='validmessage-form']/div[1]/div/label")
+        phone_prompt = self.get_login_prompt("x,//*[@id='validmessage-form']/div[2]/div/label")
+        code_prompt = self.get_login_prompt("x,//*[@id='validmessage-form']/div[3]/div/label")
+
+        all_prompt = {
+            "account_prompt2": account_prompt,
+            "phone_prompt2": phone_prompt,
+            "code_prompt2": code_prompt,
+            "text_prompt": text
+        }
+        print(all_prompt)
+        return all_prompt
+
+    # 登录---取提示语
+    def get_login_prompt(self, select):
+        try:
+            prompt = self.driver.get_text(select)
+            return prompt
+        except:
+            prompt = ""
+            return prompt

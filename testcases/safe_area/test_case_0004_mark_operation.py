@@ -48,7 +48,7 @@ class TestCase0004MarkOperation(unittest.TestCase):
         # 点击列表的编辑
         self.safe_area_page.click_edit_button_in_list()
         # 点击保存
-        self.safe_area_page.click_ensure_edit_in_list('名称','描述')
+        self.safe_area_page.click_ensure_edit_in_list('名称', '描述')
 
         # 点击列表的编辑
         self.safe_area_page.click_edit_button_in_list()

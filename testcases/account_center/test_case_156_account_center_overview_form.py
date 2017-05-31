@@ -50,6 +50,26 @@ class TestCase156AccountCenterOverviewForm(unittest.TestCase):
                 # 验证文本
                 actual_text = self.account_center_page_details.click_report_after_text()
                 self.assertEqual('统计报表', actual_text)
+
+                # 验证运动统计是否被选中
+                get_value_sport_statistion = self.account_center_page_navi_bar.get_value_sport_statistiacl_value()
+                self.assertEqual('active', get_value_sport_statistion)
+
+                # 验证运动总览
+                get_value_sport_overview = self.account_center_page_navi_bar.get_value_sport_overview_value()
+                self.assertEqual('active', get_value_sport_overview)
+
+                # 验证右侧区域是否为运动总览
+                get_text = self.account_center_page_navi_bar.get_text_after_report()
+                self.assertEqual('运动总览', get_text)
+
+                # 查看控制台告警设置能否打开
+                self.account_center_page_navi_bar.click_alarm_button_in_console()
+                # 断言
+                get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
+                self.assertEqual(' 报警管理', get_text)
+                self.account_center_page_navi_bar.close_alarm_in_console()
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

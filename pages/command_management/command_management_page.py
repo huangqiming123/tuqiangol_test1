@@ -15,12 +15,12 @@ class CommandManagementPage(BasePage):
     # 常量
     CONTROL_SELECTOR = 'x,//*[@id="index"]/a'
     COMMAND_MANAGEMENT_SELECTOR = 'x,//*[@id="commandManagement"]/a'
-    ACTUAL_TITLE_TEXT_AFTER_CLICK_COMMAND_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[1]/b'
+    ACTUAL_TITLE_TEXT_AFTER_CLICK_COMMAND_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[1]/b'
 
     # 左侧列表
     WORK_TYPE_TEMPLATE_MANAGEMENT_SELECTOR = 'x,//*[@id="templateList_li"]/a'
 
-    ACTUAL_TITLE_TEXT_AFTER_CLICK_WORK_TYPE_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div[1]/div/b'
+    ACTUAL_TITLE_TEXT_AFTER_CLICK_WORK_TYPE_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div[1]/div/b'
 
     WORK_TYPE_MANAGEMENT_CREATE_TEMPLATE_BUTTON_SELECTOR = 'x,//*[@id="create-instructionRules"]'
     WORK_TYPE_MANAGEMENT_ACTUAL_TITLE_TEXT_CLICK_CREATE_TEMPLATE_SELECTOR = 'x,/html/body/div[5]/div/div/div[1]/h4'
@@ -78,7 +78,6 @@ class CommandManagementPage(BasePage):
 
         self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/a[1]')
 
-
     def actual_url_click_command_management(self):
         # 获取点击指令管理之后的url
         actual_url = self.driver.get_current_url()
@@ -97,12 +96,12 @@ class CommandManagementPage(BasePage):
             sleep(3)
 
         elif type == 'issued_work_type_task_management':
-            self.driver.click_element(self.ISSUED_WORK_TYPE_TASK_MANAGEMENT_SELECTOR)
+            self.driver.click_element('x,//*[@id="issuedTemplateList_li"]/a')
             sleep(3)
 
         elif type == 'issued_work_type_management':
             # 下发工作模式管理
-            self.driver.click_element(self.ISSUED_WORK_TYPE_MANAGEMENT_SELECTOR)
+            self.driver.click_element('x,//*[@id="issuedStageLi"]/a')
             sleep(3)
 
         elif type == 'issued_command_task_management':
@@ -231,7 +230,7 @@ class CommandManagementPage(BasePage):
     def work_template_operation_revise(self):
         # 点击修改工作模板
         try:
-            self.driver.click_element(self.CREATE_WORK_TEMPLATE_OPERATION_REVISE_SELECTOR)
+            self.driver.click_element('x,//*[@id="templateBody"]/tr[1]/td[5]/a[1]')
             sleep(2)
         except:
             print("列表无数据！")
@@ -239,7 +238,7 @@ class CommandManagementPage(BasePage):
     def work_template_operation_delete(self):
         # 点击删除
         try:
-            self.driver.click_element(self.CREATE_WORK_TEMPLATE_OPERATION_DELETE_SELECTOR)
+            self.driver.click_element('x,//*[@id="templateBody"]/tr[1]/td[5]/a[2]')
             sleep(3)
         except:
             print('列表无数据！')
@@ -312,16 +311,16 @@ class CommandManagementPage(BasePage):
 
     def actual_title_text_click_issued_work_type_task_management(self):
         # 点击下发工作模式任务管理后，获取右侧区域左上角的文本
-        actual_text = self.driver.get_text(self.ISSUED_WORK_TYPE_TASK_MANAGEMENT_TITLE_TEXT_CLICK_SELECTOR)
+        actual_text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[1]/div/b')
         return actual_text
 
     def issued_work_type_task_management_search(self, id, name):
         # 填写下发工作模式任务管理
-        self.driver.operate_input_element(self.ISSUED_WORK_TYPE_TASK_MANAGEMENT_SEARCH_BATCH_SELECTOR, id)
+        self.driver.operate_input_element('x,//*[@id="issuedTemplateId"]', id)
 
-        self.driver.operate_input_element(self.ISSUED_WORK_TYPE_TASK_MANAGEMENT_SEARCH_TEMPLATE_NAME_SELECTOR, name)
+        self.driver.operate_input_element('x,//*[@id="issuedTemplateName"]', name)
 
-        self.driver.click_element(self.ISSUED_WORK_TYPE_TASK_MANAGEMENT_SEARCH_BUTTON_SELECTOR)
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/form/div[3]/button')
         sleep(5)
 
     def search_total_number(self, type):
@@ -361,14 +360,14 @@ class CommandManagementPage(BasePage):
     def click_look_equipment(self):
         # 点击查看设备
         try:
-            self.driver.click_element(self.ISSUED_WORK_TYPE_TASK_MANAGEMENT_LOOK_EQUIPMENT_SELECTOR)
+            self.driver.click_element('x,//*[@id="js-checkEquipment"]')
             sleep(3)
         except:
             print('列表无数据！')
 
     def actual_text_click_look_equipment(self):
         # 点击查看设备后，获取页面右上角的文本
-        actual_text = self.driver.get_text(self.ISSUED_WORK_TYPE_TASK_MANAGEMENT_TEXT_LOOK_EQUIPMENT_SELECTOR)
+        actual_text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[1]/div/b')
         return actual_text
 
     def add_data_to_search(self, search_data):
@@ -379,65 +378,65 @@ class CommandManagementPage(BasePage):
         sleep(3)
         if search_data['execute_state'] == '5':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[2]')
 
         elif search_data['execute_state'] == '1':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(3)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[3]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[3]')
 
         elif search_data['execute_state'] == '2':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[4]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[4]')
 
         elif search_data['execute_state'] == '3':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[5]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[5]')
 
         elif search_data['execute_state'] == '4':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[6]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[6]')
         else:
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[1]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[1]')
 
         # 选择状态
 
         if search_data['state'] == '1':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[2]')
         elif search_data['state'] == '2':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[3]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[3]')
         else:
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[1]')
+                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[1]')
 
         # 输入imei
         self.driver.click_element('x,//*[@id="searchIssuedTemplateIMEI"]')
@@ -447,7 +446,7 @@ class CommandManagementPage(BasePage):
         # self.driver.click_element(
         #    's,body > div.wrapper > div.main.oh > div > div > div.customer-rightsidebar.p-15.mih-400 > div.tab-con-sendworkmode.b1-ccc.bc-fff > div.funcbar.clearfix > form > div:nth-child(4) > div > div > div.fr > button.btn.btn-success.btn-sm.mw-80.js-add-results-btn')
 
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div[3]/div[2]/form/div[5]/button')
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[5]/button')
         sleep(5)
 
     def click_look_issued_work_type(self):
@@ -503,7 +502,7 @@ class CommandManagementPage(BasePage):
 
     def actual_text_after_click_issued_command_task(self):
         # 点击下发指令任务管理后，获取页面右上角的文本
-        actual_text = self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div[4]/div[1]/div/b')
+        actual_text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[4]/div[1]/div/b')
         return actual_text
 
     def issued_command_task_add_data_to_search(self, search_data):
@@ -524,7 +523,7 @@ class CommandManagementPage(BasePage):
 
     def actual_text_after_click_look_equipment(self):
         # 点击查看设备后，返回真实的title文本
-        actual_text = self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div[5]/div[1]/div/b')
+        actual_text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[5]/div[1]/div/b')
         return actual_text
 
     def issued_command_management_search_data(self, search_data):
@@ -641,3 +640,187 @@ class CommandManagementPage(BasePage):
 
         sql += ";"
         return sql
+
+    def get_create_template_name_text(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_element('x,//*[@id="tempName"]').get_attribute('placeholder')
+        self.driver.default_frame()
+        return text
+
+    def add_template_name_in_create_template(self, param):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="tempName"]', param)
+        self.driver.default_frame()
+
+    def click_ensure(self):
+        self.driver.click_element('x,//*[@id="customInstructionsModal"]/div/div/div[3]/button[1]')
+        sleep(2)
+
+    def get_text_after_click_ensure(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="tmpform"]/div[1]/div[1]/label')
+        self.driver.default_frame()
+        return text
+
+    def get_report_time_text_fail(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[2]/div/ul/li/label')
+        self.driver.default_frame()
+        return text
+
+    def get_circulation_report_time_text_fail(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[2]')
+        self.driver.default_frame()
+        return text
+
+    def add_circulation_report_time(self, param):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/input',
+                                          param)
+        self.driver.default_frame()
+
+    def get_circulation_report_time_texts_fail(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[3]')
+        self.driver.default_frame()
+        return text
+
+    def click_add_user_defined_template(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.click_element('x,//*[@id="tmpform"]/div[1]/div[2]/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_total_number_template(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        a = len(list(self.driver.get_elements('x,//*[@id="stageList"]/div')))
+        self.driver.default_frame()
+        return a
+
+    def click_delete_user_defined_template(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.click_element('x,//*[@id="stageList"]/div[2]/div/div/div/div[1]/a')
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_week_patterns(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.click_element('x,//*[@id="stageList"]/div/div/div/div/div[1]/ul/li[2]/a')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_text_fail_report_time_week(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[1]/div/label')
+        self.driver.default_frame()
+        return text
+
+    def get_text_fail_report_time(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[2]/div/label')
+        self.driver.default_frame()
+        return text
+
+    def get_text_fail_limit_cycle(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/label[2]')
+        self.driver.default_frame()
+        return text
+
+    def add_limit_cycle_in_create_template(self, n):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/input',
+                                          n)
+        self.driver.default_frame()
+
+    def get_texts_fail_limit_cycle(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/label[3]')
+        self.driver.default_frame()
+        return text
+
+    def click_normal_mode(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.click_element('x,//*[@id="stageList"]/div/div/div/div/div[1]/ul/li[3]/a')
+        sleep(2)
+        self.driver.default_frame()
+
+    def add_wake_up_time_in_create_template(self, n):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[1]/div/input',
+                                          n)
+        self.driver.default_frame()
+
+    def get_text_wake_up_time_fail(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[1]/div/label')
+        self.driver.default_frame()
+        return text
+
+    def add_limit_cycle_in_create_templates(self, param):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.operate_input_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/input',
+                                          param)
+        self.driver.default_frame()
+
+    def get_text_fail_limit_cycles(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/label[2]')
+        self.driver.default_frame()
+        return text
+
+    def get_texts_fail_limit_cycles(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/label[3]')
+        self.driver.default_frame()
+        return text
+
+    def get_template_name(self):
+        text = self.driver.get_text('x,//*[@id="templateBody"]/tr[1]/td[2]')
+        return text
+
+    def click_modify_template_button(self):
+        self.driver.click_element('x,//*[@id="templateBody"]/tr[1]/td[5]/a[1]')
+        sleep(2)
+
+    def get_template_name_again(self):
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        text = self.driver.get_element('x,//*[@id="tempName"]').get_attribute('value')
+        self.driver.default_frame()
+        return text
+
+    def click_close_issued_command(self):
+        self.driver.click_element('x,//*[@id="execution-instruction"]/div/div/div[1]/button/span')
+        sleep(2)
+
+    def add_dev_to_issued_command(self, param):
+        self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', param)
+        sleep(1)
+        self.driver.click_element(
+            'x,//*[@id="execution-instruction"]/div/div/div[2]/form/div/div/div[1]/div/div[3]/button[1]')
+        sleep(10)
+
+    def click_send_issued_command(self):
+        self.driver.click_element('x,//*[@id="execution-instruction"]/div/div/div[2]/form/div/div/div[3]/button')
+        sleep(2)
+
+    def click_issued_commands(self):
+        self.driver.click_element('x,//*[@id="js-issued-instruction"]')
+        sleep(2)
+
+    def get_command_name_fail(self):
+        return self.driver.get_text('x,//*[@id="failedList"]/tr/td[1]')
+
+    def get_command_status_fail(self):
+        return self.driver.get_text('x,//*[@id="failedList"]/tr/td[2]/span')
+
+    def get_command_reason_fail(self):
+        return self.driver.get_text('x,//*[@id="failedList"]/tr/td[3]')
+
+    def close_issued_command_fail(self):
+        self.driver.click_element('x,//*[@id="addResultsModal-close"]')
+        sleep(2)
+
+    def get_text_after_ensure(self):
+        return self.driver.get_text('c,layui-layer-content')

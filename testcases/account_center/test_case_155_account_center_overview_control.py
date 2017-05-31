@@ -46,6 +46,22 @@ class TestCase155AccountCenterOverviewControl(unittest.TestCase):
                 expect_url = self.driver.get_current_url()
                 actual_url = self.base_url + '/console'
                 self.assertEqual(expect_url, actual_url, '点击控制台后，实际的url和期望的不一样！')
+
+                # 获取菜单栏中控制台的class属性
+                get_console_class = self.account_center_page_navi_bar.get_console_class_value()
+                self.assertEqual('active', get_console_class)
+
+                # 获取全部的li里面的class属性
+                all_dev_class_value = self.account_center_page_navi_bar.get_all_dev_button_value()
+                self.assertEqual('active', all_dev_class_value)
+
+                # 查看控制台告警设置能否打开
+                self.account_center_page_navi_bar.click_alarm_button_in_console()
+                # 断言
+                get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
+                self.assertEqual(' 报警管理', get_text)
+                self.account_center_page_navi_bar.close_alarm_in_console()
+
                 self.driver.close_current_page()
                 # 回到账户中心窗口
                 self.driver.switch_to_window(account_center_handle)

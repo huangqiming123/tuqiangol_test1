@@ -10,7 +10,6 @@ from pages.console.console_page_read_csv import ConsolePageReadCsv
 from pages.dev_manage.dev_manage_page import DevManagePage
 
 
-
 # 控制台-地图中的单个设备操作（街景、轨迹回放、下发指令、设备详情、电子围栏、查看告警）
 
 # author:孙燕妮
@@ -162,7 +161,7 @@ class TestCase115ConsoleVehicleListDevOperate(unittest.TestCase):
                 self.driver.wait(1)
                 # 获取电子围栏页面的url
                 curr_url = self.driver.get_current_url()
-                expect_url = self.base_url +  '/electricFence/toElectricFence?imei=874544562356578'
+                expect_url = self.base_url + '/electricFence/toElectricFence?imei=874544562356578'
                 # 验证两者是否一致
                 self.assertEqual(expect_url, curr_url, "当前页面跳转错误")
                 # 关闭当前窗口

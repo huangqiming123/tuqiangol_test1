@@ -455,12 +455,10 @@ class AlarmInfoPage(BasePage):
         sleep(2)
         # 输入数据
         self.driver.operate_input_element('x,//*[@id="cusTreeKey"]', data['user_name'])
-        sleep(1)
         self.driver.click_element('x,//*[@id="cusTreeSearchBtn"]')
         # 点击搜索的第一个
         sleep(2)
         self.driver.click_element('c,autocompleter-item')
-        sleep(2)
 
         # 点击设备搜索
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
@@ -484,7 +482,7 @@ class AlarmInfoPage(BasePage):
         sleep(2)
         # 选择日期
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/span[2]')
-        sleep(2)
+        sleep(1)
         if data['choose_date'] == 'today':
             # 今天
             self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/div/ul/li[2]')
@@ -734,5 +732,5 @@ class AlarmInfoPage(BasePage):
         sleep(2)
 
     def click_alarm_detail_list(self):
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div/div[2]/ul/li[4]/ul/li[2]/a')
+        self.driver.click_element('x,//*[@id="alarmDdetails"]/a')
         sleep(2)

@@ -65,7 +65,6 @@ class TestCase077CustManageMyDevMore(unittest.TestCase):
         except:
             print('该设备未配备指令')
 
-
         # 获取当前窗口句柄
         account_center_handle = self.driver.get_current_window_handle()
 

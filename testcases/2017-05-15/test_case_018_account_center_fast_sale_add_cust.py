@@ -128,7 +128,6 @@ class TestCase018AccountCenterFastSaleAddCust(unittest.TestCase):
             self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[2]')
             sleep(2)
 
-
         csv_file.close()
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()

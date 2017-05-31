@@ -78,8 +78,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
             # 创建游标
             cursor = connect.cursor()
             # 查询搜索用户的uesrID
-            get_user_id_sql = "SELECT userId FROM user_info WHERE account ='" + data[
-                'user_name'] + "';"
+            get_user_id_sql = "SELECT userId FROM user_info WHERE account ='" + data['user_name'] + "';"
             # 执行sql
             cursor.execute(get_user_id_sql)
             get_user_id = cursor.fetchall()

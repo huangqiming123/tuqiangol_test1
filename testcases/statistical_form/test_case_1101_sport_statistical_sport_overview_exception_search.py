@@ -1,5 +1,4 @@
 import unittest
-from time import sleep
 from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage

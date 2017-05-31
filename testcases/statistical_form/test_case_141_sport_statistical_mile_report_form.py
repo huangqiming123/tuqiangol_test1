@@ -10,9 +10,9 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase148SportStatisticalMileageForm(unittest.TestCase):
+class TestCase141SportStatisticalMileReportForm(unittest.TestCase):
     '''
-    用例第148条，运动统计 行程报表
+    用例第141条，运动统计 里程报表
     author:zhangAo
     '''
 
@@ -42,20 +42,18 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_148_sport_statistical_mileage_form(self):
+    def test_case_141_sport_statistical_mile_report_form(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,
                          self.statistical_form_page.actual_url_after_statistical_form())
         # 点击里程报表
-        self.statistical_form_page.click_mileage_form_button()
+        self.statistical_form_page.click_mileage_form_buttons()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
-        self.assertEqual('行程报表', self.statistical_form_page.actual_text_after_click_mileage_form_button())
-        self.driver.default_frame()
+        self.assertEqual('里程报表', self.statistical_form_page.actual_text_after_click_mileage_form_buttons())
 
         # 读取查询数据
-        csv_file = self.statistical_form_page_read_csv.read_csv('sport_statistical_milage_form_search_data.csv')
+        csv_file = self.statistical_form_page_read_csv.read_csv('milage_report_search_data.csv')
         csv_data = csv.reader(csv_file)
         is_header = True
         for row in csv_data:
@@ -69,8 +67,8 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
                 'begin_time': row[3],
                 'end_time': row[4]
             }
-            self.statistical_form_page.add_data_to_search_mileage_form(search_data)
-            self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+            self.statistical_form_page.add_datas_to_search_mileage_form(search_data)
+            self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
 
             # 连接数据库
             # 连接数据库
@@ -83,8 +81,10 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
             # 判断查询的条件
 
             # 判断查询条件
-            get_total_sql = self.seasrch_sql.search_sport_mile_sql(all_dev, search_data)
+            get_total_sql = self.seasrch_sql.search_sport_mile_report_sql(all_dev, search_data)
+            get_total = self.seasrch_sql.search_sport_mile_report_sql_get_total(all_dev, search_data)
             print(get_total_sql)
+            print(get_total)
 
             # 判断查询的条件
             if search_data['type'] == 'mile':
@@ -96,31 +96,19 @@ class TestCase148SportStatisticalMileageForm(unittest.TestCase):
                     for range2 in range1:
                         get_all_mlie_and_time_list.append(range2)
 
-                total = len(get_all_mlie_and_time_list) / 2
+                cursor_02.execute(get_total)
+                total_number = cursor_02.fetchall()
+                total_number_list = []
+                for range1 in total_number:
+                    for range2 in range1:
+                        total_number_list.append(range2)
+
+                total = len(total_number_list)
                 web_total = self.statistical_form_page.get_total_search_mileage_form()
                 self.assertEqual(total, web_total)
-
-                # 拆分列表
-                all_mile_list = []
-                all_time_list = []
-                for n in range(len(get_all_mlie_and_time_list)):
-                    if n % 2 == 0:
-                        all_mile_list.append(get_all_mlie_and_time_list[n])
-
-                    elif n % 2 == 1:
-                        all_time_list.append(get_all_mlie_and_time_list[n])
-
                 # 计算总里程 和 总时间
-                total_mile = sum(all_mile_list)
-                total_time = sum(all_time_list)
+                total_mile = sum(get_all_mlie_and_time_list)
                 # 断言总时间和总里程，总油耗
-                web_total_mile = self.statistical_form_page.get_mileage_all_mile()
-                self.assertAlmostEqual(total_mile / 1000, float(web_total_mile))
-
-                web_total_time = self.statistical_form_page.get_mileage_all_time()
-                chang_total_time_type = self.statistical_form_page.change_sec_time(total_time)
-                self.assertEqual(chang_total_time_type, web_total_time)
-
                 # 计算总油耗
                 if total_mile == 0:
                     self.assertEqual('0', self.statistical_form_page.get_mileage_total_oil())

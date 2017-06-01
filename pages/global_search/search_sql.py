@@ -5,8 +5,7 @@ class SearchSql(object):
 
         if search_data['dev_info'] != '':
             sql += " and ( d.imei like '%" + search_data['dev_info'] + "%' or d.driverName like '%" + search_data[
-                'dev_info'] + "%' or d.vehicleNumber like '%" + search_data['dev_info'] + "%' or m.deviceName like '%" + \
-                   search_data['dev_info'] + "%')"
+                'dev_info'] + "')"
 
         sql += ";"
         return sql

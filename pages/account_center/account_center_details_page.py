@@ -444,14 +444,14 @@ class AccountCenterDetailsPage(BasePageServer):
         self.driver.operate_input_element("pswAgain", add_data["confirm_pwd"])
         self.driver.operate_input_element("email", add_data["email"])
         # 保存
-        self.driver.click_element("addUserBtn")
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait()
 
         # 取已存在账号的提示
-        try:
-            text = self.driver.get_element("c,layui-layer-content").text
-        except:
-            text = ""
+        # try:
+        # text = self.driver.get_element("c,layui-layer-content").text
+        # except:
+        # text = ""
         # 客户名称--错误提示
         name_prompt2 = self.get_prompt("x,//*[@id='addRole_userForm']/div[3]/div/label")
         account_prompt2 = self.get_prompt("x,//*[@id='addRole_userForm']/div[4]/div/label")
@@ -465,14 +465,13 @@ class AccountCenterDetailsPage(BasePageServer):
             "pwd_prompt2": pwd_prompt2,
             "pwd2_prompt2": pwd2_prompt2,
             "email_prompt2": email_prompt2,
-            "text2": text
         }
         print(all_prompt)
         return all_prompt
 
     # 快速销售（新增客户）--取消
     def click_add_cancel_button(self):
-        self.driver.click_element("x,//*[@id='addRole']/div/div/div[3]/button[2]")
+        self.driver.click_element('c,layui-layer-btn1')
 
     # 账户详情---取提示语
     def get_prompt(self, select):

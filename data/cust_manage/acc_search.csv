@@ -1,6 +1,6 @@
 账号,客户类型,信息
-test_007,,,
-test_007,代理商,
-test_007,用户,
-test_007,代理商,a
-test_007,用户,t
+web_autotest,,,
+web_autotest,代理商,
+web_autotest,用户,
+web_autotest,代理商,a
+web_autotest,用户,t

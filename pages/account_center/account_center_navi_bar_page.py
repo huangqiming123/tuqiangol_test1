@@ -144,7 +144,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         # 个人资料修改框的邮箱输入
         self.driver.operate_input_element("x,//*[@id='edit-modal-email']", email)
         # 点击保存按钮
-        self.driver.click_element("saveUserInformation")
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait(1)
         # 获取保存成功状态对话框的文本内容
         self.driver.get_element("c,layui-layer-ico1")
@@ -165,7 +165,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         # 确认新密码
         self.driver.operate_input_element("renewPwd", new_passwd)
         # 点击保存按钮
-        self.driver.click_element('x,//*[@id="save"]')
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait(1)
         # 获取修改密码成功状态对话框的文本内容
         modify_status = self.driver.get_element("c,layui-layer-content").text
@@ -173,7 +173,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 密码修改成功状态框点击确定
     def modify_passwd_success_comfrim(self):
-        self.driver.click_element("c,layui-layer-btn0")
+        self.driver.click_element('x,//*[@id="layui-layer2"]/div[3]/a')
         self.driver.wait(1)
 
     # 招呼栏业务日志
@@ -410,11 +410,11 @@ class AccountCenterNaviBarPage(BasePageServer):
         sleep(3)
 
     def cancel_modify_user_info(self):
-        self.driver.click_element('x,//*[@id="editInformationModal"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-btn1')
         sleep(2)
 
     def close_modify_user_info(self):
-        self.driver.click_element('x,//*[@id="editInformationModal"]/div/div/div[3]/button[2]')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def check_next_user_input_value(self):
@@ -465,7 +465,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.operate_input_element("x,//*[@id='edit-modal-phone']", data["phone"])
         self.driver.operate_input_element("x,//*[@id='edit-modal-email']", data["email"])
         # 点击保存按钮
-        self.driver.click_element("saveUserInformation")
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait()
         # 获取错误提示
         name_prompt = self.get_modify_prompt("x,//*[@id='edit-modal-userForm']/div[2]/div/label")
@@ -499,7 +499,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 修改密码--取消
     def click_password_cancel(self):
-        self.driver.click_element("x,//*[@id='changePasswordModal']/div/div/div[3]/button[2]")
+        self.driver.click_element('c,layui-layer-btn1')
         self.driver.wait(1)
 
     # 修改密码---错误提示
@@ -509,7 +509,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.operate_input_element("newPwd", data["new_password"])
         self.driver.operate_input_element("renewPwd", data["new_password2"])
         # 点击保存按钮
-        self.driver.click_element("save")
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait()
 
         # 获取弹出框的提示

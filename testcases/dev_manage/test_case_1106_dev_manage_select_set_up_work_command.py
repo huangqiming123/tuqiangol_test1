@@ -85,11 +85,3 @@ class TestCase1106DevManageSelectSetUpWorkCommand(unittest.TestCase):
 
         # 点击发送指令
         self.dev_manage_page.click_issued_command_button()
-        get_text = self.dev_manage_page.get_fail_text()
-        self.assertEqual('没有选择工作模式', get_text)
-
-        # 选择一个工作模式
-        self.dev_manage_page.click_work_command()
-        self.dev_manage_page.click_issued_command_button()
-        get_text = self.dev_manage_page.get_fail_text()
-        self.assertEqual('没有可发送指令的设备', get_text)

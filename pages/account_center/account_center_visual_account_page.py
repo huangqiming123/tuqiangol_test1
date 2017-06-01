@@ -59,7 +59,7 @@ class AccountCenterVisualAccountPage(BasePageServer):
 
     # 添加虚拟账户-保存
     def save_add_info(self):
-        self.driver.click_element("x,//*[@id='addVirtualAccountModal']/div/div/div[3]/button[1]")
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait(1)
 
     # 获取保存成功对话框的文本内容
@@ -70,7 +70,7 @@ class AccountCenterVisualAccountPage(BasePageServer):
 
     # 添加虚拟账户-取消
     def dis_save_add_info(self):
-        self.driver.click_element("x,//*[@id='addVirtualAccountModal']/div/div/div[3]/button[3]")
+        self.driver.click_element('c,layui-layer-btn1')
 
     # 编辑虚拟账户
     def edit_visu_account(self,edit_passwd):
@@ -82,7 +82,7 @@ class AccountCenterVisualAccountPage(BasePageServer):
         # 编辑再次输入密码
         self.driver.operate_input_element("password",edit_passwd)
         # 保存
-        self.driver.click_element("x,//*[@id='addVirtualAccountModal']/div/div/div[3]/button[2]")
+        self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait()
 
     # 取消编辑
@@ -90,7 +90,7 @@ class AccountCenterVisualAccountPage(BasePageServer):
         self.driver.click_element("x,//*[@id='fictitiousAccount_tbody']/tr[1]/td[4]/a[1]")
         self.driver.wait(1)
         # 点击取消
-        self.driver.click_element("x,//*[@id='addVirtualAccountModal']/div/div/div[3]/button[3]")
+        self.driver.click_element('c,layui-layer-btn1')
 
     # 删除虚拟账户
     def del_visu_account(self):
@@ -130,7 +130,7 @@ class AccountCenterVisualAccountPage(BasePageServer):
             self.driver.operate_input_element("fictitious_password", password)
             self.driver.operate_input_element("password", confirm_pwd)
             # 点保存
-            self.driver.click_element("x,//*[@id='addVirtualAccountModal']/div/div/div[3]/button[2]")
+            self.driver.click_element('c,layui-layer-btn0')
             self.driver.wait(1)
 
         # 获取虚拟登录账号的提示语

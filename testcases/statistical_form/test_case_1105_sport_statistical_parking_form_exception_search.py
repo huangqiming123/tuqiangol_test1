@@ -41,7 +41,7 @@ class TestCase1105SportStatisticalParkingFormExceptionSearch(unittest.TestCase):
 
         # 取开始、结束时间
         type = ["今天", "本周", "昨天", "上周", "本月", "上月", "自定义"]
-        data = ["#￥%@#￥！", "销售", "20002017", "abcdyyyyyyy", "测试01511abc_@!&", "暂无数据"]
+        data = ["暂无数据"]
 
         for time in type:
             time = self.statistical_form_page2.parking_not_shut_down_form_validation_time(time)

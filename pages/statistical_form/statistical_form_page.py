@@ -1180,24 +1180,24 @@ class StatisticalFormPage(BasePage):
             print('查询无数据，无法导出')
 
     def click_customer_in_mile_form(self, n):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
-        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(2)
         self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
         sleep(2)
         self.driver.default_frame()
 
     def click_search_dev_button(self):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
-        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(2)
         self.driver.default_frame()
 
     def get_group_number_in_mile_form(self):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
-        a = self.driver.get_element('x,//*[@id="dev_tree_mileageReport"]').get_attribute('style')
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="dev_tree_travelReport"]').get_attribute('style')
         if a == 'display: block;':
-            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_mileageReport"]/li')))
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_travelReport"]/li')))
             self.driver.default_frame()
             return number
         else:
@@ -1205,13 +1205,13 @@ class StatisticalFormPage(BasePage):
             return 0
 
     def click_defalut_group_in_mile_form(self):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
-        self.driver.click_element('x,//*[@id="dev_tree_mileageReport_1_switch"]')
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.driver.click_element('x,//*[@id="dev_tree_travelReport_1_switch"]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_number_in_mile_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
         text = self.driver.get_text(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
                 m + 1))
@@ -1220,7 +1220,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_per_group_in_mile_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
         self.driver.click_element(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
                 m + 1))
@@ -1228,7 +1228,7 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def get_dev_number_list_in_mile_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
         number = len(list(self.driver.get_elements(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
                 m + 1))))
@@ -1769,7 +1769,7 @@ class StatisticalFormPage(BasePage):
 
         # 搜索用户
         self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[1]/div/div[1]/span/button')
-        sleep(1)
+        sleep(2)
         self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
         sleep(3)
@@ -1810,9 +1810,9 @@ class StatisticalFormPage(BasePage):
         a = self.driver.get_element('x,//*[@id="icheckContainSub"]').is_selected()
         if a == True and search_data['next'] == '':
             self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[4]/label/div/ins')
-        elif a == True and search_data['next'] == '':
+        elif a == True and search_data['next'] == '1':
             pass
-        elif a == False and search_data['next'] == '':
+        elif a == False and search_data['next'] == '1':
             self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[4]/label/div/ins')
         elif a == False and search_data['next'] == '':
             pass

@@ -56,7 +56,6 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
 
-
         csv_file = self.cust_manage_page_read_csv.read_csv('acc_search.csv')
         csv_data = csv.reader(csv_file)
         is_header = True

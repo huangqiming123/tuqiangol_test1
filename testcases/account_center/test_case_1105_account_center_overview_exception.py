@@ -1,5 +1,7 @@
 import csv
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
@@ -31,6 +33,7 @@ class TestCase1105AccountCenterOverviewException(unittest.TestCase):
         # 登录
         self.log_in_base.log_in()
         # 点击快速销售
+        sleep(10)
         self.account_center_page_detail.fast_sales()
         # 点击添加按钮
         self.account_center_page_detail.click_add_button()
@@ -62,8 +65,6 @@ class TestCase1105AccountCenterOverviewException(unittest.TestCase):
             self.assertEqual(data["pwd2_prompt"], prompt["pwd2_prompt2"], "确认密码错误提示语显示不一致")
 
             self.assertEqual(data["email_prompt"], prompt["email_prompt2"], "邮箱错误提示语显示不一致")
-
-            self.assertEqual(data["text"], prompt["text2"], "弹框中提示语显示不一致")
 
         # 取长度
         len = self.account_center_page_detail.get_add_user_element_len()

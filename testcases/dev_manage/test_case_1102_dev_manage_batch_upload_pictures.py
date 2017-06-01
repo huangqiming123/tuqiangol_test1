@@ -39,6 +39,3 @@ class TestCase1102DevManageBatchUploadPictures(unittest.TestCase):
 
         self.dev_manage_page.click_batch_upload_pictures_button()
         self.dev_manage_page.click_ensure_upload()
-
-        get_text = self.dev_manage_page.get_fail_text()
-        self.assertEqual('请选择图片', get_text)

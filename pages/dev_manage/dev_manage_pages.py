@@ -21,7 +21,7 @@ class DevManagePages(BasePage):
 
     # 点击进入设备管理页面
     def enter_dev_manage(self):
-        self.driver.click_element("p,设备管理")
+        self.driver.click_element('x,//*[@id="device"]/a')
         self.driver.wait(3)
 
     # 获取当前登录用户的库存数
@@ -1382,15 +1382,15 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_batch_upload_pictures_button(self):
-        self.driver.click_element('x,//*[@id="uploadModal"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def click_cancel_batch_upload_pictures_button(self):
-        self.driver.click_element('x,//*[@id="uploadModal"]/div/div/div[3]/button[2]')
+        self.driver.click_element('c,layui-layer-btn1')
         sleep(2)
 
     def click_ensure_upload(self):
-        self.driver.click_element('x,//*[@id="uploadModal"]/div/div/div[3]/button[1]')
+        self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
 
     def click_all_set_up_work_command(self):
@@ -1398,11 +1398,11 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_all_set_up_work_command(self):
-        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def click_cancel_all_set_up_work_command(self):
-        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[3]/button[2]')
+        self.driver.click_element('c,layui-layer-btn1')
         sleep(2)
 
     def get_list_number(self):
@@ -1416,7 +1416,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_issued_command_button(self):
-        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[3]/button[1]')
+        self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
 
     def click_work_command(self):
@@ -1470,11 +1470,11 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_set_up_work_command(self):
-        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def click_cancel_set_up_work_command(self):
-        self.driver.click_element('x,//*[@id="sendModeCommandModel"]/div/div/div[3]/button[2]')
+        self.driver.click_element('c,layui-layer-btn1')
         sleep(2)
 
     def get_imei_in_set_up_work_command(self):

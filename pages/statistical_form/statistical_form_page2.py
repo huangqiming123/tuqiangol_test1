@@ -12,8 +12,8 @@ class StatisticalFormPage2(BasePage):
     # 取开始--结束时间
     def get_sport_statistical_time(self, start_element, end_element):
         # 页面的时间
-        start_time = self.driver.get_element(start_element).get_attribute("value")
-        end_time = self.driver.get_element(end_element).get_attribute("value")
+        start_time = self.driver.get_element(start_element).get_attribute('value')
+        end_time = self.driver.get_element(end_element).get_attribute('value')
         time = {"page_start_time": start_time, "page_end_time": end_time}
         return time
 
@@ -168,9 +168,9 @@ class StatisticalFormPage2(BasePage):
 
     # 里程报表--验证时间
     def mileage_form_validation_time(self, type):
-        iframe = "mileageReportFrame"
-        start = "startTime_mileage"
-        end = "endTime_mileage"
+        iframe = "tracelReportFrame"
+        start = "startTime_travel"
+        end = "endTime_travel"
         pull_down = "x,//*[@id='dateSelect_div']/div/span[2]"
         today = "x,//*[@id='dateSelect_div']/div/div/ul/li[2]"
         yesterday = "x,//*[@id='dateSelect_div']/div/div/ul/li[3]"
@@ -243,7 +243,7 @@ class StatisticalFormPage2(BasePage):
 
     # 点击里程报表搜索下拉
     def click_mileage_pull_down(self):
-        self.driver.click_element("x,//*[@id='MileageFrom']/div[2]/div[1]/div/div[1]/span/button")
+        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[1]/div/div[1]/span/button')
 
     def get_grouping_list_count(self):
         # 获取分组imei数

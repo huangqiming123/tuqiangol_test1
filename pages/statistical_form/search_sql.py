@@ -39,8 +39,8 @@ class SearchSql(object):
 
     def get_this_week_end_time(self):
         # 获取本周的结束时间
-        today = datetime.date.today()
-        return str(today) + ' 23:59'
+        current_time = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+        return current_time
 
     def get_last_week_begin_time(self):
         # 获取上周的开始时间
@@ -65,8 +65,8 @@ class SearchSql(object):
 
     def get_this_month_end_time(self):
         # 获取本月的开始时间
-        current_time = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        return current_time + " 23:59"
+        current_time = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+        return current_time
 
     def get_last_month_begin_time(self):
         # 获取上月的开始时间
@@ -492,10 +492,49 @@ class SearchSql(object):
         sql += ";"
         return sql
 
-    def get_total_electric_report_sql(self, all_dev, search_data):
-        sql = "SELECT e.imei FROM equipment_electricity e INNER JOIN equipment_detail d on e.imei = d.imei WHERE d.equipType = 'WIRELESS'"
-        sql += " and e.imei in %s" % str(all_dev)
-        if search_data['electric'] != '':
-            sql += " and e.electricity < '%s'" % search_data['electric']
+    def get_total_electric_report_sql(self, all_user_dev, all_dev, search_data):
+        sql = "SELECT e.imei FROM equipment_electricity e INNER JOIN equipment_detail d on e.imei = d.imei"
+        if search_data['next'] == '':
+            sql += " where e.imei in %s" % str(all_dev)
+            if search_data['electric'] != '':
+                sql += " and e.electricity < '%s'" % search_data['electric']
+        elif search_data['next'] == '1':
+            sql += " where e.imei in %s" % str(all_user_dev)
+            if search_data['electric'] != '':
+                sql += " and e.electricity < '%s'" % search_data['electric']
         sql += ";"
         return sql
+
+    def search_current_account_equipment_and_next(self, param):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+
+        get_user_id_sql = "select u.userId,u.fullParentId from user_info u where u.account = '%s';" % param
+        cursor.execute(get_user_id_sql)
+        user_id_list = cursor.fetchall()
+        user_id = user_id_list[0][0]
+        user_full_id = user_id_list[0][1]
+
+        get_lower_account_sql = "select userId from user_info where fullParentId like '" + user_full_id + user_id + ",%'" + ";"
+        cursor.execute(get_lower_account_sql)
+        # 读取数据
+        lower_account = cursor.fetchall()
+        lower_account_list = []
+        for range1 in lower_account:
+            for range2 in range1:
+                lower_account_list.append(range2)
+        lower_account_tuple = tuple(lower_account_list)
+
+        get_account_dev_sql = "select a.imei from equipment_mostly a where a.userId in %s and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>=0;" % str(
+            lower_account_tuple)
+        cursor.execute(get_account_dev_sql)
+        get_all_dev = cursor.fetchall()
+        dev_list = []
+        for range1 in get_all_dev:
+            for range2 in range1:
+                dev_list.append(range2)
+        all_dev = tuple(dev_list)
+        cursor.close()
+        connect.close()
+        return all_dev

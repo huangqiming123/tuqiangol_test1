@@ -44,7 +44,7 @@ class TestCase1101GlobSearchCheckMarkedWords(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
 
         get_dev_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
-        self.assertEqual('IMEI/司机/车牌/设备名称', get_dev_search_marked_words)
+        self.assertEqual('IMEI/设备名称', get_dev_search_marked_words)
 
         # 选择搜索用户
         self.global_dev_search_page.select_search_user()

@@ -833,7 +833,7 @@ class DevManagePages(BasePage):
         elif search_data['band_status'] == '未绑定':
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/div/ul/li[3]')
 
-        '''# 设备类型
+        # 设备类型
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[4]/div/div/span[2]')
         sleep(2)
         if search_data['dev_mold'] == '':
@@ -843,7 +843,7 @@ class DevManagePages(BasePage):
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[4]/div/div/div/ul/li[2]')
 
         elif search_data['dev_mold'] == '电池':
-            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[4]/div/div/div/ul/li[3]')'''
+            self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[4]/div/div/div/ul/li[3]')
 
         # 分组
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[5]/div/div/span[2]')
@@ -866,7 +866,7 @@ class DevManagePages(BasePage):
         a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            number = new_paging.get_total_number('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
+            number = new_paging.get_total_numbers('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
             return number
 
         elif a == 'display: none;':
@@ -1117,7 +1117,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_batch_batch_issued_command_button(self):
-        self.driver.click_element('x,//*[@id="sendCommandModal"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def get_dev_number_after_click_issued_command(self):
@@ -1435,11 +1435,11 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_select_send_command(self):
-        self.driver.click_element('x,//*[@id="sendCommandModal"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def click_cancel_select_send_command(self):
-        self.driver.click_element('x,//*[@id="sendCommandModal"]/div/div/div[3]/button[3]')
+        self.driver.click_element('c,layui-layer-btn1')
         sleep(2)
 
     def get_imei_in_send_command(self):
@@ -1462,7 +1462,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_send_command_in_send_command(self):
-        self.driver.click_element('x,//*[@id="toSendBatchIns"]')
+        self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
 
     def click_select_set_up_work_command(self):

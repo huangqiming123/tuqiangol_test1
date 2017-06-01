@@ -86,5 +86,3 @@ class TestCase1104DevManageSelectIssuedCommand(unittest.TestCase):
         self.dev_manage_page.click_detele_dev_in_send_command()
 
         self.dev_manage_page.click_send_command_in_send_command()
-        get_text = self.dev_manage_page.get_fail_text()
-        self.assertEqual('没有可发送指令的设备', get_text)

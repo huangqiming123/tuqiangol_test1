@@ -57,6 +57,11 @@ class SearchSql(object):
             if search_data['sn'] != "":
                 sql += " and d.sn like '" + search_data['sn'] + "'"
 
+            if search_data['dev_mold'] == '有线':
+                sql += " and d.equipType = 'WIRED'"
+            elif search_data['dev_mold'] == '电池':
+                sql += " and d.equipType = 'WIRELESS'"
+
         elif search_data['next'] == '1':
             sql += " and m.userId in %s" % str(lower_account_tuple)
 
@@ -111,6 +116,11 @@ class SearchSql(object):
 
             if search_data['sn'] != "":
                 sql += " and d.sn like '" + search_data['sn'] + "'"
+
+            if search_data['dev_mold'] == '有线':
+                sql += " and d.equipType = 'WIRED'"
+            elif search_data['dev_mold'] == '电池':
+                sql += " and d.equipType = 'WIRELESS'"
 
         sql += ";"
         return sql

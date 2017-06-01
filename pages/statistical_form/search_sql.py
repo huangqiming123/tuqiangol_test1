@@ -491,3 +491,11 @@ class SearchSql(object):
             sql += " group by m.DEVICE_IMEI"
         sql += ";"
         return sql
+
+    def get_total_electric_report_sql(self, all_dev, search_data):
+        sql = "SELECT e.imei FROM equipment_electricity e INNER JOIN equipment_detail d on e.imei = d.imei WHERE d.equipType = 'WIRELESS'"
+        sql += " and e.imei in %s" % str(all_dev)
+        if search_data['electric'] != '':
+            sql += " and e.electricity < '%s'" % search_data['electric']
+        sql += ";"
+        return sql

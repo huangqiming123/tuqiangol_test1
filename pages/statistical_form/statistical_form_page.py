@@ -322,7 +322,6 @@ class StatisticalFormPage(BasePage):
                 # 填写结束时间
                 self.driver.operate_input_element('x,//*[@id="endTime_travel"]', search_data['end_time'])
 
-
         # 点击搜索
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[3]/button')
         sleep(5)
@@ -1754,3 +1753,84 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[3]/button')
         sleep(5)
         self.driver.default_frame()
+
+    def click_electric_report_form_buttons(self):
+        self.driver.click_element('x,//*[@id="electricityReport"]/a')
+        sleep(2)
+
+    def actual_text_after_click_electric_report_buttons(self):
+        self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
+        text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
+        self.driver.default_frame()
+        return text
+
+    def add_data_to_search_electric_report(self, search_data):
+        self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
+
+        # 搜索用户
+        self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[1]/div/div[1]/span/button')
+        sleep(1)
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
+        self.driver.click_element('x,//*[@id="search_user_btn"]')
+        sleep(3)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)
+
+        # 选择低于的电量
+        self.driver.click_element('x,//*[@id="ratioSel"]')
+        sleep(2)
+        if search_data['electric'] == '100':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[1]')
+        elif search_data['electric'] == '90':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[2]')
+        elif search_data['electric'] == '80':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[3]')
+        elif search_data['electric'] == '70':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[4]')
+        elif search_data['electric'] == '60':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[5]')
+        elif search_data['electric'] == '50':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[6]')
+        elif search_data['electric'] == '40':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[7]')
+        elif search_data['electric'] == '30':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[8]')
+        elif search_data['electric'] == '20':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[9]')
+        elif search_data['electric'] == '10':
+            self.driver.click_element('x,//*[@id="ratioSel"]/option[10]')
+
+        # 选择型号
+        self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[3]/div/div/span[2]')
+        sleep(2)
+        if search_data['dev_type']:
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[3]/div/div/div/ul/li[1]')
+
+        # 选择下级
+        a = self.driver.get_element('x,//*[@id="icheckContainSub"]').is_selected()
+        if a == True and search_data['next'] == '':
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[4]/label/div/ins')
+        elif a == True and search_data['next'] == '':
+            pass
+        elif a == False and search_data['next'] == '':
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[4]/label/div/ins')
+        elif a == False and search_data['next'] == '':
+            pass
+
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[5]/button[1]')
+        sleep(5)
+
+        self.driver.default_frame()
+
+    def get_web_total_electric_report(self):
+        self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
+        a = self.driver.get_element('x,//*[@id="paging-electric"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="paging-electric"]', 'x,//*[@id="electricTable"]')
+            self.driver.default_frame()
+            return total
+        else:
+            self.driver.default_frame()
+            return 0

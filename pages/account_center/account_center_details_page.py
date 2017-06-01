@@ -263,7 +263,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
         else:
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_number("x,//*[@id='paging-dev']", "x,//*[@id='markDevTable']")
+            total = new_paging.get_total_numbers("x,//*[@id='paging-dev']", "x,//*[@id='markDevTable']")
             return total
 
     def get_current_account_online_all_equipment(self):
@@ -392,7 +392,7 @@ class AccountCenterDetailsPage(BasePageServer):
         a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_number('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
+            total = new_paging.get_total_numbers('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
             return total
         elif a == 'display: none;':
             return 0

@@ -104,7 +104,7 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
             connect.close()
 
             # 连接另一个数据库
-            connect_02 = self.connect_sql.connect_tuqiang_form()
+            connect_02 = self.connect_sql.connect_tuqiang_sql()
             # 创建游标
             cursor_02 = connect_02.cursor()
             # 判断查询条件

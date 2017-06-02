@@ -398,7 +398,7 @@ class SearchSql(object):
         return sql
 
     def search_alarm_details_sql(self, user_id, account_dev, data):
-        sql = "SELECT a.imei FROM alarm_info_user AS a WHERE a.imei in " + str(
+        sql = "SELECT a.imei FROM alarm_info AS a WHERE a.imei in " + str(
             account_dev)
         if data['next_user'] == '':
             sql += " and a.USER_ID = '%s'" % user_id

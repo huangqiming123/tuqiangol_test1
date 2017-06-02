@@ -52,10 +52,33 @@ def run_09():
     sleep(10)
 
 
-# 设置运行时间
-start_time = datetime.datetime(2017, 4, 11, 19, 0, 0)
-while datetime.datetime.now() < start_time:
-    sleep(5)
+while 1:
+    print('请输入开始运行时间')
+    print('月、日、小时、分钟 用“/”隔开(如：5/26/17/15)')
+    print('如现在运行，请输入now')
+    time = input('请输入：')
+    if time == 'now':
+        break
+    try:
+        month = time.split('/')[0]
+        day = time.split('/')[1]
+        hour = time.split('/')[2]
+        min = time.split('/')[3]
+        if month.isdigit() and day.isdigit() and hour.isdigit() and min.isdigit():
+            if month <= 12 and day <= 31 and hour <= 23 and min <= 59:
+                start_time = datetime.datetime(2017, int(month), int(day), int(hour), int(min), 0)
+                while datetime.datetime.now() < start_time:
+                    sleep(5)
+                break
+            else:
+                print('输入有误，请重新输入！')
+                continue
+        else:
+            print('输入有误，请重新输入！')
+            continue
+    except:
+        print('输入有误，请重新输入！')
+        continue
 
 # 设置线程
 thread_list = []
@@ -94,10 +117,10 @@ for i7 in range(1):
     t7.setDaemon(True)
     thread_list.append(t7)
 
-for i8 in range(1):
+'''for i8 in range(1):
     t8 = threading.Thread(target=run_08)
     t8.setDaemon(True)
-    thread_list.append(t8)
+    thread_list.append(t8)'''
 
 for t in thread_list:
     t.start()
@@ -105,7 +128,7 @@ for t in thread_list:
 for t in thread_list:
     t.join()
 
-run_09()
+# run_09()
 # 运行后自动关机
-sleep(10)
-# os.system('shutdown -s -f')
+# sleep(10)
+os.system('shutdown -s -f')

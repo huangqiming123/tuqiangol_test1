@@ -100,11 +100,11 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
             connect.close()
             time.sleep(5)
             # 连接另一个数据库
-            connect_02 = self.connect_sql.connect_tuqiang_form()
+            connect_02 = self.connect_sql.connect_tuqiang_sql()
             # 创建游标
             cursor_02 = connect_02.cursor()
 
-            get_total_sql = "SELECT a.IMEI,a.USER_ID FROM alarm_info_user AS a WHERE a.CREATETIME BETWEEN  '" + self.alarm_info_page.get_first_time() + "' AND  '" + self.alarm_info_page.get_second_time() + "' and a.imei in " + str(
+            get_total_sql = "SELECT a.IMEI,a.USER_ID FROM alarm_info AS a WHERE a.CREATETIME BETWEEN  '" + self.alarm_info_page.get_first_time() + "' AND  '" + self.alarm_info_page.get_second_time() + "' and a.imei in " + str(
                 current_user_all_equipment) + " and a.USER_ID = " + user_id + " GROUP BY a.IMEI ;"
             # 执行sql
             print(get_total_sql)

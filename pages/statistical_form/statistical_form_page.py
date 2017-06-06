@@ -1858,3 +1858,11 @@ class StatisticalFormPage(BasePage):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[2]'))
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[2]' % str(n + 1))
         return number
+
+    def get_begin_time_in_mile_report_page(self):
+        begin_time = self.driver.get_element('x,//*[@id="startTime_mileage"]').get_attribute('value')
+        return begin_time
+
+    def get_end_time_in_mile_report_page(self):
+        begin_time = self.driver.get_element('x,//*[@id="endTime_mileage"]').get_attribute('value')
+        return begin_time

@@ -29,7 +29,7 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
-        self.search_sql = SearchSql()
+        self.search_sql = SearchSql(self.driver, self.base_url)
 
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()

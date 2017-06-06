@@ -1,10 +1,8 @@
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver
-from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
-from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
@@ -19,8 +17,6 @@ class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.statistical_form_page_read_csv = StatisticalFormPageReadCsv()
         self.log_in_base = LogInBase(self.driver, self.base_url)
-        self.connect_sql = ConnectSql()
-        self.search_sql = SearchSql()
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
         self.driver.set_window_max()

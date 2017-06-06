@@ -466,7 +466,6 @@ class AlarmInfoPage(BasePage):
 
         all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_alarmOverview"]/li'))
         all_group_num = len(all_group_list)
-        print(all_group_num)
         if all_group_num == 1:
             pass
         else:
@@ -626,12 +625,15 @@ class AlarmInfoPage(BasePage):
 
     def get_web_total_in_overview_search(self):
         # 查询报警总览搜索出的条数
-        try:
-            page_logs = list(self.driver.get_elements('x,//*[@id="alarm_report_tbody"]/tr'))
-            page_logs_num = len(page_logs)
-            return page_logs_num
-        except:
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        a = self.driver.get_element('x,//*[@id="alarm_report_nodata"]').get_attribute('style')
+        if a == 'display: block;':
+            self.driver.default_frame()
             return 0
+        elif a == 'display: none;':
+            number = len(list(self.driver.get_elements('x,//*[@id="alarm_report_tbody"]/tr')))
+            self.driver.default_frame()
+            return number
 
     def click_all_alarm_type(self):
         # 现在报警类型

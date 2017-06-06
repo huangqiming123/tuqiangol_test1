@@ -92,19 +92,3 @@ class TestCase105DevManageDevOperationNOActiveAndStop(unittest.TestCase):
 
                 self.driver.switch_to_window(current_handle)
                 sleep(2)
-
-        # 点街景
-        self.dev_manage_page.click_street_scape_button()
-        all_handles = self.driver.get_all_window_handles()
-        for handle in all_handles:
-            if handle != current_handle:
-                self.driver.switch_to_window(handle)
-                sleep(2)
-                expect_url = self.base_url + "/trackpreset/tracking/%s?isTracking=1" % imei
-                self.assertEqual(expect_url, self.driver.get_current_url())
-
-                text = self.dev_manage_page.click_street_scape_get_text()
-                self.assertEqual('实时跟踪', text)
-                self.driver.close_current_page()
-                self.driver.switch_to_window(current_handle)
-                sleep(2)

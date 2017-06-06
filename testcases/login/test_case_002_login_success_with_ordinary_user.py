@@ -66,7 +66,7 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
                     current_user_info.append(range2)
             print(current_user_info)
             get_up_account_info_sql = "SELECT o.account,o.nickName,o.phone FROM user_info o WHERE o.userId = '" + \
-                                      current_user_info[0] + "'"
+                                      current_user_info[0] + "';"
             cursor.execute(get_up_account_info_sql)
             get_up_user_info = cursor.fetchall()
             up_user_info = []
@@ -77,27 +77,14 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
             usr_service_provider = self.account_center_page_navi_bar.ordinary_usr_service_provider()
             expect_usr_service_provider = up_user_info[0]
             self.assertIn(expect_usr_service_provider, usr_service_provider, "服务商显示错误")
-
-            service_provider_connect = self.account_center_page_navi_bar.ordinary_usr_service_provider_connect()
-            expect_service_provider_connect = up_user_info[1]
-            self.assertIn(expect_service_provider_connect, service_provider_connect, "联系人显示错误")
+            if up_user_info[1] != '':
+                service_provider_connect = self.account_center_page_navi_bar.ordinary_usr_service_provider_connect()
+                expect_service_provider_connect = up_user_info[1]
+                self.assertIn(expect_service_provider_connect, service_provider_connect, "联系人显示错误")
 
             service_provider_phone = self.account_center_page_navi_bar.ordinary_usr_service_provider_phone()
             expect_service_provider_phone = up_user_info[2]
             self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")
-
-            '''# 判断登录成功后账户总览下方显示的“我的服务商”信息是否正确
-            usr_service_provider = self.account_center_page_navi_bar.ordinary_usr_service_provider()
-            expect_usr_service_provider = user_to_login["service_provider"]
-            self.assertIn(expect_usr_service_provider, usr_service_provider, "服务商显示错误")
-
-            service_provider_connect = self.account_center_page_navi_bar.ordinary_usr_service_provider_connect()
-            expect_service_provider_connect = user_to_login["service_provider_connect"]
-            self.assertIn(expect_service_provider_connect, service_provider_connect, "联系人显示错误")
-
-            service_provider_phone = self.account_center_page_navi_bar.ordinary_usr_service_provider_phone()
-            expect_service_provider_phone = user_to_login["service_provider_phone"]
-            self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")'''
 
             # 成功退出系统
             self.account_center_page_navi_bar.usr_log_out()

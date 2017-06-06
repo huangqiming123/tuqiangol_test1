@@ -440,25 +440,25 @@ class SearchSql(object):
             sql += "SELECT m.DISTANCE FROM report_distance_sum AS m WHERE m.DEVICE_IMEI IN %s" % str(
                 all_dev)
             if search_data['choose_date'] == '':
-                sql += " AND m.CREATE_TIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                sql += " AND m.START_TIME > '" + search_data['begin_time'] + "' and s.END_TIME < '" + search_data[
                     'end_time'] + "'"
             elif search_data['choose_date'] == 'today':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_today_begin_date() + "' and s.END_TIME '" + self.get_today_end_time() + "'"
 
             elif search_data['choose_date'] == 'yesterday':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_yesterday_begin_time() + "' and s.END_TIME '" + self.get_yesterday_end_time() + "'"
 
             elif search_data['choose_date'] == 'this_week':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_this_week_begin_time() + "' and s.END_TIME '" + self.get_this_week_end_time() + "'"
 
             elif search_data['choose_date'] == 'last_week':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_last_week_begin_time() + "' and s.END_TIME '" + self.get_last_week_end_time() + "'"
 
             elif search_data['choose_date'] == 'this_month':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_this_month_begin_time() + "' and s.END_TIME '" + self.get_this_month_end_time() + "'"
 
             elif search_data['choose_date'] == 'last_month':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_last_month_begin_time() + "' and s.END_TIME '" + self.get_last_month_end_time() + "'"
         sql += ";"
         return sql
 
@@ -468,25 +468,25 @@ class SearchSql(object):
             sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum AS m WHERE m.DEVICE_IMEI IN %s" % str(
                 all_dev)
             if search_data['choose_date'] == '':
-                sql += " AND m.CREATE_TIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                sql += " AND m.START_TIME > '" + search_data['begin_time'] + "' and s.END_TIME < '" + search_data[
                     'end_time'] + "'"
             elif search_data['choose_date'] == 'today':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_today_begin_date() + "' and s.END_TIME '" + self.get_today_end_time() + "'"
 
             elif search_data['choose_date'] == 'yesterday':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_yesterday_begin_time() + "' and s.END_TIME '" + self.get_yesterday_end_time() + "'"
 
             elif search_data['choose_date'] == 'this_week':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_this_week_begin_time() + "' and s.END_TIME '" + self.get_this_week_end_time() + "'"
 
             elif search_data['choose_date'] == 'last_week':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_last_week_begin_time() + "' and s.END_TIME '" + self.get_last_week_end_time() + "'"
 
             elif search_data['choose_date'] == 'this_month':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_this_month_begin_time() + "' and s.END_TIME '" + self.get_this_month_end_time() + "'"
 
             elif search_data['choose_date'] == 'last_month':
-                sql += " AND m.CREATE_TIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "'"
+                sql += " AND m.START_TIME > '" + self.get_last_month_begin_time() + "' and s.END_TIME '" + self.get_last_month_end_time() + "'"
 
             sql += " group by m.DEVICE_IMEI"
         sql += ";"

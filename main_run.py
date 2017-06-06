@@ -117,10 +117,10 @@ for i7 in range(1):
     t7.setDaemon(True)
     thread_list.append(t7)
 
-'''for i8 in range(1):
+for i8 in range(1):
     t8 = threading.Thread(target=run_08)
     t8.setDaemon(True)
-    thread_list.append(t8)'''
+    thread_list.append(t8)
 
 for t in thread_list:
     t.start()
@@ -128,7 +128,7 @@ for t in thread_list:
 for t in thread_list:
     t.join()
 
-# run_09()
+run_09()
 # 运行后自动关机
-# sleep(10)
+sleep(10)
 os.system('shutdown -s -f')

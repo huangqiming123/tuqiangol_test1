@@ -21,7 +21,7 @@ class GlobalDevSearchPage(BasePage):
 
     # 全局搜索栏-设备搜索
     def device_easy_search(self, search_keyword):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
 
         # 在设备名称/imei输入框内输入搜索关键词信息
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_keyword)
@@ -52,7 +52,7 @@ class GlobalDevSearchPage(BasePage):
     # 设备搜索-获取搜索结果共多少条
     def easy_search_result(self):
         # 当搜索结果只有一条时，必可获取到用户关系--一级用户--查看
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_device"]').get_attribute('style')
         b = self.driver.get_element('x,//*[@id="complex_device_table_nodata"]').get_attribute('style')
         if a == 'display: block;':
@@ -544,7 +544,7 @@ class GlobalDevSearchPage(BasePage):
 
     def account_easy_search(self, search_data):
         # 填写用户搜索的条件，进行搜索
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_data['account_info'])
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
         sleep(5)
@@ -559,7 +559,7 @@ class GlobalDevSearchPage(BasePage):
 
     def add_data_to_search_complex(self, search_data):
         # 增加数据去搜索高级
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         # 点击选择用户
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[2]/div/div[1]/span/button')
         sleep(1)
@@ -676,7 +676,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.click_element('c,layui-layer-ico')
 
     def click_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
@@ -684,13 +684,13 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def click_senior_search_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[2]')
         sleep(2)
         self.driver.default_frame()
 
     def click_app_account_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
@@ -698,20 +698,20 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def app_account_easy_search(self, search_data):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_data['account_info'])
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/span/button')
         sleep(5)
         self.driver.default_frame()
 
     def get_dev_search_marked_words(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element('x,/html/body/div[1]/div[1]/div/input').get_attribute('placeholder')
         self.driver.default_frame()
         return text
 
     def select_search_user(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
@@ -719,7 +719,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def select_search_app_user(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
@@ -727,85 +727,85 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def click_search_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/span/button')
         sleep(5)
         self.driver.default_frame()
 
     def click_console_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[7]/a[1]')
         sleep(3)
         self.driver.default_frame()
 
     def click_detail_in_app_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[4]/div/div[1]/table/tbody/tr[1]/td[7]/a[2]')
         sleep(3)
         self.driver.default_frame()
 
     def get_app_user_name_in_app_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[2]')
         self.driver.default_frame()
         return text
 
     def get_app_user_type_in_app_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[3]/div')
         self.driver.default_frame()
         return text
 
     def get_app_user_account_in_app_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[4]')
         self.driver.default_frame()
         return text
 
     def get_app_user_phone_in_app_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[5]')
         self.driver.default_frame()
         return text
 
     def get_app_user_dev_number_in_app_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[6]')
         self.driver.default_frame()
         return text
 
     def get_app_name_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_detail_tbody"]/tr/td[2]')
         self.driver.default_frame()
         return text
 
     def get_app_type_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_detail_tbody"]/tr/td[3]/div')
         self.driver.default_frame()
         return text
 
     def get_app_account_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_detail_tbody"]/tr/td[4]')
         self.driver.default_frame()
         return text
 
     def get_app_phone_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_detail_tbody"]/tr/td[5]')
         self.driver.default_frame()
         return text
 
     def get_app_dev_number_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_detail_tbody"]/tr/td[6]')
         self.driver.default_frame()
         return text
 
     def get_app_dev_number_in_detail_by_list(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         t = self.driver.get_element('x,//*[@id="complex_mobileDevice_table_nodata"]').get_attribute('style')
         if t == 'display: block;':
             self.driver.default_frame()
@@ -817,133 +817,133 @@ class GlobalDevSearchPage(BasePage):
             return n
 
     def click_reset_password_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[7]/a[3]')
         sleep(2)
         self.driver.default_frame()
 
     def close_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('c,layui-layer-ico')
         sleep(2)
         self.driver.default_frame()
 
     def cancel_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('c,layui-layer-btn1')
         sleep(2)
         self.driver.default_frame()
 
     def ensure_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
         self.driver.default_frame()
 
     def get_text_after_succeed(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('c,layui-layer-content')
         self.driver.default_frame()
         return text
 
     def return_app_user_list(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[4]/div/div[2]/div[1]/button')
         sleep(5)
         self.driver.default_frame()
 
     def click_console_button_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_mobileUser_detail_tbody"]/tr/td[7]/a[1]')
         sleep(2)
         self.driver.default_frame()
 
     def click_reset_password_button_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_mobileUser_detail_tbody"]/tr/td[7]/a[3]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_name_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[2]/span')
         self.driver.default_frame()
         return text
 
     def get_dev_imei_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[3]')
         self.driver.default_frame()
         return text
 
     def get_dev_type_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[4]')
         self.driver.default_frame()
         return text
 
     def get_dev_active_time_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[5]')
         self.driver.default_frame()
         return text
 
     def get_dev_expire_time_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[6]')
         self.driver.default_frame()
         return text
 
     def get_dev_bound_user_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[7]')
         self.driver.default_frame()
         return text
 
     def click_dev_operation_detail_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[8]/a[1]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_name_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[2]/span')
         self.driver.default_frame()
         return text
 
     def get_dev_imei_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[3]')
         self.driver.default_frame()
         return text
 
     def get_dev_type_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[4]')
         self.driver.default_frame()
         return text
 
     def get_dev_active_time_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[5]')
         self.driver.default_frame()
         return text
 
     def get_dev_expire_time_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[6]')
         self.driver.default_frame()
         return text
 
     def get_dev_bound_user_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[7]')
         self.driver.default_frame()
         return text
 
     def click_track_replay_button_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[8]/a[2]')
         sleep(2)
         self.driver.default_frame()
@@ -959,13 +959,13 @@ class GlobalDevSearchPage(BasePage):
         return dev_name
 
     def return_app_user_detail_list(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[3]/div[2]/div[1]/button')
         sleep(4)
         self.driver.default_frame()
 
     def click_track_preset_button_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[8]/a[3]')
         sleep(2)
         self.driver.default_frame()
@@ -979,7 +979,7 @@ class GlobalDevSearchPage(BasePage):
         return text
 
     def click_alarm_detail_button_in_app_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[8]/a[4]')
         sleep(2)
         self.driver.default_frame()
@@ -991,49 +991,49 @@ class GlobalDevSearchPage(BasePage):
         return text
 
     def get_user_name_in_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[1]/td[2]')
         self.driver.default_frame()
         return text
 
     def get_user_type_in_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[1]/td[3]/div')
         self.driver.default_frame()
         return text
 
     def get_user_account_in_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[1]/td[4]')
         self.driver.default_frame()
         return text
 
     def get_user_dev_number_in_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[1]/td[6]')
         self.driver.default_frame()
         return text
 
     def click_console_button_in_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_user_tbody"]/tr[1]/td[7]/a[1]')
         sleep(2)
         self.driver.default_frame()
 
     def click_detail_in_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_user_tbody"]/tr[1]/td[7]/a[2]')
         sleep(2)
         self.driver.default_frame()
 
     def click_return_search_list(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[2]/div[2]/div[1]/button')
         sleep(2)
         self.driver.default_frame()
 
     def click_look_button_in_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_user_tbody"]/tr[1]/td[7]/a[4]')
         sleep(2)
         self.driver.default_frame()
@@ -1048,32 +1048,32 @@ class GlobalDevSearchPage(BasePage):
             return 0
 
     def click_reset_password_button_in_user_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_user_tbody"]/tr[1]/td[7]/a[3]')
         sleep(2)
         self.driver.default_frame()
 
     def click_search_buttons(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
         sleep(3)
         self.driver.default_frame()
 
     def click_user_info_in_user_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[2]/div[2]/div[1]/ul/li[2]/a')
         sleep(3)
         self.driver.default_frame()
 
     def get_user_name_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element(
             'x,//*[@id="complex_userInfo_Form_complexUpdate"]/div[3]/div/input').get_attribute('value')
         self.driver.default_frame()
         return text
 
     def get_user_type_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         a = self.driver.get_element(
             'x,//*[@id="complex_userInfo_Form_complexUpdate"]/div[2]/div/div/label[1]/div/input').is_selected()
         b = self.driver.get_element(
@@ -1091,33 +1091,33 @@ class GlobalDevSearchPage(BasePage):
             return ' 用户'
 
     def get_user_account_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element(
             'x,//*[@id="complex_userInfo_Form_complexUpdate"]/div[4]/div/input').get_attribute('value')
         self.driver.default_frame()
         return text
 
     def get_user_account_input_value_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element(
             'x,//*[@id="complex_userInfo_Form_complexUpdate"]/div[4]/div/input').get_attribute('readonly')
         self.driver.default_frame()
         return text
 
     def get_up_user_name_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element('x,//*[@id="editorSelectRole"]/div/input').get_attribute('value')
         self.driver.default_frame()
         return text
 
     def get_up_user_input_value_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element('x,//*[@id="editorSelectRole"]/div/input').get_attribute('readonly')
         self.driver.default_frame()
         return text
 
     def search_user_in_user_info(self, search_data):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="complexUpdate_globalSearch_input"]', search_data)
         self.driver.click_element('x,//*[@id="complexUpdate_globalSearch_btn"]')
         sleep(4)
@@ -1130,118 +1130,118 @@ class GlobalDevSearchPage(BasePage):
         return text
 
     def click_sale_dev_in_user_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[2]/div[2]/div[1]/ul/li[3]/a')
         sleep(2)
         self.driver.default_frame()
 
     def get_sale_user_name(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="sale_to_complexSale"]')
         self.driver.default_frame()
         return text
 
     def click_add_user_in_user_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[2]/div[2]/div[1]/ul/li[4]/a')
         sleep(2)
         self.driver.default_frame()
 
     def get_up_user_in_add_user(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element('x,//*[@id="complex_addUser_form"]/div[1]/div[1]/input').get_attribute('value')
         self.driver.default_frame()
         return text
 
     def check_add_user_account_input_in_user_info(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="complex_addUser_form"]/div[3]/div[1]/input', param)
         self.driver.default_frame()
 
     def get_text_account_input_expertion(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_addUser_form"]/div[3]/div[1]/label')
         self.driver.default_frame()
         return text
 
     def click_save_add_user(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_addUser_form"]/div[8]/div/button')
         sleep(2)
         self.driver.default_frame()
 
     def get_user_account_input_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element('x,//*[@id="complex_addUser_form"]/div[3]/div[1]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return text
 
     def check_add_user_name_input_in_user_info(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="complex_addUser_form"]/div[4]/div[1]/input', param)
         self.driver.default_frame()
 
     def get_text_name_input_expertion(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_addUser_form"]/div[4]/div[1]/label')
         self.driver.default_frame()
         return text
 
     def click_add_user_password_first_input_in_user_info(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="password"]', param)
         self.driver.default_frame()
 
     def click_add_user_password_second_input_in_user_info(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="markPswAgain_complex_addUser_form"]/div/input', param)
         self.driver.default_frame()
 
     def get_first_password_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_addUser_form"]/div[6]/div[1]/label')
         self.driver.default_frame()
         return text
 
     def get_second_password_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="markPswAgain_complex_addUser_form"]/div/label')
         self.driver.default_frame()
         return text
 
     def get_dev_name_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[1]/td[2]')
         self.driver.default_frame()
         return text
 
     def get_dev_imei_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[1]/td[3]')
         self.driver.default_frame()
         return text
 
     def get_dev_type_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[1]/td[4]')
         self.driver.default_frame()
         return text
 
     def get_dev_active_time_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[1]/td[5]')
         self.driver.default_frame()
         return text
 
     def get_dev_expire_time_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[1]/td[6]')
         self.driver.default_frame()
         return text
 
     def click_track_play_button_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[8]/a[2]')
         sleep(2)
         self.driver.default_frame()
@@ -1253,7 +1253,7 @@ class GlobalDevSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="driverName"]')
 
     def click_track_preset_button_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[8]/a[3]')
         sleep(2)
         self.driver.default_frame()
@@ -1262,67 +1262,67 @@ class GlobalDevSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="mapview"]/div[3]/div/div[1]/b')
 
     def click_look_alarm_button_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[8]/a[4]')
         sleep(2)
         self.driver.default_frame()
 
     def click_detail_in_dev_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[8]/a[1]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_name_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[2]')
         self.driver.default_frame()
         return text
 
     def get_dev_imei_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[3]')
         self.driver.default_frame()
         return text
 
     def get_dev_type_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[4]')
         self.driver.default_frame()
         return text
 
     def get_dev_active_time_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[5]')
         self.driver.default_frame()
         return text
 
     def get_dev_expire_time_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[6]')
         self.driver.default_frame()
         return text
 
     def click_track_play_button_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]/a[2]')
         sleep(2)
         self.driver.default_frame()
 
     def click_track_preset_button_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]/a[3]')
         sleep(2)
         self.driver.default_frame()
 
     def click_look_alarm_button_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]/a[4]')
         sleep(2)
         self.driver.default_frame()
 
     def click_look_place_button_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]/a[5]')
         sleep(2)
         self.driver.default_frame()
@@ -1335,19 +1335,19 @@ class GlobalDevSearchPage(BasePage):
             'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[3]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
 
     def click_dev_search_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
         sleep(2)
         self.driver.default_frame()
 
     def click_dev_info_button_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[3]/div[2]/div[1]/ul/li[2]/a')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_imei_in_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.switch_to_frame('x,//*[@id="complex_editDevice_iframe"]')
         text = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[1]/input[2]').get_attribute(
             'value')
@@ -1356,7 +1356,7 @@ class GlobalDevSearchPage(BasePage):
         return text
 
     def get_dev_type_in_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.switch_to_frame('x,//*[@id="complex_editDevice_iframe"]')
         text = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[2]/input[2]').get_attribute(
             'value')
@@ -1365,7 +1365,7 @@ class GlobalDevSearchPage(BasePage):
         return text
 
     def get_dev_name_in_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.switch_to_frame('x,//*[@id="complex_editDevice_iframe"]')
         text = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[1]/input').get_attribute('value')
         self.driver.default_frame()
@@ -1373,44 +1373,44 @@ class GlobalDevSearchPage(BasePage):
         return text
 
     def click_dev_tran_button_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[3]/div[2]/div[1]/ul/li[3]/a')
         sleep(2)
         self.driver.default_frame()
 
     def click_customer(self, n):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_allotDev_tree_complexAllot_%s_span"]' % str(n + 2))
         sleep(2)
         self.driver.default_frame()
 
     def get_customer_name_in_header(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="allot_to_complexAllot"]')
         self.driver.default_frame()
         return text
 
     def get_click_customer_name(self, n):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_allotDev_tree_complexAllot_%s_span"]' % (n + 2))
         self.driver.default_frame()
         return text
 
     def search_user_in_dev_detail(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="complexAllot_globalSearch_input"]', param)
         self.driver.click_element('x,//*[@id="complexAllot_globalSearch_btn"]')
         sleep(3)
         self.driver.default_frame()
 
     def get_text_after_search_user_in_dev_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_user_sale_complexAllot"]/div[2]/div/div/div/div')
         self.driver.default_frame()
         return text
 
     def add_dev_to_trans(self, dev_imei_in_detail):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="sale_imei_complexAllot"]')
         sleep(1)
         self.driver.operate_input_element('x,//*[@id="sale_imei_complexAllot"]', dev_imei_in_detail)
@@ -1419,166 +1419,166 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def get_file_imei_after_add_imei(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr/td[1]')
         self.driver.default_frame()
         return text
 
     def get_file_reason_add_imei(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr/td[3]')
         self.driver.default_frame()
         return text
 
     def get_file_status(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr/td[2]')
         self.driver.default_frame()
         return text
 
     def close_file_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('c,layui-layer-ico')
         self.driver.default_frame()
 
     def click_detele_dev_in_dev_tran(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[4]/a')
         sleep(2)
         self.driver.default_frame()
 
     def click_trans_dev_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_user_sale_complexAllot"]/div[3]/div[2]/button[2]')
         sleep(2)
         self.driver.default_frame()
 
     def get_text_after_click_trans_dev(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('c,layui-layer-content')
         self.driver.default_frame()
         return text
 
     def click_reset_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_user_sale_complexAllot"]/div[3]/div[1]/button')
         sleep(2)
         self.driver.default_frame()
 
     def click_dev_command_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[3]/div[2]/div[1]/ul/li[4]/a')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_imei_in_command(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="instruction_IMEI"]')
         self.driver.default_frame()
         return text
 
     def get_dev_name_in_command(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="instruction_deviceName"]')
         self.driver.default_frame()
         return text
 
     def click_higher_search(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[2]')
         sleep(2)
         self.driver.default_frame()
 
     def click_pull_down_customer(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[2]/div/div[1]/span/button')
         sleep(2)
         self.driver.default_frame()
 
     def click_customer_in_higher_search(self, n):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_search_tree_%s_span"]' % str(n + 1))
         sleep(2)
         self.driver.default_frame()
 
     def get_customer_name(self, n):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="complex_search_tree_%s_span"]' % str(n + 1))
         self.driver.default_frame()
         return text
 
     def get_customer_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element('x,//*[@id="complex_search_userName"]').get_attribute('value')
         self.driver.default_frame()
         return text
 
     def check_start_date_type(self, date):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="advancedSearchSelectStartTime"]', date)
         self.driver.click_element('x,/html/body/div[3]/div[1]/div/table/thead/tr/th[8]')
         self.driver.default_frame()
 
     def get_text_after_input_date(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="laydate_time"]/p')
         self.driver.default_frame()
         return text
 
     def click_time_quantum_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[4]/label[2]/div/ins')
         sleep(2)
         self.driver.default_frame()
 
     def check_end_date_type(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="advancedSearchSelectEndTime"]', param)
         self.driver.click_element('x,/html/body/div[3]/div[1]/div/table/thead/tr/th[8]')
         self.driver.default_frame()
 
     def get_time_quantum_input_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         value = self.driver.get_element(
             'x,//*[@id="complex_advanced_search_form"]/div[4]/label[2]/div/input').is_selected()
         self.driver.default_frame()
         return value
 
     def click_arrearage_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[5]/label[2]/div/ins')
         sleep(2)
         self.driver.default_frame()
 
     def get_arrearage_input_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         value = self.driver.get_element(
             'x,//*[@id="complex_advanced_search_form"]/div[5]/label[2]/div/input').is_selected()
         self.driver.default_frame()
         return value
 
     def click_not_active_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[5]/label[3]/div/ins')
         sleep(2)
         self.driver.default_frame()
 
     def get_not_active_input_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         value = self.driver.get_element(
             'x,//*[@id="complex_advanced_search_form"]/div[5]/label[3]/div/input').is_selected()
         self.driver.default_frame()
         return value
 
     def get_text_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         text = self.driver.get_element('x,//*[@id="complex_advanced_search_form"]/div[3]/input').get_attribute(
             'placeholder')
         self.driver.default_frame()
         return text
 
     def click_car_plate_number_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/div/ul/li[2]')
@@ -1586,7 +1586,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def click_sn_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/div/ul/li[4]')
@@ -1594,7 +1594,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def click_vin_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/div/ul/li[5]')
@@ -1602,7 +1602,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def click_sim_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/div/ul/li[6]')
@@ -1610,7 +1610,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def click_dev_name_dev_info(self):
-        self.driver.switch_to_frame('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/span[2]')
         sleep(2)
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/div/ul/li[7]')

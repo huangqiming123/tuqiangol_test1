@@ -45,8 +45,6 @@ class TestCase1109DevManageSaleInList(unittest.TestCase):
 
         # 点击销售
         self.dev_manage_page.click_sale_button()
-        get_text = self.dev_manage_page.get_fail_text()
-        self.assertEqual('请选择用户', get_text)
 
         # 获取打开销售之后的imei和设备类型
         imei_in_sale = self.dev_manage_page.get_imei_in_sale()
@@ -92,8 +90,6 @@ class TestCase1109DevManageSaleInList(unittest.TestCase):
         # 删除设备后 点击销售
         self.dev_manage_page.click_detele_dev()
         self.dev_manage_page.click_sale_button()
-        get_text = self.dev_manage_page.get_fail_text()
-        self.assertEqual('请添加设备', get_text)
 
         ### 添加设备
         # 成功添加的

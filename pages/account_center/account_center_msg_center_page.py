@@ -145,7 +145,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
         self.driver.click_element("x,//*[@id='msg_tbody']/tr[1]/td[4]/div/a")
         self.driver.wait(3)
         # 切换到iframe
-        self.driver.switch_to_iframe("commModal_iframe")
+        self.driver.switch_to_iframe('x,/html/body/div[13]/div[2]/iframe')
 
         # 基本信息
         device_name = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[1]/input")
@@ -190,6 +190,6 @@ class AccountCenterMsgCenterPage(BasePageServer):
         # 退出frame
         self.driver.default_frame()
         # 点保存
-        self.driver.click_element("commModal_submit_btn")
+        self.driver.click_element("c,layui-layer-btn0")
 
         return all_len

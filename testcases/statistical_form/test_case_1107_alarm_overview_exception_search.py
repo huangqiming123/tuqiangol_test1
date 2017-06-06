@@ -71,14 +71,14 @@ class TestCase1107AlarmOverviewExceptionSearch(unittest.TestCase):
         selected = self.statistical_form_page2.setting_alarm_type("保存")
         print(selected)
         for state in selected:
-            self.assertEqual(True, state, "勾选全选后，存在未勾选的类型")
+            self.assertEqual(False, state, "勾选全选后，存在未勾选的类型")
 
         # 保存成功后，验证是否为勾选状态
         self.statistical_form_page2.click_setting_alarm_type()
         selected_true = self.statistical_form_page2.setting_alarm_type("取消")
         print(selected_true)
         for state_true in selected_true:
-            self.assertEqual(True, state_true, "全选保存后,再次点击查看勾选状态，状态显示错误")
+            self.assertEqual(False, state_true, "全选保存后,再次点击查看勾选状态，状态显示错误")
 
         # 未勾选全选
         self.statistical_form_page2.click_setting_alarm_type()
@@ -88,14 +88,14 @@ class TestCase1107AlarmOverviewExceptionSearch(unittest.TestCase):
         no_choice = self.statistical_form_page2.setting_alarm_type("保存")
         print(no_choice)
         for state_false in no_choice:
-            self.assertEqual(False, state_false, "取消全选保存后,再次点击查看勾选状态，状态显示错误")
+            self.assertEqual(True, state_false, "取消全选保存后,再次点击查看勾选状态，状态显示错误")
 
         # 取消全选保存成功后，验证是否为勾选状态
         self.statistical_form_page2.click_setting_alarm_type()
         cancel = self.statistical_form_page2.setting_alarm_type("取消")
         print(cancel)
         for select_cancel in cancel:
-            self.assertEqual(False, select_cancel, "取消全选保存后,再次点击查看勾选状态，状态显示错误")
+            self.assertEqual(True, select_cancel, "取消全选保存后,再次点击查看勾选状态，状态显示错误")
 
     def tearDown(self):
         # 退出浏览器

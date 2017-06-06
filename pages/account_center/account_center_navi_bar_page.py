@@ -44,37 +44,37 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 销售/代理商账户--服务商
     def sales_usr_service_provider(self):
         service_provider = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[1]").text
+            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[1]").text
         return service_provider
 
     # 销售/代理商户账户--联系人
     def sales_usr_service_provider_connect(self):
         service_provider_connect = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]").text
+            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]").text
         return service_provider_connect
 
     # 销售/代理商账户--电话
     def sales_usr_service_provider_phone(self):
         service_provider_phone = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[3]").text
+            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[3]").text
         return service_provider_phone
 
     # 普通用户账户--服务商
     def ordinary_usr_service_provider(self):
         service_provider = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
+            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
         return service_provider
 
     # 普通用户账户--联系人
     def ordinary_usr_service_provider_connect(self):
         service_provider_connect = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[2]").text
+            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[2]").text
         return service_provider_connect
 
     # 普通用户账户--电话
     def ordinary_usr_service_provider_phone(self):
         service_provider_phone = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[3]").text
+            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[3]").text
         return service_provider_phone
 
     # 招呼栏退出系统

@@ -84,8 +84,8 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
             expect_usr_info_phone = current_user_info[1]
             self.assertEqual(expect_usr_info_phone, usr_info_phone, "账户总览左下方显示的客户电话错误")
 
-            get_up_account_info_sql = "SELECT o.account,o.nickName,o.phone FROM user_info o WHERE o.userId = '" + \
-                                      current_user_info[2] + "'"
+            get_up_account_info_sql = "SELECT o.nickName,o.contact,o.phone FROM user_info o WHERE o.userId = '" + \
+                                      current_user_info[2] + "';"
             cursor.execute(get_up_account_info_sql)
             get_up_user_info = cursor.fetchall()
             up_user_info = []
@@ -98,9 +98,10 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
             expect_usr_service_provider = up_user_info[0]
             self.assertIn(expect_usr_service_provider, usr_service_provider, "服务商显示错误")
 
-            service_provider_connect = self.account_center_page_navi_bar.sales_usr_service_provider_connect()
-            expect_service_provider_connect = up_user_info[1]
-            self.assertIn(expect_service_provider_connect, service_provider_connect, "联系人显示错误")
+            if up_user_info[1] != None:
+                service_provider_connect = self.account_center_page_navi_bar.sales_usr_service_provider_connect()
+                expect_service_provider_connect = up_user_info[1]
+                self.assertIn(expect_service_provider_connect, service_provider_connect, "联系人显示错误")
 
             service_provider_phone = self.account_center_page_navi_bar.sales_usr_service_provider_phone()
             expect_service_provider_phone = up_user_info[2]

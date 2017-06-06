@@ -23,11 +23,11 @@ class CommandManagementPage(BasePage):
     ACTUAL_TITLE_TEXT_AFTER_CLICK_WORK_TYPE_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div[1]/div/b'
 
     WORK_TYPE_MANAGEMENT_CREATE_TEMPLATE_BUTTON_SELECTOR = 'x,//*[@id="create-instructionRules"]'
-    WORK_TYPE_MANAGEMENT_ACTUAL_TITLE_TEXT_CLICK_CREATE_TEMPLATE_SELECTOR = 'x,/html/body/div[5]/div/div/div[1]/h4'
-    WORK_TYPE_MANAGEMENT_CLOSE_CREATE_TEMPLATE_BUTTON_SELECTOR = 'x,/html/body/div[5]/div/div/div[1]/button'
-    WORK_TYPE_MANAGEMENT_CANCEL_CREATE_TEMPLATE_BUTTON_SELECTOR = 'x,/html/body/div[5]/div/div/div[3]/button[2]'
+    WORK_TYPE_MANAGEMENT_ACTUAL_TITLE_TEXT_CLICK_CREATE_TEMPLATE_SELECTOR = 'c,layui-layer-title'
+    WORK_TYPE_MANAGEMENT_CLOSE_CREATE_TEMPLATE_BUTTON_SELECTOR = 'c,layui-layer-ico'
+    WORK_TYPE_MANAGEMENT_CANCEL_CREATE_TEMPLATE_BUTTON_SELECTOR = 'c,layui-layer-btn1'
 
-    CREATE_WORK_TEMPLATE_FRAME_SELECTOR = 'x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe'
+    CREATE_WORK_TEMPLATE_FRAME_SELECTOR = 'x,//*[@id="customInstructionsModal"]/div/iframe'
     CREATE_WORK_TEMPLATE_NAME_SELECTOR = 'x,//*[@id="tempName"]'
     CREATE_WORK_TEMPLATE_CHOOSE_TIME_SELECTOR = 'x,/html/body/div/div/div/form/div[2]/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]/div/div[1]/span/div/span[2]'
     CREATE_WORK_TEMPLATE_CHOOSE_TIMES_SELECTOR = 'x,/html/body/div/div/div/form/div[2]/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]/div/div[1]/span/div/div/ul/li[%s]'
@@ -39,7 +39,7 @@ class CommandManagementPage(BasePage):
     CREATE_WORK_TEMPLATE_SLIDER_ENSURE_SELECTOR = 'x,/html/body/div/div/div/form/div[2]/div[1]/div[2]/div[2]/button[2]'
     CREATE_WORK_TEMPLATE_CIRCULATION_DAY_SELECTOR = 'x,/html/body/div/div/div/form/div[2]/div[1]/div/div/div/div/div[2]/div[1]/div/div[3]/div/input'
     CREATE_WORK_TEMPLATE_NOT_CIRCULATION_SELECTOR = 'x,/html/body/div/div/div/form/div[2]/div[1]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[2]/div'
-    CREATE_WORK_TEMPLATE_ENSURE_BUTTON_SELECTOR = 'x,/html/body/div[5]/div/div/div[3]/button[1]'
+    CREATE_WORK_TEMPLATE_ENSURE_BUTTON_SELECTOR = 'c,layui-layer-btn0'
 
     CREATE_WORK_TEMPLATE_OPERATION_REVISE_SELECTOR = 'x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div[4]/table/tbody/tr[1]/td[5]/a[1]'
     CREATE_WORK_TEMPLATE_OPERATION_DELETE_SELECTOR = 'x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div[4]/table/tbody/tr[1]/td[5]/a[2]'
@@ -456,7 +456,7 @@ class CommandManagementPage(BasePage):
 
     def actual_text_after_click_look_issued(self):
         # 点击查看下发工作模式后，检查查看框的title文本
-        actual_text = self.driver.get_text('x,/html/body/div[2]/div/div/div[1]/h4')
+        actual_text = self.driver.get_text('c,layui-layer-title')
         return actual_text
 
     def click_list_input_issued_work_type(self):
@@ -477,7 +477,7 @@ class CommandManagementPage(BasePage):
 
     def click_close_look_issued_work_type(self):
         # 点击关闭查看
-        self.driver.click_element('x,//*[@id="view-SendWorkMode"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(3)
 
     def click_cancel_issued(self):
@@ -642,136 +642,136 @@ class CommandManagementPage(BasePage):
         return sql
 
     def get_create_template_name_text(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_element('x,//*[@id="tempName"]').get_attribute('placeholder')
         self.driver.default_frame()
         return text
 
     def add_template_name_in_create_template(self, param):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.operate_input_element('x,//*[@id="tempName"]', param)
         self.driver.default_frame()
 
     def click_ensure(self):
-        self.driver.click_element('x,//*[@id="customInstructionsModal"]/div/div/div[3]/button[1]')
+        self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
 
     def get_text_after_click_ensure(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="tmpform"]/div[1]/div[1]/label')
         self.driver.default_frame()
         return text
 
     def get_report_time_text_fail(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[2]/div/ul/li/label')
         self.driver.default_frame()
         return text
 
     def get_circulation_report_time_text_fail(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[2]')
         self.driver.default_frame()
         return text
 
     def add_circulation_report_time(self, param):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.operate_input_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/input',
                                           param)
         self.driver.default_frame()
 
     def get_circulation_report_time_texts_fail(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[1]/div/div[3]/div/label[3]')
         self.driver.default_frame()
         return text
 
     def click_add_user_defined_template(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.click_element('x,//*[@id="tmpform"]/div[1]/div[2]/button')
         sleep(2)
         self.driver.default_frame()
 
     def get_total_number_template(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         a = len(list(self.driver.get_elements('x,//*[@id="stageList"]/div')))
         self.driver.default_frame()
         return a
 
     def click_delete_user_defined_template(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.click_element('x,//*[@id="stageList"]/div[2]/div/div/div/div[1]/a')
         sleep(2)
         self.driver.default_frame()
 
     def click_week_patterns(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.click_element('x,//*[@id="stageList"]/div/div/div/div/div[1]/ul/li[2]/a')
         sleep(2)
         self.driver.default_frame()
 
     def get_text_fail_report_time_week(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[1]/div/label')
         self.driver.default_frame()
         return text
 
     def get_text_fail_report_time(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[2]/div/label')
         self.driver.default_frame()
         return text
 
     def get_text_fail_limit_cycle(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/label[2]')
         self.driver.default_frame()
         return text
 
     def add_limit_cycle_in_create_template(self, n):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.operate_input_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/input',
                                           n)
         self.driver.default_frame()
 
     def get_texts_fail_limit_cycle(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[2]/div/div[3]/div/label[3]')
         self.driver.default_frame()
         return text
 
     def click_normal_mode(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.click_element('x,//*[@id="stageList"]/div/div/div/div/div[1]/ul/li[3]/a')
         sleep(2)
         self.driver.default_frame()
 
     def add_wake_up_time_in_create_template(self, n):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.operate_input_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[1]/div/input',
                                           n)
         self.driver.default_frame()
 
     def get_text_wake_up_time_fail(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[1]/div/label')
         self.driver.default_frame()
         return text
 
     def add_limit_cycle_in_create_templates(self, param):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         self.driver.operate_input_element('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/input',
                                           param)
         self.driver.default_frame()
 
     def get_text_fail_limit_cycles(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/label[2]')
         self.driver.default_frame()
         return text
 
     def get_texts_fail_limit_cycles(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_text('x,//*[@id="stageList"]/div/div/div/div/div[2]/div[3]/div/div[3]/div/label[3]')
         self.driver.default_frame()
         return text
@@ -785,20 +785,20 @@ class CommandManagementPage(BasePage):
         sleep(2)
 
     def get_template_name_again(self):
-        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/div/div[2]/iframe')
+        self.driver.switch_to_frame('x,//*[@id="customInstructionsModal"]/div/iframe')
         text = self.driver.get_element('x,//*[@id="tempName"]').get_attribute('value')
         self.driver.default_frame()
         return text
 
     def click_close_issued_command(self):
-        self.driver.click_element('x,//*[@id="execution-instruction"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def add_dev_to_issued_command(self, param):
         self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', param)
         sleep(1)
         self.driver.click_element(
-            'x,//*[@id="execution-instruction"]/div/div/div[2]/form/div/div/div[1]/div/div[3]/button[1]')
+            'x,//*[@id="execution-instruction"]/div/form/div/div/div[1]/div/div[3]/button[1]')
         sleep(10)
 
     def click_send_issued_command(self):
@@ -819,7 +819,7 @@ class CommandManagementPage(BasePage):
         return self.driver.get_text('x,//*[@id="failedList"]/tr/td[3]')
 
     def close_issued_command_fail(self):
-        self.driver.click_element('x,//*[@id="addResultsModal-close"]')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def get_text_after_ensure(self):

@@ -1093,7 +1093,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_batch_sale_button(self):
-        self.driver.click_element('x,//*[@id="batchSales"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
 
     def get_select_account_name(self):
         return self.driver.get_text('x,//*[@id="device_sale_to"]')
@@ -1335,7 +1335,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_sale_in_list_button(self):
-        self.driver.click_element('x,//*[@id="batchSales"]/div/div/div[1]/button/span')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     def get_imei_in_sale(self):

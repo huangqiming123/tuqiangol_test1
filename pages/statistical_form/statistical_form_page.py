@@ -1777,34 +1777,34 @@ class StatisticalFormPage(BasePage):
         sleep(2)
 
         # 选择低于的电量
-        self.driver.click_element('x,//*[@id="ratioSel"]')
+        self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/span[2]')
         sleep(2)
         if search_data['electric'] == '100':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[1]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[1]')
         elif search_data['electric'] == '90':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[2]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[2]')
         elif search_data['electric'] == '80':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[3]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[3]')
         elif search_data['electric'] == '70':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[4]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[4]')
         elif search_data['electric'] == '60':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[5]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[5]')
         elif search_data['electric'] == '50':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[6]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[6]')
         elif search_data['electric'] == '40':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[7]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[7]')
         elif search_data['electric'] == '30':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[8]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[8]')
         elif search_data['electric'] == '20':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[9]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[9]')
         elif search_data['electric'] == '10':
-            self.driver.click_element('x,//*[@id="ratioSel"]/option[10]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[2]/div/span/div/div/ul/li[10]')
 
         # 选择型号
-        self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[3]/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[3]/div/div/div/span[2]')
         sleep(2)
         if search_data['dev_type']:
-            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[3]/div/div/div/ul/li[1]')
+            self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[3]/div/div/div/div/ul/li[1]')
 
         # 选择下级
         a = self.driver.get_element('x,//*[@id="icheckContainSub"]').is_selected()
@@ -1834,3 +1834,27 @@ class StatisticalFormPage(BasePage):
         else:
             self.driver.default_frame()
             return 0
+
+    def get_no_data_text_in_alarm_overview_page(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+        text = self.driver.get_text('x,//*[@id="alarm_report_nodata"]/div/span')
+        self.driver.default_frame()
+        return text
+
+    def get_sos_total_alarm_number(self):
+        text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
+        return text.split(' ')[1]
+
+    def get_list_sos_alarm_total_number(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[1]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[1]' % str(n + 1))
+        return number
+
+    def get_enter_satellite_dead_zone_alarm_total(self):
+        text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
+        return text.split(' ')[3]
+
+    def get_list_enter_satellite_dead_zone_alarm_total_number(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[2]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[2]' % str(n + 1))
+        return number

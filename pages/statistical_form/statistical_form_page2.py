@@ -6,7 +6,7 @@ from pages.statistical_form.search_sql import SearchSql
 class StatisticalFormPage2(BasePage):
     # 实例化search_sql类
     def instance_search_sql(self):
-        search_sql = SearchSql()
+        search_sql = SearchSql(self.driver, self.base_url)
         return search_sql
 
     # 取开始--结束时间

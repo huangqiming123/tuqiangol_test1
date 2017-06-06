@@ -74,7 +74,7 @@ class TestCase148SportStatisticalTracelReportForm(unittest.TestCase):
 
             # 连接数据库
             # 连接数据库
-            all_dev = self.seasrch_sql.search_current_account_equipment(search_data['search_user'])
+            all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
 
             # 连接另一个数据库
             connect_02 = self.connect_sql.connect_tuqiang_form()
@@ -83,7 +83,7 @@ class TestCase148SportStatisticalTracelReportForm(unittest.TestCase):
             # 判断查询的条件
 
             # 判断查询条件
-            get_total_sql = self.seasrch_sql.search_sport_mile_sql(all_dev, search_data)
+            get_total_sql = self.search_sql.search_sport_mile_sql(all_dev, search_data)
             print(get_total_sql)
 
             # 判断查询的条件

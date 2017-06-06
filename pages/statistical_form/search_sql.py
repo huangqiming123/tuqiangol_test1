@@ -446,22 +446,22 @@ class SearchSql(StatisticalFormPage):
             if search_data['choose_date'] == '':
                 sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
             elif search_data['choose_date'] == 'today':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'yesterday':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'this_week':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'last_week':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'this_month':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'last_month':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
         sql += ";"
         return sql
 
@@ -475,22 +475,22 @@ class SearchSql(StatisticalFormPage):
             if search_data['choose_date'] == '':
                 sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
             elif search_data['choose_date'] == 'today':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'yesterday':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'this_week':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'last_week':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'this_month':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             elif search_data['choose_date'] == 'last_month':
-                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME '" + end_time + "'"
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
 
             sql += " group by m.DEVICE_IMEI"
         sql += ";"

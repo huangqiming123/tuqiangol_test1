@@ -6,8 +6,6 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.support.select import Select
 
-from driver.driver_choose import browser
-
 
 # webdirver封装
 # author:孙燕妮
@@ -16,7 +14,7 @@ class AutomateDriverServer(object):
     def __init__(self):
         self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
                                        desired_capabilities=DesiredCapabilities.FIREFOX)
-        self.base_url = 'http://tujunsat.jimicloud.com'
+        self.base_url = 'http://www.tuqiangol.com'
 
     def navigate(self, url):
         self.driver.get(self.base_url + url)

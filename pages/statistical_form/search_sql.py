@@ -524,7 +524,7 @@ class SearchSql(StatisticalFormPage):
         cursor.execute(get_lower_account_sql)
         # 读取数据
         lower_account = cursor.fetchall()
-        lower_account_list = []
+        lower_account_list = [user_id]
         for range1 in lower_account:
             for range2 in range1:
                 lower_account_list.append(range2)

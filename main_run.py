@@ -12,24 +12,28 @@ author:zhangAo
 def run_01():
     os.system('python -m test_runner.tuqiangOL_test_runner_login')
     sleep(5)
+    os.system('python -m test_runner.tuqiangOL_test_runner_account_center')
 
 
 def run_02():
     os.system('python -m test_runner.tuqiangOL_test_runner_global_search')
     sleep(5)
+    os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
 
 
 def run_03():
     os.system('python -m test_runner.tuqiangOL_test_runner_cust_manage')
     sleep(5)
+    os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
 
 
 def run_04():
     os.system('python -m test_runner.tuqiangOL_test_runner_dev_manage')
     sleep(5)
+    os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form')
 
 
-def run_05():
+'''def run_05():
     os.system('python -m test_runner.tuqiangOL_test_runner_account_center')
 
 
@@ -44,7 +48,7 @@ def run_07():
 
 
 def run_08():
-    os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form')
+    os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form')'''
 
 
 def run_09():
@@ -102,7 +106,7 @@ for i4 in range(1):
     t4.setDaemon(True)
     thread_list.append(t4)
 
-for i5 in range(1):
+'''for i5 in range(1):
     t5 = threading.Thread(target=run_05)
     t5.setDaemon(True)
     thread_list.append(t5)
@@ -120,7 +124,7 @@ for i7 in range(1):
 for i8 in range(1):
     t8 = threading.Thread(target=run_08)
     t8.setDaemon(True)
-    thread_list.append(t8)
+    thread_list.append(t8)'''
 
 for t in thread_list:
     t.start()

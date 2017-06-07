@@ -68,30 +68,16 @@ class TestCase014AccountCenterOperLoginLog(unittest.TestCase):
             cur = connect.cursor()
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "' ;"
+            get_id_sql = "select o.userId from user_info o where o.account = '" + current_account + "' ;"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
             # 遍历数据
             for row in user_relation:
                 user_relation_id = {
-                    "account": row[0],
-                    "userId": row[1],
-                    "fullParent": row[2]
+                    "userId": row[0]
                 }
-
-                # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
-                get_lower_account_sql = "select userId from user_info where fullParentId like" + \
-                                        "'" + user_relation_id["fullParent"] + user_relation_id["userId"] + "%'" + ";"
-                cur.execute(get_lower_account_sql)
-                # 读取数据
-                lower_account = cur.fetchall()
-                lower_account_list = [user_relation_id["userId"]]
-                for range1 in lower_account:
-                    for range2 in range1:
-                        lower_account_list.append(range2)
-                lower_account_tuple = tuple(lower_account_list)
-                get_total_sql = self.search_sql.search_log_in_sql(lower_account_tuple, search_data)
+                get_total_sql = self.search_sql.search_log_in_sql(user_relation_id['userId'], search_data)
                 print(get_total_sql)
                 cur.execute(get_total_sql)
                 # 读取数据

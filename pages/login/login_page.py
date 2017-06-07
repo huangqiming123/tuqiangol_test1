@@ -87,13 +87,13 @@ class LoginPage(BasePageServer):
     # 底部第三方网站链接点击操作
     def enter_third_party_website(self, web_name):
         if web_name == '可信网站':
-            self.driver.click_element("s,body > footer > div.certification.ta-c > a:nth-child(1) > img")
+            self.driver.click_element('x,/html/body/footer/div[3]/a[1]')
         elif web_name == '网络警察':
-            self.driver.click_element("s,body > footer > div.certification.ta-c > a:nth-child(1) > img")
+            self.driver.click_element('x,/html/body/footer/div[3]/a[2]')
         elif web_name == '公共信息网络安全监察':
-            self.driver.click_element("s,body > footer > div.certification.ta-c > a:nth-child(2) > img")
+            self.driver.click_element('x,/html/body/footer/div[3]/a[3]')
         elif web_name == '不良信息举报中心':
-            self.driver.click_element("s,body > footer > div.certification.ta-c > a:nth-child(3) > img")
+            self.driver.click_element('x,/html/body/footer/div[3]/a[4]')
 
     # 封装登录操作
     def user_login(self, account, password):

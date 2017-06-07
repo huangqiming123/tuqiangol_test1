@@ -457,7 +457,7 @@ class StatisticalFormPage(BasePage):
         self.driver.operate_input_element('x,//*[@id="OverspeedFrom"]/div[1]/div[3]/input', search_data['speed'])
         # 选择日期
         self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[1]/div[1]/div/div/div/span[2]')
-        sleep(1)
+        sleep(2)
         if search_data['choose_date'] == 'yesterday':
             # 选择昨天
             self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[1]/div[1]/div/div/div/div/ul/li[3]')
@@ -609,7 +609,7 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="treeModal_stopCar"]/div[2]/div/button[1]')
         # 选择日期
         self.driver.click_element('x,//*[@id="StopCarFrom"]/div[1]/div[1]/div/div/div/span[2]')
-        sleep(1)
+        sleep(2)
         if search_data['choose_date'] == 'yesterday':
             # 选择昨天
             self.driver.click_element('x,//*[@id="StopCarFrom"]/div[1]/div[1]/div/div/div/div/ul/li[3]')
@@ -756,7 +756,7 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="treeModal_stopNotOff"]/div[2]/div/button[1]')
         # 选择日期
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[1]/div[1]/div/div/div/span[2]')
-        sleep(1)
+        sleep(2)
         if search_data['choose_date'] == 'yesterday':
             # 选择昨天
             self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[1]/div[1]/div/div/div/div/ul/li[3]')

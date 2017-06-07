@@ -67,11 +67,11 @@ class TestCase142SportStatisticalElectricReport(unittest.TestCase):
             }
             self.statistical_form_page.add_data_to_search_electric_report(search_data)
 
-            all_dev = self.seasrch_sql.search_current_account_equipment(search_data['search_user'])
-            all_user_dev = self.seasrch_sql.search_current_account_equipment_and_next(search_data['search_user'])
+            all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
+            all_user_dev = self.search_sql.search_current_account_equipment_and_next(search_data['search_user'])
             connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()
-            get_electric_total_sql = self.seasrch_sql.get_total_electric_report_sql(all_user_dev, all_dev, search_data)
+            get_electric_total_sql = self.search_sql.get_total_electric_report_sql(all_user_dev, all_dev, search_data)
             print(get_electric_total_sql)
             cursor.execute(get_electric_total_sql)
             get_total_number = cursor.fetchall()

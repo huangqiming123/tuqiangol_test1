@@ -1094,6 +1094,7 @@ class DevManagePages(BasePage):
 
     def click_close_batch_sale_button(self):
         self.driver.click_element('c,layui-layer-ico')
+        sleep(3)
 
     def get_select_account_name(self):
         return self.driver.get_text('x,//*[@id="device_sale_to"]')

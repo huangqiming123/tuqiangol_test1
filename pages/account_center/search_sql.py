@@ -49,7 +49,7 @@ class SearchSql(object):
 
     def search_log_in_sql(self, lower_account_tuple, search_data):
         # 搜索登录日志的sql
-        sql = "select id from user_login_log where loginUserId in " + str(lower_account_tuple)
+        sql = "select id from user_login_log where loginUserId = '%s'" % lower_account_tuple
 
         if search_data['account'] != '':
             sql += " and loginAccount like '%" + search_data['account'] + "%'"

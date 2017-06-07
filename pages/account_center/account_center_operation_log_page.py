@@ -112,7 +112,7 @@ class AccountCenterOperationLogPage(BasePageServer):
         a = self.driver.get_element('x,//*[@id="paging_xf"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_number('x,//*[@id="paging_xf"]', 'x,//*[@id="logslist_xf"]')
+            total = new_paging.get_totals_number('x,//*[@id="paging_xf"]', 'x,//*[@id="logslist_xf"]')
             self.driver.default_frame()
             return total
         elif a == 'display: none;':
@@ -206,7 +206,7 @@ class AccountCenterOperationLogPage(BasePageServer):
 
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_number('x,//*[@id="paging_login_log"]', 'x,//*[@id="loginLog-tbody"]')
+            total = new_paging.get_totals_number('x,//*[@id="paging_login_log"]', 'x,//*[@id="loginLog-tbody"]')
             self.driver.default_frame()
             return total
         elif a == 'display: none;':
@@ -232,7 +232,7 @@ class AccountCenterOperationLogPage(BasePageServer):
         self.driver.operate_input_element('x,//*[@id="selectUserName_xf"]', search_data['more'])
 
         self.driver.click_element('x,//*[@id="search_xf"]')
-        sleep(5)
+        sleep(15)
         self.driver.default_frame()
 
     def add_data_to_search_cus_manager_log(self, search_data):

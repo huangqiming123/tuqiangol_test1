@@ -1599,8 +1599,6 @@ class StatisticalFormPage(BasePage):
 
     def click_customer_in_off_line(self, n):
         self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
-        self.driver.click_element('x,//*[@id="OffLineFrom"]/div[2]/div[1]/div/div[1]/span/button')
-        sleep(2)
         self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 2))
         sleep(2)
         self.driver.default_frame()
@@ -1632,8 +1630,6 @@ class StatisticalFormPage(BasePage):
 
     def click_customer_in_on_line(self, n):
         self.driver.switch_to_frame('x,//*[@id="onlineReportFrame"]')
-        self.driver.click_element('x,//*[@id="OnLineFrom"]/div[1]/div/div[1]/span/button')
-        sleep(2)
         self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 2))
         sleep(2)
         self.driver.default_frame()
@@ -1866,3 +1862,31 @@ class StatisticalFormPage(BasePage):
     def get_end_time_in_mile_report_page(self):
         begin_time = self.driver.get_element('x,//*[@id="endTime_mileage"]').get_attribute('value')
         return begin_time
+
+    def get_select_account_in_on_line_form(self, n):
+        self.driver.switch_to_frame('x,//*[@id="onlineReportFrame"]')
+        self.driver.click_element('x,//*[@id="OnLineFrom"]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        text = self.driver.get_text('x,//*[@id="tree_%s_span"]' % str(n + 2))
+        self.driver.default_frame()
+        return text
+
+    def get_search_input_account_in_on_line_form(self):
+        self.driver.switch_to_frame('x,//*[@id="onlineReportFrame"]')
+        text = self.driver.get_element('x,//*[@id="search_text"]').get_attribute('value')
+        self.driver.default_frame()
+        return text
+
+    def get_select_account_off_line_form(self, n):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        self.driver.click_element('x,//*[@id="OffLineFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        text = self.driver.get_text('x,//*[@id="tree_%s_span"]' % str(n + 2))
+        self.driver.default_frame()
+        return text
+
+    def get_search_input_account_in_off_line_form(self):
+        self.driver.switch_to_frame('x,//*[@id="offlineReportFrame"]')
+        text = self.driver.get_element('x,//*[@id="search_text"]').get_attribute('value')
+        self.driver.default_frame()
+        return text

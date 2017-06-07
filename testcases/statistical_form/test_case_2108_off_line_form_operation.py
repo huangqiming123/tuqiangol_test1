@@ -56,7 +56,10 @@ class TestCase2108OffLineFormOperation(unittest.TestCase):
 
         # 循环客户树
         for n in range(5):
+            get_select_account = self.statistical_form_page.get_select_account_off_line_form(n)
             self.statistical_form_page.click_customer_in_off_line(n)
+            get_search_input_account = self.statistical_form_page.get_search_input_account_in_off_line_form()
+            self.assertEqual(get_search_input_account, get_select_account)
 
         # 搜索客户树无数据
         self.statistical_form_page.add_data_to_search_customer_in_off_line('无数据')

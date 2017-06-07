@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/statistical_form/#test_case_147_sport_statistical_sport_overview.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,25 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="#test_case_138_alarm_overview_search.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/#test_case_138_alarm_overview_search.py">
+      <file leaf-file-name="test_case_2107_statistical_form_alarm_detail.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2107_statistical_form_alarm_detail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="75" selection-start-line="73" selection-start-column="75" selection-end-line="73" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.6439169">
+              <caret line="63" column="79" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="79" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_case_147_sport_statistical_sport_overview.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.996904">
-              <caret line="108" column="54" selection-start-line="108" selection-start-column="54" selection-end-line="108" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +65,6 @@
         <option value="$PROJECT_DIR$/data/statistical_form/sport_statistical_milage_form_search_data.csv" />
         <option value="$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/#test_case_141_sport_statistical_mile_report_form.py" />
-        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py" />
-        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2107_statistical_form_alarm_detail.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2105_statistical_form_acc_form_operation.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py" />
@@ -108,12 +96,14 @@
         <option value="$PROJECT_DIR$/model/connect_sql.py" />
         <option value="$PROJECT_DIR$/automate_driver/automate_driver.py" />
         <option value="$PROJECT_DIR$/test_runner/test_runner_path.py" />
-        <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
         <option value="$PROJECT_DIR$/automate_driver/automate_driver_server.py" />
         <option value="$PROJECT_DIR$/main_run.py" />
         <option value="$PROJECT_DIR$/testcases/login/test_case_007_login_enter_third_website.py" />
         <option value="$PROJECT_DIR$/pages/login/login_page.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py" />
+        <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
       </list>
     </option>
   </component>
@@ -261,68 +251,7 @@
       <recent name="E:\git\tuqiangol_test\testcases\2017-05-12" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in TestCase147SportStatisticalOverview">
-    <configuration default="false" name="main_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase006LoginChangeLanguage.test_change_language" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/login" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/login/test_case_006_login_change_language.py" />
-      <option name="CLASS_NAME" value="TestCase006LoginChangeLanguage" />
-      <option name="METHOD_NAME" value="test_change_language" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase007LoginEnterThirdWebsite.test_third_website" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/login" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/login/test_case_007_login_enter_third_website.py" />
-      <option name="CLASS_NAME" value="TestCase007LoginEnterThirdWebsite" />
-      <option name="METHOD_NAME" value="test_third_website" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest TestCase2108OffLineFormOperation.test_case_2108_off_line_form_operation">
     <configuration default="false" name="Unittest TestCase1102LoginForgetPasswordException.test_login_forget_passwd" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -360,6 +289,72 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase2109OnLineFormOperation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangOL" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py" />
+      <option name="CLASS_NAME" value="TestCase2109OnLineFormOperation" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase2109OnLineFormOperation.test_case_2109_on_line_form_operation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangOL" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py" />
+      <option name="CLASS_NAME" value="TestCase2109OnLineFormOperation" />
+      <option name="METHOD_NAME" value="test_case_2109_on_line_form_operation" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase2108OffLineFormOperation.test_case_2108_off_line_form_operation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangOL" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py" />
+      <option name="CLASS_NAME" value="TestCase2108OffLineFormOperation" />
+      <option name="METHOD_NAME" value="test_case_2108_off_line_form_operation" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -490,19 +485,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main_run" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase006LoginChangeLanguage.test_change_language" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase007LoginEnterThirdWebsite.test_third_website" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase1102LoginForgetPasswordException.test_login_forget_passwd" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase147SportStatisticalOverview" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase1102LoginForgetPasswordException.test_login_forget_passwd" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase147SportStatisticalOverview" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase2109OnLineFormOperation" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2109OnLineFormOperation.test_case_2109_on_line_form_operation" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2108OffLineFormOperation.test_case_2108_off_line_form_operation" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase147SportStatisticalOverview" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase1102LoginForgetPasswordException.test_login_forget_passwd" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase007LoginEnterThirdWebsite.test_third_website" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase006LoginChangeLanguage.test_change_language" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main_run" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2108OffLineFormOperation.test_case_2108_off_line_form_operation" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2109OnLineFormOperation.test_case_2109_on_line_form_operation" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase2109OnLineFormOperation" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase147SportStatisticalOverview" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase1102LoginForgetPasswordException.test_login_forget_passwd" />
       </list>
     </recent_temporary>
   </component>
@@ -769,16 +764,16 @@
       <option name="project" value="LOCAL" />
       <updated>1496797982769</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="修改代码">
+      <created>1496802211964</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1496802211964</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase006LoginChangeLanguage_test_change_language - 2017.06.07 at 09h 02m 26s.xml">
-      <configuration name="Unittest TestCase006LoginChangeLanguage.test_change_language" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase006LoginChangeLanguage_test_change_language - 2017.06.07 at 09h 03m 14s.xml">
-      <configuration name="Unittest TestCase006LoginChangeLanguage.test_change_language" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase006LoginChangeLanguage_test_change_language - 2017.06.07 at 09h 04m 37s.xml">
       <configuration name="Unittest TestCase006LoginChangeLanguage.test_change_language" configurationId="tests" />
     </history-entry>
@@ -794,14 +789,20 @@
     <history-entry file="Unittest_TestCase1102LoginForgetPasswordException_test_login_forget_passwd - 2017.06.07 at 09h 11m 20s.xml">
       <configuration name="Unittest TestCase1102LoginForgetPasswordException.test_login_forget_passwd" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittest_TestCase2108OffLineFormOperation_test_case_2108_off_line_form_operation - 2017.06.07 at 10h 57m 28s.xml">
+      <configuration name="Unittest TestCase2108OffLineFormOperation.test_case_2108_off_line_form_operation" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase2109OnLineFormOperation_test_case_2109_on_line_form_operation - 2017.06.07 at 10h 50m 44s.xml">
+      <configuration name="Unittest TestCase2109OnLineFormOperation.test_case_2109_on_line_form_operation" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase2109OnLineFormOperation_test_case_2109_on_line_form_operation - 2017.06.07 at 10h 52m 31s.xml">
+      <configuration name="Unittest TestCase2109OnLineFormOperation.test_case_2109_on_line_form_operation" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_TestCase147SportStatisticalOverview - 2017.06.07 at 10h 19m 17s.xml">
       <configuration name="Unittests in TestCase147SportStatisticalOverview" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_case_1106_account_center_msg_edit_exception - 2017.06.06 at 22h 33m 48s.xml">
-      <configuration name="Unittests in test_case_1106_account_center_msg_edit_exception" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_case_157_account_center_overview_alarm - 2017.06.06 at 22h 28m 50s.xml">
-      <configuration name="Unittests in test_case_157_account_center_overview_alarm" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase2109OnLineFormOperation - 2017.06.07 at 10h 41m 54s.xml">
+      <configuration name="Unittests in TestCase2109OnLineFormOperation" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -814,7 +815,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116883" sideWeight="0.50842994" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26948053" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2391775" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -871,41 +872,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_1106_sport_statistical_acc_form_exception_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0641892">
-          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_1107_alarm_overview_exception_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5574324">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2102_statistical_form_over_speed_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2101_statistical_form_mile_fom_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5067568">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_160_account_center_overview_command.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/cust_manage/test_case_078_cust_manage_lower_account_search.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8614865">
@@ -1001,13 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4054054">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5861486">
-          <caret line="758" column="15" selection-start-line="758" selection-start-column="15" selection-end-line="758" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1130,27 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5341246">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51038575">
-          <caret line="747" column="63" selection-start-line="747" selection-start-column="63" selection-end-line="747" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2201_alarm_overview_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5341246">
-          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main_run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7410714">
@@ -1207,26 +1145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python34/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7316017">
-          <caret line="548" column="64" selection-start-line="548" selection-start-column="64" selection-end-line="548" selection-end-column="64" />
-          <folding>
-            <element signature="e#32#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/#test_case_138_alarm_overview_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="75" selection-start-line="73" selection-start-column="75" selection-end-line="73" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33281735">
@@ -1243,12 +1161,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/#test_case_138_alarm_overview_search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.996904">
-          <caret line="108" column="54" selection-start-line="108" selection-start-column="54" selection-end-line="108" selection-end-column="54" />
+        <state vertical-scroll-proportion="-0.9287926">
+          <caret line="73" column="75" selection-start-line="73" selection-start-column="75" selection-end-line="73" selection-end-column="75" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_141_sport_statistical_mile_report_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0476948">
+          <caret line="130" column="46" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.027027">
+          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_142_sport_statistical_electric_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.863275">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52305245">
+          <caret line="742" column="63" selection-start-line="742" selection-start-column="63" selection-end-line="742" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2201_alarm_overview_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.618442">
+          <caret line="78" column="71" selection-start-line="78" selection-start-column="71" selection-end-line="78" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/unittest/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1430843">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="e#2192#2222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9602544">
+          <caret line="315" column="6" selection-start-line="315" selection-start-column="6" selection-end-line="315" selection-end-column="6" />
+          <folding>
+            <element signature="e#32#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53367877">
+          <caret line="1886" column="0" selection-start-line="1886" selection-start-column="0" selection-end-line="1886" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48877373">
+          <caret line="55" column="74" selection-start-line="54" selection-start-column="12" selection-end-line="55" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46632123">
+          <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2107_statistical_form_alarm_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6439169">
+          <caret line="63" column="79" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

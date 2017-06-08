@@ -1,8 +1,5 @@
 import time
-
 import datetime
-
-from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 

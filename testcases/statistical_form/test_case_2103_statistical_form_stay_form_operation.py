@@ -40,9 +40,7 @@ class TestCase2103SportStatisticalStayFormOperation(unittest.TestCase):
         # 点击停留报表
         self.statistical_form_page.click_stay_form_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
         self.assertEqual('停留报表', self.statistical_form_page.actual_text_after_click_stay_form_button())
-        self.driver.default_frame()
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_stay_form(n)

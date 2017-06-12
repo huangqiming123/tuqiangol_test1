@@ -50,9 +50,7 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
         # 点击停留报表
         self.statistical_form_page.click_stay_form_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
         self.assertEqual('停留报表', self.statistical_form_page.actual_text_after_click_stay_form_button())
-        self.driver.default_frame()
         # 读数据
         # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv('sport_statistical_stay_search_data.csv')
@@ -69,7 +67,7 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
                 'end_time': row[3]
             }
             self.statistical_form_page.add_data_to_search_stay_form(search_data)
-            self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+
 
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
 
@@ -100,6 +98,7 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
             # 断言查询的条
             total = len(total_number_list)
             sleep(3)
+            self.statistical_form_page.switch_to_stay_report_form_frame()
             web_total = self.statistical_form_page.get_total_search_stay_form_number()
             self.assertEqual(total, web_total)
 

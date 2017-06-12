@@ -51,10 +51,7 @@ class TestCase152SportStatisticalAccForm(unittest.TestCase):
         # 点击停留报表
         self.statistical_form_page.click_acc_form_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
         self.assertEqual('ACC报表', self.statistical_form_page.actual_text_after_click_acc_button())
-        self.driver.default_frame()
-
         # 读数据
         # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv('sport_statistical_acc_search_data.csv')
@@ -73,8 +70,7 @@ class TestCase152SportStatisticalAccForm(unittest.TestCase):
             }
 
             self.statistical_form_page.add_data_to_search_acc_form(search_data)
-            self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
-
+            self.statistical_form_page.switch_to_acc_report_form_frame()
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
 
             # 连接另一个数据库

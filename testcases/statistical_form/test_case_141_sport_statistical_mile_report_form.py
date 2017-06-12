@@ -68,7 +68,7 @@ class TestCase141SportStatisticalMileReportForm(unittest.TestCase):
                 'end_time': row[4]
             }
             self.statistical_form_page.add_datas_to_search_mileage_form(search_data)
-            self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+            self.statistical_form_page.switch_to_mile_report_form_frame()
 
             # 连接数据库
             # 连接数据库

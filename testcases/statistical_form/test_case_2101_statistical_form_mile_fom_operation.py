@@ -40,9 +40,7 @@ class TestCase2101SportStatisticalMileageFormOperation(unittest.TestCase):
         # 点击里程报表
         self.statistical_form_page.click_mileage_form_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
         self.assertEqual('行程报表', self.statistical_form_page.actual_text_after_click_mileage_form_button())
-        self.driver.default_frame()
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_mile_form(n)

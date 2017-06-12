@@ -40,9 +40,7 @@ class TestCase2104SportStatisticalPakingNotShutDownOperation(unittest.TestCase):
         # 点击停留报表
         self.statistical_form_page.click_paking_not_shut_down_form_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
         self.assertEqual('停车未熄火报表', self.statistical_form_page.actual_text_after_click_paking_not_shut_down_button())
-        self.driver.default_frame()
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_stay_not_shut_down_form(n)

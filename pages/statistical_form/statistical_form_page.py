@@ -48,14 +48,20 @@ class StatisticalFormPage(BasePage):
             print("当前模糊查找无结果")
             return 0
 
+    def switch_to_sport_overview_form_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="sportOverviewFrame"]')
+
     def actual_text_after_click_sport_overview(self):
         # 获取页面右侧左上角的文本
+        self.switch_to_sport_overview_form_frame()
         actual_text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
+        self.driver.default_frame()
         return actual_text
 
     def add_data_to_search_sport_overview(self, search_data):
         # 搜索用户
-        self.driver.switch_to_frame('x,//*[@id="sportOverviewFrame"]')
+        # self.driver.switch_to_frame('x,//*[@id="sportOverviewFrame"]')
+        self.switch_to_sport_overview_form_frame()
         # 搜索用户
         self.driver.click_element('x,//*[@id="runForm"]/div[3]/div/div[1]/span/button')
         sleep(1)
@@ -231,13 +237,19 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="tracelReport"]/a')
         sleep(3)
 
+    def switch_to_tracel_report_form_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+
     def actual_text_after_click_mileage_form_button(self):
         # 点击里程报表后，获取页面左上角的文本
+        self.switch_to_tracel_report_form_frame()
         actual_text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
+        self.driver.default_frame()
         return actual_text
 
     def add_data_to_search_mileage_form(self, search_data):
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        # self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.switch_to_tracel_report_form_frame()
         # 选择用户
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
@@ -419,15 +431,20 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="speedingReport"]/a')
         sleep(5)
 
+    def switch_to_speeding_report_form_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+
     def actual_text_after_click_over_speed_button(self):
         # 点击超速报警后，获取页面右侧的文本
+        self.switch_to_speeding_report_form_frame()
         actual_text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
+        self.driver.default_frame()
         return actual_text
 
     def add_data_to_search_over_speed(self, search_data):
         # 选择用户
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
-
+        # self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.switch_to_speeding_report_form_frame()
         # 选择用户
         self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
@@ -573,16 +590,21 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="stayReport"]/a')
         sleep(5)
 
+    def switch_to_stay_report_form_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+
     def actual_text_after_click_stay_form_button(self):
         # 点击停留报表后，获取页面左上角的文本
+        self.switch_to_stay_report_form_frame()
         actual_text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
+        self.driver.default_frame()
         return actual_text
 
     def add_data_to_search_stay_form(self, search_data):
         # 输入数据去搜索 停留的报表
         # 选择用户
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
-
+        # self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.switch_to_stay_report_form_frame()
         # 选择用户
         self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
@@ -719,16 +741,21 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="parkingReport"]/a')
         sleep(3)
 
+    def switch_to_parking_report_form_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+
     def actual_text_after_click_paking_not_shut_down_button(self):
         # 点击停车未熄火报表后，返回右侧页面抬头的文字
+        self.switch_to_parking_report_form_frame()
         actual_text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
+        self.driver.default_frame()
         return actual_text
 
     def add_data_to_search_paking_not_shut_down_form(self, search_data):
         # 输入数据去搜索 停留的报表
         # 选择用户
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
-
+        # self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.switch_to_parking_report_form_frame()
         # 选择用户
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
@@ -864,16 +891,21 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="AccReport"]/a')
         sleep(3)
 
+    def switch_to_acc_report_form_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+
     def actual_text_after_click_acc_button(self):
         # 点击acc报表
+        self.switch_to_acc_report_form_frame()
         actual_text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
+        self.driver.default_frame()
         return actual_text
 
     def add_data_to_search_acc_form(self, search_data):
         # 　输入数据去搜索acc报表
         # 选择用户
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
-
+        # self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.switch_to_acc_report_form_frame()
         # 选择用户
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
@@ -1180,7 +1212,7 @@ class StatisticalFormPage(BasePage):
             print('查询无数据，无法导出')
 
     def click_customer_in_mile_form(self, n):
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.switch_to_tracel_report_form_frame()
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(2)
         self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
@@ -1188,13 +1220,13 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def click_search_dev_button(self):
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.switch_to_tracel_report_form_frame()
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(2)
         self.driver.default_frame()
 
     def get_group_number_in_mile_form(self):
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.switch_to_tracel_report_form_frame()
         a = self.driver.get_element('x,//*[@id="dev_tree_travelReport"]').get_attribute('style')
         if a == 'display: block;':
             number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_travelReport"]/li')))
@@ -1205,13 +1237,13 @@ class StatisticalFormPage(BasePage):
             return 0
 
     def click_defalut_group_in_mile_form(self):
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.switch_to_tracel_report_form_frame()
         self.driver.click_element('x,//*[@id="dev_tree_travelReport_1_switch"]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_number_in_mile_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.switch_to_tracel_report_form_frame()
         text = self.driver.get_text(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
                 m + 1))
@@ -1220,7 +1252,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_per_group_in_mile_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.switch_to_tracel_report_form_frame()
         self.driver.click_element(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
                 m + 1))
@@ -1228,7 +1260,7 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def get_dev_number_list_in_mile_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="tracelReportFrame"]')
+        self.switch_to_tracel_report_form_frame()
         number = len(list(self.driver.get_elements(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
                 m + 1))))
@@ -1236,7 +1268,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_customer_in_over_speed_form(self, n):
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.switch_to_speeding_report_form_frame()
         self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(2)
         self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
@@ -1244,13 +1276,13 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def click_search_dev_button_in_over_speed_form(self):
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.switch_to_speeding_report_form_frame()
         self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(2)
         self.driver.default_frame()
 
     def get_group_number_in_over_speed_form(self):
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.switch_to_speeding_report_form_frame()
         a = self.driver.get_element('x,//*[@id="dev_tree_overSpeedReport"]').get_attribute('style')
         if a == 'display: block;':
             number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_overSpeedReport"]/li')))
@@ -1261,13 +1293,13 @@ class StatisticalFormPage(BasePage):
             return 0
 
     def click_defalut_group_in_over_speed_form(self):
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.switch_to_speeding_report_form_frame()
         self.driver.click_element('x,//*[@id="dev_tree_overSpeedReport_1_switch"]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_number_in_over_speed_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.switch_to_speeding_report_form_frame()
         text = self.driver.get_text(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
                 m + 1))
@@ -1276,7 +1308,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_per_group_in_over_speed_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.switch_to_speeding_report_form_frame()
         self.driver.click_element(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
                 m + 1))
@@ -1284,7 +1316,7 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def get_dev_number_list_in_over_speed_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+        self.switch_to_speeding_report_form_frame()
         number = len(list(self.driver.get_elements(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
                 m + 1))))
@@ -1292,7 +1324,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_customer_in_stay_form(self, n):
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.switch_to_stay_report_form_frame()
         self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(2)
         self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
@@ -1300,13 +1332,13 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def click_search_dev_button_in_stay_form(self):
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.switch_to_stay_report_form_frame()
         self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(2)
         self.driver.default_frame()
 
     def get_group_number_in_stay_form(self):
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.switch_to_stay_report_form_frame()
         a = self.driver.get_element('x,//*[@id="dev_tree_stopCar"]').get_attribute('style')
         if a == 'display: block;':
             number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_stopCar"]/li')))
@@ -1317,13 +1349,13 @@ class StatisticalFormPage(BasePage):
             return 0
 
     def click_defalut_group_in_stay_form(self):
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.switch_to_stay_report_form_frame()
         self.driver.click_element('x,//*[@id="dev_tree_stopCar_1_switch"]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_number_in_stay_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.switch_to_stay_report_form_frame()
         text = self.driver.get_text(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
                 m + 1))
@@ -1332,7 +1364,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_per_group_in_stay_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.switch_to_stay_report_form_frame()
         self.driver.click_element(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
                 m + 1))
@@ -1340,7 +1372,7 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def get_dev_number_list_in_stay_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="stayReportFrame"]')
+        self.switch_to_stay_report_form_frame()
         number = len(list(self.driver.get_elements(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
                 m + 1))))
@@ -1348,7 +1380,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_customer_in_stay_not_shut_down_form(self, n):
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.switch_to_parking_report_form_frame()
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(2)
         self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
@@ -1356,13 +1388,13 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def click_search_dev_button_in_stay_not_shut_down(self):
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.switch_to_parking_report_form_frame()
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(2)
         self.driver.default_frame()
 
     def get_group_number_in_stay_not_shut_down(self):
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.switch_to_parking_report_form_frame()
         a = self.driver.get_element('x,//*[@id="dev_tree_stopNotOff"]').get_attribute('style')
         if a == 'display: block;':
             number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_stopNotOff"]/li')))
@@ -1373,13 +1405,13 @@ class StatisticalFormPage(BasePage):
             return 0
 
     def click_defalut_group_in_stay_not_shut_down(self):
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.switch_to_parking_report_form_frame()
         self.driver.click_element('x,//*[@id="dev_tree_stopNotOff_1_switch"]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_number_in_stay_not_shut_down(self, m):
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.switch_to_parking_report_form_frame()
         text = self.driver.get_text(
             'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
                 m + 1))
@@ -1388,7 +1420,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_per_group_in_stay_not_shut_down(self, m):
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.switch_to_parking_report_form_frame()
         self.driver.click_element(
             'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
                 m + 1))
@@ -1396,7 +1428,7 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def get_dev_number_list_in_stay_not_shut_down(self, m):
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
+        self.switch_to_parking_report_form_frame()
         number = len(list(self.driver.get_elements(
             'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
                 m + 1))))
@@ -1404,20 +1436,20 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_customer_in_acc_form(self, n):
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.switch_to_acc_report_form_frame()
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[1]/div/div[1]/span/button')
         self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
         sleep(2)
         self.driver.default_frame()
 
     def click_search_dev_button_in_acc_form(self):
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.switch_to_acc_report_form_frame()
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(2)
         self.driver.default_frame()
 
     def get_group_number_in_acc_form(self):
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.switch_to_acc_report_form_frame()
         a = self.driver.get_element('x,//*[@id="dev_tree_acc"]').get_attribute('style')
         if a == 'display: block;':
             number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_acc"]/li')))
@@ -1428,13 +1460,13 @@ class StatisticalFormPage(BasePage):
             return 0
 
     def click_defalut_group_in_acc_form(self):
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.switch_to_acc_report_form_frame()
         self.driver.click_element('x,//*[@id="dev_tree_acc_1_switch"]')
         sleep(2)
         self.driver.default_frame()
 
     def get_dev_number_in_acc_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.switch_to_acc_report_form_frame()
         text = self.driver.get_text(
             'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
                 m + 1))
@@ -1443,7 +1475,7 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_per_group_in_acc_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.switch_to_acc_report_form_frame()
         self.driver.click_element(
             'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
                 m + 1))
@@ -1451,7 +1483,7 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def get_dev_number_list_in_acc_form(self, m):
-        self.driver.switch_to_frame('x,//*[@id="AccReportFrame"]')
+        self.switch_to_acc_report_form_frame()
         number = len(list(self.driver.get_elements(
             'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
                 m + 1))))
@@ -1653,14 +1685,19 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="mileageReport"]/a')
         sleep(2)
 
-    def actual_text_after_click_mileage_form_buttons(self):
+    def switch_to_mile_report_form_frame(self):
         self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+
+    def actual_text_after_click_mileage_form_buttons(self):
+        # self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.switch_to_mile_report_form_frame()
         text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
         self.driver.default_frame()
         return text
 
     def add_datas_to_search_mileage_form(self, search_data):
-        self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        # self.driver.switch_to_frame('x,//*[@id="mileageReportFrame"]')
+        self.switch_to_mile_report_form_frame()
         # 选择用户
         self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[1]/div/div[1]/span/button')
         sleep(1)
@@ -1754,15 +1791,19 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="electricityReport"]/a')
         sleep(2)
 
-    def actual_text_after_click_electric_report_buttons(self):
+    def switch_to_electricity_report_frame(self):
         self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
+
+    def actual_text_after_click_electric_report_buttons(self):
+        # self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
+        self.switch_to_electricity_report_frame()
         text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
         self.driver.default_frame()
         return text
 
     def add_data_to_search_electric_report(self, search_data):
-        self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
-
+        # self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
+        self.switch_to_electricity_report_frame()
         # 搜索用户
         self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[1]/div/div[1]/span/button')
         sleep(2)
@@ -1820,7 +1861,8 @@ class StatisticalFormPage(BasePage):
         self.driver.default_frame()
 
     def get_web_total_electric_report(self):
-        self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
+        # self.driver.switch_to_frame('x,//*[@id="electricityReportFrame"]')
+        self.switch_to_electricity_report_frame()
         a = self.driver.get_element('x,//*[@id="paging-electric"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)

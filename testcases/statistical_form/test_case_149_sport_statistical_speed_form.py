@@ -50,9 +50,8 @@ class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
 
         self.statistical_form_page.click_over_speed_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
+
         self.assertEqual('超速报表', self.statistical_form_page.actual_text_after_click_over_speed_button())
-        self.driver.default_frame()
 
         # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv('sport_statistical_over_speed_search_dara.csv')
@@ -70,7 +69,6 @@ class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
                 'end_time': row[4]
             }
             self.statistical_form_page.add_data_to_search_over_speed(search_data)
-            self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
 
             # 连接另一个数据库
@@ -87,6 +85,7 @@ class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
                 for range2 in range1:
                     total_list.append(range2)
             total = len(total_list)
+            self.statistical_form_page.switch_to_speeding_report_form_frame()
             web_total = self.statistical_form_page.get_total_search_over_speed_number()
             self.assertEqual(total, web_total)
 

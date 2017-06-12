@@ -48,10 +48,7 @@ class TestCase147SportStatisticalOverview(unittest.TestCase):
         self.assertEqual(expect_url_after_click_statistical_form,
                          self.statistical_form_page.actual_url_after_statistical_form())
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="sportOverviewFrame"]')
         self.assertEqual('运动总览', self.statistical_form_page.actual_text_after_click_sport_overview())
-        self.driver.default_frame()
-
         # 读数据
         csv_file = self.statistical_form_page_read_csv.read_csv('sport_statistical_sport_overview_search_data.csv')
         csv_data = csv.reader(csv_file)
@@ -123,7 +120,7 @@ class TestCase147SportStatisticalOverview(unittest.TestCase):
 
             # 断言的部分
             # 断言查询条数
-            self.driver.switch_to_frame('x,//*[@id="sportOverviewFrame"]')
+            self.statistical_form_page.switch_to_sport_overview_form_frame()
             web_total = self.statistical_form_page.get_total_search_sport_overview()
             self.assertEqual(total, web_total)
 

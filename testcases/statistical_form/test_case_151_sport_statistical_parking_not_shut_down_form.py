@@ -50,9 +50,7 @@ class TestCase151SportStatisticalPakingNotShutDownForm(unittest.TestCase):
         # 点击停留报表
         self.statistical_form_page.click_paking_not_shut_down_form_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
         self.assertEqual('停车未熄火报表', self.statistical_form_page.actual_text_after_click_paking_not_shut_down_button())
-        self.driver.default_frame()
         # 读数据
         # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv(
@@ -71,7 +69,6 @@ class TestCase151SportStatisticalPakingNotShutDownForm(unittest.TestCase):
             }
 
             self.statistical_form_page.add_data_to_search_paking_not_shut_down_form(search_data)
-            self.driver.switch_to_frame('x,//*[@id="parkingReportFrame"]')
 
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
 
@@ -101,6 +98,7 @@ class TestCase151SportStatisticalPakingNotShutDownForm(unittest.TestCase):
 
             # 断言查询的条数
             total = len(total_number_list)
+            self.statistical_form_page.switch_to_parking_report_form_frame()
             web_total = self.statistical_form_page.get_total_search_paking_not_shut_down_number()
             self.assertEqual(total, web_total)
 

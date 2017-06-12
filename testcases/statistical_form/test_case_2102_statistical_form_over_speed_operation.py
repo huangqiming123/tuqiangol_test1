@@ -40,9 +40,7 @@ class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
 
         self.statistical_form_page.click_over_speed_button()
         # 断言
-        self.driver.switch_to_frame('x,//*[@id="speedingReportFrame"]')
         self.assertEqual('超速报表', self.statistical_form_page.actual_text_after_click_over_speed_button())
-        self.driver.default_frame()
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_over_speed_form(n)

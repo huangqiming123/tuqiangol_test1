@@ -539,3 +539,29 @@ class SearchSql(StatisticalFormPage):
         cursor.close()
         connect.close()
         return all_dev
+
+    def search_current_account(self, user_account):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+
+        get_user_id_sql = "select u.userId from user_info u where u.account = '%s';" % user_account
+        cursor.execute(get_user_id_sql)
+        user_id_list = cursor.fetchall()
+        user_id = user_id_list[0][0]
+        cursor.close()
+        connect.close()
+        return user_id
+
+    def get_total_electric_report_sqls(self, all_user_dev, all_dev, search_data):
+        sql = "SELECT d.deviceName,e.electricity,d.imei,d.account FROM equipment_electricity e INNER JOIN equipment_mostly d on e.imei = d.imei"
+        if search_data['next'] == '':
+            sql += " where e.imei in %s" % str(all_dev)
+            if search_data['electric'] != '':
+                sql += " and e.electricity < '%s'" % search_data['electric']
+        elif search_data['next'] == '1':
+            sql += " where e.imei in %s" % str(all_user_dev)
+            if search_data['electric'] != '':
+                sql += " and e.electricity < '%s'" % search_data['electric']
+        sql += ";"
+        return sql

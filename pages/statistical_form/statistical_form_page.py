@@ -1932,3 +1932,42 @@ class StatisticalFormPage(BasePage):
         text = self.driver.get_element('x,//*[@id="search_text"]').get_attribute('value')
         self.driver.default_frame()
         return text
+
+    def get_web_page_electric_report(self):
+        a = self.driver.get_element('x,//*[@id="paging-electric"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_page('x,//*[@id="paging-electric"]')
+            return total
+        else:
+            return 0
+
+    def get_web_page_list_electric_report(self):
+        new_paging = NewPaging(self.driver, self.base_url)
+        total = new_paging.get_last_page_number('x,//*[@id="electricTable"]')
+        return total
+
+    def get_dev_name_in_electric_report(self, n):
+        return self.driver.get_text('x,/html/body/div[1]/div[2]/div[3]/table/tbody/tr[%s]/td[2]' % str(n + 1))
+
+    def click_per_page_in_electric_report_form(self, n):
+        self.driver.click_element('l,%s' % str(n + 1))
+        sleep(2)
+
+    def get_dev_electricity_web_in_electric_report(self, x):
+        return self.driver.get_text('x,/html/body/div[1]/div[2]/div[3]/table/tbody/tr[%s]/td[6]' % str(x + 1))
+
+    def get_dev_imei_web_in_electric_report(self, x):
+        return self.driver.get_text('x,/html/body/div[1]/div[2]/div[3]/table/tbody/tr[%s]/td[3]' % str(x + 1))
+
+    def get_dev_type_web_in_electric_report(self, x):
+        return self.driver.get_text('x,/html/body/div[1]/div[2]/div[3]/table/tbody/tr[%s]/td[4]' % str(x + 1))
+
+    def get_dev_user_name_web_in_electric_report(self, x):
+        return self.driver.get_text('x,/html/body/div[1]/div[2]/div[3]/table/tbody/tr[%s]/td[5]' % str(x + 1))
+
+    def get_headers_for_post_request(self):
+        headers = {
+            'Cookie': 'JSESSIONID=0F3EDD7A72D86C3521C3F80F5719140B'
+        }
+        return headers

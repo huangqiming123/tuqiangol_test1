@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_3101_electricity_report_check_request_and_web.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_3102_electricity_report_check_request_and_sql.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/search_sql.py" afterPath="$PROJECT_DIR$/pages/statistical_form/search_sql.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_141_sport_statistical_mile_report_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_141_sport_statistical_mile_report_form.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_148_sport_statistical_tracel_report_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_148_sport_statistical_tracel_report_form.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_149_sport_statistical_speed_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_149_sport_statistical_speed_form.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_150_sport_statistical_stay_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_150_sport_statistical_stay_form.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_151_sport_statistical_parking_not_shut_down_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_151_sport_statistical_parking_not_shut_down_form.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_152_sport_statistical_acc_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_152_sport_statistical_acc_form.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_2101_statistical_form_mile_fom_operation.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2101_statistical_form_mile_fom_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_2102_statistical_form_over_speed_operation.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2102_statistical_form_over_speed_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_2103_statistical_form_stay_form_operation.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2103_statistical_form_stay_form_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_2105_statistical_form_acc_form_operation.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_2105_statistical_form_acc_form_operation.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,63 +27,27 @@
     <favorites_list name="tuqiangOL" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="test_case_2104_statistical_form_stay_not_shut_down_operation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test_case_3101_electricity_report_check_request_and_web.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_3101_electricity_report_check_request_and_web.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-              <folding />
+            <state vertical-scroll-proportion="-4.7511964">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_case_2106_statistical_form_alarm_overview.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2106_statistical_form_alarm_overview.py">
+      <file leaf-file-name="test_case_3102_electricity_report_check_request_and_sql.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_3102_electricity_report_check_request_and_sql.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_case_2107_statistical_form_alarm_detail.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2107_statistical_form_alarm_detail.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_case_2108_off_line_form_operation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="32" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_case_2109_on_line_form_operation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="86" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_case_2201_alarm_overview_search.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2201_alarm_overview_search.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.419559">
-              <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
-              <folding />
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,11 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/login/test_case_002_login_success_with_ordinary_user.py" />
-        <option value="$PROJECT_DIR$/testcases/login/test_case_001_login_success_with_sales_and_agent.py" />
-        <option value="$PROJECT_DIR$/pages/global_search/global_account_search_page.py" />
-        <option value="$PROJECT_DIR$/pages/command_management/command_management_page.py" />
-        <option value="$PROJECT_DIR$/data/statistical_form/sport_statistical_milage_form_search_data.csv" />
         <option value="$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/#test_case_141_sport_statistical_mile_report_form.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2107_statistical_form_alarm_detail.py" />
@@ -147,7 +98,6 @@
         <option value="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" />
         <option value="$PROJECT_DIR$/model/connect_sql.py" />
         <option value="$PROJECT_DIR$/testcases/account_log/test_case_012_account_center_oper_device_log.py" />
-        <option value="$PROJECT_DIR$/pages/statistical_form/search_sql.py" />
         <option value="$PROJECT_DIR$/eee.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_141_sport_statistical_mile_report_form.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py" />
@@ -161,7 +111,13 @@
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2103_statistical_form_stay_form_operation.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_2105_statistical_form_acc_form_operation.py" />
+        <option value="$PROJECT_DIR$/www.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
+        <option value="$PROJECT_DIR$/pages/statistical_form/search_sql.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/fff.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/eee.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_3101_electricity_report_check_request_and_web.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_3102_electricity_report_check_request_and_sql.py" />
       </list>
     </option>
   </component>
@@ -197,6 +153,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -247,45 +204,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testcases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="global_search" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testcases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -302,13 +222,6 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\git\tuqiangol_test\testcases\statistical_form" />
-      <recent name="E:\git\tuqiangol_test\pages\statistical_form" />
-      <recent name="E:\git\tuqiangol_test\data\login" />
-      <recent name="E:\git\tuqiangol_test\data\dev_manage" />
-      <recent name="E:\git\tuqiangol_test\data\command_management" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git\tuqiangol_test\testcases\2017-05-16" />
       <recent name="E:\git\tuqiangol_test\testcases\2017-05-15" />
@@ -316,9 +229,16 @@
       <recent name="E:\git\tuqiangol_test\testcases\account_center" />
       <recent name="E:\git\tuqiangol_test\testcases\2017-05-12" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\tuqiangol_test\testcases\statistical_form" />
+      <recent name="E:\git\tuqiangol_test\pages\statistical_form" />
+      <recent name="E:\git\tuqiangol_test\data\login" />
+      <recent name="E:\git\tuqiangol_test\data\dev_manage" />
+      <recent name="E:\git\tuqiangol_test\data\command_management" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase2105SportStatisticalAccFormOperation.test_case_2105_sport_statistical_acc_form_operation">
-    <configuration default="false" name="Unittest TestCase2101SportStatisticalMileageFormOperation.test_case_2101_sport_statistical_mileage_form_operation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in TestCase142SportStatisticalElectricReport (1)">
+    <configuration default="false" name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -328,9 +248,9 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_2101_statistical_form_mile_fom_operation.py" />
-      <option name="CLASS_NAME" value="TestCase2101SportStatisticalMileageFormOperation" />
-      <option name="METHOD_NAME" value="test_case_2101_sport_statistical_mileage_form_operation" />
+      <option name="SCRIPT_NAME" value="E:\git\tuqiangol_test\testcases\statistical_form\test_case_3101_electricity_report_check_request_and_web.py" />
+      <option name="CLASS_NAME" value="TestCase142SportStatisticalElectricReport" />
+      <option name="METHOD_NAME" value="test_case_142_sport_statistical_electric_report" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -340,7 +260,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase149SportStatisticalSpeedForm.test_case_149_sport_statistical_speed_form (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -350,9 +270,9 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_2102_statistical_form_over_speed_operation.py" />
-      <option name="CLASS_NAME" value="TestCase149SportStatisticalSpeedForm" />
-      <option name="METHOD_NAME" value="test_case_149_sport_statistical_speed_form" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_3102_electricity_report_check_request_and_sql.py" />
+      <option name="CLASS_NAME" value="TestCase142SportStatisticalElectricReport" />
+      <option name="METHOD_NAME" value="test_case_142_sport_statistical_electric_report" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -362,7 +282,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase2103SportStatisticalStayFormOperation.test_case_2103_sport_statistical_stay_operation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase142SportStatisticalElectricReport" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -372,11 +292,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_2103_statistical_form_stay_form_operation.py" />
-      <option name="CLASS_NAME" value="TestCase2103SportStatisticalStayFormOperation" />
-      <option name="METHOD_NAME" value="test_case_2103_sport_statistical_stay_operation" />
+      <option name="SCRIPT_NAME" value="E:\git\tuqiangol_test\testcases\statistical_form\test_case_3102_electricity_report_check_request_and_sql.py" />
+      <option name="CLASS_NAME" value="TestCase142SportStatisticalElectricReport" />
+      <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -384,7 +304,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase2104SportStatisticalPakingNotShutDownOperation.test_case_2104_sport_statistical_parking_not_shut_down_operation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase142SportStatisticalElectricReport (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -394,11 +314,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py" />
-      <option name="CLASS_NAME" value="TestCase2104SportStatisticalPakingNotShutDownOperation" />
-      <option name="METHOD_NAME" value="test_case_2104_sport_statistical_parking_not_shut_down_operation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_3101_electricity_report_check_request_and_web.py" />
+      <option name="CLASS_NAME" value="TestCase142SportStatisticalElectricReport" />
+      <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -406,7 +326,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase2105SportStatisticalAccFormOperation.test_case_2105_sport_statistical_acc_form_operation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase142SportStatisticalElectricReport" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -416,11 +336,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_2105_statistical_form_acc_form_operation.py" />
-      <option name="CLASS_NAME" value="TestCase2105SportStatisticalAccFormOperation" />
-      <option name="METHOD_NAME" value="test_case_2105_sport_statistical_acc_form_operation" />
+      <option name="SCRIPT_NAME" value="E:\git\tuqiangol_test\testcases\statistical_form\test_case_3102_electricity_report_check_request_and_sql.py" />
+      <option name="CLASS_NAME" value="TestCase142SportStatisticalElectricReport" />
+      <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -551,19 +471,18 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2101SportStatisticalMileageFormOperation.test_case_2101_sport_statistical_mileage_form_operation" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase149SportStatisticalSpeedForm.test_case_149_sport_statistical_speed_form (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2103SportStatisticalStayFormOperation.test_case_2103_sport_statistical_stay_operation" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2104SportStatisticalPakingNotShutDownOperation.test_case_2104_sport_statistical_parking_not_shut_down_operation" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2105SportStatisticalAccFormOperation.test_case_2105_sport_statistical_acc_form_operation" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase142SportStatisticalElectricReport" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase142SportStatisticalElectricReport (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase142SportStatisticalElectricReport" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2105SportStatisticalAccFormOperation.test_case_2105_sport_statistical_acc_form_operation" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2104SportStatisticalPakingNotShutDownOperation.test_case_2104_sport_statistical_parking_not_shut_down_operation" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2103SportStatisticalStayFormOperation.test_case_2103_sport_statistical_stay_operation" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase149SportStatisticalSpeedForm.test_case_149_sport_statistical_speed_form (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase2101SportStatisticalMileageFormOperation.test_case_2101_sport_statistical_mileage_form_operation" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase142SportStatisticalElectricReport (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase142SportStatisticalElectricReport" />
       </list>
     </recent_temporary>
   </component>
@@ -854,51 +773,57 @@
       <option name="project" value="LOCAL" />
       <updated>1496887936849</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="修改代码">
+      <created>1497238213778</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1497238213778</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase149SportStatisticalSpeedForm_test_case_149_sport_statistical_speed_form - 2017.06.12 at 09h 49m 40s.xml">
-      <configuration name="Unittest TestCase149SportStatisticalSpeedForm.test_case_149_sport_statistical_speed_form" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report - 2017.06.14 at 17h 25m 35s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase149SportStatisticalSpeedForm_test_case_149_sport_statistical_speed_form_(1) - 2017.06.12 at 10h 48m 36s.xml">
-      <configuration name="Unittest TestCase149SportStatisticalSpeedForm.test_case_149_sport_statistical_speed_form (1)" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report - 2017.06.14 at 17h 26m 55s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase150SportStatisticalStayForm_test_case_150_sport_statistical_stay_form - 2017.06.12 at 09h 57m 32s.xml">
-      <configuration name="Unittest TestCase150SportStatisticalStayForm.test_case_150_sport_statistical_stay_form" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report - 2017.06.14 at 17h 35m 43s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase151SportStatisticalPakingNotShutDownForm_test_case_151_sport_statistical_parking_not_shut_down_form - 2017.06.12 at 10h 04m 10s.xml">
-      <configuration name="Unittest TestCase151SportStatisticalPakingNotShutDownForm.test_case_151_sport_statistical_parking_not_shut_down_form" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report_(1) - 2017.06.14 at 16h 37m 10s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase152SportStatisticalAccForm_test_case_152_sport_statistical_acc_form - 2017.06.12 at 10h 09m 46s.xml">
-      <configuration name="Unittest TestCase152SportStatisticalAccForm.test_case_152_sport_statistical_acc_form" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report_(1) - 2017.06.14 at 16h 47m 44s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase2101SportStatisticalMileageFormOperation_test_case_2101_sport_statistical_mileage_form_operation - 2017.06.12 at 10h 43m 31s.xml">
-      <configuration name="Unittest TestCase2101SportStatisticalMileageFormOperation.test_case_2101_sport_statistical_mileage_form_operation" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report_(1) - 2017.06.14 at 16h 49m 02s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase2103SportStatisticalStayFormOperation_test_case_2103_sport_statistical_stay_operation - 2017.06.12 at 10h 51m 26s.xml">
-      <configuration name="Unittest TestCase2103SportStatisticalStayFormOperation.test_case_2103_sport_statistical_stay_operation" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report_(1) - 2017.06.14 at 16h 51m 34s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase2104SportStatisticalPakingNotShutDownOperation_test_case_2104_sport_statistical_parking_not_shut_down_operation - 2017.06.12 at 10h 54m 03s.xml">
-      <configuration name="Unittest TestCase2104SportStatisticalPakingNotShutDownOperation.test_case_2104_sport_statistical_parking_not_shut_down_operation" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report_(1) - 2017.06.14 at 17h 45m 48s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase2105SportStatisticalAccFormOperation_test_case_2105_sport_statistical_acc_form_operation - 2017.06.12 at 11h 24m 26s.xml">
-      <configuration name="Unittest TestCase2105SportStatisticalAccFormOperation.test_case_2105_sport_statistical_acc_form_operation" configurationId="tests" />
+    <history-entry file="Unittest_TestCase142SportStatisticalElectricReport_test_case_142_sport_statistical_electric_report_(1) - 2017.06.14 at 18h 12m 52s.xml">
+      <configuration name="Unittest TestCase142SportStatisticalElectricReport.test_case_142_sport_statistical_electric_report (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase148SportStatisticalTracelReportForm - 2017.06.12 at 09h 41m 43s.xml">
-      <configuration name="Unittests in TestCase148SportStatisticalTracelReportForm" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase142SportStatisticalElectricReport_(1) - 2017.06.14 at 18h 21m 24s.xml">
+      <configuration name="Unittests in TestCase142SportStatisticalElectricReport (1)" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2186512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19336143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116883" sideWeight="0.50842994" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28246754" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2900433" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -951,95 +876,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/sqlite3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3111111">
-          <caret line="144" column="46" selection-start-line="144" selection-start-column="46" selection-end-line="144" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44444445">
-          <caret line="162" column="4" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7967033">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/requests/packages/urllib3/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3327645">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/requests/packages/urllib3/connectionpool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3327645">
-          <caret line="599" column="0" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/requests/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45904437">
-          <caret line="141" column="30" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/datetime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.20178041">
-          <caret line="282" column="6" selection-start-line="282" selection-start-column="6" selection-end-line="282" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/requests/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46587536">
-          <caret line="632" column="37" selection-start-line="632" selection-start-column="37" selection-end-line="632" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13392857">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_003_login_with_logout_dismiss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56473213">
-          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_002_login_success_with_ordinary_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43526787">
-          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_006_login_change_language.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6651786">
-          <caret line="44" column="70" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/login/test_case_005_login_forget_passwd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.03794643">
@@ -1118,37 +959,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_141_sport_statistical_mile_report_form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.44462278">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/statistical_form/#test_case_138_alarm_overview_search.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9486356">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_142_sport_statistical_electric_report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56661314">
-          <caret line="84" column="60" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61538464">
-          <caret line="139" column="29" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,7 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.77099234">
           <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,9 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.86259544">
           <caret line="105" column="45" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1174,9 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54198474">
           <caret line="105" column="45" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1184,17 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33280757">
-          <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,9 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14826499">
           <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,9 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2429022">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1222,9 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71608835">
           <caret line="59" column="78" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1232,9 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71608835">
           <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,9 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2776026">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1252,9 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4731861">
           <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1262,17 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.252366">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33280757">
-          <caret line="1484" column="8" selection-start-line="1484" selection-start-column="8" selection-end-line="1484" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1280,23 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41798106">
           <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33280757">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/search_sql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5694006">
-          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1304,7 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71451104">
           <caret line="82" column="48" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1312,23 +1061,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5741325">
           <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py">
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-          <folding />
+        <state vertical-scroll-proportion="0.38012618">
+          <caret line="738" column="67" selection-start-line="738" selection-start-column="67" selection-end-line="738" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2106_statistical_form_alarm_overview.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.41009465">
+          <caret line="52" column="86" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6687697">
+          <caret line="66" column="32" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1336,31 +1089,180 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2108_off_line_form_operation.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2106_statistical_form_alarm_overview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="32" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.6687697">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2109_on_line_form_operation.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2104_statistical_form_stay_not_shut_down_operation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="86" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
-          <folding />
+        <state vertical-scroll-proportion="0.47949526">
+          <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2201_alarm_overview_search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.419559">
-          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.03348214">
+          <caret line="306" column="46" selection-start-line="306" selection-start-column="46" selection-end-line="306" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/site-packages/requests/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.23501578">
+          <caret line="624" column="13" selection-start-line="624" selection-start-column="13" selection-end-line="624" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/site-packages/requests/sessions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6081277">
+          <caret line="722" column="7" selection-start-line="722" selection-start-column="7" selection-end-line="722" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/base/new_paging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34833091">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/dev_manage/test_case_1113_dev_manage_starting_up_by_next_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52104497">
+          <caret line="90" column="45" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/dev_manage/dev_manage_pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3658147">
+          <caret line="1523" column="32" selection-start-line="1523" selection-start-column="32" selection-end-line="1523" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_sport_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61651915">
+          <caret line="139" column="29" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/connect_sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1754386">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.71929824">
+          <caret line="594" column="8" selection-start-line="594" selection-start-column="8" selection-end-line="594" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2810218">
+          <caret line="3499" column="8" selection-start-line="3499" selection-start-column="8" selection-end-line="3499" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_142_sport_statistical_electric_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5535714">
+          <caret line="83" column="35" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_141_sport_statistical_mile_report_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66964287">
+          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52517986">
+          <caret line="1968" column="8" selection-start-line="1968" selection-start-column="8" selection-end-line="1968" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3381295">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/#test_case_140_alarm_detail_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0143886">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/search_sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8947368">
+          <caret line="566" column="18" selection-start-line="566" selection-start-column="18" selection-end-line="566" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9569378">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_3102_electricity_report_check_request_and_sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_3101_electricity_report_check_request_and_web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7511964">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,11 +1,15 @@
 import csv
 import unittest
 import time
+
+import requests
+
 from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.alarm_info.alarm_info_page import AlarmInfoPage
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
+from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
@@ -27,6 +31,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
+        self.search_sql = SearchSql(self.driver, self.base_url)
 
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
@@ -42,7 +47,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_138_alarm_overview_search(self):
+    def test_case_3103_alarm_overview_check_web_and_request(self):
         # 断言url
         expect_url = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url, self.alarm_info_page.actual_url_click_alarm())
@@ -51,9 +56,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
         self.alarm_info_page.click_alarm_overview_list()
         # 断言文本
         expect_text_after_click_alarm = '告警总览'
-        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
         self.assertEqual(expect_text_after_click_alarm, self.alarm_info_page.actual_text_click_alarm_info())
-        self.driver.default_frame()
         # 输入数据搜索
         csv_file = self.statistical_form_page_read_csv.read_csv('alarm_overview_search_data.csv')
         csv_data = csv.reader(csv_file)
@@ -69,55 +72,38 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
                 'end_time': row[3]
             }
             self.alarm_info_page.add_data_to_search_in_alarm_overview(data)
-            self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
-            # 连接数据库
-            connect = self.connect_sql.connect_tuqiang_sql()
-            # 创建游标
-            cursor = connect.cursor()
-            # 查询搜索用户的uesrID
-            get_user_id_sql = "SELECT userId FROM user_info WHERE account ='" + data['user_name'] + "';"
-            # 执行sql
-            cursor.execute(get_user_id_sql)
-            get_user_id = cursor.fetchall()
-            user_id = get_user_id[0][0]
+            self.alarm_info_page.switch_to_alarm_overview_frame()
+            user_id = self.search_sql.search_current_account(data['user_name'])
+            all_dev = self.search_sql.search_current_account_equipment(data['user_name'])
+            start_time = self.statistical_form_page.get_start_time_in_alarm_overview()
+            end_time = self.statistical_form_page.get_end_time_in_alarm_overview()
+            playload = {
+                'status': '1,10,11,12,128,13,14,15,16,17,18,19,192,194,195,2,22,23,3,4,5,6,9,90,ACC_OFF,ACC_ON,in,offline,out,sensitiveAreasFence,stayAlert,stayTimeIn,stayTimeOut',
+                'imei': all_dev,
+                'userId': user_id,
+                'startTime': start_time,
+                'endTime': end_time
+            }
+            headers = self.statistical_form_page.get_headers_for_post_request()
 
-            # 当前用户下设置
-            get_current_user_all_equipment = "SELECT a.imei FROM equipment_mostly AS a WHERE a.status = 'NORMAL' and a.userId = " + user_id + " and a.expiration > CURDATE();"
-            cursor.execute(get_current_user_all_equipment)
-            all_equipment = cursor.fetchall()
-
-            all_equipment_list = []
-            for range1 in all_equipment:
-                for range2 in range1:
-                    all_equipment_list.append(range2)
-
-            current_user_all_equipment = tuple(all_equipment_list)
-
-            cursor.close()
-            connect.close()
-            time.sleep(5)
-            # 连接另一个数据库
-            connect_02 = self.connect_sql.connect_tuqiang_sql()
-            # 创建游标
-            cursor_02 = connect_02.cursor()
-
-            get_total_sql = "SELECT a.IMEI,a.USER_ID FROM alarm_info AS a WHERE a.CREATETIME BETWEEN  '" + self.alarm_info_page.get_first_time() + "' AND  '" + self.alarm_info_page.get_second_time() + "' and a.imei in " + str(
-                current_user_all_equipment) + " and a.USER_ID = " + user_id + " GROUP BY a.IMEI ;"
-            # 执行sql
-            print(get_total_sql)
-            cursor_02.execute(get_total_sql)
-            get_total = cursor_02.fetchall()
-            total_list = []
-            for range1 in get_total:
-                for range2 in range1:
-                    total_list.append(range2)
-            total = len(total_list) / 2
-
-            # 查询web端的总条数
-            web_total = self.alarm_info_page.get_web_total_in_overview_search()
-            # 断言
-            self.assertEqual(total, web_total)
+            r = requests.post('http://tuqiangol.com/alarmInfo/getAlarmReport', params=playload, headers=headers)
+            response = r.text
+            response_data = response
+            print(response_data)
+            if len(response_data) == 0:
+                pass
+            elif len(response_data) == 1:
+                dev_data = eval(response_data.split('[')[1].split(']')[0])
+                dev_name = dev_data['devName']
+                dev_type = dev_data['mcType']
+                dev_imei = dev_data['imei']
+                dev_name_web = self.statistical_form_page.get_dev_name_in_alarm_overview()
+                self.assertEqual(dev_name, dev_name_web)
+                dev_type_web = self.statistical_form_page.get_dev_type_in_alarm_overview()
+                self.assertEqual(dev_type, dev_type_web)
+                dev_imei_web = self.statistical_form_page.get_dev_imei_in_alarm_overview()
+                self.assertEqual(dev_imei, dev_imei_web)
+            else:
+                pass
             self.driver.default_frame()
-            cursor_02.close()
-            connect_02.close()
         csv_file.close()

@@ -47,7 +47,9 @@ class AlarmInfoPage(BasePage):
 
     def actual_text_click_alarm_info(self):
         # 点击告警总览后，获取右侧页面的文本
+        self.switch_to_alarm_overview_frame()
         text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
+        self.driver.default_frame()
         return text
 
     def click_alarm_info_type(self):
@@ -481,7 +483,7 @@ class AlarmInfoPage(BasePage):
         sleep(2)
         # 选择日期
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/span[2]')
-        sleep(1)
+        sleep(2)
         if data['choose_date'] == 'today':
             # 今天
             self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/div/ul/li[2]')
@@ -736,3 +738,6 @@ class AlarmInfoPage(BasePage):
     def click_alarm_detail_list(self):
         self.driver.click_element('x,//*[@id="alarmDdetails"]/a')
         sleep(2)
+
+    def switch_to_alarm_overview_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')

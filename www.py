@@ -3,19 +3,18 @@ import requests
 # 接口测试
 # 参数化
 playload = {
-    'electricity': 100,
-    'mcType': '',
-    'containSubordinate': 0,
+    'status': '1,10,11,12,128,13,14,15,16,17,18,19,192,194,195,2,22,23,3,4,5,6,9,90,ACC_OFF,ACC_ON,in,offline,out,sensitiveAreasFence,stayAlert,stayTimeIn,stayTimeOut',
+    'imei': '868120145233604,121201234567000',
     'userId': 12875,
-    'pageNo': 1,
-    'pageSize': 10
+    'startTime': '2017-06-01 00:00',
+    'endTime': '2017-06-15 09:12'
 }
 # 定制请求头 携带cookie
 headers = {
-    'Cookie': 'JSESSIONID=0F3EDD7A72D86C3521C3F80F5719140B'
+    'Cookie': 'JSESSIONID=DA4D4C232AE4097C30F48D9000642050'
 }
 # request库提交post请求，其中包含请求参数，请求头
-r = requests.post('http://tuqiangol.com/electricityReportController/list', params=playload, headers=headers)
+r = requests.post('http://tuqiangol.com/alarmInfo/getAlarmReport', params=playload, headers=headers)
 # 请求的url
 print(r.url)
 # 响应正文

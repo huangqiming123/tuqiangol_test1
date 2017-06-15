@@ -1968,6 +1968,21 @@ class StatisticalFormPage(BasePage):
 
     def get_headers_for_post_request(self):
         headers = {
-            'Cookie': 'JSESSIONID=0F3EDD7A72D86C3521C3F80F5719140B'
+            'Cookie': 'JSESSIONID=DA4D4C232AE4097C30F48D9000642050'
         }
         return headers
+
+    def get_start_time_in_alarm_overview(self):
+        return self.driver.get_element('x,//*[@id="startTime_alarmReport"]').get_attribute('value')
+
+    def get_end_time_in_alarm_overview(self):
+        return self.driver.get_element('x,//*[@id="endTime_alarmReport"]').get_attribute('value')
+
+    def get_dev_name_in_alarm_overview(self):
+        return self.driver.get_text('x,//*[@id="alarm_report_tbody"]/tr[1]/td[2]')
+
+    def get_dev_type_in_alarm_overview(self):
+        return self.driver.get_text('x,//*[@id="alarm_report_tbody"]/tr[1]/td[4]')
+
+    def get_dev_imei_in_alarm_overview(self):
+        return self.driver.get_text('x,//*[@id="alarm_report_tbody"]/tr[1]/td[3]')

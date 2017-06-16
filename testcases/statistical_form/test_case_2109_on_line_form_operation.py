@@ -56,5 +56,6 @@ class TestCase2109OnLineFormOperation(unittest.TestCase):
             self.assertEqual(get_search_input_account, get_select_account)
         # 搜索客户树无数据
         self.statistical_form_page.add_data_to_search_customer_in_on_line('无数据')
+        sleep(3)
         text = self.statistical_form_page.get_text_after_click_search_in_on_line()
         self.assertEqual('  暂无数据 ', text)

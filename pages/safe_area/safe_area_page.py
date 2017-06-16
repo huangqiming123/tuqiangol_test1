@@ -316,7 +316,7 @@ class SafeAreaPage(BasePageServer):
         sleep(2)
 
     def get_first_name_in_mark_point_list(self):
-        return self.driver.get_text('x,//*[@id="marktbody"]/tr[1]/td[1]')
+        return self.driver.get_element('x,//*[@id="marktbody"]/tr[1]/td[1]').get_attribute('title')
 
     def click_edit_button_in_mark_point(self):
         self.driver.click_element('x,//*[@id="marktbody"]/tr[1]/td[2]/a[1]')

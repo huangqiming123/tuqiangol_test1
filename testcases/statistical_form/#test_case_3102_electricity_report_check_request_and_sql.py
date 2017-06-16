@@ -1,8 +1,8 @@
 import csv
 import unittest
+from time import sleep
 
 import requests
-
 from automate_driver.automate_driver import AutomateDriver
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
@@ -97,6 +97,7 @@ class TestCase142SportStatisticalElectricReport(unittest.TestCase):
             # }
             # request库提交post请求，其中包含请求参数，请求头
             r = requests.post('http://tuqiangol.com/electricityReportController/list', params=playload, headers=headers)
+            sleep(60)
             data = r.text.split('[')[1].split(']')[0]
             dev_list = eval(data)
             dev_name = []

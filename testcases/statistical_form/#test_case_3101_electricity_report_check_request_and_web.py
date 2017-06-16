@@ -89,6 +89,7 @@ class TestCase142SportStatisticalElectricReport(unittest.TestCase):
             # }
             # request库提交post请求，其中包含请求参数，请求头
             r = requests.post('http://tuqiangol.com/electricityReportController/list', params=playload, headers=headers)
+            sleep(60)
             data = r.text.split('[')[1].split(']')[0]
             print(data)
 

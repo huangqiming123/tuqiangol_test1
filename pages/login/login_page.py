@@ -1,3 +1,5 @@
+from time import sleep
+
 from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
@@ -64,23 +66,28 @@ class LoginPage(BasePageServer):
     # 语言切换操作
     def change_language(self, language):
         if language == 'English':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[2]/a/img")
+            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[2]/a")
+            sleep(4)
             login_button_text = self.driver.get_element("logins").text
             return login_button_text
         elif language == 'España':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[3]/a/img")
+            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[3]/a")
+            sleep(4)
             login_button_text = self.driver.get_element("logins").text
             return login_button_text
         elif language == 'Portugal':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[4]/a/img")
+            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[4]/a")
+            sleep(4)
             login_button_text = self.driver.get_element("logins").text
             return login_button_text
         elif language == 'Polska':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[5]/a/img")
+            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[5]/a")
+            sleep(4)
             login_button_text = self.driver.get_element("logins").text
             return login_button_text
         elif language == 'Deutschland':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[6]/a/img")
+            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[6]/a")
+            sleep(4)
             login_button_text = self.driver.get_element("logins").text
             return login_button_text
 

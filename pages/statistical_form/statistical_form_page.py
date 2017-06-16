@@ -1968,7 +1968,7 @@ class StatisticalFormPage(BasePage):
 
     def get_headers_for_post_request(self):
         headers = {
-            'Cookie': 'JSESSIONID=DA4D4C232AE4097C30F48D9000642050'
+            'Cookie': 'JSESSIONID=45D60132E907B63DCFE712BDA2A749E0'
         }
         return headers
 
@@ -1986,3 +1986,67 @@ class StatisticalFormPage(BasePage):
 
     def get_dev_imei_in_alarm_overview(self):
         return self.driver.get_text('x,//*[@id="alarm_report_tbody"]/tr[1]/td[3]')
+
+    def get_text_no_data_in_alarm_overview(self):
+        return self.driver.get_text('x,//*[@id="alarm_report_nodata"]/div/span')
+
+    def get_per_alarm_total_in_alarm_overview(self, k):
+        self.driver.execute_script(
+            self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[%s]' % (k + 1)))
+        return self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[%s]' % (k + 1))
+
+    def click_customer_in_new_mile_form(self, n):
+        self.switch_to_mile_report_form_frame()
+        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def click_search_dev_button_in_new_mile_form(self):
+        self.switch_to_mile_report_form_frame()
+        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_group_number_in_new_mile_form(self):
+        self.switch_to_mile_report_form_frame()
+        a = self.driver.get_element('x,//*[@id="dev_tree_mileageReport"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_mileageReport"]/li')))
+            self.driver.default_frame()
+            return number
+        else:
+            self.driver.default_frame()
+            return 0
+
+    def click_defalut_group_in_new_mile_form(self):
+        self.switch_to_mile_report_form_frame()
+        self.driver.click_element('x,//*[@id="dev_tree_mileageReport_1_switch"]')
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_in_new_mile_form(self, m):
+        self.switch_to_mile_report_form_frame()
+        text = self.driver.get_text(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        self.driver.default_frame()
+        return number
+
+    def click_per_group_in_new_mile_form(self, m):
+        self.switch_to_mile_report_form_frame()
+        self.driver.click_element(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_dev_number_list_in_new_mile_form(self, m):
+        self.switch_to_mile_report_form_frame()
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        self.driver.default_frame()
+        return number

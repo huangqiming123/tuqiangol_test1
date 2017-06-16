@@ -20,7 +20,5 @@ print(r.url)
 # 响应正文
 print(r.text)
 # 获取相应的数据，evel为强制把字符串转换为字典类型
-# 获取相应的json格式
-print(r.json())
 # 获取响应的状态码
 print(r.status_code)

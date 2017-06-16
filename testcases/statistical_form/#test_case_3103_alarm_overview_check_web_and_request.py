@@ -1,6 +1,6 @@
 import csv
 import unittest
-import time
+from time import sleep
 
 import requests
 
@@ -42,7 +42,6 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
 
         # 登录之后点击控制台，然后点击指令管理
         self.statistical_form_page.click_control_after_click_statistical_form_page()
-        time.sleep(3)
 
     def tearDown(self):
         self.driver.quit_browser()
@@ -85,25 +84,44 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
                 'endTime': end_time
             }
             headers = self.statistical_form_page.get_headers_for_post_request()
-
             r = requests.post('http://tuqiangol.com/alarmInfo/getAlarmReport', params=playload, headers=headers)
-            response = r.text
-            response_data = response
+            sleep(60)
+            response_data = r.text
             print(response_data)
-            if len(response_data) == 0:
-                pass
-            elif len(response_data) == 1:
-                dev_data = eval(response_data.split('[')[1].split(']')[0])
-                dev_name = dev_data['devName']
-                dev_type = dev_data['mcType']
-                dev_imei = dev_data['imei']
-                dev_name_web = self.statistical_form_page.get_dev_name_in_alarm_overview()
-                self.assertEqual(dev_name, dev_name_web)
-                dev_type_web = self.statistical_form_page.get_dev_type_in_alarm_overview()
-                self.assertEqual(dev_type, dev_type_web)
-                dev_imei_web = self.statistical_form_page.get_dev_imei_in_alarm_overview()
-                self.assertEqual(dev_imei, dev_imei_web)
-            else:
-                pass
+            if response_data.split(':')[1].split(',')[0] == '-1':
+                self.assertIn('暂无数据', self.statistical_form_page.get_text_no_data_in_alarm_overview())
+            elif response_data.split(':')[1].split(',')[0] == '0':
+                list_number = []
+                for n in response_data:
+                    if n == '[':
+                        list_number.append(n)
+                if len(list_number) == 1:
+                    self.assertIn('暂无数据', self.statistical_form_page.get_text_no_data_in_alarm_overview())
+                elif len(list_number) == 2:
+                    # 当查询出来的数据只有一条时
+                    # 获取告警信息的数据
+                    alarm_data = eval(response_data.split('[')[2].split(']')[0])
+                    # 获取设备数据
+                    dev_data = eval(response_data.split('[')[1] + "''}")
+                    # 断言设备名称、设备imei、设备类型
+                    dev_name_web = self.statistical_form_page.get_dev_name_in_alarm_overview()
+                    self.assertEqual(dev_name_web, dev_data['devName'])
+                    dev_imei_web = self.statistical_form_page.get_dev_imei_in_alarm_overview()
+                    self.assertEqual(dev_imei_web, dev_data['imei'])
+                    dev_type_web = self.statistical_form_page.get_dev_type_in_alarm_overview()
+                    self.assertEqual(dev_type_web, dev_data['mcType'])
+                    # 断言告警数据
+                    for k in range(len(alarm_data)):
+                        # 断言设备的imei
+                        dev_imei_web = self.statistical_form_page.get_dev_imei_in_alarm_overview()
+                        self.assertEqual(dev_imei_web, alarm_data[k]['imei'])
+                        get_per_alarm_total = self.statistical_form_page.get_per_alarm_total_in_alarm_overview(k)
+                        # 断言告警详情
+                        self.assertEqual(get_per_alarm_total, str(alarm_data[k]['allTotal']))
+                        self.assertEqual(get_per_alarm_total, str(alarm_data[k]['total']))
+                else:
+                    for i in range(len(list_number)):
+                        alarm_data = eval(response_data.split('[')[i].split(']')[0])
+
             self.driver.default_frame()
         csv_file.close()

@@ -54,9 +54,9 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
         self.alarm_info_page.click_alarm_overview_list()
         # 断言文本
         expect_text_after_click_alarm = '告警总览'
-        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+
         self.assertEqual(expect_text_after_click_alarm, self.alarm_info_page.actual_text_click_alarm_info())
-        self.driver.default_frame()
+
         # 输入数据搜索
         csv_file = self.statistical_form_page_read_csv.read_csv('alarm_overview_search_data.csv')
         csv_data = csv.reader(csv_file)

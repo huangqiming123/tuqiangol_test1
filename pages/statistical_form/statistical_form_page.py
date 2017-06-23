@@ -1968,7 +1968,7 @@ class StatisticalFormPage(BasePage):
 
     def get_headers_for_post_request(self):
         headers = {
-            'Cookie': 'JSESSIONID=45D60132E907B63DCFE712BDA2A749E0'
+            'Cookie': 'JSESSIONID=2955B3B6A82D5B919EE89414F259E420'
         }
         return headers
 

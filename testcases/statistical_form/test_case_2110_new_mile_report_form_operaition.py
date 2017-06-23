@@ -1,4 +1,3 @@
-import csv
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver

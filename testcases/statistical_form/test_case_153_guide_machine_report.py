@@ -10,9 +10,9 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase152SportStatisticalAccForm(unittest.TestCase):
+class TestCase153GuideManchineReport(unittest.TestCase):
     '''
-    用例第152条，运动报表，acc报表
+    用例第153条，导游播报统计 仅仅hemi的账号有
     author ：zhangAo
     '''
 
@@ -42,7 +42,7 @@ class TestCase152SportStatisticalAccForm(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_152_sport_statistical_acc_form(self):
+    def test_case_153_guide_manchine_report(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,
@@ -71,3 +71,4 @@ class TestCase152SportStatisticalAccForm(unittest.TestCase):
             self.statistical_form_page.switch_to_guide_manchine_report_frame()
             self.statistical_form_page.add_data_to_search_guide_manchine_report(search_data)
             self.driver.default_frame()
+        csv_file.close()

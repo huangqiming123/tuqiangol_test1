@@ -27,3 +27,10 @@ class LogInBase(BasePage):
         self.driver.click_element('x,//*[@id="checkbox"]')
         self.driver.click_element("logins")
         sleep(2)
+
+    def log_in_hemi(self):
+        self.driver.operate_input_element("account", 'hemi')
+        self.driver.operate_input_element("password", 'jimi123')
+        self.driver.click_element('x,//*[@id="checkbox"]')
+        self.driver.click_element("logins")
+        sleep(2)

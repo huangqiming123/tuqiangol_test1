@@ -2050,3 +2050,61 @@ class StatisticalFormPage(BasePage):
                 m + 1))))
         self.driver.default_frame()
         return number
+
+    def click_guide_manchine_report_button(self):
+        self.driver.click_element('x,//*[@id="guideMachineBroadcast"]/a')
+        sleep(2)
+
+    def switch_to_guide_manchine_report_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="guideMachineBroadcastFrame"]')
+
+    def actual_text_after_click_guide_manchine_report_button(self):
+        self.switch_to_guide_manchine_report_frame()
+        text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
+        self.driver.default_frame()
+        return text
+
+    def add_data_to_search_guide_manchine_report(self, search_data):
+        self.driver.click_element('x,//*[@id="formGuideMachine"]/div/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
+        self.driver.click_element('x,//*[@id="search_user_btn"]')
+        sleep(2)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)
+
+        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+        sleep(2)
+        if search_data['choose_date'] == '今天':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[2]')
+
+        elif search_data['choose_date'] == '昨天':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[3]')
+
+        elif search_data['choose_date'] == '本周':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[4]')
+
+        elif search_data['choose_date'] == '上周':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[5]')
+
+        elif search_data['choose_date'] == '本月':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[6]')
+
+        elif search_data['choose_date'] == '上月':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[7]')
+
+        elif search_data['choose_date'] == '自定义':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[1]')
+
+            self.driver.operate_input_element('x,//*[@id="startTime_guideMachine"]', search_data['begin_time'])
+            self.driver.operate_input_element('x,//*[@id="endTime_guideMachine"]', search_data['end_time'])
+
+        a = self.driver.get_element('x,//*[@id="icheckContainSub"]').is_selected()
+        if a == False and search_data['status'] == '1':
+            self.driver.click_element('x,//*[@id="formGuideMachine"]/div/div[4]/label/div/ins')
+
+        if a == True and search_data['status'] == '0':
+            self.driver.click_element('x,//*[@id="formGuideMachine"]/div/div[4]/label/div/ins')
+
+        self.driver.click_element('x,//*[@id="formGuideMachine"]/div/div[5]/button[1]')
+        sleep(5)

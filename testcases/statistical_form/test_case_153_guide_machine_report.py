@@ -32,7 +32,7 @@ class TestCase153GuideManchineReport(unittest.TestCase):
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
-        self.log_in_base.log_in_hemi()
+        self.log_in_base.log_in_jimitest()
 
         # 登录之后点击控制台，然后点击设置
         self.statistical_form_page.click_control_after_click_statistical_form_page()
@@ -70,5 +70,6 @@ class TestCase153GuideManchineReport(unittest.TestCase):
             }
             self.statistical_form_page.switch_to_guide_manchine_report_frame()
             self.statistical_form_page.add_data_to_search_guide_manchine_report(search_data)
+
             self.driver.default_frame()
         csv_file.close()

@@ -74,9 +74,10 @@ class TestCase153GuideManchineReport(unittest.TestCase):
             # 获取当前用户所有的设备
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
             all_user_dev = self.search_sql.search_current_account_equipment_and_next(search_data['search_user'])
-            connect = self.connect_sql.connect_tuqiang_sql()
+            connect = self.connect_sql.connect_tuqiang_form()
             cursor = connect.cursor()
             get_total_and_times_sql = self.search_sql.get_total_and_times_sql(all_dev, all_user_dev, search_data)
+            print(get_total_and_times_sql)
             cursor.execute(get_total_and_times_sql)
             data = cursor.fetchall()
             list_times = []
@@ -88,13 +89,21 @@ class TestCase153GuideManchineReport(unittest.TestCase):
             # 已用次数
             used_numbers_list = []
             for n in range(len(list_times)):
-                if n % 2 == 0:
+                if n % 3 == 1:
                     usable_numbers_list.append(list_times[n])
-                elif n % 2 == 1:
+                elif n % 3 == 2:
                     used_numbers_list.append(list_times[n])
-            total = len(list_times) / 2
+            total = len(list_times)
             web_total = self.statistical_form_page.get_total_number_in_guide_machine_report()
             self.assertEqual(total, web_total)
+
+            total_usable_numbers = sum(usable_numbers_list)
+            web_total_usable_numbers = self.statistical_form_page.get_web_total_usable_numbers_in_guide_machine_report()
+            self.assertEqual(str(total_usable_numbers), web_total_usable_numbers)
+
+            total_used_numbers = sum(used_numbers_list)
+            web_total_used_numbers = self.statistical_form_page.get_web_total_used_numbers_in_guide_machine_report()
+            self.assertEqual(str(total_used_numbers), web_total_used_numbers)
             cursor.close()
             connect.close()
             self.driver.default_frame()

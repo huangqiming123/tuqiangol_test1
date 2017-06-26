@@ -69,7 +69,7 @@ class TestCase142SportStatisticalElectricReport(unittest.TestCase):
 
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
             all_user_dev = self.search_sql.search_current_account_equipment_and_next(search_data['search_user'])
-            connect = self.connect_sql.connect_tuqiang_form()
+            connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()
             get_electric_total_sql = self.search_sql.get_total_electric_report_sql(all_user_dev, all_dev, search_data)
             print(get_electric_total_sql)

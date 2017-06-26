@@ -2127,3 +2127,9 @@ class StatisticalFormPage(BasePage):
             return total
         elif a == 'display: none;':
             return 0
+
+    def get_web_total_usable_numbers_in_guide_machine_report(self):
+        return self.driver.get_text('x,//*[@id="availableTimes"]')
+
+    def get_web_total_used_numbers_in_guide_machine_report(self):
+        return self.driver.get_text('x,//*[@id="salesTimes"]')

@@ -12,7 +12,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 class TestCase153GuideManchineReport(unittest.TestCase):
     '''
-    用例第153条，导游播报统计
+    用例第153条，导游播报统计 仅仅hemi的账号有
     author ：zhangAo
     '''
 

@@ -1,8 +1,0 @@
-868120141980208,轨迹回放,/trackreplay/locus?imei=868120141980208
-,实时跟踪,/trackpreset/tracking/868120141980208?isTracking=0
-,查看告警,/alarmInfo/toAlarmInfo
-,查看位置,/index
-,父根级用户-控制台,/index
-,父根级用户-查看,/customer/toSearch
-,当前设备用户-控制台,/index
-,当前设备用户-查看,/customer/toSearch

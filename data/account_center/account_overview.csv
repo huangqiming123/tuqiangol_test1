@@ -1,0 +1,17 @@
+库存,http://tujunsat.jimicloud.com/customer/toSearch?userId=78842
+总进货数,http://tujunsat.jimicloud.com/customer/toSearch?userId=78842
+在线,http://tujunsat.jimicloud.com/index?userId=78842&viewFlag=2
+离线,http://tujunsat.jimicloud.com/index?userId=78842&viewFlag=3
+即将到期,http://tujunsat.jimicloud.com/customer/toSearch?viewFlag=2
+已过期,http://tujunsat.jimicloud.com/customer/toSearch?viewFlag=3
+已激活,http://tujunsat.jimicloud.com/device/toDevices?flag=activated
+未激活,http://tujunsat.jimicloud.com/device/toDevices?flag=inactive
+重点关注车辆,http://tujunsat.jimicloud.com/index?userId=78842&viewFlag=4
+控制台,http://tujunsat.jimicloud.com/index
+统计报表,http://tujunsat.jimicloud.com/runReport/toReports
+围栏,http://tujunsat.jimicloud.com/alarmInfo/toAlarmInfo?viewFlag=2
+下级客户管理,http://tujunsat.jimicloud.com/customer/toSearch?userId=78842&viewFlag=4
+设备管理,http://tujunsat.jimicloud.com/device/toDevices
+指令管理,http://tujunsat.jimicloud.com/custom/toTemplate?viewFlag=2
+地标设置,http://tujunsat.jimicloud.com/setup/toSetUp?viewFlag=2
+告警,http://tujunsat.jimicloud.com/alarmInfo/toAlarmInfo

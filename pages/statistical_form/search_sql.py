@@ -565,3 +565,15 @@ class SearchSql(StatisticalFormPage):
                 sql += " and e.electricity < '%s'" % search_data['electric']
         sql += ";"
         return sql
+
+    def get_total_and_times_sql(self, all_dev, all_user_dev, search_data):
+        begin_time = self.get_begin_time_in_guide_machine_report_page()
+        end_time = self.get_end_time_in_guide_machine_report_page()
+        sql = "select USABLE_NUMS,USED_NUMS from guide_machine_report where"
+        if search_data['next'] == '0':
+            sql += " imei in %s" % str(all_dev)
+        elif search_data['next'] == '1':
+            sql += " imei in %s" % str(all_user_dev)
+
+        sql += " and UP_TIME between '" + begin_time + "' and '" + end_time + "';"
+        return sql

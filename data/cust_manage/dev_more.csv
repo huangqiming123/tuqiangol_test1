@@ -1,0 +1,4 @@
+轨迹回放,/trackreplay/locus?imei=874544562356578
+街景,/trackpreset/tracking/874544562356578?isTracking=1
+行车记录,/drivingrecord/driving?imei=874544562356578
+查看告警,/deviceReport/statisticalReport

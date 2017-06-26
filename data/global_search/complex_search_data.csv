@@ -1,0 +1,13 @@
+搜索用户,基本信息,基本信息内容,日期类型,日期,时间段,欠费,未激活
+web_autotest,imei,874,,/,,,
+web_autotest,车牌号,1,,/,,,
+web_autotest,设备名称,GT,,/,,,
+web_autotest,设备名称,GT,,/,,,
+web_autotest,,,激活时间,2017-04-05/,,,
+web_autotest,,,激活时间,2017-01-05/2017-04-04,1,,
+web_autotest,,,平台到期时间,2017-01-05/2027-04-04,1,,
+web_autotest,,,,/,,1,
+web_autotest,,,,/,,,1
+web_autotest,SN,123,,/,,1,
+web_autotest,SN,123,,/,,,1
+web_autotest,,,,/,,1,1

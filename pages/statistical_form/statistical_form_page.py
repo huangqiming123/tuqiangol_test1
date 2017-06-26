@@ -2108,3 +2108,22 @@ class StatisticalFormPage(BasePage):
 
         self.driver.click_element('x,//*[@id="formGuideMachine"]/div/div[5]/button[1]')
         sleep(5)
+
+    def get_begin_time_in_guide_machine_report_page(self):
+        begin_time = self.driver.get_element(
+            'x,/html/body/div/div[2]/div[1]/form/div/div[3]/div/input[1]').get_attribute('value')
+        return begin_time
+
+    def get_end_time_in_guide_machine_report_page(self):
+        begin_time = self.driver.get_element(
+            'x,/html/body/div/div[2]/div[1]/form/div/div[3]/div/input[2]').get_attribute('value')
+        return begin_time
+
+    def get_total_number_in_guide_machine_report(self):
+        a = self.driver.get_element('x,//*[@id="paging_guideMachine"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="paging_guideMachine"]', 'x,//*[@id="tableGuideMachine"]')
+            return total
+        elif a == 'display: none;':
+            return 0

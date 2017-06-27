@@ -2133,3 +2133,18 @@ class StatisticalFormPage(BasePage):
 
     def get_web_total_used_numbers_in_guide_machine_report(self):
         return self.driver.get_text('x,//*[@id="salesTimes"]')
+
+    def click_search_user_button_in_guide_manchine_report(self):
+        self.driver.click_element('x,//*[@id="formGuideMachine"]/div/div[1]/div/div[1]/span/button')
+        sleep(2)
+
+    def click_per_user_in_guide_manchine_report(self, n):
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % (n + 1))
+        sleep(2)
+
+    def get_user_name_in_guide_manchine_report(self, n):
+        text = self.driver.get_text('x,//*[@id="tree_%s_span"]' % (n + 1))
+        return text
+
+    def user_name_in_guide_manchine_report(self):
+        return self.driver.get_element('x,//*[@id="search_text"]').get_attribute('value')

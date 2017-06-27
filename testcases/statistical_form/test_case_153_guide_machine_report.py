@@ -93,7 +93,7 @@ class TestCase153GuideManchineReport(unittest.TestCase):
                     usable_numbers_list.append(list_times[n])
                 elif n % 3 == 2:
                     used_numbers_list.append(list_times[n])
-            total = len(list_times)
+            total = len(list_times) / 3
             web_total = self.statistical_form_page.get_total_number_in_guide_machine_report()
             self.assertEqual(total, web_total)
 

@@ -569,11 +569,11 @@ class SearchSql(StatisticalFormPage):
     def get_total_and_times_sql(self, all_dev, all_user_dev, search_data):
         begin_time = self.get_begin_time_in_guide_machine_report_page()
         end_time = self.get_end_time_in_guide_machine_report_page()
-        sql = "select r.DEVICE_IMEI,MIN(r.USABLE_NUMS),sum(r.DAY_USED_NUMS) from guide_machine_report r where"
+        sql = "select m.DEVICE_IMEI,min(r.USABLE_NUMS),sum(r.DAY_USED_NUMS) from guide_machine m inner join guide_machine_report r on m.DEVICE_IMEI= r.DEVICE_IMEI"
         if search_data['status'] == '0':
-            sql += " DEVICE_IMEI in %s" % str(all_dev)
+            sql += " where m.DEVICE_IMEI in %s" % str(all_dev)
         elif search_data['status'] == '1':
-            sql += " DEVICE_IMEI in %s" % str(all_user_dev)
+            sql += " where m.DEVICE_IMEI in %s" % str(all_user_dev)
 
-        sql += " and UP_TIME between '" + begin_time + "' and '" + end_time + "' group by r.DEVICE_IMEI;"
+        sql += " and r.UP_TIME between '" + begin_time + "' and '" + end_time + "' group by m.DEVICE_IMEI;"
         return sql

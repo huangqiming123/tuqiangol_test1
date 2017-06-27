@@ -1,2 +1,7 @@
 选择的用户,时间,开始时间,结束时间是否包含下级
 jimitest,今天,,,0
+jimitest,昨天,,,0
+jimitest,本周,,,0
+jimitest,上周,,,0
+jimitest,上月,,,0
+jimitest,本月,,,1

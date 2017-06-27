@@ -56,7 +56,7 @@ def run_09():
     sleep(10)
 
 
-while 1:
+'''while 1:
     print('请输入开始运行时间')
     print('月、日、小时、分钟 用“/”隔开(如：5/26/17/15)')
     print('如现在运行，请输入now')
@@ -82,7 +82,10 @@ while 1:
             continue
     except:
         print('输入有误，请重新输入！')
-        continue
+        continue'''
+start_time = datetime.datetime(2017, 6, 26, 21, 15, 0)
+while datetime.datetime.now() < start_time:
+    sleep(5)
 
 # 设置线程
 thread_list = []

@@ -1,5 +1,6 @@
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
 from pages.login.login_page import LoginPage
 
@@ -13,6 +14,7 @@ class TestCase005LoginForgetPasswd(unittest.TestCase):
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -30,7 +32,8 @@ class TestCase005LoginForgetPasswd(unittest.TestCase):
         self.driver.wait()
 
         # 断言找回密码的文本框
-        self.assertEqual('找回密码', self.login_page.get_text_after_forget_password())
+        self.assertEqual(self.assert_text.log_in_page_find_password_text(),
+                         self.login_page.get_text_after_forget_password())
         # 输入账号
         self.login_page.forget_passwd_account("test_007")
         # 输入电话
@@ -40,4 +43,4 @@ class TestCase005LoginForgetPasswd(unittest.TestCase):
         self.driver.wait()
         # 通过能否获取到登录按钮的文本内容来判断是否成功取消弹框
         login_button_text = self.login_page.login_button_text()
-        self.assertEqual('登录', login_button_text)
+        self.assertEqual(self.assert_text.log_in_page_log_in_text(), login_button_text)

@@ -2,6 +2,7 @@ import csv
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.alarm_info.alarm_info_page import AlarmInfoPage
 from pages.base.base_page import BasePage
@@ -36,6 +37,7 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
+        self.assert_text = AssertText()
         self.log_in_base.log_in_jimitest()
         # 登录之后点击控制台，然后点击指令管理
         self.statistical_form_page.click_control_after_click_statistical_form_page()
@@ -52,7 +54,8 @@ class TestCase140AlarmDetailSearch(unittest.TestCase):
         self.alarm_info_page.click_alarm_detail_list()
         # 断言
         self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
-        self.assertEqual('告警详情', self.alarm_info_page.actual_text_after_click_alarm_detail())
+        self.assertEqual(self.assert_text.account_center_page_alarm_details_text(),
+                         self.alarm_info_page.actual_text_after_click_alarm_detail())
         self.driver.default_frame()
         sleep(3)
         # 读数据

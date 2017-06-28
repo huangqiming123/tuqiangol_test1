@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
@@ -23,6 +24,7 @@ class TestCase1101GlobSearchCheckMarkedWords(unittest.TestCase):
         self.global_account_search_page = GlobalAccountSearchPage(self.driver, self.base_url)
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.global_search_page_read_csv = GlobleSearchPageReadCsv()
+        self.assert_text = AssertText()
         self.search_sql = SearchSql()
         self.driver.wait(1)
         self.connect_sql = ConnectSql()
@@ -44,14 +46,14 @@ class TestCase1101GlobSearchCheckMarkedWords(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
 
         get_dev_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
-        self.assertEqual('IMEI/设备名称', get_dev_search_marked_words)
+        self.assertEqual(self.assert_text.glob_search_page_search_dev_text(), get_dev_search_marked_words)
 
         # 选择搜索用户
         self.global_dev_search_page.select_search_user()
         get_user_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
-        self.assertEqual('请输入用户名称/账号', get_user_search_marked_words)
+        self.assertEqual(self.assert_text.glob_search_page_search_account_text(), get_user_search_marked_words)
 
         # 选择搜索app用户
         self.global_dev_search_page.select_search_app_user()
         get_user_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
-        self.assertEqual('请输入用户名称/账号', get_user_search_marked_words)
+        self.assertEqual(self.assert_text.glob_search_page_search_account_text(), get_user_search_marked_words)

@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
@@ -30,6 +31,7 @@ class TestCase083CustManageLowerAccountOperate(unittest.TestCase):
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -57,7 +59,7 @@ class TestCase083CustManageLowerAccountOperate(unittest.TestCase):
         text = self.cust_manage_lower_account_page.reset_passwd_content()
 
         # 验证重置密码弹框文本内容是否正确显示
-        self.assertIn("您确定要重置密码？", text, "重置密码弹框文本内容显示错误")
+        self.assertIn(self.assert_text.cust_page_are_you_reset_this_password(), text, "重置密码弹框文本内容显示错误")
 
         # 确定重置密码
         self.cust_manage_lower_account_page.reset_passwd_ensure()

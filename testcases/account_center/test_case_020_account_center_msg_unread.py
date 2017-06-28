@@ -1,5 +1,6 @@
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_msg_center_page import AccountCenterMsgCenterPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -19,6 +20,7 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
         self.account_center_page_msg_center = AccountCenterMsgCenterPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -35,7 +37,7 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
         # 获取消息中心title
         msg_center_title = self.account_center_page_msg_center.get_msg_center_title()
         # 验证消息中心title是否正确显示
-        self.assertIn("消息中心", msg_center_title, "消息中心title有误!")
+        self.assertIn(self.assert_text.account_center_page_message_center_text(), msg_center_title, "消息中心title有误!")
         # 获取左侧栏目-消息中心-x条未读
         unread_msg_num = int(self.account_center_page_msg_center.get_unread_msg_num())
         if unread_msg_num > 0:

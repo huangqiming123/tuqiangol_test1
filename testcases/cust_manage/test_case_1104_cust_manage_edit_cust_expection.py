@@ -1,5 +1,6 @@
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -29,6 +30,7 @@ class TestCase1104CustManageEditCustExpection(unittest.TestCase):
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.cust_manage_page_read_csv = CustManagePageReadCsv()
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -95,13 +97,13 @@ class TestCase1104CustManageEditCustExpection(unittest.TestCase):
         self.cust_manage_basic_info_and_add_cust_page.add_account_name('')
         self.cust_manage_basic_info_and_add_cust_page.click_ensure()
         text = self.cust_manage_basic_info_and_add_cust_page.get_add_account_name_exception_text()
-        self.assertEqual('用户名不能为空', text)
+        self.assertEqual(self.assert_text.cust_page_user_name_not_null(), text)
 
         # 2 长度小于三位
         self.cust_manage_basic_info_and_add_cust_page.add_account_name('1')
         self.cust_manage_basic_info_and_add_cust_page.click_ensure()
         text = self.cust_manage_basic_info_and_add_cust_page.get_add_account_name_exception_text()
-        self.assertEqual('用户名称至少3位', text)
+        self.assertEqual(self.assert_text.cust_page_user_name_more_than_3(), text)
 
         # 3 验证最大长度
         max_len = self.cust_manage_basic_info_and_add_cust_page.get_account_name_max_len()
@@ -117,7 +119,7 @@ class TestCase1104CustManageEditCustExpection(unittest.TestCase):
         self.cust_manage_basic_info_and_add_cust_page.add_email_format('123123')
         self.cust_manage_basic_info_and_add_cust_page.click_ensure()
         get_text_email = self.cust_manage_basic_info_and_add_cust_page.get_texts_email_text()
-        self.assertEqual('邮箱格式不正确', get_text_email)
+        self.assertEqual(self.assert_text.cust_page_user_email_formate_error(), get_text_email)
 
         connect_max_len = self.cust_manage_basic_info_and_add_cust_page.get_connect_max_len()
         self.assertEqual('50', connect_max_len)

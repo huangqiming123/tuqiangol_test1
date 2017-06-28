@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
@@ -19,6 +20,7 @@ class TestCase1109DevManageSaleInList(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.dev_manage_page_read_csv = DevManagePageReadCsv()
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -78,7 +80,7 @@ class TestCase1109DevManageSaleInList(unittest.TestCase):
         # 搜索无数据
         self.dev_manage_page.search_customer_after_click_batch_sale_dev('无数据')
         get_text = self.dev_manage_page.get_search_customer_no_data_text_after_batch_sale_dev()
-        self.assertEqual('  暂无数据 ', get_text)
+        self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text)
 
         # 获取选中设备的数量
         dev_number = self.dev_manage_page.get_select_dev_number()
@@ -103,10 +105,10 @@ class TestCase1109DevManageSaleInList(unittest.TestCase):
         self.assertEqual(imei_in_list, imei_after_add_fail)
 
         status = self.dev_manage_page.get_status_after_add_fail()
-        self.assertEqual('失败', status)
+        self.assertEqual(self.assert_text.dev_page_fail_text(), status)
 
         fail_reason = self.dev_manage_page.get_fail_reason()
-        self.assertEqual('重复', fail_reason)
+        self.assertEqual(self.assert_text.dev_page_repetition_text(), fail_reason)
         self.dev_manage_page.click_close_fail()
 
         # 添加不存在的imei
@@ -116,8 +118,8 @@ class TestCase1109DevManageSaleInList(unittest.TestCase):
         self.assertEqual('我就是要添加不存在的', imei_after_add_fail)
 
         status = self.dev_manage_page.get_status_after_add_fail()
-        self.assertEqual('失败', status)
+        self.assertEqual(self.assert_text.dev_page_fail_text(), status)
 
         fail_reason = self.dev_manage_page.get_fail_reason()
-        self.assertEqual('不存在', fail_reason)
+        self.assertEqual(self.assert_text.dev_page_inexistence_text(), fail_reason)
         self.dev_manage_page.click_close_fail()

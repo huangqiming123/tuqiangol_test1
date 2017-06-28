@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
@@ -26,6 +27,7 @@ class TestCase1106GlobSearchDevOperation(unittest.TestCase):
         self.search_sql = SearchSql()
         self.driver.wait(1)
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.clear_cookies()
         self.driver.wait(1)
 
@@ -64,7 +66,7 @@ class TestCase1106GlobSearchDevOperation(unittest.TestCase):
                 self.assertEqual(self.base_url + '/trackreplay/locus?imei=%s' % dev_imei, self.driver.get_current_url())
                 # 获取页面的抬头的文字
                 text = self.global_dev_search_page.get_text_after_click_track_play()
-                self.assertEqual('轨迹回放', text)
+                self.assertEqual(self.assert_text.dev_page_track_replay_text(), text)
                 # 获取页面抬头的设备名称和imei
                 dev_name_and_dev_imei = self.global_dev_search_page.get_dev_name_and_imei_after_click_track_play()
                 self.assertIn(dev_name, dev_name_and_dev_imei)
@@ -85,7 +87,7 @@ class TestCase1106GlobSearchDevOperation(unittest.TestCase):
                                  self.driver.get_current_url())
                 # 获取页面的抬头的文字
                 text = self.global_dev_search_page.get_text_after_click_track_preset()
-                self.assertEqual('实时跟踪', text)
+                self.assertEqual(self.assert_text.dev_page_track_preset_text(), text)
                 # 获取页面抬头的设备名称和imei
                 dev_name_in_track_preset = self.global_dev_search_page.get_dev_name_in_track_preset()
                 dev_imei_in_track_preset = self.global_dev_search_page.get_imei_in_track_preset()
@@ -106,7 +108,7 @@ class TestCase1106GlobSearchDevOperation(unittest.TestCase):
                 self.assertEqual(self.base_url + '/deviceReport/statisticalReport', self.driver.get_current_url())
                 # 获取页面的抬头的文字
                 text = self.global_dev_search_page.get_text_after_click_alarm_detail()
-                self.assertEqual('告警详情', text)
+                self.assertEqual(self.assert_text.account_center_page_alarm_details_text(), text)
                 # 获取页面抬头的设备名称和ime
                 self.driver.close_current_page()
                 sleep(2)

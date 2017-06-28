@@ -1,5 +1,6 @@
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
 from pages.login.login_page import LoginPage
 
@@ -13,6 +14,7 @@ class TestCase006LoginChangeLanguage(unittest.TestCase):
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -30,7 +32,7 @@ class TestCase006LoginChangeLanguage(unittest.TestCase):
 
         # 通过登录按钮的文本内容判断默认是否为中文
         login_button_text = self.login_page.login_button_text()
-        self.assertEqual("登录", login_button_text, "默认语言不是简体中文")
+        self.assertEqual(self.assert_text.log_in_page_log_in_text(), login_button_text, "默认语言不是简体中文")
 
         # 切换语言
 

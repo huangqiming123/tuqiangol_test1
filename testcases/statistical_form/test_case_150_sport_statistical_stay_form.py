@@ -2,6 +2,7 @@ import csv
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
@@ -27,6 +28,7 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
         self.search_sql = SearchSql(self.driver, self.base_url)
+        self.assert_text = AssertText()
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
         self.driver.set_window_max()
@@ -50,7 +52,8 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
         # 点击停留报表
         self.statistical_form_page.click_stay_form_button()
         # 断言
-        self.assertEqual('停留报表', self.statistical_form_page.actual_text_after_click_stay_form_button())
+        self.assertEqual(self.assert_text.statistical_form_stay_form(),
+                         self.statistical_form_page.actual_text_after_click_stay_form_button())
         # 读数据
         # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv('sport_statistical_stay_search_data.csv')

@@ -1,6 +1,7 @@
 import unittest
 from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -21,6 +22,7 @@ class TestCase168AccountCenterOverviewInactive(unittest.TestCase):
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -48,7 +50,7 @@ class TestCase168AccountCenterOverviewInactive(unittest.TestCase):
                 self.assertEqual(expect_url, actual_url, '点击未激活后，实际的url和期望的不一样！')
                 sleep(2)
                 self.account_center_page_details.click_more_in_dev_manage()
-                self.assertEqual('未激活', self.driver.get_text(
+                self.assertEqual(self.assert_text.account_center_page_activing_text(), self.driver.get_text(
                     'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]'))
                 self.assertEqual(True, self.driver.get_element('x,//*[@id="lowerFlag"]/div/input').is_selected())
 
@@ -60,19 +62,19 @@ class TestCase168AccountCenterOverviewInactive(unittest.TestCase):
                 lower_user_input_value = self.account_center_page_details.get_lower_input_value()
                 self.assertEqual(False, lower_user_input_value)
                 get_text = self.account_center_page_details.click_active_get_text()
-                self.assertEqual('激活状态', get_text)
+                self.assertEqual(self.assert_text.account_center_page_active_status_text(), get_text)
                 # 点搜索
                 self.account_center_page_details.click_search_button()
                 lower_user_input_value_again = self.account_center_page_details.get_lower_input_value()
                 self.assertEqual(False, lower_user_input_value_again)
                 get_text = self.account_center_page_details.click_active_get_text()
-                self.assertEqual('激活状态', get_text)
+                self.assertEqual(self.assert_text.account_center_page_active_status_text(), get_text)
 
                 # 查看控制台告警设置能否打开
                 self.account_center_page_navi_bar.click_alarm_button_in_console()
                 # 断言
                 get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
-                self.assertEqual(' 报警管理', get_text)
+                self.assertEqual(self.assert_text.account_center_page_alarm_manager_text(), get_text)
                 self.account_center_page_navi_bar.close_alarm_in_console()
 
                 self.driver.close_current_page()

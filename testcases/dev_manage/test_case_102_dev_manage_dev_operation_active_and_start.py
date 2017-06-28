@@ -3,6 +3,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
@@ -27,6 +28,7 @@ class TestCase102DevManageDevOperationActiveAndStart(unittest.TestCase):
         self.dev_manage_page_read_csv = DevManagePageReadCsv()
         self.connect_sql = ConnectSql()
         self.search_sql = SearchSql()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -110,7 +112,7 @@ class TestCase102DevManageDevOperationActiveAndStart(unittest.TestCase):
                 self.assertEqual(expect_url, self.driver.get_current_url())
 
                 text = self.dev_manage_page.click_track_playback_get_text()
-                self.assertEqual('轨迹回放', text)
+                self.assertEqual(self.assert_text.dev_page_track_replay_text(), text)
                 self.driver.close_current_page()
                 self.driver.switch_to_window(current_handle)
                 sleep(2)
@@ -126,7 +128,7 @@ class TestCase102DevManageDevOperationActiveAndStart(unittest.TestCase):
                 self.assertEqual(expect_url, self.driver.get_current_url())
 
                 text = self.dev_manage_page.click_driving_recond_get_text()
-                self.assertEqual('行车记录', text)
+                self.assertEqual(self.assert_text.dev_page_driving_record_text(), text)
                 self.driver.close_current_page()
                 self.driver.switch_to_window(current_handle)
                 sleep(2)
@@ -142,7 +144,7 @@ class TestCase102DevManageDevOperationActiveAndStart(unittest.TestCase):
                 self.assertEqual(expect_url, self.driver.get_current_url())
 
                 text = self.dev_manage_page.click_street_scape_get_text()
-                self.assertEqual('实时跟踪', text)
+                self.assertEqual(self.assert_text.dev_page_track_preset_text(), text)
                 self.driver.close_current_page()
                 self.driver.switch_to_window(current_handle)
                 sleep(2)
@@ -158,7 +160,7 @@ class TestCase102DevManageDevOperationActiveAndStart(unittest.TestCase):
                 self.assertEqual(expect_url, self.driver.get_current_url())
 
                 text = self.dev_manage_page.click_look_alarm_get_text()
-                self.assertEqual('告警详情', text)
+                self.assertEqual(self.assert_text.account_center_page_alarm_details_text(), text)
                 self.driver.close_current_page()
                 self.driver.switch_to_window(current_handle)
                 sleep(2)

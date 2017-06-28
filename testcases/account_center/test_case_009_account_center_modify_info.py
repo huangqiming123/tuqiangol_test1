@@ -2,6 +2,7 @@ import csv
 import unittest
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.base.base_page_server import BasePageServer
@@ -19,6 +20,7 @@ class TestCase009AccountCenterModifyInfo(unittest.TestCase):
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -46,7 +48,7 @@ class TestCase009AccountCenterModifyInfo(unittest.TestCase):
                                                                             user_to_modify_info["phone"],
                                                                             user_to_modify_info["email"])
             # 判断是否修改成功
-            self.assertEqual("操作成功", save_status, "修改失败")
+            self.assertEqual(self.assert_text.account_center_page_operation_done(), save_status, "修改失败")
         csv_file.close()
 
         # 点击关闭

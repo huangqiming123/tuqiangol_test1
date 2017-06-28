@@ -1,5 +1,6 @@
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
@@ -12,6 +13,7 @@ class TestCase1106SafeAreaMarkPointOperation(unittest.TestCase):
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.safe_area_page = SafeAreaPage(self.driver, self.base_url)
+        self.assert_text = AssertText()
 
         self.base_page.open_page()
         self.driver.set_window_max()
@@ -43,20 +45,20 @@ class TestCase1106SafeAreaMarkPointOperation(unittest.TestCase):
         self.assertIn(get_name, mark_point_name)
         self.safe_area_page.click_ensure()
         text = self.safe_area_page.get_text_after_ensure()
-        self.assertEqual('操作成功.', text)
+        self.assertIn(self.assert_text.account_center_page_operation_done(), text)
 
         # 点击新建按钮
         self.safe_area_page.click_create_mark_point()
         text = self.safe_area_page.get_text_after_create_map()
-        self.assertEqual('请在地图上单击左键开始绘制，双击完成', text)
+        self.assertEqual(self.assert_text.safe_area_page_map_text(), text)
 
         # 点击删除
         self.safe_area_page.click_delete_in_mark_point()
         text = self.safe_area_page.get_text_after_click_delete()
-        self.assertEqual('请选择要删除的记录!', text)
+        self.assertEqual(self.assert_text.safe_area_page_choose_delete_content(), text)
         self.safe_area_page.click_ensure()
 
         self.safe_area_page.click_delete_in_mark_point()
         text = self.safe_area_page.get_text_after_click_delete()
-        self.assertEqual('请选择要删除的记录!', text)
+        self.assertEqual(self.assert_text.safe_area_page_choose_delete_content(), text)
         self.safe_area_page.click_close()

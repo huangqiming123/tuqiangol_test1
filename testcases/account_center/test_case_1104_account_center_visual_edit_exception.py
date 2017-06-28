@@ -1,6 +1,7 @@
 import csv
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.account_center.account_center_visual_account_page import AccountCenterVisualAccountPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -20,6 +21,7 @@ class TestCase1104AccountCenterVisualEditException(unittest.TestCase):
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
         self.base_page.open_page()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -41,23 +43,30 @@ class TestCase1104AccountCenterVisualEditException(unittest.TestCase):
         # 虚拟账号添加与编辑方法
         # 长度不够
         prompt = self.visual_account_page.get_visu_account_error_prompt("edit", "12", "")
-        self.assertEqual("密码长度至少6位以上", prompt["pwd_error_prompt"], "修改虚拟账号密码，提示不一致")
-        self.assertEqual("两次输入的密码不一致", prompt["pwd2_error_prompt"], "虚拟账号的确认密码，提示不一致")
+        self.assertEqual(self.assert_text.account_center_page_password_len_text(), prompt["pwd_error_prompt"],
+                         "修改虚拟账号密码，提示不一致")
+        self.assertEqual(self.assert_text.account_center_page_password_unlike(), prompt["pwd2_error_prompt"],
+                         "虚拟账号的确认密码，提示不一致")
 
         # 格式错误
         prompt = self.visual_account_page.get_visu_account_error_prompt("edit", "abcdefgh", "")
-        self.assertEqual("密码格式错误，必须为字母和数字的组合", prompt["pwd_error_prompt"], "修改虚拟账号密码，提示不一致")
-        self.assertEqual("两次输入的密码不一致", prompt["pwd2_error_prompt"], "虚拟账号的确认密码，提示不一致")
+        self.assertEqual(self.assert_text.account_center_page_password_formart_text(), prompt["pwd_error_prompt"],
+                         "修改虚拟账号密码，提示不一致")
+        self.assertEqual(self.assert_text.account_center_page_password_unlike(), prompt["pwd2_error_prompt"],
+                         "虚拟账号的确认密码，提示不一致")
 
         # 密码相同，长度不够
         prompt = self.visual_account_page.get_visu_account_error_prompt("edit", "123", "123")
-        self.assertEqual("密码长度至少6位以上", prompt["pwd_error_prompt"], "修改虚拟账号密码，提示不一致")
-        self.assertEqual("密码长度至少6位以上", prompt["pwd2_error_prompt"], "虚拟账号的确认密码，提示不一致")
+        self.assertEqual(self.assert_text.account_center_page_password_len_text(), prompt["pwd_error_prompt"],
+                         "修改虚拟账号密码，提示不一致")
+        self.assertEqual(self.assert_text.account_center_page_password_len_text(), prompt["pwd2_error_prompt"],
+                         "虚拟账号的确认密码，提示不一致")
 
         # 密码不一致
         prompt = self.visual_account_page.get_visu_account_error_prompt("edit", "jimi123", "123")
         self.assertEqual("", prompt["pwd_error_prompt"], "修改虚拟账号密码，提示不一致")
-        self.assertEqual("两次输入的密码不一致", prompt["pwd2_error_prompt"], "虚拟账号的确认密码，提示不一致")
+        self.assertEqual(self.assert_text.account_center_page_password_unlike(), prompt["pwd2_error_prompt"],
+                         "虚拟账号的确认密码，提示不一致")
 
         # 验证密码输入长度
         self.assertEqual(16, self.visual_account_page.get_visual_add_and_edit_len(), "密码限制长度显示不一致")

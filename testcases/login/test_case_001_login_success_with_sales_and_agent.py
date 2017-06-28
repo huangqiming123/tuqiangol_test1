@@ -3,6 +3,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -22,6 +23,7 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.log_in_read_csv = LogInPageReadCsv()
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -67,14 +69,9 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
                 for range2 in range1:
                     current_user_info.append(range2)
             print(current_user_info)
-            if current_user_info[0] == 8:
-                self.type = "代理商"
-            elif current_user_info[0] == 9:
-                self.type = "用户"
-            elif current_user_info[0] == 11:
-                self.type = "销售"
+            type = self.assert_text.log_in_page_account_type(current_user_info[0])
             usr_info_type = self.account_center_page_navi_bar.usr_info_type()
-            self.assertEqual(self.type, usr_info_type, "账户总览左下方显示的客户类型错误")
+            self.assertEqual(type, usr_info_type, "账户总览左下方显示的客户类型错误")
 
             usr_info_name = self.account_center_page_navi_bar.usr_info_name()
             expect_usr_info_name = current_user_info[3]

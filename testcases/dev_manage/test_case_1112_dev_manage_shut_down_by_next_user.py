@@ -3,6 +3,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
@@ -20,6 +21,7 @@ class TestCase1112DevManageShutDownByNextUser(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.dev_manage_page_read_csv = DevManagePageReadCsv()
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -55,7 +57,7 @@ class TestCase1112DevManageShutDownByNextUser(unittest.TestCase):
         # 点击确定
         self.dev_manage_page.click_ensure()
         get_dev_status = self.dev_manage_page.get_dev_status_in_list()
-        self.assertEqual('停机', get_dev_status)
+        self.assertEqual(self.assert_text.dev_page_closing_down(), get_dev_status)
 
         # 点击选中停机
         self.dev_manage_page.click_dev_in_list()
@@ -63,14 +65,14 @@ class TestCase1112DevManageShutDownByNextUser(unittest.TestCase):
         # 点击取消
         self.dev_manage_page.click_cancel()
         get_dev_status = self.dev_manage_page.get_dev_status_in_list()
-        self.assertEqual('停机', get_dev_status)
+        self.assertEqual(self.assert_text.dev_page_closing_down(), get_dev_status)
 
         # 点击选中停机
         self.dev_manage_page.click_select_shut_down()
         # 点击关闭
         self.dev_manage_page.click_close()
         get_dev_status = self.dev_manage_page.get_dev_status_in_list()
-        self.assertEqual('停机', get_dev_status)
+        self.assertEqual(self.assert_text.dev_page_closing_down(), get_dev_status)
 
         # 点击本次查询全部停机
         self.dev_manage_page.click_all_shut_down()
@@ -85,7 +87,7 @@ class TestCase1112DevManageShutDownByNextUser(unittest.TestCase):
             per_number = self.dev_manage_page.get_per_number()
             for m in range(per_number):
                 text = self.dev_manage_page.get_text_dev_status(m + 1)
-                self.assertEqual('停机', text)
+                self.assertEqual(self.assert_text.dev_page_closing_down(), text)
         else:
             for n in range(get_all_page):
                 self.dev_manage_page.click_per_page(n + 1)
@@ -95,4 +97,4 @@ class TestCase1112DevManageShutDownByNextUser(unittest.TestCase):
 
                 for m in range(per_number):
                     text = self.dev_manage_page.get_text_dev_status(m + 1)
-                    self.assertEqual('停机', text)
+                    self.assertEqual(self.assert_text.dev_page_closing_down(), text)

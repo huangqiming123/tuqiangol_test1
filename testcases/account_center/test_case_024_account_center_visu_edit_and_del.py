@@ -2,6 +2,7 @@ import csv
 import unittest
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.account_center.account_center_visual_account_page import AccountCenterVisualAccountPage
 
@@ -24,6 +25,7 @@ class TestCase024AccountCenterVisuEditAndDel(unittest.TestCase):
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -56,14 +58,14 @@ class TestCase024AccountCenterVisuEditAndDel(unittest.TestCase):
             self.account_center_page_visual_account.edit_visu_account(acc_to_add["passwd"])
             # 验证是否保存成功
             save_status = self.account_center_page_visual_account.get_save_status()
-            self.assertIn("操作成功", save_status, "保存成功")
+            self.assertIn(self.assert_text.account_center_page_operation_done(), save_status, "保存成功")
             self.account_center_page_visual_account.dis_edit()
             self.driver.wait(1)
             # 删除列表中的虚拟账户
             self.account_center_page_visual_account.del_visu_account()
             # 验证是否操作成功
             save_status = self.account_center_page_visual_account.get_save_status()
-            self.assertIn("操作成功", save_status, "操作成功")
+            self.assertIn(self.assert_text.account_center_page_operation_done(), save_status, "操作成功")
             self.driver.wait()
         csv_file.close()
         # 退出登录

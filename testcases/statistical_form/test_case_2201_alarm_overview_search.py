@@ -2,6 +2,7 @@ import csv
 import unittest
 import time
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.alarm_info.alarm_info_page import AlarmInfoPage
 from pages.base.base_page import BasePage
@@ -35,6 +36,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
+        self.assert_text = AssertText()
         self.log_in_base.log_in_jimitest()
         time.sleep(1)
 
@@ -52,10 +54,6 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
 
         # 点击告警总览
         self.alarm_info_page.click_alarm_overview_list()
-        # 断言文本
-        expect_text_after_click_alarm = '告警总览'
-
-        self.assertEqual(expect_text_after_click_alarm, self.alarm_info_page.actual_text_click_alarm_info())
 
         # 输入数据搜索
         csv_file = self.statistical_form_page_read_csv.read_csv('alarm_overview_search_data.csv')
@@ -76,7 +74,8 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
             # 获取搜索出的条数
             web_total = self.alarm_info_page.get_web_total_in_overview_search()
             if web_total == 0:
-                self.assertIn('暂无数据', self.statistical_form_page.get_no_data_text_in_alarm_overview_page())
+                self.assertIn(self.assert_text.account_center_page_no_data_text(),
+                              self.statistical_form_page.get_no_data_text_in_alarm_overview_page())
             else:
                 self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
                 # sos报警总数

@@ -5,6 +5,7 @@ from time import sleep
 import requests
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
@@ -33,6 +34,7 @@ class TestCase142SportStatisticalElectricReport(unittest.TestCase):
         self.search_sql = SearchSql(self.driver, self.base_url)
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
@@ -54,7 +56,8 @@ class TestCase142SportStatisticalElectricReport(unittest.TestCase):
         # 点击里程报表
         self.statistical_form_page.click_electric_report_form_buttons()
         # 断言
-        self.assertEqual('电量统计', self.statistical_form_page.actual_text_after_click_electric_report_buttons())
+        self.assertEqual(self.assert_text.statistical_form_electric_report(),
+                         self.statistical_form_page.actual_text_after_click_electric_report_buttons())
         # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv('search_electric_report_data.csv')
         csv_data = csv.reader(csv_file)

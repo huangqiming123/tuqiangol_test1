@@ -1,5 +1,6 @@
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
@@ -14,6 +15,7 @@ class TestCase1103SafeAreaExpertion(unittest.TestCase):
         self.safe_area_page = SafeAreaPage(self.driver, self.base_url)
 
         self.base_page.open_page()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.log_in_base.log_in()
         self.safe_area_page.click_control_after_click_safe_area()
@@ -29,19 +31,19 @@ class TestCase1103SafeAreaExpertion(unittest.TestCase):
         # 点击删除按钮
         self.safe_area_page.click_delete_button()
         text = self.safe_area_page.get_text_after_click_delete()
-        self.assertEqual('请选择要删除的记录!', text)
+        self.assertEqual(self.assert_text.safe_area_page_choose_delete_content(), text)
         self.safe_area_page.click_ensure()
 
         self.safe_area_page.click_delete_button()
         text = self.safe_area_page.get_text_after_click_delete()
-        self.assertEqual('请选择要删除的记录!', text)
+        self.assertEqual(self.assert_text.safe_area_page_choose_delete_content(), text)
         self.safe_area_page.click_close()
 
         # 点击新建
         self.safe_area_page.click_creat_map()
         # 获取文本
         text = self.safe_area_page.get_text_after_create_map()
-        self.assertEqual('请在地图上单击左键开始绘制，双击完成', text)
+        self.assertEqual(self.assert_text.safe_area_page_map_text(), text)
 
         # 选择黑车库操作
         self.safe_area_page.click_select_black_address_button()
@@ -70,7 +72,7 @@ class TestCase1103SafeAreaExpertion(unittest.TestCase):
         self.safe_area_page.click_ensure()
         # 获取保存后的文本
         text = self.safe_area_page.get_text_after_ensure()
-        self.assertEqual('操作成功.', text)
+        self.assertEqual(self.assert_text.account_center_page_operation_done(), text)
 
         # 选择围栏编辑
         self.safe_area_page.click_select_fence_button()
@@ -94,4 +96,4 @@ class TestCase1103SafeAreaExpertion(unittest.TestCase):
         self.safe_area_page.click_ensure()
         # 获取保存后的文本
         text = self.safe_area_page.get_text_after_ensure()
-        self.assertEqual('操作成功.', text)
+        self.assertIn(self.assert_text.account_center_page_operation_done(), text)

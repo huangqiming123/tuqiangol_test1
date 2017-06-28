@@ -1,6 +1,7 @@
 import csv
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.account_center.account_center_visual_account_page import AccountCenterVisualAccountPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -19,6 +20,7 @@ class TestCase1107AccountCenterAddVisualEditException(unittest.TestCase):
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
+        self.assert_text = AssertText()
         self.base_page.open_page()
         self.driver.set_window_max()
         self.driver.wait(1)
@@ -40,7 +42,8 @@ class TestCase1107AccountCenterAddVisualEditException(unittest.TestCase):
             self.visual_account_page.save_add_info()
             self.visual_account_page.dis_save_add_info()
             self.driver.wait(1)
-            self.assertEqual("账号已存在", self.visual_account_page.get_save_status(), "在添加虚拟账号中可以添加已存在的账号！")
+            self.assertEqual(self.assert_text.account_center_page_account_exist(),
+                             self.visual_account_page.get_save_status(), "在添加虚拟账号中可以添加已存在的账号！")
             self.driver.wait(1)
             # 退出登录
             # self.account_center_page_navi_bar.usr_logout()

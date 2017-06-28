@@ -43,9 +43,6 @@ class TestCase2106StatisticalFormAlarmOverview(unittest.TestCase):
 
         # 点击告警总览
         self.alarm_info_page.click_alarm_overview_list()
-        # 断言文本
-        expect_text_after_click_alarm = '告警总览'
-        self.assertEqual(expect_text_after_click_alarm, self.alarm_info_page.actual_text_click_alarm_info())
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_alarm_overview(n)

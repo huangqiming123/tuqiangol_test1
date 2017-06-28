@@ -48,8 +48,6 @@ class TestCase141SportStatisticalMileReportForm(unittest.TestCase):
                          self.statistical_form_page.actual_url_after_statistical_form())
         # 点击里程报表
         self.statistical_form_page.click_mileage_form_buttons()
-        # 断言
-        self.assertEqual('里程报表', self.statistical_form_page.actual_text_after_click_mileage_form_buttons())
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_new_mile_form(n)

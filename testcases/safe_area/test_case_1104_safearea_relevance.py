@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
@@ -16,6 +17,7 @@ class TestCase1104SafeAreaRelevance(unittest.TestCase):
         self.safe_area_page = SafeAreaPage(self.driver, self.base_url)
 
         self.base_page.open_page()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.log_in_base.log_in_jimitest()
         self.safe_area_page.click_control_after_click_safe_area()
@@ -49,7 +51,7 @@ class TestCase1104SafeAreaRelevance(unittest.TestCase):
             attribute = self.safe_area_page.get_no_data_attribute()
             if 'display: none;' in attribute:
                 text = self.safe_area_page.get_text_no_data()
-                self.assertEqual('  暂无数据 ', text)
+                self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
             else:
                 # 点击收起默认组
                 self.safe_area_page.click_close_default_group()
@@ -60,6 +62,7 @@ class TestCase1104SafeAreaRelevance(unittest.TestCase):
                     self.safe_area_page.click_open_per_group(m)
                     list_total_dev = self.safe_area_page.get_list_dev_in_per_group(m)
                     self.assertEqual(group_total_dev, str(list_total_dev))
+                    self.safe_area_page.click_open_per_group(m)
 
         # 验证已选中的设备数量和统计的是否一致
         count_dev_number = self.safe_area_page.get_count_dev_number()

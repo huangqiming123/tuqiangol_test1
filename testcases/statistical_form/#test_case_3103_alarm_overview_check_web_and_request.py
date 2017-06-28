@@ -5,6 +5,7 @@ from time import sleep
 import requests
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.alarm_info.alarm_info_page import AlarmInfoPage
 from pages.base.base_page import BasePage
@@ -32,6 +33,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
         self.statistical_form_page = StatisticalFormPage(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
         self.search_sql = SearchSql(self.driver, self.base_url)
+        self.assert_text = AssertText()
 
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
@@ -54,7 +56,7 @@ class TestCase138AlarmOverviewSearch(unittest.TestCase):
         # 点击告警总览
         self.alarm_info_page.click_alarm_overview_list()
         # 断言文本
-        expect_text_after_click_alarm = '告警总览'
+        expect_text_after_click_alarm = self.assert_text.statistical_form_page_alarm_overview()
         self.assertEqual(expect_text_after_click_alarm, self.alarm_info_page.actual_text_click_alarm_info())
         # 输入数据搜索
         csv_file = self.statistical_form_page_read_csv.read_csv('alarm_overview_search_data.csv')

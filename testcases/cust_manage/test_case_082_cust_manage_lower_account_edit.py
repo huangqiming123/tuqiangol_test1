@@ -3,6 +3,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
@@ -33,6 +34,7 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.cust_manage_page_read_csv = CustManagePageReadCsv()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -87,4 +89,4 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
             status = self.cust_manage_lower_account_page.edit_info_save_status()
 
             # 验证是否操作成功
-            self.assertIn("操作成功", status, "操作失败")
+            self.assertIn(self.assert_text.account_center_page_operation_done(), status, "操作失败")

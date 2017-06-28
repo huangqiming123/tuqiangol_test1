@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
@@ -26,6 +27,7 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
         self.search_sql = SearchSql()
         self.driver.wait(1)
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.clear_cookies()
         self.driver.wait(1)
 
@@ -89,7 +91,7 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
         # 验证右侧的客户数是否可以搜索
         # 搜索没有的数据
         text = self.global_dev_search_page.search_user_in_user_info('无数据')
-        self.assertEqual('  暂无数据 ', text)
+        self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
 
         # 循环点击五次
         for n in range(5):
@@ -119,13 +121,13 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
         self.global_dev_search_page.check_add_user_account_input_in_user_info('')
         self.global_dev_search_page.click_save_add_user()
         text = self.global_dev_search_page.get_text_account_input_expertion()
-        self.assertEqual('账号不能为空', text)
+        self.assertEqual(self.assert_text.cust_page_user_account_not_null(), text)
 
         # 小于3位
         self.global_dev_search_page.check_add_user_account_input_in_user_info('12')
         self.global_dev_search_page.click_save_add_user()
         text = self.global_dev_search_page.get_text_account_input_expertion()
-        self.assertEqual('账号长度至少3位、不超过30位字符', text)
+        self.assertEqual(self.assert_text.cust_page_user_account_len(), text)
 
         # 验证最大长度
         get_user_account_input_max_len = self.global_dev_search_page.get_user_account_input_max_len()
@@ -136,44 +138,44 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
         self.global_dev_search_page.check_add_user_name_input_in_user_info('')
         self.global_dev_search_page.click_save_add_user()
         text = self.global_dev_search_page.get_text_name_input_expertion()
-        self.assertEqual('用户名不能为空', text)
+        self.assertEqual(self.assert_text.cust_page_user_name_not_null(), text)
 
         # 小于3位
         self.global_dev_search_page.check_add_user_name_input_in_user_info('12')
         self.global_dev_search_page.click_save_add_user()
         text = self.global_dev_search_page.get_text_name_input_expertion()
-        self.assertEqual('昵称长度至少3位', text)
+        self.assertEqual(self.assert_text.cust_page_user_name_more_than_3(), text)
 
         # 密码
         # 为空
         self.global_dev_search_page.click_add_user_password_first_input_in_user_info('')
         self.global_dev_search_page.click_save_add_user()
         get_first_password_text = self.global_dev_search_page.get_first_password_text()
-        self.assertEqual('请输入密码', get_first_password_text)
+        self.assertEqual(self.assert_text.cust_page_user_password_not_null(), get_first_password_text)
 
         # 小于6位
         self.global_dev_search_page.click_add_user_password_first_input_in_user_info('12qw')
         self.global_dev_search_page.click_add_user_password_second_input_in_user_info('12qw')
         self.global_dev_search_page.click_save_add_user()
         get_first_password_text = self.global_dev_search_page.get_first_password_text()
-        self.assertEqual('密码长度不能小于6位', get_first_password_text)
+        self.assertEqual(self.assert_text.cust_page_user_password_len(), get_first_password_text)
 
         # 全数字
         self.global_dev_search_page.click_add_user_password_first_input_in_user_info('121212')
         self.global_dev_search_page.click_add_user_password_second_input_in_user_info('121212')
         self.global_dev_search_page.click_save_add_user()
         get_first_password_text = self.global_dev_search_page.get_first_password_text()
-        self.assertEqual('密码格式错误，必须为字母和数字的组合', get_first_password_text)
+        self.assertEqual(self.assert_text.account_center_page_password_formart_text(), get_first_password_text)
 
         # 全字母
         self.global_dev_search_page.click_add_user_password_first_input_in_user_info('qwerqw')
         self.global_dev_search_page.click_add_user_password_second_input_in_user_info('qwerqw')
         self.global_dev_search_page.click_save_add_user()
         get_first_password_text = self.global_dev_search_page.get_first_password_text()
-        self.assertEqual('密码格式错误，必须为字母和数字的组合', get_first_password_text)
+        self.assertEqual(self.assert_text.account_center_page_password_formart_text(), get_first_password_text)
         # 两次密码不一致
         self.global_dev_search_page.click_add_user_password_first_input_in_user_info('qwerqw123')
         self.global_dev_search_page.click_add_user_password_second_input_in_user_info('qwerqw2324')
         self.global_dev_search_page.click_save_add_user()
         get_second_password_text = self.global_dev_search_page.get_second_password_text()
-        self.assertEqual('两次输入的密码不一致', get_second_password_text)
+        self.assertEqual(self.assert_text.cust_page_password_unlike(), get_second_password_text)

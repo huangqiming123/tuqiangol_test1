@@ -908,7 +908,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_edit_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[1]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[1]')
         sleep(2)
 
     def click_close_edit_button(self):
@@ -916,7 +916,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def add_data_to_edit_dev_detila(self, data):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
 
         # 填写基本信息
         # 设备名称
@@ -970,15 +970,15 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[2]')
 
     def click_look_place_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[3]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[3]')
         sleep(2)
 
     def get_dev_name_after_click_console(self):
         return self.driver.get_text(
-            'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[3]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
+            'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[4]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
 
     def click_track_playback_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
         sleep(2)
         self.driver.click_element('l,轨迹回放')
         sleep(2)
@@ -990,7 +990,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="mapview"]/div[3]/div/div[1]/b')
 
     def click_driving_recond_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
         sleep(2)
         self.driver.click_element('l,行车记录')
         sleep(2)
@@ -999,7 +999,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="mapview"]/div[2]/div/div[1]/b')
 
     def click_street_scape_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
         sleep(2)
         self.driver.click_element('l,街景')
         sleep(2)
@@ -1069,7 +1069,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_look_alarm_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
         sleep(2)
         self.driver.click_element('l,查看告警')
         sleep(2)
@@ -1128,139 +1128,139 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="check-total"]')
 
     def get_imei_input_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[1]/input[2]').get_attribute(
             'disabled')
         self.driver.default_frame()
         return a
 
     def get_dev_type_input_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[2]/input[2]').get_attribute(
             'disabled')
         self.driver.default_frame()
         return a
 
     def get_active_time_input_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[3]/div[2]/input').get_attribute('disabled')
         self.driver.default_frame()
         return a
 
     def get_expire_time_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[4]/div[2]/input').get_attribute('disabled')
         self.driver.default_frame()
         return a
 
     def get_iccid_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[5]/div[1]/input').get_attribute('disabled')
         self.driver.default_frame()
         return a
 
     def get_imsi_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[5]/div[2]/input').get_attribute('disabled')
         self.driver.default_frame()
         return a
 
     def get_dev_name_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[1]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def get_dev_sim_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[2]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def get_dev_remark_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="reMark"]').get_attribute('maxlength')
         self.driver.default_frame()
         return a
 
     def click_cust_info_button(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         self.driver.click_element('x,/html/body/div[1]/ul/li[2]/a')
         self.driver.default_frame()
 
     def get_driver_name_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[1]/div[1]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def click_driver_phone_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[1]/div[2]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def driver_vehicle_number_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[2]/div[1]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def get_driver_iccid_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[2]/div[2]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def get_driver_sn_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[3]/div[1]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def driver_car_frame_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[1]/div[3]/div[2]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def get_driver_engine_number_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="engineNumber"]').get_attribute('maxlength')
         self.driver.default_frame()
         return a
 
     def get_dev_install_address_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[2]/div[1]/div[2]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def get_dev_install_company_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[2]/div[2]/div[1]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def get_dev_install_position_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[2]/div[2]/div[2]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
 
     def get_dev_install_personnel_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_b"]/fieldset[2]/div[3]/div/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
@@ -1277,20 +1277,24 @@ class DevManagePages(BasePage):
         b = a.split(' ')[0]
         return b
 
+    def switch_to_dev_edit_frame(self):
+        self.driver.switch_to_frame('x,/html/body/div[32]/div[2]/iframe')
+
     def get_imei_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[1]/input[2]').get_attribute('value')
         self.driver.default_frame()
         return a
 
     def get_active_time_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        # self.driver.switch_to_frame('x,/html/body/div[28]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[3]/div[2]/input').get_attribute('value')
         self.driver.default_frame()
         return a
 
     def get_expire_time_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[4]/div[2]/input').get_attribute('value')
         self.driver.default_frame()
         return a
@@ -1305,34 +1309,34 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[6]')
 
     def get_dev_group_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[9]')
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[10]')
 
     def get_dev_type_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[1]/div[2]/input[2]').get_attribute('value')
         self.driver.default_frame()
         return a
 
     def get_dev_name_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[1]/input').get_attribute('value')
         self.driver.default_frame()
         return a
 
     def get_dev_sim_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[2]/input').get_attribute('value')
         self.driver.default_frame()
         return a
 
     def get_dev_group_in_detail(self):
-        self.driver.switch_to_frame('x,/html/body/div[26]/div[2]/iframe')
+        self.switch_to_dev_edit_frame()
         a = self.driver.get_text('x,//*[@id="device_info_a"]/fieldset/div[3]/div[1]/span/div/span[2]')
         self.driver.default_frame()
         return a
 
     def click_sale_in_list_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[2]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[2]')
         sleep(2)
 
     def click_close_sale_in_list_button(self):
@@ -1494,7 +1498,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="checkTbody"]/tr/td[3]')
 
     def get_dev_status_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[8]')
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[9]')
 
     def click_select_shut_down(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
@@ -1530,7 +1534,7 @@ class DevManagePages(BasePage):
         return number
 
     def get_text_dev_status(self, m):
-        text = self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[8]' % str(m))
+        text = self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[9]' % str(m))
         return text
 
     def click_select_starting_up(self):

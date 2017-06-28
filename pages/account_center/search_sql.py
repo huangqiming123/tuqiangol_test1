@@ -65,7 +65,7 @@ class SearchSql(object):
 
     def search_massage_sql(self, current_account, search_data):
         # 搜索消息的sql
-        sql = "select m.id from user_message m inner join user_info o on o.userId = m.userId where o.account = '%s'" % current_account
+        sql = "select m.id from user_message m where m.userId in %s" % str(current_account)
 
         if search_data['imei'] != '':
             sql += " and m.imeis like '%" + search_data['imei'] + "%'"

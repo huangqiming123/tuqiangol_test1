@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
@@ -26,6 +27,7 @@ class TestCase1108GlobSearchDevSearchHigher(unittest.TestCase):
         self.search_sql = SearchSql()
         self.driver.wait(1)
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.clear_cookies()
         self.driver.wait(1)
 
@@ -61,7 +63,7 @@ class TestCase1108GlobSearchDevSearchHigher(unittest.TestCase):
         self.global_dev_search_page.check_start_date_type('2022021551')
         # 获取日期错误的提示
         get_text = self.global_dev_search_page.get_text_after_input_date()
-        self.assertEqual('日期不符合格式，请重新选择。', get_text)
+        self.assertEqual(self.assert_text.glob_search_page_date_formate_error(), get_text)
 
         # 验证结束日期的格式
         # 点击时间段
@@ -72,7 +74,7 @@ class TestCase1108GlobSearchDevSearchHigher(unittest.TestCase):
         self.global_dev_search_page.check_end_date_type('2022021551')
         # 获取日期错误的提示
         get_text = self.global_dev_search_page.get_text_after_input_date()
-        self.assertEqual('日期不符合格式，请重新选择。', get_text)
+        self.assertEqual(self.assert_text.glob_search_page_date_formate_error(), get_text)
 
         # 验证欠费、激活的按钮
         self.global_dev_search_page.click_arrearage_button()
@@ -86,29 +88,29 @@ class TestCase1108GlobSearchDevSearchHigher(unittest.TestCase):
         # 验证基本信息的提示语是否正确
         # imei
         get_text = self.global_dev_search_page.get_text_dev_info()
-        self.assertEqual('请输入IMEI号', get_text)
+        self.assertEqual(self.assert_text.glob_search_page_text('imei'), get_text)
 
         # 车牌号
         self.global_dev_search_page.click_car_plate_number_dev_info()
         get_text = self.global_dev_search_page.get_text_dev_info()
-        self.assertEqual('请输入车牌号', get_text)
+        self.assertEqual(self.assert_text.glob_search_page_text('车牌号'), get_text)
 
         # sn
         self.global_dev_search_page.click_sn_dev_info()
         get_text = self.global_dev_search_page.get_text_dev_info()
-        self.assertEqual('请输入SN', get_text)
+        self.assertEqual(self.assert_text.glob_search_page_text('sn'), get_text)
 
         # 车架号
         self.global_dev_search_page.click_vin_dev_info()
         get_text = self.global_dev_search_page.get_text_dev_info()
-        self.assertEqual('请输入车架号', get_text)
+        self.assertEqual(self.assert_text.glob_search_page_text('车架号'), get_text)
 
         # sim卡号
         self.global_dev_search_page.click_sim_dev_info()
         get_text = self.global_dev_search_page.get_text_dev_info()
-        self.assertEqual('请输入SIM卡号', get_text)
+        self.assertEqual(self.assert_text.glob_search_page_text('sim'), get_text)
 
         # 设备名称
         self.global_dev_search_page.click_dev_name_dev_info()
         get_text = self.global_dev_search_page.get_text_dev_info()
-        self.assertEqual('请输入设备名称', get_text)
+        self.assertEqual(self.assert_text.glob_search_page_text('name'), get_text)

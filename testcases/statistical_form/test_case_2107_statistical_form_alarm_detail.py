@@ -40,10 +40,6 @@ class TestCase2107StatisticalFormAlarmDetail(unittest.TestCase):
         self.assertEqual(expect_url, self.alarm_info_page.actual_url_click_alarm())
         # 点击告警详情
         self.alarm_info_page.click_alarm_detail_list()
-        # 断言
-        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
-        self.assertEqual('告警详情', self.alarm_info_page.actual_text_after_click_alarm_detail())
-        self.driver.default_frame()
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_alarm_detail_form(n)

@@ -39,8 +39,6 @@ class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
                          self.statistical_form_page.actual_url_after_statistical_form())
 
         self.statistical_form_page.click_over_speed_button()
-        # 断言
-        self.assertEqual('超速报表', self.statistical_form_page.actual_text_after_click_over_speed_button())
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_over_speed_form(n)

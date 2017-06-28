@@ -3,6 +3,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.account_center.account_center_visual_account_page import AccountCenterVisualAccountPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -13,6 +14,7 @@ from pages.login.login_page import LoginPage
 
 # 账户中心-虚拟账户管理
 # author:孙燕妮
+
 
 class TestCase023AccountCenterVisualAccount(unittest.TestCase):
     def setUp(self):
@@ -25,6 +27,7 @@ class TestCase023AccountCenterVisualAccount(unittest.TestCase):
         self.driver.set_window_max()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -44,7 +47,8 @@ class TestCase023AccountCenterVisualAccount(unittest.TestCase):
         # 获取虚拟账户管理title
         visual_account_title = self.account_center_page_visual_account.get_visual_account_title()
         # 验证消息中心title是否正确显示
-        self.assertIn("虚拟账号管理", visual_account_title, "虚拟账户管理title有误!")
+        self.assertIn(self.assert_text.account_center_page_virtual_account_manager(), visual_account_title,
+                      "虚拟账户管理title有误!")
         csv_file = self.account_center_page_read_csv.read_csv('add_visual_account.csv')
         csv_data = csv.reader(csv_file)
         for row in csv_data:
@@ -58,7 +62,7 @@ class TestCase023AccountCenterVisualAccount(unittest.TestCase):
             self.account_center_page_visual_account.save_add_info()
             # 验证是否保存成功
             save_status = self.account_center_page_visual_account.get_save_status()
-            self.assertIn("操作成功", save_status, "保存成功")
+            self.assertIn(self.assert_text.account_center_page_operation_done(), save_status, "保存成功")
             self.driver.wait()
         csv_file.close()
         # 退出登录

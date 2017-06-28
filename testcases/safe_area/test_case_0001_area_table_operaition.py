@@ -1,6 +1,7 @@
 import unittest
 from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
@@ -16,6 +17,7 @@ class TestCase0001AreaTableOperaition(unittest.TestCase):
 
         self.base_page.open_page()
         self.driver.set_window_max()
+        self.assert_text = AssertText()
         self.log_in_base.log_in()
         self.safe_area_page.click_control_after_click_safe_area()
 
@@ -38,14 +40,14 @@ class TestCase0001AreaTableOperaition(unittest.TestCase):
         # 点击列表中的编辑
         self.safe_area_page.click_list_edit_button()
         # 断言
-        self.assertEqual('编辑', self.safe_area_page.get_text_after_click_edit())
+        self.assertEqual(self.assert_text.safe_area_page_edit_text(), self.safe_area_page.get_text_after_click_edit())
         # 输入内容保存
         self.safe_area_page.ensure_edit_list('名称', '描述')
 
         # 点击列表中的编辑
         self.safe_area_page.click_list_edit_button()
         # 断言
-        self.assertEqual('编辑', self.safe_area_page.get_text_after_click_edit())
+        self.assertEqual(self.assert_text.safe_area_page_edit_text(), self.safe_area_page.get_text_after_click_edit())
         # 输入内容保存
         self.safe_area_page.click_cancel_edit()
 

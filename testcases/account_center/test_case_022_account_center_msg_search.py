@@ -2,6 +2,7 @@ import csv
 import unittest
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_msg_center_page import AccountCenterMsgCenterPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -25,6 +26,7 @@ class TestCase022AccountCenterMsgSearch(unittest.TestCase):
         self.account_center_page_operation_log = AccountCenterOperationLogPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.account_center_page_msg_center = AccountCenterMsgCenterPage(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.connect_sql = ConnectSql()
@@ -48,7 +50,7 @@ class TestCase022AccountCenterMsgSearch(unittest.TestCase):
         # 获取消息中心title
         msg_center_title = self.account_center_page_msg_center.get_msg_center_title()
         # 验证消息中心title是否正确显示
-        self.assertIn("消息中心", msg_center_title, "消息中心title有误!")
+        self.assertIn(self.assert_text.account_center_page_message_center_text(), msg_center_title, "消息中心title有误!")
 
         csv_file = self.account_center_page_read_csv.read_csv('search_massage_data.csv')
         csv_data = csv.reader(csv_file)
@@ -63,11 +65,40 @@ class TestCase022AccountCenterMsgSearch(unittest.TestCase):
                 'status': row[2]
             }
             self.account_center_page_operation_log.add_data_to_search_massages(search_data)
+            connect1 = self.connect_sql.connect_tuqiang_sql()
+            # 创建数据库游标
+            cur = connect1.cursor()
+            # 执行sql脚本查询当前登录账号的userId,fullParent
+            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "';"
+            cur.execute(get_id_sql)
+            # 读取数据
+            user_relation = cur.fetchall()
+            # 遍历数据
+            for row in user_relation:
+                user_relation_id = {
+                    "account": row[0],
+                    "userId": row[1],
+                    "fullParent": row[2]
+                }
+
+                # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
+                get_lower_account_sql = "select userId from user_info where fullParentId like" + \
+                                        "'" + user_relation_id["fullParent"] + user_relation_id["userId"] + "%'" + ";"
+                cur.execute(get_lower_account_sql)
+                # 读取数据
+                lower_account = cur.fetchall()
+                lower_account_list = [user_relation_id["userId"]]
+                for range1 in lower_account:
+                    for range2 in range1:
+                        lower_account_list.append(range2)
+                self.lower_account_tuple = tuple(lower_account_list)
+            cur.close()
+            connect1.close()
 
             connect = self.connect_sql.connect_tuqiang_sql()
             # 创建数据库游标
             cur = connect.cursor()
-            get_total_sql = self.search_sql.search_massage_sql(current_account, search_data)
+            get_total_sql = self.search_sql.search_massage_sql(self.lower_account_tuple, search_data)
             print(get_total_sql)
             cur.execute(get_total_sql)
             # 读取数据

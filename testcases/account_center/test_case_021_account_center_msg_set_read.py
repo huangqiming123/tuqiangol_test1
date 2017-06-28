@@ -1,6 +1,7 @@
 import unittest
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_msg_center_page import AccountCenterMsgCenterPage
 
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -21,6 +22,7 @@ class TestCase021AccountCenterMsgSetRead(unittest.TestCase):
         self.account_center_page_msg_center = AccountCenterMsgCenterPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -41,7 +43,7 @@ class TestCase021AccountCenterMsgSetRead(unittest.TestCase):
         msg_center_title = self.account_center_page_msg_center.get_msg_center_title()
 
         # 验证消息中心title是否正确显示
-        self.assertIn("消息中心", msg_center_title, "消息中心title有误!")
+        self.assertIn(self.assert_text.account_center_page_message_center_text(), msg_center_title, "消息中心title有误!")
         # 获取左侧栏目-消息中心-x条未读
         unread_msg_num = int(self.account_center_page_msg_center.get_unread_msg_num())
 
@@ -71,13 +73,13 @@ class TestCase021AccountCenterMsgSetRead(unittest.TestCase):
                 self.driver.wait(1)
                 status_text = self.account_center_page_msg_center.get_status_text()
 
-                self.assertIn("操作成功", status_text, "操作失败")
+                self.assertIn(self.assert_text.account_center_page_operation_done(), status_text, "操作失败")
 
                 # 设置搜索条件-消息状态为“未读”，判断未读消息列表是否为空
                 self.account_center_page_msg_center.set_search_status_unread()
                 no_msg_text = self.account_center_page_msg_center.get_no_msg_text()
 
-                self.assertIn("暂无数据", no_msg_text, "未读消息列表未清空")
+                self.assertIn(self.assert_text.account_center_page_no_data_text(), no_msg_text, "未读消息列表未清空")
 
 
 
@@ -91,12 +93,12 @@ class TestCase021AccountCenterMsgSetRead(unittest.TestCase):
 
                 status_text = self.account_center_page_msg_center.get_status_text()
 
-                self.assertIn("操作成功", status_text, "操作失败")
+                self.assertIn(self.assert_text.account_center_page_operation_done(), status_text, "操作失败")
 
                 # 设置搜索条件-消息状态为“未读”，判断未读消息列表是否为空
                 self.account_center_page_msg_center.set_search_status_unread()
                 no_msg_text = self.account_center_page_msg_center.get_no_msg_text()
-                self.assertIn("暂无数据", no_msg_text, "未读消息列表未清空")
+                self.assertIn(self.assert_text.account_center_page_no_data_text(), no_msg_text, "未读消息列表未清空")
                 # 退出登录
                 self.account_center_page_navi_bar.usr_logout()
         else:

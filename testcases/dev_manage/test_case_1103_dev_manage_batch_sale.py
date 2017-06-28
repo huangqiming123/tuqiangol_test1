@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.dev_manage.dev_manage_page_read_csv import DevManagePageReadCsv
@@ -19,6 +20,7 @@ class TestCase1103DevManageBatchSale(unittest.TestCase):
         self.dev_manage_page_read_csv = DevManagePageReadCsv()
         self.driver.wait(1)
         self.driver.clear_cookies()
+        self.assert_text = AssertText()
         self.driver.wait(1)
 
     def tearDown(self):
@@ -53,7 +55,7 @@ class TestCase1103DevManageBatchSale(unittest.TestCase):
         # 搜索无数据
         self.dev_manage_page.search_customer_after_click_batch_sale_dev('无数据')
         get_text = self.dev_manage_page.get_search_customer_no_data_text_after_batch_sale_dev()
-        self.assertEqual('  暂无数据 ', get_text)
+        self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text)
 
         # 获取选中设备的数量
         dev_number = self.dev_manage_page.get_select_dev_number()

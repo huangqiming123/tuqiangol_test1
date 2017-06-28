@@ -49,8 +49,6 @@ class TestCase2111GuideManchineReportSearchUser(unittest.TestCase):
 
         # 点击停留报表
         self.statistical_form_page.click_guide_manchine_report_button()
-        # 断言
-        self.assertEqual('导游播报统计', self.statistical_form_page.actual_text_after_click_guide_manchine_report_button())
 
         # 循环点击用户
         self.statistical_form_page.switch_to_guide_manchine_report_frame()

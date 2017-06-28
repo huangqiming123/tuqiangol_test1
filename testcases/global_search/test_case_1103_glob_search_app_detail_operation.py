@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
@@ -24,6 +25,7 @@ class TestCase1103GlobSearchAppDetailOperation(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.global_search_page_read_csv = GlobleSearchPageReadCsv()
         self.search_sql = SearchSql()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.connect_sql = ConnectSql()
         self.driver.clear_cookies()
@@ -79,7 +81,7 @@ class TestCase1103GlobSearchAppDetailOperation(unittest.TestCase):
         self.global_dev_search_page.ensure_button()
 
         get_text = self.global_dev_search_page.get_text_after_succeed()
-        self.assertEqual('操作成功', get_text)
+        self.assertEqual(self.assert_text.account_center_page_operation_done(), get_text)
 
         # 获取app用户详情页面绑定的设备信息
         get_dev_name = self.global_dev_search_page.get_dev_name_in_app_detail()
@@ -160,7 +162,7 @@ class TestCase1103GlobSearchAppDetailOperation(unittest.TestCase):
                 self.assertEqual(self.base_url + '/deviceReport/statisticalReport', self.driver.get_current_url())
                 # 断言
                 text = self.global_dev_search_page.get_text_after_click_alarm_detail()
-                self.assertEqual('告警详情', text)
+                self.assertEqual(self.assert_text.account_center_page_alarm_details_text(), text)
                 self.driver.close_current_page()
                 sleep(2)
                 self.driver.switch_to_window(current_handle)

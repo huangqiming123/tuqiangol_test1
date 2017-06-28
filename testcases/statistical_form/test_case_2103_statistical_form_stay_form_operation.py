@@ -39,8 +39,6 @@ class TestCase2103SportStatisticalStayFormOperation(unittest.TestCase):
                          self.statistical_form_page.actual_url_after_statistical_form())
         # 点击停留报表
         self.statistical_form_page.click_stay_form_button()
-        # 断言
-        self.assertEqual('停留报表', self.statistical_form_page.actual_text_after_click_stay_form_button())
 
         for n in range(5):
             self.statistical_form_page.click_customer_in_stay_form(n)

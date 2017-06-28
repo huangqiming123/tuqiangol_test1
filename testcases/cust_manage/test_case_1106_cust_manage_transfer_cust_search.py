@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -31,6 +32,7 @@ class TestCase1106CustManageCustTransferCustSearch(unittest.TestCase):
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.cust_manage_page_read_csv = CustManagePageReadCsv()
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -66,4 +68,4 @@ class TestCase1106CustManageCustTransferCustSearch(unittest.TestCase):
         # 1 搜索无数据的内容
         self.cust_manage_basic_info_and_add_cust_page.search_cust('无数据')
         get_text = self.cust_manage_basic_info_and_add_cust_page.get_search_no_data_text()
-        self.assertEqual('  暂无数据 ', get_text)
+        self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text)

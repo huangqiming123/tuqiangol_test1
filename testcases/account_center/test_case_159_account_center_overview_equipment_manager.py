@@ -1,6 +1,7 @@
 import unittest
 from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -23,6 +24,7 @@ class TestCase159AccountCenterOverviewEquipmentManager(unittest.TestCase):
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -51,13 +53,13 @@ class TestCase159AccountCenterOverviewEquipmentManager(unittest.TestCase):
 
                 # 验证文本
                 text = self.account_center_page_details.click_dev_manage_get_text()
-                self.assertEqual('全部设备', text)
+                self.assertEqual(self.assert_text.account_center_page_all_dev_text(), text)
 
                 # 查看控制台告警设置能否打开
                 self.account_center_page_navi_bar.click_alarm_button_in_console()
                 # 断言
                 get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
-                self.assertEqual(' 报警管理', get_text)
+                self.assertEqual(self.assert_text.account_center_page_alarm_manager_text(), get_text)
                 self.account_center_page_navi_bar.close_alarm_in_console()
 
                 self.driver.close_current_page()

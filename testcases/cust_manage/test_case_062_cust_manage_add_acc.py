@@ -3,6 +3,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -35,6 +36,7 @@ class TestCase062CustManageAddAcc(unittest.TestCase):
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.cust_manage_page_read_csv = CustManagePageReadCsv()
         self.connect_sql = ConnectSql()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -100,7 +102,7 @@ class TestCase062CustManageAddAcc(unittest.TestCase):
             # 获取保存操作状态
             status = self.cust_manage_basic_info_and_add_cust_page.acc_info_save_status()
             # 验证是否操作成功
-            self.assertIn("操作成功", status, "操作失败")
+            self.assertIn(self.assert_text.account_center_page_operation_done(), status, "操作失败")
 
             # 搜索新增客户
             self.cust_manage_lower_account_page.input_search_info(add_info["account"])
@@ -118,6 +120,6 @@ class TestCase062CustManageAddAcc(unittest.TestCase):
             del_status = self.cust_manage_lower_account_page.get_del_status()
 
             # 验证是否操作成功
-            self.assertIn("操作成功", del_status, "操作失败")
+            self.assertIn(self.assert_text.account_center_page_operation_done(), del_status, "操作失败")
 
         csv_file.close()

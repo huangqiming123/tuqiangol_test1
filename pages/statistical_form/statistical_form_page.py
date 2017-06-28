@@ -2148,3 +2148,15 @@ class StatisticalFormPage(BasePage):
 
     def user_name_in_guide_manchine_report(self):
         return self.driver.get_element('x,//*[@id="search_text"]').get_attribute('value')
+
+    def click_oil_reoport(self):
+        self.driver.click_element('x,//*[@id="oilReport"]/a')
+
+    def switch_to_oil_report(self):
+        self.driver.switch_to_frame('x,//*[@id="oilReportFrame"]')
+
+    def actual_text_after_click_oil_report_button(self):
+        self.switch_to_oil_report()
+        text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
+        self.driver.default_frame()
+        return text

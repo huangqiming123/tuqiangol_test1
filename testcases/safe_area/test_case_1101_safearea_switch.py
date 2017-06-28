@@ -1,6 +1,7 @@
 import unittest
 from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
@@ -15,6 +16,7 @@ class TestCase1101SafeAreaSwitch(unittest.TestCase):
         self.safe_area_page = SafeAreaPage(self.driver, self.base_url)
 
         self.base_page.open_page()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.log_in_base.log_in_jimitest()
         self.safe_area_page.click_control_after_click_safe_area()
@@ -44,12 +46,12 @@ class TestCase1101SafeAreaSwitch(unittest.TestCase):
                     numbers = self.safe_area_page.get_per_number()
                     for m in range(numbers):
                         text = self.safe_area_page.get_text_safe_area_type(m)
-                        self.assertEqual('围栏', text)
+                        self.assertEqual(self.assert_text.safe_area_page_geo_fence(), text)
                 else:
                     numbers = self.safe_area_page.get_per_number()
                     for m in range(numbers):
                         text = self.safe_area_page.get_text_safe_area_type(m)
-                        self.assertEqual('围栏', text)
+                        self.assertEqual(self.assert_text.safe_area_page_geo_fence(), text)
                     self.safe_area_page.click_next_page()
 
         # 选择黑车地址库
@@ -66,10 +68,10 @@ class TestCase1101SafeAreaSwitch(unittest.TestCase):
                     numbers = self.safe_area_page.get_per_number()
                     for m in range(numbers):
                         text = self.safe_area_page.get_text_safe_area_type(m)
-                        self.assertEqual('黑车库', text)
+                        self.assertEqual(self.assert_text.safe_area_page_black_car_address_text(), text)
                 else:
                     numbers = self.safe_area_page.get_per_number()
                     for m in range(numbers):
                         text = self.safe_area_page.get_text_safe_area_type(m)
-                        self.assertEqual('黑车库', text)
+                        self.assertEqual(self.assert_text.safe_area_page_black_car_address_text(), text)
                     self.safe_area_page.click_next_page()

@@ -2,6 +2,7 @@ import csv
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
@@ -33,6 +34,7 @@ class TestCase153GuideManchineReport(unittest.TestCase):
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
         self.log_in_base.log_in_jimitest()
+        self.assert_text = AssertText()
 
         # 登录之后点击控制台，然后点击设置
         self.statistical_form_page.click_control_after_click_statistical_form_page()
@@ -51,7 +53,8 @@ class TestCase153GuideManchineReport(unittest.TestCase):
         # 点击停留报表
         self.statistical_form_page.click_guide_manchine_report_button()
         # 断言
-        self.assertEqual('导游播报统计', self.statistical_form_page.actual_text_after_click_guide_manchine_report_button())
+        self.assertEqual(self.assert_text.statistical_form_guide_machine_report(),
+                         self.statistical_form_page.actual_text_after_click_guide_manchine_report_button())
 
         # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv('guide_manchine_report_search_data.csv')

@@ -1,6 +1,7 @@
 import unittest
 from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -21,6 +22,7 @@ class TestCase162AccountCenterOverviewAlarm(unittest.TestCase):
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -48,13 +50,14 @@ class TestCase162AccountCenterOverviewAlarm(unittest.TestCase):
                 sleep(2)
 
                 actual_text = self.account_center_page_details.get_actual_text_after_click_alarms()
-                self.assertEqual('告警详情', actual_text, '点击告警后，页面没有跳转到告警总览页面上')
+                self.assertEqual(self.assert_text.account_center_page_alarm_details_text(), actual_text,
+                                 '点击告警后，页面没有跳转到告警总览页面上')
 
                 # 查看控制台告警设置能否打开
                 self.account_center_page_navi_bar.click_alarm_button_in_console()
                 # 断言
                 get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
-                self.assertEqual(' 报警管理', get_text)
+                self.assertEqual(self.assert_text.account_center_page_alarm_manager_text(), get_text)
                 self.account_center_page_navi_bar.close_alarm_in_console()
 
                 self.driver.close_current_page()

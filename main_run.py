@@ -83,7 +83,7 @@ def run_09():
     except:
         print('输入有误，请重新输入！')
         continue'''
-start_time = datetime.datetime(2017, 6, 26, 21, 15, 0)
+start_time = datetime.datetime(2017, 6, 27, 20, 10, 0)
 while datetime.datetime.now() < start_time:
     sleep(5)
 
@@ -135,7 +135,7 @@ for t in thread_list:
 for t in thread_list:
     t.join()
 
-run_09()
+# run_09()
 # 运行后自动关机
 sleep(10)
-os.system('shutdown -s -f')
+# os.system('shutdown -s -f')

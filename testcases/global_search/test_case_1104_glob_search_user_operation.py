@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
@@ -24,6 +25,7 @@ class TestCase1104GlobSearchUserOperation(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.global_search_page_read_csv = GlobleSearchPageReadCsv()
         self.search_sql = SearchSql()
+        self.assert_text = AssertText()
         self.driver.wait(1)
         self.connect_sql = ConnectSql()
         self.driver.clear_cookies()
@@ -99,4 +101,4 @@ class TestCase1104GlobSearchUserOperation(unittest.TestCase):
         self.global_dev_search_page.ensure_button()
 
         get_text = self.global_dev_search_page.get_text_after_succeed()
-        self.assertEqual('操作成功', get_text)
+        self.assertEqual(self.assert_text.account_center_page_operation_done(), get_text)

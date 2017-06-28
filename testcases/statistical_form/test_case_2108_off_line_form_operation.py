@@ -1,6 +1,7 @@
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
@@ -21,6 +22,7 @@ class TestCase2108OffLineFormOperation(unittest.TestCase):
         self.connect_sql = ConnectSql()
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
@@ -45,14 +47,14 @@ class TestCase2108OffLineFormOperation(unittest.TestCase):
 
         # 断言文本
         text = self.statistical_form_page.get_text_after_click_off_line_form_button()
-        self.assertEqual('离线统计', text)
+        self.assertEqual(self.assert_text.statistical_form_off_line_form(), text)
 
         # 检查里面时间格式
         self.statistical_form_page.add_off_time_in_off_line_form('sss')
         # 点击搜索
         self.statistical_form_page.click_search_button_in_off_line_form()
         get_text = self.statistical_form_page.get_text_after_click_search()
-        self.assertEqual('必须是正整数！', get_text)
+        self.assertEqual(self.assert_text.statistical_form_date_formate(), get_text)
 
         # 循环客户树
         for n in range(5):
@@ -64,4 +66,4 @@ class TestCase2108OffLineFormOperation(unittest.TestCase):
         # 搜索客户树无数据
         self.statistical_form_page.add_data_to_search_customer_in_off_line('无数据')
         text = self.statistical_form_page.get_text_after_click_search_in_off_line()
-        self.assertEqual('  暂无数据 ', text)
+        self.assertIn(self.assert_text.account_center_page_no_data_text(), text)

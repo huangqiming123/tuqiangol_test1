@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
@@ -24,6 +25,7 @@ class TestCase1104CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
         self.command_management_page = CommandManagementPage(self.driver, self.base_url)
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.command_management_page_read_csv = CommandManagementPageReadCsv()
+        self.assert_text = AssertText()
 
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
@@ -45,14 +47,14 @@ class TestCase1104CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
         self.assertEqual(expect_url_after_click_command_management,
                          self.command_management_page.actual_url_click_command_management())
         # 断言左侧列表的title文本
-        expect_title_text_after_click_command_management = '指令类型'
+        expect_title_text_after_click_command_management = self.assert_text.command_manager_page_command_type()
         self.assertEqual(expect_title_text_after_click_command_management,
                          self.command_management_page.actual_title_text_after_click_command_management())
 
         # 点击工作模式模板管理
         self.command_management_page.click_lift_list('work_type_template_management')
         # 断言右侧页面的title文本
-        expect_title_text_after_click_work_type_template_management = '工作模式模板管理'
+        expect_title_text_after_click_work_type_template_management = self.assert_text.command_manager_page_work_type_template_management()
         self.assertEqual(expect_title_text_after_click_work_type_template_management,
                          self.command_management_page.actual_title_text_after_click_work_type_template_management())
 
@@ -69,4 +71,4 @@ class TestCase1104CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
         self.command_management_page.add_template_name_in_create_template('')
         self.command_management_page.click_ensure()
         get_name_text_fail = self.command_management_page.get_text_after_click_ensure()
-        self.assertEqual('该项不能为空', get_name_text_fail)
+        self.assertEqual(self.assert_text.command_manager_page_not_null(), get_name_text_fail)

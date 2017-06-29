@@ -577,3 +577,12 @@ class SearchSql(StatisticalFormPage):
 
         sql += " and r.UP_TIME between '" + begin_time + "' and '" + end_time + "' group by m.DEVICE_IMEI;"
         return sql
+
+    def get_oil_report_total_sql(self, all_dev):
+        begin_time = self.get_begin_time_in_oil_report()
+        end_time = self.get_end_time_in_oil_report()
+
+        sql = "select o.id from oil_his_201705 o where o.DEVICE_IMEI in " + str(
+            all_dev) + " and o.POST_TIME between '" + begin_time + "' and '" + end_time + "';"
+
+        return sql

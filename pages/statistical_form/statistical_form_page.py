@@ -2160,3 +2160,76 @@ class StatisticalFormPage(BasePage):
         text = self.driver.get_text('x,/html/body/div/div[1]/div/b')
         self.driver.default_frame()
         return text
+
+    def add_data_to_search_oil_report(self, search_data):
+        self.driver.click_element('x,//*[@id="oilFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
+        self.driver.click_element('x,//*[@id="search_user_btn"]')
+        sleep(2)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)
+
+        # 选择设备
+        self.driver.clear_input('x,//*[@id="imeiInput_oilReport"]')
+        sleep(1)
+        self.driver.click_element('x,//*[@id="oilFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(1)
+
+        all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_oilReport"]/li'))
+        all_group_num = len(all_group_list)
+        for n in range(1, all_group_num):
+            sleep(1)
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
+        self.driver.click_element('x,//*[@id="treeModal_oilReport"]/div[2]/label/div/ins')
+        self.driver.click_element('x,//*[@id="treeModal_oilReport"]/div[2]/div/button[1]')
+
+        self.driver.click_element('x,//*[@id="oilFrom"]/div[1]/div[1]/div/div/div/span[2]')
+        sleep(2)
+        if search_data['choose_date'] == '今天':
+            self.driver.click_element('x,//*[@id="oilFrom"]/div[1]/div[1]/div/div/div/div/ul/li[1]')
+
+        elif search_data['choose_date'] == '昨天':
+            self.driver.click_element('x,//*[@id="oilFrom"]/div[1]/div[1]/div/div/div/div/ul/li[2]')
+
+        elif search_data['choose_date'] == '本周':
+            self.driver.click_element('x,//*[@id="oilFrom"]/div[1]/div[1]/div/div/div/div/ul/li[3]')
+
+        elif search_data['choose_date'] == '上周':
+            self.driver.click_element('x,//*[@id="oilFrom"]/div[1]/div[1]/div/div/div/div/ul/li[4]')
+
+        elif search_data['choose_date'] == '本月':
+            self.driver.click_element('x,//*[@id="oilFrom"]/div[1]/div[1]/div/div/div/div/ul/li[5]')
+
+        elif search_data['choose_date'] == '上月':
+            self.driver.click_element('x,//*[@id="oilFrom"]/div[1]/div[1]/div/div/div/div/ul/li[6]')
+
+        elif search_data['choose_date'] == '自定义':
+            js = 'document.getElementById("startTime_overspeed").removeAttribute("readonly")'
+            self.driver.execute_js(js)
+            self.driver.operate_input_element('x,//*[@id="startTime_overspeed"]', search_data['begin_time'])
+            js = 'document.getElementById("endTime_overspeed").removeAttribute("readonly")'
+            self.driver.execute_js(js)
+            self.driver.operate_input_element('x,//*[@id="endTime_overspeed"]', search_data['end_time'])
+
+        self.driver.click_element('x,//*[@id="oilFrom"]/div[2]/div[3]/button')
+        sleep(5)
+
+    def get_begin_time_in_oil_report(self):
+        begin_time = self.driver.get_element('startTime_overspeed').get_attribute('value')
+        return begin_time
+
+    def get_end_time_in_oil_report(self):
+        begin_time = self.driver.get_element('endTime_overspeed').get_attribute('value')
+        return begin_time
+
+    def get_total_in_oil_report(self):
+        a = self.driver.get_element('x,//*[@id="paging-oil"]').get_attribute('style')
+        if a == 'display: none;':
+            return 0
+        elif a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="paging-oil"]', 'x,//*[@id="oil-tbody"]')
+            return total

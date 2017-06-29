@@ -2233,3 +2233,44 @@ class StatisticalFormPage(BasePage):
             new_paging = NewPaging(self.driver, self.base_url)
             total = new_paging.get_total_number('x,//*[@id="paging-oil"]', 'x,//*[@id="oil-tbody"]')
             return total
+
+    def click_customer_in_oil_form(self, n):
+        self.driver.click_element('x,//*[@id="oilFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="tree_%s_span"]' % str(n + 1))
+        sleep(2)
+
+    def click_search_dev_button_in_oil_report(self):
+        self.driver.click_element('x,//*[@id="oilFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(2)
+
+    def get_group_number_in_oil_form(self):
+        a = self.driver.get_element('x,//*[@id="treeModal_oilReport"]').get_attribute('style')
+        if a == 'display: block;':
+            number = len(list(self.driver.get_elements('x,//*[@id="treeModal_oilReport"]/li')))
+            return number
+        else:
+            return 0
+
+    def click_defalut_group_in_oil_form(self):
+        self.driver.click_element('x,//*[@id="dev_tree_oilReport_1_switch"]')
+        sleep(2)
+
+    def get_dev_number_in_oil_form(self, m):
+        text = self.driver.get_text(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/a/span[2]' % str(
+                m + 1))
+        number = text.split('(')[1].split(')')[0]
+        return number
+
+    def click_per_group_in_oil_form(self, m):
+        self.driver.click_element(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                m + 1))
+        sleep(2)
+
+    def get_dev_number_list_in_oil_form(self, m):
+        number = len(list(self.driver.get_elements(
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
+                m + 1))))
+        return number

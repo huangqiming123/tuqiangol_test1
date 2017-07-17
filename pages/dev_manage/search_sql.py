@@ -1,7 +1,7 @@
 class SearchSql(object):
     def search_dev_sql(self, user_id, lower_account_tuple, search_data):
         # 查询设备的sql
-        sql = "select d.id from equipment_detail d, equipment_mostly m, assets_organize o,equipment_electricity x where d.imei = m.imei and o.id = m.orgId"
+        sql = "select d.id from equipment_detail d, equipment_mostly m, user_group o,equipment_expiration x where d.imei = m.imei and o.id = m.orgId"
         sql += " and x.imei = d.imei"
         if search_data['next'] == '':
             sql += " and m.userId = '%s'" % user_id

@@ -52,6 +52,10 @@ class TestCase1102SportStatisticalMileageFormExceptionSearch(unittest.TestCase):
         self.statistical_form_page2.click_mileage_pull_down()
         self.driver.wait()
 
+        # 验证搜索下级的imei可以搜索到
+        # 填写下级的imei搜索
+        self.statistical_form_page2.input_imei_to_search_in_mileage_form()
+
     def tearDown(self):
         # 退出浏览器
         self.driver.quit_browser()

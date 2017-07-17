@@ -41,6 +41,7 @@ class TestCase101DevManageDevComplexSearch(unittest.TestCase):
         self.base_page.open_page()
         # 登录
         self.log_in_base.log_in()
+        self.dev_manage_page.click_account_center_button()
         current_account = self.log_in_base.get_log_in_account()
 
         self.dev_manage_page.enter_dev_manage()

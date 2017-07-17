@@ -744,3 +744,9 @@ class StatisticalFormPage2(BasePage):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[33]'))
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[33]' % str(n + 1))
         return number
+
+    def get_imei(self):
+        return ''
+
+    def input_imei_to_search_in_mileage_form(self):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_mileageReport"]', '')

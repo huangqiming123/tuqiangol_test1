@@ -911,7 +911,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_edit_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[1]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[1]')
         sleep(2)
 
     def click_close_edit_button(self):
@@ -973,15 +973,15 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[2]')
 
     def click_look_place_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[3]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[3]')
         sleep(2)
 
     def get_dev_name_after_click_console(self):
         return self.driver.get_text(
-            'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[4]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
+            'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[3]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
 
     def click_track_playback_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
         sleep(2)
         self.driver.click_element('l,轨迹回放')
         sleep(2)
@@ -993,7 +993,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="mapview"]/div[3]/div/div[1]/b')
 
     def click_driving_recond_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
         sleep(2)
         self.driver.click_element('l,行车记录')
         sleep(2)
@@ -1002,7 +1002,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="mapview"]/div[2]/div/div[1]/b')
 
     def click_street_scape_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
         sleep(2)
         self.driver.click_element('l,街景')
         sleep(2)
@@ -1072,7 +1072,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_look_alarm_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
         sleep(2)
         self.driver.click_element('l,查看告警')
         sleep(2)
@@ -1281,7 +1281,7 @@ class DevManagePages(BasePage):
         return b
 
     def switch_to_dev_edit_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[32]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[28]/div[2]/iframe')
 
     def get_imei_in_detail(self):
         self.switch_to_dev_edit_frame()
@@ -1312,7 +1312,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[6]')
 
     def get_dev_group_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[10]')
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[9]')
 
     def get_dev_type_in_detail(self):
         self.switch_to_dev_edit_frame()
@@ -1339,7 +1339,7 @@ class DevManagePages(BasePage):
         return a
 
     def click_sale_in_list_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[2]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[2]')
         sleep(2)
 
     def click_close_sale_in_list_button(self):
@@ -1501,7 +1501,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="checkTbody"]/tr/td[3]')
 
     def get_dev_status_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[9]')
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[8]')
 
     def click_select_shut_down(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
@@ -1537,7 +1537,7 @@ class DevManagePages(BasePage):
         return number
 
     def get_text_dev_status(self, m):
-        text = self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[9]' % str(m))
+        text = self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[8]' % str(m))
         return text
 
     def click_select_starting_up(self):
@@ -1582,5 +1582,9 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_fails(self):
-        self.driver.click_element('x,/html/body/div[29]/span[1]/a')
+        self.driver.click_element('x,/html/body/div[25]/span[1]/a')
         sleep(2)
+
+    def click_account_center_button(self):
+        self.driver.click_element('x,//*[@id="accountCenter"]/a')
+        sleep(3)

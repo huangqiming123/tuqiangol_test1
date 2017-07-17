@@ -59,12 +59,6 @@ class TestCase1108GlobSearchDevSearchHigher(unittest.TestCase):
             get_customer_text = self.global_dev_search_page.get_customer_text()
             self.assertEqual(get_customer_name, get_customer_text)
 
-        # 验证开始日期的格式
-        self.global_dev_search_page.check_start_date_type('2022021551')
-        # 获取日期错误的提示
-        get_text = self.global_dev_search_page.get_text_after_input_date()
-        self.assertEqual(self.assert_text.glob_search_page_date_formate_error(), get_text)
-
         # 验证结束日期的格式
         # 点击时间段
         self.global_dev_search_page.click_time_quantum_button()

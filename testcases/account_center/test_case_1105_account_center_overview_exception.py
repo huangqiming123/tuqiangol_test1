@@ -32,6 +32,7 @@ class TestCase1105AccountCenterOverviewException(unittest.TestCase):
 
         # 登录
         self.log_in_base.log_in()
+        self.account_center_page_navi_bar.click_account_center_button()
         # 点击快速销售
         sleep(10)
         self.account_center_page_detail.fast_sales()

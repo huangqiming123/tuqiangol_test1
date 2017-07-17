@@ -109,7 +109,7 @@ class TestCase1109DevManageSaleInList(unittest.TestCase):
 
         fail_reason = self.dev_manage_page.get_fail_reason()
         self.assertEqual(self.assert_text.dev_page_repetition_text(), fail_reason)
-        self.dev_manage_page.click_close_fail()
+        self.dev_manage_page.click_close_fails()
 
         # 添加不存在的imei
         self.dev_manage_page.add_dev_to_sale('我就是要添加不存在的')
@@ -122,4 +122,4 @@ class TestCase1109DevManageSaleInList(unittest.TestCase):
 
         fail_reason = self.dev_manage_page.get_fail_reason()
         self.assertEqual(self.assert_text.dev_page_inexistence_text(), fail_reason)
-        self.dev_manage_page.click_close_fail()
+        self.dev_manage_page.click_close_fails()

@@ -26,7 +26,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
 
     # 获取左侧栏目-消息中心-x条未读
     def get_unread_msg_num(self):
-        unread_msg_num = self.driver.get_element("unReadTotal").text
+        unread_msg_num = self.driver.get_element('x,//*[@id="unReadTotal"]').text
         return unread_msg_num
 
     # 设置搜索项-消息状态-未读
@@ -162,7 +162,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
         sn = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[3]/div[1]/input")
         engine_number = self.get_length("x,//*[@id='engineNumber']")
         phone = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[1]/div[2]/input")
-        id_card = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[2]/input")
+        # id_card = self.get_length('x,//*[@id="device_info_b]/fieldset[1]/div[2]/div[2]/input')
         car_frame = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[3]/div[2]/input")
 
         # 安装信息
@@ -179,7 +179,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
             "sn": sn,
             "engine_number": engine_number,
             "phone": phone,
-            "id_card": id_card,
+            # "id_card": id_card,
             "car_frame": car_frame,
             "install_company": install_company,
             "install_personnel": install_personnel,

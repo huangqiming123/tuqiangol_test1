@@ -42,6 +42,7 @@ class TestCase023AccountCenterVisualAccount(unittest.TestCase):
         sleep(2)
         # 登录
         self.log_in_base.log_in()
+        self.account_center_page_navi_bar.click_account_center_button()
         # 进入虚拟账户管理
         self.account_center_page_visual_account.enter_visual_account()
         # 获取虚拟账户管理title

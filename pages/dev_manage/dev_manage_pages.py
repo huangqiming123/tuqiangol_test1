@@ -811,6 +811,9 @@ class DevManagePages(BasePage):
         elif search_data['choose_time'] == '平台到期时间':
             self.driver.click_element(
                 'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[5]/div[1]/div/div/div/ul/li[2]')
+        elif search_data['choose_time'] == '用户到期时间':
+            self.driver.click_element(
+                'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[5]/div[1]/div/div/div/ul/li[3]')
         sleep(2)
         self.driver.operate_input_element('x,//*[@id="startTime_input"]', search_data['begin_time'])
         self.driver.operate_input_element('x,//*[@id="endTime_input"]', search_data['end_time'])
@@ -1569,11 +1572,15 @@ class DevManagePages(BasePage):
         sleep(3)
 
     def click_unbundle_dev(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
         sleep(2)
         self.driver.click_element('l,解绑')
         sleep(2)
 
     def click_more_button(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
+        sleep(2)
+
+    def click_close_fails(self):
+        self.driver.click_element('x,/html/body/div[29]/span[1]/a')
         sleep(2)

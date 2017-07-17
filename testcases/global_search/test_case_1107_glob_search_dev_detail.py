@@ -66,7 +66,7 @@ class TestCase1107GlobSearchDevDetail(unittest.TestCase):
                                  self.driver.get_current_url())
                 # 获取页面的抬头的文字
                 text = self.global_dev_search_page.get_text_after_click_track_play()
-                self.assertEqual(self, text)
+                self.assertEqual(self.assert_text.dev_page_track_replay_text(), text)
                 # 获取页面抬头的设备名称和imei
                 dev_name_and_dev_imei = self.global_dev_search_page.get_dev_name_and_imei_after_click_track_play()
                 self.assertIn(dev_imei_in_detail, dev_name_and_dev_imei)

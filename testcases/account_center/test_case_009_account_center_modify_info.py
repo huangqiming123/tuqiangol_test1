@@ -43,6 +43,7 @@ class TestCase009AccountCenterModifyInfo(unittest.TestCase):
             self.base_page.open_page()
             # 登录账号
             self.log_in_base.log_in()
+            self.account_center_page_navi_bar.click_account_center_button()
             # 招呼栏修改资料
             save_status = self.account_center_page_navi_bar.modify_usr_info(user_to_modify_info["username"],
                                                                             user_to_modify_info["phone"],

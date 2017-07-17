@@ -1,7 +1,8 @@
 class SearchSql(object):
     def search_dev_sql(self, user_id, lower_account_tuple, search_data):
         # 查询设备的sql
-        sql = "select d.id from equipment_detail d, equipment_mostly m, assets_organize o where d.imei = m.imei and o.id = m.orgId"
+        sql = "select d.id from equipment_detail d, equipment_mostly m, assets_organize o,equipment_electricity x where d.imei = m.imei and o.id = m.orgId"
+        sql += " and x.imei = d.imei"
         if search_data['next'] == '':
             sql += " and m.userId = '%s'" % user_id
 
@@ -12,9 +13,9 @@ class SearchSql(object):
                 sql += " and m.mcType like '%" + search_data['dev_type'] + "%'"
 
             if search_data['past_due'] == '即将过期':
-                sql += " and DATEDIFF(m.expiration,CURDATE())<= 30 and DATEDIFF(m.expiration,CURDATE())>= 0"
+                sql += " and ((DATEDIFF(m.expiration,CURDATE())<= 30 and DATEDIFF(m.expiration,CURDATE())>= 0) or (DATEDIFF(x.expiration,CURDATE())<= 30 and DATEDIFF(x.expiration,CURDATE())>= 0))"
             elif search_data['past_due'] == '已过期':
-                sql += " and DATEDIFF(m.expiration,CURDATE())<= 0"
+                sql += " and (DATEDIFF(m.expiration,CURDATE())<= 0 or DATEDIFF(x.expiration,CURDATE())<= 0)"
 
             if search_data['plate_numbers'] != '':
                 sql += " and d.vehicleNumber like '%" + search_data['plate_numbers'] + "%'"
@@ -40,6 +41,11 @@ class SearchSql(object):
                     sql += " and m.expiration >= '%s'" % search_data['begin_time']
                 if search_data['end_time'] != '':
                     sql += " and m.expiration <= '%s'" % search_data['end_time']
+            elif search_data['choose_time'] == '用户到期时间':
+                if search_data['begin_time'] != '':
+                    sql += " and x.expiration >= '%s'" % search_data['begin_time']
+                if search_data['end_time'] != '':
+                    sql += " and x.expiration <= '%s'" % search_data['end_time']
 
             if search_data['band_status'] == '已绑定':
                 sql += " and m.bindUserId is not null"
@@ -72,9 +78,9 @@ class SearchSql(object):
                 sql += " and m.mcType like '%" + search_data['dev_type'] + "%'"
 
             if search_data['past_due'] == '即将过期':
-                sql += " and DATEDIFF(m.expiration,CURDATE())<= 30 and DATEDIFF(m.expiration,CURDATE())>= 0"
+                sql += " and ((DATEDIFF(m.expiration,CURDATE())<= 30 and DATEDIFF(m.expiration,CURDATE())>= 0) or (DATEDIFF(x.expiration,CURDATE())<= 30 and DATEDIFF(x.expiration,CURDATE())>= 0))"
             elif search_data['past_due'] == '已过期':
-                sql += " and DATEDIFF(m.expiration,CURDATE())<= 0"
+                sql += " and (DATEDIFF(m.expiration,CURDATE())<= 0 or DATEDIFF(x.expiration,CURDATE())<= 0)"
 
             if search_data['plate_numbers'] != '':
                 sql += " and d.vehicleNumber like '%" + search_data['plate_numbers'] + "%'"
@@ -100,6 +106,11 @@ class SearchSql(object):
                     sql += " and m.expiration >= '%s'" % search_data['begin_time']
                 if search_data['end_time'] != '':
                     sql += " and m.expiration <= '%s'" % search_data['end_time']
+            elif search_data['choose_time'] == '用户到期时间':
+                if search_data['begin_time'] != '':
+                    sql += " and x.expiration >= '%s'" % search_data['begin_time']
+                if search_data['end_time'] != '':
+                    sql += " and x.expiration <= '%s'" % search_data['end_time']
 
             if search_data['band_status'] == '已绑定':
                 sql += " and m.bindUserId is not null"

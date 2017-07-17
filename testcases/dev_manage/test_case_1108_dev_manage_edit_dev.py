@@ -107,9 +107,6 @@ class TestCase1108DevManageEditDev(unittest.TestCase):
         driver_vehicle_number_max_len = self.dev_manage_page.driver_vehicle_number_max_len()
         self.assertEqual('50', driver_vehicle_number_max_len)
 
-        driver_iccid_max_len = self.dev_manage_page.get_driver_iccid_max_len()
-        self.assertEqual('18', driver_iccid_max_len)
-
         driver_sn_max_len = self.dev_manage_page.get_driver_sn_max_len()
         self.assertEqual('50', driver_sn_max_len)
 

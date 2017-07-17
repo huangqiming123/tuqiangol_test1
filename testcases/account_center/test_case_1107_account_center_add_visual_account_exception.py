@@ -34,6 +34,7 @@ class TestCase1107AccountCenterAddVisualEditException(unittest.TestCase):
 
         # 登录
         self.log_in_base.log_in()
+        self.account_center_page_navi_bar.click_account_center_button()
         # 进入虚拟账户管理
         self.visual_account_page.enter_visual_account()
         # 添加虚拟账号、保存

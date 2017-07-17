@@ -41,7 +41,7 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
-        self.log_in_base.log_in()
+        self.log_in_base.log_in_jimitest()
         self.current_account = self.log_in_base.get_log_in_account()
 
         # 登录之后点击控制台，然后点击指令管理

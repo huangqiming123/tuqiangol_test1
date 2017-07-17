@@ -72,7 +72,7 @@ class TestCase1103SafeAreaExpertion(unittest.TestCase):
         self.safe_area_page.click_ensure()
         # 获取保存后的文本
         text = self.safe_area_page.get_text_after_ensure()
-        self.assertEqual(self.assert_text.account_center_page_operation_done(), text)
+        self.assertIn(self.assert_text.account_center_page_operation_done(), text)
 
         # 选择围栏编辑
         self.safe_area_page.click_select_fence_button()

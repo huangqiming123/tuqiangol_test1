@@ -109,7 +109,7 @@ class TestCase1103CommandManageCreateTemplateNormalMode(unittest.TestCase):
         get_text_fail_limit_cycle = self.command_management_page.get_text_fail_limit_cycles()
         get_texts_fail_limit_cycle = self.command_management_page.get_texts_fail_limit_cycles()
         self.assertEqual(
-            self.assert_text.command_manager_page_must_be_integer() + self.assert_text.command_manager_page_must_than_90(),
+            self.assert_text.command_manager_page_must_than_90() + self.assert_text.command_manager_page_must_be_integer(),
             get_text_fail_limit_cycle + get_texts_fail_limit_cycle)
 
         # 点击添加

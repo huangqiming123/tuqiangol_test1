@@ -25,6 +25,7 @@ class TestCase1101AccountCenterModifyInfoException(unittest.TestCase):
         "修改资料错误提示"
 
         self.log_in_base.log_in()
+        self.account_center_page_navi_bar.click_account_center_button()
         self.driver.wait(1)
         # 点击招呼栏的修改资料
         self.account_center_page_navi_bar.click_modify_usr_info()

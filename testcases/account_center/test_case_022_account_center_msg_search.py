@@ -42,6 +42,7 @@ class TestCase022AccountCenterMsgSearch(unittest.TestCase):
     def test_account_center_msg_search(self):
         self.base_page.open_page()
         self.log_in_base.log_in()
+        self.account_center_page_navi_bar.click_account_center_button()
         # 获取登录账号的用户名
         current_account = self.log_in_base.get_log_in_account()
 

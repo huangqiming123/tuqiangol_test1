@@ -1777,10 +1777,12 @@ class StatisticalFormPage(BasePage):
             elif search_data['choose_date'] == '':
                 # 填写
                 self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[1]')
+                sleep(2)
                 # 填写开始时间
                 self.driver.operate_input_element('x,//*[@id="startTime_mileage"]', search_data['begin_time'])
+                sleep(2)
                 # 填写结束时间
-                self.driver.operate_input_element('x,//*[@id="startTime_mileage"]', search_data['end_time'])
+                self.driver.operate_input_element('x,//*[@id="endTime_mileage"]', search_data['end_time'])
 
         # 点击搜索
         self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[3]/button')

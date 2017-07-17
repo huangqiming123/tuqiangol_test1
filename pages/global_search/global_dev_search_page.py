@@ -896,13 +896,13 @@ class GlobalDevSearchPage(BasePage):
 
     def get_dev_bound_user_in_app_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        text = self.driver.get_text('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[7]')
+        text = self.driver.get_text('x,//*[@id="complex_mobileUser_device_tbody"]/tr/td[8]')
         self.driver.default_frame()
         return text
 
     def click_dev_operation_detail_in_app_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[8]/a[1]')
+        self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr/td[9]/a[1]')
         sleep(2)
         self.driver.default_frame()
 
@@ -938,13 +938,13 @@ class GlobalDevSearchPage(BasePage):
 
     def get_dev_bound_user_in_dev_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[7]')
+        text = self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]')
         self.driver.default_frame()
         return text
 
     def click_track_replay_button_in_app_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[8]/a[2]')
+        self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[9]/a[2]')
         sleep(2)
         self.driver.default_frame()
 
@@ -966,7 +966,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_track_preset_button_in_app_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[8]/a[3]')
+        self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[9]/a[3]')
         sleep(2)
         self.driver.default_frame()
 
@@ -980,7 +980,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_alarm_detail_button_in_app_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[8]/a[4]')
+        self.driver.click_element('x,//*[@id="complex_mobileUser_device_tbody"]/tr[1]/td[9]/a[4]')
         sleep(2)
         self.driver.default_frame()
 
@@ -1242,7 +1242,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_track_play_button_in_dev_search(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[8]/a[2]')
+        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[9]/a[2]')
         sleep(2)
         self.driver.default_frame()
 
@@ -1254,7 +1254,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_track_preset_button_in_dev_search(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[8]/a[3]')
+        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[9]/a[3]')
         sleep(2)
         self.driver.default_frame()
 
@@ -1263,13 +1263,13 @@ class GlobalDevSearchPage(BasePage):
 
     def click_look_alarm_button_in_dev_search(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[8]/a[4]')
+        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[9]/a[4]')
         sleep(2)
         self.driver.default_frame()
 
     def click_detail_in_dev_search(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[8]/a[1]')
+        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[9]/a[1]')
         sleep(2)
         self.driver.default_frame()
 
@@ -1305,25 +1305,25 @@ class GlobalDevSearchPage(BasePage):
 
     def click_track_play_button_in_dev_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]/a[2]')
+        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]/a[2]')
         sleep(2)
         self.driver.default_frame()
 
     def click_track_preset_button_in_dev_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]/a[3]')
+        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]/a[3]')
         sleep(2)
         self.driver.default_frame()
 
     def click_look_alarm_button_in_dev_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]/a[4]')
+        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]/a[4]')
         sleep(2)
         self.driver.default_frame()
 
     def click_look_place_button_in_dev_detail(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
-        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[8]/a[5]')
+        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]/a[5]')
         sleep(2)
         self.driver.default_frame()
 
@@ -1332,7 +1332,7 @@ class GlobalDevSearchPage(BasePage):
 
     def get_type_after_click_look_place(self):
         return self.driver.get_text(
-            'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[3]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
+            'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[4]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
 
     def click_dev_search_button(self):
         self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')

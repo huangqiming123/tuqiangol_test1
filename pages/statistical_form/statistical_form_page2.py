@@ -1,4 +1,6 @@
 from time import sleep
+
+from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.statistical_form.search_sql import SearchSql
 
@@ -746,7 +748,213 @@ class StatisticalFormPage2(BasePage):
         return number
 
     def get_imei(self):
-        return ''
+        return '123456780012355'
 
     def input_imei_to_search_in_mileage_form(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_mileageReport"]', '')
+        self.driver.operate_input_element('x,//*[@id="imeiInput_travelReport"]', self.get_imei())
+        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(5)
+
+    def input_imei_to_search_in_speed_form(self):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_overSpeedReport"]', self.get_imei())
+        self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(5)
+
+    def input_imei_to_search_in_stay_form(self):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_stopCar"]', self.get_imei())
+        self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(5)
+
+    def input_imei_to_search_in_paking_form(self):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_stopNotOff"]', self.get_imei())
+        self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(5)
+
+    def input_imei_to_search_in_acc_form(self):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_acc"]', self.get_imei())
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(5)
+
+    def input_imei_to_search_in_alarm_overview_form(self):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_alarmOverview"]', self.get_imei())
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
+        sleep(5)
+
+    def mileage_form_validation_times(self, type):
+        iframe = "mileageReportFrame"
+        start = "startTime_mileage"
+        end = "endTime_mileage"
+        pull_down = "x,//*[@id='dateSelect_div']/div/span[2]"
+        today = "x,//*[@id='dateSelect_div']/div/div/ul/li[2]"
+        yesterday = "x,//*[@id='dateSelect_div']/div/div/ul/li[3]"
+        this_week = "x,//*[@id='dateSelect_div']/div/div/ul/li[4]"
+        last_week = "x,//*[@id='dateSelect_div']/div/div/ul/li[5]"
+        this_month = "x,//*[@id='dateSelect_div']/div/div/ul/li[6]"
+        last_month = "x,//*[@id='dateSelect_div']/div/div/ul/li[7]"
+        random = "x,//*[@id='dateSelect_div']/div/div/ul/li[1]"
+        time = self.sport_statistical_validation_times(type, iframe, start, end, pull_down, yesterday,
+                                                       this_week, last_week, this_month, last_month, random, today)
+        return time
+
+    def input_imei_to_search_in_mileage_forms(self):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_mileageReport"]', self.get_imei())
+        self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(5)
+
+    def sport_statistical_validation_times(self, type, iframe, start, end, pull_down, yesterday, this_week, last_week,
+                                           this_month, last_month, random, today):
+        search_sql = self.instance_search_sql()
+        # 定位iframe
+        try:
+            self.driver.switch_to_iframe(iframe)
+            print("执行了iframe")
+        except:
+            print("没有执行iframe")
+        # 点击下拉框
+        self.driver.click_element(pull_down)
+        self.driver.wait()
+
+        if type == "今天":
+            self.driver.click_element(today)
+            # 获取页面显示的时间
+            page_time = self.get_sport_statistical_time(start, end)
+            # 获取实际时间（今天）
+            sql_start_time = search_sql.get_today_begin_date()
+            sql_end_time = search_sql.get_today_end_times()
+            time = {
+                "page_time": page_time,
+                "sql_time": {"sql_start_time": sql_start_time, "sql_end_time": sql_end_time}
+            }
+            print(time)
+            return time
+
+        elif type == "昨天":
+            self.driver.click_element(yesterday)
+            # 获取页面显示的时间
+            page_time = self.get_sport_statistical_time(start, end)
+            # 获取实际时间（昨天）
+            sql_start_time = search_sql.get_yesterday_begin_time()
+            sql_end_time = search_sql.get_yesterday_end_time()
+            time = {
+                "page_time": page_time,
+                "sql_time": {"sql_start_time": sql_start_time, "sql_end_time": sql_end_time}
+            }
+            print(time)
+            return time
+
+        elif type == "本周":
+            self.driver.click_element(this_week)
+            page_time = self.get_sport_statistical_time(start, end)
+            # 获取实际时间(本周)
+            sql_start_time = search_sql.get_this_week_begin_time()
+            sql_end_time = search_sql.get_today_end_times()
+            time = {
+                "page_time": page_time,
+                "sql_time": {"sql_start_time": sql_start_time, "sql_end_time": sql_end_time}
+            }
+            print(time)
+            return time
+
+        elif type == "上周":
+            self.driver.click_element(last_week)
+            self.driver.wait(1)
+            page_time = self.get_sport_statistical_time(start, end)
+            # 获取实际时间(上周)
+            sql_start_time = search_sql.get_last_week_begin_time()
+            sql_end_time = search_sql.get_last_week_end_time()
+            time = {
+                "page_time": page_time,
+                "sql_time": {"sql_start_time": sql_start_time, "sql_end_time": sql_end_time}
+            }
+            print(time)
+            return time
+
+        elif type == "本月":
+            self.driver.click_element(this_month)
+            page_time = self.get_sport_statistical_time(start, end)
+            # 获取实际时间(本月)
+            sql_start_time = search_sql.get_this_month_begin_time()
+            sql_end_time = search_sql.get_today_end_times()
+            time = {
+                "page_time": page_time,
+                "sql_time": {"sql_start_time": sql_start_time, "sql_end_time": sql_end_time}
+            }
+            print(time)
+            return time
+
+        elif type == "上月":
+            self.driver.click_element(last_month)
+            page_time = self.get_sport_statistical_time(start, end)
+            # 获取实际时间(本周)
+            sql_start_time = search_sql.get_last_month_begin_time()
+            sql_end_time = search_sql.get_last_month_end_time()
+            time = {
+                "page_time": page_time,
+                "sql_time": {"sql_start_time": sql_start_time, "sql_end_time": sql_end_time}
+            }
+            print(time)
+            return time
+
+        elif type == "自定义":
+            # 获取点击自定义之前的时间
+            page_time = self.get_sport_statistical_time(start, end)
+            self.driver.click_element(random)
+            time = {
+                "page_time": page_time,
+                "sql_time": {"sql_start_time": page_time["page_start_time"], "sql_end_time": page_time["page_end_time"]}
+            }
+            return time
+        # 退出frame
+        self.driver.default_frame()
+
+    def input_imei_to_search_in_alarm_detail_form(self):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_alarmDetail"]', self.get_imei())
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/span/button')
+        sleep(5)
+
+    def get_search_imei_in_mileage_form(self):
+        text = self.driver.get_text('x,//*[@id="dev_tree_travelReport_1_span"]')
+        return text.split('[')[1].split(']')[0]
+
+    def get_dev_user_name(self):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        sql = "SELECT o.nickName FROM equipment_mostly m INNER JOIN user_info o on m.userId = o.userId WHERE m.imei = %s;" % self.get_imei()
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        user_name = data[0][0]
+        cursor.close()
+        connect.close()
+        return user_name
+
+    def get_dev_user_name_web(self):
+        return self.driver.get_element('x,//*[@id="search_text"]').get_attribute('value').split('(')[0]
+
+    def get_search_imei_in_speed_form(self):
+        text = self.driver.get_text('x,//*[@id="dev_tree_overSpeedReport_1_span"]')
+        return text.split('[')[1].split(']')[0]
+
+    def get_search_imei_in_stay_form(self):
+        text = self.driver.get_text('x,//*[@id="dev_tree_stopCar_1_span"]')
+        return text.split('[')[1].split(']')[0]
+
+    def get_search_imei_in_paking_form(self):
+        text = self.driver.get_text('x,//*[@id="dev_tree_stopNotOff_1_span"]')
+        return text.split('[')[1].split(']')[0]
+
+    def get_search_imei_in_acc_form(self):
+        text = self.driver.get_text('x,//*[@id="dev_tree_acc_1_span"]')
+        return text.split('[')[1].split(']')[0]
+
+    def get_search_imei_in_alarm_overview_form(self):
+        text = self.driver.get_text('x,//*[@id="dev_tree_alarmOverview_1_span"]')
+        return text.split('[')[1].split(']')[0]
+
+    def get_search_imei_in_mileage_forms(self):
+        text = self.driver.get_text('x,//*[@id="dev_tree_mileageReport_1_a"]')
+        return text.split('[')[1].split(']')[0]
+
+    def get_search_imei_in_alarm_detail_forms(self):
+        text = self.driver.get_text('x,//*[@id="dev_tree_alarmDetail_1_span"]')
+        return text.split('[')[1].split(']')[0]

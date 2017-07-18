@@ -1,12 +1,7 @@
 from time import sleep
 import time
-
 import datetime
-
-import math
-
 from pages.base.base_page import BasePage
-from pages.base.base_page_server import BasePageServer
 from pages.base.new_paging import NewPaging
 
 
@@ -2276,3 +2271,7 @@ class StatisticalFormPage(BasePage):
             'x,/html/body/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/ul/li' % str(
                 m + 1))))
         return number
+
+    def click_static_reoport_button(self):
+        self.driver.click_element('')
+        sleep(3)

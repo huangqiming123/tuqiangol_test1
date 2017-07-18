@@ -13,8 +13,8 @@ from driver.driver_choose import browser
 class AutomateDriver(object):
     def __init__(self):
         self.driver = browser('chrome')
-        # self.base_url = 'http://tujunsat.jimicloud.com'
-        self.base_url = 'http://www.tuqiangol.com'
+        self.base_url = 'http://tujunsat.jimicloud.com'
+        # self.base_url = 'http://www.tuqiangol.com'
 
     def navigate(self, url):
         self.driver.get(self.base_url + url)

@@ -1,4 +1,6 @@
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver import AutomateDriver
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
@@ -7,9 +9,9 @@ from pages.statistical_form.statistical_form_page2 import StatisticalFormPage2
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-# 统计报表--里程报表--异常搜索验证
+# 统计报表--行程报表--异常搜索验证
 # author:戴招利
-class TestCase1102SportStatisticalMileageFormExceptionSearch(unittest.TestCase):
+class TestCase1102SportStatisticalTracelFormExceptionSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
@@ -54,7 +56,12 @@ class TestCase1102SportStatisticalMileageFormExceptionSearch(unittest.TestCase):
 
         # 验证搜索下级的imei可以搜索到
         # 填写下级的imei搜索
+        sleep(2)
         self.statistical_form_page2.input_imei_to_search_in_mileage_form()
+        # 断言
+        # 获取查询设备的imei
+        search_imei = self.statistical_form_page2.get_search_imei_in_mileage_form()
+        self.assertEqual(search_imei, self.statistical_form_page2.get_imei())
 
     def tearDown(self):
         # 退出浏览器

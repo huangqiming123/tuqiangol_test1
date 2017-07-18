@@ -1,4 +1,5 @@
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
 
@@ -51,6 +52,15 @@ class TestCase1104SportStatisticalStayFormExceptionSearch(unittest.TestCase):
             text = self.statistical_form_page2.search_inexistence_user(user)
             print(text)
             self.assertIn(user, text, "搜索后的数据不存在实际搜索出的数据中")
+
+        # 验证搜索下级的imei可以搜索到
+        # 填写下级的imei搜索
+        sleep(2)
+        self.statistical_form_page2.input_imei_to_search_in_stay_form()
+        # 断言
+        # 获取查询设备的imei
+        search_imei = self.statistical_form_page2.get_search_imei_in_stay_form()
+        self.assertEqual(search_imei, self.statistical_form_page2.get_imei())
 
     def tearDown(self):
         # 退出浏览器

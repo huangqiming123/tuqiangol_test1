@@ -588,3 +588,6 @@ class SearchSql(StatisticalFormPage):
             all_dev) + " and o.POST_TIME between '" + begin_time + "' and '" + end_time + "';"
 
         return sql
+
+    def get_today_end_times(self):
+        return (datetime.datetime.now() - datetime.timedelta(hours=1)).strftime("%Y-%m-%d %H") + ':00'

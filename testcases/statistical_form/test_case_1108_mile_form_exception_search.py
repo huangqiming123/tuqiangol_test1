@@ -9,9 +9,9 @@ from pages.statistical_form.statistical_form_page2 import StatisticalFormPage2
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-# 统计报表--acc报表--异常搜索验证
+# 统计报表--里程报表--异常搜索验证
 # author:戴招利
-class TestCase1106SportStatisticalAccFormExceptionSearch(unittest.TestCase):
+class TestCase1108MileFormExceptionSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
@@ -26,22 +26,22 @@ class TestCase1106SportStatisticalAccFormExceptionSearch(unittest.TestCase):
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
 
-    def test_acc_form_exception_search(self):
+    def test_mile_form_exception_search(self):
         """
-         acc报表页面，异常搜索数据验证
+         里程报表页面，异常搜索数据验证
         """
         # 登录
         self.log_in_base.log_in_jimitest()
-        # 点击进入统计报表、acc报表
+        # 点击进入统计报表、里程报表
         self.statistical_form_page.click_control_after_click_statistical_form_page()
-        self.statistical_form_page.click_acc_form_button()
+        self.statistical_form_page.click_mileage_form_buttons()
 
         # 取开始、结束时间
         type = ["今天", "本周", "昨天", "上周", "本月", "上月", "自定义"]
         data = ["暂无数据"]
 
         for time in type:
-            time = self.statistical_form_page2.acc_form_validation_time(time)
+            time = self.statistical_form_page2.mileage_form_validation_times(time)
             self.assertEqual(time["page_time"]["page_start_time"], time["sql_time"]["sql_start_time"], "实际与显示的开始时间不相符")
             self.assertEqual(time["page_time"]["page_end_time"], time["sql_time"]["sql_end_time"], "实际与显示的结束时间不相符")
 
@@ -54,10 +54,10 @@ class TestCase1106SportStatisticalAccFormExceptionSearch(unittest.TestCase):
         # 验证搜索下级的imei可以搜索到
         # 填写下级的imei搜索
         sleep(2)
-        self.statistical_form_page2.input_imei_to_search_in_acc_form()
+        self.statistical_form_page2.input_imei_to_search_in_mileage_forms()
         # 断言
         # 获取查询设备的imei
-        search_imei = self.statistical_form_page2.get_search_imei_in_acc_form()
+        search_imei = self.statistical_form_page2.get_search_imei_in_mileage_forms()
         self.assertEqual(search_imei, self.statistical_form_page2.get_imei())
 
     def tearDown(self):

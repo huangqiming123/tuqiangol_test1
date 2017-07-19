@@ -36,6 +36,7 @@ class TestCase012AccountCenterOperDeviceLog(unittest.TestCase):
     def test_account_center_oper_device_log(self):
         self.base_page.open_page()
         self.log_in_base.log_in()
+        self.log_in_base.click_account_center_button()
         # 获取登录账号的用户名
         current_account = self.log_in_base.get_log_in_account()
 
@@ -45,6 +46,7 @@ class TestCase012AccountCenterOperDeviceLog(unittest.TestCase):
         # 判断当前页面是否正确跳转至业务日志页面
         expect_url = self.base_url + "/userFeedback/toHelp"
         self.assertEqual(expect_url, self.driver.get_current_url(), "当前页面跳转错误")
+        i = 0
 
         csv_file = self.account_center_page_read_csv.read_csv('search_equipment_manager_log_data.csv')
         csv_data = csv.reader(csv_file)
@@ -101,9 +103,10 @@ class TestCase012AccountCenterOperDeviceLog(unittest.TestCase):
                     for range2 in range1:
                         total_list.append(range2)
                 total = len(total_list)
-                print('本次查询数据库的条数为：%s' % total)
+                b = i + 1
+                print('第%s次查询数据库的条数为：%s' % (b, total))
                 web_total = self.account_center_page_operation_log.count_curr_busi_log_num()
-                print('本次查询页面的条数是：%s' % web_total)
+                print('第%s次查询页面的条数是：%s' % (b, web_total))
                 self.assertEqual(total, web_total)
 
             cur.close()

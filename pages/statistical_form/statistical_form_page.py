@@ -2273,5 +2273,62 @@ class StatisticalFormPage(BasePage):
         return number
 
     def click_static_reoport_button(self):
-        self.driver.click_element('')
+        self.driver.click_element('x,//*[@id="staticReport"]/a')
         sleep(3)
+
+    def switch_to_static_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="staticReportFrame"]')
+        sleep(1)
+
+    def add_data_to_search_static_report(self, search_data):
+        self.switch_to_static_frame()
+        self.driver.click_element('x,//*[@id="staticFrom"]/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
+        self.driver.click_element('x,//*[@id="search_user_btn"]')
+        sleep(3)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)
+
+        self.driver.operate_input_element('x,//*[@id="startDay"]', search_data['begin_day'])
+        self.driver.operate_input_element('x,//*[@id="startHour"]', search_data['begin_hours'])
+
+        self.driver.operate_input_element('x,//*[@id="endDay"]', search_data['end_day'])
+        self.driver.operate_input_element('x,//*[@id="endHour"]', search_data['end_hours'])
+
+        a = self.driver.get_element('x,//*[@id="icheckContainSubOnLine"]').is_selected()
+        if a == False and search_data['next'] == '1':
+            self.driver.click_element('x,//*[@id="staticFrom"]/div[2]/div[2]/label/div/ins')
+        elif a == True and search_data['next'] == '0':
+            self.driver.click_element('x,//*[@id="staticFrom"]/div[2]/div[2]/label/div/ins')
+
+        self.driver.click_element('x,//*[@id="staticFrom"]/div[2]/div[3]/button')
+        sleep(5)
+        self.driver.default_frame()
+
+    def get_text_in_static_form_report(self):
+        self.switch_to_static_frame()
+        text = self.driver.get_text('x,/html/body/div[1]/div[1]/div/b')
+        self.driver.default_frame()
+        return text
+
+    def get_total_mile_in_moving_overview(self):
+        return self.driver.get_text('x,//*[@id="allmileage"]')
+
+    def get_total_over_speed_times_in_moving_overview(self):
+        return self.driver.get_text('x,//*[@id="alloverSpeedTimes"]')
+
+    def get_total_stop_over_times_in_moving_overview(self):
+        return self.driver.get_text('x,//*[@id="allstopTimes"]')
+
+    def get_total_number_in_moving_overview(self):
+        return len(list(self.driver.get_elements('x,//*[@id="run-tbody"]/tr')))
+
+    def get_per_mile_in_list_in_moving_overview(self, n):
+        return self.driver.get_text('x,//*[@id="run-tbody"]/tr[%s]/td[5]' % str(n + 1))
+
+    def get_per_over_speed_in_list_in_moving_overview(self, n):
+        return self.driver.get_text('x,//*[@id="run-tbody"]/tr[%s]/td[6]' % str(n + 1))
+
+    def get_per_stop_over_in_list_in_moving_overview(self, n):
+        return self.driver.get_text('x,//*[@id="run-tbody"]/tr[%s]/td[7]' % str(n + 1))

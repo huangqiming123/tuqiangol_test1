@@ -38,6 +38,7 @@ class TestCase1107GlobSearchDevDetail(unittest.TestCase):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.log_in_base.log_in_jimitest()
+        self.log_in_base.click_account_center_button()
         self.global_dev_search_page.click_easy_search()
         # 关闭
         self.global_dev_search_page.close_search()
@@ -126,8 +127,8 @@ class TestCase1107GlobSearchDevDetail(unittest.TestCase):
                 # 获取页面的抬头的文字
                 text = self.global_dev_search_page.get_text_after_click_look_place()
                 self.assertEqual(dev_imei_in_detail, text)
-                get_dev_name = self.global_dev_search_page.get_type_after_click_look_place()
-                self.assertEqual(dev_name_in_detail, get_dev_name)
+                # get_dev_name = self.global_dev_search_page.get_type_after_click_look_place()
+                # self.assertEqual(dev_name_in_detail, get_dev_name)
                 # 获取页面抬头的设备名称和ime
                 self.driver.close_current_page()
                 sleep(2)

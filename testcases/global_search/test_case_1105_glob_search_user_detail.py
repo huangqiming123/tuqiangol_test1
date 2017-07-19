@@ -38,6 +38,7 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.log_in_base.log_in_jimitest()
+        self.log_in_base.click_account_center_button()
         self.global_dev_search_page.click_easy_search()
         # 关闭
         self.global_dev_search_page.close_search()
@@ -59,7 +60,7 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
         self.global_dev_search_page.click_user_info_in_user_detail()
         # 获取用户信息中用户名称，用户类型、用户账号、上级用户
         user_name_in_detail = self.global_dev_search_page.get_user_name_in_detail()
-        self.assertEqual(user_name, user_name_in_detail)
+        self.assertIn(user_name, user_name_in_detail)
 
         user_type_in_detail = self.global_dev_search_page.get_user_type_in_detail()
         self.assertEqual(user_type, user_type_in_detail)
@@ -114,7 +115,7 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
         self.global_dev_search_page.click_add_user_in_user_info()
         # 获取新增客户默认的上级
         up_user_in_add_user = self.global_dev_search_page.get_up_user_in_add_user()
-        self.assertEqual(user_name, up_user_in_add_user)
+        self.assertIn(user_name, up_user_in_add_user)
 
         # 验证账号
         # 为空

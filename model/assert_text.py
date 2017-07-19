@@ -270,3 +270,6 @@ class AssertText(object):
 
     def statistical_form_date_formate(self):
         return '必须是正整数！'
+
+    def statistical_form_page_static_report_text(self):
+        return '静止统计'

@@ -47,6 +47,8 @@ class TestCase155StaticReport(unittest.TestCase):
 
         # 点击停留报表
         self.statistical_form_page.click_static_reoport_button()
+        self.assertEqual(self.assert_text.statistical_form_page_static_report_text(),
+                         self.statistical_form_page.get_text_in_static_form_report())
 
         csv_file = self.statistical_form_page_read_csv.read_csv('static_report_data.csv')
         csv_data = csv.reader(csv_file)
@@ -58,6 +60,11 @@ class TestCase155StaticReport(unittest.TestCase):
                 continue
             search_data = {
                 'search_user': row[0],
-                '': row[1],
+                'begin_day': row[1],
+                'begin_hours': row[2],
+                'end_day': row[3],
+                'end_hours': row[4],
+                'next': row[5]
             }
+            self.statistical_form_page.add_data_to_search_static_report(search_data)
         csv_file.close()

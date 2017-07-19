@@ -40,6 +40,7 @@ class TestCase028GlobComplexSearchByAllCondi(unittest.TestCase):
         self.base_page.open_page()
         # 登录
         self.log_in_base.log_in()
+        self.log_in_base.click_account_center_button()
         # 点击全局搜索栏-高级搜素按钮
         # 关闭
         self.global_dev_search_page.click_easy_search()

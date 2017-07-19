@@ -38,6 +38,7 @@ class TestCase1106GlobSearchDevOperation(unittest.TestCase):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.log_in_base.log_in_jimitest()
+        self.log_in_base.click_account_center_button()
         self.global_dev_search_page.click_easy_search()
         # 关闭
         self.global_dev_search_page.close_search()

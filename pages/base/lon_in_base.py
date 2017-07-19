@@ -34,3 +34,7 @@ class LogInBase(BasePage):
         self.driver.click_element('x,//*[@id="checkbox"]')
         self.driver.click_element("logins")
         sleep(2)
+
+    def click_account_center_button(self):
+        self.driver.click_element('x,//*[@id="accountCenter"]/a')
+        sleep(4)

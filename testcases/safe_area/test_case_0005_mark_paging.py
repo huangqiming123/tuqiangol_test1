@@ -19,7 +19,6 @@ class TestCase0005MarkPaging(unittest.TestCase):
         self.base_page.open_page()
         self.driver.set_window_max()
         self.log_in_base.log_in()
-        self.current_account = self.log_in_base.get_log_in_account()
         self.safe_area_page.click_control_after_click_safe_area()
         self.safe_area_page_read_csv = SafeAreaPageReadCsv()
 

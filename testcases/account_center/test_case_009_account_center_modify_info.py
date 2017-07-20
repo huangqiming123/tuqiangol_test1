@@ -1,5 +1,6 @@
 import csv
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
@@ -41,6 +42,7 @@ class TestCase009AccountCenterModifyInfo(unittest.TestCase):
             }
             # 打开途强在线首页-登录页
             self.base_page.open_page()
+            sleep(1)
             # 登录账号
             self.log_in_base.log_in()
             self.account_center_page_navi_bar.click_account_center_button()

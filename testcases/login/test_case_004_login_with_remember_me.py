@@ -28,6 +28,8 @@ class TestCase004LoginWithRememberMe(unittest.TestCase):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.log_in_base.log_in()
+        # 点账户中心
+        self.account_center_page_navi_bar.click_account_center_button()
         # 判断登录成功后跳转页面是否正确
         actual_url = self.driver.get_current_url()
         expect_url = self.base_url + "/customer/toAccountCenter"

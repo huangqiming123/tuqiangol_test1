@@ -17,7 +17,8 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 点击进入客户管理页面
     def enter_cust_manage(self):
-        self.driver.click_element('x,//*[@id="customer"]/a')
+        self.driver.wait(1)
+        self.driver.click_element("customer")
         self.driver.wait(1)
 
     # 点击进入账户中心页面
@@ -256,6 +257,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         sleep(2)
 
     def add_data_to_search_account(self, data):
+        sleep(1)
         self.driver.operate_input_element('x,//*[@id="treeDemo_cusTreeKey"]', data['account'])
 
         self.driver.click_element('x,//*[@id="treeDemo_cusTreeSearchBtn"]')

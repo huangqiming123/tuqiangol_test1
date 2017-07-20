@@ -50,7 +50,7 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
 
         # 登录
         self.log_in_base.log_in()
-
+        self.driver.wait(1)
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
 
@@ -66,7 +66,7 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
                 "conn": row[4],
                 "com": row[5]
             }
-
+            sleep(1)
             # 点击单个用户的编辑
             self.cust_manage_lower_account_page.click_acc_edit()
 

@@ -463,6 +463,7 @@ class AlarmInfoPage(BasePage):
         self.driver.click_element('c,autocompleter-item')
 
         # 点击设备搜索
+        self.driver.clear_input('x,//*[@id="imeiInput_alarmOverview"]')
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
         sleep(2)
 

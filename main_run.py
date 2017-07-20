@@ -25,11 +25,11 @@ def run_02():
 def run_03():
     # os.system('python -m test_runner.tuqiangOL_test_runner_cust_manage')
     os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
-    sleep(5)
-    os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
 
 
 def run_04():
+    os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
+    sleep(5)
     os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form')
 
 

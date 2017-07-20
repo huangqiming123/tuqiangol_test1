@@ -1,4 +1,6 @@
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from pages.account_center.account_center_msg_center_page import AccountCenterMsgCenterPage
@@ -45,6 +47,7 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
         if unread_msg_num > 0:
             # 设置搜索条件-消息状态为“未读”，搜索出结果，统计结果列表中的未读消息共几条
             self.account_center_page_msg_center.set_search_status_unread()
+            self.driver.wait()
             count_unread_msg_num = self.account_center_page_msg_center.get_total_unread_logs_num()
             # 判断消息中心左侧栏目的未读消息与搜索结果的未读消息数量是否一致
             self.assertEqual(unread_msg_num, count_unread_msg_num, "消息中心左侧栏目的未读消息与搜索结果的未读消息数量不一致")

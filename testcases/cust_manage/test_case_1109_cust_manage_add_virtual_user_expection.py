@@ -14,8 +14,8 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 新增客户客户数操作
-
+# 新增客户--添加虚拟账号
+# author:戴招利
 class TestCase1101CustManageCustSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
@@ -51,17 +51,17 @@ class TestCase1101CustManageCustSearch(unittest.TestCase):
 
         # 添加客户名称、账号,点击保存
         self.cust_manage_basic_info_and_add_cust_page.add_account_name("虚拟账号")
-        self.cust_manage_basic_info_and_add_cust_page.add_account("xnzh_dzl02")
+        self.cust_manage_basic_info_and_add_cust_page.add_account("xnzh_dzl022")
         self.cust_manage_basic_info_and_add_cust_page.acc_add_save()
 
         connect = self.connect_sql.connect_tuqiang_sql()
         cursor = connect.cursor()
-        get_account_sql = "select account from user_info where account = 'xnzh_dzl02';"
+        get_account_sql = "select account from user_info where account = 'xnzh_dzl022';"
         cursor.execute(get_account_sql)
         user = cursor.fetchall()
         print(user)
         print(len(user))
-        self.assertEqual(0, len(user), "创建普通账号，存在已存在的虚拟账户")
+        self.assertEqual(0, len(user), "添加普通账号时，可成功添加虚拟账户")
 
     def tearDown(self):
         self.driver.quit_browser()

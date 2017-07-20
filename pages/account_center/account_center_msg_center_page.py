@@ -33,14 +33,14 @@ class AccountCenterMsgCenterPage(BasePageServer):
     def set_search_status_unread(self):
         # 点击状态下拉框
         self.driver.click_element(
-            "x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/span[2]")
+            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/span[2]")
         self.driver.wait(1)
         # 选中未读
         self.driver.click_element(
-            "x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[2]")
-        self.driver.wait(1)
+            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[2]")
+        self.driver.wait(2)
         # 点击搜索
-        self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/button")
+        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/button")
         self.driver.wait()
 
     # 设置搜索项-消息状态-已读
@@ -92,13 +92,13 @@ class AccountCenterMsgCenterPage(BasePageServer):
     # 点击“标为已读”
     def set_current_page_status_read(self):
         self.driver.click_element(
-            "x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[1]/button[1]")
+            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[1]/button[1]")
         self.driver.wait()
 
     # 点击“全部标为已读”
     def set_all_msg_status_read(self):
         self.driver.click_element(
-            "x,/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[1]/button[2]")
+            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[1]/button[2]")
         self.driver.wait()
 
     # 获取操作状态文本内容

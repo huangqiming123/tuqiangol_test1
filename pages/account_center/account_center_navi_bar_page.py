@@ -531,5 +531,5 @@ class AccountCenterNaviBarPage(BasePageServer):
         return all_prompt
 
     def click_account_center_button(self):
-        self.driver.click_element('x,//*[@id="accountCenter"]/a')
+        self.driver.click_element("accountCenter")
         sleep(3)

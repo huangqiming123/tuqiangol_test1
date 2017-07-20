@@ -178,3 +178,8 @@ class LoginPage(BasePageServer):
         except:
             prompt = ""
             return prompt
+
+    # 点击首页
+    def click_home_page(self):
+        self.driver.click_element("nomalUserCenter")
+        sleep(3)

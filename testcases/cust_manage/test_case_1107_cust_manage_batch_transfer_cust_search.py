@@ -45,6 +45,7 @@ class TestCase1107CustManageCustBatchTransferCustSearch(unittest.TestCase):
         self.base_page.open_page()
         # 登录
         self.log_in_base.log_in()
+        sleep(1)
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()

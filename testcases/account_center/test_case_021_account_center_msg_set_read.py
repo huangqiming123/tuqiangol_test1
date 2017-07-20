@@ -52,6 +52,7 @@ class TestCase021AccountCenterMsgSetRead(unittest.TestCase):
 
             # 设置搜索条件-消息状态为“未读”，搜索出结果，统计当前未读消息总数
             self.account_center_page_msg_center.set_search_status_unread()
+            self.driver.wait(1)
             # 判断消息中心左侧栏目的未读消息与搜索结果的未读消息数量是否一致
             count_unread_msg_num = self.account_center_page_msg_center.get_total_unread_logs_num()
             self.assertEqual(unread_msg_num, count_unread_msg_num, "消息中心左侧栏目的未读消息与搜索结果的未读消息数量不一致")
@@ -71,15 +72,16 @@ class TestCase021AccountCenterMsgSetRead(unittest.TestCase):
                 self.account_center_page_msg_center.set_current_page_status_read()
 
                 # 验证操作状态是否成功
-                self.driver.wait(1)
+                self.driver.wait()
                 status_text = self.account_center_page_msg_center.get_status_text()
 
                 self.assertIn(self.assert_text.account_center_page_operation_done(), status_text, "操作失败")
+                self.driver.wait()
 
                 # 设置搜索条件-消息状态为“未读”，判断未读消息列表是否为空
                 self.account_center_page_msg_center.set_search_status_unread()
                 no_msg_text = self.account_center_page_msg_center.get_no_msg_text()
-
+                self.driver.wait()
                 self.assertIn(self.assert_text.account_center_page_no_data_text(), no_msg_text, "未读消息列表未清空")
 
 

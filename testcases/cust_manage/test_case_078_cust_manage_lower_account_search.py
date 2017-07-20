@@ -51,6 +51,9 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
 
         # 登录
         self.log_in_base.log_in()
+        # 点击账户中心
+        self.account_center_page_navi_bar.click_account_center_button()
+        current_account = self.log_in_base.get_log_in_account()
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()

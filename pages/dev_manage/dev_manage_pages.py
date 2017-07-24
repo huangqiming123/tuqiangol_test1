@@ -1572,7 +1572,7 @@ class DevManagePages(BasePage):
         sleep(3)
 
     def click_unbundle_dev(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[11]/a[4]')
         sleep(2)
         self.driver.click_element('l,解绑')
         sleep(2)

@@ -138,7 +138,8 @@ class AssertText(object):
         return '用户名不能为空'
 
     def cust_page_user_name_more_than_3(self):
-        return '昵称长度至少3位'
+        # return '昵称长度至少3位'
+        return '用户名称至少3位'
 
     def cust_page_user_account_not_null(self):
         return '账号不能为空'
@@ -147,7 +148,8 @@ class AssertText(object):
         return '账号长度至少3位、不超过30位字符'
 
     def cust_page_user_password_not_null(self):
-        return '请输入密码'
+        # return '请输入密码'
+        return "密码不能为空"
 
     def cust_page_user_password_len(self):
         return '密码长度不能小于6位'

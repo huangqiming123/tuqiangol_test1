@@ -60,7 +60,7 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
             connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()
             get_account_user_info_sql = "SELECT o.parentId from user_info o WHERE o.account = '" + \
-                                        user_to_login['account'] + "'"
+                                        user_to_login['account'] + "';"
             cursor.execute(get_account_user_info_sql)
             get_account_user_info = cursor.fetchall()
             current_user_info = []

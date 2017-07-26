@@ -2332,3 +2332,71 @@ class StatisticalFormPage(BasePage):
 
     def get_per_stop_over_in_list_in_moving_overview(self, n):
         return self.driver.get_text('x,//*[@id="run-tbody"]/tr[%s]/td[7]' % str(n + 1))
+
+    def get_this_month_and_current_account_alarms(self):
+        sleep(2)
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/div/ul/li[6]')
+        sleep(3)
+
+        # 搜索全部设备
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
+        sleep(4)
+        # 获取当前用户下设备有多少个分组
+        number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_alarmOverview"]/li')))
+        for n in range(1, number):
+            sleep(1)
+            self.driver.click_element(
+                'x,/html/body/div/div[2]/div[1]/form/div/div[4]/div/div[1]/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
+
+        self.driver.click_element('x,//*[@id="treeModal_alarmOverview"]/div[2]/label/div/ins')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="treeModal_alarmOverview"]/div[2]/div/button[1]')
+        sleep(3)
+
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[5]/button')
+        sleep(5)
+
+    def click_alarm_overview_list(self):
+        self.driver.click_element('x,//*[@id="alarmOverview"]/a')
+        sleep(2)
+
+    def switch_to_alarm_overview_form_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+
+    def get_total_number_in_search(self):
+        return len(list(self.driver.get_elements('x,//*[@id="alarm_report_tbody"]/tr')))
+
+    def get_per_dev_imei_in_list(self, n):
+        return self.driver.get_text('x,//*[@id="alarm_report_tbody"]/tr[%s]/td[3]' % str(n + 1))
+
+    def search_next_account_in_alarm_overview(self):
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[3]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="cusTreeKey"]', 'hqjtest')
+        self.driver.click_element('x,//*[@id="cusTreeSearchBtn"]')
+        sleep(4)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(3)
+
+    def add_next_dev_imei_in_alarm_overview(self):
+        # 搜索全部设备
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
+        sleep(4)
+        # 获取当前用户下设备有多少个分组
+        number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_alarmOverview"]/li')))
+        for n in range(1, number):
+            sleep(1)
+            self.driver.click_element(
+                'x,/html/body/div/div[2]/div[1]/form/div/div[4]/div/div[1]/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
+
+        self.driver.click_element('x,//*[@id="treeModal_alarmOverview"]/div[2]/label/div/ins')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="treeModal_alarmOverview"]/div[2]/div/button[1]')
+        sleep(3)
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[5]/button')
+        sleep(5)

@@ -72,5 +72,5 @@ class TestCase4101MovingOverviewTest(unittest.TestCase):
             dev_imei = self.statistical_form_page.get_per_dev_imei_in_list(n)
             current_dev_again.append(dev_imei)
         print(current_dev_again)
-        self.assertIn(current_dev, current_dev_again)
+        self.assertIn(str(current_dev).split('[')[1].split(']')[0], str(current_dev_again).split('[')[1].split(']')[0])
         self.driver.default_frame()

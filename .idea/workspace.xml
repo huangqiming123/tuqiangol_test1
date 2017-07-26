@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_4102_alarm_detail_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
@@ -24,14 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_4101_alarm_overview_test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py">
+      <file leaf-file-name="test_case_4102_alarm_detail_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_4102_alarm_detail_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.625">
-              <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.59398496">
+              <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_case_4101_alarm_overview_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/global_search/test_case_1105_glob_search_user_detail.py" />
         <option value="$PROJECT_DIR$/testcases/global_search/test_case_1104_glob_search_user_operation.py" />
         <option value="$PROJECT_DIR$/testcases/global_search/test_case_1103_glob_search_app_detail_operation.py" />
         <option value="$PROJECT_DIR$/testcases/global_search/test_case_1102_glob_search_app_user_operation.py" />
@@ -109,6 +120,7 @@
         <option value="$PROJECT_DIR$/redis_helper_test.py" />
         <option value="$PROJECT_DIR$/testcases/login/test_case_002_login_success_with_ordinary_user.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_4102_alarm_detail_test.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py" />
       </list>
     </option>
@@ -229,29 +241,7 @@
       <recent name="E:\git\tuqiangol_test\testcases\cust_manage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (2)">
-    <configuration default="false" name="Unittests in TestCase4101MovingOverviewTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py" />
-      <option name="CLASS_NAME" value="TestCase4101MovingOverviewTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests in TestCase4102MovingDetailTest">
     <configuration default="false" name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -267,6 +257,28 @@
       <option name="METHOD_NAME" value="test_case_4101_moving_overview_statistical" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase4101MovingOverviewTest (2)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangOL" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py" />
+      <option name="CLASS_NAME" value="TestCase4101MovingOverviewTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -296,7 +308,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -306,9 +318,9 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py" />
-      <option name="CLASS_NAME" value="TestCase4101MovingOverviewTest" />
-      <option name="METHOD_NAME" value="test_case_4101_moving_overview_statistical" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_4102_alarm_detail_test.py" />
+      <option name="CLASS_NAME" value="TestCase4102MovingDetailTest" />
+      <option name="METHOD_NAME" value="test_case_4102_moving_detail_test" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -318,7 +330,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (2)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase4102MovingDetailTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -328,11 +340,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py" />
-      <option name="CLASS_NAME" value="TestCase4101MovingOverviewTest" />
-      <option name="METHOD_NAME" value="test_case_4101_moving_overview_statistical" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_4102_alarm_detail_test.py" />
+      <option name="CLASS_NAME" value="TestCase4102MovingDetailTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -463,19 +475,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4101MovingOverviewTest" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4101MovingOverviewTest (2)" />
       <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4101MovingOverviewTest (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (2)" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4102MovingDetailTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (2)" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4101MovingOverviewTest" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4101MovingOverviewTest (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4102MovingDetailTest" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4101MovingOverviewTest (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase4101MovingOverviewTest (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -489,12 +501,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00025" summary="修改代码">
-      <created>1494558074991</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1494558074991</updated>
     </task>
     <task id="LOCAL-00026" summary="修改代码">
       <created>1494559651977</created>
@@ -784,39 +790,45 @@
       <option name="project" value="LOCAL" />
       <updated>1501037650307</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="修改代码">
+      <created>1501039270855</created>
+      <option name="number" value="00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1501039270855</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical - 2017.07.26 at 10h 11m 27s.xml">
+    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical - 2017.07.26 at 15h 09m 44s.xml">
       <configuration name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical - 2017.07.26 at 10h 22m 46s.xml">
+    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical - 2017.07.26 at 15h 11m 27s.xml">
       <configuration name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical - 2017.07.26 at 10h 35m 28s.xml">
-      <configuration name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" configurationId="tests" />
+    <history-entry file="Unittest_TestCase4102MovingDetailTest_test_case_4102_moving_detail_test - 2017.07.26 at 14h 15m 42s.xml">
+      <configuration name="Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical - 2017.07.26 at 10h 41m 20s.xml">
-      <configuration name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" configurationId="tests" />
+    <history-entry file="Unittest_TestCase4102MovingDetailTest_test_case_4102_moving_detail_test - 2017.07.26 at 14h 45m 08s.xml">
+      <configuration name="Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical - 2017.07.26 at 10h 56m 22s.xml">
-      <configuration name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" configurationId="tests" />
+    <history-entry file="Unittest_TestCase4102MovingDetailTest_test_case_4102_moving_detail_test - 2017.07.26 at 14h 48m 18s.xml">
+      <configuration name="Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical - 2017.07.26 at 10h 59m 52s.xml">
-      <configuration name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical" configurationId="tests" />
+    <history-entry file="Unittest_TestCase4102MovingDetailTest_test_case_4102_moving_detail_test - 2017.07.26 at 14h 57m 16s.xml">
+      <configuration name="Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical_(1) - 2017.07.26 at 11h 12m 30s.xml">
-      <configuration name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (1)" configurationId="tests" />
+    <history-entry file="Unittest_TestCase4102MovingDetailTest_test_case_4102_moving_detail_test - 2017.07.26 at 15h 00m 20s.xml">
+      <configuration name="Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase4101MovingOverviewTest_test_case_4101_moving_overview_statistical_(2) - 2017.07.26 at 11h 14m 36s.xml">
-      <configuration name="Unittest TestCase4101MovingOverviewTest.test_case_4101_moving_overview_statistical (2)" configurationId="tests" />
+    <history-entry file="Unittest_TestCase4102MovingDetailTest_test_case_4102_moving_detail_test - 2017.07.26 at 15h 03m 28s.xml">
+      <configuration name="Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase4101MovingOverviewTest - 2017.07.26 at 10h 49m 24s.xml">
-      <configuration name="Unittests in TestCase4101MovingOverviewTest" configurationId="tests" />
+    <history-entry file="Unittest_TestCase4102MovingDetailTest_test_case_4102_moving_detail_test - 2017.07.26 at 15h 06m 50s.xml">
+      <configuration name="Unittest TestCase4102MovingDetailTest.test_case_4102_moving_detail_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase4101MovingOverviewTest_(1) - 2017.07.26 at 10h 44m 38s.xml">
-      <configuration name="Unittests in TestCase4101MovingOverviewTest (1)" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase4102MovingDetailTest - 2017.07.26 at 15h 15m 31s.xml">
+      <configuration name="Unittests in TestCase4102MovingDetailTest" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -829,7 +841,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116883" sideWeight="0.50842994" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27597404" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24891774" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -886,48 +898,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_1107_glob_search_dev_detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59907836">
-          <caret line="130" column="67" selection-start-line="130" selection-start-column="55" selection-end-line="130" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_1108_glob_search_dev_search_higher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5852535">
-          <caret line="108" column="61" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_001_login_success_with_sales_and_agent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5529954">
-          <caret line="105" column="76" selection-start-line="105" selection-start-column="76" selection-end-line="105" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_002_login_success_with_ordinary_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67741936">
-          <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_003_login_with_logout_dismiss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67741936">
-          <caret line="42" column="89" selection-start-line="42" selection-start-column="89" selection-end-line="42" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/login/test_case_004_login_with_remember_me.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6313364">
@@ -960,20 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/redis_helper_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6296296">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/redis_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6481481">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1218,28 +1174,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_3104_moving_overview_statistical.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49542683">
-          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33231708">
           <caret line="451" column="8" selection-start-line="451" selection-start-column="8" selection-end-line="451" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2201_alarm_overview_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5945122">
-          <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1252,26 +1190,112 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_2201_alarm_overview_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0625">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_3104_moving_overview_statistical.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53571427">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5746756">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/site-packages/redis/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6899351">
+          <caret line="1073" column="39" selection-start-line="1073" selection-start-column="39" selection-end-line="1073" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/site-packages/redis/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7711039">
+          <caret line="863" column="41" selection-start-line="863" selection-start-column="41" selection-end-line="863" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29220778">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redis_helper_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5584415">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#12#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redis_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48701298">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/base/new_paging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7305195">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3328125">
-          <caret line="2372" column="8" selection-start-line="2372" selection-start-column="8" selection-end-line="2372" selection-end-column="8" />
+        <state vertical-scroll-proportion="2.004644">
+          <caret line="2452" column="0" selection-start-line="2452" selection-start-column="0" selection-end-line="2452" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4265625">
-          <caret line="4889" column="57" selection-start-line="4889" selection-start-column="57" selection-end-line="4889" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4330" column="60" selection-start-line="4330" selection-start-column="60" selection-end-line="4330" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_4101_alarm_overview_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.625">
-          <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_4102_alarm_detail_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59398496">
+          <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

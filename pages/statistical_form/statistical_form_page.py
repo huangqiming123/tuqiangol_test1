@@ -2400,3 +2400,53 @@ class StatisticalFormPage(BasePage):
         sleep(3)
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[5]/button')
         sleep(5)
+
+    def click_alarm_detail_list(self):
+        self.driver.click_element('x,//*[@id="alarmDdetails"]/a')
+        sleep(2)
+
+    def switch_to_alarm_detail_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmDdetailsFrame"]')
+
+    def search_current_account_alarms_in_alarm_detail(self):
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/span/button')
+        sleep(3)
+
+        # 获取当前用户下设备有多少个分组
+        number = len(list(self.driver.get_elements('x,//*[@id="dev_tree_alarmDetail"]/li')))
+        for n in range(1, number):
+            sleep(1)
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
+
+        self.driver.click_element('x,//*[@id="treeModal_alarmDetail"]/div[2]/label/div/ins')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="treeModal_alarmDetail"]/div[2]/div/button[1]')
+        sleep(3)
+        self.driver.click_element('x,//*[@id="getAlertInfo_btn"]')
+        sleep(5)
+
+    def get_total_page_after_search(self):
+        new_page = NewPaging(self.driver, self.base_url)
+        return new_page.get_total_page('x,//*[@id="alarm_info_paging"]')
+
+    def get_page_number_data_in_alarm_detail(self):
+        new_page = NewPaging(self.driver, self.base_url)
+        return new_page.get_last_page_number('x,//*[@id="alarm_info_tbody"]')
+
+    def get_per_dev_imei_in_dev_alarm_detail(self, n):
+        return self.driver.get_text('x,//*[@id="alarm_info_tbody"]/tr[%s]/td[3]' % str(n + 1))
+
+    def cilck_per_page_in_alarm_detail(self, m):
+        self.driver.click_element('l,%s' % str(m + 1))
+        sleep(3)
+
+    def search_next_account_in_alarm_detail(self):
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[1]/div/div[1]/span/button')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="cusTreeKey2"]', 'hqjtest')
+        self.driver.click_element('x,//*[@id="cusTreeSearchBtn2"]')
+        sleep(3)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)

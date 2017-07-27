@@ -2,6 +2,7 @@ import os
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 
 # 设备管理页面
@@ -864,7 +865,6 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
-
     def get_dev_number(self):
         a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
         if a == 'display: block;':
@@ -1587,4 +1587,91 @@ class DevManagePages(BasePage):
 
     def click_account_center_button(self):
         self.driver.click_element('x,//*[@id="accountCenter"]/a')
+        sleep(3)
+
+    def click_per_account_in_dev_manage_page(self, n):
+        self.driver.click_element('x,//*[@id="treeDemo_deviceManage_%s_span"]' % str(n + 1))
+        sleep(3)
+
+    def get_per_user_account_in_dev_manage_page(self):
+        return self.driver.get_text('x,//*[@id="userAccount"]')
+
+    def get_account_info(self, user_account):
+        connect_sql = ConnectSql()
+        conncet = connect_sql.connect_tuqiang_sql()
+        cursor = conncet.cursor()
+        sql = "SELECT o.nickName,o.type,o.phone FROM user_info o WHERE o.account = '%s';" % user_account
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        user_info = {
+            'nickname': data[0][0],
+            'type': data[0][1],
+            'phone': data[0][2]
+        }
+        cursor.close()
+        conncet.close()
+        return user_info
+
+    def get_user_nickname_in_page(self):
+        return self.driver.get_text('x,//*[@id="user_account"]')
+
+    def get_user_type_in_page(self):
+        return self.driver.get_text('x,//*[@id="userType"]')
+
+    def get_user_phone_in_page(self):
+        return self.driver.get_text('x,//*[@id="user_phone"]')
+
+    def get_account_nickname_in_cust_tree(self, n):
+        return self.driver.get_text('x,//*[@id="treeDemo_deviceManage_%s_span"]' % str(n + 1)).split('(')[0]
+
+    def click_control_account_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[1]/div[2]/button')
+        sleep(2)
+
+    def get_edit_style_in_dev_page(self):
+        return self.driver.get_element('x,//*[@id="editUserFast"]').get_attribute('style')
+
+    def click_edit_account_button(self):
+        self.driver.click_element('x,//*[@id="editUserFast"]/button')
+        sleep(3)
+
+    def get_up_user_edit_user_in_dev_page(self):
+        return self.driver.get_element('x,//*[@id="topUser"]').get_attribute('value')
+
+    def get_user_type_edit_user_in_dev_page(self):
+        a = self.driver.get_element('x,//*[@id="labelSale"]/div/input').is_selected()
+        b = self.driver.get_element('x,//*[@id="labelDistributor"]/div/input').is_selected()
+        c = self.driver.get_element('x,//*[@id="labelUser"]/div/input').is_selected()
+        if a == True:
+            return '销售'
+        elif b == True:
+            return '代理商'
+        elif c == True:
+            return '用户'
+
+    def get_user_name_edit_user_in_dev_page(self):
+        return self.driver.get_element('x,//*[@id="nickName"]').get_attribute('value')
+
+    def get_user_account_edit_in_dev_page(self):
+        return self.driver.get_element('x,//*[@id="account"]').get_attribute('value')
+
+    def get_user_phone_edit_in_dev_page(self):
+        return self.driver.get_element('x,//*[@id="phone"]').get_attribute('value')
+
+    def click_next_user_in_dev_page(self):
+        self.driver.click_element('x,//*[@id="treeDemo_deviceManage_2_a"]')
+        sleep(3)
+
+    def search_account_in_edit_user(self):
+        self.driver.operate_input_element('x,//*[@id="treeDemo2_cusTreeKey"]', 'account')
+        self.driver.click_element('x,//*[@id="treeDemo2_cusTreeSearchBtn"]')
+        sleep(3)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(4)
+
+    def get_user_name_after_search_in_edit_user(self):
+        return self.driver.get_text('c,curSelectedNode')
+
+    def click_user_to_search_up_user_in_edit_user(self, n):
+        self.driver.click_element('x,//*[@id="treeDemo2_%s_a"]' % str(n + 3))
         sleep(3)

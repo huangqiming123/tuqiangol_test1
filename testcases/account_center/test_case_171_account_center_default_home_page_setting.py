@@ -85,6 +85,7 @@ class TestCase171AccountCenterDefaultHomePageSetting(unittest.TestCase):
                 # 获取默认设置的首页地址
                 expect_url = self.account_center_page_home_page_setting.get_expect_url(setting_text["page_name"])
                 self.assertEqual(expect_url, actual_url, "登录后，默认主页显示错误")
+                sleep(2)
 
         sleep(2)
         self.account_center_page_navi_bar.usr_logout()

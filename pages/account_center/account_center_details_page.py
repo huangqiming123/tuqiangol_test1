@@ -404,7 +404,8 @@ class AccountCenterDetailsPage(BasePageServer):
         return self.driver.get_element('x,//*[@id="safemenu"]/li[1]').get_attribute('class')
 
     def click_dev_manage_get_text(self):
-        return self.driver.get_text('x,//*[@id="allDev"]/div[1]/div/b')
+        # return self.driver.get_text('x,//*[@id="allDev"]/div[1]/div/b')
+        return self.driver.get_text("x,//*[@id='lowerFlag']")
 
     def get_coming_overtime_number(self):
         return self.driver.get_text('x,//*[@id="devExpiring2"]')

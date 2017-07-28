@@ -532,4 +532,5 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     def click_account_center_button(self):
         self.driver.click_element("accountCenter")
-        sleep(3)
+        # self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/ul/li[1]")
+        sleep(2)

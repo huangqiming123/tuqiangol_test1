@@ -145,14 +145,14 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
         self.global_dev_search_page.check_add_user_name_input_in_user_info('12')
         self.global_dev_search_page.click_save_add_user()
         text = self.global_dev_search_page.get_text_name_input_expertion()
-        self.assertEqual(self.assert_text.cust_page_user_name_more_than_3(), text)
+        self.assertEqual(self.assert_text.cust_page_user_name_more_than_3s(), text)
 
         # 密码
         # 为空
         self.global_dev_search_page.click_add_user_password_first_input_in_user_info('')
         self.global_dev_search_page.click_save_add_user()
         get_first_password_text = self.global_dev_search_page.get_first_password_text()
-        self.assertEqual(self.assert_text.cust_page_user_password_not_null(), get_first_password_text)
+        self.assertEqual(self.assert_text.cust_page_user_password_not_nulls(), get_first_password_text)
 
         # 小于6位
         self.global_dev_search_page.click_add_user_password_first_input_in_user_info('12qw')

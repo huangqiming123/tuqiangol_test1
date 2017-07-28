@@ -275,3 +275,9 @@ class AssertText(object):
 
     def statistical_form_page_static_report_text(self):
         return '静止统计'
+
+    def cust_page_user_name_more_than_3s(self):
+        return '昵称长度至少3位'
+
+    def cust_page_user_password_not_nulls(self):
+        return '请输入密码'

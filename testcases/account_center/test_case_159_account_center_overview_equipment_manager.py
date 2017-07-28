@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
+from model.assert_text2 import AssertText2
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -25,6 +26,7 @@ class TestCase159AccountCenterOverviewEquipmentManager(unittest.TestCase):
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.connect_sql = ConnectSql()
         self.assert_text = AssertText()
+        self.assert_text2 = AssertText2()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -53,8 +55,10 @@ class TestCase159AccountCenterOverviewEquipmentManager(unittest.TestCase):
                 self.assertEqual(expect_url, actual_url, '点击设备管理后，实际的url和期望的不一样！')
 
                 # 验证文本
+                # text = self.account_center_page_details.click_dev_manage_get_text()
                 text = self.account_center_page_details.click_dev_manage_get_text()
-                self.assertEqual(self.assert_text.account_center_page_all_dev_text(), text)
+                print(text)
+                self.assertEqual(" " + self.assert_text2.account_center_page_contains_lower_dev_text(), text)
 
                 # 查看控制台告警设置能否打开
                 self.account_center_page_navi_bar.click_alarm_button_in_console()

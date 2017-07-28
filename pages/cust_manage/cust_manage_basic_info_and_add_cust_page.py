@@ -530,3 +530,51 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         text = self.driver.get_text('x,//*[@id="userForm"]/div[6]/div/label')
         self.driver.default_frame()
         return text
+
+    # 当前账户-新增用户（密码默认888888）
+    def add_default_password_acc(self, acc_name, account, phone, email, conn, com):
+        # 编辑客户名称
+        self.driver.operate_input_element("nickName", acc_name)
+        self.driver.wait(1)
+        # 编辑登录账号
+        self.driver.operate_input_element("account", account)
+        self.driver.wait(1)
+        # 编辑电话
+        self.driver.operate_input_element("phone", phone)
+        self.driver.wait(1)
+        # 编辑邮箱
+        self.driver.operate_input_element("email", email)
+        self.driver.wait(1)
+        # 编辑联系人
+        self.driver.operate_input_element("contact", conn)
+        self.driver.wait(1)
+        # 编辑公司名
+        self.driver.operate_input_element("companyName", com)
+        self.driver.wait(1)
+
+    # 修改默认密码
+    def user_default_password_edit(self, password):
+        self.driver.operate_input_element("x,//*[@id='newPwd_advise']", password)
+        self.driver.operate_input_element("x,//*[@id='renewPwd_advise']", password)
+        self.driver.wait(1)
+        self.driver.click_element("x,//*[@id='layui-layer1']/div[3]/a")
+
+    # 修改密码后的提示
+    def user_default_password_edit_prompt(self):
+        prompt = self.driver.get_text("x,/html/body/div[7]/div[2]")
+        print(prompt)
+        self.driver.wait()
+        self.driver.click_element("x,/html/body/div[7]/div[3]/a")
+        return prompt
+
+    # 点击设备管理页面的监控用户
+    def click_dev_page_monitoring_account_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[1]/div[2]/button')
+        sleep(2)
+
+    # 获取控制台--左侧客户名称
+    def get_console_page_username(self):
+        text = self.driver.get_text("x,//*[@id='account']")
+        name = text.split("(")[0]
+        print(name)
+        return name

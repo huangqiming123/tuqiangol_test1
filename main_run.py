@@ -25,11 +25,10 @@ def run_02():
 def run_03():
     # os.system('python -m test_runner.tuqiangOL_test_runner_cust_manage')
     os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
+    os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
 
 
 def run_04():
-    os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
-    sleep(5)
     os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form')
 
 
@@ -135,7 +134,7 @@ for t in thread_list:
 for t in thread_list:
     t.join()
 
-run_09()
+# run_09()
 # 运行后自动关机
 sleep(10)
-os.system('shutdown -s -f')
+# os.system('shutdown -s -f')

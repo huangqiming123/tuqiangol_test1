@@ -38,6 +38,7 @@ class TestCase028GlobComplexSearchByAllCondi(unittest.TestCase):
     def test_glob_complex_search_complex_search(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
+        self.base_page.click_chinese_button()
         # 登录
         self.log_in_base.log_in()
         self.log_in_base.click_account_center_button()

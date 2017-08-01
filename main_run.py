@@ -24,7 +24,7 @@ def run_02():
 
 def run_03():
     # os.system('python -m test_runner.tuqiangOL_test_runner_cust_manage')
-    os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
+    # os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
     os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
 
 
@@ -82,7 +82,7 @@ def run_09():
     except:
         print('输入有误，请重新输入！')
         continue'''
-start_time = datetime.datetime(2017, 7, 22, 1, 10, 0)
+start_time = datetime.datetime(2017, 7, 31, 23, 50, 0)
 while datetime.datetime.now() < start_time:
     sleep(5)
 
@@ -137,4 +137,4 @@ for t in thread_list:
 # run_09()
 # 运行后自动关机
 sleep(10)
-# os.system('shutdown -s -f')
+os.system('shutdown -s -f')

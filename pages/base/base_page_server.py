@@ -17,6 +17,10 @@ class BasePageServer(object):
         self.driver.navigate("/")
         sleep(2)
 
+    def click_chinese_button(self):
+        self.driver.click_element('x,/html/body/footer/div[1]/ul/li[1]/a')
+        sleep(2)
+
     # 列表分页
 
     # 设置列表底部每页共x条

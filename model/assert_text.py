@@ -223,7 +223,7 @@ class AssertText(object):
         return '围栏'
 
     def safe_area_page_black_car_address_text(self):
-        return '黑车库'
+        return '黑车地址库'
 
     def safe_area_page_choose_delete_content(self):
         return '请选择要删除的记录!'

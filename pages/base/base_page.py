@@ -162,3 +162,7 @@ class BasePage(object):
     def reset_passwd_succ_ensure(self):
         self.driver.click_element("c,layui-layer-btn0")
         self.driver.wait(1)
+
+    def click_chinese_button(self):
+        self.driver.click_element('x,/html/body/footer/div[1]/ul/li[1]/a')
+        sleep(2)

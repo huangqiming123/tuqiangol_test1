@@ -29,6 +29,7 @@ class TestCase1103DevManageBatchSale(unittest.TestCase):
     def test_case_1103_dev_manage_batch_sale(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
+        self.base_page.click_chinese_button()
         # 登录
         self.log_in_base.log_in()
         # 点击进入设备管理

@@ -19,7 +19,10 @@ class LogInBase(BasePage):
         sleep(2)
 
     def get_log_in_account(self):
-        return self.driver.get_text('x,//*[@id="userAccount"]')
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+        a = self.driver.get_text('x,//*[@id="userAccount"]')
+        self.driver.default_frame()
+        return a
 
     def log_in_jimitest(self):
         self.driver.operate_input_element("account", 'jimitest')

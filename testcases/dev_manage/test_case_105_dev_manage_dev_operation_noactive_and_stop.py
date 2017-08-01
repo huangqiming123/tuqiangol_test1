@@ -35,6 +35,7 @@ class TestCase105DevManageDevOperationNOActiveAndStop(unittest.TestCase):
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
+        self.base_page.click_chinese_button()
         # 登录
         self.log_in_base.log_in()
 
@@ -85,7 +86,7 @@ class TestCase105DevManageDevOperationNOActiveAndStop(unittest.TestCase):
                 expect_url = self.base_url + "/console"
                 self.assertEqual(expect_url, self.driver.get_current_url())
 
-                dev_name = self.dev_manage_page.get_dev_name_after_click_console()
+                # dev_name = self.dev_manage_page.get_dev_name_after_click_console()
 
                 # self.assertEqual(self.data['dev_name'], dev_name)
                 self.driver.close_current_page()

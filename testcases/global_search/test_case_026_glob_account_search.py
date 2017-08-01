@@ -36,8 +36,8 @@ class TestCase026GlobAccountSearch(unittest.TestCase):
     def test_global_account_search(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
+        self.base_page.click_chinese_button()
         self.log_in_base.log_in()
-        self.log_in_base.click_account_center_button()
         self.log_in_base.click_account_center_button()
         current_account = self.log_in_base.get_log_in_account()
         self.global_dev_search_page.click_easy_search()

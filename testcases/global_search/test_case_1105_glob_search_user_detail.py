@@ -37,6 +37,7 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
     def test_case_1105_global_search_user_detail(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
+        self.base_page.click_chinese_button()
         self.log_in_base.log_in_jimitest()
         self.log_in_base.click_account_center_button()
         self.global_dev_search_page.click_easy_search()
@@ -96,7 +97,7 @@ class TestCase1105GlobSearchUserDetail(unittest.TestCase):
 
         # 循环点击五次
         for n in range(5):
-            self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
+            self.driver.switch_to_frame('x,/html/body/div[4]/div[2]/iframe')
             self.driver.click_element('x,//*[@id="complex_userInfo_tree_complexUpdate_%s_span"]' % str(n + 3))
             get_up_user_name = self.global_dev_search_page.get_up_user_name_in_details()
             select_up_name = self.driver.get_text(

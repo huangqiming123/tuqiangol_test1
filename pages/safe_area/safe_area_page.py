@@ -27,6 +27,8 @@ class SafeAreaPage(BasePageServer):
     def click_list_edit_button(self):
         self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[1]')
         sleep(2)
+        self.driver.click_element('l,编辑')
+        sleep(2)
 
     def get_text_after_click_edit(self):
         return self.driver.get_text('x,/html/body/div[2]/div[1]')
@@ -46,11 +48,14 @@ class SafeAreaPage(BasePageServer):
         sleep(2)
 
     def click_list_delete_button(self):
-        self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[2]')
+        self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[1]')
         sleep(2)
+        self.driver.click_element('l,删除')
 
     def click_relevance_button(self):
-        self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[3]')
+        self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[1]')
+        sleep(2)
+        self.driver.click_element('l,关联')
         sleep(2)
 
     def search_account_click_equipment(self, current_account):
@@ -122,7 +127,7 @@ class SafeAreaPage(BasePageServer):
 
     def click_all_select_button_with_mark(self):
         self.driver.click_element(
-            'x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[3]/div[2]/div[1]/table/thead/tr/th[1]/label/div/ins')
+            'x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[3]/div[2]/div[1]/table/thead/tr/th[1]/label/div/ins')
         sleep(2)
 
     def click_detele_button_with_mark(self):
@@ -130,14 +135,16 @@ class SafeAreaPage(BasePageServer):
         sleep(2)
 
     def click_edit_button_in_list(self):
-        self.driver.click_element('x,//*[@id="marktbody"]/tr[1]/td[2]/a[1]')
+        self.driver.click_element('x,//*[@id="marktbody"]/tr[1]/td[2]/a')
+        sleep(2)
+        self.driver.click_element('l,编辑')
         sleep(2)
 
     def click_ensure_edit_in_list(self, param, param1):
         self.driver.operate_input_element('x,//*[@id="geonameHtml"]', param)
         self.driver.operate_input_element('x,//*[@id="descriptionHtml"]', param1)
         self.driver.click_element('c,layui-layer-btn0')
-        sleep(2)
+        sleep(4)
 
     def click_cancel_edit_in_list(self):
         self.driver.click_element('c,layui-layer-btn1')
@@ -148,7 +155,9 @@ class SafeAreaPage(BasePageServer):
         sleep(2)
 
     def click_delete_button_in_list(self):
-        self.driver.click_element('x,//*[@id="marktbody"]/tr[1]/td[2]/a[2]')
+        self.driver.click_element('x,//*[@id="marktbody"]/tr[1]/td[2]/a')
+        sleep(2)
+        self.driver.click_element('l,删除')
         sleep(2)
 
     def get_total_page_number_mark(self):
@@ -178,9 +187,9 @@ class SafeAreaPage(BasePageServer):
         sleep(2)
 
     def click_select_fence_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[2]')
         sleep(2)
 
     def get_per_number(self):
@@ -192,13 +201,13 @@ class SafeAreaPage(BasePageServer):
         return text
 
     def click_select_black_address_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[3]')
+        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[3]')
         sleep(2)
 
     def get_page(self):
-        text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[3]/div[1]/div[2]/div/span')
+        text = self.driver.get_text('x,//*[@id="areapage"]')
         return text
 
     def get_text_after_click_delete(self):
@@ -226,6 +235,8 @@ class SafeAreaPage(BasePageServer):
     def click_edit_black_address(self):
         self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[1]')
         sleep(2)
+        self.driver.click_element('l,编辑')
+        sleep(2)
 
     def get_black_address_after_click_edit(self):
         return self.driver.get_element('x,//*[@id="geonameHtml"]').get_attribute('value')
@@ -243,6 +254,8 @@ class SafeAreaPage(BasePageServer):
 
     def click_edit_fence(self):
         self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[1]')
+        sleep(2)
+        self.driver.click_element('l,编辑')
         sleep(2)
 
     def get_fence_name_after_edit(self):
@@ -301,7 +314,7 @@ class SafeAreaPage(BasePageServer):
         return number
 
     def get_page_in_mark_page(self):
-        text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[3]/div[2]/div[2]/div/span')
+        text = self.driver.get_text('x,//*[@id="markpage"]')
         return text
 
     def click_next_page_in_mark_page(self):
@@ -320,6 +333,8 @@ class SafeAreaPage(BasePageServer):
 
     def click_edit_button_in_mark_point(self):
         self.driver.click_element('x,//*[@id="marktbody"]/tr[1]/td[2]/a[1]')
+        sleep(2)
+        self.driver.click_element('l,编辑')
         sleep(2)
 
     def get_name_after_click_edit(self):

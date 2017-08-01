@@ -37,6 +37,7 @@ class TestCase1103GlobSearchAppDetailOperation(unittest.TestCase):
     def test_case_1103_global_search_app_detail_operation(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
+        self.base_page.click_chinese_button()
         self.log_in_base.log_in_jimitest()
         self.log_in_base.click_account_center_button()
         self.global_dev_search_page.click_easy_search()

@@ -16,6 +16,7 @@ class TestCase0001AreaTableOperaition(unittest.TestCase):
         self.safe_area_page = SafeAreaPage(self.driver, self.base_url)
 
         self.base_page.open_page()
+        self.base_page.click_chinese_button()
         self.driver.set_window_max()
         self.assert_text = AssertText()
         self.log_in_base.log_in()

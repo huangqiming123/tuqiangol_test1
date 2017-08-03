@@ -16,12 +16,13 @@ class AccountCenterMsgCenterPage(BasePageServer):
 
     # 点击进入“消息中心”
     def enter_msg_center(self):
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[2]/a')
+        self.driver.click_element('x,//*[@id="usermessage"]')
         self.driver.wait(1)
 
     # 获取“消息中心”title
     def get_msg_center_title(self):
-        msg_center_title = self.driver.get_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[1]/div/b').text
+        self.driver.wait(1)
+        msg_center_title = self.driver.get_element('x,/html/body/div/div[1]/div/b').text
         return msg_center_title
 
     # 获取左侧栏目-消息中心-x条未读
@@ -33,14 +34,14 @@ class AccountCenterMsgCenterPage(BasePageServer):
     def set_search_status_unread(self):
         # 点击状态下拉框
         self.driver.click_element(
-            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/span[2]")
+            "x,/html/body/div/div[2]/div[1]/form/div[2]/span[2]/div/span[2]")
         self.driver.wait(1)
         # 选中未读
         self.driver.click_element(
-            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[2]")
+            "x,/html/body/div/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[2]")
         self.driver.wait(2)
         # 点击搜索
-        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/button")
+        self.driver.click_element("x,/html/body/div/div[2]/div[1]/form/div[2]/button")
         self.driver.wait()
 
     # 设置搜索项-消息状态-已读
@@ -92,13 +93,13 @@ class AccountCenterMsgCenterPage(BasePageServer):
     # 点击“标为已读”
     def set_current_page_status_read(self):
         self.driver.click_element(
-            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[1]/button[1]")
+            "x,/html/body/div/div[2]/div[1]/form/div[1]/button[1]")
         self.driver.wait()
 
     # 点击“全部标为已读”
     def set_all_msg_status_read(self):
         self.driver.click_element(
-            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[1]/button[2]")
+            "x,/html/body/div/div[2]/div[1]/form/div[1]/button[2]")
         self.driver.wait()
 
     # 获取操作状态文本内容
@@ -142,10 +143,12 @@ class AccountCenterMsgCenterPage(BasePageServer):
     # 消息中心--编辑--获取长度
     def get_message_edit_element_len(self):
         # 点击第一条的imei
+        self.driver.switch_to_frame('x,//*[@id="usermessageFrame"]')
         self.driver.click_element("x,//*[@id='msg_tbody']/tr[1]/td[4]/div/a")
+        self.driver.default_frame()
         self.driver.wait(3)
         # 切换到iframe
-        self.driver.switch_to_iframe('x,/html/body/div[13]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,/html/body/div[6]/div[2]/iframe')
 
         # 基本信息
         device_name = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[1]/input")
@@ -193,3 +196,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
         self.driver.click_element("c,layui-layer-btn0")
 
         return all_len
+
+    # 消息中心iframe
+    def message_center_iframe(self):
+        self.driver.switch_to_frame('x,//*[@id="usermessageFrame"]')

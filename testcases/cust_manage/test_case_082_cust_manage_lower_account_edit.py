@@ -66,7 +66,7 @@ class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
                 "conn": row[4],
                 "com": row[5]
             }
-            sleep(1)
+            sleep(2)
             # 点击单个用户的编辑
             self.cust_manage_lower_account_page.click_acc_edit()
 

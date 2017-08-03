@@ -1,6 +1,8 @@
 from time import sleep
 import time
 import datetime
+
+from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.new_paging import NewPaging
 
@@ -2450,3 +2452,106 @@ class StatisticalFormPage(BasePage):
         sleep(3)
         self.driver.click_element('c,autocompleter-item')
         sleep(2)
+
+    def add_imei_to_search_oil_report(self):
+        js1 = 'document.getElementById("startTime_overspeed").removeAttribute("readonly")'
+        self.driver.execute_js(js1)
+        self.driver.operate_input_element('x,//*[@id="startTime_overspeed"]', '2017-05-15 00:00')
+
+        js2 = 'document.getElementById("endTime_overspeed").removeAttribute("readonly")'
+        self.driver.execute_js(js2)
+        self.driver.operate_input_element('x,//*[@id="endTime_overspeed"]', '2017-07-20 23:59')
+
+        # 输入imei搜索
+        self.driver.operate_input_element('x,//*[@id="imeiInput_oilReport"]', '912345678909873')
+        self.driver.click_element('x,//*[@id="oilFrom"]/div[2]/div[3]/button')
+        sleep(5)
+
+    def get_per_page_number_in_oil_report(self):
+        new_paging = NewPaging(self.driver, self.base_url)
+        return new_paging.get_last_page_number('x,//*[@id="oil-tbody"]')
+
+    def get_per_imei_in_oil_report(self, n):
+        return self.driver.get_text('x,//*[@id="oil-tbody"]/tr[%s]/td[4]' % str(n + 1))
+
+    def get_dev_oil_data_with_imei(self):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        sql = "SELECT o.imei,o.type,o.length,o.width,o.height,o.woLength,o.diameter,o.percentage0,o.percentage25,o.percentage50,o.percentage75,o.percentage100,o.totalCapacity FROM device_oilRod o WHERE o.imei = '912345678909873';"
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        dev_data = {
+            'imei': data[0][0],
+            'type': data[0][1],
+            'length': data[0][2],
+            'width': data[0][3],
+            'height': data[0][4],
+            'woLength': data[0][5],
+            'diameter': data[0][6],
+            'percentage0': data[0][7],
+            'percentage25': data[0][8],
+            'percentage50': data[0][9],
+            'percentage75': data[0][10],
+            'percentage100': data[0][11],
+            'totalCapacity': data[0][12],
+        }
+        cursor.close()
+        connect.close()
+        return dev_data
+
+    def get_dev_oil_RemainL(self):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_form()
+        cursor = connect.cursor()
+        sql = "SELECT l.OIL FROM oil_his_201705 l WHERE l.DEVICE_IMEI = '912345678909873' and l.RECORD_TIME BETWEEN '2017-05-15 00:00' and '2017-07-20 23:59' ORDER BY l.RECORD_TIME DESC;"
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        oil = []
+        for range1 in data:
+            for range2 in range1:
+                oil.append(range2)
+        cursor.close()
+        connect.close()
+        return oil
+
+    def count_remain_oil(self, dev_oil_data, get_oil_Remain):
+        if dev_oil_data['type'] == '3':
+            if get_oil_Remain >= 0 and get_oil_Remain < dev_oil_data['percentage25']:
+                oil = dev_oil_data['totalCapacity'] * (0.25) * get_oil_Remain / dev_oil_data['percentage25']
+                per_oil = oil * 100 / dev_oil_data['totalCapacity']
+                a = '%.3fL' % oil
+                return a
+
+            elif get_oil_Remain >= dev_oil_data['percentage25'] and get_oil_Remain < dev_oil_data['percentage50']:
+                oil = dev_oil_data['totalCapacity'] * (0.25 * (get_oil_Remain - dev_oil_data['percentage50']) / (
+                    dev_oil_data['percentage50'] - dev_oil_data['percentage25']) + 0.5)
+                per_oil = oil * 100 / dev_oil_data['totalCapacity']
+                a = '%.3fL' % oil
+                return a
+
+            elif get_oil_Remain >= dev_oil_data['percentage50'] and get_oil_Remain < dev_oil_data['percentage75']:
+                oil = dev_oil_data['totalCapacity'] * (0.25 * (get_oil_Remain - dev_oil_data['percentage75']) / (
+                    dev_oil_data['percentage75'] - dev_oil_data['percentage50']) + 0.75)
+                per_oil = oil * 100 / dev_oil_data['totalCapacity']
+                a = '%.3fL' % oil
+                return a
+
+            elif get_oil_Remain >= dev_oil_data['percentage75'] and get_oil_Remain < dev_oil_data['percentage100']:
+                oil = dev_oil_data['totalCapacity'] * (0.25 * ((get_oil_Remain - dev_oil_data['percentage100']) / (
+                    dev_oil_data['percentage100'] - dev_oil_data['percentage75'])) + 1)
+                per_oil = oil * 100 / dev_oil_data['totalCapacity']
+                a = '%.3fL' % oil
+                return a
+
+            elif get_oil_Remain >= dev_oil_data['percentage100']:
+                a = str(dev_oil_data['totalCapacity']).split('.')[0]
+                return a + 'L'
+
+    def get_oil_data_in_page(self, n):
+        a = self.driver.get_text('x,//*[@id="oil-tbody"]/tr[%s]/td[7]' % str(n + 1))
+        return a.split('(')[0]
+
+    def click_per_page_in_oil_page(self, m):
+        self.driver.click_element('l,%s' % str(m + 1))
+        sleep(3)

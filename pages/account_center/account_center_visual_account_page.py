@@ -15,21 +15,25 @@ class AccountCenterVisualAccountPage(BasePageServer):
 
     # 点击虚拟账号管理
     def enter_visual_account(self):
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[3]/a')
+        self.driver.click_element('x,//*[@id="fictitiousaccount"]')
         self.driver.wait()
 
     # 获取虚拟账号管理title
     def get_visual_account_title(self):
-        title = self.driver.get_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[1]/div/b').text
+        title = self.driver.get_element('x,/html/body/div/div[1]/div/b').text
         return title
 
     # 添加虚拟账户-输入虚拟账户信息
     def add_visual_account(self,visual_account,visual_passwd):
+        self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')
         # 点击添加
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/div[1]/form/div/button')
+        self.driver.click_element('x,/html/body/div/div[2]/div[1]/form/div/button')
+        # 离开frame
+        self.driver.default_frame()
         sleep(3)
         # 输入虚拟账号名称
         self.driver.operate_input_element("x,//*[@id='fictitiousAccountForm']/div[1]/div/input",visual_account)
+        #self.driver.operate_input_element('x,/html/body/div[1]/div[8]/div[2]/div/form/div[1]/div/input',visual_account)
         # 输入虚拟账号密码
         self.driver.operate_input_element("fictitious_password",visual_passwd)
         # 确认密码
@@ -74,8 +78,10 @@ class AccountCenterVisualAccountPage(BasePageServer):
 
     # 编辑虚拟账户
     def edit_visu_account(self,edit_passwd):
+        self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')
         sleep(2)
         self.driver.click_element("x,//*[@id='fictitiousAccount_tbody']/tr[1]/td[4]/a[1]")
+        self.driver.default_frame()
         self.driver.wait(1)
         # 编辑密码
         self.driver.operate_input_element("fictitious_password",edit_passwd)
@@ -87,7 +93,9 @@ class AccountCenterVisualAccountPage(BasePageServer):
 
     # 取消编辑
     def dis_edit(self):
+        self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')
         self.driver.click_element("x,//*[@id='fictitiousAccount_tbody']/tr[1]/td[4]/a[1]")
+        self.driver.default_frame()
         self.driver.wait(1)
         # 点击取消
         self.driver.click_element('c,layui-layer-btn1')
@@ -102,7 +110,9 @@ class AccountCenterVisualAccountPage(BasePageServer):
 
     # 点击添加按钮(*)
     def click_add_button(self):
-        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/div[1]/form/div/button")
+        self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')
+        self.driver.click_element("x,/html/body/div/div[2]/div[1]/form/div/button")
+        self.driver.default_frame()
         self.driver.wait()
 
     # 虚拟账号--取提示语
@@ -156,3 +166,7 @@ class AccountCenterVisualAccountPage(BasePageServer):
     def get_visual_add_and_edit_len(self):
         password_len = int(self.driver.get_element("fictitious_password").get_attribute("maxlength"))
         return password_len
+
+    # 进入iframe
+    def visual_account_iframe(self):
+        self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')

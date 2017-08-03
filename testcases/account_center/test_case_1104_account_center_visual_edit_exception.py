@@ -38,8 +38,11 @@ class TestCase1104AccountCenterVisualEditException(unittest.TestCase):
         # 添加虚拟账号、保存
         self.visual_account_page.add_visual_account("xnhtj001", "jimi123")
         self.visual_account_page.save_add_info()
+
         # 点击编辑
+        self.visual_account_page.visual_account_iframe()
         self.visual_account_page.click_editor()
+        self.driver.default_frame()
 
         # 虚拟账号添加与编辑方法
         # 长度不够
@@ -75,7 +78,9 @@ class TestCase1104AccountCenterVisualEditException(unittest.TestCase):
         self.visual_account_page.dis_save_add_info()
         self.driver.wait(1)
         # 删除
+        self.visual_account_page.visual_account_iframe()
         self.visual_account_page.del_visu_account()
+        self.driver.default_frame()
         self.driver.wait()
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()

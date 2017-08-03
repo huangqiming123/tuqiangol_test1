@@ -40,8 +40,10 @@ class TestCase171AccountCenterDefaultHomePageSetting(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         # 点击默认首页设置
         self.account_center_page_home_page_setting.click_home_page_setting()
+        self.account_center_page_home_page_setting.default_home_page_iframe()
         # 取列表数据
         all_state = self.account_center_page_home_page_setting.get_home_page_list_all_state()
+        self.driver.default_frame()
 
         for i in range(len(all_state)):
             # 点击账户中心
@@ -52,6 +54,7 @@ class TestCase171AccountCenterDefaultHomePageSetting(unittest.TestCase):
             # 已默认
             is_default = self.assert_text2.account_center_home_page_setting_state()
 
+            self.account_center_page_home_page_setting.default_home_page_iframe()
             text = self.account_center_page_home_page_setting.get_default_setting_text(i + 1)
             if text["state"] == is_default:
                 continue
@@ -76,6 +79,7 @@ class TestCase171AccountCenterDefaultHomePageSetting(unittest.TestCase):
                 del (default_list[:])
                 print("删除后：", default_list)
 
+                self.driver.default_frame()
                 # 退出
                 sleep(2)
                 self.account_center_page_navi_bar.usr_logout()

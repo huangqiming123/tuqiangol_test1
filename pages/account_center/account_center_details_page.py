@@ -20,75 +20,58 @@ class AccountCenterDetailsPage(BasePageServer):
 
         if link_name == '库存':
             self.driver.click_element(
-                "x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[1]/div/div[1]/a")
+                "x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[1]/a")
             self.driver.wait(1)
         elif link_name == '总进货数':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[2]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[2]/a")
             self.driver.wait(1)
         elif link_name == '在线':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[3]/a/i")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[3]/a")
             self.driver.wait(1)
         elif link_name == '离线':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[4]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[4]/a")
             self.driver.wait(1)
         elif link_name == '即将到期':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[5]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[5]/a")
             self.driver.wait(1)
         elif link_name == '已过期':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[6]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[6]/a")
             self.driver.wait(1)
         elif link_name == '已激活':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[7]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[7]/a")
             self.driver.wait(1)
         elif link_name == '未激活':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[8]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[8]/a")
             self.driver.wait(1)
         elif link_name == '告警车辆':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[9]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[9]/a")
             self.driver.wait(1)
         elif link_name == '重点关注车辆':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[1]/div/div[10]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[10]/a")
             self.driver.wait(1)
         elif link_name == '控制台':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[2]/div/div[1]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[1]/a")
             self.driver.wait(1)
         elif link_name == '统计报表':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[2]/div/div[2]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[2]/a")
             self.driver.wait(1)
         elif link_name == '围栏':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[2]/div/div[3]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[3]/a")
             self.driver.wait(1)
         elif link_name == '下级客户管理':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[2]/div/div[4]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[4]/a")
             self.driver.wait(1)
         elif link_name == '设备管理':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[2]/div/div[5]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[5]/a")
             self.driver.wait(1)
         elif link_name == '指令管理':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[2]/div/div[6]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[6]/a")
             self.driver.wait(1)
         elif link_name == '地标设置':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[2]/div/div[7]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[7]/a")
             self.driver.wait(1)
         elif link_name == '告警':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/"
-                                      "div[1]/div/div[2]/div/div[8]/a")
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[8]/a")
             self.driver.wait(1)
 
     # 快捷销售
@@ -294,7 +277,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
 
     def get_actual_text_after_click_command(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[5]/div[1]/div/b')
+        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div[5]/div[1]/div/b')
 
     def get_actual_text_after_click_set_up_landmark(self):
         return self.driver.get_text('x,//*[@id="marktab"]')
@@ -398,7 +381,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
 
     def click_report_after_text(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[1]/div/b')
+        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[1]/div')
 
     def click_safearea_get_vaule(self):
         return self.driver.get_element('x,//*[@id="safemenu"]/li[1]').get_attribute('class')
@@ -432,8 +415,7 @@ class AccountCenterDetailsPage(BasePageServer):
 
     # 快捷销售--点击添加按钮
     def click_add_button(self):
-        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/"
-                                  "div/div[2]/div[1]/div[1]/div[2]/button")
+        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
         self.driver.wait(1)
 
     # 快捷销售-新增客户--异常提示
@@ -505,3 +487,13 @@ class AccountCenterDetailsPage(BasePageServer):
     def click_more_in_dev_manage(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
         sleep(2)
+
+    # 账户中心iframe
+    def account_center_iframe(self):
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+
+    # 获取app账号的服务商个数
+    def get_current_account_service_number(self):
+        count = len(self.driver.get_elements("x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div"))
+        print(count)
+        return count

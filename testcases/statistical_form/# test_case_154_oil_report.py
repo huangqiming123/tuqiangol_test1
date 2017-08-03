@@ -30,9 +30,9 @@ class TestCase154OilReport(unittest.TestCase):
         self.search_sql = SearchSql(self.driver, self.base_url)
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
+        self.base_page.click_chinese_button()
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
-        self.driver.clear_cookies()
         self.log_in_base.log_in_jimitest()
         self.assert_text = AssertText()
 
@@ -56,7 +56,7 @@ class TestCase154OilReport(unittest.TestCase):
         self.assertEqual(self.assert_text.statistical_form_oil_form(),
                          self.statistical_form_page.actual_text_after_click_oil_report_button())
 
-        # # 读取查询数据
+        '''# # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv('oil_report_search_data.csv')
         csv_data = csv.reader(csv_file)
         is_header = True
@@ -84,4 +84,44 @@ class TestCase154OilReport(unittest.TestCase):
             cursor.close()
             connect.close()
             self.driver.default_frame()
-        csv_file.close()
+        csv_file.close'''
+        self.statistical_form_page.switch_to_oil_report()
+        # 输入imei搜索
+        self.statistical_form_page.add_imei_to_search_oil_report()
+        dev_oil_data = self.statistical_form_page.get_dev_oil_data_with_imei()
+        get_oil_RemainL = self.statistical_form_page.get_dev_oil_RemainL()
+        # 查询搜索的条数
+        page_number = self.statistical_form_page.get_total_in_oil_report()
+        if page_number == 0:
+            pass
+        elif page_number == 1:
+            # 获取本页有多少条记录
+            per_page_number = self.statistical_form_page.get_per_page_number_in_oil_report()
+            for n in range(per_page_number):
+                # 获取每一个imei的值
+                per_imei = self.statistical_form_page.get_per_imei_in_oil_report(n)
+                # 获取该imei的邮箱数据
+                self.assertEqual(per_imei, dev_oil_data['imei'])
+                # 计算剩余油量
+                remain_oil = self.statistical_form_page.count_remain_oil(dev_oil_data, get_oil_RemainL[n])
+                get_oil_data_in_page = self.statistical_form_page.get_oil_data_in_page(n)
+                self.assertEqual(remain_oil, get_oil_data_in_page)
+        else:
+            i = 0
+            for m in range(page_number - 1):
+                # 获取imei
+                i = i + 1
+                # 点击每一页
+                self.statistical_form_page.click_per_page_in_oil_page(m)
+                per_page_number = self.statistical_form_page.get_per_page_number_in_oil_report()
+                for n in range(per_page_number):
+                    # 获取每一个imei的值
+                    per_imei = self.statistical_form_page.get_per_imei_in_oil_report(n)
+                    # 获取该imei的邮箱数据
+                    self.assertEqual(per_imei, dev_oil_data['imei'])
+                    # 计算剩余油量
+                    remain_oil = self.statistical_form_page.count_remain_oil(dev_oil_data,
+                                                                             get_oil_RemainL[(i - 1) * 10 + n])
+                    get_oil_data_in_page = self.statistical_form_page.get_oil_data_in_page(n)
+                    self.assertEqual(remain_oil, get_oil_data_in_page)
+        self.driver.default_frame()

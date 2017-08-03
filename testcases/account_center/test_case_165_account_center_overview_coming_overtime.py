@@ -37,10 +37,13 @@ class TestCase165AccountCenterOverviewComingOvertime(unittest.TestCase):
         self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
+        self.account_center_page_details.account_center_iframe()
         number = self.account_center_page_details.get_coming_overtime_number()
         account_center_handle = self.driver.get_current_window_handle()
         # 点击库存
         self.account_center_page_details.account_overview('即将到期')
+        self.driver.default_frame()
+
         all_handles = self.driver.get_all_window_handles()
         for handle in all_handles:
             if handle != account_center_handle:

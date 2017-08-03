@@ -15,27 +15,21 @@ class AssertText2(object):
     # 跳转页面，期望地址
     def get_page_expect_url(self, page_url):
         if page_url == "库存" or page_url == "设备管理":
-            print("库存、设备管理")
             return '/device/toDeviceManage'
 
         elif page_url == "总进货数":
-            print("总进货数")
             return '/device/toDeviceManage?lowerDevFlag=1'
 
         elif page_url == "即将到期":
-            print("即将到期")
             return '/device/toDeviceManage?statusFlag=aboutToExpirate&lowerDevFlag=1'
 
         elif page_url == "已过期":
-            print("已过期")
             return '/device/toDeviceManage?statusFlag=expirated&lowerDevFlag=1'
 
         elif page_url == "已激活":
-            print("已激活")
             return '/device/toDeviceManage?statusFlag=actived&lowerDevFlag=1'
 
         elif page_url == "未激活":
-            print("未激活")
             return '/device/toDeviceManage?statusFlag=inactive&lowerDevFlag=1'
 
     # 包含下级设备

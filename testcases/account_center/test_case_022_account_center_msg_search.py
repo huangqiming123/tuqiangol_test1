@@ -43,11 +43,17 @@ class TestCase022AccountCenterMsgSearch(unittest.TestCase):
         self.base_page.open_page()
         self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
+
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
         # 获取登录账号的用户名
         current_account = self.log_in_base.get_log_in_account()
+        self.driver.default_frame()
 
         # 进入消息中心
         self.account_center_page_msg_center.enter_msg_center()
+
+        # 进入iframe
+        self.account_center_page_msg_center.message_center_iframe()
         # 获取消息中心title
         msg_center_title = self.account_center_page_msg_center.get_msg_center_title()
         # 验证消息中心title是否正确显示

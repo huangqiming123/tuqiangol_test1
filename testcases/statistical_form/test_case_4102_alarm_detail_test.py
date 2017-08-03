@@ -103,5 +103,5 @@ class TestCase4102MovingDetailTest(unittest.TestCase):
         # for i in range(len(dev_lists)):
         #     self.assertIn(dev_lists[i], dev_lists_again)
         for dev in dev_list:
-            self.assertEqual(dev, dev_lists_again)
+            self.assertIn(dev, dev_lists_again)
         self.driver.default_frame()

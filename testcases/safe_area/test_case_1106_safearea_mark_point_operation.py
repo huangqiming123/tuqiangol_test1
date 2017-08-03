@@ -18,7 +18,7 @@ class TestCase1106SafeAreaMarkPointOperation(unittest.TestCase):
         self.base_page.open_page()
         self.base_page.click_chinese_button()
         self.driver.set_window_max()
-        self.log_in_base.log_in_jimitest()
+        self.log_in_base.log_in()
         self.safe_area_page.click_control_after_click_safe_area()
 
     def tearDown(self):

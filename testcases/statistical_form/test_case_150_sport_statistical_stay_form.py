@@ -80,10 +80,23 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
 
             # 判断查询条件
             get_total_sql = self.search_sql.search_sport_stay_sql(all_dev, search_data)
-            print(get_total_sql)
+            get_total_sql_01 = self.search_sql.search_sport_stay_sql_01(all_dev, search_data)
+            get_total_sql_02 = self.search_sql.search_sport_stay_sql_02(all_dev, search_data)
+            get_total_sql_03 = self.search_sql.search_sport_stay_sql_03(all_dev, search_data)
+            get_total_sql_04 = self.search_sql.search_sport_stay_sql_04(all_dev, search_data)
+            get_total_sql_05 = self.search_sql.search_sport_stay_sql_05(all_dev, search_data)
+            get_total_sql_06 = self.search_sql.search_sport_stay_sql_06(all_dev, search_data)
+            get_total_sql_07 = self.search_sql.search_sport_stay_sql_07(all_dev, search_data)
+            get_total_sql_08 = self.search_sql.search_sport_stay_sql_08(all_dev, search_data)
+            get_total_sql_09 = self.search_sql.search_sport_stay_sql_09(all_dev, search_data)
+            get_total_sql_10 = self.search_sql.search_sport_stay_sql_10(all_dev, search_data)
+            get_total_sql_11 = self.search_sql.search_sport_stay_sql_11(all_dev, search_data)
+            get_total_sql_12 = self.search_sql.search_sport_stay_sql_12(all_dev, search_data)
+
+            print(get_total_sql_01)
+
             cursor_02.execute(get_total_sql)
             get_total = cursor_02.fetchall()
-
             total_list = []
             for range1 in get_total:
                 for range2 in range1:
@@ -97,15 +110,201 @@ class TestCase150SportStatisticalStayForm(unittest.TestCase):
                 elif n % 2 == 1:
                     total_time_list.append(total_list[n])
 
+            cursor_02.execute(get_total_sql_01)
+            get_total_01 = cursor_02.fetchall()
+            total_list_01 = []
+            for range1 in get_total_01:
+                for range2 in range1:
+                    total_list_01.append(range2)
+            # 拆分列表
+            total_number_list_01 = []
+            total_time_list_01 = []
+            for n in range(len(total_list_01)):
+                if n % 2 == 0:
+                    total_number_list_01.append(total_list_01[n])
+                elif n % 2 == 1:
+                    total_time_list_01.append(total_list_01[n])
+
+            cursor_02.execute(get_total_sql_02)
+            get_total_02 = cursor_02.fetchall()
+            total_list_02 = []
+            for range1 in get_total_02:
+                for range2 in range1:
+                    total_list_02.append(range2)
+            # 拆分列表
+            total_number_list_02 = []
+            total_time_list_02 = []
+            for n in range(len(total_list_02)):
+                if n % 2 == 0:
+                    total_number_list_02.append(total_list_02[n])
+                elif n % 2 == 1:
+                    total_time_list_02.append(total_list_02[n])
+
+            cursor_02.execute(get_total_sql_03)
+            get_total_03 = cursor_02.fetchall()
+            total_list_03 = []
+            for range1 in get_total_03:
+                for range2 in range1:
+                    total_list_03.append(range2)
+            # 拆分列表
+            total_number_list_03 = []
+            total_time_list_03 = []
+            for n in range(len(total_list_03)):
+                if n % 2 == 0:
+                    total_number_list_03.append(total_list_03[n])
+                elif n % 2 == 1:
+                    total_time_list_03.append(total_list_03[n])
+
+            cursor_02.execute(get_total_sql_04)
+            get_total_04 = cursor_02.fetchall()
+            total_list_04 = []
+            for range1 in get_total_04:
+                for range2 in range1:
+                    total_list_04.append(range2)
+            # 拆分列表
+            total_number_list_04 = []
+            total_time_list_04 = []
+            for n in range(len(total_list_04)):
+                if n % 2 == 0:
+                    total_number_list_04.append(total_list_04[n])
+                elif n % 2 == 1:
+                    total_time_list_04.append(total_list_04[n])
+
+            cursor_02.execute(get_total_sql_05)
+            get_total_05 = cursor_02.fetchall()
+            total_list_05 = []
+            for range1 in get_total_05:
+                for range2 in range1:
+                    total_list_05.append(range2)
+            # 拆分列表
+            total_number_list_05 = []
+            total_time_list_05 = []
+            for n in range(len(total_list_05)):
+                if n % 2 == 0:
+                    total_number_list_05.append(total_list_05[n])
+                elif n % 2 == 1:
+                    total_time_list_05.append(total_list_05[n])
+
+            cursor_02.execute(get_total_sql_06)
+            get_total_06 = cursor_02.fetchall()
+            total_list_06 = []
+            for range1 in get_total_06:
+                for range2 in range1:
+                    total_list_06.append(range2)
+            # 拆分列表
+            total_number_list_06 = []
+            total_time_list_06 = []
+            for n in range(len(total_list_06)):
+                if n % 2 == 0:
+                    total_number_list_06.append(total_list_06[n])
+                elif n % 2 == 1:
+                    total_time_list_06.append(total_list_06[n])
+
+            cursor_02.execute(get_total_sql_07)
+            get_total_07 = cursor_02.fetchall()
+            total_list_07 = []
+            for range1 in get_total_07:
+                for range2 in range1:
+                    total_list_07.append(range2)
+            # 拆分列表
+            total_number_list_07 = []
+            total_time_list_07 = []
+            for n in range(len(total_list_07)):
+                if n % 2 == 0:
+                    total_number_list_07.append(total_list_07[n])
+                elif n % 2 == 1:
+                    total_time_list_07.append(total_list_07[n])
+
+            cursor_02.execute(get_total_sql_08)
+            get_total_08 = cursor_02.fetchall()
+            total_list_08 = []
+            for range1 in get_total_08:
+                for range2 in range1:
+                    total_list_08.append(range2)
+            # 拆分列表
+            total_number_list_08 = []
+            total_time_list_08 = []
+            for n in range(len(total_list_08)):
+                if n % 2 == 0:
+                    total_number_list_08.append(total_list_08[n])
+                elif n % 2 == 1:
+                    total_time_list_08.append(total_list_08[n])
+
+            cursor_02.execute(get_total_sql_09)
+            get_total_09 = cursor_02.fetchall()
+            total_list_09 = []
+            for range1 in get_total_09:
+                for range2 in range1:
+                    total_list_09.append(range2)
+            # 拆分列表
+            total_number_list_09 = []
+            total_time_list_09 = []
+            for n in range(len(total_list_09)):
+                if n % 2 == 0:
+                    total_number_list_09.append(total_list_09[n])
+                elif n % 2 == 1:
+                    total_time_list_09.append(total_list_09[n])
+
+            cursor_02.execute(get_total_sql_10)
+            get_total_10 = cursor_02.fetchall()
+            total_list_10 = []
+            for range1 in get_total_10:
+                for range2 in range1:
+                    total_list_10.append(range2)
+            # 拆分列表
+            total_number_list_10 = []
+            total_time_list_10 = []
+            for n in range(len(total_list_10)):
+                if n % 2 == 0:
+                    total_number_list_10.append(total_list_10[n])
+                elif n % 2 == 1:
+                    total_time_list_10.append(total_list_10[n])
+
+            cursor_02.execute(get_total_sql_11)
+            get_total_11 = cursor_02.fetchall()
+            total_list_11 = []
+            for range1 in get_total_11:
+                for range2 in range1:
+                    total_list_11.append(range2)
+            # 拆分列表
+            total_number_list_11 = []
+            total_time_list_11 = []
+            for n in range(len(total_list_02)):
+                if n % 2 == 0:
+                    total_number_list_11.append(total_list_11[n])
+                elif n % 2 == 1:
+                    total_time_list_11.append(total_list_11[n])
+
+            cursor_02.execute(get_total_sql_12)
+            get_total_12 = cursor_02.fetchall()
+            total_list_12 = []
+            for range1 in get_total_12:
+                for range2 in range1:
+                    total_list_12.append(range2)
+            # 拆分列表
+            total_number_list_12 = []
+            total_time_list_12 = []
+            for n in range(len(total_list_12)):
+                if n % 2 == 0:
+                    total_number_list_12.append(total_list_12[n])
+                elif n % 2 == 1:
+                    total_time_list_12.append(total_list_12[n])
+
             # 断言查询的条
-            total = len(total_number_list)
+            total = len(total_number_list_01) + len(total_number_list_02) + len(total_number_list_03) + len(
+                total_number_list_04) + len(total_number_list_05) + len(total_number_list_06) + len(
+                total_number_list_07) + len(total_number_list_08) + len(total_number_list_09) + len(
+                total_number_list_10) + len(total_number_list_11) + len(total_number_list_12) + len(total_number_list)
             sleep(3)
             self.statistical_form_page.switch_to_stay_report_form_frame()
             web_total = self.statistical_form_page.get_total_search_stay_form_number()
             self.assertEqual(total, web_total)
 
             # 断言查询的总的停留时间
-            total_time = sum(total_time_list)
+            total_time = sum(total_time_list_01) + sum(total_time_list_02) + sum(total_time_list_03) + sum(
+                total_time_list_04) + sum(total_time_list_05) + sum(total_time_list_06) + sum(total_time_list_07) + sum(
+                total_time_list_08) + sum(total_time_list_09) + sum(total_time_list_10) + sum(total_time_list_11) + sum(
+                total_time_list_12) + sum(total_time_list)
             chang_total_time_type = self.statistical_form_page.change_sec_time(total_time)
             web_total_time = self.statistical_form_page.get_total_stay_form_time()
             self.assertEqual(chang_total_time_type, web_total_time)

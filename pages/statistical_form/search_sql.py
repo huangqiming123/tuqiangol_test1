@@ -158,7 +158,7 @@ class SearchSql(StatisticalFormPage):
     def search_sport_mile_sql(self, account_dev, search_data):
         sql = ""
         if search_data['type'] == 'mile':
-            sql += "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment AS m WHERE m.IMEI IN %s" % str(
+            sql += "SELECT m.DISTANCE,m.RUNTIMESECOND FROM report_track_segment_08 AS m WHERE m.IMEI IN %s" % str(
                 account_dev)
             if search_data['choose_date'] == '':
                 sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
@@ -270,6 +270,510 @@ class SearchSql(StatisticalFormPage):
 
     def search_sport_stay_sql(self, account_dev, search_data):
         sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_01(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_01 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_02(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_02 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_03(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_03 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_04(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_04 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_05(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_05 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_06(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_06 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_07(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_07 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_08(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_08 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_09(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_09 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_10(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_10 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_11(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_11 AS m WHERE m.IMEI in %s" % str(account_dev)
+
+        if search_data['choose_date'] == '':
+            sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                       'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
+                   search_data['end_time'] + "'))"
+
+        elif search_data['choose_date'] == 'today':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
+                   self.get_today_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'yesterday':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_yesterday_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_week':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_week_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'this_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_this_month_end_time() + "'))"
+
+        elif search_data['choose_date'] == 'last_month':
+            sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
+                   self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
+                   self.get_last_month_end_time() + "'))"
+
+        sql += " AND m.ACC = '0';"
+        return sql
+
+    def search_sport_stay_sql_12(self, account_dev, search_data):
+        sql = "SELECT m.STARTTIME,m.DURSECOND FROM report_stop_segment_12 AS m WHERE m.IMEI in %s" % str(account_dev)
 
         if search_data['choose_date'] == '':
             sql += " AND (m.STARTTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
@@ -435,7 +939,152 @@ class SearchSql(StatisticalFormPage):
         sql += ";"
         return sql
 
-    def search_sport_mile_report_sql(self, all_dev, search_data):
+    def search_sport_mile_report_sql_01(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_01 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_02(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_02 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_03(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_03 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_04(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_04 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_05(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_05 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_06(self, all_dev, search_data):
         begin_time = self.get_begin_time_in_mile_report_page()
         end_time = self.get_end_time_in_mile_report_page()
         sql = ""
@@ -464,12 +1113,527 @@ class SearchSql(StatisticalFormPage):
         sql += ";"
         return sql
 
-    def search_sport_mile_report_sql_get_total(self, all_dev, search_data):
+    def search_sport_mile_report_sql_07(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_07 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_08(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_08 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_09(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_09 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_10(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_10 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_11(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_11 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_12(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DISTANCE FROM report_distance_sum_12 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_01(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_01 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_02(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_02 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_03(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_03 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_04(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_04 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_05(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_05 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_06(self, all_dev, search_data):
         begin_time = self.get_begin_time_in_mile_report_page()
         end_time = self.get_end_time_in_mile_report_page()
         sql = ""
         if search_data['type'] == 'mile':
             sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_06 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_07(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_07 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_08(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_08 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_09(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_09 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_10(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_10 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_11(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_11 AS m WHERE m.DEVICE_IMEI IN %s" % str(
+                all_dev)
+            if search_data['choose_date'] == '':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+            elif search_data['choose_date'] == 'today':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'yesterday':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_week':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'this_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            elif search_data['choose_date'] == 'last_month':
+                sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
+
+            sql += " group by m.DEVICE_IMEI"
+        sql += ";"
+        return sql
+
+    def search_sport_mile_report_sql_get_total_12(self, all_dev, search_data):
+        begin_time = self.get_begin_time_in_mile_report_page()
+        end_time = self.get_end_time_in_mile_report_page()
+        sql = ""
+        if search_data['type'] == 'mile':
+            sql += "SELECT m.DEVICE_IMEI FROM report_distance_sum_12 AS m WHERE m.DEVICE_IMEI IN %s" % str(
                 all_dev)
             if search_data['choose_date'] == '':
                 sql += " AND m.START_TIME > '" + begin_time + "' and m.END_TIME < '" + end_time + "'"
@@ -587,7 +1751,7 @@ class SearchSql(StatisticalFormPage):
         end_time = self.get_end_time_in_oil_report()
 
         sql = "select o.id from oil_his_201705 o where o.DEVICE_IMEI in " + str(
-            all_dev) + " and o.POST_TIME between '" + begin_time + "' and '" + end_time + "';"
+            all_dev) + " and o.RECORD_TIME between '" + begin_time + "' and '" + end_time + "';"
 
         return sql
 

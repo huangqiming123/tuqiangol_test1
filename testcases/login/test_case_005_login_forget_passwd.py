@@ -27,6 +27,7 @@ class TestCase005LoginForgetPasswd(unittest.TestCase):
         '''测试忘记密码功能'''
         # 打开途强在线首页-登录页
         self.base_page.open_page()
+
         # 点击忘记密码
         self.login_page.forget_password()
         self.driver.wait()

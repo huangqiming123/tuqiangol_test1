@@ -38,6 +38,7 @@ class TestCase1102AccountCenterMsgEdit_Exception(unittest.TestCase):
         self.driver.wait(1)
         # 点击进入消息中心
         self.account_center_page_msg_center.enter_msg_center()
+        # self.account_center_page_msg_center.message_center_iframe()
         sleep(5)
 
         # 取元素长度

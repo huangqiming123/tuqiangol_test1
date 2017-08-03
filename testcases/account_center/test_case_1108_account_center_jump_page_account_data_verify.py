@@ -15,7 +15,6 @@ from pages.login.login_page import LoginPage
 
 # 账户中心-账户详情--跳转页面后验证登录账户的数据
 # author:戴招利
-
 class TestCase1108AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
@@ -47,13 +46,19 @@ class TestCase1108AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
         self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
+
         # 获取当前登录账号
+        self.account_center_page_details.account_center_iframe()
         current_account = self.log_in_base.get_log_in_account()
+        self.driver.default_frame()
         account_center_handle = self.driver.get_current_window_handle()
 
         # 点击页面跳转到设备管理页面
         for page in data:
+            self.account_center_page_details.account_center_iframe()
             self.account_center_page_details.account_overview(page)
+            self.driver.default_frame()
+
             all_handles = self.driver.get_all_window_handles()
             for handle in all_handles:
                 if handle != account_center_handle:
@@ -98,6 +103,7 @@ class TestCase1108AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
                     all_handles2 = self.driver.get_all_window_handles()
 
                     for handle in all_handles2:
+
                         if handle != account_center_handle:
                             self.driver.switch_to_window(handle)
                             actual_url = self.driver.get_current_url()

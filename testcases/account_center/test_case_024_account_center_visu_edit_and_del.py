@@ -55,6 +55,7 @@ class TestCase024AccountCenterVisuEditAndDel(unittest.TestCase):
             # 取消添加
             self.account_center_page_visual_account.dis_save_add_info()
             self.driver.wait()
+
             # 编辑列表中的虚拟账户
             self.account_center_page_visual_account.edit_visu_account(acc_to_add["passwd"])
             # 验证是否保存成功
@@ -62,12 +63,16 @@ class TestCase024AccountCenterVisuEditAndDel(unittest.TestCase):
             self.assertIn(self.assert_text.account_center_page_operation_done(), save_status, "保存成功")
             self.account_center_page_visual_account.dis_edit()
             self.driver.wait(1)
+
             # 删除列表中的虚拟账户
+            self.account_center_page_visual_account.visual_account_iframe()
             self.account_center_page_visual_account.del_visu_account()
+
             # 验证是否操作成功
             save_status = self.account_center_page_visual_account.get_save_status()
             self.assertIn(self.assert_text.account_center_page_operation_done(), save_status, "操作成功")
             self.driver.wait()
+            self.driver.default_frame()
         csv_file.close()
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()

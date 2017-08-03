@@ -286,32 +286,33 @@ class AccountCenterOperationLogPage(BasePageServer):
         self.driver.operate_input_element('x,//*[@id="remainSearchDeviceInput"]', search_data['imei'])
 
         self.driver.click_element(
-            'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[1]/div/span[2]')
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/span[1]/div/span[2]')
         sleep(1)
         if search_data['type'] == '':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[1]')
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[1]')
         elif search_data['type'] == '1':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[3]')
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[3]')
         elif search_data['type'] == '2':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[2]')
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[2]')
 
         self.driver.click_element(
-            'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/span[2]')
+            'x,/html/body/div/div[2]/div[1]/form/div[2]/span[2]/div/span[2]')
         sleep(1)
         if search_data['status'] == '':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[1]')
+                # 'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[1]')
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[1]')
         elif search_data['status'] == '0':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[2]')
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[2]')
         elif search_data['status'] == '1':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[3]')
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[3]')
 
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/div[1]/form/div[2]/button')
+        self.driver.click_element('x,/html/body/div/div[2]/div[1]/form/div[2]/button')
         sleep(10)
 
     def get_msg_number(self):

@@ -12,10 +12,9 @@ from pages.login.log_in_page_read_csv import LogInPageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 销售和代理商账户成功登录功能的测试
-# author:孙燕妮
-
-class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
+# 虚拟账户成功登录功能的测试
+# author:戴招利
+class TestCase008LoginSuccessWithVirtualUser(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -24,25 +23,19 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.account_center_page_details = AccountCenterDetailsPage(self.driver, self.base_url)
         self.log_in_read_csv = LogInPageReadCsv()
-        self.connect_sql = ConnectSql()
         self.assert_text = AssertText()
+        self.connect_sql = ConnectSql()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
 
-    def tearDown(self):
-        self.driver.quit_browser()
+    def test_virtual_user_login(self):
+        '''通过csv测试虚拟账户成功登录'''
 
-    def test_sales_and_agent_login_by_csv(self):
-        '''通过csv测试销售和代理商账户成功登录和成功退出功能'''
-        csv_file = self.log_in_read_csv.read_csv('login_with_sales_and_agent_user.csv')
+        csv_file = self.log_in_read_csv.read_csv('login_with_virtual_user.csv')
         csv_data = csv.reader(csv_file)
-        is_header = True
         for row in csv_data:
-            if is_header:
-                is_header = False
-                continue
             user_to_login = {
                 "account": row[0],
                 "passwd": row[1]
@@ -52,7 +45,6 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
             # 输入用户信息进行登录
             self.login_page.user_login(user_to_login["account"], user_to_login["passwd"])
             # 点账户中心
-            self.account_center_page_navi_bar.click_account_center_button()
             self.account_center_page_navi_bar.click_account_center_button()
             # 判断登录成功后跳转页面是否正确
             actual_url = self.driver.get_current_url()
@@ -67,8 +59,11 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
 
             connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()
-            get_account_user_info_sql = "SELECT o.type,o.phone,o.parentId,o.nickName from user_info o WHERE o.account = '" + \
-                                        user_to_login['account'] + "'"
+            get_account_user_info_sql = "select i.type,i.phone,i.parentId,i.nickName from user_info i inner join" \
+                                        " user_fictitious f on i.userid = f.parent where f.account='" + user_to_login[
+                                            'account'] + "'"
+
+            print(get_account_user_info_sql)
             cursor.execute(get_account_user_info_sql)
             get_account_user_info = cursor.fetchall()
             current_user_info = []
@@ -121,3 +116,6 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
             # 判断是否成功退出到登录页
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "退出系统失败")
         csv_file.close()
+
+    def tearDown(self):
+        self.driver.quit_browser()

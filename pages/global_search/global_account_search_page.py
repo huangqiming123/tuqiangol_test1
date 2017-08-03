@@ -473,7 +473,7 @@ class GlobalAccountSearchPage(BasePage):
 
     def easy_search_results(self):
         # 获取用户搜索的结果
-        self.driver.switch_to_frame('x,/html/body/div[4]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('style')
         print(a)
         b = self.driver.get_element('x,//*[@id="complex_user_table_nodata"]').get_attribute('style')
@@ -536,7 +536,7 @@ class GlobalAccountSearchPage(BasePage):
 
     def app_easy_search_results(self):
         # 获取用户搜索的结果
-        self.driver.switch_to_frame('x,/html/body/div[4]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]').get_attribute('style')
         b = self.driver.get_element('x,//*[@id="complex_mobileUser_table_nodata"]').get_attribute('style')
         if a == 'display: block;':

@@ -1582,7 +1582,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_fails(self):
-        self.driver.click_element('x,/html/body/div[25]/span[1]/a')
+        self.driver.click_element('x,/html/body/div[29]/span[1]/a')
         sleep(2)
 
     def click_account_center_button(self):

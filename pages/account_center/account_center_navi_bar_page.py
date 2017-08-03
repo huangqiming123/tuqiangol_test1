@@ -44,43 +44,58 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 销售/代理商账户--服务商
     def sales_usr_service_provider(self):
         service_provider = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[1]").text
+            "x,/html/body/div/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[1]").text
         return service_provider
 
     # 销售/代理商户账户--联系人
     def sales_usr_service_provider_connect(self):
         service_provider_connect = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]").text
+            "x,/html/body/div/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]").text
         return service_provider_connect
 
     # 销售/代理商账户--电话
     def sales_usr_service_provider_phone(self):
         service_provider_phone = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[3]").text
+            "x,/html/body/div/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[3]").text
         return service_provider_phone
 
     # 普通用户账户--服务商
     def ordinary_usr_service_provider(self):
+        # service_provider = self.driver.get_element(
+        # "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
         service_provider = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
+            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
         return service_provider
 
     # 普通用户账户--联系人
     def ordinary_usr_service_provider_connect(self):
         service_provider_connect = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[2]").text
+            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[2]").text
         return service_provider_connect
 
     # 普通用户账户--电话
     def ordinary_usr_service_provider_phone(self):
         service_provider_phone = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[3]").text
+            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[3]").text
         return service_provider_phone
 
     # 招呼栏退出系统
     def usr_logout(self):
         # 点击退出系统
         self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a'))
+        sleep(2)
+        self.driver.click_element('p,退出系统')
+        self.driver.wait()
+        # 定位到弹出框内容
+        logout_text = self.driver.get_element("c,layui-layer-content").text
+        print(logout_text)
+        # 点击确定
+        self.driver.click_element("c,layui-layer-btn0")
+        self.driver.wait()
+
+    def app_usr_logout(self):
+        # 点击退出系统
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div/div[2]/span/a'))
         sleep(2)
         self.driver.click_element('p,退出系统')
         self.driver.wait()
@@ -166,15 +181,15 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.operate_input_element("renewPwd", new_passwd)
         # 点击保存按钮
         self.driver.click_element('c,layui-layer-btn0')
-        self.driver.wait(1)
+        self.driver.wait()
         # 获取修改密码成功状态对话框的文本内容
         modify_status = self.driver.get_element("c,layui-layer-content").text
         return modify_status
 
     # 密码修改成功状态框点击确定
     def modify_passwd_success_comfrim(self):
-        self.driver.click_element('x,//*[@id="layui-layer2"]/div[3]/a')
-        self.driver.wait(1)
+        self.driver.click_element("x,/html/body/div[7]/div[3]/a")
+        self.driver.wait()
 
     # 招呼栏业务日志
     def business_log(self):
@@ -532,5 +547,4 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     def click_account_center_button(self):
         self.driver.click_element("accountCenter")
-        # self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/ul/li[1]")
         sleep(2)

@@ -3,6 +3,7 @@ import unittest
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
+from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
@@ -27,6 +28,7 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
         self.cust_manage_basic_info_and_add_cust_page = CustManageBasicInfoAndAddCustPage(self.driver, self.base_url)
+        self.account_center_page_details = AccountCenterDetailsPage(self.driver, self.base_url)
         self.cust_manage_cust_list_page = CustManageCustListPage(self.driver, self.base_url)
         self.cust_manage_my_dev_page = CustManageMyDevPage(self.driver, self.base_url)
         self.cust_manage_lower_account_page = CustManageLowerAccountPage(self.driver, self.base_url)
@@ -53,7 +55,9 @@ class TestCase078CustManageLowerAccountSearch(unittest.TestCase):
         self.log_in_base.log_in()
         # 点击账户中心
         self.account_center_page_navi_bar.click_account_center_button()
+        self.account_center_page_details.account_center_iframe()
         current_account = self.log_in_base.get_log_in_account()
+        self.driver.default_frame()
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()

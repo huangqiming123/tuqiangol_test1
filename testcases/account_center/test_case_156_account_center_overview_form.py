@@ -39,8 +39,11 @@ class TestCase156AccountCenterOverviewForm(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
         account_center_handle = self.driver.get_current_window_handle()
-        # 点击库存
+        # 点击统计报表
+        self.account_center_page_details.account_center_iframe()
         self.account_center_page_details.account_overview('统计报表')
+        self.driver.default_frame()
+
         all_handles = self.driver.get_all_window_handles()
         for handle in all_handles:
             if handle != account_center_handle:

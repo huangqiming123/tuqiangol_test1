@@ -13,7 +13,7 @@ class AccountCenterSettingHomePage(BasePageServer):
 
     # 点击默认首页设置
     def click_home_page_setting(self):
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[5]/a')
+        self.driver.click_element('x,//*[@id="defaultpage"]')
         self.driver.wait()
 
     # 点击默认设置
@@ -68,3 +68,6 @@ class AccountCenterSettingHomePage(BasePageServer):
         if title == "设备分布图":
             url = self.driver.base_url + "/deviceReport/deviceDistribution"
             return url
+
+    def default_home_page_iframe(self):
+        self.driver.switch_to_frame("x,//*[@id='defaultpageFrame']")

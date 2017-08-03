@@ -46,7 +46,7 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
         self.driver.clear_cookies()
         self.log_in_base.log_in()
         self.log_in_base.click_account_center_button()
-        self.current_account = self.log_in_base.get_log_in_account()
+        self.current_account = self.command_management_page.get_user_account_text()
 
         # 登录之后点击控制台，然后点击指令管理
         self.command_management_page.click_control_after_click_command_management()

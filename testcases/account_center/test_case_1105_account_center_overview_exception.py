@@ -33,11 +33,13 @@ class TestCase1105AccountCenterOverviewException(unittest.TestCase):
         # 登录
         self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
+        self.account_center_page_detail.account_center_iframe()
         # 点击快速销售
         sleep(10)
         self.account_center_page_detail.fast_sales()
         # 点击添加按钮
         self.account_center_page_detail.click_add_button()
+        self.driver.default_frame()
 
         csv_file = self.account_center_page_read_csv.read_csv('overview_add_user_exception.csv')
         csv_data = csv.reader(csv_file)

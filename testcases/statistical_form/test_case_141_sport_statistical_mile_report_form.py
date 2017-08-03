@@ -84,33 +84,218 @@ class TestCase141SportStatisticalMileReportForm(unittest.TestCase):
             # 判断查询的条件
 
             # 判断查询条件
-            get_total_sql = self.seasrch_sql.search_sport_mile_report_sql(all_dev, search_data)
-            get_total = self.seasrch_sql.search_sport_mile_report_sql_get_total(all_dev, search_data)
-            print(get_total_sql)
-            print(get_total)
+            get_total_sql_01 = self.seasrch_sql.search_sport_mile_report_sql_01(all_dev, search_data)
+            get_total_sql_02 = self.seasrch_sql.search_sport_mile_report_sql_02(all_dev, search_data)
+            get_total_sql_03 = self.seasrch_sql.search_sport_mile_report_sql_03(all_dev, search_data)
+            get_total_sql_04 = self.seasrch_sql.search_sport_mile_report_sql_04(all_dev, search_data)
+            get_total_sql_05 = self.seasrch_sql.search_sport_mile_report_sql_05(all_dev, search_data)
+            get_total_sql_06 = self.seasrch_sql.search_sport_mile_report_sql_06(all_dev, search_data)
+            get_total_sql_07 = self.seasrch_sql.search_sport_mile_report_sql_07(all_dev, search_data)
+            get_total_sql_08 = self.seasrch_sql.search_sport_mile_report_sql_08(all_dev, search_data)
+            get_total_sql_09 = self.seasrch_sql.search_sport_mile_report_sql_09(all_dev, search_data)
+            get_total_sql_10 = self.seasrch_sql.search_sport_mile_report_sql_10(all_dev, search_data)
+            get_total_sql_11 = self.seasrch_sql.search_sport_mile_report_sql_11(all_dev, search_data)
+            get_total_sql_12 = self.seasrch_sql.search_sport_mile_report_sql_12(all_dev, search_data)
+            get_total_01 = self.seasrch_sql.search_sport_mile_report_sql_get_total_01(all_dev, search_data)
+            get_total_02 = self.seasrch_sql.search_sport_mile_report_sql_get_total_02(all_dev, search_data)
+            get_total_03 = self.seasrch_sql.search_sport_mile_report_sql_get_total_03(all_dev, search_data)
+            get_total_04 = self.seasrch_sql.search_sport_mile_report_sql_get_total_04(all_dev, search_data)
+            get_total_05 = self.seasrch_sql.search_sport_mile_report_sql_get_total_05(all_dev, search_data)
+            get_total_06 = self.seasrch_sql.search_sport_mile_report_sql_get_total_06(all_dev, search_data)
+            get_total_07 = self.seasrch_sql.search_sport_mile_report_sql_get_total_07(all_dev, search_data)
+            get_total_08 = self.seasrch_sql.search_sport_mile_report_sql_get_total_08(all_dev, search_data)
+            get_total_09 = self.seasrch_sql.search_sport_mile_report_sql_get_total_09(all_dev, search_data)
+            get_total_10 = self.seasrch_sql.search_sport_mile_report_sql_get_total_10(all_dev, search_data)
+            get_total_11 = self.seasrch_sql.search_sport_mile_report_sql_get_total_11(all_dev, search_data)
+            get_total_12 = self.seasrch_sql.search_sport_mile_report_sql_get_total_12(all_dev, search_data)
+            print(get_total_sql_01)
+            print(get_total_01)
 
             # 判断查询的条件
             if search_data['type'] == 'mile':
                 # 查询的选择里程
-                cursor_02.execute(get_total_sql)
-                get_all_mlie_and_time = cursor_02.fetchall()
-                get_all_mlie_and_time_list = []
-                for range1 in get_all_mlie_and_time:
+                cursor_02.execute(get_total_sql_01)
+                get_all_mlie_and_time_01 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_01 = []
+                for range1 in get_all_mlie_and_time_01:
                     for range2 in range1:
-                        get_all_mlie_and_time_list.append(range2)
+                        get_all_mlie_and_time_list_01.append(range2)
 
-                cursor_02.execute(get_total)
-                total_number = cursor_02.fetchall()
-                total_number_list = []
-                for range1 in total_number:
+                cursor_02.execute(get_total_sql_02)
+                get_all_mlie_and_time_02 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_02 = []
+                for range1 in get_all_mlie_and_time_02:
                     for range2 in range1:
-                        total_number_list.append(range2)
+                        get_all_mlie_and_time_list_02.append(range2)
 
-                total = len(total_number_list)
+                cursor_02.execute(get_total_sql_03)
+                get_all_mlie_and_time_03 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_03 = []
+                for range1 in get_all_mlie_and_time_03:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_03.append(range2)
+
+                cursor_02.execute(get_total_sql_04)
+                get_all_mlie_and_time_04 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_04 = []
+                for range1 in get_all_mlie_and_time_04:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_04.append(range2)
+
+                cursor_02.execute(get_total_sql_05)
+                get_all_mlie_and_time_05 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_05 = []
+                for range1 in get_all_mlie_and_time_05:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_05.append(range2)
+
+                cursor_02.execute(get_total_sql_06)
+                get_all_mlie_and_time_06 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_06 = []
+                for range1 in get_all_mlie_and_time_06:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_06.append(range2)
+
+                cursor_02.execute(get_total_sql_07)
+                get_all_mlie_and_time_07 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_07 = []
+                for range1 in get_all_mlie_and_time_07:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_07.append(range2)
+
+                cursor_02.execute(get_total_sql_08)
+                get_all_mlie_and_time_08 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_08 = []
+                for range1 in get_all_mlie_and_time_08:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_08.append(range2)
+
+                cursor_02.execute(get_total_sql_09)
+                get_all_mlie_and_time_09 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_09 = []
+                for range1 in get_all_mlie_and_time_09:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_09.append(range2)
+
+                cursor_02.execute(get_total_sql_10)
+                get_all_mlie_and_time_10 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_10 = []
+                for range1 in get_all_mlie_and_time_10:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_10.append(range2)
+
+                cursor_02.execute(get_total_sql_11)
+                get_all_mlie_and_time_11 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_11 = []
+                for range1 in get_all_mlie_and_time_11:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_11.append(range2)
+
+                cursor_02.execute(get_total_sql_12)
+                get_all_mlie_and_time_12 = cursor_02.fetchall()
+                get_all_mlie_and_time_list_12 = []
+                for range1 in get_all_mlie_and_time_12:
+                    for range2 in range1:
+                        get_all_mlie_and_time_list_12.append(range2)
+
+                cursor_02.execute(get_total_01)
+                total_number_01 = cursor_02.fetchall()
+                total_number_list_01 = []
+                for range1 in total_number_01:
+                    for range2 in range1:
+                        total_number_list_01.append(range2)
+
+                cursor_02.execute(get_total_02)
+                total_number_02 = cursor_02.fetchall()
+                total_number_list_02 = []
+                for range1 in total_number_02:
+                    for range2 in range1:
+                        total_number_list_02.append(range2)
+
+                cursor_02.execute(get_total_03)
+                total_number_03 = cursor_02.fetchall()
+                total_number_list_03 = []
+                for range1 in total_number_03:
+                    for range2 in range1:
+                        total_number_list_03.append(range2)
+
+                cursor_02.execute(get_total_04)
+                total_number_04 = cursor_02.fetchall()
+                total_number_list_04 = []
+                for range1 in total_number_04:
+                    for range2 in range1:
+                        total_number_list_04.append(range2)
+
+                cursor_02.execute(get_total_05)
+                total_number_05 = cursor_02.fetchall()
+                total_number_list_05 = []
+                for range1 in total_number_05:
+                    for range2 in range1:
+                        total_number_list_05.append(range2)
+
+                cursor_02.execute(get_total_06)
+                total_number_06 = cursor_02.fetchall()
+                total_number_list_06 = []
+                for range1 in total_number_06:
+                    for range2 in range1:
+                        total_number_list_06.append(range2)
+
+                cursor_02.execute(get_total_07)
+                total_number_07 = cursor_02.fetchall()
+                total_number_list_07 = []
+                for range1 in total_number_07:
+                    for range2 in range1:
+                        total_number_list_07.append(range2)
+
+                cursor_02.execute(get_total_08)
+                total_number_08 = cursor_02.fetchall()
+                total_number_list_08 = []
+                for range1 in total_number_08:
+                    for range2 in range1:
+                        total_number_list_08.append(range2)
+
+                cursor_02.execute(get_total_09)
+                total_number_09 = cursor_02.fetchall()
+                total_number_list_09 = []
+                for range1 in total_number_09:
+                    for range2 in range1:
+                        total_number_list_09.append(range2)
+
+                cursor_02.execute(get_total_10)
+                total_number_10 = cursor_02.fetchall()
+                total_number_list_10 = []
+                for range1 in total_number_10:
+                    for range2 in range1:
+                        total_number_list_10.append(range2)
+
+                cursor_02.execute(get_total_11)
+                total_number_11 = cursor_02.fetchall()
+                total_number_list_11 = []
+                for range1 in total_number_11:
+                    for range2 in range1:
+                        total_number_list_11.append(range2)
+
+                cursor_02.execute(get_total_12)
+                total_number_12 = cursor_02.fetchall()
+                total_number_list_12 = []
+                for range1 in total_number_12:
+                    for range2 in range1:
+                        total_number_list_12.append(range2)
+
+                total = len(total_number_list_01) + len(total_number_list_02) + len(
+                    total_number_list_03) + len(total_number_list_04) + len(total_number_list_05) + len(
+                    total_number_list_06) + len(total_number_list_07) + len(total_number_list_08) + len(
+                    total_number_list_09) + len(total_number_list_10) + len(total_number_list_11) + len(
+                    total_number_list_12)
                 web_total = self.statistical_form_page.get_total_search_mileage_form()
                 self.assertEqual(total, web_total)
                 # 计算总里程 和 总时间
-                total_mile = sum(get_all_mlie_and_time_list)
+                total_mile = sum(get_all_mlie_and_time_list_01) + sum(get_all_mlie_and_time_list_02) + sum(
+                    get_all_mlie_and_time_list_03) + sum(get_all_mlie_and_time_list_04) + sum(
+                    get_all_mlie_and_time_list_05) + sum(get_all_mlie_and_time_list_06) + sum(
+                    get_all_mlie_and_time_list_07) + sum(get_all_mlie_and_time_list_08) + sum(
+                    get_all_mlie_and_time_list_09) + sum(get_all_mlie_and_time_list_10) + sum(
+                    get_all_mlie_and_time_list_11) + sum(get_all_mlie_and_time_list_12)
                 # 断言总时间和总里程，总油耗
                 # 计算总油耗
                 if total_mile == 0:
@@ -125,7 +310,7 @@ class TestCase141SportStatisticalMileReportForm(unittest.TestCase):
 
             elif search_data['type'] == 'day':
                 # 如果选择天
-                cursor_02.execute(get_total_sql)
+                cursor_02.execute(get_total_sql_01)
                 get_all_mile_data = cursor_02.fetchall()
                 get_all_mile_list = []
                 for range1 in get_all_mile_data:

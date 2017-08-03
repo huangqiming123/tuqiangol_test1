@@ -40,12 +40,15 @@ class TestCase153AccountCenterOverviewStock(unittest.TestCase):
         self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
+        self.account_center_page_details.account_center_iframe()
         current_account = self.log_in_base.get_log_in_account()
         account_center_handle = self.driver.get_current_window_handle()
         expect_total = self.account_center_page_details.get_current_account_all_equipment()
 
         # 点击库存
         self.account_center_page_details.account_overview('库存')
+        self.driver.default_frame()
+
         all_handles = self.driver.get_all_window_handles()
         for handle in all_handles:
             if handle != account_center_handle:

@@ -43,7 +43,7 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
         self.driver.clear_cookies()
         self.log_in_base.log_in_jimitest()
         self.log_in_base.click_account_center_button()
-        self.current_account = self.log_in_base.get_log_in_account()
+        self.current_account = self.command_management_page.get_user_account_text()
 
         # 登录之后点击控制台，然后点击指令管理
         self.command_management_page.click_control_after_click_command_management()
@@ -99,6 +99,7 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
                     'id': row[0],
                     'fullparent': row[1]
                 }
+
                 # 查询当前登录用户的全部下级
                 get_next_id_sql = "select userId from user_info where fullParentId like" + \
                                   "'" + user_info["fullparent"] + user_info["id"] + "%'" + ";"
@@ -106,12 +107,27 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
                 cursor.execute(get_next_id_sql)
                 current_account = cursor.fetchall()
                 current_account_list = [user_info['id']]
-
                 for range1 in current_account:
                     for range2 in range1:
                         current_account_list.append(range2)
 
+                # 查询APP用户
+                search_userId_sql = "SELECT sk.bindUserId FROM (SELECT * FROM equipment_mostly WHERE fullParentId LIKE '" + \
+                                    user_info["fullparent"] + user_info[
+                                        "id"] + "%" + "') as sk WHERE sk.bindUserId is NOT NULL GROUP BY sk.bindUserId"
+                cursor.execute(search_userId_sql)
+                app_userId = cursor.fetchall()
+                app_userId_list = []
+                for i in app_userId:
+                    for j in i:
+                        app_userId_list.append(j)
+                app_userId_tuple = tuple(app_userId_list)
+
+                # 合并平台与APP用户
+                for k in app_userId_tuple:
+                    current_account_list.append(k)
                 current_user_next = tuple(current_account_list)
+
                 # 判断搜索条件
                 get_sql = self.command_management_page.search_sql(current_user_next, search_data)
                 # 执行sql

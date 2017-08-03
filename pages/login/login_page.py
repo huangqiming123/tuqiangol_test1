@@ -24,7 +24,8 @@ class LoginPage(BasePageServer):
 
     # 忘记密码点击操作
     def forget_password(self):
-        self.driver.click_element("l,忘记密码？")
+        # self.driver.click_element("l,忘记密码？")
+        self.driver.click_element("x,/html/body/div[1]/div/div[3]/span[1]/a[1]")
 
     # 忘记密码-账号输入框
     def forget_passwd_account(self, account):
@@ -93,14 +94,18 @@ class LoginPage(BasePageServer):
 
     # 底部第三方网站链接点击操作
     def enter_third_party_website(self, web_name):
-        if web_name == '可信网站':
+        if web_name == '工商网监':
             self.driver.click_element('x,/html/body/footer/div[3]/a[1]')
-        elif web_name == '网络警察':
+        elif web_name == '可信网站':
             self.driver.click_element('x,/html/body/footer/div[3]/a[2]')
-        elif web_name == '公共信息网络安全监察':
+        elif web_name == '网络警察':
             self.driver.click_element('x,/html/body/footer/div[3]/a[3]')
-        elif web_name == '不良信息举报中心':
+        elif web_name == '公共信息网络安全监察':
             self.driver.click_element('x,/html/body/footer/div[3]/a[4]')
+        elif web_name == '不良信息举报中心':
+            self.driver.click_element('x,/html/body/footer/div[3]/a[5]')
+
+
 
     # 封装登录操作
     def user_login(self, account, password):

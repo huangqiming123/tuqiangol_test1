@@ -22,7 +22,7 @@ class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
     def test_third_website(self):
         '''测试登录页底部第三方链接'''
 
-        websites = ["可信网站", "网络警察", "公共信息网络安全监察", "不良信息举报中心"]
+        websites = ["可信网站", "网络警察", "公共信息网络安全监察", "不良信息举报中心", "工商网监"]
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
@@ -102,6 +102,26 @@ class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
                 web_url_03 = self.driver.get_current_url()
                 # 判断当前第三方链接跳转是否正确
                 self.assertEqual(expect_url_03, web_url_03, "当前第三方链接跳转错误")
+                self.driver.wait()
+
+                self.driver.close_window()
+                self.driver.switch_to_window(tuqiang_handle)
+
+        self.driver.switch_to_window(tuqiang_handle)
+        self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "回到原窗口失败")
+
+        expect_url_04 = "http://szcert.ebs.org.cn/2a950f00-00fb-495c-8e30-5a04100f9b17"
+        self.login_page.enter_third_party_website(websites[4])
+        self.driver.wait()
+        # 获取当前所有窗口句柄
+        all_handles = self.driver.get_all_window_handles()
+        for handle in all_handles:
+            if handle != tuqiang_handle:
+                self.driver.switch_to_window(handle)
+                self.driver.wait(1)
+                web_url_04 = self.driver.get_current_url()
+                # 判断当前第三方链接跳转是否正确
+                self.assertEqual(expect_url_04, web_url_04, "当前第三方链接跳转错误")
                 self.driver.wait()
 
                 self.driver.close_window()

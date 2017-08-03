@@ -38,9 +38,13 @@ class TestCase167AccountCenterOverviewActived(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
         account_center_handle = self.driver.get_current_window_handle()
+
+        self.account_center_page_details.account_center_iframe()
         actual_total_actived = self.account_center_page_details.get_actual_total_actved()
         # 点击库存
         self.account_center_page_details.account_overview('已激活')
+        self.driver.default_frame()
+
         all_handles = self.driver.get_all_window_handles()
         for handle in all_handles:
             if handle != account_center_handle:

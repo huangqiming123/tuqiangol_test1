@@ -819,11 +819,12 @@ class DevManagePages(BasePage):
         self.driver.operate_input_element('x,//*[@id="startTime_input"]', search_data['begin_time'])
         self.driver.operate_input_element('x,//*[@id="endTime_input"]', search_data['end_time'])
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[1]/div')
-        # 是否包含下级
-        sleep(2)
-        if search_data['next'] == '1':
+        a = self.driver.get_element('x,//*[@id="lowerFlag"]/div/input').is_selected()
+        if a == False and search_data['next'] == '1':
             self.driver.click_element('x,//*[@id="lowerFlag"]/div/ins')
+        elif a == True and search_data['next'] == '':
+            self.driver.click_element('x,//*[@id="lowerFlag"]/div/ins')
+        # 是否包含下级search_data['next'] == '1':
 
         # 绑定状态
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/span[2]')

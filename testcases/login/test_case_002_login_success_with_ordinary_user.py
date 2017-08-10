@@ -30,6 +30,7 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
 
     def test_ordinary_user_login_by_csv(self):
         '''通过csv测试普通用户账户成功登录和成功退出功能'''
+        data = ["首页", "设备管理", "控制台", "统计报表", "安全区域", "设备分布"]
 
         csv_file = self.log_in_page_read_csv.read_csv('login_with_ordinary_user.csv')
         csv_data = csv.reader(csv_file)
@@ -55,7 +56,12 @@ class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
             # 判断登录成功后招呼栏的用户名是否正确
             hello_usr = self.account_center_page_navi_bar.hello_user_account()
             expect_usr = user_to_login["account"]
-            self.assertEqual(expect_usr, hello_usr, "登录成功后招呼栏账户名显示错误")
+            self.assertIn(expect_usr, hello_usr, "登录成功后招呼栏账户名显示错误")
+
+            # 验证模块
+            module = self.account_center_page_navi_bar.get_page_module()
+            for m in range(len(module)):
+                self.assertIn(data[m], module[m], "用户账号登录，模块显示错误")
 
             connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()

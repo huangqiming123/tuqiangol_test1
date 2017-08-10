@@ -12,7 +12,7 @@ from pages.login.log_in_page_read_csv import LogInPageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 虚拟账户成功登录功能的测试
+# 虚拟账户成功登录和登录失败功能
 # author:戴招利
 class TestCase008LoginSuccessWithVirtualUser(unittest.TestCase):
     def setUp(self):
@@ -50,6 +50,13 @@ class TestCase008LoginSuccessWithVirtualUser(unittest.TestCase):
             actual_url = self.driver.get_current_url()
             expect_url = self.base_url + "/customer/toAccountCenter"
             self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")
+
+            # 验证是否有存在虚拟账号管理模块
+            text = self.login_page.get_account_center_list()
+            for i in text:
+                print(i)
+                self.assertNotIn(self.assert_text.account_center_page_virtual_account_manager(), i, "虚拟账号中存在虚拟账号管理模块")
+
 
             self.account_center_page_details.account_center_iframe()
             # 断言当前登录账号的用户名
@@ -115,7 +122,17 @@ class TestCase008LoginSuccessWithVirtualUser(unittest.TestCase):
             self.account_center_page_navi_bar.usr_logout()
             # 判断是否成功退出到登录页
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "退出系统失败")
+
+            # 虚拟账号错误密码登录
+            self.login_page.user_login(user_to_login["account"], "5656565656")
+            self.assertEqual(self.assert_text.log_in_page_password_error(), self.login_page.get_exception_text(),
+                             "虚拟账号密码错误提示不一致")
+
+
+
+
         csv_file.close()
+
 
     def tearDown(self):
         self.driver.quit_browser()

@@ -1,4 +1,3 @@
-import csv
 import unittest
 from time import sleep
 
@@ -11,10 +10,10 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 
 class TestCase125WorkTypeTemplateManagementOperation(unittest.TestCase):
-    '''
-    用例第124条，工作模板的操作：修改、删除、下发指令
+    """
+    用例第125条，工作模板的操作：修改、删除、下发指令
     author：zhangAo
-    '''
+    """
     driver = None
     base_url = None
     base_page = None
@@ -59,7 +58,8 @@ class TestCase125WorkTypeTemplateManagementOperation(unittest.TestCase):
         # 点击工作模式模板管理
         self.command_management_page.click_lift_list('work_type_template_management')
         # 断言右侧页面的title文本
-        expect_title_text_after_click_work_type_template_management = self.assert_text.command_manager_page_work_type_template_management()
+        expect_title_text_after_click_work_type_template_management = \
+            self.assert_text.command_manager_page_work_type_template_management()
         self.assertEqual(expect_title_text_after_click_work_type_template_management,
                          self.command_management_page.actual_title_text_after_click_work_type_template_management())
 

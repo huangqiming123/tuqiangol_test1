@@ -11,10 +11,10 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 
 class TestCase124WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
-    '''
-    用例第123条，创建模板
+    """
+    用例第124条，创建模板
     author:zhangAo
-    '''
+    """
     driver = None
     base_url = None
     base_page = None
@@ -59,7 +59,8 @@ class TestCase124WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
         # 点击工作模式模板管理
         self.command_management_page.click_lift_list('work_type_template_management')
         # 断言右侧页面的title文本
-        expect_title_text_after_click_work_type_template_management = self.assert_text.command_manager_page_work_type_template_management()
+        expect_title_text_after_click_work_type_template_management = \
+            self.assert_text.command_manager_page_work_type_template_management()
         self.assertEqual(expect_title_text_after_click_work_type_template_management,
                          self.command_management_page.actual_title_text_after_click_work_type_template_management())
 
@@ -113,7 +114,7 @@ class TestCase124WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
             # 断言打开的创建模板的title文本
             self.assertEqual(expect_title_text_after_click_create_template,
                              self.command_management_page.actual_title_text_after_click_create_template())
-            sleep(3)
+            sleep(5)
             self.command_management_page.add_create_template_data(work_template_time_data)
             # 点击保存
             self.command_management_page.create_template_click_ensure()

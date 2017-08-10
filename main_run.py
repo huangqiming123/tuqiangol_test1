@@ -8,9 +8,9 @@ testcases运行入口
 author:zhangAo
 '''
 def run_01():
-    os.system('python -m test_runner.tuqiangOL_test_runner_login')
-    sleep(5)
-    os.system('python -m test_runner.tuqiangOL_test_runner_account_center')
+    # os.system('python -m test_runner.tuqiangOL_test_runner_login')
+    # sleep(5)
+    # os.system('python -m test_runner.tuqiangOL_test_runner_account_center')
     os.system('python -m test_runner.tuqiangOL_test_runner_dev_manage')
     sleep(5)
 
@@ -21,8 +21,8 @@ def run_02():
 
 
 def run_03():
-    os.system('python -m test_runner.tuqiangOL_test_runner_cust_manage')
-    os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
+    # os.system('python -m test_runner.tuqiangOL_test_runner_cust_manage')
+    # os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
     os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
 
 
@@ -80,7 +80,7 @@ def run_09():
     except:
         print('输入有误，请重新输入！')
         continue'''
-start_time = datetime.datetime(2017, 8, 3, 22, 10, 0)
+start_time = datetime.datetime(2017, 8, 10, 2, 10, 0)
 while datetime.datetime.now() < start_time:
     sleep(5)
 

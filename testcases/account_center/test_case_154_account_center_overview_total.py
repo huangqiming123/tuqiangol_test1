@@ -61,6 +61,7 @@ class TestCase154AccountCenterOverviewTotal(unittest.TestCase):
                 # 断言包涵下级是否被勾选上
                 self.assertEqual(True, self.driver.get_element('x,//*[@id="lowerFlag"]/div/input').is_selected())
 
+                sleep(2)
                 dev_count = self.account_center_page_details.get_total_dev_number_after_ckick_all_dev_number()
                 self.assertEqual(expect_total, str(dev_count), '当前总进货数和实际数据库不一致！')
 

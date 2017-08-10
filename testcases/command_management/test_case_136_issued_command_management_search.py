@@ -13,9 +13,9 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 
 class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
-    '''
+    """
     用例第136条，下发指令管理页面的搜索
-    '''
+    """
     driver = None
     base_url = None
     base_page = None
@@ -90,7 +90,8 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
             # 建立游标
             cursor = connect.cursor()
             # 查询登录用户的ID 和 父ID
-            get_current_user_id = "select o.userId,o.fullParentId from user_info o where o.account = '" + self.current_account + "';"
+            get_current_user_id = \
+                "select o.userId,o.fullParentId from user_info o where o.account = '" + self.current_account + "';"
             # 执行
             cursor.execute(get_current_user_id)
             user = cursor.fetchall()
@@ -116,15 +117,15 @@ class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
                                     user_info["fullparent"] + user_info[
                                         "id"] + "%" + "') as sk WHERE sk.bindUserId is NOT NULL GROUP BY sk.bindUserId"
                 cursor.execute(search_userId_sql)
-                app_userId = cursor.fetchall()
-                app_userId_list = []
-                for i in app_userId:
+                app_user_id = cursor.fetchall()
+                app_user_id_list = []
+                for i in app_user_id:
                     for j in i:
-                        app_userId_list.append(j)
-                app_userId_tuple = tuple(app_userId_list)
+                        app_user_id_list.append(j)
+                app_user_id_tuple = tuple(app_user_id_list)
 
                 # 合并平台与APP用户
-                for k in app_userId_tuple:
+                for k in app_user_id_tuple:
                     current_account_list.append(k)
                 current_user_next = tuple(current_account_list)
 

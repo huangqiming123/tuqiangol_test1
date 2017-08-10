@@ -12,7 +12,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
-# 账户中心-虚拟账户管理
+# 账户中心-虚拟账户管理--添加虚拟账号
 # author:孙燕妮
 
 
@@ -64,14 +64,18 @@ class TestCase023AccountCenterVisualAccount(unittest.TestCase):
 
             # 添加虚拟账户
             self.account_center_page_visual_account.add_visual_account(acc_to_add["account"], acc_to_add["passwd"])
+            state = self.account_center_page_visual_account.get_visual_account_limits_state()
+            self.assertEqual(False, state["edit_data"], "修改数据默认勾选了")
+            self.assertEqual(False, state["instruction"], "下发指令默认勾选了")
             # 保存
             self.account_center_page_visual_account.save_add_info()
+
             # 验证是否保存成功
             save_status = self.account_center_page_visual_account.get_save_status()
             self.assertIn(self.assert_text.account_center_page_operation_done(), save_status, "保存成功")
             self.driver.wait()
 
-            # 退出登录验证虚拟账号
+            #退出登录验证虚拟账号
             self.account_center_page_navi_bar.usr_logout()
             self.log_in_base.log_in_with_csv(acc_to_add["account"], acc_to_add["passwd"])
             self.assertEqual(acc_to_add["account"], self.account_center_page_navi_bar.hello_user_account(),

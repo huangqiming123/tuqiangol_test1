@@ -48,6 +48,10 @@ class TestCase1102LoginForgetPasswordException(unittest.TestCase):
             self.assertEqual(data["phone_prompt"], all_prompt["phone_prompt2"], "手机号错误提示语显示不一致")
             self.assertEqual(data["code_prompt"], all_prompt["code_prompt2"], "验证码错误提示语显示不一致")
 
+            self.assertEqual(data["text"], all_prompt["text_prompt"], "弹框提示不一致")
+            print(data["text"], all_prompt["text_prompt"])
+
+
         # 点取消
         self.login_page.dis_forget_passwd()
         csv_file.close()

@@ -141,7 +141,7 @@ class TestCase104DevManageDevOperationNOActiveAndStart(unittest.TestCase):
                 self.assertEqual(expect_url, self.driver.get_current_url())
 
                 text = self.dev_manage_page.click_street_scape_get_text()
-                self.assertEqual(self.assert_text.dev_page_track_preset_text(), text)
+                self.assertIn(self.assert_text.dev_page_track_preset_text(), text)
                 self.driver.close_current_page()
                 self.driver.switch_to_window(current_handle)
                 sleep(2)

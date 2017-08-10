@@ -54,7 +54,8 @@ class TestCase1101CommandManageCreateTemplate(unittest.TestCase):
         # 点击工作模式模板管理
         self.command_management_page.click_lift_list('work_type_template_management')
         # 断言右侧页面的title文本
-        expect_title_text_after_click_work_type_template_management = self.assert_text.command_manager_page_work_type_template_management()
+        expect_title_text_after_click_work_type_template_management = \
+            self.assert_text.command_manager_page_work_type_template_management()
         self.assertEqual(expect_title_text_after_click_work_type_template_management,
                          self.command_management_page.actual_title_text_after_click_work_type_template_management())
 
@@ -104,7 +105,8 @@ class TestCase1101CommandManageCreateTemplate(unittest.TestCase):
         get_circulation_report_time_text_fail = self.command_management_page.get_circulation_report_time_text_fail()
         get_circulation_report_time_texts_fail = self.command_management_page.get_circulation_report_time_texts_fail()
         self.assertEqual(
-            self.assert_text.command_manager_page_must_than_90() + self.assert_text.command_manager_page_must_be_integer(),
+            self.assert_text.command_manager_page_must_than_90() +
+            self.assert_text.command_manager_page_must_be_integer(),
             get_circulation_report_time_text_fail + get_circulation_report_time_texts_fail)
 
         # 点击添加

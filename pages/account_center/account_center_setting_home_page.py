@@ -71,3 +71,10 @@ class AccountCenterSettingHomePage(BasePageServer):
 
     def default_home_page_iframe(self):
         self.driver.switch_to_frame("x,//*[@id='defaultpageFrame']")
+
+    # 获取标题
+    def get_default_home_setting_title(self):
+        self.driver.switch_to_frame("x,//*[@id='defaultpageFrame']")
+        text = self.driver.get_text("x,/html/body/div/div[1]/div/b")
+        self.driver.default_frame()
+        return text

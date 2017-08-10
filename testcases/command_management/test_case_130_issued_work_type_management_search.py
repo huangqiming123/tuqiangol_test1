@@ -13,10 +13,10 @@ from pages.command_management.search_sql import SearchSql
 
 
 class TestCase130IssuedWorkTypeManagementSearch(unittest.TestCase):
-    '''
+    """
     用例第130条，下发工作模式管理页面搜索
     author：zhangAo
-    '''
+    """
     driver = None
     base_url = None
     base_page = None
@@ -93,7 +93,8 @@ class TestCase130IssuedWorkTypeManagementSearch(unittest.TestCase):
             # 创建游标
             cursor = connect.cursor()
             # 获取登录账号的ID
-            get_current_user_id_sql = "select o.account,o.userId from user_info o where o.account = '" + self.current_account + "';"
+            get_current_user_id_sql = \
+                "select o.account,o.userId from user_info o where o.account = '" + self.current_account + "';"
             cursor.execute(get_current_user_id_sql)
             user_relation = cursor.fetchall()
             for row in user_relation:

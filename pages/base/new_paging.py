@@ -126,7 +126,7 @@ class NewPaging(BasePage):
                 page = self.get_li_total_number(param)
                 self.driver.click_element(param + "/ul/li[" + str(int(page) + 1) + "]/a")
                 try:
-                    sleep(15)
+                    sleep(25)
                     self.driver.get_text('l,下一页') == '下一页'
                     continue
                 except:

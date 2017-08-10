@@ -51,6 +51,7 @@ class TestCase022AccountCenterMsgSearch(unittest.TestCase):
 
         # 进入消息中心
         self.account_center_page_msg_center.enter_msg_center()
+        self.driver.wait(5)
 
         # 进入iframe
         self.account_center_page_msg_center.message_center_iframe()

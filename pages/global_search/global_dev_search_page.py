@@ -1250,7 +1250,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def get_text_after_click_track_play(self):
-        return self.driver.get_text('x,//*[@id="mapview"]/div[3]/div/div[1]/b')
+        return self.driver.get_text('x,//*[@id="mapview"]/div[1]/div[1]/div/b')
 
     def get_dev_name_and_imei_after_click_track_play(self):
         return self.driver.get_text('x,//*[@id="driverName"]')
@@ -1262,7 +1262,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.default_frame()
 
     def get_text_after_click_track_preset(self):
-        return self.driver.get_text('x,//*[@id="mapview"]/div[3]/div/div[1]/b')
+        return self.driver.get_text('x,//*[@id="mapview"]/div[1]/div/b')
 
     def click_look_alarm_button_in_dev_search(self):
         self.swith_to_search_frame()

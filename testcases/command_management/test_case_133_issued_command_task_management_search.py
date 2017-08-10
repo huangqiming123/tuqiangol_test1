@@ -14,10 +14,10 @@ from pages.command_management.search_sql import SearchSql
 
 
 class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
-    '''
+    """
     用例第133条，下发指令任务管理的搜索功能
     author:zhangAo
-    '''
+    """
     driver = None
     base_url = None
     base_page = None
@@ -68,7 +68,8 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
         # 点击下发任务指令管理
         self.command_management_page.click_lift_list('issued_command_task_management')
         # 断言
-        expect_title_text_after_click_issued_command_task_management = self.assert_text.command_manager_page_issued_command_task()
+        expect_title_text_after_click_issued_command_task_management = \
+            self.assert_text.command_manager_page_issued_command_task()
         self.assertEqual(expect_title_text_after_click_issued_command_task_management,
                          self.command_management_page.actual_text_after_click_issued_command_task())
 
@@ -91,7 +92,8 @@ class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
             # 建立游标
             cursor = connect.cursor()
             # 查询登录用户的ID 和 父ID
-            get_current_user_id = "select o.userId,o.fullParentId from user_info o where o.account = '" + self.current_account + "';"
+            get_current_user_id = \
+                "select o.userId,o.fullParentId from user_info o where o.account = '" + self.current_account + "';"
             # 执行
             cursor.execute(get_current_user_id)
             user = cursor.fetchall()

@@ -10,10 +10,10 @@ from pages.command_management.command_management_page import CommandManagementPa
 
 
 class TestCase134IssuedCommandTaskManagementOperation(unittest.TestCase):
-    '''
+    """
     用例第134条，下发工作指令任务的操作
     author:zhangAo
-    '''
+    """
     driver = None
     base_url = None
     base_page = None
@@ -59,7 +59,8 @@ class TestCase134IssuedCommandTaskManagementOperation(unittest.TestCase):
         # 点击下发任务指令管理
         self.command_management_page.click_lift_list('issued_command_task_management')
         # 断言
-        expect_title_text_after_click_issued_command_task_management = self.assert_text.command_manager_page_issued_command_task()
+        expect_title_text_after_click_issued_command_task_management = \
+            self.assert_text.command_manager_page_issued_command_task()
         self.assertEqual(expect_title_text_after_click_issued_command_task_management,
                          self.command_management_page.actual_text_after_click_issued_command_task())
 

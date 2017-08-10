@@ -14,7 +14,9 @@ class AutomateDriver(object):
     def __init__(self):
         self.driver = browser('chrome')
         # self.base_url = 'http://tujunsat.jimicloud.com'
-        self.base_url = 'http://www.tuqiangol.com'
+        self.base_url = 'http://120.76.232.176:8180'
+        # self.base_url = 'http://www.tuqiangol.com'
+        # self.base_url = 'http://172.16.0.116:8680'
 
     def navigate(self, url):
         self.driver.get(self.base_url + url)
@@ -227,3 +229,15 @@ class AutomateDriver(object):
 
     def close_window(self):
         self.driver.close()
+
+    def input_element(self, selector, value):
+        element = self.get_element(selector)
+        element.send_keys(value)
+
+    def input_sim(self, selector, value):
+        element = self.get_element(selector)
+        element.send_keys(value)
+
+    def clear(self, selector):
+        element = self.get_element(selector)
+        element.clear()

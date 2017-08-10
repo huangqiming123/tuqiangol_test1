@@ -1060,10 +1060,12 @@ class StatisticalFormPage(BasePage):
 
     def get_total_search_acc_form_number(self):
         # 获取搜索出来的acc报表的条数
-        try:
-            self.new_paging = NewPaging(self.driver, self.base_url)
-            return self.new_paging.get_last_page_number('x,//*[@id="accTable"]')
-        except:
+        a = self.driver.get_element('x,//*[@id="paging-accReport"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="paging-accReport"]', 'x,//*[@id="accTable"]')
+            return total
+        else:
             return 0
 
     def get_total_search_mile_total(self):

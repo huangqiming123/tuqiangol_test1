@@ -1,5 +1,7 @@
 from time import sleep
 
+from selenium.webdriver.common.keys import Keys
+
 from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
@@ -77,6 +79,7 @@ class AccountCenterDetailsPage(BasePageServer):
     # 快捷销售
     def fast_sales(self):
         self.driver.click_element("x,//*[@id='eSales']/a")
+        self.driver.wait()
 
     # 快捷销售-账户查找
     def fast_sales_find_account(self, search_account):
@@ -99,13 +102,39 @@ class AccountCenterDetailsPage(BasePageServer):
     # 快捷销售-设备查找、添加
     def fast_sales_find_and_add_device(self, device_imei):
         # 在“追加设备”框内输入账号下存在的设备imei号（一个/多个）
-        self.driver.operate_input_element("searchIMEI", device_imei)
-        imei_count = self.get_device_imei_count()
-        # 点击“添加”按钮
-        self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/"
-                                  "div/div[2]/div[1]/div[2]/div/div/div/div[3]/button[1]")
-        self.driver.wait()
-        return imei_count
+        if "/" in device_imei:
+            self.driver.get_element('searchIMEI').click()
+            self.driver.clear("searchIMEI")
+            self.driver.wait(1)
+            value = device_imei.split("/")
+            print(value)
+            for i in value:
+                add_sim = self.driver.get_element("searchIMEI")
+                self.driver.input_sim('searchIMEI', i)
+                add_sim.send_keys(Keys.ENTER)
+
+            # 获取imei计数
+            imei_count = self.get_device_imei_count()
+            data = {"import_count": len(value),
+                    "add_count": imei_count
+                    }
+
+            # 点击“添加”按钮
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]"
+                                      "/div[2]/div/div/div/div[3]/button[1]")
+            self.driver.wait()
+            return data
+        else:
+            self.driver.operate_input_element("searchIMEI", device_imei)
+            self.driver.wait(1)
+            imei_count = self.get_device_imei_count()
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]"
+                                      "/div[2]/div/div/div/div[3]/button[1]")
+            self.driver.wait()
+            return imei_count
+
+
+
 
     '''# 已添加设备imei后获取设备框内显示的设备imei文本内容
     def get_selected_device(self):
@@ -117,23 +146,78 @@ class AccountCenterDetailsPage(BasePageServer):
         # 在“追加设备”框内输入存在的设备imei号
         self.driver.operate_input_element("searchIMEI", device_imei)
         # 点击“取消”按钮
-        self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/"
-                                  "div/div[2]/div[1]/div[2]/div/div/div/div[3]/button[2]")
+        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/"
+                                  "div[2]/div/div/div/div[3]/button[2]")
 
     # 快捷销售-设备列表-删除
     def delete_list_device(self):
-        self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/"
-                                  "div/div[2]/div[2]/div/div[2]/table/tr/td[4]/a")
+        count = len(self.driver.get_elements("x,//*[@id='succList']/tr"))
+        if count > 1:
+            for i in range(count):
+                self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div/"
+                                          "div[2]/table/tr[1]/td[4]/a")
+                self.driver.wait(1)
+        else:
+            self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div/"
+                                      "div[2]/table/tr[1]/td[4]/a")
 
-    # 快捷销售-设备查找-获取imei计数
+    # 快捷销售-设备查找-获取输入imei计数
     def get_device_imei_count(self):
         dev_num = self.driver.get_element("ac_dev_num").text
         return dev_num
 
     # 快捷销售-设备查找-获取已选设备个数
     def get_selected_device_num(self):
-        dev_num = self.driver.get_element("selectedCount").text
+        dev_num = int(self.driver.get_element("selectedCount").text)
         return dev_num
+
+    # 快速销售-设备查找-提示成功个数
+    def get_device_prompt_succeed_count(self):
+        succeed_count = self.driver.get_text("succCount")
+        return int(succeed_count)
+
+    # 快速销售-设备查找-提示失败个数
+    def get_device_prompt_failure_count(self):
+        failure_count = self.driver.get_text("failCount")
+        print("失败数", failure_count)
+        return int(failure_count)
+
+    # 快速销售-设备查找-提示列表失败个数
+    def get_device_list_failure_count(self):
+        list_count = len(self.driver.get_elements("x,//*[@id='failedList']/tr"))
+        return list_count
+
+    # 快速销售-添加成功个数
+    def get_list_succeed_count(self):
+        count = len(self.driver.get_elements("x,//*[@id='succList']/tr"))
+        print("列表", count)
+        return count
+
+    # 获取消息中的数据
+    def get_prompt_list_data(self):
+        all_imei = []
+        all_state = []
+        all_cause = []
+        count = len(self.driver.get_elements("x,//*[@id='failedList']/tr"))
+        print("333", count)
+        for i in range(count):
+            imei = self.driver.get_text("x,//*[@id='failedList']/tr[" + str(i + 1) + "]/td[1]")
+            state = self.driver.get_text("x,//*[@id='failedList']/tr[" + str(i + 1) + "]/td[2]/span")
+            cause = self.driver.get_text("x,//*[@id='failedList']/tr[" + str(i + 1) + "]/td[3]")
+            all_imei.append(imei)
+            all_state.append(state)
+            all_cause.append(cause)
+        data = {
+            "imei": all_imei,
+            "state": all_state,
+            "cause": all_cause,
+        }
+        return data
+
+    # 点击消息提示的X
+    def click_prompt_close(self):
+        self.driver.click_element("x,/html/body/div[1]/div[8]/span[1]/a")
+
 
     # 快捷销售-选择用户到期时间
     def choose_account_expired_time(self, account_expired_time):
@@ -161,8 +245,7 @@ class AccountCenterDetailsPage(BasePageServer):
 
     # 快捷销售-销售按钮
     def sale_button(self):
-        self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/div"
-                                  "/div[2]/div[3]/button[3]")
+        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/button[3]")
 
     # 获取销售成功操作状态弹框的文本内容
     def get_sale_status(self):
@@ -175,19 +258,19 @@ class AccountCenterDetailsPage(BasePageServer):
 
     # 快捷销售-新增客户
     def add_cust(self, acc_type, acc_name, account, pwd, phone, email, conn, com):
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
         # 点击新增客户
-        self.driver.click_element("x,/html/body/div[1]/div[4]/div/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/div/"
-                                  "div[2]/div[1]/div[1]/div[2]/button")
-        self.driver.wait(1)
+        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
+        self.driver.default_frame()
         sleep(2)
 
         # 选择客户类型
         if acc_type == '销售':
-            self.driver.click_element("x,/html/body/div[4]/div/div/div[2]/div/form/div[2]/div/div/label[1]/div/ins")
+            self.driver.click_element("x,//*[@id='addRole_userForm']/div[2]/div/div/label[1]")
         elif acc_type == '代理商':
-            self.driver.click_element("x,/html/body/div[4]/div/div/div[2]/div/form/div[2]/div/div/label[2]/div/ins")
+            self.driver.click_element("x,//*[@id='addRole_userForm']/div[2]/div/div/label[2]")
         elif acc_type == '用户':
-            self.driver.click_element('x,/html/body/div[4]/div/div/div[2]/div/form/div[2]/div/div/label[2]/div/ins')
+            self.driver.click_element('x,//*[@id="addRole_userForm"]/div[2]/div/div/label[3]')
         # 编辑客户名称
         self.driver.operate_input_element("nickName", acc_name)
         self.driver.wait(1)
@@ -210,8 +293,29 @@ class AccountCenterDetailsPage(BasePageServer):
         self.driver.operate_input_element("contact", conn)
         self.driver.wait(1)
         # 保存
-        self.driver.click_element("addUserBtn")
+        self.driver.click_element("c,layui-layer-btn0")
         self.driver.wait(1)
+
+    # 快捷销售-新增客户--取消
+    def add_cust_cancel(self):
+        # 添加
+        self.click_add()
+        sleep(2)
+        # 取消
+        self.driver.click_element("x,/html/body/div[1]/div[7]/div[3]/a[2]")
+        sleep(2)
+        self.click_add()
+        sleep(2)
+        self.driver.click_element("x,/html/body/div[1]/div[7]/span[1]/a")
+        sleep(2)
+
+    # 点击添加按钮
+
+    def click_add(self):
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
+        self.driver.default_frame()
+
 
     # 获取新增客户保存状态
     def get_add_save_status(self):
@@ -277,7 +381,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
 
     def get_actual_text_after_click_command(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[2]/div[5]/div[1]/div/b')
+        return self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[5]/div[1]/div/b')
 
     def get_actual_text_after_click_set_up_landmark(self):
         return self.driver.get_text('x,//*[@id="marktab"]')
@@ -381,7 +485,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
 
     def click_report_after_text(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[1]/div')
+        return self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[1]/div')
 
     def click_safearea_get_vaule(self):
         return self.driver.get_element('x,//*[@id="safemenu"]/li[1]').get_attribute('class')
@@ -488,12 +592,59 @@ class AccountCenterDetailsPage(BasePageServer):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
         sleep(2)
 
-    # 账户中心iframe
+    #账户中心iframe
     def account_center_iframe(self):
         self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
 
-    # 获取app账号的服务商个数
+    #获取app账号的服务商个数
     def get_current_account_service_number(self):
-        count = len(self.driver.get_elements("x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div"))
+        count = len(self.driver.get_elements("x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div"))
         print(count)
         return count
+
+    # 转移设备
+    def shift_facility(self, add_info, search_info):
+        # 进入设备管理页面
+        self.driver.click_element('x,//*[@id="device"]/a')
+        sleep(2)
+        self.driver.operate_input_element('deviceManage_cusTreeKey', add_info['account'])
+        # 搜索
+        self.driver.click_element('deviceManage_cusTreeSearchBtn')
+        self.driver.wait()
+        # 选中查询结果
+        self.driver.click_element("c,autocompleter-item")
+        self.driver.wait(1)
+
+        self.driver.operate_input_element('x,//*[@id="searchIMEI"]', search_info['device_imei'])
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
+        sleep(3)
+        # 点击转移
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr/td[12]/a[2]')
+        sleep(2)
+        # 转个当前登录账号
+        self.driver.click_element("treeDemo_device_sale_id_1_a")
+        self.driver.click_element("x,//*[@id='device_sale_id']/div[3]/div[2]/button[3]")
+
+    # 点击账户详情
+    def click_account_details(self):
+        self.driver.click_element("x,//*[@id='usercenter']/a")
+        sleep(2)
+
+    # 获取记住默认参数选项文本
+    def get_memorization_default_options_text(self):
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+        text = self.driver.get_text("x,/html/body/div/div/div[1]/label")
+        self.driver.default_frame()
+        return text
+
+    # 点击设备型号设置
+    def click_facility_Model_number_setting(self):
+        self.driver.click_element("devicetype")
+        sleep(2)
+
+    # 点击设备型号设置
+    def get_facility_Model_number_setting_title(self):
+        self.driver.switch_to_frame("x,//*[@id='devicetypeFrame']")
+        title = self.driver.get_text("x,/html/body/div/div[1]/div/b")
+        self.driver.default_frame()
+        return title

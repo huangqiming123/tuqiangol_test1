@@ -2,6 +2,7 @@ import csv
 import unittest
 
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text import AssertText
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.base.base_page_server import BasePageServer
@@ -19,6 +20,7 @@ class TestCase010AccountCenterModifyPasswd(unittest.TestCase):
         self.login_page = LoginPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -55,7 +57,13 @@ class TestCase010AccountCenterModifyPasswd(unittest.TestCase):
             # 判断点击确定后是否关闭弹框并回到登录页
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "修改成功后页面跳转错误")
 
-            # 登录账号
+            # 使用旧密码登录
+            self.login_page.user_login(user_to_modify_passwd["account"],
+                                       user_to_modify_passwd["old_passwd"])
+            self.assertEqual(self.assert_text.log_in_page_password_error(), self.login_page.get_exception_text(),
+                             "旧密码登录，提示不一致")
+
+            # 新密码登录账号
             self.login_page.user_login(user_to_modify_passwd["account"],
                                        user_to_modify_passwd["new_passwd"])
 

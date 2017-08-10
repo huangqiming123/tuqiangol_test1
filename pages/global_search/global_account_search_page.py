@@ -1,5 +1,7 @@
 from time import sleep
 
+from selenium.webdriver.common.keys import Keys
+
 from automate_driver.automate_driver import AutomateDriver
 from pages.base.base_page import BasePage
 
@@ -552,3 +554,183 @@ class GlobalAccountSearchPage(BasePage):
             elif a == 'display: none;' and b == 'display: block;':
                 self.driver.default_frame()
                 return 0
+
+    def click_cust_manager_button(self):
+        self.driver.click_element('x,//*[@id="customer"]/a')
+        sleep(2)
+
+    def click_add_new_user_button(self):
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[2]/div/button[1]')
+        sleep(2)
+
+    def switch_to_add_user_frame(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        sleep(2)
+
+    def click_close_add_user_page(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def add_data_to_add_new_user(self, add_data):
+        if add_data['account_type'] == '销售':
+            self.driver.click_element('x,//*[@id="labelSale"]/div/ins')
+        elif add_data['account_type'] == '代理商':
+            self.driver.click_element('x,//*[@id="labelDistributor"]/div/ins')
+        elif add_data['account_type'] == '用户':
+            self.driver.click_element('x,//*[@id="labelUser"]/div/ins')
+
+        self.driver.operate_input_element('x,//*[@id="nickName"]', add_data['account_name'])
+        self.driver.operate_input_element('x,//*[@id="account"]', add_data['account'])
+
+        self.driver.default_frame()
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(3)
+
+    def search_user_by_account_in_cust_manage(self, param):
+        self.driver.operate_input_element('x,//*[@id="searchaccount"]', param)
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
+        sleep(5)
+        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[3]')
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(3)
+
+    def click_global_search_button(self):
+        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[1]/a')
+        sleep(3)
+
+    def switch_to_search_user_frame(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+
+    def search_user_by_account_in_global_search(self, param):
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
+        sleep(2)
+
+        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', param)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        sleep(3)
+
+    def get_text_after_search(self):
+        return self.driver.get_text('x,//*[@id="complex_user_table_nodata"]/div/span')
+
+    def get_user_account_after_search(self):
+        return self.driver.get_text('x,//*[@id="complex_user_relation_tbody"]/tr[2]/td[4]')
+
+    def click_search_user_button(self):
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        sleep(4)
+
+    def get_total_number_after_click_search_user_button(self):
+        a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('style')
+        print(a)
+        b = self.driver.get_element('x,//*[@id="complex_user_table_nodata"]').get_attribute('style')
+        print(b)
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_page('x,//*[@id="complex_paging_user"]')
+            return total
+        else:
+            if a == 'display: none;' and b == 'display: none;':
+                return 0
+            elif a == 'display: none;' and b == 'display: block;':
+                return 0
+
+    def get_no_data_text_in_user_search(self):
+        return self.driver.get_text('x,//*[@id="complex_user_table_nodata"]/div/span')
+
+    def get_up_page_state_in_search_user(self):
+        return self.driver.get_element('x,//*[@id="complex_paging_user"]/ul/li[1]').get_attribute('class')
+
+    def get_next_page_state_in_search_user(self):
+        return self.driver.get_element('x,//*[@id="complex_paging_user"]/ul/li[3]').get_attribute('class')
+
+    def click_per_page(self, n):
+        self.driver.click_element('l,%s' % str(n + 1))
+        sleep(3)
+
+    def click_per_number(self):
+        self.driver.click_element('c,page-select')
+        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
+        sleep(5)
+        self.driver.click_element('c,page-select')
+        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
+
+        sleep(5)
+        self.driver.click_element('c,page-select')
+        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
+
+        sleep(5)
+        self.driver.click_element('c,page-select')
+        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
+        sleep(5)
+
+    def get_user_account_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_user_relation_tbody"]/tr[3]/td[4]').get_attribute('title')
+
+    def get_user_name_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_user_relation_tbody"]/tr[3]/td[2]').get_attribute('title')
+
+    def get_user_type_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_user_relation_tbody"]/tr[3]/td[3]/div').get_attribute(
+            'title')
+
+    def get_dev_number_in_user_detail(self):
+        return self.driver.get_text('x,//*[@id="complex_user_relation_tbody"]/tr[3]/td[6]')
+
+    def click_look_button_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_user_relation_tbody"]/tr[3]/td[7]/a[4]')
+        sleep(4)
+
+    def get_dev_total_number_in_dev_manage_page(self):
+        a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_numbers('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
+            return total
+        else:
+            return 0
+
+    def click_console_button_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_user_relation_tbody"]/tr[3]/td[7]/a[1]')
+        sleep(2)
+
+    def click_reset_password_button_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_user_relation_tbody"]/tr[3]/td[7]/a[3]')
+        sleep(3)
+
+    def click_close_button(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def click_cancel_button(self):
+        self.driver.click_element('c,layui-layer-btn1')
+        sleep(2)
+
+    def click_ensuer_button(self):
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(2)
+
+    def log_out_current_account(self):
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a'))
+        sleep(2)
+        self.driver.click_element('p,退出系统')
+        sleep(2)
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(4)
+
+    def log_in_user(self, user_account_in_user_detail, param):
+        self.driver.operate_input_element('x,//*[@id="account"]', user_account_in_user_detail)
+        self.driver.operate_input_element('x,//*[@id="password"]', param)
+        self.driver.click_element('x,//*[@id="logins"]')
+        sleep(5)
+
+    def modify_password_after_log_in(self, password):
+        self.driver.operate_input_element('x,//*[@id="newPwd_advise"]', password)
+        self.driver.operate_input_element('x,//*[@id="renewPwd_advise"]', password)
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(5)
+
+    def get_account_after_log_in(self):
+        return self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[1]/span/b').get_attribute(
+            'title')

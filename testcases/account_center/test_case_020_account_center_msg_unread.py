@@ -44,7 +44,7 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
         msg_center_title = self.account_center_page_msg_center.get_msg_center_title()
         # 验证消息中心title是否正确显示
         self.assertIn(self.assert_text.account_center_page_message_center_text(), msg_center_title, "消息中心title有误!")
-        # 退出iframe
+        #退出iframe
         self.driver.default_frame()
 
         # 获取左侧栏目-消息中心-x条未读

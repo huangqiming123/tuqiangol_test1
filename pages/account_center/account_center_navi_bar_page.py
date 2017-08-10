@@ -64,19 +64,19 @@ class AccountCenterNaviBarPage(BasePageServer):
         # service_provider = self.driver.get_element(
         # "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
         service_provider = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
+            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
         return service_provider
 
     # 普通用户账户--联系人
     def ordinary_usr_service_provider_connect(self):
         service_provider_connect = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[2]").text
+            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[2]").text
         return service_provider_connect
 
     # 普通用户账户--电话
     def ordinary_usr_service_provider_phone(self):
         service_provider_phone = self.driver.get_element(
-            "x,/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[3]").text
+            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[3]").text
         return service_provider_phone
 
     # 招呼栏退出系统
@@ -106,6 +106,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.click_element("c,layui-layer-btn0")
         self.driver.wait()
 
+
     # 设备管理-退出系统
     def dev_manage_usr_logout(self):
         # 点击退出系统
@@ -120,8 +121,10 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 体验账号—招呼栏退出系统
     def taste_usr_logout(self):
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div/div[2]/span/a'))
+        sleep(2)
         # 点击退出系统
-        self.driver.click_element("x,/html/body/div[1]/header/div/div[3]/div/div[2]/a")
+        self.driver.click_element('p,退出系统')
         self.driver.wait()
         # 定位到弹出框内容
         logout_text = self.driver.get_element("c,layui-layer-content").text
@@ -546,5 +549,16 @@ class AccountCenterNaviBarPage(BasePageServer):
         return all_prompt
 
     def click_account_center_button(self):
-        self.driver.click_element("accountCenter")
+        sleep(1)
+        self.driver.click_element("x,//*[@id='accountCenter']")
         sleep(2)
+
+    # 获取头部模块
+    def get_page_module(self):
+        module = []
+        module_len = len(self.driver.get_elements("x,/html/body/div[1]/header/div/div[2]/ul/li"))
+        for i in range(module_len):
+            text = self.driver.get_text("x,/html/body/div/header/div/div[2]/ul/li[" + str(i + 1) + "]/a")
+            module.append(text)
+        print(module)
+        return module

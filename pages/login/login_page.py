@@ -40,6 +40,13 @@ class LoginPage(BasePageServer):
     # 取消忘记密码
     def dis_forget_passwd(self):
         self.driver.click_element("x,//*[@id='RetrievePasswordModal']/div/div/div[3]/button[3]")
+        self.driver.wait()
+
+    def dis_forget_passwd2(self):
+        self.dis_forget_passwd()
+        self.forget_password()
+        self.driver.wait()
+        self.driver.click_element("x,//*[@id='RetrievePasswordModal']/div/div/div[1]/button/span")
 
     # 体验账号登入
     def taste(self):
@@ -172,7 +179,7 @@ class LoginPage(BasePageServer):
             "code_prompt2": code_prompt,
             "text_prompt": text
         }
-        print(all_prompt)
+
         return all_prompt
 
     # 登录---取提示语
@@ -188,3 +195,67 @@ class LoginPage(BasePageServer):
     def click_home_page(self):
         self.driver.click_element("nomalUserCenter")
         sleep(3)
+
+    # 点击体验账号
+    def click_experience_account(self):
+        self.driver.click_element("x,/html/body/div[1]/div/div[3]/span[1]/a[2]")
+        sleep(2)
+
+    # 账号登录后 ，获取账户中心列表
+    def get_account_center_list(self):
+        list_data = []
+        list_len = len(self.driver.get_elements("x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/ul/li"))
+        for i in range(list_len):
+            text = self.driver.get_text(
+                "x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/ul/li[" + str(i + 1) + "]/a")
+            list_data.append(text)
+        print(list_data)
+        return list_data
+
+    # 首页页面跳转
+    def login_page_account_overview(self, link_name):
+        if link_name == '在线':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[1]/div/div[1]/a")
+            self.driver.wait(1)
+        elif link_name == '离线':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[1]/div/div[2]/a")
+            self.driver.wait(1)
+        elif link_name == '即将到期':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[1]/div/div[4]/a")
+            self.driver.wait(1)
+        elif link_name == '已过期':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[1]/div/div[5]/a")
+            self.driver.wait(1)
+        elif link_name == '已激活':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[1]/div/div[7]/a")
+            self.driver.wait(1)
+        elif link_name == '未激活':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[1]/div/div[8]/a")
+            self.driver.wait(1)
+        elif link_name == '告警车辆':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[1]/div/div[3]/a")
+            self.driver.wait(1)
+        elif link_name == '重点关注车辆':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[1]/div/div[6]/a")
+            self.driver.wait(1)
+        elif link_name == '控制台':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[1]/a")
+            self.driver.wait(1)
+        elif link_name == '统计报表':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[2]/a")
+            self.driver.wait(1)
+        elif link_name == '围栏':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[3]/a")
+            self.driver.wait(1)
+        elif link_name == '设备管理':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[5]/a")
+            self.driver.wait(1)
+        elif link_name == '指令管理':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[6]/a")
+            self.driver.wait(1)
+        elif link_name == '地标设置':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[4]/a")
+            self.driver.wait(1)
+        elif link_name == '告警':
+            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[7]/a")
+            self.driver.wait(1)

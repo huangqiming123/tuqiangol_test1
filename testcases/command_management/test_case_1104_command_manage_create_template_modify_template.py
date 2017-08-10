@@ -54,7 +54,8 @@ class TestCase1104CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
         # 点击工作模式模板管理
         self.command_management_page.click_lift_list('work_type_template_management')
         # 断言右侧页面的title文本
-        expect_title_text_after_click_work_type_template_management = self.assert_text.command_manager_page_work_type_template_management()
+        expect_title_text_after_click_work_type_template_management = \
+            self.assert_text.command_manager_page_work_type_template_management()
         self.assertEqual(expect_title_text_after_click_work_type_template_management,
                          self.command_management_page.actual_title_text_after_click_work_type_template_management())
 

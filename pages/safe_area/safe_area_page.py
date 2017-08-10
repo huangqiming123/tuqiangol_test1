@@ -127,7 +127,7 @@ class SafeAreaPage(BasePageServer):
 
     def click_all_select_button_with_mark(self):
         self.driver.click_element(
-            'x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[3]/div[2]/div[1]/table/thead/tr/th[1]/label/div/ins')
+            'x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[3]/div[2]/div[1]/table/thead/tr/th[1]/label/div/ins')
         sleep(2)
 
     def click_detele_button_with_mark(self):
@@ -187,9 +187,9 @@ class SafeAreaPage(BasePageServer):
         sleep(2)
 
     def click_select_fence_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[2]')
         sleep(2)
 
     def get_per_number(self):
@@ -201,9 +201,9 @@ class SafeAreaPage(BasePageServer):
         return text
 
     def click_select_black_address_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[3]')
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[3]')
         sleep(2)
 
     def get_page(self):

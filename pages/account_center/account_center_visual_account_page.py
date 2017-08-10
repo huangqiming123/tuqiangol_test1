@@ -33,7 +33,6 @@ class AccountCenterVisualAccountPage(BasePageServer):
         sleep(3)
         # 输入虚拟账号名称
         self.driver.operate_input_element("x,//*[@id='fictitiousAccountForm']/div[1]/div/input",visual_account)
-        #self.driver.operate_input_element('x,/html/body/div[1]/div[8]/div[2]/div/form/div[1]/div/input',visual_account)
         # 输入虚拟账号密码
         self.driver.operate_input_element("fictitious_password",visual_passwd)
         # 确认密码
@@ -170,3 +169,15 @@ class AccountCenterVisualAccountPage(BasePageServer):
     # 进入iframe
     def visual_account_iframe(self):
         self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')
+
+    # 获取权限范围的状态
+    def get_visual_account_limits_state(self):
+        edit_data = self.driver.get_element(
+            "x,//*[@id='fictitiousAccountForm']/div[4]/div/ul/li[1]/label/div/ins").is_selected()
+        instruction = self.driver.get_element(
+            "x,//*[@id='fictitiousAccountForm']/div[4]/div/ul/li[2]/label/div/ins").is_selected()
+        data = {"edit_data": edit_data,
+                "instruction": instruction
+                }
+        print(data)
+        return data

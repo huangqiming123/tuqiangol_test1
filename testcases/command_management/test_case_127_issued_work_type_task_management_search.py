@@ -13,10 +13,10 @@ from pages.command_management.search_sql import SearchSql
 
 
 class TestCase127IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
-    '''
+    """
     用例第127条，下发工作模式任务管理搜索功能
     author:zhangAo
-    '''
+    """
     driver = None
     base_url = None
     base_page = None
@@ -65,7 +65,8 @@ class TestCase127IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
         # 点击工作模式模板管理
         self.command_management_page.click_lift_list('issued_work_type_task_management')
         # 断言
-        expect_title_text_after_click_issued_work_type_task_mangagement = self.assert_text.command_manager_page_work_type_task_manager_text()
+        expect_title_text_after_click_issued_work_type_task_mangagement = \
+            self.assert_text.command_manager_page_work_type_task_manager_text()
         self.assertEqual(expect_title_text_after_click_issued_work_type_task_mangagement,
                          self.command_management_page.actual_title_text_click_issued_work_type_task_management())
 
@@ -87,7 +88,8 @@ class TestCase127IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
             # 创建游标
             cursor = connect.cursor()
             # 获取当前登录账号的usedID
-            get_current_user_id_sql = "select o.account,o.userId from user_info o where o.account = '" + self.current_account + "';"
+            get_current_user_id_sql = \
+                "select o.account,o.userId from user_info o where o.account = '" + self.current_account + "';"
             cursor.execute(get_current_user_id_sql)
 
             user_relation = cursor.fetchall()

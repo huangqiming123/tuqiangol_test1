@@ -36,6 +36,7 @@ class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
 
     def test_sales_and_agent_login_by_csv(self):
         '''通过csv测试销售和代理商账户成功登录和成功退出功能'''
+
         csv_file = self.log_in_read_csv.read_csv('login_with_sales_and_agent_user.csv')
         csv_data = csv.reader(csv_file)
         is_header = True

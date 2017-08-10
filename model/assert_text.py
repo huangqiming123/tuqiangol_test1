@@ -281,3 +281,33 @@ class AssertText(object):
 
     def cust_page_user_password_not_nulls(self):
         return '请输入密码'
+
+    def feedback_page_error_content(self):
+        return '请输入描述内容'
+
+    def feedback_page_error_contact(self):
+        return '请输入联系人'
+
+    def feedback_page_error_phone(self):
+        return '请输入联系电话'
+
+    def feedback_page_error_contents(self):
+        return '描述内容不能超过2000个字符'
+
+    def feedback_page_error_contacts(self):
+        return '联系人不能超过100个字符'
+
+    def feedback_page_error_phones(self):
+        return '联系电话格式不正确'
+
+    def feedback_page_error_phoness(self):
+        return '联系电话长度不正确'
+
+    def feedback_page_ensuer_succeed_text(self):
+        return '感谢你的反馈意见'
+
+    def batch_sale_text(self):
+        return '批量销售'
+
+    def per_20_page(self):
+        return '每页20条'

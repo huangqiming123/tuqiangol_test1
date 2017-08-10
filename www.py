@@ -1,6 +1,6 @@
 import redis
 
-re = redis.Redis(host='127.0.0.1', port=6379, db=0)
+'''re = redis.Redis(host='127.0.0.1', port=6379, db=0)
 re.set('name', 'zhangsan')
 print(re.get('name'))
 
@@ -13,4 +13,4 @@ pipe = r.pipeline(transaction=True)
 r.set('name', 'zhangao')
 r.set('name', 'zhangwu')
 pipe.execute()
-print(r.get('name'))
+print(r.get('name'))'''

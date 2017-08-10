@@ -17,7 +17,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
     # 点击进入“消息中心”
     def enter_msg_center(self):
         self.driver.click_element('x,//*[@id="usermessage"]')
-        self.driver.wait(1)
+        self.driver.wait()
 
     # 获取“消息中心”title
     def get_msg_center_title(self):

@@ -961,3 +961,6 @@ class StatisticalFormPage2(BasePage):
     def get_search_imei_in_alarm_detail_forms(self):
         text = self.driver.get_text('x,//*[@id="dev_tree_alarmDetail_1_span"]')
         return text.split('[')[1].split(']')[0]
+
+    def get_no_active_imei(self):
+        return '358740051670098'

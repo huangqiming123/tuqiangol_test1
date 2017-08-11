@@ -78,6 +78,16 @@ class TestCase1107AlarmOverviewExceptionSearch(unittest.TestCase):
         get_text_after_search = self.statistical_form_page.get_text_after_search_in_alarm_overview_form()
         self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text_after_search)
 
+        # 验证未激活的设备无法搜索到
+        self.statistical_form_page2.input_imei_to_search_in_alarm_overview_form(
+            self.statistical_form_page2.get_no_active_imei())
+        # 获取搜索的数量
+        get_number_after_search = self.statistical_form_page.get_number_after_search_in_alarm_overview_form()
+        self.assertEqual(0, get_number_after_search)
+
+        get_text_after_search = self.statistical_form_page.get_text_after_search_in_alarm_overview_form()
+        self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text_after_search)
+
         # 点击搜索用户--下拉框
         # self.statistical_form_page2.click_alarm_overview_pull_down()
         self.driver.wait()

@@ -64,7 +64,7 @@ class TestCase1109AlarmDetailSearchDev(unittest.TestCase):
 
         # 验证停机的设备无法搜索到
         self.statistical_form_page2.input_imei_to_search_in_alarm_detail_form(
-            self.statistical_form_page2.get_shut_down_imei())
+            self.statistical_form_page2.get_no_active_imei())
         # 获取搜索的数量
         get_number_after_search = self.statistical_form_page.get_number_after_search_in_alarm_detail_form()
         self.assertEqual(0, get_number_after_search)

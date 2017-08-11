@@ -750,33 +750,36 @@ class StatisticalFormPage2(BasePage):
     def get_imei(self):
         return '123456780012355'
 
-    def input_imei_to_search_in_mileage_form(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_travelReport"]', self.get_imei())
+    def get_shut_down_imei(self):
+        return '121201230052520'
+
+    def input_imei_to_search_in_mileage_form(self, imei):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_travelReport"]', imei)
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(5)
 
-    def input_imei_to_search_in_speed_form(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_overSpeedReport"]', self.get_imei())
+    def input_imei_to_search_in_speed_form(self, imei):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_overSpeedReport"]', imei)
         self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(5)
 
-    def input_imei_to_search_in_stay_form(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_stopCar"]', self.get_imei())
+    def input_imei_to_search_in_stay_form(self, imei):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_stopCar"]', imei)
         self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(5)
 
-    def input_imei_to_search_in_paking_form(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_stopNotOff"]', self.get_imei())
+    def input_imei_to_search_in_paking_form(self, imei):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_stopNotOff"]', imei)
         self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(5)
 
-    def input_imei_to_search_in_acc_form(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_acc"]', self.get_imei())
+    def input_imei_to_search_in_acc_form(self, imei):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_acc"]', imei)
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(5)
 
-    def input_imei_to_search_in_alarm_overview_form(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_alarmOverview"]', self.get_imei())
+    def input_imei_to_search_in_alarm_overview_form(self, imei):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_alarmOverview"]', imei)
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[4]/div/div[1]/div/div[1]/span/button')
         sleep(5)
 
@@ -796,8 +799,8 @@ class StatisticalFormPage2(BasePage):
                                                        this_week, last_week, this_month, last_month, random, today)
         return time
 
-    def input_imei_to_search_in_mileage_forms(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_mileageReport"]', self.get_imei())
+    def input_imei_to_search_in_mileage_forms(self, imei):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_mileageReport"]', imei)
         self.driver.click_element('x,//*[@id="MileageFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(5)
 
@@ -907,8 +910,8 @@ class StatisticalFormPage2(BasePage):
         # 退出frame
         self.driver.default_frame()
 
-    def input_imei_to_search_in_alarm_detail_form(self):
-        self.driver.operate_input_element('x,//*[@id="imeiInput_alarmDetail"]', self.get_imei())
+    def input_imei_to_search_in_alarm_detail_form(self, imei):
+        self.driver.operate_input_element('x,//*[@id="imeiInput_alarmDetail"]', imei)
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/span/button')
         sleep(5)
 

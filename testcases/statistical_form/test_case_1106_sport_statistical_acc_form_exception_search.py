@@ -2,6 +2,7 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
@@ -20,6 +21,7 @@ class TestCase1106SportStatisticalAccFormExceptionSearch(unittest.TestCase):
         self.statistical_form_page2 = StatisticalFormPage2(self.driver, self.base_url)
         self.statistical_form_page_read_csv = StatisticalFormPageReadCsv()
         self.log_in_base = LogInBase(self.driver, self.base_url)
+        self.assert_text = AssertText()
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
         self.base_page.click_chinese_button()
@@ -54,11 +56,21 @@ class TestCase1106SportStatisticalAccFormExceptionSearch(unittest.TestCase):
         # 验证搜索下级的imei可以搜索到
         # 填写下级的imei搜索
         sleep(2)
-        self.statistical_form_page2.input_imei_to_search_in_acc_form()
+        self.statistical_form_page2.input_imei_to_search_in_acc_form(self.statistical_form_page2.get_imei())
         # 断言
         # 获取查询设备的imei
         search_imei = self.statistical_form_page2.get_search_imei_in_acc_form()
         self.assertEqual(search_imei, self.statistical_form_page2.get_imei())
+
+        # 验证停机的设备无法搜索到
+        self.statistical_form_page2.input_imei_to_search_in_acc_form(
+            self.statistical_form_page2.get_shut_down_imei())
+        # 获取搜索的数量
+        get_number_after_search = self.statistical_form_page.get_number_after_search_in_acc_form()
+        self.assertEqual(0, get_number_after_search)
+
+        get_text_after_search = self.statistical_form_page.get_text_after_search_in_acc_form()
+        self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text_after_search)
 
     def tearDown(self):
         # 退出浏览器

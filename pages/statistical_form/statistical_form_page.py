@@ -2557,3 +2557,51 @@ class StatisticalFormPage(BasePage):
     def click_per_page_in_oil_page(self, m):
         self.driver.click_element('l,%s' % str(m + 1))
         sleep(3)
+
+    def get_number_after_search_in_tracel_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="dev_tree_travelReport"]/li')))
+
+    def get_text_after_search_in_tracel_form(self):
+        return self.driver.get_text('x,//*[@id="nodata_travelReport"]/span')
+
+    def get_number_after_search_in_speed_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="dev_tree_overSpeedReport"]/li')))
+
+    def get_text_after_search_in_speed_form(self):
+        return self.driver.get_text('x,//*[@id="nodata_overSpeedReport"]/span')
+
+    def get_number_after_search_in_stay_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="dev_tree_stopCar"]/li')))
+
+    def get_text_after_search_in_stay_form(self):
+        return self.driver.get_text('x,//*[@id="nodata_stopCar"]/span')
+
+    def get_number_after_search_in_paking_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="dev_tree_stopNotOff"]/li')))
+
+    def get_text_after_search_in_paking_form(self):
+        return self.driver.get_text('x,//*[@id="nodata_stopNotOff"]/span')
+
+    def get_number_after_search_in_acc_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="dev_tree_acc"]/li')))
+
+    def get_text_after_search_in_acc_form(self):
+        return self.driver.get_text('x,//*[@id="nodata_acc"]/span')
+
+    def get_number_after_search_in_alarm_overview_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="dev_tree_alarmOverview"]/li')))
+
+    def get_text_after_search_in_alarm_overview_form(self):
+        return self.driver.get_text('x,//*[@id="nodata_alarmOverview"]/span')
+
+    def get_number_after_search_in_mileage_forms(self):
+        return len(list(self.driver.get_elements('x,//*[@id="dev_tree_mileageReport"]/li')))
+
+    def get_text_after_search_in_mileage_forms(self):
+        return self.driver.get_text('x,//*[@id="nodata_mileageReport"]/span')
+
+    def get_number_after_search_in_alarm_detail_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="dev_tree_alarmDetail"]/li')))
+
+    def get_text_after_search_in_alarm_detail_form(self):
+        return self.driver.get_text('x,//*[@id="nodata_alarmDetail"]/span')

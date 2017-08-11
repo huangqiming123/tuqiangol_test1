@@ -14,8 +14,8 @@ class AutomateDriver(object):
     def __init__(self):
         self.driver = browser('chrome')
         # self.base_url = 'http://tujunsat.jimicloud.com'
-        self.base_url = 'http://120.76.232.176:8180'
-        # self.base_url = 'http://www.tuqiangol.com'
+        # self.base_url = 'http://120.76.232.176:8180'
+        self.base_url = 'http://www.tuqiangol.com'
         # self.base_url = 'http://172.16.0.116:8680'
 
     def navigate(self, url):

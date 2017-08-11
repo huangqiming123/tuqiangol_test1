@@ -87,7 +87,8 @@ class TestCase3104MovingOverviewStatistical(unittest.TestCase):
                 total_over_speed_list = sum(over_speed_list)
                 self.assertEqual(total_over_speed_times, str(total_over_speed_list))
 
-                # 获取列表中停留的总数
+                # 获取列表中停留的总数+
+
                 stop_over_list = []
                 for n in range(get_total_number):
                     c = self.statistical_form_page.get_per_stop_over_in_list_in_moving_overview(n)

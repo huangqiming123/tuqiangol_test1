@@ -65,4 +65,4 @@ class TestCase1105CommandManagerAbnormalStateSendCommand(unittest.TestCase):
 
         # 断言
         print(send_command_text)
-        self.assertEqual(send_command_text, '失败')
+        self.assertEqual(send_command_text, self.assert_text.dev_page_fail_text())

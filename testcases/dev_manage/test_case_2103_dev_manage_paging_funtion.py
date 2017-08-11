@@ -36,7 +36,7 @@ class TestCase2103DevManagePagingFunction(unittest.TestCase):
         self.dev_manage_page.enter_dev_manage()
 
         # 全部设备_分页默认显示每页20条
-        get_paging_text = self.dev_manage_page.get_paging_text()
+        # get_paging_text = self.dev_manage_page.get_paging_text()
         # self.assertEqual(self.assert_text.per_20_page(), get_paging_text)
 
         # 获取总共有多少页

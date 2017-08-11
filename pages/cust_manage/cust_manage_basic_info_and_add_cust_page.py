@@ -203,7 +203,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     # 新增客户
     def add_acc(self):
         # 点击新增客户
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[2]/div/button[1]')
+        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[2]/div/button[1]")
         self.driver.wait()
 
     # 当前账户-新增用户-编辑用户输入框信息
@@ -278,7 +278,8 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="user_account"]')
 
     def click_monitoring_account_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
+        # self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
+        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[1]/div/button')
         sleep(2)
 
     def get_text_after_click(self):
@@ -578,3 +579,34 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         name = text.split("(")[0]
         print(name)
         return name
+
+    # 获取默认密码提示
+    def get_update_default_password_prompt(self, newPwd, renewPwd):
+        self.driver.operate_input_element("x,//*[@id='newPwd_advise']", newPwd)
+        self.driver.operate_input_element("x,//*[@id='renewPwd_advise']", renewPwd)
+        self.driver.wait(1)
+        self.driver.click_element("x,//*[@id='layui-layer1']/div[3]/a")
+        self.driver.wait(1)
+
+        # 获取提示
+        pwd1_prompt = self.driver.get_text("x,//*[@id='editpwd-form_advise']/div[1]/div/label")
+        pwd2_prompt = self.driver.get_text("x,//*[@id='editpwd-form_advise']/div[2]/div/label")
+        data = {
+            "newPwd": pwd1_prompt,
+            "renewPwd": pwd2_prompt
+        }
+        return data
+
+    # 新增账号--web权限
+    def setting_web_login_permissions(self):
+        self.driver.click_element("x,//*[@id='userForm']/div[11]/div[1]/label")
+        web = self.driver.get_element('x,//*[@id="userForm"]/div[11]/div[1]/label/div/ins')
+        web_status = web.is_selected()
+        return web_status
+
+    # 新增账号--app权限
+    def setting_app_login_permissions(self):
+        self.driver.click_element("x,//*[@id='userForm']/div[11]/div[2]/label")
+        app = self.driver.get_element("x,//*[@id='userForm']/div[11]/div[2]/label/div/ins")
+        app_status = app.is_selected()
+        return app_status

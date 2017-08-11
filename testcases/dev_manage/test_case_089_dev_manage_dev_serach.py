@@ -41,7 +41,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_platform_soon_expire_time()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -64,7 +64,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_platform_expire_time()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -77,7 +77,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_user_soon_expire_time()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -100,7 +100,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_user_expire_time()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -114,7 +114,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_active_dev()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -127,7 +127,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_noactive_dev()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -141,7 +141,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_band_dev()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -154,7 +154,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_no_band_dev()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -168,7 +168,7 @@ class TestCase089DevManageDevSearch(unittest.TestCase):
         self.dev_manage_page.choose_user_group_to_search()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)

@@ -1,4 +1,5 @@
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
@@ -49,6 +50,7 @@ class TestCase015OperDeviceLogPaging(unittest.TestCase):
 
         # 选择条件搜索
         self.account_center_page_navi_bar.switch_to_dev_oper_frame()
+        sleep(10)
         # 获取页面有多少页
         page_number = self.account_center_page_operation_log.count_curr_busi_log_numss()
         if page_number == 0:

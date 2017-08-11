@@ -50,6 +50,7 @@ class TestCase016CustManagerPaging(unittest.TestCase):
 
         # 选择条件搜索
         self.account_center_page_navi_bar.switch_to_cust_oper_frame()
+        sleep(10)
         # 获取页面有多少页
         page_number = self.account_center_page_operation_log.count_cust_busi_log_numss()
         if page_number == 0:
@@ -69,4 +70,4 @@ class TestCase016CustManagerPaging(unittest.TestCase):
 
         # 分别点击每页 20 30 50 和 100
         sleep(2)
-        self.account_center_page_navi_bar.click_per_numbers_in_dev_operation()
+        # self.account_center_page_navi_bar.click_per_numbers_in_dev_operation()

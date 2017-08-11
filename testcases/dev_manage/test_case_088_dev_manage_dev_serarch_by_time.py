@@ -45,7 +45,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.input_begin_time_to_serach(begin_time)
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -61,7 +61,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.input_end_time_to_search(end_time)
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -77,7 +77,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.input_end_time_to_search(end_time)
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -95,7 +95,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.choose_platform_time_to_serach()
         self.dev_manage_page.input_begin_time_to_serach(begin_time)
         self.dev_manage_page.click_search_btn()
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -111,7 +111,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.input_begin_time_to_serach('')
         self.dev_manage_page.input_end_time_to_search(end_time)
         self.dev_manage_page.click_search_btn()
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -128,7 +128,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.input_end_time_to_search(end_time)
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -145,7 +145,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.choose_user_time_to_serach()
         self.dev_manage_page.input_begin_time_to_serach(begin_time)
         self.dev_manage_page.click_search_btn()
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -161,7 +161,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.input_begin_time_to_serach('')
         self.dev_manage_page.input_end_time_to_search(end_time)
         self.dev_manage_page.click_search_btn()
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
@@ -178,7 +178,7 @@ class TestCase088DevManageDevSearchByTime(unittest.TestCase):
         self.dev_manage_page.input_end_time_to_search(end_time)
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)

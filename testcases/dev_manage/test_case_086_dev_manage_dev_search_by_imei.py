@@ -71,7 +71,7 @@ class TestCase086DevManageDevSearchByIMEI(unittest.TestCase):
             self.assertEqual(search_info["imei"], imei, "搜索结果imei与输入的imei不一致")
         csv_file.close()
 
-        # 设备IMEI输入框输入选中用户的多个设备IMEI（以enter键隔开），点击搜索，点击导出
+        '''# 设备IMEI输入框输入选中用户的多个设备IMEI（以enter键隔开），点击搜索，点击导出
         imeis = self.dev_manage_page.add_imeis_to_test_dev_search()
         self.dev_manage_page.click_search_btn()
         # 获取查询出来的条数
@@ -113,4 +113,4 @@ class TestCase086DevManageDevSearchByIMEI(unittest.TestCase):
         else:
             for n in range(number):
                 dev_type = self.dev_manage_page.get_dev_type_after_search(n)
-                self.assertEqual(dev_search_type, dev_type)
+                self.assertEqual(dev_search_type, dev_type)'''

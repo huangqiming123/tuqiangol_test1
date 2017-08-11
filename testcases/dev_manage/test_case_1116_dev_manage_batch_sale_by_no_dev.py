@@ -56,7 +56,7 @@ class TestCase1116DevManageBatchSaleByNoDev(unittest.TestCase):
 
         # 不选择销售对象进行销售
         self.dev_manage_page.click_sale_button()
-        text = self.dev_manage_page.get_error_text_after_ensure()
+        # text = self.dev_manage_page.get_error_text_after_ensure()
         # self.assertEqual(self.assert_text.glob_search_please_add_account_text(), text)
 
         # 点击重置的按钮

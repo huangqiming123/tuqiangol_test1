@@ -338,3 +338,21 @@ class AccountCenterOperationLogPage(BasePageServer):
     def click_log_in_log(self):
         self.driver.click_element('x,//*[@id="loginReport"]/a')
         sleep(2)
+
+    def count_curr_busi_log_numss(self):
+        a = self.driver.get_element('x,//*[@id="paging_xf"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_page('x,//*[@id="paging_xf"]')
+            return total
+        else:
+            return 0
+
+    def count_cust_busi_log_numss(self):
+        a = self.driver.get_element('x,//*[@id="paging_fp"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_page('x,//*[@id="paging_fp"]')
+            return total
+        else:
+            return 0

@@ -46,7 +46,7 @@ class TestCase087DevManageDevSearchByInputData(unittest.TestCase):
         connect = connect_sql.connect_tuqiang_sql()
         cursor = connect.cursor()
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         for n in range(number):
             imei = self.dev_manage_page.get_imei_after_search(n)
             sql = "SELECT d.vehicleNumber FROM equipment_detail d WHERE d.imei = '%s';" % imei
@@ -69,7 +69,7 @@ class TestCase087DevManageDevSearchByInputData(unittest.TestCase):
         self.dev_manage_page.click_search_btn()
         sleep(2)
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         for n in range(number):
             imei = self.dev_manage_page.get_imei_after_search(n)
             sql = "SELECT d.carFrame FROM equipment_detail d WHERE d.imei = '%s';" % imei
@@ -92,7 +92,7 @@ class TestCase087DevManageDevSearchByInputData(unittest.TestCase):
         self.dev_manage_page.click_search_btn()
         sleep(2)
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         for n in range(number):
             imei = self.dev_manage_page.get_imei_after_search(n)
             sql = "SELECT d.sim FROM equipment_mostly d WHERE d.imei = '%s';" % imei
@@ -115,7 +115,7 @@ class TestCase087DevManageDevSearchByInputData(unittest.TestCase):
         self.dev_manage_page.click_search_btn()
         sleep(2)
         # 获取查询出来的条数
-        number = self.dev_manage_page.get_numbers_after_click_search()
+        number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         for n in range(number):
             imei = self.dev_manage_page.get_imei_after_search(n)
             sql = "SELECT d.sn FROM equipment_detail d WHERE d.imei = '%s';" % imei

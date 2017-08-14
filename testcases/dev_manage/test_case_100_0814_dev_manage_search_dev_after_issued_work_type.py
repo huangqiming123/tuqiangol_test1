@@ -7,7 +7,7 @@ from pages.dev_manage.dev_manage_page_read_csv import DevManagePageReadCsv
 from pages.dev_manage.dev_manage_pages import DevManagePages
 
 
-class TestCase99DevManageSearchDevAfterIssuedCommand(unittest.TestCase):
+class TestCase100DevManageSearchDevAfterIssuedWorkType(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
@@ -24,7 +24,7 @@ class TestCase99DevManageSearchDevAfterIssuedCommand(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_dev_manager_search_dev_after_issued_command(self):
+    def test_dev_manage_search_dev_after_issued_work_type(self):
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
@@ -42,10 +42,10 @@ class TestCase99DevManageSearchDevAfterIssuedCommand(unittest.TestCase):
             text = self.dev_manage_page.get_no_data_text_after_search_in_dev_page()
             self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
             # 点击本次查询全部发送指令
-            self.dev_manage_page.click_batch_issued_command_button()
+            self.dev_manage_page.click_batch_issued_work_type_button()
             # 断言数据为零
-            self.assertEqual('0', self.dev_manage_page.get_total_number_in_issued_command_page())
-            self.assertEqual(0, self.dev_manage_page.get_total_number_list_in_issued_command_page())
+            self.assertEqual('0', self.dev_manage_page.get_total_number_in_issued_work_type_page())
+            self.assertEqual(0, self.dev_manage_page.get_total_number_list_in_issued_work_type_page())
 
         elif page_number == 1:
             # 查询本页的条数
@@ -57,10 +57,10 @@ class TestCase99DevManageSearchDevAfterIssuedCommand(unittest.TestCase):
                 search_imei.append(imei)
 
             # 点击本次查询全部发送指令
-            self.dev_manage_page.click_batch_issued_command_button()
+            self.dev_manage_page.click_batch_issued_work_type_button()
             # 获取全部下发指令页面 统计的总数和列表中设备的总数
-            check_number = self.dev_manage_page.get_total_number_in_issued_command_page()
-            check_list_number = self.dev_manage_page.get_total_number_list_in_issued_command_page()
+            check_number = self.dev_manage_page.get_total_number_in_issued_work_type_page()
+            check_list_number = self.dev_manage_page.get_total_number_list_in_issued_work_type_page()
             a = (number - int(check_number)) >= 0
             self.assertEqual(True, a)
             b = (number - check_list_number) >= 0
@@ -69,7 +69,7 @@ class TestCase99DevManageSearchDevAfterIssuedCommand(unittest.TestCase):
             # 获取下发指令页面的所有imei
             issued_imei = []
             for m in range(check_list_number):
-                imei = self.dev_manage_page.get_per_imei_in_issued_command(m)
+                imei = self.dev_manage_page.get_per_imei_in_issued_work_type_page(m)
                 issued_imei.append(imei)
             # 断言下发指令页面的设备都在查询的里面
             for dev in issued_imei:
@@ -87,10 +87,10 @@ class TestCase99DevManageSearchDevAfterIssuedCommand(unittest.TestCase):
                     search_imei.append(imei)
 
             # 点击本次查询全部发送指令
-            self.dev_manage_page.click_batch_issued_command_button()
+            self.dev_manage_page.click_batch_issued_work_type_button()
             # 获取全部下发指令页面 统计的总数和列表中设备的总数
-            check_number = self.dev_manage_page.get_total_number_in_issued_command_page()
-            check_list_number = self.dev_manage_page.get_total_number_list_in_issued_command_page()
+            check_number = self.dev_manage_page.get_total_number_in_issued_work_type_page()
+            check_list_number = self.dev_manage_page.get_total_number_list_in_issued_work_type_page()
             a = (len(search_imei) - int(check_number)) >= 0
             self.assertEqual(True, a)
             b = (len(search_imei) - check_list_number) >= 0
@@ -99,7 +99,7 @@ class TestCase99DevManageSearchDevAfterIssuedCommand(unittest.TestCase):
             # 获取下发指令页面的所有imei
             issued_imei = []
             for m in range(check_list_number):
-                imei = self.dev_manage_page.get_per_imei_in_issued_command(m)
+                imei = self.dev_manage_page.get_per_imei_in_issued_work_type_page(m)
                 issued_imei.append(imei)
             # 断言下发指令页面的设备都在查询的里面
             for dev in issued_imei:

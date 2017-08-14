@@ -1895,3 +1895,50 @@ class DevManagePages(BasePage):
 
     def input_dev_sn_to_search(self, dev_sn):
         self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[4]/input', dev_sn)
+
+    def search_platform_expire_and_contain_next_in_dev_page(self):
+        # 点击包含下级
+        self.driver.click_element('x,//*[@id="lowerFlag"]/div/ins')
+        # 点击更多
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/div/button')
+        sleep(2)
+        # 选择平台即将过期
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/div/ul/li[2]')
+        sleep(2)
+
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
+        sleep(5)
+
+    def get_no_data_text_after_search_in_dev_page(self):
+        return self.driver.get_text('x,//*[@id="dev-noData"]/div/span')
+
+    def get_total_number_in_issued_command_page(self):
+        return self.driver.get_text('x,//*[@id="check-total"]')
+
+    def get_total_number_list_in_issued_command_page(self):
+        return len(list(self.driver.get_elements('x,//*[@id="check-row-tbody"]/tr')))
+
+    def get_total_number_per_page_in_dev_manager(self):
+        return len(list(self.driver.get_elements('x,//*[@id="markDevTable"]/tr')))
+
+    def get_per_imei_in_dev_page(self, n):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[3]' % str(n + 1))
+
+    def get_per_imei_in_issued_command(self, m):
+        return self.driver.get_text('x,//*[@id="check-row-tbody"]/tr[%s]/td[1]' % str(m + 1))
+
+    def click_batch_issued_work_type_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[8]')
+        sleep(3)
+
+    def get_total_number_in_issued_work_type_page(self):
+        return self.driver.get_text('x,//*[@id="check-workMode-total"]')
+
+    def get_total_number_list_in_issued_work_type_page(self):
+        return len(list(self.driver.get_elements('x,//*[@id="checkTbody"]/tr')))
+
+    def get_per_imei_in_issued_work_type_page(self, m):
+        return self.driver.get_text('x,//*[@id="checkTbody"]/tr[%s]/td[1]' % str(m + 1))

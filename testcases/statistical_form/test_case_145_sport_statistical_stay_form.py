@@ -13,7 +13,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 class TestCase145SportStatisticalStayForm(unittest.TestCase):
     '''
-    用例第150条，运动统计，停留报表
+    运动统计，停留报表
     author ： zhangAo
     '''
 

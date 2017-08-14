@@ -24,7 +24,7 @@ class TestCase138SafeAreaMarkPointOperation(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1106_safe_area_mark_point_operation(self):
+    def test_case_safe_area_mark_point_operation(self):
         # 断言url
         expect_url = self.base_url + "/safearea/geozonemap?flag=0"
         self.assertEqual(expect_url, self.driver.get_current_url())

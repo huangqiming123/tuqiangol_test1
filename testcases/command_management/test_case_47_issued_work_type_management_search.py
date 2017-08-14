@@ -53,7 +53,7 @@ class TestCase47IssuedWorkTypeManagementSearch(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_130_issued_work_type_management_search(self):
+    def test_case_issued_work_type_management_search(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

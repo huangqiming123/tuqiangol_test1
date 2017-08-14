@@ -36,7 +36,7 @@ class TestCase165StatisticalFormAlarmOverview(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_2106_statistical_form_alarm_overview(self):
+    def test_case_statistical_form_alarm_overview(self):
         # 断言url
         expect_url = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url, self.alarm_info_page.actual_url_click_alarm())

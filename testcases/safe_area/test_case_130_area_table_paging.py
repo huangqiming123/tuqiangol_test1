@@ -24,7 +24,7 @@ class TestCase130AreaTablePaging(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_0003_area_table_paging(self):
+    def test_case_area_table_paging(self):
         # 断言url
         expect_url = self.base_url + "/safearea/geozonemap?flag=0"
         self.assertEqual(expect_url, self.driver.get_current_url())

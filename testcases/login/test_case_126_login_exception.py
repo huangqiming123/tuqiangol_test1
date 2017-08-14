@@ -28,7 +28,7 @@ class TestCase126LoginException(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_101_login_exception(self):
+    def test_case_login_exception(self):
         # 异常登录
         self.base_page.open_page()
         sleep(2)

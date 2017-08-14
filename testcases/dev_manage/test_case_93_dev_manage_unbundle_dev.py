@@ -24,7 +24,7 @@ class TestCase93DevManageUnbundleDev(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1114_dev_manage_unbundle_dev(self):
+    def test_case_dev_manage_unbundle_dev(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.base_page.click_chinese_button()

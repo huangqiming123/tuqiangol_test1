@@ -38,7 +38,7 @@ class TestCase173MovingDetailTest(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_4102_moving_detail_test(self):
+    def test_case_moving_detail_test(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,

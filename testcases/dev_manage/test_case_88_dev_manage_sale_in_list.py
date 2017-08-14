@@ -28,7 +28,7 @@ class TestCase88DevManageSaleInList(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1109_dev_manage_sale_in_list(self):
+    def test_case_dev_manage_sale_in_list(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.base_page.click_chinese_button()

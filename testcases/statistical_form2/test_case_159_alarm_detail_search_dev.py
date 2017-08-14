@@ -42,7 +42,7 @@ class TestCase159AlarmDetailSearchDev(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1109_alarm_detail_search_dev(self):
+    def test_case_alarm_detail_search_dev(self):
         # 断言url
         expect_url = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url, self.alarm_info_page.actual_url_click_alarm())

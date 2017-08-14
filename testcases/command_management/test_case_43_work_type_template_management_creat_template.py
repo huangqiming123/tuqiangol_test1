@@ -12,7 +12,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 class TestCase43WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
     """
-    用例第124条，创建模板
+    创建模板
     author:zhangAo
     """
     driver = None
@@ -46,7 +46,7 @@ class TestCase43WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_124_work_type_template_management_creat_template(self):
+    def test_case_work_type_template_management_creat_template(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

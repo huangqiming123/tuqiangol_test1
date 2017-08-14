@@ -52,7 +52,7 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_136_issued_command_management_search(self):
+    def test_case_issued_command_management_search(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

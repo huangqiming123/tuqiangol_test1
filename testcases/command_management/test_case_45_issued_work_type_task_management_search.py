@@ -14,7 +14,7 @@ from pages.command_management.search_sql import SearchSql
 
 class TestCase45IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
     """
-    用例第127条，下发工作模式任务管理搜索功能
+    下发工作模式任务管理搜索功能
     author:zhangAo
     """
     driver = None
@@ -52,7 +52,7 @@ class TestCase45IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_127_issued_work_type_task_management_search(self):
+    def test_case_issued_work_type_task_management_search(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

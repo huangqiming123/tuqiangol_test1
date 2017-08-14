@@ -34,7 +34,7 @@ class TestCase42CustManagerPaging(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_016_cust_manager_paging(self):
+    def test_case_cust_manager_paging(self):
         self.base_page.open_page()
         self.log_in_base.log_in_jimitest()
         self.log_in_base.click_account_center_button()

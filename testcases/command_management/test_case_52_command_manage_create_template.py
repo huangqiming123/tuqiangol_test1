@@ -41,7 +41,7 @@ class TestCase52CommandManageCreateTemplate(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1101_command_manage_create_template(self):
+    def test_case_command_manage_create_template(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

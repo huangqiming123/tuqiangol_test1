@@ -34,7 +34,7 @@ class TestCase115UserSearchUserInfo(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_2104_user_search_user_info(self):
+    def test_case_user_search_user_info(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.log_in_base.log_in()

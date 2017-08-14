@@ -32,7 +32,7 @@ class TestCase162SportStatisticalStayFormOperation(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_2103_sport_statistical_stay_operation(self):
+    def test_case_sport_statistical_stay_operation(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,

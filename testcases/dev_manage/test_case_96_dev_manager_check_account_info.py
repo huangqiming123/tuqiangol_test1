@@ -26,7 +26,7 @@ class TestCase96DevManageCheckAccountInfo(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_2101_dev_manage_check_account_info(self):
+    def test_case_dev_manage_check_account_info(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.base_page.click_chinese_button()

@@ -11,7 +11,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 class TestCase44WorkTypeTemplateManagementOperation(unittest.TestCase):
     """
-    用例第125条，工作模板的操作：修改、删除、下发指令
+    工作模板的操作：修改、删除、下发指令
     author：zhangAo
     """
     driver = None
@@ -45,7 +45,7 @@ class TestCase44WorkTypeTemplateManagementOperation(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_125_work_type_template_management_operation(self):
+    def test_case_work_type_template_management_operation(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

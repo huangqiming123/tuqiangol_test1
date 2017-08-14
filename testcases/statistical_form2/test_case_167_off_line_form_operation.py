@@ -36,7 +36,7 @@ class TestCase167OffLineFormOperation(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_2108_off_line_form_operation(self):
+    def test_case_off_line_form_operation(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,

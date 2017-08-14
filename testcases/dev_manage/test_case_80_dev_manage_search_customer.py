@@ -26,7 +26,7 @@ class TestCase80DevManageSearchCustomer(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1101_dev_manage_search_customer(self):
+    def test_case_dev_manage_search_customer(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.base_page.click_chinese_button()

@@ -23,7 +23,7 @@ def run_02():
 def run_03():
     # os.system('python -m test_runner.tuqiangOL_test_runner_cust_manage')
     # os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
-    os.system('python -m test_runner.tuqiangOL_test_runner_safe_area')
+    os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form2')
 
 
 def run_04():

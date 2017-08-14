@@ -10,7 +10,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 
 class TestCase46IssuedWorkTaskManagementOperation(unittest.TestCase):
     """
-    用例第128条，下发工作模式任务管理，查看设备
+    下发工作模式任务管理，查看设备
     author：zhangAo
     """
     driver = None
@@ -43,7 +43,7 @@ class TestCase46IssuedWorkTaskManagementOperation(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_128_issued_work_type_task_management_operation(self):
+    def test_case_issued_work_type_task_management_operation(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

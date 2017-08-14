@@ -27,7 +27,7 @@ class TestCase82DevManageBatchSale(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1103_dev_manage_batch_sale(self):
+    def test_case_dev_manage_batch_sale(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.log_in_base.log_in()

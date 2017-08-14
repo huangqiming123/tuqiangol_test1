@@ -26,7 +26,7 @@ class TestCase136SafeAreaRelevance(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1104_safe_area_relevance(self):
+    def test_case_safe_area_relevance(self):
         # 断言url
         expect_url = self.base_url + "/safearea/geozonemap?flag=0"
         self.assertEqual(expect_url, self.driver.get_current_url())

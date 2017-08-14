@@ -34,7 +34,7 @@ class TestCase56CommandManagerAbnormalStateSendCommand(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1105_command_manage_abnormal_state_send_command(self):
+    def test_case_command_manage_abnormal_state_send_command(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

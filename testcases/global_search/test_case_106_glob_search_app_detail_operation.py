@@ -34,7 +34,7 @@ class TestCase106GlobSearchAppDetailOperation(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_1103_global_search_app_detail_operation(self):
+    def test_case_global_search_app_detail_operation(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.base_page.click_chinese_button()

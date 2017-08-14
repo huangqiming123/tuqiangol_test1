@@ -12,7 +12,7 @@ def open_excel(file):
 
 def read_excel_file_by_index(file, col_name_index=0, by_index=0):
     excel_file = open_excel(file)
-    table = excel_file.sheets()[by_index]
+    table = excel_file.sheets[by_index]
     number_rows = table.nrows
     colnames = table.row_values(col_name_index)
 

@@ -10,7 +10,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
-class TestCase124WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
+class TestCase43WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
     """
     用例第124条，创建模板
     author:zhangAo

@@ -13,7 +13,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 from pages.command_management.search_sql import SearchSql
 
 
-class TestCase133IssuedCommandTaskManagementSearch(unittest.TestCase):
+class TestCase49IssuedCommandTaskManagementSearch(unittest.TestCase):
     """
     用例第133条，下发指令任务管理的搜索功能
     author:zhangAo

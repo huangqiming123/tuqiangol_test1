@@ -12,7 +12,7 @@ from pages.dev_manage.dev_manage_pages import DevManagePages
 from pages.dev_manage.search_sql import SearchSql
 
 
-class TestCase105DevManageDevOperationNOActiveAndStop(unittest.TestCase):
+class TestCase79DevManageDevOperationNOActiveAndStop(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

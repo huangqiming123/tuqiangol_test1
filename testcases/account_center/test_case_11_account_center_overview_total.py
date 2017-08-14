@@ -14,7 +14,7 @@ from pages.login.login_page import LoginPage
 # 账户中心-账户详情-账户总览  总进货数
 # author:zhangao
 
-class TestCase154AccountCenterOverviewTotal(unittest.TestCase):
+class TestCase11AccountCenterOverviewTotal(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

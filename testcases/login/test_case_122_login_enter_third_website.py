@@ -7,7 +7,7 @@ from pages.login.login_page import LoginPage
 # 登录页底部第三方链接测试
 # author:孙燕妮
 
-class TestCase007LoginEnterThirdWebsite(unittest.TestCase):
+class TestCase122LoginEnterThirdWebsite(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

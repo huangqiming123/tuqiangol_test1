@@ -15,7 +15,7 @@ from pages.login.login_page import LoginPage
 # 账户中心招呼栏业务日志-客户管理日志查询
 # author:孙燕妮
 
-class TestCase013AccountCenterOperCustLog(unittest.TestCase):
+class TestCase39AccountCenterOperCustLog(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

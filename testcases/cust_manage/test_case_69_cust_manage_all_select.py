@@ -16,7 +16,7 @@ from pages.login.login_page import LoginPage
 
 # 新增客户--客户数操作
 
-class TestCase1107CustManageCustAllSelect(unittest.TestCase):
+class TestCase69CustManageCustAllSelect(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

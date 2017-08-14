@@ -9,7 +9,7 @@ import csv
 
 # 账户中心招呼栏修改资料---异常操作
 # author:戴招利
-class TestCase1101AccountCenterModifyInfoException(unittest.TestCase):
+class TestCase271AccountCenterModifyInfoException(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

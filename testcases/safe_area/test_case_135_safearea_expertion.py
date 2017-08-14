@@ -6,7 +6,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
 
 
-class TestCase1103SafeAreaExpertion(unittest.TestCase):
+class TestCase135SafeAreaExpertion(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

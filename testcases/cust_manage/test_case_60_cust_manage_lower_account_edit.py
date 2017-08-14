@@ -20,7 +20,7 @@ from pages.login.login_page import LoginPage
 
 # author:孙燕妮
 
-class TestCase082CustManageLowerAccountEdit(unittest.TestCase):
+class TestCase60CustManageLowerAccountEdit(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

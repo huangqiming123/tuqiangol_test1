@@ -15,7 +15,7 @@ from pages.login.login_page import LoginPage
 
 # 编辑客户的异常操作
 
-class TestCase1104CustManageEditCustExpection(unittest.TestCase):
+class TestCase65CustManageEditCustExpection(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

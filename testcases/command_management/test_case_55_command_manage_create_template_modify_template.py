@@ -9,7 +9,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
-class TestCase1104CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
+class TestCase55CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
     driver = None
     base_url = None
     base_page = None

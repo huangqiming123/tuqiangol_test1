@@ -7,7 +7,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
+class TestCase161SportStatisticalSpeedForm(unittest.TestCase):
     def setUp(self):
         # 前置条件
         # 实例化对象

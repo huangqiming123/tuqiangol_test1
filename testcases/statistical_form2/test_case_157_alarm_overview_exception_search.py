@@ -14,7 +14,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 # 告警统计--告警总览--异常搜索验证
 # author:戴招利
-class TestCase1107AlarmOverviewExceptionSearch(unittest.TestCase):
+class TestCase157AlarmOverviewExceptionSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

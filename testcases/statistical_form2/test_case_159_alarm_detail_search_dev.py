@@ -12,7 +12,7 @@ from pages.statistical_form.statistical_form_page2 import StatisticalFormPage2
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase1109AlarmDetailSearchDev(unittest.TestCase):
+class TestCase159AlarmDetailSearchDev(unittest.TestCase):
     def setUp(self):
         # 前置条件
         # 实例化对象

@@ -9,7 +9,7 @@ from pages.login.login_page import LoginPage
 # 登录时勾选记住我
 # author:孙燕妮
 
-class TestCase004LoginWithRememberMe(unittest.TestCase):
+class TestCase119LoginWithRememberMe(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

@@ -11,7 +11,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 # 账户中心-虚拟账户管理---添加虚拟用户异常验证
 # author:戴招利
-class TestCase1107AccountCenterAddVisualEditException(unittest.TestCase):
+class TestCase33AccountCenterAddVisualEditException(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

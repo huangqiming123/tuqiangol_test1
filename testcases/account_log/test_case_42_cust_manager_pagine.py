@@ -14,7 +14,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 # 帮助栏 业务日志 客户管理分页功能
 
-class TestCase016CustManagerPaging(unittest.TestCase):
+class TestCase42CustManagerPaging(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

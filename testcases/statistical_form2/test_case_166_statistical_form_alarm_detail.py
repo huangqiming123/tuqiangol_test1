@@ -8,7 +8,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase2107StatisticalFormAlarmDetail(unittest.TestCase):
+class TestCase166StatisticalFormAlarmDetail(unittest.TestCase):
     def setUp(self):
         # 前置条件
         # 实例化对象

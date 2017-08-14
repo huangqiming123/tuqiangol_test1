@@ -8,7 +8,7 @@ from pages.login.login_page import LoginPage
 
 # 登录页点击忘记密码---异常操作
 # author:戴招利
-class TestCase1102LoginForgetPasswordException(unittest.TestCase):
+class TestCase127LoginForgetPasswordException(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

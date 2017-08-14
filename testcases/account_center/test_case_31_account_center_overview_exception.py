@@ -12,7 +12,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 # 账户详情(快速销售)--添加客户异常操作
 # author:戴招利
-class TestCase1105AccountCenterOverviewException(unittest.TestCase):
+class TestCase31AccountCenterOverviewException(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

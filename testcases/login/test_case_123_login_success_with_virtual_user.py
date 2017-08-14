@@ -14,7 +14,7 @@ from pages.login.login_page import LoginPage
 
 # 虚拟账户成功登录和登录失败功能
 # author:戴招利
-class TestCase008LoginSuccessWithVirtualUser(unittest.TestCase):
+class TestCase123LoginSuccessWithVirtualUser(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

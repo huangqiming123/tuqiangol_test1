@@ -16,7 +16,7 @@ from pages.login.login_page import LoginPage
 
 # 新增客户--添加虚拟账号
 # author:戴招利
-class TestCase1101CustManageCustSearch(unittest.TestCase):
+class TestCase70CustManageCustSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

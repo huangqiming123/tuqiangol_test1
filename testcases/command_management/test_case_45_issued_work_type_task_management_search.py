@@ -12,7 +12,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 from pages.command_management.search_sql import SearchSql
 
 
-class TestCase127IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
+class TestCase45IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
     """
     用例第127条，下发工作模式任务管理搜索功能
     author:zhangAo

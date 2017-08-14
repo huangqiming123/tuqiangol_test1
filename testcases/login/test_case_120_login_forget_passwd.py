@@ -9,7 +9,7 @@ from pages.login.login_page import LoginPage
 # 登录页点击忘记密码+点击体验账号
 # author:孙燕妮
 
-class TestCase005LoginForgetPasswd(unittest.TestCase):
+class TestCase120LoginForgetPasswd(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

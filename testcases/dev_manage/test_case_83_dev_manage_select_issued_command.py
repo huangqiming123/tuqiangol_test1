@@ -8,7 +8,7 @@ from pages.dev_manage.dev_manage_page_read_csv import DevManagePageReadCsv
 from pages.dev_manage.dev_manage_pages import DevManagePages
 
 
-class TestCase1104DevManageSelectIssuedCommand(unittest.TestCase):
+class TestCase83DevManageSelectIssuedCommand(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

@@ -11,7 +11,7 @@ from pages.login.login_page import LoginPage
 # 普通用户账户成功登录功能的测试
 # author:孙燕妮
 
-class TestCase002LoginSuccessWithOrdinaryUser(unittest.TestCase):
+class TestCase117LoginSuccessWithOrdinaryUser(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

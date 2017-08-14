@@ -9,7 +9,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
-class TestCase125WorkTypeTemplateManagementOperation(unittest.TestCase):
+class TestCase44WorkTypeTemplateManagementOperation(unittest.TestCase):
     """
     用例第125条，工作模板的操作：修改、删除、下发指令
     author：zhangAo

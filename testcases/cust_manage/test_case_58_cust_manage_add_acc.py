@@ -21,7 +21,7 @@ from pages.login.login_page import LoginPage
 
 # author:孙燕妮
 
-class TestCase062CustManageAddAcc(unittest.TestCase):
+class TestCase58CustManageAddAcc(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

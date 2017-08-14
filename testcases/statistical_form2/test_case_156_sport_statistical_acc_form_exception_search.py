@@ -12,7 +12,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 # 统计报表--acc报表--异常搜索验证
 # author:戴招利
-class TestCase1106SportStatisticalAccFormExceptionSearch(unittest.TestCase):
+class TestCase156SportStatisticalAccFormExceptionSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

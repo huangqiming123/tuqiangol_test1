@@ -12,7 +12,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 # 统计报表--停车未熄火报表--异常搜索验证
 # author:戴招利
-class TestCase1105SportStatisticalParkingFormExceptionSearch(unittest.TestCase):
+class TestCase155SportStatisticalParkingFormExceptionSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

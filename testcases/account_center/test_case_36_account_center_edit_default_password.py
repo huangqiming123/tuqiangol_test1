@@ -16,7 +16,7 @@ from pages.login.login_page import LoginPage
 
 # 账号中心--不同角色账户修改默认密码 + 验证异常提示
 # author:戴招利
-class TestCase1110AccountCenterEditDefaultPassword(unittest.TestCase):
+class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

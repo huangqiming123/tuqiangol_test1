@@ -12,7 +12,7 @@ from pages.login.login_page import LoginPage
 # 首页-app账号--各模块跳转页面
 # author:戴招利
 
-class TestCase010AppUserJumpPage(unittest.TestCase):
+class TestCase125AppUserJumpPage(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

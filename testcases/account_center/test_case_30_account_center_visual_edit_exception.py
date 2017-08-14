@@ -11,7 +11,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 # 账户中心-虚拟账户管理---修改异常处理
 # author:戴招利
-class TestCase1104AccountCenterVisualEditException(unittest.TestCase):
+class TestCase30AccountCenterVisualEditException(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

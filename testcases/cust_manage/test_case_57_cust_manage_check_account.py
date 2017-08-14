@@ -16,7 +16,7 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-class TestCase062CustManageCheckAccount(unittest.TestCase):
+class TestCase57CustManageCheckAccount(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

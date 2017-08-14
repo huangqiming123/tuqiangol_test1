@@ -15,7 +15,7 @@ from pages.dev_manage.search_sql import SearchSql
 
 # author:孙燕妮
 
-class TestCase103DevManageDevOperationActiveAndStop(unittest.TestCase):
+class TestCase77DevManageDevOperationActiveAndStop(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

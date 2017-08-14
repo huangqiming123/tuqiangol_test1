@@ -6,7 +6,7 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 from pages.safe_area.safe_area_page_read_csv import SafeAreaPageReadCsv
 
 
-class TestCase0003AreaTablePaging(unittest.TestCase):
+class TestCase130AreaTablePaging(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

@@ -12,7 +12,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 # 统计报表--里程报表--异常搜索验证
 # author:戴招利
-class TestCase1108MileFormExceptionSearch(unittest.TestCase):
+class TestCase158MileFormExceptionSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

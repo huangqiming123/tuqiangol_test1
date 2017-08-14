@@ -8,7 +8,7 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 from pages.safe_area.safe_area_page_read_csv import SafeAreaPageReadCsv
 
 
-class TestCase0004MarkOperation(unittest.TestCase):
+class TestCase131MarkOperation(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

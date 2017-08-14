@@ -10,7 +10,7 @@ from pages.login.log_in_page_read_csv import LogInPageReadCsv
 from pages.login.login_page import LoginPage
 
 # 验证异常登录
-class TestCase1101LoginException(unittest.TestCase):
+class TestCase126LoginException(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

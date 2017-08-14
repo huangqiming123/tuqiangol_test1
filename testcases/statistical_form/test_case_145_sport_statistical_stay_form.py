@@ -11,7 +11,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase150SportStatisticalStayForm(unittest.TestCase):
+class TestCase145SportStatisticalStayForm(unittest.TestCase):
     '''
     用例第150条，运动统计，停留报表
     author ： zhangAo

@@ -8,7 +8,7 @@ from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 
 
-class TestCase128IssuedWorkTaskManagementOperation(unittest.TestCase):
+class TestCase46IssuedWorkTaskManagementOperation(unittest.TestCase):
     """
     用例第128条，下发工作模式任务管理，查看设备
     author：zhangAo

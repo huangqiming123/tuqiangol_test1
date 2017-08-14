@@ -9,7 +9,7 @@ from pages.login.login_page import LoginPage
 # 成功登录的用户取消退出
 # author:孙燕妮
 
-class TestCase003LoginWithLogoutDismiss(unittest.TestCase):
+class TestCase118LoginWithLogoutDismiss(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

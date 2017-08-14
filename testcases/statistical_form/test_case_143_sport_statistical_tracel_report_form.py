@@ -11,7 +11,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase148SportStatisticalTracelReportForm(unittest.TestCase):
+class TestCase143SportStatisticalTracelReportForm(unittest.TestCase):
     '''
     用例第148条，运动统计 行程报表
     author:zhangAo

@@ -13,7 +13,7 @@ from pages.login.login_page import LoginPage
 
 # 登录--用户账户修改默认密码
 # author:戴招利
-class TestCase1103LoginAccountEditDefaultPassword(unittest.TestCase):
+class TestCase128LoginAccountEditDefaultPassword(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

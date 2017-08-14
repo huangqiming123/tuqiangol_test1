@@ -8,7 +8,7 @@ from pages.login.login_page import LoginPage
 # 登录时切换语言
 # author:孙燕妮
 
-class TestCase006LoginChangeLanguage(unittest.TestCase):
+class TestCase121LoginChangeLanguage(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

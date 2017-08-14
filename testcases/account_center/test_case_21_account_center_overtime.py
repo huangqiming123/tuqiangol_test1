@@ -13,7 +13,7 @@ from pages.login.login_page import LoginPage
 # 账户中心-账户详情-账户总览   已过期
 # author:zhangao
 
-class TestCase166AccountCenterOverviewOvertime(unittest.TestCase):
+class TestCase21AccountCenterOverviewOvertime(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

@@ -9,7 +9,7 @@ from pages.dev_manage.dev_manage_page_read_csv import DevManagePageReadCsv
 from pages.dev_manage.dev_manage_pages import DevManagePages
 
 
-class TestCase088DevManageDevSearchByTime(unittest.TestCase):
+class TestCase73DevManageDevSearchByTime(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

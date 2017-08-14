@@ -11,7 +11,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase154OilReport(unittest.TestCase):
+class TestCase150OilReport(unittest.TestCase):
     '''
     用例第154条，
     author ：zhangAo

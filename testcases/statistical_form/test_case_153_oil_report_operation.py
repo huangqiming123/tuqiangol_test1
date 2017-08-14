@@ -10,7 +10,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase2112OilReportOperation(unittest.TestCase):
+class TestCase153OilReportOperation(unittest.TestCase):
     '''
     用例第154条，
     author ：zhangAo

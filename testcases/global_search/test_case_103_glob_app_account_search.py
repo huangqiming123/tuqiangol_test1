@@ -13,7 +13,7 @@ from pages.global_search.global_search_page_read_csv import GlobleSearchPageRead
 from pages.global_search.search_sql import SearchSql
 
 
-class TestCase029GlobAppAccountSearch(unittest.TestCase):
+class TestCase103GlobAppAccountSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url

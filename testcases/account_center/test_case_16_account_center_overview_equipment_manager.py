@@ -14,7 +14,7 @@ from pages.login.login_page import LoginPage
 # 账户中心-账户详情-账户总览   设置管理
 # author:zhangao
 
-class TestCase159AccountCenterOverviewEquipmentManager(unittest.TestCase):
+class TestCase16AccountCenterOverviewEquipmentManager(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

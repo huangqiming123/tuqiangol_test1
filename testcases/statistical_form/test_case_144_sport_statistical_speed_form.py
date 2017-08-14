@@ -11,8 +11,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-
-class TestCase149SportStatisticalSpeedForm(unittest.TestCase):
+class TestCase144SportStatisticalSpeedForm(unittest.TestCase):
     '''
     用例第149条，运动报表，超速报表
     author：zhangAo

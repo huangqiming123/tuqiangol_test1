@@ -14,7 +14,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 # 菜单栏 帮助 意见反馈
 
-class TestCase011FeedbackTest(unittest.TestCase):
+class TestCase37FeedbackTest(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

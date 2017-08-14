@@ -9,7 +9,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase2111GuideManchineReportSearchUser(unittest.TestCase):
+class TestCase152GuideManchineReportSearchUser(unittest.TestCase):
     '''
     导游播报统计搜索用户
     author ：zhangAo

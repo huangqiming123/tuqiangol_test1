@@ -11,7 +11,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase151SportStatisticalPakingNotShutDownForm(unittest.TestCase):
+class TestCase146SportStatisticalPakingNotShutDownForm(unittest.TestCase):
     '''
     用例第151条，停车未熄火报表
     author ： zhangAo

@@ -12,7 +12,7 @@ from pages.login.login_page import LoginPage
 # 账户中心-账户详情-账户总览   地标设置
 # author:zhangao
 
-class TestCase161AccountCenterOverviewSetUpLandmark(unittest.TestCase):
+class TestCase18AccountCenterOverviewSetUpLandmark(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

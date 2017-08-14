@@ -13,7 +13,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 # 账户中心-消息中心-编辑设备异常操作
 # author:戴招利
-class TestCase1102AccountCenterMsgEdit_Exception(unittest.TestCase):
+class TestCase32AccountCenterMsgEdit_Exception(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

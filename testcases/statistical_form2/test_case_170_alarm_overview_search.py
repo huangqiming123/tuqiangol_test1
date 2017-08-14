@@ -12,7 +12,7 @@ from pages.statistical_form.statistical_form_page2 import StatisticalFormPage2
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase138AlarmOverviewSearch(unittest.TestCase):
+class TestCase170AlarmOverviewSearch(unittest.TestCase):
     '''
     用例第138条，告警总览页面搜索
     author：zhangAo

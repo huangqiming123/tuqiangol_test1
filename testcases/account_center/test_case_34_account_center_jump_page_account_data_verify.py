@@ -15,7 +15,7 @@ from pages.login.login_page import LoginPage
 
 # 账户中心-账户详情--跳转页面后验证登录账户的数据
 # author:戴招利
-class TestCase1108AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
+class TestCase34AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

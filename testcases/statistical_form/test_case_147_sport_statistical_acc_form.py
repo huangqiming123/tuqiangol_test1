@@ -11,7 +11,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase152SportStatisticalAccForm(unittest.TestCase):
+class TestCase147SportStatisticalAccForm(unittest.TestCase):
     '''
     用例第152条，运动报表，acc报表
     author ：zhangAo

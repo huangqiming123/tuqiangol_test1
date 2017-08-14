@@ -13,7 +13,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 # 账户中心招呼栏业务日志-设备管理日志查询
 
-class TestCase012AccountCenterOperDeviceLog(unittest.TestCase):
+class TestCase38AccountCenterOperDeviceLog(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

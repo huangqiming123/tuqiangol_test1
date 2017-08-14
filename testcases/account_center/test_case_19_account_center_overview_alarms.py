@@ -12,7 +12,7 @@ from pages.login.login_page import LoginPage
 # 账户中心-账户详情-账户总览   告警
 # author:zhangao
 
-class TestCase162AccountCenterOverviewAlarm(unittest.TestCase):
+class TestCase19AccountCenterOverviewAlarm(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

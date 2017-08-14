@@ -15,7 +15,7 @@ from pages.login.login_page import LoginPage
 # 销售和代理商账户成功登录功能的测试
 # author:孙燕妮
 
-class TestCase001LoginSuccessWithSalesAndAgent(unittest.TestCase):
+class TestCase116LoginSuccessWithSalesAndAgent(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

@@ -12,7 +12,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
-class TestCase136IssuedCommandManagementSearch(unittest.TestCase):
+class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
     """
     用例第136条，下发指令管理页面的搜索
     """

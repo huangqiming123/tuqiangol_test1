@@ -9,7 +9,7 @@ import csv
 
 # 账户中心招呼栏修改密码---异常操作
 # author:戴招利
-class TestCase1102AccountCenterModifyPasswordException(unittest.TestCase):
+class TestCase28AccountCenterModifyPasswordException(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

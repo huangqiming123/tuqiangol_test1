@@ -11,11 +11,6 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 
 class TestCase153OilReportOperation(unittest.TestCase):
-    '''
-    用例第154条，
-    author ：zhangAo
-    '''
-
     def setUp(self):
         # 前置条件
         # 实例化对象

@@ -13,7 +13,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 class TestCase142SportStatisticalElectricReport(unittest.TestCase):
     '''
-    用例第142条，电量报表
+    电量报表
     author:zhangAo
     '''
 

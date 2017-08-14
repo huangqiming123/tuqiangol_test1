@@ -13,7 +13,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 class TestCase144SportStatisticalSpeedForm(unittest.TestCase):
     '''
-    用例第149条，运动报表，超速报表
+    运动报表，超速报表
     author：zhangAo
     '''
 

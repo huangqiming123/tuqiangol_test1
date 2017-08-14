@@ -3,10 +3,7 @@ import threading
 from time import sleep
 import datetime
 
-'''
-testcases运行入口
-author:zhangAo
-'''
+
 def run_01():
     # os.system('python -m test_runner.tuqiangOL_test_runner_login')
     # sleep(5)

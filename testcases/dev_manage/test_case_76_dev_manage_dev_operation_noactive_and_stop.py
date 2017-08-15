@@ -3,7 +3,6 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
-from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_pages import AccountCenterNaviBarPages
 from pages.base.base_page import BasePage
@@ -13,8 +12,7 @@ from pages.dev_manage.dev_manage_pages import DevManagePages
 from pages.dev_manage.search_sql import SearchSql
 
 
-
-class TestCase77DevManageDevOperationActiveAndStop(unittest.TestCase):
+class TestCase76DevManageDevOperationNOActiveAndStop(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()
         self.base_url = self.driver.base_url
@@ -25,7 +23,6 @@ class TestCase77DevManageDevOperationActiveAndStop(unittest.TestCase):
         self.dev_manage_page_read_csv = DevManagePageReadCsv()
         self.connect_sql = ConnectSql()
         self.search_sql = SearchSql()
-        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -34,7 +31,7 @@ class TestCase77DevManageDevOperationActiveAndStop(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_dev_manage_dev_operation_active_and_stop(self):
+    def test_dev_manage_dev_operation_noactive_and_stop(self):
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
@@ -45,7 +42,7 @@ class TestCase77DevManageDevOperationActiveAndStop(unittest.TestCase):
         self.dev_manage_page.enter_dev_manage()
 
         # 选择已激活和开机的设备
-        self.dev_manage_page.choose_dev_active_and_stop()
+        self.dev_manage_page.choose_dev_noactive_and_stop()
         self.dev_manage_page.click_ensure()
         imei = self.dev_manage_page.get_imei_number()
         self.dev_manage_page.click_edit_button()
@@ -90,8 +87,7 @@ class TestCase77DevManageDevOperationActiveAndStop(unittest.TestCase):
                 self.assertEqual(expect_url, self.driver.get_current_url())
 
                 # dev_name = self.dev_manage_page.get_dev_name_after_click_console()
-                # sleep(25)
-                # dev_name = self.driver.get_element('c,vehicles-info-list').get_attribute('value')
+
                 # self.assertEqual(self.data['dev_name'], dev_name)
                 self.driver.close_current_page()
 

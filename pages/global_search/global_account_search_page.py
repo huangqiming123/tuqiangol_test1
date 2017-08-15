@@ -734,3 +734,100 @@ class GlobalAccountSearchPage(BasePage):
     def get_account_after_log_in(self):
         return self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[1]/span/b').get_attribute(
             'title')
+
+    def get_second_user_account_after_search_user(self):
+        return self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[2]/td[4]')
+
+    def click_user_detail_button(self):
+        self.driver.click_element('x,//*[@id="complex_user_tbody"]/tr[2]/td[7]/a[2]')
+        sleep(2)
+
+    def click_user_info_in_user_detail(self):
+        self.driver.click_element('x,/html/body/div[2]/div[2]/div[1]/ul/li[2]/a')
+        sleep(2)
+
+    def get_current_account_in_user_detail(self):
+        return self.driver.get_element(
+            'x,//*[@id="complex_userInfo_Form_complexUpdate"]/div[4]/div/input').get_attribute('value')
+
+    def get_web_login_authority_input_select_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_login"]/div[1]/label/div/input').is_selected()
+
+    def get_app_login_authorith_input_select_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_login"]/div[2]/label/div/input').is_selected()
+
+    def batch_issued_command_authority_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_devinfo_isBatchSendIns"]/label/div/input').is_selected()
+
+    def batch_issued_work_type_authority_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_devinfo_isBatchSendFM"]/label/div/input').is_selected()
+
+    def get_web_modify_authority_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_devinfo_webupddatedev_div"]/label/div/input').is_selected()
+
+    def get_app_modify_authority_in_user_detail(self):
+        return self.driver.get_element('x,//*[@id="complex_devinfo_appupdatedev_div"]/label/div/input').is_selected()
+
+    def click_web_modify_dev_authority_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_devinfo_webupddatedev_div"]/label/div/ins')
+        sleep(2)
+
+    def logout(self):
+        # 点击退出系统
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a'))
+        # self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        sleep(3)
+        self.driver.click_element('p,退出系统')
+        sleep(2)
+        self.driver.click_element("c,layui-layer-btn0")
+        sleep(2)
+
+    def click_ensuer_button_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_updateUserBtn"]')
+        sleep(2)
+
+    def click_dev_manage_page(self):
+        self.driver.click_element('x,//*[@id="device"]/a')
+        sleep(2)
+
+    def click_edit_dev_in_dev_manage_page(self):
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[1]')
+        sleep(2)
+
+    def get_no_authority_text(self):
+        self.driver.switch_to_frame('x,/html/body/div[31]/div[2]/iframe')
+        a = self.driver.get_text("c,layui-layer-content")
+        self.driver.default_frame()
+        return a
+
+    def get_authority_text(self):
+        return self.driver.get_text("c,layui-layer-content")
+
+    def close_dev_edit(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def click_account_manage_page(self):
+        self.driver.click_element('x,//*[@id="accountCenter"]/a')
+        sleep(2)
+
+    def click_modify_batch_issued_command_authority_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_devinfo_isBatchSendIns"]/label/div/ins')
+        sleep(2)
+
+    def get_total_button_in_dev_manage(self):
+        return len(list(self.driver.get_elements('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button')))
+
+    def get_per_operation_in_dev_manage(self, n):
+        return self.driver.get_text('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[%s]' % str(n + 1))
+
+    def click_modify_batch_issued_work_type_authority_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_devinfo_isBatchSendFM"]/label/div/ins')
+        sleep(2)
+
+    def click_modify_web_login_authority_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_login"]/div[1]/label/div/ins')
+        sleep(2)
+
+    def get_no_login_authority_text(self):
+        return self.driver.get_text('tipsmsg')

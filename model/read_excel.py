@@ -14,7 +14,9 @@ def read_excel_file_by_index(file, col_name_index=0, by_index=0):
     excel_file = open_excel(file)
     # table = excel_file.sheets[by_index]
     table = excel_file.sheet_by_index(by_index)
+    # 列数
     number_rows = table.nrows
+    # 每一列总共有多少个值
     colnames = table.row_values(col_name_index)
 
     list = []

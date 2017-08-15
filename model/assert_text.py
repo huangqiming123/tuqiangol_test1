@@ -311,3 +311,21 @@ class AssertText(object):
 
     def per_20_page(self):
         return '每页20条'
+
+    def no_authority_text(self):
+        return '没有权限'
+
+    def select_issued_command_text(self):
+        return '选中发送指令'
+
+    def all_issued_command_text(self):
+        return '本次查询全部发送指令'
+
+    def select_issued_work_type_text(self):
+        return '选中设置工作模式'
+
+    def all_issued_work_type_text(self):
+        return '本次查询全部设置工作模式'
+
+    def no_login_authority_text(self):
+        return '没有权限登录'

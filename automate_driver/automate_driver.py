@@ -11,8 +11,11 @@ from driver.driver_choose import browser
 # author:孙燕妮
 
 class AutomateDriver(object):
-    def __init__(self):
-        self.driver = browser('chrome')
+    def __init__(self, choose=None):
+        if choose != None:
+            self.driver = browser('firefox')
+        else:
+            self.driver = browser('chrome')
         # self.base_url = 'http://tujunsat.jimicloud.com'
         # self.base_url = 'http://120.76.232.176:8180'
         self.base_url = 'http://www.tuqiangol.com'

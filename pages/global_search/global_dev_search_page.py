@@ -1766,3 +1766,32 @@ class GlobalDevSearchPage(BasePage):
 
     def get_list_dev_number_in_dev_transfer_page(self):
         return len(list(self.driver.get_elements('x,//*[@id="sale_tbody_complexAllot"]/tr')))
+
+    def get_dev_types_in_dev_detail(self):
+        return self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[2]')
+
+    def clcik_dev_command_button(self):
+        self.driver.click_element('x,/html/body/div[3]/div[2]/div[1]/ul/li[4]/a')
+        sleep(2)
+
+    def get_dev_imei_in_command_page(self):
+        return self.driver.get_text('x,//*[@id="instruction_IMEI"]')
+
+    def get_dev_name_in_command_page(self):
+        return self.driver.get_text('x,//*[@id="instruction_deviceName"]')
+
+    def click_advanced_search_button(self):
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[2]')
+        sleep(2)
+
+    def click_search_button_in_dev_advanced_search_page(self):
+        self.driver.click_element('x,/html/body/div[1]/div[2]/form/div[2]/div/div[1]/span/button')
+        sleep(2)
+
+    def add_user_name_to_search_in_dev_advanced_search_page(self, user):
+        self.driver.operate_input_element('x,//*[@id="complex_globalSearch_input"]', user)
+        self.driver.click_element('x,//*[@id="complex_globalSearch_btn"]')
+        sleep(5)
+
+    def get_text_after_click_search_button_in_dev_advanced_search_page(self):
+        return self.driver.get_text('x,//*[@id="complex_advanced_search_form"]/div[2]/div/div[2]/div/div/div')

@@ -1795,3 +1795,141 @@ class GlobalDevSearchPage(BasePage):
 
     def get_text_after_click_search_button_in_dev_advanced_search_page(self):
         return self.driver.get_text('x,//*[@id="complex_advanced_search_form"]/div[2]/div/div[2]/div/div/div')
+
+    def get_first_page_total_number_in_dev_search(self):
+        return len(list(self.driver.get_elements('x,//*[@id="complex_device_tbody"]/tr')))
+
+    def get_imei_in_dev_search(self, n):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[%s]/td[3]' % str(n + 1))
+
+    def get_first_total_number_in_advanced_search(self):
+        return len(list(self.driver.get_elements('x,//*[@id="complex_device_tbody"]/tr')))
+
+    def get_imei_in_dev_advanced_search(self, x):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[%s]/td[3]' % str(x + 1))
+
+    def click_get_back_button_in_advanced_search(self):
+        self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[1]/button')
+        sleep(3)
+
+    def click_detail_button_in_dev_advanced_search_page(self):
+        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[9]/a[1]')
+        sleep(2)
+
+    def get_imei_after_click_detail_button_in_dev_advanced(self):
+        return self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[3]')
+
+    def click_tracker_play_button_in_dev_advanced_page(self):
+        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]/a[2]')
+        sleep(3)
+
+    def get_imei_after_click_tracker_play_in_tracker_play(self):
+        return self.driver.get_text('x,//*[@id="driverName"]/span')
+
+    def click_track_preset_button_in_dev_advanced_page(self):
+        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]/a[3]')
+        sleep(3)
+
+    def click_alarm_detail_button_in_dev_advanced_page(self):
+        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]/a[4]')
+        sleep(3)
+
+    def click_look_loacltion_button_in_dev_advanced_page(self):
+        self.driver.click_element('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]/a[5]')
+        sleep(3)
+
+    def click_search_buttons_in_dev_advanced_search_page(self):
+        self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[6]/button[1]')
+        sleep(3)
+
+    def click_console_button_in_dev_advanced(self):
+        self.driver.click_element('x,//*[@id="complex_device_user_realtion_tbody"]/tr[2]/td[7]/a[1]')
+        sleep(2)
+
+    def click_look_button_in_dev_advanced(self):
+        self.driver.click_element('x,//*[@id="complex_device_user_realtion_tbody"]/tr[2]/td[7]/a[4]')
+        sleep(3)
+
+    def get_user_dev_number_in_dev_advanced(self):
+        return self.driver.get_text('x,//*[@id="complex_device_user_realtion_tbody"]/tr[2]/td[6]')
+
+    def get_user_dev_total_number_in_dev_page(self):
+        a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_numbers('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
+            return total
+        else:
+            return 0
+
+    def click_dev_info_in_dev_advancde_search_page(self):
+        self.driver.click_element('x,/html/body/div[3]/div[2]/div[1]/ul/li[2]/a')
+        sleep(3)
+
+    def get_imei_in_dev_info_after_click_dev_info_button(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[1]/div[1]/input[2]').get_attribute(
+            'value')
+
+    def get_imei_input_attribute_in_dev_info_page(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[1]/div[1]/input[2]').get_attribute(
+            'disabled')
+
+    def input_dev_name_modify_dev_info_in_dev_info_page(self, param):
+        self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset[1]/div[2]/div[1]/input', param)
+
+    def click_ensure_button_in_dev_info_page(self):
+        self.driver.click_element('x,//*[@id="device_info_form"]/div[3]/div/button')
+        sleep(2)
+
+    def get_text_after_click_ensure_in_dev_info_page(self):
+        self.driver.default_frame()
+        return self.driver.get_text('c,layui-layer-content')
+
+    def select_dev_group_in_dev_info_page(self):
+        self.driver.click_element('x,//*[@id="device_info_a"]/fieldset[1]/div[3]/div[1]/span/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="device_info_a"]/fieldset[1]/div[3]/div[1]/span/div/div/ul/li[1]')
+        sleep(2)
+
+    def click_dev_range_of_use_in_dev_info_page(self, number):
+        self.driver.click_element('x,//*[@id="device_info_a"]/fieldset[1]/div[4]/div[1]/ul/li[%s]' % number)
+        sleep(2)
+
+    def get_iccid_input_attribute_in_dev_info_page(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[5]/div[1]/input').get_attribute(
+            'disabled')
+
+    def get_sale_time_input_attribute_in_dev_info_page(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[6]/div[1]/input').get_attribute(
+            'disabled')
+
+    def add_over_speed_and_over_speed_time_to_modify_dev_info(self, param, param1):
+        self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset[1]/div[7]/div[1]/input', param)
+        sleep(1)
+        self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset[1]/div[7]/div[3]/input', param1)
+
+    def add_remark_to_modify_dev_info(self, param):
+        self.driver.operate_input_element('x,//*[@id="reMark"]', param)
+
+    def get_dev_type_input_attribute_in_dev_info_page(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[1]/div[2]/input[2]').get_attribute(
+            'disabled')
+
+    def add_sim_number_to_modify_dev_info_page(self, sim):
+        self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset[1]/div[2]/div[2]/input', sim)
+
+    def get_active_time_input_attribute_in_dev_info_page(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[3]/div[2]/input').get_attribute(
+            'disabled')
+
+    def get_platform_time_input_attribute_in_dev_info_page(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[4]/div[2]/input').get_attribute(
+            'disabled')
+
+    def get_imsi_input_attribute_in_dev_info_page(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[5]/div[2]/input').get_attribute(
+            'disabled')
+
+    def get_export_time_attribute_in_dev_info_page(self):
+        return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[6]/div[2]/input').get_attribute(
+            'disabled')

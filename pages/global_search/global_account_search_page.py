@@ -831,3 +831,88 @@ class GlobalAccountSearchPage(BasePage):
 
     def get_no_login_authority_text(self):
         return self.driver.get_text('tipsmsg')
+
+    def clcik_sale_dev_button_in_user_detail_button(self):
+        self.driver.click_element('x,/html/body/div[2]/div[2]/div[1]/ul/li[3]/a')
+        sleep(3)
+
+    def get_frist_imei_in_dev_manage_page(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[3]')
+
+    def get_second_imei_in_dev_manage_page(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[2]/td[3]')
+
+    def get_third_imei_in_dev_manage_page(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[3]/td[3]')
+
+    def add_imei_to_sale_dev_in_user_detail(self, imei):
+        self.driver.click_element('x,//*[@id="sale_imei_complexSale"]')
+        sleep(1)
+        self.driver.operate_input_element('x,//*[@id="sale_imei_complexSale"]', imei)
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexSale"]/div[1]/div/div[1]/div/div[3]/button[1]')
+        sleep(4)
+
+    def get_failure_statue_text_in_user_detail(self):
+        return self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr/td[2]/span')
+
+    def get_failure_reason_text_in_user_detail(self):
+        return self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr/td[3]')
+
+    def close_failure_windows(self):
+        self.driver.click_element('x,/html/body/div[5]/span[1]/a')
+        sleep(2)
+
+    def get_imei_after_add_in_user_detail(self):
+        return self.driver.get_text('x,//*[@id="sale_tbody_complexSale"]/tr[2]/td[1]')
+
+    def get_fourth_imei_in_dev_manage_page(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[4]/td[3]')
+
+    def get_second_failure_statue_text_in_user_detail(self):
+        return self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr[2]/td[2]/span')
+
+    def get_second_failure_reason_text_in_user_detail(self):
+        return self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr[2]/td[3]')
+
+    def get_fifth_imei_in_dev_manage_page(self):
+        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[5]/td[3]')
+
+    def get_total_dev_number_after_add_in_sale_dev(self):
+        return len(list(self.driver.get_elements('x,//*[@id="sale_tbody_complexSale"]/tr')))
+
+    def click_sale_button_in_user_search(self):
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexSale"]/div[2]/div[2]/button[2]')
+        sleep(2)
+
+    def get_text_after_click_sale_button_with_no_dev(self):
+        return self.driver.get_text('c,layui-layer-content')
+
+    def select_user_expire_time_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexSale"]/div[2]/div[1]/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexSale"]/div[2]/div[1]/div/div/div/ul/li[3]')
+        sleep(2)
+
+    def click_reset_button_in_user_detail(self):
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexSale"]/div[2]/div[1]/button')
+        sleep(2)
+
+    def count_dev_number_in_sale_dev_page(self):
+        return self.driver.get_text('x,//*[@id="sale_count_complexSale"]')
+
+    def get_user_expire_text_in_sale_dev(self):
+        return self.driver.get_text('x,//*[@id="complex_user_sale_complexSale"]/div[2]/div[1]/div/div/span[2]')
+
+    def click_transfer_user_button_in_user_detail_button(self):
+        self.driver.click_element('x,/html/body/div[2]/div[2]/div[1]/ul/li[5]/a')
+        sleep(2)
+
+    def search_user_to_transfer_user_in_user_detail(self, param):
+        self.driver.operate_input_element('x,//*[@id="complexTrans_globalSearch_input_transCust1"]', param)
+        self.driver.click_element('x,//*[@id="complexTrans_globalSearch_btn_transCust1"]')
+        sleep(4)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(2)
+
+    def get_text_after_click_transfer_user(self):
+        return self.driver.get_text('c,layui-layer-content')

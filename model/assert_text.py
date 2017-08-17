@@ -329,3 +329,12 @@ class AssertText(object):
 
     def no_login_authority_text(self):
         return '没有权限登录'
+
+    def please_select_text(self):
+        return '请选择'
+
+    def the_selected_user_cannot_be_the_superior(self):
+        return '选择的用户不能做为上级用户'
+
+    def this_field_must_be_filled_in_text(self):
+        return '此字段必填'

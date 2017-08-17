@@ -141,3 +141,31 @@ class NewPaging(BasePage):
             # 计算总共有多少条记录
             total = int(pages) * 10 + last_page_number
             return total
+
+    def get_total_page_and_total_number(self, selector_li, selector_tr):
+        if self.get_li_total_number(selector_li) == 0:
+            return 0
+
+        # 如果页面就一条记录，就返回这一页tr标签的总数
+        elif self.get_li_total_number(selector_li) == 1:
+            return 1
+
+        else:
+            for n in range(10000):
+                page = self.get_li_total_number(selector_li)
+                self.driver.click_element(selector_li + "/ul/li[" + str(int(page) + 1) + "]/a")
+                try:
+                    sleep(5)
+                    self.driver.get_text('l,下一页') == '下一页'
+                    continue
+                except:
+                    break
+
+            # 获取最后一页前一页的页码
+            page_01 = self.get_li_total_number(selector_li)
+            pages = self.driver.get_text(selector_li + "/ul/li[" + str(int(page_01)) + "]/a")
+            last_page_number = self.get_last_page_number(selector_tr)
+            # 计算总共有多少条记录
+            total = int(pages) * 10 + last_page_number
+            total_number = [int(pages) + 1, total]
+            return total_number

@@ -1,6 +1,8 @@
 import os
 from time import sleep
 
+from selenium.webdriver.common.keys import Keys
+
 from automate_driver.automate_driver import AutomateDriver
 from pages.base.base_page import BasePage
 
@@ -1619,3 +1621,148 @@ class GlobalDevSearchPage(BasePage):
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[3]/div/div/div/ul/li[7]')
         sleep(1)
         self.driver.default_frame()
+
+    def get_total_page_number_after_search_dev(self):
+        a = self.driver.get_element('x,//*[@id="complex_paging_device"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_page_and_total_number('x,//*[@id="complex_paging_device"]',
+                                                               'x,//*[@id="complex_device_tbody"]')
+            return total
+        else:
+            return 0
+
+    def get_no_data_text_in_search_dev(self):
+        return self.driver.get_text('x,//*[@id="complex_device_table_nodata"]/div/span')
+
+    def get_up_page_class_active_in_dev_search(self):
+        return self.driver.get_element('x,//*[@id="complex_paging_device"]/ul/li[1]').get_attribute('class')
+
+    def get_next_page_class_active_in_dev_search(self):
+        return self.driver.get_element('x,//*[@id="complex_paging_device"]/ul/li[3]').get_attribute('class')
+
+    def click_per_page(self, n):
+        self.driver.click_element('l,%s' % str(n + 1))
+        sleep(3)
+
+    def get_per_frist_number_in_dev_search(self):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[1]/td[1]')
+
+    def click_per_page_number(self):
+        self.driver.click_element('c,page-select')
+        sleep(2)
+        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
+        sleep(5)
+
+    def get_page_number_in_dev_search(self):
+        new_paging = NewPaging(self.driver, self.base_url)
+        total = new_paging.get_total_page('x,//*[@id="complex_paging_device"]')
+        return total
+
+    def click_dev_detail_after_search_dev(self):
+        self.driver.click_element('x,//*[@id="complex_device_tbody"]/tr[1]/td[9]/a[1]')
+        sleep(2)
+
+    def click_dev_info_in_dev_detail(self):
+        self.driver.click_element('x,/html/body/div[3]/div[2]/div[1]/ul/li[2]/a')
+        sleep(2)
+
+    def switch_to_dev_info_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="complex_editDevice_iframe"]')
+
+    def click_cubic_oil_edit_in_dev_info(self):
+        self.driver.click_element('x,//*[@id="device_info_a"]/fieldset[2]/div[1]/div/label[1]/div/ins')
+        sleep(2)
+
+    def click_ensure_button(self):
+        self.driver.click_element('x,//*[@id="device_info_form"]/div[3]/div/button')
+        sleep(2)
+
+    def get_text_cubic1_after_click_ensure_button(self):
+        return self.driver.get_text('x,//*[@id="device_info_a"]/fieldset[2]/div[2]/div[1]/div[1]/div[4]/label')
+
+    def get_text_cubic2_after_click_ensure_button(self):
+        return self.driver.get_text('x,//*[@id="device_info_a"]/fieldset[2]/div[2]/div[1]/div[2]/div[4]/label')
+
+    def get_text_cubic3_after_click_ensure_button(self):
+        return self.driver.get_text('x,//*[@id="device_info_a"]/fieldset[2]/div[2]/div[1]/div[3]/div[4]/label')
+
+    def add_cubic_oil_parm_in_dev_info(self, param, param1, param2):
+        self.driver.operate_input_element(
+            'x,//*[@id="device_info_a"]/fieldset[2]/div[2]/div[1]/div[1]/div[2]/div/input', param)
+        self.driver.operate_input_element(
+            'x,//*[@id="device_info_a"]/fieldset[2]/div[2]/div[1]/div[2]/div[2]/div/input', param1)
+        self.driver.operate_input_element(
+            'x,//*[@id="device_info_a"]/fieldset[2]/div[2]/div[1]/div[3]/div[2]/div/input', param2)
+
+    def get_succeed_text_after_click_ensure_button(self):
+        return self.driver.get_text('c,layui-layer-content')
+
+    def get_imei_in_dev_detail(self):
+        return self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[3]')
+
+    def click_transfer_dev_button_in_dev_detail(self):
+        self.driver.click_element('x,/html/body/div[3]/div[2]/div[1]/ul/li[3]/a')
+        sleep(2)
+
+    def get_imei_after_transfer_dev_button(self):
+        return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr/td[1]')
+
+    def click_sale_button_in_dev_detail(self):
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexAllot"]/div[3]/div[2]/button[2]')
+        sleep(2)
+
+    def get_text_after_click_transfer_button(self):
+        return self.driver.get_text('c,layui-layer-content')
+
+    def click_detele_dev_in_dev_transfer(self):
+        self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[4]/a')
+        sleep(2)
+
+    def get_dev_number_in_dev_transfer_page(self):
+        return len(list(self.driver.get_elements('x,//*[@id="sale_tbody_complexAllot"]/tr')))
+
+    def get_dev_count_number_in_dev_transfer_page(self):
+        return self.driver.get_text('x,//*[@id="sale_count_complexAllot"]')
+
+    def click_frist_user_in_dev_transfer_page(self):
+        self.driver.click_element('x,//*[@id="complex_allotDev_tree_complexAllot_1_span"]')
+
+    def get_frist_user_name_in_dev_transfer_page(self):
+        return self.driver.get_text('x,//*[@id="complex_allotDev_tree_complexAllot_1_span"]')
+
+    def get_select_user_name_in_dev_transfer_page(self):
+        return self.driver.get_text('x,//*[@id="allot_to_complexAllot"]')
+
+    def click_reset_button_in_transfer_page(self):
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexAllot"]/div[3]/div[1]/button')
+        sleep(2)
+
+    def get_second_imei_in_dev_detail(self):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[2]/td[3]')
+
+    def get_third_imei_in_dev_detail(self):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[3]/td[3]')
+
+    def get_fourth_imei_in_dev_detail(self):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[4]/td[3]')
+
+    def add_dev_to_trans_in_transfer_page(self, param):
+        self.driver.click_element('x,//*[@id="sale_imei_complexAllot"]')
+        sleep(1)
+        self.driver.operate_input_element('x,//*[@id="sale_imei_complexAllot"]', param)
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexAllot"]/div[1]/div/div[1]/div/div[3]/button[1]')
+        sleep(3)
+
+    def get_add_failure_status_after_click_add_button(self):
+        return self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr/td[2]/span')
+
+    def get_add_failure_reason_after_click_add_button(self):
+        return self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr/td[3]')
+
+    def click_close_failure_windows(self):
+        self.driver.click_element('x,/html/body/div[5]/span[1]/a')
+        sleep(2)
+
+    def get_list_dev_number_in_dev_transfer_page(self):
+        return len(list(self.driver.get_elements('x,//*[@id="sale_tbody_complexAllot"]/tr')))

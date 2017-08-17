@@ -14,10 +14,10 @@ class AutomateDriverServer(object):
     def __init__(self):
         self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
                                        desired_capabilities=DesiredCapabilities.FIREFOX)
-        # self.base_url = 'http://tujunsat.jimicloud.com'
         # self.base_url = 'http://120.76.232.176:8180'
         self.base_url = 'http://www.tuqiangol.com'
         # self.base_url = 'http://172.16.0.116:8680'
+        # self.base_url = 'http://tujunsat.jimicloud.com'
 
     def navigate(self, url):
         self.driver.get(self.base_url + url)

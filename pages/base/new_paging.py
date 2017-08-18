@@ -144,11 +144,12 @@ class NewPaging(BasePage):
 
     def get_total_page_and_total_number(self, selector_li, selector_tr):
         if self.get_li_total_number(selector_li) == 0:
-            return 0
+            return [0, 0]
 
         # 如果页面就一条记录，就返回这一页tr标签的总数
         elif self.get_li_total_number(selector_li) == 1:
-            return 1
+            last_page_number = self.get_last_page_number(selector_tr)
+            return [1, last_page_number]
 
         else:
             for n in range(10000):

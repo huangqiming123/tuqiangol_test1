@@ -1979,3 +1979,23 @@ class GlobalDevSearchPage(BasePage):
 
     def get_second_dev_user_account_in_transfer_page(self):
         return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr[2]/td[3]')
+
+    def get_total_page_after_click_app_search(self):
+        a = self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_page_and_total_number('x,//*[@id="complex_paging_mobileUser"]',
+                                                               'x,//*[@id="complex_mobileUser_tbody"]')
+            print(total)
+            return total
+        else:
+            return 0
+
+    def get_no_data_text_in_app_user_search(self):
+        return self.driver.get_text('x,//*[@id="complex_mobileUser_table_nodata"]/div/span')
+
+    def get_previous_page_class_in_app_user_search(self):
+        return self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]/ul/li[1]').get_attribute('class')
+
+    def get_next_page_class_in_app_user_search(self):
+        return self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]/ul/li[3]').get_attribute('class')

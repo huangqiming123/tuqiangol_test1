@@ -4,6 +4,7 @@ from time import sleep
 from selenium.webdriver.common.keys import Keys
 
 from automate_driver.automate_driver import AutomateDriver
+from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 
 # 全局搜索-设备搜索功能的元素及操作
@@ -1933,3 +1934,48 @@ class GlobalDevSearchPage(BasePage):
     def get_export_time_attribute_in_dev_info_page(self):
         return self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[1]/div[6]/div[2]/input').get_attribute(
             'disabled')
+
+    def get_dev_imei_in_transfer_dev_page(self):
+        return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr/td[1]')
+
+    def click_transfer_button_in_transfer_page(self):
+        self.driver.click_element('x,//*[@id="complex_user_sale_complexAllot"]/div[3]/div[2]/button[2]')
+        sleep(2)
+
+    def clcik_dev_imei_in_transfer_page(self):
+        self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[4]/a')
+        sleep(2)
+
+    def click_user_to_transfer_dev_in_transfer_dev_page(self):
+        self.driver.click_element('x,//*[@id="complex_allotDev_tree_complexAllot_1_span"]')
+        sleep(2)
+
+    def get_dev_user_account_by_sql(self, param):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        sql = "SELECT m.account FROM equipment_mostly m where m.imei = '%s';" % param
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        user_account = data[0][0]
+        cursor.close()
+        connect.close()
+        return user_account
+
+    def get_dev_user_account_in_transfer_page(self):
+        return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr/td[3]')
+
+    def get_second_imei_in_dev_advanced_page(self):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[2]/td[3]')
+
+    def get_third_imei_in_dev_advanced_page(self):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[3]/td[3]')
+
+    def get_fourth_imei_in_dev_advanced_page(self):
+        return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[4]/td[3]')
+
+    def get_total_dev_number_in_transfer_page(self):
+        return self.driver.get_text('x,//*[@id="sale_count_complexAllot"]')
+
+    def get_second_dev_user_account_in_transfer_page(self):
+        return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr[2]/td[3]')

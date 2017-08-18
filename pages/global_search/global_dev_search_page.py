@@ -1999,3 +1999,34 @@ class GlobalDevSearchPage(BasePage):
 
     def get_next_page_class_in_app_user_search(self):
         return self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]/ul/li[3]').get_attribute('class')
+
+    def click_search_button_in_user_search_page(self):
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        sleep(3)
+
+    def get_total_page_after_click_user_search_search(self):
+        a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('style')
+        if a == 'display: block;':
+            new_page = NewPaging(self.driver, self.base_url)
+            total = new_page.get_total_page_and_total_number('x,//*[@id="complex_paging_user"]',
+                                                             'x,//*[@id="complex_user_tbody"]')
+            return total
+        else:
+            return 0
+
+    def get_no_data_text_in_user_search(self):
+        return self.driver.get_text('x,//*[@id="complex_user_table_nodata"]/div/span')
+
+    def get_previous_page_class_in_user_search(self):
+        return self.driver.get_element('x,//*[@id="complex_paging_user"]/ul/li[1]').get_attribute('class')
+
+    def get_next_page_class_in_user_search(self):
+        return self.driver.get_element('x,//*[@id="complex_paging_user"]/ul/li[3]').get_attribute('class')
+
+    def get_per_frist_number_in_user_search(self):
+        return self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[1]/td[1]')
+
+    def get_page_number_in_user_search(self):
+        new_paging = NewPaging(self.driver, self.base_url)
+        total = new_paging.get_total_page('x,//*[@id="complex_paging_user"]')
+        return total

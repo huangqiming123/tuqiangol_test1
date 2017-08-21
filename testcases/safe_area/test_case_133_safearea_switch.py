@@ -1,5 +1,4 @@
 import unittest
-from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
@@ -8,6 +7,9 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 
 
 class TestCase133SafeAreaSwitch(unittest.TestCase):
+    """
+    jimitest账号，区域预警----围栏、黑车地址库验证
+    """
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

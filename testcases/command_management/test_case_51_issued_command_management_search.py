@@ -95,10 +95,10 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
             # 执行
             cursor.execute(get_current_user_id)
             user = cursor.fetchall()
-            for row in user:
+            for row1 in user:
                 user_info = {
-                    'id': row[0],
-                    'fullparent': row[1]
+                    'id': row1[0],
+                    'fullparent': row1[1]
                 }
 
                 # 查询当前登录用户的全部下级
@@ -113,9 +113,11 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
                         current_account_list.append(range2)
 
                 # 查询APP用户
-                search_userId_sql = "SELECT sk.bindUserId FROM (SELECT * FROM equipment_mostly WHERE fullParentId LIKE '" + \
+                search_userId_sql = "SELECT sk.bindUserId FROM (SELECT * FROM " \
+                                    "equipment_mostly WHERE fullParentId LIKE '" + \
                                     user_info["fullparent"] + user_info[
-                                        "id"] + "%" + "') as sk WHERE sk.bindUserId is NOT NULL GROUP BY sk.bindUserId"
+                                        "id"] + "%" + "') as sk WHERE sk.bindUserId is " \
+                                                      "NOT NULL GROUP BY sk.bindUserId"
                 cursor.execute(search_userId_sql)
                 app_user_id = cursor.fetchall()
                 app_user_id_list = []

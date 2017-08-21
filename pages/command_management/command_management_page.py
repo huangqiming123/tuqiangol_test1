@@ -862,24 +862,52 @@ class CommandManagementPage(BasePage):
         self.driver.default_frame()
         return text
 
-    # 获取对非正常状态下的设备下发指令后的文本
-    def get_text_after_send_command_with_abnormal_dev(self):
+    # 点击下发指令
+    def click_send_command(self):
         self.driver.click_element('x,//*[@id="js-issued-instruction"]')
         self.driver.wait(1)
-        self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '808120137883051')
+
+    # 获取对非正常状态下的设备下发指令后的文本
+    def get_text_after_send_command_with_abnormal_dev(self, state):
+
+        if state == '停机':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201705261957003')
+        elif state == '用户到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '103456789012341')
+        elif state == '平台到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
+        elif state == '不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201708081742001')
+        elif state == '停机+用户到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201707071043002')
+        elif state == '停机+平台到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
+        elif state == '停机+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201708141550002')
+        elif state == '用户到期+平台到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '519876810593085')
+        elif state == '用户到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201707121513005')
+        elif state == '平台到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
+        elif state == '停机+用户到期+平台到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
+        elif state == '停机+用户到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201708092035005')
+        elif state == '停机+平台到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
+        elif state == '用户到期+平台到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '424111111124560')
+        elif state == '平台到期+用户到期+停机+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '912345678909875')
+
         self.driver.click_element('x,//*[@id="execution-instruction"]/div/form/div/div/div[1]/div/div[3]/button[1]')
         self.driver.wait(5)
-        text = self.driver.get_text('x,//*[@id="failedList"]/tr/td[2]/span')
+        text = self.driver.get_text('x,//*[@id="failedList"]/tr/td[3]')
+        print(text)
         return text
 
-    # 设置设备为停机状态
-    def shut_down_the_equipment(self):
-        self.driver.click_element('p,设备管理')
-        self.driver.operate_input_element('x,//*[@id="searchIMEI"]', '808120137883051')
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
-        self.driver.wait(10)
-        self.driver.click_element('x,//*[@id="deviceTableHeader"]/thead/tr/th[1]/span/div/ins')
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
+    # 异常状态设备下发指令失败后，点击关闭提示框
+    def close_send_command_fail_frame(self):
+        self.driver.click_element('x,/html/body/div[4]/span[1]/a')
         self.driver.wait()
-        self.driver.click_element('c,layui-layer-btn0')
-        self.driver.wait(1)

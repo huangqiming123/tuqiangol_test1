@@ -1,4 +1,4 @@
-import unittest
+'''import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
@@ -7,6 +7,9 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 
 
 class TestCase138SafeAreaMarkPointOperation(unittest.TestCase):
+    """
+    web_autotest账号，标注点页面操作
+    """
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -62,4 +65,4 @@ class TestCase138SafeAreaMarkPointOperation(unittest.TestCase):
         self.safe_area_page.click_delete_in_mark_point()
         text = self.safe_area_page.get_text_after_click_delete()
         self.assertEqual(self.assert_text.safe_area_page_choose_delete_content(), text)
-        self.safe_area_page.click_close()
+        self.safe_area_page.click_close()'''

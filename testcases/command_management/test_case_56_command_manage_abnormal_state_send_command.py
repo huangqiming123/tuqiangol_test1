@@ -1,5 +1,6 @@
 import unittest
 from time import sleep
+import csv
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from pages.base.base_page import BasePage
@@ -52,17 +53,30 @@ class TestCase56CommandManagerAbnormalStateSendCommand(unittest.TestCase):
         self.assertEqual(expect_title_text_after_click_work_type_template_management,
                          self.command_management_page.actual_title_text_after_click_work_type_template_management())
 
-        # 设置设备状态为停机
-        self.command_management_page.shut_down_the_equipment()
+        # 点击下发指令
+        self.command_management_page.click_send_command()
 
-        # 跳转到工作模式模版管理
-        self.command_management_page.click_control_after_click_command_management()
-        sleep(3)
-        self.command_management_page.click_lift_list('work_type_template_management')
+        # 读取数据
+        csv_file = self.command_management_page_read_csv.read_csv("send_command_with_abnormal_dev.csv")
+        csv_data = csv.reader(csv_file)
 
-        # 下发指令
-        send_command_text = self.command_management_page.get_text_after_send_command_with_abnormal_dev()
+        is_header = True
+        for row in csv_data:
+            if is_header:
+                is_header = False
+                continue
+            abnormal_state_data = {
+                "state": row[0]
+            }
 
-        # 断言
-        print(send_command_text)
-        self.assertEqual(send_command_text, self.assert_text.dev_page_fail_text())
+            # 下发指令并获取文本
+            send_command_text = self.command_management_page. \
+                get_text_after_send_command_with_abnormal_dev(abnormal_state_data["state"])
+
+            # 断言
+            print(send_command_text)
+            self.assertEqual(send_command_text, self.assert_text.
+                             text_with_abnormal_dev_send_command(abnormal_state_data["state"]))
+
+            # 关闭提示框
+            self.command_management_page.close_send_command_fail_frame()

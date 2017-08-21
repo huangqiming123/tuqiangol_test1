@@ -1,6 +1,4 @@
 from time import sleep
-
-from pages.base.base_page import BasePage
 from pages.base.base_page_server import BasePageServer
 
 
@@ -51,6 +49,7 @@ class SafeAreaPage(BasePageServer):
         self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[1]')
         sleep(2)
         self.driver.click_element('l,删除')
+        sleep(2)
 
     def click_relevance_button(self):
         self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a[1]')
@@ -377,3 +376,13 @@ class SafeAreaPage(BasePageServer):
 
     def get_text_after_ensures(self):
         return self.driver.get_text('c,layui-layer-setwin')
+
+    # 获取第一个围栏名称文本
+    def get_first_fence_name_text(self):
+        text = self.driver.get_element('x,//*[@id="areatbody"]/tr[1]/td[1]').get_attribute('title')
+        return text
+
+    # 获取第一个地标名称文本
+    def get_first_mark_name_text(self):
+        text = self.driver.get_element('x,//*[@id="marktbody"]/tr[1]/td[1]').get_attribute('title')
+        return text

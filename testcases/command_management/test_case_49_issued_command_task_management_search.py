@@ -97,10 +97,10 @@ class TestCase49IssuedCommandTaskManagementSearch(unittest.TestCase):
             # 执行
             cursor.execute(get_current_user_id)
             user = cursor.fetchall()
-            for row in user:
+            for row1 in user:
                 user_info = {
-                    'id': row[0],
-                    'fullparent': row[1]
+                    'id': row1[0],
+                    'fullparent': row1[1]
                 }
                 # 查询当前登录用户的全部下级
                 get_next_id_sql = "select userId from user_info where fullParentId like" + \

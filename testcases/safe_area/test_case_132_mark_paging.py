@@ -9,6 +9,9 @@ from pages.safe_area.safe_area_page_read_csv import SafeAreaPageReadCsv
 
 
 class TestCase132MarkPaging(unittest.TestCase):
+    """
+    web_autotest账号，标注点页面分页功能
+    """
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

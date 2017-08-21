@@ -97,10 +97,10 @@ class TestCase47IssuedWorkTypeManagementSearch(unittest.TestCase):
                 "select o.account,o.userId from user_info o where o.account = '" + self.current_account + "';"
             cursor.execute(get_current_user_id_sql)
             user_relation = cursor.fetchall()
-            for row in user_relation:
+            for row1 in user_relation:
                 user_id = {
-                    'user_account': row[0],
-                    'user_id': row[1]
+                    'user_account': row1[0],
+                    'user_id': row1[1]
                 }
 
                 # 查询数据库有多少条记录

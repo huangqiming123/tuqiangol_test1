@@ -1,6 +1,4 @@
 import unittest
-from time import sleep
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
@@ -9,6 +7,9 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 
 
 class TestCase136SafeAreaRelevance(unittest.TestCase):
+    """
+    jimitest账号，围栏关联设备
+    """
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

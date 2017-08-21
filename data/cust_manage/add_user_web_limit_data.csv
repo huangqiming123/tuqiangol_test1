@@ -1,0 +1,4 @@
+,,都不勾选web和app权限,cswebqxzh1,jimi123,1312456,web@qq.com,张三,公司1,False,False
+,,不勾选web勾选app权限,cswebqxzh3,jimi123,186623232323,weborapp1@qq.com,王老五,公司2221,False,True
+,,勾选web勾选不app权限,cswebqxzh4,jimi123,13126555,weborapp1@qq.com,王老五333,公司888,True,False
+,,都勾选web和app权限账,cswebqxzh2,jimi123,186659,gxweb@qq.com,李四,公司2,True,True

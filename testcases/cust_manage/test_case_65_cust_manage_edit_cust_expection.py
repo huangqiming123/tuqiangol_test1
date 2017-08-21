@@ -13,7 +13,7 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 编辑客户的异常操作
+# 客户编辑---异常操作验证
 
 class TestCase65CustManageEditCustExpection(unittest.TestCase):
     def setUp(self):

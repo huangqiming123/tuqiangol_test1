@@ -12,6 +12,9 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
+# 账户中心-虚拟账户管理--添加虚拟账号
+# author:孙燕妮
+
 class TestCase08AccountCenterVisualAccount(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()

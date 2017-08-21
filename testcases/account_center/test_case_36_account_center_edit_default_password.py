@@ -125,3 +125,8 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
             # 成功退出系统
             sleep(2)
             self.account_center_page_navi_bar.usr_logout()
+
+            # 验证账号是否删除
+            self.log_in_base.log_in_with_csv(data[1], data[7])
+            sleep(2)
+            self.assertEqual(self.assert_text.log_in_page_account_not_exist(), self.login_page.get_exception_text())

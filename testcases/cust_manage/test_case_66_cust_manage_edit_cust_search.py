@@ -3,6 +3,7 @@ from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
+from model.assert_text2 import AssertText2
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -15,7 +16,7 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 新增客户客户数操作
+# 编辑客户--客户树操作
 
 class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
     def setUp(self):
@@ -31,6 +32,7 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.cust_manage_page_read_csv = CustManagePageReadCsv()
+        self.assert_text2 = AssertText2()
         self.connect_sql = ConnectSql()
         self.driver.wait(1)
         self.driver.clear_cookies()
@@ -41,6 +43,8 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
         self.driver.quit_browser()
 
     def test_cust_manage_edit_cust_search(self):
+
+        account = ["jianyigezh1", "jianyigezh2"]
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录
@@ -49,6 +53,9 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
         sleep(2)
+        # 搜索用户
+        self.cust_manage_lower_account_page.input_search_info(account[0])
+        self.cust_manage_lower_account_page.click_search_btn()
 
         # 点击编辑用户
         self.cust_manage_basic_info_and_add_cust_page.click_edit_customer()
@@ -73,3 +80,13 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
         self.cust_manage_basic_info_and_add_cust_page.search_cust('无数据')
         get_text = self.cust_manage_basic_info_and_add_cust_page.get_search_no_data_text()
         self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text)
+
+        # 不能作为上级的验证
+        for user in account:
+            self.cust_manage_basic_info_and_add_cust_page.search_cust(user)
+            self.cust_manage_basic_info_and_add_cust_page.click_search_user()
+            sleep(2)
+            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+            status = self.cust_manage_lower_account_page.edit_info_save_status()
+            self.driver.default_frame()
+            self.assertEqual(self.assert_text2.cust_manage_select_user_unable_superior(), status, "提示显示不一致")

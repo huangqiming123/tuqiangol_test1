@@ -67,12 +67,15 @@ class TestCase60CustManageLowerAccountEdit(unittest.TestCase):
                 "com": row[5]
             }
             sleep(2)
+            # 取消
+            self.cust_manage_lower_account_page.edit_info_cancel()
             # 点击单个用户的编辑
             self.cust_manage_lower_account_page.click_acc_edit()
 
             # 选择客户类型
             sleep(3)
-            self.driver.switch_to_frame('x,/html/body/div[6]/div[2]/iframe')
+            # self.driver.switch_to_frame('x,/html/body/div[6]/div[2]/iframe')
+            self.driver.switch_to_iframe("x,/html/body/div[7]/div[2]/iframe")
             self.cust_manage_lower_account_page.acc_type_choose(edit_info["acc_type"])
             # 编辑信息
             self.cust_manage_lower_account_page.edit_acc_input_info_edit(edit_info["acc_name"],

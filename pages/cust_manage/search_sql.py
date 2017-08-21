@@ -28,7 +28,15 @@ class SearchSql(object):
         return sql
 
     def search_account_sql(self, lower_account_tuple, search_data):
-        sql = "select u.id from user_info u where u.userId in %s" % str(lower_account_tuple)
+        sql = ""
+        if len(lower_account_tuple) == 0:
+            sql = "select u.id from user_info u where u.userId in ('')"
+        elif len(lower_account_tuple) == 1:
+            sql = "select u.id from user_info u where u.userId in (" + str(lower_account_tuple[0]) + ")"
+
+        elif len(lower_account_tuple) > 1:
+            sql = "select u.id from user_info u where u.userId in %s" % str(lower_account_tuple)
+
 
         if search_data['account_type'] == '代理商':
             sql += " and u.type = '8'"

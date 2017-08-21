@@ -15,7 +15,7 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 新增客户客户数操作
+# 列表转移---客户树操作
 
 class TestCase67CustManageCustTransferCustSearch(unittest.TestCase):
     def setUp(self):
@@ -66,6 +66,21 @@ class TestCase67CustManageCustTransferCustSearch(unittest.TestCase):
 
         # 搜索
         # 1 搜索无数据的内容
+        """
         self.cust_manage_basic_info_and_add_cust_page.search_cust('无数据')
         get_text = self.cust_manage_basic_info_and_add_cust_page.get_search_no_data_text()
         self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text)
+        """
+
+        # 2搜索
+        seatch_data = ["无", "test", "yonghu222啦啦啦", "休息休息12", "#@@@ %"]
+        for user in range(len(seatch_data)):
+            search_result = self.cust_manage_basic_info_and_add_cust_page.transfer_import_account_search(
+                seatch_data[user])
+            if type(search_result) is str:
+                self.assertIn(self.assert_text.account_center_page_no_data_text(), search_result, "搜索结果为暂无数据时，提示不一致")
+
+            else:
+                for subscript in range(len(search_result)):
+                    text = search_result[subscript].split("(")[0]
+                    self.assertIn(seatch_data[user], text, "搜索结果不一致")

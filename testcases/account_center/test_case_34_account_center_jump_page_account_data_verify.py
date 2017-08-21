@@ -48,9 +48,9 @@ class TestCase34AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
         sleep(2)
 
         # 获取当前登录账号
-        self.account_center_page_details.account_center_iframe()
+        # self.account_center_page_details.account_center_iframe()
         current_account = self.log_in_base.get_log_in_account()
-        self.driver.default_frame()
+        #self.driver.default_frame()
         account_center_handle = self.driver.get_current_window_handle()
 
         # 点击页面跳转到设备管理页面

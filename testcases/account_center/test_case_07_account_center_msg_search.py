@@ -14,6 +14,9 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
+# 账户中心-消息中心-根据搜索条件来搜索消息
+# author:孙燕妮
+
 class TestCase07AccountCenterMsgSearch(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
@@ -41,10 +44,10 @@ class TestCase07AccountCenterMsgSearch(unittest.TestCase):
         self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
 
-        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+        # self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
         # 获取登录账号的用户名
         current_account = self.log_in_base.get_log_in_account()
-        self.driver.default_frame()
+        #self.driver.default_frame()
 
         # 进入消息中心
         self.account_center_page_msg_center.enter_msg_center()

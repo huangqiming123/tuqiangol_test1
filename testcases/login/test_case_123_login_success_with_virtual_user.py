@@ -59,6 +59,7 @@ class TestCase123LoginSuccessWithVirtualUser(unittest.TestCase):
 
 
             self.account_center_page_details.account_center_iframe()
+            sleep(1)
             # 断言当前登录账号的用户名
             usr_info_account = self.account_center_page_navi_bar.usr_info_account()
             expect_usr_info_account = user_to_login["account"]

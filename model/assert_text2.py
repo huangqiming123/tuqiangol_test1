@@ -46,3 +46,36 @@ class AssertText2(object):
     # 记住默认选项
     def account_center_facility_Model_number_title(self):
         return "设备型号设置"
+
+    def login_no_permissions(self):
+        return "没有权限登录"
+
+    def dev_manage_select_send_command(self):
+        return "选中发送指令"
+
+    def dev_manage_select_all_send_command(self):
+        return "本次查询全部发送指令"
+
+    def dev_manage_setting_working_mode(self):
+        return "选中设置工作模式"
+
+    def dev_manage_setting_all_working_mode(self):
+        return "本次查询全部设置工作模式"
+
+    def comm_manage_send_working_mode_task_manage(self):
+        return "下发工作模式任务管理"
+
+    def comm_manage_send_working_mode_manage(self):
+        return "下发工作模式管理"
+
+    def comm_manage_command_task_manage(self):
+        return "下发指令任务管理"
+
+    def cust_manage_exist_facility_cannot_del(self):
+        return "该用户下面已有设备，不能删除"
+
+    def cust_manage_exist_user_cannot_del(self):
+        return "该用户有下级用户,无法删除"
+
+    def cust_manage_select_user_unable_superior(self):
+        return "选择的用户不能做为上级用户"

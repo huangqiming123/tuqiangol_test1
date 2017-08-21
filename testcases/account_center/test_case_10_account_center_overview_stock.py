@@ -41,7 +41,7 @@ class TestCase10AccountCenterOverviewStock(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
         self.account_center_page_details.account_center_iframe()
-        current_account = self.log_in_base.get_log_in_account()
+        # current_account = self.log_in_base.get_log_in_account()
         account_center_handle = self.driver.get_current_window_handle()
         expect_total = self.account_center_page_details.get_current_account_all_equipment()
 

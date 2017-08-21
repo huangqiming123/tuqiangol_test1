@@ -19,6 +19,9 @@ from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
 from pages.login.login_page import LoginPage
 
 
+# 账户中心-账户详情-快捷销售-新增客户并成功销售设备给新客户
+# author:孙燕妮
+
 class TestCase04AccountCenterFastSaleAddCust(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()

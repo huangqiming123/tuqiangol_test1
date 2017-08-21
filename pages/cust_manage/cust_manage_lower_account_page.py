@@ -56,6 +56,11 @@ class CustManageLowerAccountPage(BasePageServer):
                                              "div[2]/div[2]/div[3]/table/tbody/tr/td[2]").text
         return result_acc
 
+    # 获取搜索结果账号(一个)
+    def get_search_result_account(self):
+        account = self.driver.get_element("x,//*[@id='customerlist']/tr/td[2]").text
+        return account
+
     # 点击不同的客户类型
     def click_acc_type(self, type):
         if type == '销售':
@@ -187,6 +192,16 @@ class CustManageLowerAccountPage(BasePageServer):
         status = self.driver.get_element("c,layui-layer-content").text
         return status
 
+    # 单个用户操作-编辑信息-取消
+    def edit_info_cancel(self):
+        self.click_acc_edit()
+        self.driver.click_element("c,layui-layer-btn1")
+        sleep(2)
+        self.click_acc_edit()
+        self.driver.click_element("x,/html/body/div[7]/span[1]/a")
+        sleep(2)
+
+
     # 单个用户操作-控制台
     def enter_console(self):
         self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[1]')
@@ -217,6 +232,17 @@ class CustManageLowerAccountPage(BasePageServer):
         self.driver.click_element("c,layui-layer-btn1")
         self.driver.wait()
 
+    # 单个用户操作-“重置密码”-X
+    def click_reset_passwd_dismiss(self):
+        self.acc_reset_passwd()
+        # 点X
+        self.driver.click_element("x,/html/body/div[6]/span[1]/a")
+        sleep(2)
+        self.acc_reset_passwd()
+        # 取消
+        self.reset_passwd_dismiss()
+
+
     # 单个用户操作-删除
     def delete_acc(self):
         self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[3]')
@@ -236,6 +262,14 @@ class CustManageLowerAccountPage(BasePageServer):
     def delete_acc_dismiss(self):
         self.driver.click_element("c,layui-layer-btn1")
         self.driver.wait(1)
+
+    # 单个用户操作-删除-取消2
+    def delete_acc_x(self):
+        self.delete_acc()
+        self.delete_acc_dismiss()
+        self.delete_acc()
+        self.driver.click_element("x,/html/body/div[6]/span[1]/a")
+
 
     # 单个用户操作-转移客户
     def click_user_trans(self):
@@ -310,7 +344,7 @@ class CustManageLowerAccountPage(BasePageServer):
         text = self.driver.get_text('x,//*[@id="account"]')
         return text.split('(')[0]
 
-    # 获取列表中的角色类型
+    #获取列表中的角色类型
     def get_list_role_type(self):
         type = self.driver.get_text("x,//*[@id='customerlist']/tr/td[3]")
         print(type)

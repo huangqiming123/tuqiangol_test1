@@ -9,7 +9,10 @@ from pages.base.base_page_server import BasePageServer
 from pages.login.login_page import LoginPage
 
 
-class TestCase02AccountCenterModifyPasswd(unittest.TestCase):
+# 账户中心招呼栏--修改密码
+# author:孙燕妮
+
+class TestCase010AccountCenterModifyPasswd(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

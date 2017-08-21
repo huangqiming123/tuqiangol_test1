@@ -15,7 +15,7 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 左侧客户数 操作
+# 左侧客户列表 ---客户树操作
 
 class TestCase64CustManageSearch(unittest.TestCase):
     def setUp(self):

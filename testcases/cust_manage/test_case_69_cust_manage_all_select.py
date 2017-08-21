@@ -14,9 +14,9 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 新增客户--客户数操作
+# 全部选择
 
-class TestCase69CustManageCustAllSelect(unittest.TestCase):
+class TestCase69CustManageAllSelect(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

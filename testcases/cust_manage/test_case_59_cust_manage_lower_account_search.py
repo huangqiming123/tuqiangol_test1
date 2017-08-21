@@ -56,7 +56,7 @@ class TestCase59CustManageLowerAccountSearch(unittest.TestCase):
         # 点击账户中心
         self.account_center_page_navi_bar.click_account_center_button()
         self.account_center_page_details.account_center_iframe()
-        current_account = self.log_in_base.get_log_in_account()
+        # current_account = self.log_in_base.get_log_in_account()
         self.driver.default_frame()
 
         # 进入客户管理页面
@@ -85,6 +85,7 @@ class TestCase59CustManageLowerAccountSearch(unittest.TestCase):
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
+
             # 遍历数据
             for row in user_relation:
                 user_relation_id = {
@@ -96,9 +97,13 @@ class TestCase59CustManageLowerAccountSearch(unittest.TestCase):
                 get_lower_account_sql = "select userId from user_info where fullParentId = " + \
                                         "'" + user_relation_id["fullParent"] + user_relation_id[
                                             "userId"] + ",'" + ";"
+
                 cur.execute(get_lower_account_sql)
                 # 读取数据
                 lower_account = cur.fetchall()
+
+                print(lower_account)
+
                 lower_account_list = []
                 for range1 in lower_account:
                     for range2 in range1:

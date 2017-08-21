@@ -1,7 +1,5 @@
 from time import sleep
 
-from selenium.webdriver.common.keys import Keys
-
 from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
@@ -95,6 +93,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.click_element("c,layui-layer-btn0")
         self.driver.wait()
 
+    # app用户退出
     def app_usr_logout(self):
         # 点击退出系统
         self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div/div[2]/span/a'))
@@ -108,8 +107,11 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.click_element("c,layui-layer-btn0")
         self.driver.wait()
 
+
     # 设备管理-退出系统
     def dev_manage_usr_logout(self):
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[2]/header/div/div[2]/div[2]/div[2]/span/a'))
+        sleep(2)
         # 点击退出系统
         self.driver.click_element("p,退出系统")
         self.driver.wait()
@@ -564,93 +566,3 @@ class AccountCenterNaviBarPage(BasePageServer):
         print(module)
         return module
 
-    def switch_to_feedback_frame(self):
-        self.driver.switch_to_frame('x,//*[@id="feedbackReportFrame"]')
-
-    def get_total_numbers_feedback(self):
-        return len(list(self.driver.get_elements('x,/html/body/div/div[2]/div/ul/li')))
-
-    def click_per_feedback_in_feedback_page(self, n):
-        self.driver.click_element('x,/html/body/div/div[2]/div/ul/li[%s]/a' % str(n + 1))
-        sleep(2)
-        return self.driver.get_element('x,/html/body/div/div[2]/div/ul/li[%s]' % str(n + 1)).get_attribute('class')
-
-    def click_ensuer_button_in_feedback_page(self):
-        self.driver.click_element('x,//*[@id="userFeedbackForm"]/div[4]/div/button')
-        sleep(2)
-
-    def get_error_content_in_feedback(self):
-        return self.driver.get_text('x,//*[@id="userFeedbackForm"]/div[1]/div/label')
-
-    def get_error_contact_in_feedback(self):
-        return self.driver.get_text('x,//*[@id="userFeedbackForm"]/div[2]/div/label')
-
-    def get_error_phone_in_feedback(self):
-        return self.driver.get_text('x,//*[@id="userFeedbackForm"]/div[3]/div/label')
-
-    def input_content_after_ensuer_in_feedback_page(self, param):
-        self.driver.operate_input_element('x,//*[@id="content"]', param)
-
-    def input_contact_after_ensuer_in_feedback_page(self, param):
-        self.driver.operate_input_element('x,//*[@id="linkman"]', param)
-
-    def input_phone_after_ensuer_in_feedback_page(self, param):
-        self.driver.operate_input_element('x,//*[@id="phone"]', param)
-
-    def get_feedback_text_after_click_ensuer(self):
-        return self.driver.get_text('c,layui-layer-content')
-
-    def switch_to_dev_oper_frame(self):
-        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
-
-    def get_no_data_in_fenpei(self):
-        return self.driver.get_text('x,//*[@id="markNull_xf"]/div/span')
-
-    def get_up_page_class_name(self):
-        return self.driver.get_element('x,//*[@id="paging_xf"]/ul/li[1]').get_attribute('class')
-
-    def get_next_page_class_name(self):
-        return self.driver.get_element('x,//*[@id="paging_xf"]/ul/li[3]').get_attribute('class')
-
-    def click_per_page_in_dev_oper(self, n):
-        self.driver.click_element('l,%s' % str(n + 1))
-        sleep(5)
-
-    def get_per_page_in_dev_oper(self):
-        return len(list(self.driver.get_elements('x,//*[@id="logslist_xf"]/tr')))
-
-    def click_per_numbers_in_dev_operation(self):
-        self.driver.click_element('c,page-select')
-        sleep(2)
-        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
-        sleep(6)
-
-        self.driver.click_element('c,page-select')
-        sleep(2)
-        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
-        sleep(6)
-
-        self.driver.click_element('c,page-select')
-        sleep(2)
-        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
-        sleep(6)
-
-        self.driver.click_element('c,page-select')
-        sleep(2)
-        self.driver.get_element('c,page-select').send_keys(Keys.DOWN + Keys.ENTER)
-        sleep(6)
-
-    def switch_to_cust_oper_frame(self):
-        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
-
-    def get_no_data_in_cust_manage(self):
-        return self.driver.get_text('x,//*[@id="markNull_fp"]/div/span')
-
-    def get_up_page_class_name_in_cust_manage(self):
-        return self.driver.get_element('x,//*[@id="paging_fp"]/ul/li[1]').get_attribute('class')
-
-    def get_next_page_class_name_in_cust_manage(self):
-        return self.driver.get_element('x,//*[@id="paging_fp"]/ul/li[3]').get_attribute('class')
-
-    def get_per_page_in_cust_oper(self):
-        return len(list(self.driver.get_elements('x,//*[@id="logslist_fp"]/tr')))

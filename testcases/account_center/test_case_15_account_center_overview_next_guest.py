@@ -39,11 +39,13 @@ class TestCase15AccountCenterOverviewNextGuest(unittest.TestCase):
         # 登录账号
         self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
-        self.account_center_page_details.account_center_iframe()
+        # self.account_center_page_details.account_center_iframe()
         current_account = self.log_in_base.get_log_in_account()
         sleep(2)
         account_center_handle = self.driver.get_current_window_handle()
+
         # 点击下级客户管理
+        self.account_center_page_details.account_center_iframe()
         self.account_center_page_details.account_overview('下级客户管理')
         self.driver.default_frame()
 

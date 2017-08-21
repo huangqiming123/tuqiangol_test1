@@ -10,6 +10,9 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
+# 账户中心-消息中心-设置消息为已读
+# author:孙燕妮
+
 class TestCase06AccountCenterMsgSetRead(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()

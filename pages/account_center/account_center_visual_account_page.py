@@ -170,7 +170,7 @@ class AccountCenterVisualAccountPage(BasePageServer):
     def visual_account_iframe(self):
         self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')
 
-    # 获取权限范围的状态
+    #获取权限范围的状态
     def get_visual_account_limits_state(self):
         edit_data = self.driver.get_element(
             "x,//*[@id='fictitiousAccountForm']/div[4]/div/ul/li[1]/label/div/ins").is_selected()

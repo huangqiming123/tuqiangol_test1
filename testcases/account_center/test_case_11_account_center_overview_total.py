@@ -39,7 +39,7 @@ class TestCase11AccountCenterOverviewTotal(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         self.account_center_page_details.account_center_iframe()
         # 获取登录账号的用户名
-        current_account = self.log_in_base.get_log_in_account()
+        # current_account = self.log_in_base.get_log_in_account()
         sleep(2)
         account_center_handle = self.driver.get_current_window_handle()
         expect_total = self.account_center_page_details.get_current_account_total_equipment()

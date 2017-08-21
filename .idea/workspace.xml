@@ -2,26 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/command_management/send_command_with_abnormal_dev.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/safe_area/safe_area_search_sql.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/account_center/search_different_account.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/cust_manage/add_user_command_limit_data.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/cust_manage/add_user_web_limit_data.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_37_account_center_search_different_account_verify.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_63_cust_manage_add_acc_cycle_click_user.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_71_0814_cust_manage_add_account_web_limit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_72_0815_cust_manage_add_user_command_limit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_73_0816_cust_manage_edit_user_command_limit.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_74_0817_cust_manage_reset_password_verify.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_75_0817_cust_manage_delete_account_verify.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/read_excel_demo.xls" afterPath="$PROJECT_DIR$/model/read_excel_demo.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/command_management/command_management_page.py" afterPath="$PROJECT_DIR$/pages/command_management/command_management_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" afterPath="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_47_issued_work_type_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_47_issued_work_type_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_49_issued_command_task_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_49_issued_command_task_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_51_issued_command_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_51_issued_command_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_129_area_table_operaition.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_129_area_table_operaition.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_130_area_table_paging.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_130_area_table_paging.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_131_mark_operation.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_131_mark_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_132_mark_paging.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_132_mark_paging.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_133_safearea_switch.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_133_safearea_switch.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_134_safearea_paging.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_134_safearea_paging.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_135_safearea_expertion.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_135_safearea_expertion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_136_safearea_relevance.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_136_safearea_relevance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_137_safearea_mark_point_exception.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_137_safearea_mark_point_exception.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_138_safearea_mark_point_operation.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_138_safearea_mark_point_operation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/account_center/modify_info_exception.csv" afterPath="$PROJECT_DIR$/data/account_center/modify_info_exception.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/account_center/overview_add_user_exception.csv" afterPath="$PROJECT_DIR$/data/account_center/overview_add_user_exception.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/account_center/user_to_modify_info.csv" afterPath="$PROJECT_DIR$/data/account_center/user_to_modify_info.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cust_manage/acc_search.csv" afterPath="$PROJECT_DIR$/data/cust_manage/acc_search.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/login/login_app_user_jump_page.csv" afterPath="$PROJECT_DIR$/data/login/login_app_user_jump_page.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/login/login_forget_pwd_exception.csv" afterPath="$PROJECT_DIR$/data/login/login_forget_pwd_exception.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/login/login_with_app_user.csv" afterPath="$PROJECT_DIR$/data/login/login_with_app_user.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/assert_text2.py" afterPath="$PROJECT_DIR$/model/assert_text2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" afterPath="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/cust_manage_lower_account_page.py" afterPath="$PROJECT_DIR$/pages/cust_manage/cust_manage_lower_account_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/search_sql.py" afterPath="$PROJECT_DIR$/pages/cust_manage/search_sql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_01_account_center_modify_info.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_01_account_center_modify_info.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_02_account_center_modify_passwd.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_02_account_center_modify_passwd.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_04_account_center_fast_sale_add_cust.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_04_account_center_fast_sale_add_cust.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_05_account_center_msg_unread.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_05_account_center_msg_unread.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_06_account_center_msg_set_read.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_06_account_center_msg_set_read.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_07_account_center_msg_search.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_07_account_center_msg_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_08_account_center_visual_account.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_08_account_center_visual_account.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_09_account_center_visu_edit_and_del.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_09_account_center_visu_edit_and_del.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_10_account_center_overview_stock.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_10_account_center_overview_stock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_11_account_center_overview_total.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_11_account_center_overview_total.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_15_account_center_overview_next_guest.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_15_account_center_overview_next_guest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_16_account_center_overview_equipment_manager.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_16_account_center_overview_equipment_manager.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_24_account_center_overview_attention.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_24_account_center_overview_attention.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_26_account_center_default_home_page_no_setting.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_26_account_center_default_home_page_no_setting.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_34_account_center_jump_page_account_data_verify.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_34_account_center_jump_page_account_data_verify.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_35_account_center_left_cycle_click_module.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_35_account_center_left_cycle_click_module.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_36_account_center_edit_default_password.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_36_account_center_edit_default_password.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_57_cust_manage_check_account.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_57_cust_manage_check_account.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_58_cust_manage_add_acc.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_58_cust_manage_add_acc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_59_cust_manage_lower_account_search.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_59_cust_manage_lower_account_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_60_cust_manage_lower_account_edit.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_60_cust_manage_lower_account_edit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_61_cust_manage_lower_account_operate.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_61_cust_manage_lower_account_operate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_62_cust_manage_add_cust_expection.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_62_cust_manage_add_cust_expection.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_64_cust_manage_search_cust.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_64_cust_manage_search_cust.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_65_cust_manage_edit_cust_expection.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_65_cust_manage_edit_cust_expection.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_66_cust_manage_edit_cust_search.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_66_cust_manage_edit_cust_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_67_cust_manage_transfer_cust_search.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_67_cust_manage_transfer_cust_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_68_cust_manage_batch_transfer_cust_search.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_68_cust_manage_batch_transfer_cust_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_69_cust_manage_all_select.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_69_cust_manage_all_select.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/login/test_case_123_login_success_with_virtual_user.py" afterPath="$PROJECT_DIR$/testcases/login/test_case_123_login_success_with_virtual_user.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/login/test_case_124_login_success_with_app_user.py" afterPath="$PROJECT_DIR$/testcases/login/test_case_124_login_success_with_app_user.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,18 +83,7 @@
     <favorites_list name="tuqiangOL" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_52_command_manage_create_template.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_52_command_manage_create_template.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38189533">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -193,6 +224,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -215,9 +260,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\git\tuqiangol_test\testcases" />
       <recent name="E:\git\tuqiangol_test\pages" />
+      <recent name="E:\git\tuqiangol_test\model" />
       <recent name="E:\git\tuqiangol_test\data" />
       <recent name="E:\git\tuqiangol_test\test_runner" />
-      <recent name="E:\git\tuqiangol_test\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git\tuqiangol_test\model" />
@@ -487,12 +532,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00056" summary="修改代码">
-      <created>1498201721008</created>
-      <option name="number" value="00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1498201721008</updated>
     </task>
     <task id="LOCAL-00057" summary="修改代码">
       <created>1498461335316</created>
@@ -782,7 +821,13 @@
       <option name="project" value="LOCAL" />
       <updated>1503051167842</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="修改代码">
+      <created>1503282750208</created>
+      <option name="number" value="00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1503282750208</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -830,8 +875,9 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20337197" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20758693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24216217" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4963119" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2034632" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -840,7 +886,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972972" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -893,27 +938,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_108_glob_search_user_detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.8875194">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_104_glob_search_check_marked_words.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2187982">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_126_0816_dev_search_transfer_dev_add_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6614173">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_112_user_search_by_delete_user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5748032">
@@ -1118,13 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/login/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49744898">
@@ -1263,10 +1280,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/account_center/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_52_command_manage_create_template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38189533">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.55162656">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/assert_text2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/account_center/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

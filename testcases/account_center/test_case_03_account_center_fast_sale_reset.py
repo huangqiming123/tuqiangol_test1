@@ -9,7 +9,9 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
-class TestCase03AccountCenterFastSaleReset(unittest.TestCase):
+# 账户中心-账户详情-快捷销售-删除设备、重置
+# author:孙燕妮
+class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -53,7 +55,7 @@ class TestCase03AccountCenterFastSaleReset(unittest.TestCase):
 
             # 查找账户
             self.account_center_page_details.fast_sales_find_account(search_account["account"])
-            # 点取消
+            #点取消
             self.account_center_page_details.fast_sales_find_and_dis_add_device("123123123")
 
             # 输入设备imei精确查找设备并添加
@@ -61,12 +63,12 @@ class TestCase03AccountCenterFastSaleReset(unittest.TestCase):
             self.driver.default_frame()
             self.driver.wait()
 
-            # 验证消息中的失败个数
+            #验证消息中的失败个数
             failure_count = self.account_center_page_details.get_device_prompt_failure_count()
             list_failure_count = self.account_center_page_details.get_device_list_failure_count()
             self.assertEqual(failure_count, list_failure_count, "显示的失败个数与列表中的失败数不一致")
 
-            # 验证消息中的成功个数
+            #验证消息中的成功个数
             all_data = self.account_center_page_details.get_prompt_list_data()
             succeed_count = self.account_center_page_details.get_device_prompt_succeed_count()
             self.account_center_page_details.click_prompt_close()
@@ -74,11 +76,12 @@ class TestCase03AccountCenterFastSaleReset(unittest.TestCase):
             list_count = self.account_center_page_details.get_list_succeed_count()
             self.assertEqual(succeed_count, list_count, "成功添加的设备数不一致")
 
-            # 断言失败提示中的信息
+            #断言失败提示中的信息
             for s in range(list_failure_count):
                 self.assertIsNotNone(all_data["imei"][s], "sim卡号为空")
                 self.assertEqual("失败", all_data["state"][s], "存在不是失败的数据")
                 self.assertIsNotNone(all_data["cause"][s], "失败原因中存在空数据")
+
 
             # 验证已选设备计数是否准确
             dev_num = self.account_center_page_details.get_selected_device_num()

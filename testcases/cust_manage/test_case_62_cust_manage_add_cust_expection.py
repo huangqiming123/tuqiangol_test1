@@ -14,9 +14,9 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 新增客户异常操作
+# 新增客户--异常操作验证
 
-class TestCase62CustManageCustExpection(unittest.TestCase):
+class TestCase1101CustManageCustExpection(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -123,7 +123,15 @@ class TestCase62CustManageCustExpection(unittest.TestCase):
         get_password_first_text = self.cust_manage_basic_info_and_add_cust_page.get_text_first_password()
         self.assertEqual(self.assert_text.cust_page_user_password_formate(), get_password_first_text)
 
-        # 5 两次密码不一致
+        # 5 只输入确认密码
+        self.cust_manage_basic_info_and_add_cust_page.add_password_first('')
+        self.cust_manage_basic_info_and_add_cust_page.add_password_second('a123456')
+        self.cust_manage_basic_info_and_add_cust_page.click_ensure()
+
+        get_password_first_text = self.cust_manage_basic_info_and_add_cust_page.get_text_second_password()
+        self.assertEqual(self.assert_text.cust_page_password_unlike(), get_password_first_text)
+
+        # 6两次密码不一致
         self.cust_manage_basic_info_and_add_cust_page.add_password_first('123456ee')
         self.cust_manage_basic_info_and_add_cust_page.add_password_second('123456ff')
         self.cust_manage_basic_info_and_add_cust_page.click_ensure()

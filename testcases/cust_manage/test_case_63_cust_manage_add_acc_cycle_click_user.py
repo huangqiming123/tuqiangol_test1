@@ -15,9 +15,9 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 客户管理---批量转移--客户树操作
+# 新增客户--客户树操作
 
-class TestCase68CustManageCustBatchTransferCustSearch(unittest.TestCase):
+class TestCase63CustManageAddCycleClickUser(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -40,30 +40,29 @@ class TestCase68CustManageCustBatchTransferCustSearch(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_cust_manage_batch_transfer_cust_search(self):
+    def test_cust_manage_add_cust_search(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录
         self.log_in_base.log_in()
-        sleep(1)
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
-        sleep(2)
 
-        self.cust_manage_basic_info_and_add_cust_page.click_first_account()
+        self.cust_manage_basic_info_and_add_cust_page.add_acc()
+        self.cust_manage_basic_info_and_add_cust_page.cancel_add_account()
 
-        # 点击编辑用户
-        self.cust_manage_basic_info_and_add_cust_page.click_batch_transfer_customer()
+        self.cust_manage_basic_info_and_add_cust_page.add_acc()
 
-        self.cust_manage_basic_info_and_add_cust_page.click_cancel_edit()
-
-        self.cust_manage_basic_info_and_add_cust_page.click_batch_transfer_customer()
         # 循环点击五次
         for n in range(5):
             self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
-            self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 3))
+            self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 2))
             sleep(2)
+            text = self.driver.get_text('x,//*[@id="treeDemo2_%s_span"]' % str(n + 2))
+            account_name = text.split('(')[0]
+            value = self.driver.get_element('x,//*[@id="topUser"]').get_attribute('value')
+            self.assertEqual(account_name, value)
             self.driver.default_frame()
 
         # 搜索

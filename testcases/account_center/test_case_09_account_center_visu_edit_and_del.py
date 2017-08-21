@@ -12,6 +12,9 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
+# 账户中心-虚拟账户管理-编辑、删除
+# author:孙燕妮
+
 class TestCase09AccountCenterVisuEditAndDel(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()

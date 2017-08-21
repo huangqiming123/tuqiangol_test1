@@ -10,7 +10,10 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
-class TestCase05AccountCenterMsgUnread(unittest.TestCase):
+# 账户中心-消息中心-未读消息验证
+# author:孙燕妮
+
+class TestCase020AccountCenterMsgUnread(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

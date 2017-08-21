@@ -1,7 +1,6 @@
 import csv
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
@@ -13,12 +12,10 @@ from pages.cust_manage.cust_manage_cust_list_page import CustManageCustListPage
 from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAccountPage
 from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
 from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
-
 from pages.login.login_page import LoginPage
 
 
 # 客户管理-新增用户
-
 # author:孙燕妮
 
 class TestCase58CustManageAddAcc(unittest.TestCase):

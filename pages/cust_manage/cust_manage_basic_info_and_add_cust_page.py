@@ -21,6 +21,10 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.click_element("customer")
         self.driver.wait(1)
 
+    def click_left_tree_current_user(self):
+        self.driver.click_element("treeDemo_1_span")
+        sleep(1)
+
     # 点击进入账户中心页面
     def enter_account_center(self):
         self.driver.click_element("accountCenter")
@@ -420,6 +424,13 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         sleep(2)
         self.driver.default_frame()
 
+    # 编辑-搜索--点击查询结果
+    def click_search_user(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.click_element("c,autocompleter")
+
+        self.driver.default_frame()
+
     def get_search_no_data_text(self):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="treeRoleBox"]/div[1]/div[1]/span')
@@ -588,7 +599,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.click_element("x,//*[@id='layui-layer1']/div[3]/a")
         self.driver.wait(1)
 
-        # 获取提示
+        #获取提示
         pwd1_prompt = self.driver.get_text("x,//*[@id='editpwd-form_advise']/div[1]/div/label")
         pwd2_prompt = self.driver.get_text("x,//*[@id='editpwd-form_advise']/div[2]/div/label")
         data = {
@@ -597,16 +608,107 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         }
         return data
 
-    # 新增账号--web权限
-    def setting_web_login_permissions(self):
-        self.driver.click_element("x,//*[@id='userForm']/div[11]/div[1]/label")
-        web = self.driver.get_element('x,//*[@id="userForm"]/div[11]/div[1]/label/div/ins')
-        web_status = web.is_selected()
-        return web_status
+    # 新增账号--web登录权限
+    def setting_web_login_permissions(self, state):
+        print(state)
+        if state == "True":
+            sleep(2)
+            web_status = self.driver.get_element("webLogin").is_selected()
+            return web_status
 
-    # 新增账号--app权限
-    def setting_app_login_permissions(self):
-        self.driver.click_element("x,//*[@id='userForm']/div[11]/div[2]/label")
-        app = self.driver.get_element("x,//*[@id='userForm']/div[11]/div[2]/label/div/ins")
-        app_status = app.is_selected()
-        return app_status
+        elif state == "False":
+            self.driver.click_element("x,//*[@id='userForm']/div[11]/div[1]/label")
+            web_status = self.driver.get_element("webLogin").is_selected()
+            return web_status
+
+    # 新增账号--app登录权限
+    def setting_app_login_permissions(self, state):
+        if state == "True":
+            sleep(2)
+            app_status = self.driver.get_element("appLogin").is_selected()
+            return app_status
+
+        elif state == "False":
+            self.driver.click_element("x,//*[@id='userForm']/div[11]/div[2]/label")
+            app_status = self.driver.get_element("appLogin").is_selected()
+            return app_status
+
+    # 指令权限--批量下发指令
+    def setting_command_permissions(self, state):
+        command_status = str(self.driver.get_element("isBatchSendIns").is_selected())
+
+        if command_status == state:
+            print(command_status)
+            return command_status
+
+        elif command_status != state:
+            self.driver.click_element("x,//*[@id='customer_isBatchSendIns']/label")
+            command_status = self.driver.get_element("isBatchSendIns").is_selected()
+            print(command_status)
+            return command_status
+
+    # 指令权限--批量下发工作模式
+    def setting_working_mode_permissions(self, state):
+        working_mode_status = str(self.driver.get_element("isBatchSendFM").is_selected())
+        if working_mode_status == state:
+            print(working_mode_status)
+            return working_mode_status
+
+        elif working_mode_status != state:
+            self.driver.click_element("x,//*[@id='customer_isBatchSendFM']/label")
+            working_mode_status = self.driver.get_element("isBatchSendFM").is_selected()
+            print(working_mode_status)
+            return working_mode_status
+
+    # 点设备管理
+    def get_facility_manage_page_function_button(self):
+        self.driver.click_element("device")
+        sleep(2)
+        # 获取全部功能按钮
+        button_list = []
+        all_data = len(self.driver.get_elements("x,//*[@id='allDev']/div[2]/div[2]/div/div/button"))
+        for a in range(all_data):
+            text = self.driver.get_text("x,//*[@id='allDev']/div[2]/div[2]/div/div/button[" + str(a + 1) + "]")
+            button_list.append(text)
+
+        print("设备管理页面", button_list)
+        return button_list
+
+    # 获取指令管理页面模块
+    def get_command_page_module(self):
+        self.driver.click_element("x,/html/body/div[2]/header/div/div[2]/div[2]/div[2]/a[1]")
+        sleep(2)
+        # 获取指令模块
+        command_module = []
+        all_module = len(self.driver.get_elements("x,//*[@id='insManage_ul']/li"))
+        for a in range(all_module):
+            text = self.driver.get_text(
+                "x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[" + str(a + 1) + "]")
+            command_module.append(text)
+
+        print("指令管理页面", command_module)
+        return command_module
+
+    # 转移客户-账户查找
+    def transfer_import_account_search(self, search_account):
+        # 点击下拉箭头图标
+        self.search_cust(search_account)
+        self.driver.wait(3)
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        # 获取查询结果
+        list_data = len(self.driver.get_elements("x,/html/body/div/div/form/div/div/div[1]/div/ul/li"))
+
+        if list_data >= 1:
+            list = []
+            for i in range(list_data):
+                text = self.driver.get_text("x,/html/body/div/div/form/div/div/div[1]/div/ul/li[" + str(i + 1) + "]")
+                list.append(text)
+            self.driver.default_frame()
+            print(list)
+            return list
+        else:
+
+            no_data = self.driver.get_text('x,//*[@id="treeRoleBox"]/div[1]/div[1]/span')
+            self.driver.default_frame()
+            print(no_data)
+            return no_data

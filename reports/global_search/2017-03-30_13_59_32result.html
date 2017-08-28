@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,49 +8,49 @@
     <title>全局搜索模块测试报告</title>
     <meta name="generator" content="HtmlTestRunner 0.8.4"/>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    
-<style type="text/css" media="screen">
 
-/* -- css div popup ------------------------------------------------------------------------ */
-.popup_window {
-    display: none;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    /*border: solid #627173 1px; */
-    padding: 10px;
-    background-color: #99CCFF;
-    font-family: "Lucida Console", "Courier New", Courier, monospace;
-    text-align: left;
-    font-size: 10pt;
-    width: 500px;
-}
+    <style type="text/css" media="screen">
 
-/* -- report ------------------------------------------------------------------------ */
+        /* -- css div popup ------------------------------------------------------------------------ */
+        .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        background-color: #99CCFF;
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 10pt;
+        width: 500px;
+        }
 
-#show_detail_line .label {
-    font-size: 85%;
-    cursor: pointer;
-}
+        /* -- report ------------------------------------------------------------------------ */
 
-#show_detail_line {
-    margin: 2em auto 1em auto;
-}
+        #show_detail_line .label {
+        font-size: 85%;
+        cursor: pointer;
+        }
 
-#total_row  { font-weight: bold; }
-.hiddenRow  { display: none; }
-.testcase   { margin-left: 2em; }
+        #show_detail_line {
+        margin: 2em auto 1em auto;
+        }
 
-</style>
+        #total_row { font-weight: bold; }
+        .hiddenRow { display: none; }
+        .testcase { margin-left: 2em; }
+
+    </style>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 <body>
 <script language="javascript" type="text/javascript"><!--
 output_list = Array();
@@ -145,60 +145,71 @@ function showOutput(id, name) {
     d.close();
 }
 */
---></script>
+-->
+
+</script>
 
 <div class="container">
     <div class='heading'>
-<h1>全局搜索模块测试报告</h1>
-<p><strong>Start Time:</strong> 2017-03-30 13:59:32</p>
-<p><strong>Duration:</strong> 0:02:58.631217</p>
-<p><strong>Status:</strong> <span class="text text-warning">Error <strong>35</strong></span></p>
+        <h1>全局搜索模块测试报告</h1>
+        <p><strong>Start Time:</strong> 2017-03-30 13:59:32</p>
+        <p><strong>Duration:</strong> 0:02:58.631217</p>
+        <p><strong>Status:</strong> <span class="text text-warning">Error <strong>35</strong></span></p>
 
-<p class='description'>用例执行情况：</p>
-</div>
+        <p class='description'>用例执行情况：</p>
+    </div>
 
 
-    
-<p id='show_detail_line'>
-<span class="label label-primary" onclick="showCase(0)">Summary</span>
-<span class="label label-danger" onclick="showCase(1)">Failed</span>
-<span class="label label-default" onclick="showCase(2)">All</span>
-</p>
-<table id='result_table' class="table">
-    <thead>
+    <p id='show_detail_line'>
+        <span class="label label-primary" onclick="showCase(0)">Summary</span>
+        <span class="label label-danger" onclick="showCase(1)">Failed</span>
+        <span class="label label-default" onclick="showCase(2)">All</span>
+    </p>
+    <table id='result_table' class="table">
+        <thead>
         <tr id='header_row'>
-            <th>Test Group/Test case</td>
-            <th>Count</td>
-            <th>Pass</td>
-            <th>Fail</td>
-            <th>Error</td>
-            <th>View</td>
+            <th>Test Group/Test case
+            </td>
+            <th>Count
+            </td>
+            <th>Pass
+            </td>
+            <th>Fail
+            </td>
+            <th>Error
+            </td>
+            <th>View
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        
-<tr class='text text-warning'>
-    <td>test_case_025_glob_dev_exact_search.TestCase025GlobDevExactSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',1)">Detail</a></td>
-</tr>
+        </thead>
+        <tbody>
 
-<tr id='ft1.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_global_dev_exact_search: 通过csv测试全局搜索-搜索栏设备精确查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr class='text text-warning'>
+            <td>test_case_025_glob_dev_exact_search.TestCase025GlobDevExactSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c1',1)">Detail</a></td>
+        </tr>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+        <tr id='ft1.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_global_dev_exact_search: 通过csv测试全局搜索-搜索栏设备精确查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <div id='div_ft1.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft1.1')">
+                    error</a>
+
+                <div id='div_ft1.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft1.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft1.1: Traceback (most recent call last):
@@ -224,34 +235,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_026_glob_dev_like_search.TestCase026GlobDevLikeSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_026_glob_dev_like_search.TestCase026GlobDevLikeSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c2',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft2.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_global_dev_like_search: 通过csv测试全局搜索-搜索栏设备模糊查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft2.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_global_dev_like_search: 通过csv测试全局搜索-搜索栏设备模糊查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft2.1')">
+                    error</a>
 
-    <div id='div_ft2.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft2.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft2.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft2.1: Traceback (most recent call last):
@@ -277,34 +292,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_027_glob_dev_no_keyword_search.TestCase027GlobDevNoKeywordSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c3',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_027_glob_dev_no_keyword_search.TestCase027GlobDevNoKeywordSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c3',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft3.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_global_dev_no_keyword_search: 测试全局搜索-搜索栏设备不输入搜索信息查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft3.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_global_dev_no_keyword_search: 测试全局搜索-搜索栏设备不输入搜索信息查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft3.1')">
+                    error</a>
 
-    <div id='div_ft3.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft3.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft3.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft3.1: Traceback (most recent call last):
@@ -330,34 +349,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_028_glob_dev_exact_search_details_user_relation.TestCase028GlobDevExactSearchDetailsUserRelation</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c4',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_028_glob_dev_exact_search_details_user_relation.TestCase028GlobDevExactSearchDetailsUserRelation
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c4',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft4.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_dev_exact_search_details_user_relation: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-用户关系模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft4.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_dev_exact_search_details_user_relation:
+                    通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-用户关系模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft4.1')">
+                    error</a>
 
-    <div id='div_ft4.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft4.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft4.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft4.1: Traceback (most recent call last):
@@ -383,34 +410,40 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_029_glob_dev_exact_search_details_dev_info.TestCase029GlobDevExactSearchDetailsDevInfo</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c5',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_029_glob_dev_exact_search_details_dev_info.TestCase029GlobDevExactSearchDetailsDevInfo</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c5',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft5.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_dev_exact_search_details_dev_info: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备信息-基本信息模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft5.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_dev_exact_search_details_dev_info:
+                    通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备信息-基本信息模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft5.1')">
+                    error</a>
 
-    <div id='div_ft5.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft5.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft5.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft5.1: Traceback (most recent call last):
@@ -436,34 +469,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_030_glob_dev_exact_search_details_dev_install_info.TestCase029GlobDevExactSearchDetailsDevInfo</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c6',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_030_glob_dev_exact_search_details_dev_install_info.TestCase029GlobDevExactSearchDetailsDevInfo
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c6',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft6.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_dev_exact_search_details_dev_info: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备信息-客户信息模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft6.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_dev_exact_search_details_dev_info:
+                    通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备信息-客户信息模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft6.1')">
+                    error</a>
 
-    <div id='div_ft6.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft6.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft6.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft6.1: Traceback (most recent call last):
@@ -489,34 +530,40 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_031_glob_dev_exact_search_details_dev_trans.TestCase030GlobDevExactSearchDetailsDevTrans</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c7',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_031_glob_dev_exact_search_details_dev_trans.TestCase030GlobDevExactSearchDetailsDevTrans</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c7',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft7.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_dev_exact_search_details_dev_trans: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备转移模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft7.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_dev_exact_search_details_dev_trans:
+                    通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备转移模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft7.1')">
+                    error</a>
 
-    <div id='div_ft7.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft7.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft7.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft7.1: Traceback (most recent call last):
@@ -542,34 +589,40 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_032_glob_dev_exact_search_details_dev_instr.TestCase031GlobDevExactSearchDetailsDevInstr</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c8',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_032_glob_dev_exact_search_details_dev_instr.TestCase031GlobDevExactSearchDetailsDevInstr</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c8',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft8.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_dev_exact_search_details_dev_instr: 通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备指令模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft8.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_dev_exact_search_details_dev_instr:
+                    通过csv测试全局搜索-精确查找设备结果唯一设备详情页面-设备指令模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft8.1')">
+                    error</a>
 
-    <div id='div_ft8.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft8.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft8.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft8.1: Traceback (most recent call last):
@@ -595,34 +648,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_033_glob_dev_search_list.TestCase027GlobDevNoKeywordSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c9',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_033_glob_dev_search_list.TestCase027GlobDevNoKeywordSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c9',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft9.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_global_dev_no_keyword_search: 测试全局搜索-搜索栏设备不输入搜索信息查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft9.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_global_dev_no_keyword_search: 测试全局搜索-搜索栏设备不输入搜索信息查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft9.1')">
+                    error</a>
 
-    <div id='div_ft9.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft9.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft9.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft9.1: Traceback (most recent call last):
@@ -648,34 +705,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_034_glob_account_exact_search.TestCase034GlobAccountExactSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c10',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_034_glob_account_exact_search.TestCase034GlobAccountExactSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c10',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft10.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_global_account_exact_search: 通过csv测试全局搜索-搜索栏用户精确查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft10.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_global_account_exact_search: 通过csv测试全局搜索-搜索栏用户精确查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft10.1')">
+                    error</a>
 
-    <div id='div_ft10.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft10.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft10.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft10.1: Traceback (most recent call last):
@@ -701,34 +762,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_035_glob_account_like_search.TestCase035GlobAccountLikeSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c11',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_035_glob_account_like_search.TestCase035GlobAccountLikeSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c11',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft11.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_global_account_like_search: 通过csv测试全局搜索-搜索栏用户模糊查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft11.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_global_account_like_search: 通过csv测试全局搜索-搜索栏用户模糊查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft11.1')">
+                    error</a>
 
-    <div id='div_ft11.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft11.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft11.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft11.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft11.1: Traceback (most recent call last):
@@ -754,34 +819,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_036_glob_account_no_keyword_search.TestCase027GlobAccountNoKeywordSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c12',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_036_glob_account_no_keyword_search.TestCase027GlobAccountNoKeywordSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c12',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft12.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_global_account_no_keyword_search: 测试全局搜索-搜索栏用户不输入搜索信息查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft12.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_global_account_no_keyword_search: 测试全局搜索-搜索栏用户不输入搜索信息查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft12.1')">
+                    error</a>
 
-    <div id='div_ft12.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft12.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft12.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft12.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft12.1: Traceback (most recent call last):
@@ -807,34 +876,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_037_glob_account_exact_search_details_user_relation.TestCase037GlobAccountExactSearchDetailsUserRelation</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c13',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_037_glob_account_exact_search_details_user_relation.TestCase037GlobAccountExactSearchDetailsUserRelation
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c13',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft13.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_account_exact_search_details_user_relation: 通过csv测试全局搜索-精确查找用户结果唯一用户详情页面-用户关系模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft13.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_account_exact_search_details_user_relation:
+                    通过csv测试全局搜索-精确查找用户结果唯一用户详情页面-用户关系模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft13.1')">
+                    error</a>
 
-    <div id='div_ft13.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft13.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft13.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft13.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft13.1: Traceback (most recent call last):
@@ -860,34 +937,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_038_glob_account_exact_search_details_user_info.TestCase038GlobAccountExactSearchDetailsUserInfo</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c14',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_038_glob_account_exact_search_details_user_info.TestCase038GlobAccountExactSearchDetailsUserInfo
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c14',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft14.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_account_exact_search_details_user_info: 通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-用户信息模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft14.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_account_exact_search_details_user_info:
+                    通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-用户信息模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft14.1')">
+                    error</a>
 
-    <div id='div_ft14.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft14.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft14.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft14.1: Traceback (most recent call last):
@@ -913,34 +998,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_039_glob_account_exact_search_details_dev_sale.TestCase039GlobAccountExactSearchDetailsDevSale</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c15',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_039_glob_account_exact_search_details_dev_sale.TestCase039GlobAccountExactSearchDetailsDevSale
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c15',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft15.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_account_exact_search_details_dev_sale: 通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-销售设备模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft15.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_account_exact_search_details_dev_sale:
+                    通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-销售设备模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft15.1')">
+                    error</a>
 
-    <div id='div_ft15.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft15.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft15.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft15.1: Traceback (most recent call last):
@@ -966,34 +1059,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_040_glob_account_exact_search_details_add_lower_acc.TestCase040GlobAccountExactSearchDetailsAddLowerAcc</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c16',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_040_glob_account_exact_search_details_add_lower_acc.TestCase040GlobAccountExactSearchDetailsAddLowerAcc
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c16',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft16.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_account_exact_search_details_add_lower_acc: 通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-新增下级用户模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft16.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_account_exact_search_details_add_lower_acc:
+                    通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-新增下级用户模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft16.1')">
+                    error</a>
 
-    <div id='div_ft16.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft16.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft16.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft16.1: Traceback (most recent call last):
@@ -1019,34 +1120,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_041_glob_account_exact_search_details_acc_trans.TestCase041GlobAccountExactSearchDetailsAccTrans</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c17',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_041_glob_account_exact_search_details_acc_trans.TestCase041GlobAccountExactSearchDetailsAccTrans
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c17',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft17.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_account_exact_search_details_acc_trans: 通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-转移用户模块的操作功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft17.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_account_exact_search_details_acc_trans:
+                    通过csv测试全局搜索-精确查找设备结果唯一用户详情页面-转移用户模块的操作功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft17.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft17.1')">
+                    error</a>
 
-    <div id='div_ft17.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft17.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft17.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft17.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft17.1: Traceback (most recent call last):
@@ -1072,34 +1181,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_042_glob_account_search_list.TestCase042GlobAccountSearchList</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c18',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_042_glob_account_search_list.TestCase042GlobAccountSearchList</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c18',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft18.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_account_search_list: 测试全局搜索-用户搜索-不输入搜索信息查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft18.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_account_search_list: 测试全局搜索-用户搜索-不输入搜索信息查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft18.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft18.1')">
+                    error</a>
 
-    <div id='div_ft18.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft18.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft18.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft18.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft18.1: Traceback (most recent call last):
@@ -1125,34 +1238,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_043_glob_complex_search_by_acc.TestCase043GlobComplexSearchByAcc</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c19',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_043_glob_complex_search_by_acc.TestCase043GlobComplexSearchByAcc</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c19',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft19.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_acc: 测试全局搜索-高级搜索-通过选择用户单一查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft19.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_acc: 测试全局搜索-高级搜索-通过选择用户单一查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft19.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft19.1')">
+                    error</a>
 
-    <div id='div_ft19.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft19.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft19.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft19.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft19.1: Traceback (most recent call last):
@@ -1178,34 +1295,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_044_glob_complex_search_by_basic_info.TestCase044GlobComplexSearchByBasicInfo</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c20',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_044_glob_complex_search_by_basic_info.TestCase044GlobComplexSearchByBasicInfo</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c20',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft20.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_basic_info: 测试全局搜索-高级搜索-通过选择基本信息单一查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft20.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_basic_info: 测试全局搜索-高级搜索-通过选择基本信息单一查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft20.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft20.1')">
+                    error</a>
 
-    <div id='div_ft20.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft20.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft20.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft20.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft20.1: Traceback (most recent call last):
@@ -1231,34 +1352,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_045_glob_complex_search_by_date_type.TestCase045GlobComplexSearchByDateType</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c21',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_045_glob_complex_search_by_date_type.TestCase045GlobComplexSearchByDateType</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c21',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft21.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_date_type: 测试全局搜索-高级搜索-通过日期类型单一查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft21.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_date_type: 测试全局搜索-高级搜索-通过日期类型单一查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft21.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft21.1')">
+                    error</a>
 
-    <div id='div_ft21.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft21.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft21.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft21.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft21.1: Traceback (most recent call last):
@@ -1284,34 +1409,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_046_glob_complex_search_by_dev_status.TestCase046GlobComplexSearchByDevStatus</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c22',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_046_glob_complex_search_by_dev_status.TestCase046GlobComplexSearchByDevStatus</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c22',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft22.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_dev_status: 测试全局搜索-高级搜索-通过设备状态单一查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft22.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_dev_status: 测试全局搜索-高级搜索-通过设备状态单一查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft22.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft22.1')">
+                    error</a>
 
-    <div id='div_ft22.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft22.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft22.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft22.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft22.1: Traceback (most recent call last):
@@ -1337,34 +1466,40 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_047_glob_complex_search_by_acc_and_basic_info.TestCase047GlobComplexSearchByAccAndBasicInfo</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c23',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_047_glob_complex_search_by_acc_and_basic_info.TestCase047GlobComplexSearchByAccAndBasicInfo
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c23',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft23.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_acc_and_basic_info: 测试全局搜索-高级搜索-通过选择用户+基本信息双组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft23.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_acc_and_basic_info: 测试全局搜索-高级搜索-通过选择用户+基本信息双组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft23.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft23.1')">
+                    error</a>
 
-    <div id='div_ft23.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft23.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft23.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft23.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft23.1: Traceback (most recent call last):
@@ -1390,34 +1525,39 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_048_glob_complex_search_by_acc_and_date_type.TestCase048GlobComplexSearchByAccAndDateType</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c24',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_048_glob_complex_search_by_acc_and_date_type.TestCase048GlobComplexSearchByAccAndDateType</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c24',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft24.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_acc_and_date_type: 测试全局搜索-高级搜索-通过选择用户+日期类型双组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft24.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_acc_and_date_type: 测试全局搜索-高级搜索-通过选择用户+日期类型双组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft24.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft24.1')">
+                    error</a>
 
-    <div id='div_ft24.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft24.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft24.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft24.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft24.1: Traceback (most recent call last):
@@ -1443,34 +1583,40 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_049_glob_complex_search_by_acc_and_dev_status.TestCase049GlobComplexSearchByAccAndDevStatus</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c25',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_049_glob_complex_search_by_acc_and_dev_status.TestCase049GlobComplexSearchByAccAndDevStatus
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c25',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft25.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_acc_and_dev_status: 测试全局搜索-高级搜索-通过选择用户+设备状态双组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft25.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_acc_and_dev_status: 测试全局搜索-高级搜索-通过选择用户+设备状态双组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft25.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft25.1')">
+                    error</a>
 
-    <div id='div_ft25.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft25.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft25.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft25.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft25.1: Traceback (most recent call last):
@@ -1496,34 +1642,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_050_glob_complex_search_by_basic_info_and_date_type.TestCase050GlobComplexSearchByBasicInfoAndDateType</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c26',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_050_glob_complex_search_by_basic_info_and_date_type.TestCase050GlobComplexSearchByBasicInfoAndDateType
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c26',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft26.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_basic_info_and_date_type: 测试全局搜索-高级搜索-通过选择基本信息+日期类型双组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft26.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_basic_info_and_date_type:
+                    测试全局搜索-高级搜索-通过选择基本信息+日期类型双组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft26.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft26.1')">
+                    error</a>
 
-    <div id='div_ft26.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft26.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft26.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft26.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft26.1: Traceback (most recent call last):
@@ -1549,34 +1703,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_051_glob_complex_search_by_basic_info_and_dev_status.TestCase051GlobComplexSearchByBasicInfoAndDevStatus</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c27',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_051_glob_complex_search_by_basic_info_and_dev_status.TestCase051GlobComplexSearchByBasicInfoAndDevStatus
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c27',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft27.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_basic_info_and_dev_status: 测试全局搜索-高级搜索-通过选择基本信息+设备状态双组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft27.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_basic_info_and_dev_status:
+                    测试全局搜索-高级搜索-通过选择基本信息+设备状态双组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft27.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft27.1')">
+                    error</a>
 
-    <div id='div_ft27.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft27.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft27.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft27.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft27.1: Traceback (most recent call last):
@@ -1602,34 +1764,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_052_glob_complex_search_by_date_type_and_dev_status.TestCase052GlobComplexSearchByDateTypeAndDevStatus</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c28',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_052_glob_complex_search_by_date_type_and_dev_status.TestCase052GlobComplexSearchByDateTypeAndDevStatus
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c28',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft28.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_date_type_and_dev_status: 测试全局搜索-高级搜索-通过日期类型+设备状态双组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft28.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_date_type_and_dev_status:
+                    测试全局搜索-高级搜索-通过日期类型+设备状态双组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft28.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft28.1')">
+                    error</a>
 
-    <div id='div_ft28.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft28.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft28.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft28.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft28.1: Traceback (most recent call last):
@@ -1655,34 +1825,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_053_glob_complex_search_by_acc_and_basic_info_and_date_type.TestCase053GlobComplexSearchByAccAndBasicInfoAndDateType</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c29',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_053_glob_complex_search_by_acc_and_basic_info_and_date_type.TestCase053GlobComplexSearchByAccAndBasicInfoAndDateType
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c29',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft29.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_acc_and_basic_info_and_date_type: 测试全局搜索-高级搜索-通过选择用户+基本信息+日期类型三组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft29.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_acc_and_basic_info_and_date_type:
+                    测试全局搜索-高级搜索-通过选择用户+基本信息+日期类型三组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft29.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft29.1')">
+                    error</a>
 
-    <div id='div_ft29.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft29.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft29.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft29.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft29.1: Traceback (most recent call last):
@@ -1708,34 +1886,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_054_glob_complex_search_by_acc_and_basic_info_and_dev_status.TestCase054GlobComplexSearchByAccAndBasicInfoAndDevStatus</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c30',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_054_glob_complex_search_by_acc_and_basic_info_and_dev_status.TestCase054GlobComplexSearchByAccAndBasicInfoAndDevStatus
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c30',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft30.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_acc_and_basic_info_and_dev_status: 测试全局搜索-高级搜索-通过选择用户+基本信息+设备状态三组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft30.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_acc_and_basic_info_and_dev_status:
+                    测试全局搜索-高级搜索-通过选择用户+基本信息+设备状态三组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft30.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft30.1')">
+                    error</a>
 
-    <div id='div_ft30.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft30.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft30.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft30.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft30.1: Traceback (most recent call last):
@@ -1761,34 +1947,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_055_glob_complex_search_by_acc_and_date_type_and_dev_status.TestCase055GlobComplexSearchByAccAndDateTypeAndDevStatus</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c31',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_055_glob_complex_search_by_acc_and_date_type_and_dev_status.TestCase055GlobComplexSearchByAccAndDateTypeAndDevStatus
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c31',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft31.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_acc_and_date_type_and_dev_status: 测试全局搜索-高级搜索-通过选择用户+日期类型+设备状态三组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft31.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_acc_and_date_type_and_dev_status:
+                    测试全局搜索-高级搜索-通过选择用户+日期类型+设备状态三组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft31.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft31.1')">
+                    error</a>
 
-    <div id='div_ft31.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft31.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft31.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft31.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft31.1: Traceback (most recent call last):
@@ -1814,34 +2008,42 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_056_glob_complex_search_by_basic_info_and_date_type_and_dev_status.TestCase056GlobComplexSearchByBasicInfoAndDateTypeAndDevStatus</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c32',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>
+                test_case_056_glob_complex_search_by_basic_info_and_date_type_and_dev_status.TestCase056GlobComplexSearchByBasicInfoAndDateTypeAndDevStatus
+            </td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c32',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft32.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_basic_info_and_date_type_and_dev_status: 测试全局搜索-高级搜索-通过基本信息+日期类型+设备状态三组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft32.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_basic_info_and_date_type_and_dev_status:
+                    测试全局搜索-高级搜索-通过基本信息+日期类型+设备状态三组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft32.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft32.1')">
+                    error</a>
 
-    <div id='div_ft32.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft32.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft32.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft32.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft32.1: Traceback (most recent call last):
@@ -1867,34 +2069,39 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_057_glob_complex_search_by_all_condi.TestCase057GlobComplexSearchByAllCondi</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c33',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_057_glob_complex_search_by_all_condi.TestCase057GlobComplexSearchByAllCondi</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c33',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft33.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_complex_search_by_all_condi: 测试全局搜索-高级搜索-通过选择用户-基本信息+日期类型+设备状态全组合查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft33.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_complex_search_by_all_condi: 测试全局搜索-高级搜索-通过选择用户-基本信息+日期类型+设备状态全组合查找功能
+                </div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft33.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft33.1')">
+                    error</a>
 
-    <div id='div_ft33.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft33.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft33.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft33.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft33.1: Traceback (most recent call last):
@@ -1920,34 +2127,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_058_glob_app_account_exact_search_and_details.TestCase058GlobAppAccountExactSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c34',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_058_glob_app_account_exact_search_and_details.TestCase058GlobAppAccountExactSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c34',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft34.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_app_account_exact_search: 测试全局搜索-App用户搜索-精确查找功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft34.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_app_account_exact_search: 测试全局搜索-App用户搜索-精确查找功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft34.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft34.1')">
+                    error</a>
 
-    <div id='div_ft34.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft34.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft34.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft34.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft34.1: Traceback (most recent call last):
@@ -1973,34 +2184,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_059_glob_app_account_search_list.TestCase058GlobAppAccountSearchList</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c35',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_059_glob_app_account_search_list.TestCase058GlobAppAccountSearchList</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c35',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft35.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_glob_app_account_search_list: 测试全局搜索-App用户搜索-不输入搜索信息查找，列表操作</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft35.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_glob_app_account_search_list: 测试全局搜索-App用户搜索-不输入搜索信息查找，列表操作</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft35.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft35.1')">
+                    error</a>
 
-    <div id='div_ft35.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft35.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft35.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft35.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft35.1: Traceback (most recent call last):
@@ -2026,14 +2241,14 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-    </tbody>
-    <tfoot>
+        </tbody>
+        <tfoot>
         <tr id='total_row'>
             <td>Total</td>
             <td>35</td>
@@ -2042,8 +2257,8 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
             <td class="text text-warning">35</td>
             <td>&nbsp;</td>
         </tr>
-    </tfoot>
-</table>
+        </tfoot>
+    </table>
 
     <div id='ending'>&nbsp;</div>
 </div>

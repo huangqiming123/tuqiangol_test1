@@ -91,7 +91,7 @@ class TestCase123LoginSuccessWithVirtualUser(unittest.TestCase):
             expect_usr_info_phone = current_user_info[1]
             self.assertEqual(expect_usr_info_phone, usr_info_phone, "账户总览左下方显示的客户电话错误")
 
-            get_up_account_info_sql = "SELECT o.nickName,o.contact,o.phone FROM user_info o WHERE o.userId = '" + \
+            get_up_account_info_sql = "SELECT o.account,o.contact,o.phone FROM user_info o WHERE o.userId = '" + \
                                       current_user_info[2] + "';"
             cursor.execute(get_up_account_info_sql)
             get_up_user_info = cursor.fetchall()
@@ -129,11 +129,7 @@ class TestCase123LoginSuccessWithVirtualUser(unittest.TestCase):
             self.assertEqual(self.assert_text.log_in_page_password_error(), self.login_page.get_exception_text(),
                              "虚拟账号密码错误提示不一致")
 
-
-
-
         csv_file.close()
-
 
     def tearDown(self):
         self.driver.quit_browser()

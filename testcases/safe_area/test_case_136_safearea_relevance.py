@@ -10,6 +10,7 @@ class TestCase136SafeAreaRelevance(unittest.TestCase):
     """
     jimitest账号，围栏关联设备
     """
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

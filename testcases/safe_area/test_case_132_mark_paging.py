@@ -12,6 +12,7 @@ class TestCase132MarkPaging(unittest.TestCase):
     """
     web_autotest账号，标注点页面分页功能
     """
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

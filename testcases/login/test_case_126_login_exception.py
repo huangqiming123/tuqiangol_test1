@@ -57,6 +57,7 @@ class TestCase126LoginException(unittest.TestCase):
                          self.login_page.get_exception_text())
 
         # 第三种 账号不存在
+
         self.login_page.account_input('fdsafasfd')
         self.login_page.password_input('jimi123')
         self.login_page.login_button_click()

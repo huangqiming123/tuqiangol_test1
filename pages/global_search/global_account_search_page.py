@@ -595,20 +595,20 @@ class GlobalAccountSearchPage(BasePage):
         sleep(3)
 
     def click_global_search_button(self):
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[1]/a')
+        self.driver.click_element('x,//*[@id="globalSearch"]/a')
         sleep(3)
 
     def switch_to_search_user_frame(self):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
 
     def search_user_by_account_in_global_search(self, param):
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
         sleep(2)
 
-        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', param)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', param)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
         sleep(3)
 
     def get_text_after_search(self):
@@ -618,7 +618,7 @@ class GlobalAccountSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="complex_user_relation_tbody"]/tr[2]/td[4]')
 
     def click_search_user_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
         sleep(4)
 
     def get_total_number_after_click_search_user_button(self):
@@ -774,7 +774,7 @@ class GlobalAccountSearchPage(BasePage):
 
     def logout(self):
         # 点击退出系统
-        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a'))
+        self.driver.float_element(self.driver.get_element('x,//*[@id="systemTools"]/span/a'))
         # self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
         sleep(3)
         self.driver.click_element('p,退出系统')

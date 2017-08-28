@@ -38,7 +38,8 @@ class TestCase128LoginAccountEditDefaultPassword(unittest.TestCase):
     def test_login_edit_default_password_success(self):
         # 用户账号修改默认密码
 
-        data = ["用户", "有默认密码的账号", "yonghuzh01", "13129561000", "233234@qq.com", "用户1", "测试公司名称", "888888", "jimi123"]
+        data = ["用户", "有默认密码的账号123", "yonghuzh0123", "13129561000", "233234@qq.com", "用户1", "测试公司名称", "888888",
+                "jimi123"]
 
         self.log_in_base.log_in()
         sleep(2)

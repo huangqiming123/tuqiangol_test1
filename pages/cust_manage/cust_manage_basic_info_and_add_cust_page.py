@@ -17,7 +17,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 点击进入客户管理页面
     def enter_cust_manage(self):
-        self.driver.wait(1)
+        self.driver.wait()
         self.driver.click_element("customer")
         self.driver.wait(1)
 
@@ -660,11 +660,11 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             print(working_mode_status)
             return working_mode_status
 
-    # 点设备管理
+    #点设备管理
     def get_facility_manage_page_function_button(self):
         self.driver.click_element("device")
         sleep(2)
-        # 获取全部功能按钮
+        #获取全部功能按钮
         button_list = []
         all_data = len(self.driver.get_elements("x,//*[@id='allDev']/div[2]/div[2]/div/div/button"))
         for a in range(all_data):
@@ -674,28 +674,27 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         print("设备管理页面", button_list)
         return button_list
 
-    # 获取指令管理页面模块
+    #获取指令管理页面模块
     def get_command_page_module(self):
-        self.driver.click_element("x,/html/body/div[2]/header/div/div[2]/div[2]/div[2]/a[1]")
+        self.driver.click_element("x,//*[@id='systemTools']/a[1]")
         sleep(2)
-        # 获取指令模块
+        #获取指令模块
         command_module = []
         all_module = len(self.driver.get_elements("x,//*[@id='insManage_ul']/li"))
         for a in range(all_module):
-            text = self.driver.get_text(
-                "x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[" + str(a + 1) + "]")
+            text = self.driver.get_text("x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[" + str(a + 1) + "]")
             command_module.append(text)
 
         print("指令管理页面", command_module)
         return command_module
 
-    # 转移客户-账户查找
+    #转移客户-账户查找
     def transfer_import_account_search(self, search_account):
         # 点击下拉箭头图标
         self.search_cust(search_account)
         self.driver.wait(3)
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
-        # 获取查询结果
+        #获取查询结果
         list_data = len(self.driver.get_elements("x,/html/body/div/div/form/div/div/div[1]/div/ul/li"))
 
         if list_data >= 1:

@@ -11,7 +11,7 @@ from pages.base.base_page_server import BasePageServer
 
 class AccountCenterVisualAccountPage(BasePageServer):
     def __init__(self, driver: AutomateDriverServer, base_url):
-        super().__init__(driver,base_url)
+        super().__init__(driver, base_url)
 
     # 点击虚拟账号管理
     def enter_visual_account(self):
@@ -24,7 +24,7 @@ class AccountCenterVisualAccountPage(BasePageServer):
         return title
 
     # 添加虚拟账户-输入虚拟账户信息
-    def add_visual_account(self,visual_account,visual_passwd):
+    def add_visual_account(self, visual_account, visual_passwd):
         self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')
         # 点击添加
         self.driver.click_element('x,/html/body/div/div[2]/div[1]/form/div/button')
@@ -32,11 +32,11 @@ class AccountCenterVisualAccountPage(BasePageServer):
         self.driver.default_frame()
         sleep(3)
         # 输入虚拟账号名称
-        self.driver.operate_input_element("x,//*[@id='fictitiousAccountForm']/div[1]/div/input",visual_account)
+        self.driver.operate_input_element("x,//*[@id='fictitiousAccountForm']/div[1]/div/input", visual_account)
         # 输入虚拟账号密码
-        self.driver.operate_input_element("fictitious_password",visual_passwd)
+        self.driver.operate_input_element("fictitious_password", visual_passwd)
         # 确认密码
-        self.driver.operate_input_element("password",visual_passwd)
+        self.driver.operate_input_element("password", visual_passwd)
 
 
     # 添加虚拟账户-选择修改数据权限
@@ -76,16 +76,16 @@ class AccountCenterVisualAccountPage(BasePageServer):
         self.driver.click_element('c,layui-layer-btn1')
 
     # 编辑虚拟账户
-    def edit_visu_account(self,edit_passwd):
+    def edit_visu_account(self, edit_passwd):
         self.driver.switch_to_frame('x,//*[@id="fictitiousaccountFrame"]')
         sleep(2)
         self.driver.click_element("x,//*[@id='fictitiousAccount_tbody']/tr[1]/td[4]/a[1]")
         self.driver.default_frame()
         self.driver.wait(1)
         # 编辑密码
-        self.driver.operate_input_element("fictitious_password",edit_passwd)
+        self.driver.operate_input_element("fictitious_password", edit_passwd)
         # 编辑再次输入密码
-        self.driver.operate_input_element("password",edit_passwd)
+        self.driver.operate_input_element("password", edit_passwd)
         # 保存
         self.driver.click_element('c,layui-layer-btn0')
         self.driver.wait()

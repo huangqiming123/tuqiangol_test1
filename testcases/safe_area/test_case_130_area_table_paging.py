@@ -10,6 +10,7 @@ class TestCase130AreaTablePaging(unittest.TestCase):
     """
     web_autotest账号，区域告警--分页功能
     """
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

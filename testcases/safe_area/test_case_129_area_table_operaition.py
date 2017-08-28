@@ -10,7 +10,6 @@ from pages.safe_area.safe_area_search_sql import SafeAreaSearchSql
 
 
 class TestCase129AreaTableOperaition(unittest.TestCase):
-
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

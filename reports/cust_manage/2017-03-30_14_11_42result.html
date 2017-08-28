@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,49 +8,49 @@
     <title>客户管理模块测试报告</title>
     <meta name="generator" content="HtmlTestRunner 0.8.4"/>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    
-<style type="text/css" media="screen">
 
-/* -- css div popup ------------------------------------------------------------------------ */
-.popup_window {
-    display: none;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    /*border: solid #627173 1px; */
-    padding: 10px;
-    background-color: #99CCFF;
-    font-family: "Lucida Console", "Courier New", Courier, monospace;
-    text-align: left;
-    font-size: 10pt;
-    width: 500px;
-}
+    <style type="text/css" media="screen">
 
-/* -- report ------------------------------------------------------------------------ */
+        /* -- css div popup ------------------------------------------------------------------------ */
+        .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        background-color: #99CCFF;
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 10pt;
+        width: 500px;
+        }
 
-#show_detail_line .label {
-    font-size: 85%;
-    cursor: pointer;
-}
+        /* -- report ------------------------------------------------------------------------ */
 
-#show_detail_line {
-    margin: 2em auto 1em auto;
-}
+        #show_detail_line .label {
+        font-size: 85%;
+        cursor: pointer;
+        }
 
-#total_row  { font-weight: bold; }
-.hiddenRow  { display: none; }
-.testcase   { margin-left: 2em; }
+        #show_detail_line {
+        margin: 2em auto 1em auto;
+        }
 
-</style>
+        #total_row { font-weight: bold; }
+        .hiddenRow { display: none; }
+        .testcase { margin-left: 2em; }
+
+    </style>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 <body>
 <script language="javascript" type="text/javascript"><!--
 output_list = Array();
@@ -145,60 +145,71 @@ function showOutput(id, name) {
     d.close();
 }
 */
---></script>
+-->
+
+</script>
 
 <div class="container">
     <div class='heading'>
-<h1>客户管理模块测试报告</h1>
-<p><strong>Start Time:</strong> 2017-03-30 14:11:42</p>
-<p><strong>Duration:</strong> 0:02:07.192275</p>
-<p><strong>Status:</strong> <span class="text text-warning">Error <strong>25</strong></span></p>
+        <h1>客户管理模块测试报告</h1>
+        <p><strong>Start Time:</strong> 2017-03-30 14:11:42</p>
+        <p><strong>Duration:</strong> 0:02:07.192275</p>
+        <p><strong>Status:</strong> <span class="text text-warning">Error <strong>25</strong></span></p>
 
-<p class='description'>用例执行情况：</p>
-</div>
+        <p class='description'>用例执行情况：</p>
+    </div>
 
 
-    
-<p id='show_detail_line'>
-<span class="label label-primary" onclick="showCase(0)">Summary</span>
-<span class="label label-danger" onclick="showCase(1)">Failed</span>
-<span class="label label-default" onclick="showCase(2)">All</span>
-</p>
-<table id='result_table' class="table">
-    <thead>
+    <p id='show_detail_line'>
+        <span class="label label-primary" onclick="showCase(0)">Summary</span>
+        <span class="label label-danger" onclick="showCase(1)">Failed</span>
+        <span class="label label-default" onclick="showCase(2)">All</span>
+    </p>
+    <table id='result_table' class="table">
+        <thead>
         <tr id='header_row'>
-            <th>Test Group/Test case</td>
-            <th>Count</td>
-            <th>Pass</td>
-            <th>Fail</td>
-            <th>Error</td>
-            <th>View</td>
+            <th>Test Group/Test case
+            </td>
+            <th>Count
+            </td>
+            <th>Pass
+            </td>
+            <th>Fail
+            </td>
+            <th>Error
+            </td>
+            <th>View
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        
-<tr class='text text-warning'>
-    <td>test_case_060_cust_manage_basic_info.TestCase060CustManageBasicInfo</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',1)">Detail</a></td>
-</tr>
+        </thead>
+        <tbody>
 
-<tr id='ft1.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manege_basic_info: 测试客户管理-客户及其设备基本信息验证</div></td>
-    <td colspan='5' align='center'>
+        <tr class='text text-warning'>
+            <td>test_case_060_cust_manage_basic_info.TestCase060CustManageBasicInfo</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c1',1)">Detail</a></td>
+        </tr>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+        <tr id='ft1.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manege_basic_info: 测试客户管理-客户及其设备基本信息验证</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <div id='div_ft1.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft1.1')">
+                    error</a>
+
+                <div id='div_ft1.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft1.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft1.1: Traceback (most recent call last):
@@ -224,34 +235,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_061_cust_manage_edit_acc.TestCase061CustManageEditAcc</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_061_cust_manage_edit_acc.TestCase061CustManageEditAcc</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c2',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft2.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_edit_acc: 测试客户管理-编辑用户</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft2.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_edit_acc: 测试客户管理-编辑用户</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft2.1')">
+                    error</a>
 
-    <div id='div_ft2.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft2.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft2.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft2.1: Traceback (most recent call last):
@@ -277,34 +292,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_062_cust_manage_add_acc.TestCase062CustManageAddAcc</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c3',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_062_cust_manage_add_acc.TestCase062CustManageAddAcc</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c3',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft3.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_add_acc: 测试客户管理-新增用户</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft3.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_add_acc: 测试客户管理-新增用户</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft3.1')">
+                    error</a>
 
-    <div id='div_ft3.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft3.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft3.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft3.1: Traceback (most recent call last):
@@ -330,34 +349,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_063_cust_manage_exact_search.TestCase063CustManageExactSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c4',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_063_cust_manage_exact_search.TestCase063CustManageExactSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c4',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft4.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_exact_search: 测试客户管理-精确搜索客户</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft4.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_exact_search: 测试客户管理-精确搜索客户</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft4.1')">
+                    error</a>
 
-    <div id='div_ft4.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft4.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft4.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft4.1: Traceback (most recent call last):
@@ -383,34 +406,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_064_cust_manage_like_search.TestCase064CustManageLikeSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c5',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_064_cust_manage_like_search.TestCase064CustManageLikeSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c5',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft5.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_like_search: 测试客户管理-模糊搜索客户</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft5.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_like_search: 测试客户管理-模糊搜索客户</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft5.1')">
+                    error</a>
 
-    <div id='div_ft5.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft5.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft5.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft5.1: Traceback (most recent call last):
@@ -436,34 +463,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_065_cust_manage_curr_acc_stock.TestCase065CustManageCurrAccStock</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c6',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_065_cust_manage_curr_acc_stock.TestCase065CustManageCurrAccStock</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c6',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft6.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_curr_acc_stock: 客户管理-验证当前选中客户的库存数与“我的设备”数</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft6.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_curr_acc_stock: 客户管理-验证当前选中客户的库存数与“我的设备”数</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft6.1')">
+                    error</a>
 
-    <div id='div_ft6.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft6.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft6.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft6.1: Traceback (most recent call last):
@@ -489,34 +520,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_066_cust_manage_curr_lower_acc.TestCase066CustManageCurrLowerAcc</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c7',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_066_cust_manage_curr_lower_acc.TestCase066CustManageCurrLowerAcc</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c7',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft7.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_curr_lower_acc: 客户管理-验证当前选中客户的实际下级客户数与“下级客户”数</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft7.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_curr_lower_acc: 客户管理-验证当前选中客户的实际下级客户数与“下级客户”数</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft7.1')">
+                    error</a>
 
-    <div id='div_ft7.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft7.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft7.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft7.1: Traceback (most recent call last):
@@ -542,34 +577,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_067_cust_manage_expired_dev_edit.TestCase067CustManageExpiredDevEdit</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c8',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_067_cust_manage_expired_dev_edit.TestCase067CustManageExpiredDevEdit</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c8',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft8.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_expired_dev_edit: 客户管理-过期设备列表-编辑</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft8.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_expired_dev_edit: 客户管理-过期设备列表-编辑</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft8.1')">
+                    error</a>
 
-    <div id='div_ft8.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft8.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft8.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft8.1: Traceback (most recent call last):
@@ -595,34 +634,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_068_cust_manage_expired_dev_sale_and_locate.TestCase068CustManageExpiredDevSaleAndLocate</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c9',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_068_cust_manage_expired_dev_sale_and_locate.TestCase068CustManageExpiredDevSaleAndLocate</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c9',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft9.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_expired_dev_sale_and_locate: 客户管理-过期设备列表-销售、查看位置</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft9.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_expired_dev_sale_and_locate: 客户管理-过期设备列表-销售、查看位置</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft9.1')">
+                    error</a>
 
-    <div id='div_ft9.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft9.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft9.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft9.1: Traceback (most recent call last):
@@ -648,34 +691,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_069_cust_manage_expired_dev_more.TestCase069CustManageExpiredDevMore</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c10',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_069_cust_manage_expired_dev_more.TestCase069CustManageExpiredDevMore</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c10',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft10.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_expired_dev_more: 客户管理-过期设备列表-更多</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft10.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_expired_dev_more: 客户管理-过期设备列表-更多</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft10.1')">
+                    error</a>
 
-    <div id='div_ft10.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft10.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft10.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft10.1: Traceback (most recent call last):
@@ -701,34 +748,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_070_cust_manage_expired_dev_batch_operate.TestCase070CustManageExpiredDevBatchOperate</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c11',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_070_cust_manage_expired_dev_batch_operate.TestCase070CustManageExpiredDevBatchOperate</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c11',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft11.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_expired_dev_batch_operate: 客户管理-过期设备列表-批量操作</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft11.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_expired_dev_batch_operate: 客户管理-过期设备列表-批量操作</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft11.1')">
+                    error</a>
 
-    <div id='div_ft11.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft11.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft11.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft11.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft11.1: Traceback (most recent call last):
@@ -754,34 +805,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_071_cust_manage_my_dev_search.TestCase071CustManageMyDevSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c12',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_071_cust_manage_my_dev_search.TestCase071CustManageMyDevSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c12',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft12.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_my_dev_search: 客户管理-我的设备-搜索</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft12.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_my_dev_search: 客户管理-我的设备-搜索</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft12.1')">
+                    error</a>
 
-    <div id='div_ft12.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft12.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft12.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft12.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft12.1: Traceback (most recent call last):
@@ -807,34 +862,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_072_cust_manage_my_dev_batch_edit.TestCase072CustManageMyDevBatchEdit</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c13',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_072_cust_manage_my_dev_batch_edit.TestCase072CustManageMyDevBatchEdit</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c13',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft13.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_my_dev_batch_edit: 客户管理-我的设备-批量编辑</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft13.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_my_dev_batch_edit: 客户管理-我的设备-批量编辑</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft13.1')">
+                    error</a>
 
-    <div id='div_ft13.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft13.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft13.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft13.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft13.1: Traceback (most recent call last):
@@ -860,34 +919,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_073_cust_manage_my_dev_batch_sale_and_export.TestCase073CustManageMyDevBatchSaleAndExport</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c14',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_073_cust_manage_my_dev_batch_sale_and_export.TestCase073CustManageMyDevBatchSaleAndExport</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c14',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft14.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_my_dev_batch_sale_and_export: 客户管理-我的设备-批量销售、导出</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft14.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_my_dev_batch_sale_and_export: 客户管理-我的设备-批量销售、导出</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft14.1')">
+                    error</a>
 
-    <div id='div_ft14.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft14.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft14.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft14.1: Traceback (most recent call last):
@@ -913,34 +976,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_074_cust_manage_my_dev_batch_upload_pict.TestCase074CustManageMyDevBatchUploadPict</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c15',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_074_cust_manage_my_dev_batch_upload_pict.TestCase074CustManageMyDevBatchUploadPict</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c15',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft15.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_my_dev_batch_upload_pict: 客户管理-我的设备-批量上传图片</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft15.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_my_dev_batch_upload_pict: 客户管理-我的设备-批量上传图片</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft15.1')">
+                    error</a>
 
-    <div id='div_ft15.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft15.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft15.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft15.1: Traceback (most recent call last):
@@ -966,34 +1033,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_075_cust_manage_my_dev_edit.TestCase075CustManageMyDevEdit</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c16',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_075_cust_manage_my_dev_edit.TestCase075CustManageMyDevEdit</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c16',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft16.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_my_dev_edit: 客户管理-我的设备-单个设备操作-编辑</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft16.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_my_dev_edit: 客户管理-我的设备-单个设备操作-编辑</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft16.1')">
+                    error</a>
 
-    <div id='div_ft16.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft16.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft16.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft16.1: Traceback (most recent call last):
@@ -1019,34 +1090,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_076_cust_manage_my_dev_sale_and_locate.TestCase076CustManageMyDevSaleAndLocate</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c17',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_076_cust_manage_my_dev_sale_and_locate.TestCase076CustManageMyDevSaleAndLocate</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c17',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft17.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_my_dev_sale_and_locate: 客户管理-我的设备-单个设备操作-销售、查看位置</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft17.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_my_dev_sale_and_locate: 客户管理-我的设备-单个设备操作-销售、查看位置</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft17.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft17.1')">
+                    error</a>
 
-    <div id='div_ft17.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft17.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft17.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft17.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft17.1: Traceback (most recent call last):
@@ -1072,34 +1147,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_077_cust_manage_my_dev_more.TestCase077CustManageMyDevMore</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c18',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_077_cust_manage_my_dev_more.TestCase077CustManageMyDevMore</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c18',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft18.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_my_dev_more: 客户管理-我的设备-单个设备操作-更多</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft18.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_my_dev_more: 客户管理-我的设备-单个设备操作-更多</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft18.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft18.1')">
+                    error</a>
 
-    <div id='div_ft18.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft18.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft18.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft18.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft18.1: Traceback (most recent call last):
@@ -1125,34 +1204,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_078_cust_manage_lower_account_search.TestCase078CustManageLowerAccountSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c19',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_078_cust_manage_lower_account_search.TestCase078CustManageLowerAccountSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c19',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft19.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_lower_account_search: 客户管理-下级客户-搜索</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft19.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_lower_account_search: 客户管理-下级客户-搜索</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft19.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft19.1')">
+                    error</a>
 
-    <div id='div_ft19.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft19.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft19.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft19.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft19.1: Traceback (most recent call last):
@@ -1178,34 +1261,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_079_cust_manage_lower_account_type_search.TestCase079CustManageLowerAccountTypeSearch</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c20',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_079_cust_manage_lower_account_type_search.TestCase079CustManageLowerAccountTypeSearch</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c20',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft20.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_lower_account_type_search: 客户管理-下级客户不同类型-搜索</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft20.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_lower_account_type_search: 客户管理-下级客户不同类型-搜索</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft20.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft20.1')">
+                    error</a>
 
-    <div id='div_ft20.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft20.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft20.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft20.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft20.1: Traceback (most recent call last):
@@ -1231,34 +1318,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_080_cust_manage_lower_account_add.TestCase080CustManageLowerAccountAdd</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c21',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_080_cust_manage_lower_account_add.TestCase080CustManageLowerAccountAdd</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c21',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft21.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_lower_account_add: 客户管理-下级客户-新增客户</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft21.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_lower_account_add: 客户管理-下级客户-新增客户</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft21.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft21.1')">
+                    error</a>
 
-    <div id='div_ft21.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft21.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft21.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft21.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft21.1: Traceback (most recent call last):
@@ -1284,34 +1375,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_081_cust_manage_lower_account_batch_trans.TestCase081CustManageLowerAccountBatchTrans</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c22',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_081_cust_manage_lower_account_batch_trans.TestCase081CustManageLowerAccountBatchTrans</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c22',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft22.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_lower_account_batch_trans: 客户管理-下级客户-批量转移</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft22.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_lower_account_batch_trans: 客户管理-下级客户-批量转移</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft22.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft22.1')">
+                    error</a>
 
-    <div id='div_ft22.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft22.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft22.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft22.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft22.1: Traceback (most recent call last):
@@ -1337,34 +1432,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_082_cust_manage_lower_account_edit.TestCase082CustManageLowerAccountEdit</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c23',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_082_cust_manage_lower_account_edit.TestCase082CustManageLowerAccountEdit</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c23',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft23.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_lower_account_edit: 客户管理-下级客户-单个客户编辑</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft23.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_lower_account_edit: 客户管理-下级客户-单个客户编辑</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft23.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft23.1')">
+                    error</a>
 
-    <div id='div_ft23.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft23.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft23.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft23.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft23.1: Traceback (most recent call last):
@@ -1390,34 +1489,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_083_cust_manage_lower_account_operate.TestCase083CustManageLowerAccountOperate</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c24',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_083_cust_manage_lower_account_operate.TestCase083CustManageLowerAccountOperate</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c24',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft24.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_lower_account_operate: 客户管理-下级客户-单个客户操作</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft24.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_lower_account_operate: 客户管理-下级客户-单个客户操作</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft24.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft24.1')">
+                    error</a>
 
-    <div id='div_ft24.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft24.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft24.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft24.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft24.1: Traceback (most recent call last):
@@ -1443,34 +1546,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_084_cust_manage_lower_account_trans.TestCase084CustManageLowerAccountTrans</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c25',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_084_cust_manage_lower_account_trans.TestCase084CustManageLowerAccountTrans</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c25',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft25.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_cust_manage_lower_account_trans: 客户管理-下级客户-单个客户转移</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft25.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_cust_manage_lower_account_trans: 客户管理-下级客户-单个客户转移</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft25.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft25.1')">
+                    error</a>
 
-    <div id='div_ft25.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft25.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft25.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft25.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft25.1: Traceback (most recent call last):
@@ -1496,14 +1603,14 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-    </tbody>
-    <tfoot>
+        </tbody>
+        <tfoot>
         <tr id='total_row'>
             <td>Total</td>
             <td>25</td>
@@ -1512,8 +1619,8 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
             <td class="text text-warning">25</td>
             <td>&nbsp;</td>
         </tr>
-    </tfoot>
-</table>
+        </tfoot>
+    </table>
 
     <div id='ending'>&nbsp;</div>
 </div>

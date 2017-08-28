@@ -82,7 +82,7 @@ for t in thread_list:
 for t in thread_list:
     t.join()
 
-run_09()
+# run_09()
 # 运行后自动关机
 sleep(10)
-os.system('shutdown -s -f')
+# os.system('shutdown -s -f')

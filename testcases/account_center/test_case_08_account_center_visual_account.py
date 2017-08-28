@@ -11,7 +11,6 @@ from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
-
 # 账户中心-虚拟账户管理--添加虚拟账号
 # author:孙燕妮
 
@@ -74,7 +73,7 @@ class TestCase08AccountCenterVisualAccount(unittest.TestCase):
             self.assertIn(self.assert_text.account_center_page_operation_done(), save_status, "保存成功")
             self.driver.wait()
 
-            #退出登录验证虚拟账号
+            # 退出登录验证虚拟账号
             self.account_center_page_navi_bar.usr_logout()
             self.log_in_base.log_in_with_csv(acc_to_add["account"], acc_to_add["passwd"])
             self.assertEqual(acc_to_add["account"], self.account_center_page_navi_bar.hello_user_account(),

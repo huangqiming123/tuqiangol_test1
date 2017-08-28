@@ -1285,7 +1285,7 @@ class DevManagePages(BasePage):
         return b
 
     def switch_to_dev_edit_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[32]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[33]/div[2]/iframe')
 
     def get_imei_in_detail(self):
         self.switch_to_dev_edit_frame()
@@ -1586,7 +1586,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_fails(self):
-        self.driver.click_element('x,/html/body/div[29]/span[1]/a')
+        self.driver.click_element('x,/html/body/div[30]/span[1]/a')
         sleep(2)
 
     def click_account_center_button(self):
@@ -1797,7 +1797,7 @@ class DevManagePages(BasePage):
     def choose_user_expire_time(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/div/ul/li[4]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/div/ul/li[5]')
         sleep(5)
 
     def no_choose_expire_time(self):

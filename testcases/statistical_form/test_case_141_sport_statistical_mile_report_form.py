@@ -12,10 +12,8 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 
 class TestCase141SportStatisticalMileReportForm(unittest.TestCase):
-    '''
-    运动统计 里程报表
-    author:zhangAo
-    '''
+    # 运动统计 里程报表
+    # author:zhangAo
 
     def setUp(self):
         # 前置条件

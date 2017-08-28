@@ -38,7 +38,8 @@ class TestCase34AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
 
     def test_jump_page_account_data_verify(self):
         """ 跳转页面后验证登录账户的数据是否正确"""
-        data = ["库存", "总进货数", "即将到期", "已过期", "设备管理", "已激活", "未激活"]
+        # data = ["库存", "总进货数", "即将到期", "已过期", "设备管理", "已激活", "未激活"]
+        data = ["即将到期", "已过期", "已激活", "未激活"]
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()

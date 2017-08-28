@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,49 +8,49 @@
     <title>登录模块测试报告</title>
     <meta name="generator" content="HtmlTestRunner 0.8.4"/>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    
-<style type="text/css" media="screen">
 
-/* -- css div popup ------------------------------------------------------------------------ */
-.popup_window {
-    display: none;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    /*border: solid #627173 1px; */
-    padding: 10px;
-    background-color: #99CCFF;
-    font-family: "Lucida Console", "Courier New", Courier, monospace;
-    text-align: left;
-    font-size: 10pt;
-    width: 500px;
-}
+    <style type="text/css" media="screen">
 
-/* -- report ------------------------------------------------------------------------ */
+        /* -- css div popup ------------------------------------------------------------------------ */
+        .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        background-color: #99CCFF;
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 10pt;
+        width: 500px;
+        }
 
-#show_detail_line .label {
-    font-size: 85%;
-    cursor: pointer;
-}
+        /* -- report ------------------------------------------------------------------------ */
 
-#show_detail_line {
-    margin: 2em auto 1em auto;
-}
+        #show_detail_line .label {
+        font-size: 85%;
+        cursor: pointer;
+        }
 
-#total_row  { font-weight: bold; }
-.hiddenRow  { display: none; }
-.testcase   { margin-left: 2em; }
+        #show_detail_line {
+        margin: 2em auto 1em auto;
+        }
 
-</style>
+        #total_row { font-weight: bold; }
+        .hiddenRow { display: none; }
+        .testcase { margin-left: 2em; }
+
+    </style>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 <body>
 <script language="javascript" type="text/javascript"><!--
 output_list = Array();
@@ -145,60 +145,71 @@ function showOutput(id, name) {
     d.close();
 }
 */
---></script>
+-->
+
+</script>
 
 <div class="container">
     <div class='heading'>
-<h1>登录模块测试报告</h1>
-<p><strong>Start Time:</strong> 2017-03-30 13:57:04</p>
-<p><strong>Duration:</strong> 0:00:41.050348</p>
-<p><strong>Status:</strong> <span class="text text-warning">Error <strong>8</strong></span></p>
+        <h1>登录模块测试报告</h1>
+        <p><strong>Start Time:</strong> 2017-03-30 13:57:04</p>
+        <p><strong>Duration:</strong> 0:00:41.050348</p>
+        <p><strong>Status:</strong> <span class="text text-warning">Error <strong>8</strong></span></p>
 
-<p class='description'>用例执行情况：</p>
-</div>
+        <p class='description'>用例执行情况：</p>
+    </div>
 
 
-    
-<p id='show_detail_line'>
-<span class="label label-primary" onclick="showCase(0)">Summary</span>
-<span class="label label-danger" onclick="showCase(1)">Failed</span>
-<span class="label label-default" onclick="showCase(2)">All</span>
-</p>
-<table id='result_table' class="table">
-    <thead>
+    <p id='show_detail_line'>
+        <span class="label label-primary" onclick="showCase(0)">Summary</span>
+        <span class="label label-danger" onclick="showCase(1)">Failed</span>
+        <span class="label label-default" onclick="showCase(2)">All</span>
+    </p>
+    <table id='result_table' class="table">
+        <thead>
         <tr id='header_row'>
-            <th>Test Group/Test case</td>
-            <th>Count</td>
-            <th>Pass</td>
-            <th>Fail</td>
-            <th>Error</td>
-            <th>View</td>
+            <th>Test Group/Test case
+            </td>
+            <th>Count
+            </td>
+            <th>Pass
+            </td>
+            <th>Fail
+            </td>
+            <th>Error
+            </td>
+            <th>View
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        
-<tr class='text text-warning'>
-    <td>test_case_001_login_success_with_sales_and_agent.TestCase001LoginSuccessWithSalesAndAgent</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',1)">Detail</a></td>
-</tr>
+        </thead>
+        <tbody>
 
-<tr id='ft1.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_sales_and_agent_login_by_csv: 通过csv测试销售和代理商账户成功登录和成功退出功能</div></td>
-    <td colspan='5' align='center'>
+        <tr class='text text-warning'>
+            <td>test_case_001_login_success_with_sales_and_agent.TestCase001LoginSuccessWithSalesAndAgent</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c1',1)">Detail</a></td>
+        </tr>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+        <tr id='ft1.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_sales_and_agent_login_by_csv: 通过csv测试销售和代理商账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <div id='div_ft1.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft1.1')">
+                    error</a>
+
+                <div id='div_ft1.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft1.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft1.1: Traceback (most recent call last):
@@ -224,34 +235,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_002_login_success_with_ordinary_user.TestCase002LoginSuccessWithOrdinaryUser</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_002_login_success_with_ordinary_user.TestCase002LoginSuccessWithOrdinaryUser</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c2',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft2.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_ordinary_user_login_by_csv: 通过csv测试普通用户账户成功登录和成功退出功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft2.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_ordinary_user_login_by_csv: 通过csv测试普通用户账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft2.1')">
+                    error</a>
 
-    <div id='div_ft2.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft2.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft2.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft2.1: Traceback (most recent call last):
@@ -277,34 +292,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_003_login_with_logout_dismiss.TestCase003LoginWithLogoutDismiss</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c3',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_003_login_with_logout_dismiss.TestCase003LoginWithLogoutDismiss</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c3',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft3.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_login_and_logout_dismiss: 测试成功登录的用户取消退出</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft3.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_and_logout_dismiss: 测试成功登录的用户取消退出</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft3.1')">
+                    error</a>
 
-    <div id='div_ft3.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft3.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft3.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft3.1: Traceback (most recent call last):
@@ -330,34 +349,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_004_login_with_remember_me.TestCase004LoginWithRememberMe</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c4',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_004_login_with_remember_me.TestCase004LoginWithRememberMe</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c4',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft4.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_login_with_remember_me: 测试登录时勾选记住我</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft4.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_with_remember_me: 测试登录时勾选记住我</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft4.1')">
+                    error</a>
 
-    <div id='div_ft4.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft4.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft4.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft4.1: Traceback (most recent call last):
@@ -383,34 +406,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_005_login_forget_passwd.TestCase005LoginForgetPasswd</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c5',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_005_login_forget_passwd.TestCase005LoginForgetPasswd</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c5',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft5.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_login_forget_passwd: 测试忘记密码功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft5.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_forget_passwd: 测试忘记密码功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft5.1')">
+                    error</a>
 
-    <div id='div_ft5.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft5.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft5.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft5.1: Traceback (most recent call last):
@@ -436,34 +463,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_006_login_change_language.TestCase006LoginChangeLanguage</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c6',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_006_login_change_language.TestCase006LoginChangeLanguage</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c6',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft6.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_change_language: 测试登录切换语言</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft6.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_change_language: 测试登录切换语言</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft6.1')">
+                    error</a>
 
-    <div id='div_ft6.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft6.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft6.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft6.1: Traceback (most recent call last):
@@ -489,34 +520,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_007_login_enter_third_website.TestCase007LoginEnterThirdWebsite</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c7',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_007_login_enter_third_website.TestCase007LoginEnterThirdWebsite</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c7',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft7.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_third_website: 测试登录页底部第三方链接</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft7.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_third_website: 测试登录页底部第三方链接</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft7.1')">
+                    error</a>
 
-    <div id='div_ft7.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft7.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft7.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft7.1: Traceback (most recent call last):
@@ -542,34 +577,38 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-warning'>
-    <td>test_case_008_login_taste.TestCase008LoginTaste</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c8',1)">Detail</a></td>
-</tr>
+        <tr class='text text-warning'>
+            <td>test_case_008_login_taste.TestCase008LoginTaste</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c8',1)">Detail</a></td>
+        </tr>
 
-<tr id='ft8.1' class='text text-success'>
-    <td class='text text-warning'><div class='testcase'>test_login_taste: 测试我要体验功能</div></td>
-    <td colspan='5' align='center'>
+        <tr id='ft8.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_taste: 测试我要体验功能</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
-        error</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft8.1')">
+                    error</a>
 
-    <div id='div_ft8.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_ft8.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft8.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 ft8.1: Traceback (most recent call last):
@@ -595,14 +634,14 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-    </tbody>
-    <tfoot>
+        </tbody>
+        <tfoot>
         <tr id='total_row'>
             <td>Total</td>
             <td>8</td>
@@ -611,8 +650,8 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: chrome fa
             <td class="text text-warning">8</td>
             <td>&nbsp;</td>
         </tr>
-    </tfoot>
-</table>
+        </tfoot>
+    </table>
 
     <div id='ending'>&nbsp;</div>
 </div>

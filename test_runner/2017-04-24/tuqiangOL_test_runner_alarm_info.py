@@ -1,4 +1,3 @@
-
 import os
 import smtplib
 import unittest
@@ -22,19 +21,17 @@ from email.mime.text import MIMEText
 '''
 
 
-
 # 查找测试报告目录，找到最新生成的测试报告文件
 
 def new_report(testreport):
-
     # 获取测试报告目录下的所有文件及文件夹
     lists = os.listdir(testreport)
 
     # 重新按时间对目录下的文件进行排序
-    lists.sort(key=lambda fn:os.path.getmtime(testreport + "\\" + fn))
+    lists.sort(key=lambda fn: os.path.getmtime(testreport + "\\" + fn))
 
     # List[-1]取到的就是最新生成的文件或文件夹
-    file_new = os.path.join(testreport,lists[-1])
+    file_new = os.path.join(testreport, lists[-1])
     print(file_new)
     return file_new
 
@@ -42,8 +39,7 @@ def new_report(testreport):
 # 定义发送邮件
 
 def send_mail(file_new):
-
-    f = open(file_new,'rb')
+    f = open(file_new, 'rb')
     mail_body = f.read()
 
     # 带附件的邮件可以看做包含若干部分的邮件：文本和各个附件本身，所以，
@@ -59,7 +55,7 @@ def send_mail(file_new):
     msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
 
     # email模块的Header（）方法用来定义邮件标题
-    msg['Subject'] = Header("自动化测试报告",'utf-8')
+    msg['Subject'] = Header("自动化测试报告", 'utf-8')
 
     msg['From'] = "2091566123@qq.com"
     msg['To'] = "mail_zhangao@126.com"
@@ -83,7 +79,7 @@ def send_mail(file_new):
 
     f.close()
 
-    smtp = smtplib.SMTP_SSL("smtp.qq.com",465)
+    smtp = smtplib.SMTP_SSL("smtp.qq.com", 465)
     smtp.set_debuglevel(1)
     smtp.login("2091566123@qq.com", "skmicdntzetlcdcg")
     smtp.sendmail("2091566123@qq.com", "mail_zhangao@126.com", msg.as_string())
@@ -91,20 +87,14 @@ def send_mail(file_new):
     print('email has send out !')
 
 
-
-
 if __name__ == '__main__':
-
     # 指定测试用例目录
     test_dir_account_center = 'E:\\git\\tuqiangol_test\\testcases\\alarm_info'
-
 
     # 指定测试报告目录
     test_report_account_center = '\\\\172.16.0.101\\share\\automate_report\\tuqiangol_test\\alarm_info'
 
     discover_account_center = unittest.defaultTestLoader.discover(test_dir_account_center, pattern='test*.py')
-
-
 
     # 按照一定格式获得当前时间
     now = time.strftime("%Y-%m-%d_%H_%M_%S")
@@ -112,15 +102,13 @@ if __name__ == '__main__':
     # 定义报告存放路径
     filename_account_center = test_report_account_center + '\\' + now + 'result.html'
 
-
     # 以读的方式打开报告文件
     fp_account_center = open(filename_account_center, 'wb')
 
-
     # 定义测试报告，stream指定测试报告文件，file定义测试报告标题，description定义测试报告副标题
     runner_account_center = HtmlTestRunner(stream=fp_account_center,
-                               title='告警模块测试报告',
-                               description='用例执行情况：')
+                                           title='告警模块测试报告',
+                                           description='用例执行情况：')
 
     runner_account_center.run(discover_account_center)  # 运行测试用例
 
@@ -128,6 +116,3 @@ if __name__ == '__main__':
 
     new_report_account_center = new_report(test_report_account_center)
     send_mail(new_report_account_center)
-
-
-

@@ -274,7 +274,7 @@ class AssertText(object):
         return '必须是正整数！'
 
     def statistical_form_page_static_report_text(self):
-        return '静止统计'
+        return '静止报表'
 
     def cust_page_user_name_more_than_3s(self):
         return '昵称长度至少3位'

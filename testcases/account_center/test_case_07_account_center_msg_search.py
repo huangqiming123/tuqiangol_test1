@@ -13,7 +13,6 @@ from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
-
 # 账户中心-消息中心-根据搜索条件来搜索消息
 # author:孙燕妮
 

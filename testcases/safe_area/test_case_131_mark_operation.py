@@ -15,6 +15,7 @@ class TestCase131MarkOperation(unittest.TestCase):
     """
     web_autotest账号，标注点页面操作
     """
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

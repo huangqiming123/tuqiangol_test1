@@ -45,6 +45,7 @@ class TestCase730816CustManageEditUserCommandLimit(unittest.TestCase):
         csv_data = csv.reader(csv_file)
         for row in csv_data:
             info = {
+                "passwd": row[4],
                 "command": row[9],
                 "working_mode": row[10],
                 "wdit_account": row[11]
@@ -66,7 +67,7 @@ class TestCase730816CustManageEditUserCommandLimit(unittest.TestCase):
             self.cust_manage_basic_info_and_add_cust_page.click_edit_customer()
             self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
 
-            # 是或否勾选web和app登录权限
+            # 是或否批量下发指令 和批量下发工作模式
             command_status = self.cust_manage_basic_info_and_add_cust_page.setting_command_permissions(info["command"])
             working_mode_status = self.cust_manage_basic_info_and_add_cust_page.setting_working_mode_permissions(
                 info["working_mode"])
@@ -103,28 +104,28 @@ class TestCase730816CustManageEditUserCommandLimit(unittest.TestCase):
 
             command_list = []
             working_mode_list = []
-            # 循环设备管理页面的数据
+            #循环设备管理页面的数据
             for b in facility_manage_data:
-                # 选中发送指令 和 本次查询全部发送指令
+                #选中发送指令 和 本次查询全部发送指令
                 if send_command in b or all_send_command in b:
                     command_list.append(b)
-                # 选中设置工作模式 和 本次查询全部设置工作模式
+                #选中设置工作模式 和 本次查询全部设置工作模式
                 elif working_mode in b or all_working_mode in b:
                     working_mode_list.append(b)
 
-            # 循环指令管理页面的数据
+            #循环指令管理页面的数据
             for c in command_manage_data:
-                # 下发指令任务管理 和 下发指令管理
+                #下发指令任务管理 和 下发指令管理
                 if task_manage in c or comm_manager in c:
                     command_list.append(c)
-                # 工作模式模板管理, 下发工作模式任务管理, 下发工作模式管理
+                #工作模式模板管理, 下发工作模式任务管理, 下发工作模式管理
                 elif template_manage in c or working_mode_task_manage in c or working_mode_manage in c:
                     working_mode_list.append(c)
 
             print("指令", command_list)
             print("工作模式", working_mode_list)
 
-            # 验证设备、指令管理页面功能按钮显示情况
+            #验证设备、指令管理页面功能按钮显示情况
             if command_status == True and working_mode_status == True:
                 # 指令（设备页+指令管理页）
                 self.assertEqual(send_command, command_list[0])

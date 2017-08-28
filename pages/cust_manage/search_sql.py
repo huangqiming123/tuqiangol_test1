@@ -37,7 +37,6 @@ class SearchSql(object):
         elif len(lower_account_tuple) > 1:
             sql = "select u.id from user_info u where u.userId in %s" % str(lower_account_tuple)
 
-
         if search_data['account_type'] == '代理商':
             sql += " and u.type = '8'"
 

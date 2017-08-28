@@ -12,7 +12,6 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 
 class TestCase150OilReport(unittest.TestCase):
-
     def setUp(self):
         # 前置条件
         # 实例化对象

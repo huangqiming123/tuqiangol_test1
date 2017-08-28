@@ -44,7 +44,8 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
 
     def test_cust_manage_edit_cust_search(self):
 
-        account = ["jianyigezh1", "jianyigezh2"]
+        account = ["jianyigezh1", "csjianyigezh2"]
+
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录

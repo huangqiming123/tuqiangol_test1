@@ -13,7 +13,6 @@ from pages.dev_manage.dev_manage_pages import DevManagePages
 from pages.dev_manage.search_sql import SearchSql
 
 
-
 class TestCase78DevManageDevOperationNOActiveAndStart(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriver()

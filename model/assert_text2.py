@@ -79,3 +79,9 @@ class AssertText2(object):
 
     def cust_manage_select_user_unable_superior(self):
         return "选择的用户不能做为上级用户"
+
+    def account_center_download_app_text(self):
+        return "扫描二维码，下载手机APP客户端"
+
+    def account_center_fast_sale_typeface(self):
+        return "快速销售"

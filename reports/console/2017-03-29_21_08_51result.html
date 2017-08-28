@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,49 +8,49 @@
     <title>控制台模块测试报告</title>
     <meta name="generator" content="HtmlTestRunner 0.8.4"/>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    
-<style type="text/css" media="screen">
 
-/* -- css div popup ------------------------------------------------------------------------ */
-.popup_window {
-    display: none;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    /*border: solid #627173 1px; */
-    padding: 10px;
-    background-color: #99CCFF;
-    font-family: "Lucida Console", "Courier New", Courier, monospace;
-    text-align: left;
-    font-size: 10pt;
-    width: 500px;
-}
+    <style type="text/css" media="screen">
 
-/* -- report ------------------------------------------------------------------------ */
+        /* -- css div popup ------------------------------------------------------------------------ */
+        .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        background-color: #99CCFF;
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 10pt;
+        width: 500px;
+        }
 
-#show_detail_line .label {
-    font-size: 85%;
-    cursor: pointer;
-}
+        /* -- report ------------------------------------------------------------------------ */
 
-#show_detail_line {
-    margin: 2em auto 1em auto;
-}
+        #show_detail_line .label {
+        font-size: 85%;
+        cursor: pointer;
+        }
 
-#total_row  { font-weight: bold; }
-.hiddenRow  { display: none; }
-.testcase   { margin-left: 2em; }
+        #show_detail_line {
+        margin: 2em auto 1em auto;
+        }
 
-</style>
+        #total_row { font-weight: bold; }
+        .hiddenRow { display: none; }
+        .testcase { margin-left: 2em; }
+
+    </style>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 <body>
 <script language="javascript" type="text/javascript"><!--
 output_list = Array();
@@ -145,60 +145,71 @@ function showOutput(id, name) {
     d.close();
 }
 */
---></script>
+-->
+
+</script>
 
 <div class="container">
     <div class='heading'>
-<h1>控制台模块测试报告</h1>
-<p><strong>Start Time:</strong> 2017-03-29 21:08:51</p>
-<p><strong>Duration:</strong> 0:09:56.467702</p>
-<p><strong>Status:</strong> <span class="text text-success">Pass <strong>8</strong></span></p>
+        <h1>控制台模块测试报告</h1>
+        <p><strong>Start Time:</strong> 2017-03-29 21:08:51</p>
+        <p><strong>Duration:</strong> 0:09:56.467702</p>
+        <p><strong>Status:</strong> <span class="text text-success">Pass <strong>8</strong></span></p>
 
-<p class='description'>用例执行情况：</p>
-</div>
+        <p class='description'>用例执行情况：</p>
+    </div>
 
 
-    
-<p id='show_detail_line'>
-<span class="label label-primary" onclick="showCase(0)">Summary</span>
-<span class="label label-danger" onclick="showCase(1)">Failed</span>
-<span class="label label-default" onclick="showCase(2)">All</span>
-</p>
-<table id='result_table' class="table">
-    <thead>
+    <p id='show_detail_line'>
+        <span class="label label-primary" onclick="showCase(0)">Summary</span>
+        <span class="label label-danger" onclick="showCase(1)">Failed</span>
+        <span class="label label-default" onclick="showCase(2)">All</span>
+    </p>
+    <table id='result_table' class="table">
+        <thead>
         <tr id='header_row'>
-            <th>Test Group/Test case</td>
-            <th>Count</td>
-            <th>Pass</td>
-            <th>Fail</td>
-            <th>Error</td>
-            <th>View</td>
+            <th>Test Group/Test case
+            </td>
+            <th>Count
+            </td>
+            <th>Pass
+            </td>
+            <th>Fail
+            </td>
+            <th>Error
+            </td>
+            <th>View
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        
-<tr class='text text-success'>
-    <td>test_case_108_console_dev_info_count_with_login_user.TestCase108ConsoleDevInfoCountWithLoginUser</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',1)">Detail</a></td>
-</tr>
+        </thead>
+        <tbody>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_console_dev_info_count_with_login_user: 测试控制台-当前登录账户设备的各类数据统计验证</div></td>
-    <td colspan='5' align='center'>
+        <tr class='text text-success'>
+            <td>test_case_108_console_dev_info_count_with_login_user.TestCase108ConsoleDevInfoCountWithLoginUser</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c1',1)">Detail</a></td>
+        </tr>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        pass</a>
+        <tr id='pt1.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_console_dev_info_count_with_login_user: 测试控制台-当前登录账户设备的各类数据统计验证</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <div id='div_pt1.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt1.1')">
+                    pass</a>
+
+                <div id='div_pt1.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt1.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 pt1.1: 3
@@ -230,34 +241,38 @@ pt1.1: 3
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-success'>
-    <td>test_case_109_console_dev_info_count_with_select_user.TestCase108ConsoleDevInfoCountWithSelectUser</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
+        <tr class='text text-success'>
+            <td>test_case_109_console_dev_info_count_with_select_user.TestCase108ConsoleDevInfoCountWithSelectUser</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c2',1)">Detail</a></td>
+        </tr>
 
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_console_dev_info_count_with_select_user: 测试控制台-当前选中客户设备的各类数据统计验证</div></td>
-    <td colspan='5' align='center'>
+        <tr id='pt2.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_console_dev_info_count_with_select_user: 测试控制台-当前选中客户设备的各类数据统计验证</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
-        pass</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt2.1')">
+                    pass</a>
 
-    <div id='div_pt2.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_pt2.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt2.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 pt2.1: 3
@@ -310,34 +325,38 @@ pt2.1: 3
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-success'>
-    <td>test_case_110_console_vehicle_list_exact_search.TestCase110ConsoleVehicleListExactSearch</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c3',1)">Detail</a></td>
-</tr>
+        <tr class='text text-success'>
+            <td>test_case_110_console_vehicle_list_exact_search.TestCase110ConsoleVehicleListExactSearch</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c3',1)">Detail</a></td>
+        </tr>
 
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_console_vehicle_list_exact_search: 测试控制台-车辆列表-精确搜索</div></td>
-    <td colspan='5' align='center'>
+        <tr id='pt3.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_console_vehicle_list_exact_search: 测试控制台-车辆列表-精确搜索</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
-        pass</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt3.1')">
+                    pass</a>
 
-    <div id='div_pt3.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_pt3.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt3.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 pt3.1: 3
@@ -391,34 +410,38 @@ pt3.1: 3
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-success'>
-    <td>test_case_111_console_vehicle_list_like_search.TestCase111ConsoleVehicleListLikeSearch</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c4',1)">Detail</a></td>
-</tr>
+        <tr class='text text-success'>
+            <td>test_case_111_console_vehicle_list_like_search.TestCase111ConsoleVehicleListLikeSearch</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c4',1)">Detail</a></td>
+        </tr>
 
-<tr id='pt4.1' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_console_vehicle_list_like_search: 测试控制台-车辆列表-模糊搜索</div></td>
-    <td colspan='5' align='center'>
+        <tr id='pt4.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_console_vehicle_list_like_search: 测试控制台-车辆列表-模糊搜索</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
-        pass</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt4.1')">
+                    pass</a>
 
-    <div id='div_pt4.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_pt4.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt4.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 pt4.1: 3
@@ -485,34 +508,38 @@ pt4.1: 3
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-success'>
-    <td>test_case_112_console_vehicle_list_group_operate.TestCase112ConsoleVehicleListGroupOperate</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c5',1)">Detail</a></td>
-</tr>
+        <tr class='text text-success'>
+            <td>test_case_112_console_vehicle_list_group_operate.TestCase112ConsoleVehicleListGroupOperate</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c5',1)">Detail</a></td>
+        </tr>
 
-<tr id='pt5.1' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_console_vehicle_list_group_operate: 测试控制台-车辆列表-分组操作（新增，修改，删除）</div></td>
-    <td colspan='5' align='center'>
+        <tr id='pt5.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_console_vehicle_list_group_operate: 测试控制台-车辆列表-分组操作（新增，修改，删除）</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
-        pass</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt5.1')">
+                    pass</a>
 
-    <div id='div_pt5.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_pt5.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt5.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 pt5.1: 3
@@ -580,34 +607,40 @@ pt5.1: 3
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-success'>
-    <td>test_case_113_console_list_fold_or_unfold_and_select_order.TestCase113ConsoleListFoldOrUnfoldAndSelectOrder</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c6',1)">Detail</a></td>
-</tr>
+        <tr class='text text-success'>
+            <td>
+                test_case_113_console_list_fold_or_unfold_and_select_order.TestCase113ConsoleListFoldOrUnfoldAndSelectOrder
+            </td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c6',1)">Detail</a></td>
+        </tr>
 
-<tr id='pt6.1' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_console_list_fold_or_unfold_and_select_order: 测试控制台-列表折叠/展开、车辆列表排序方式选择</div></td>
-    <td colspan='5' align='center'>
+        <tr id='pt6.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_console_list_fold_or_unfold_and_select_order: 测试控制台-列表折叠/展开、车辆列表排序方式选择</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
-        pass</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt6.1')">
+                    pass</a>
 
-    <div id='div_pt6.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_pt6.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt6.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 pt6.1: 3
@@ -676,34 +709,38 @@ pt6.1: 3
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-success'>
-    <td>test_case_114_console_vehicle_list_dev_operate.TestCase114ConsoleVehicleListDevOperate</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c7',1)">Detail</a></td>
-</tr>
+        <tr class='text text-success'>
+            <td>test_case_114_console_vehicle_list_dev_operate.TestCase114ConsoleVehicleListDevOperate</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c7',1)">Detail</a></td>
+        </tr>
 
-<tr id='pt7.1' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_console_vehicle_list_dev_operate: 测试控制台-车辆列表的单个设备操作（关注、轨迹回放、更多）</div></td>
-    <td colspan='5' align='center'>
+        <tr id='pt7.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_console_vehicle_list_dev_operate: 测试控制台-车辆列表的单个设备操作（关注、轨迹回放、更多）</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
-        pass</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt7.1')">
+                    pass</a>
 
-    <div id='div_pt7.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_pt7.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt7.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 pt7.1: 3
@@ -773,34 +810,38 @@ pt7.1: 3
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-<tr class='text text-success'>
-    <td>test_case_115_console_map_dev_operate.TestCase115ConsoleVehicleListDevOperate</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c8',1)">Detail</a></td>
-</tr>
+        <tr class='text text-success'>
+            <td>test_case_115_console_map_dev_operate.TestCase115ConsoleVehicleListDevOperate</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c8',1)">Detail</a></td>
+        </tr>
 
-<tr id='pt8.1' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_console_map_dev_operate: 测试控制台-地图中的单个设备操作（街景、轨迹回放、下发指令、设备详情、电子围栏、查看告警）</div></td>
-    <td colspan='5' align='center'>
+        <tr id='pt8.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_console_map_dev_operate: 测试控制台-地图中的单个设备操作（街景、轨迹回放、下发指令、设备详情、电子围栏、查看告警）</div>
+            </td>
+            <td colspan='5' align='center'>
 
-    <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
-        pass</a>
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt8.1')">
+                    pass</a>
 
-    <div id='div_pt8.1' class="popup_window">
-        <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
-           [x]</a>
-        </div>
+                <div id='div_pt8.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt8.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
         <pre>
         
 pt8.1: 3
@@ -871,14 +912,14 @@ pt8.1: 3
 
 
         </pre>
-    </div>
-    <!--css div popup end-->
+                </div>
+                <!--css div popup end-->
 
-    </td>
-</tr>
+            </td>
+        </tr>
 
-    </tbody>
-    <tfoot>
+        </tbody>
+        <tfoot>
         <tr id='total_row'>
             <td>Total</td>
             <td>8</td>
@@ -887,8 +928,8 @@ pt8.1: 3
             <td class="text text-warning">0</td>
             <td>&nbsp;</td>
         </tr>
-    </tfoot>
-</table>
+        </tfoot>
+    </table>
 
     <div id='ending'>&nbsp;</div>
 </div>

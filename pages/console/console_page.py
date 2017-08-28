@@ -7,7 +7,6 @@ from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
-
 # 控制台页面
 # author:孙燕妮
 from pages.base.base_page_server import BasePageServer

@@ -44,19 +44,19 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 销售/代理商账户--服务商
     def sales_usr_service_provider(self):
         service_provider = self.driver.get_element(
-            "x,/html/body/div/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[1]").text
+            "x,//*[@id='creat-1']/div/div[2]/div/div/div/div[2]/ul/li[1]").text
         return service_provider
 
     # 销售/代理商户账户--联系人
     def sales_usr_service_provider_connect(self):
         service_provider_connect = self.driver.get_element(
-            "x,/html/body/div/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]").text
+            "x,//*[@id='creat-1']/div/div[2]/div/div/div/div[2]/ul/li[2]").text
         return service_provider_connect
 
     # 销售/代理商账户--电话
     def sales_usr_service_provider_phone(self):
         service_provider_phone = self.driver.get_element(
-            "x,/html/body/div/div/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div/div[2]/ul/li[3]").text
+            "x,//*[@id='creat-1']/div/div[2]/div/div/div/div[2]/ul/li[3]").text
         return service_provider_phone
 
     # 普通用户账户--服务商
@@ -64,25 +64,25 @@ class AccountCenterNaviBarPage(BasePageServer):
         # service_provider = self.driver.get_element(
         # "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
         service_provider = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[1]").text
+            "x,//*[@id='creat-1']/div/div[2]/div/div/div/div[2]/ul/li[1]").text
         return service_provider
 
     # 普通用户账户--联系人
     def ordinary_usr_service_provider_connect(self):
         service_provider_connect = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[2]").text
+            "x,//*[@id='creat-1']/div/div[2]/div/div/div/div[2]/ul/li[2]").text
         return service_provider_connect
 
     # 普通用户账户--电话
     def ordinary_usr_service_provider_phone(self):
         service_provider_phone = self.driver.get_element(
-            "x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div[1]/div[2]/ul/li[3]").text
+            "x,//*[@id='creat-1']/div/div[2]/div/div/div/div[2]/ul/li[3]").text
         return service_provider_phone
 
     # 招呼栏退出系统
     def usr_logout(self):
         # 点击退出系统
-        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a'))
+        self.driver.float_element(self.driver.get_element('x,//*[@id="systemTools"]/span/a'))
         sleep(2)
         self.driver.click_element('p,退出系统')
         self.driver.wait()
@@ -139,7 +139,7 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏退出系统-取消
     def usr_logout_dismiss(self):
         # 点击退出系统
-        self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a")
+        self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/div/div[2]/span/a")
         sleep(2)
         self.driver.click_element('p,退出系统')
         self.driver.wait()
@@ -152,7 +152,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 招呼栏修改资料
     def modify_usr_info(self, user_name, phone, email):
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        self.driver.click_element('x,//*[@id="systemTools"]/span/a')
         sleep(1)
         # 点击招呼栏的修改资料
 
@@ -175,7 +175,7 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏修改密码
     def modify_user_passwd(self, old_passwd, new_passwd):
         # 点击招呼栏的修改密码
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        self.driver.click_element('x,//*[@id="systemTools"]/span/a')
         sleep(1)
         self.driver.click_element('p,修改密码')
         self.driver.wait(1)
@@ -424,7 +424,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.wait()
 
     def click_modify_usr_info(self):
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        self.driver.click_element('x,//*[@id="systemTools"]/span/a')
         sleep(1)
         # 点击招呼栏的修改资料
         self.driver.click_element("p,修改资料")
@@ -512,7 +512,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         # 点击招呼栏的修改密码
 
     def click_modify_usr_password(self):
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        self.driver.click_element('x,//*[@id="systemTools"]/span/a')
         sleep(2)
         # 点击招呼栏的修改密码
         self.driver.click_element("p,修改密码")
@@ -565,4 +565,3 @@ class AccountCenterNaviBarPage(BasePageServer):
             module.append(text)
         print(module)
         return module
-

@@ -558,5 +558,3 @@ class CustManageCustListPage(BasePageServer):
     def click_sale_button(self):
         self.driver.click_element('x,//*[@id="complex_user_sale_batchSaleid"]/div[3]/div[2]/button[3]')
         sleep(2)
-
-

@@ -41,6 +41,7 @@ class TestCase710814CustManageAddAccountWebLimit(unittest.TestCase):
 
         self.base_page.open_page()
 
+
         csv_file = self.cust_manage_page_read_csv.read_csv('add_user_web_limit_data.csv')
         csv_data = csv.reader(csv_file)
         for row in csv_data:
@@ -92,13 +93,14 @@ class TestCase710814CustManageAddAccountWebLimit(unittest.TestCase):
                 self.log_in_base.log_in_with_csv(info["account"], info["passwd"])
                 self.assertEqual(self.assert_text2.login_no_permissions(), self.login_page.get_exception_text(),
                                  "没有获取到没有权限登录的提示")
-            # 有web登录权限验证
+            #有web登录权限验证
             elif web_status == True:
                 self.log_in_base.log_in_with_csv(info["account"], info["passwd"])
                 hello_usr = self.account_center_page_navi_bar.hello_user_account()
                 self.assertIn(info["account"], hello_usr, "登录成功后招呼栏账户名显示错误")
-                sleep(1)
+                sleep(2)
                 self.account_center_page_navi_bar.usr_logout()
+
 
             self.log_in_base.log_in()
             self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()

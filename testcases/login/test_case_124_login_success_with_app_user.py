@@ -36,7 +36,7 @@ class TestCase124LoginSuccessWithphAppUser(unittest.TestCase):
 
     def test_app_user_login_by_csv(self):
         '''通过csv测试app账户成功登录和成功退出功能'''
-        data = ["首页", "设备管理", "控制台", "统计报表", "安全区域", "设备分布"]
+        data = ["首页", "设备管理", "操控台", "统计报表", "安全区域", "设备分布"]
 
         csv_file = self.log_in_read_csv.read_csv('login_with_app_user.csv')
         csv_data = csv.reader(csv_file)
@@ -50,7 +50,7 @@ class TestCase124LoginSuccessWithphAppUser(unittest.TestCase):
             # 输入用户信息进行登录
             self.login_page.user_login(user_to_login["account"], user_to_login["passwd"])
             # 点首页
-            self.login_page.click_home_page()
+            # self.login_page.click_home_page()
             # 判断登录成功后跳转页面是否正确
             actual_url = self.driver.get_current_url()
             expect_url = self.base_url + "/nomalUserCenter"
@@ -62,6 +62,7 @@ class TestCase124LoginSuccessWithphAppUser(unittest.TestCase):
             self.assertEqual(expect_usr, hello_usr, "登录成功后招呼栏账户名显示错误")
 
             # 验证模块
+
             module = self.account_center_page_navi_bar.get_page_module()
             for m in range(len(module)):
                 self.assertIn(data[m], module[m], "用户账号登录，模块显示错误")

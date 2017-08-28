@@ -117,7 +117,7 @@ class BasePagingFunction(BasePage):
 
     def click_paging_next_page(self):
         # 如果页数大于1页，先点击下一页
-        new_paging = NewPaging(self.driver,self.base_url)
+        new_paging = NewPaging(self.driver, self.base_url)
         pages = new_paging.get_total_page('x,//*[@id="pagination-blackCarList"]')
         if pages == 1:
             print("失败，列表页数只有一页，不能点击下一页！")
@@ -219,8 +219,9 @@ class BasePagingFunction(BasePage):
 
             elif web_page == 'set_up_alarm':
                 # 下发 指令管理
-                self.driver.operate_input_element('x,//*[@id="pagination-geozoneList"]/ul/li[%s]/input' % (int(pages) + 3),
-                                                  page)
+                self.driver.operate_input_element(
+                    'x,//*[@id="pagination-geozoneList"]/ul/li[%s]/input' % (int(pages) + 3),
+                    page)
                 self.driver.click_element('x,//*[@id="pagination-geozoneList"]/ul/li[%s]/button' % (int(pages) + 3))
                 sleep(2)
         else:
@@ -258,7 +259,7 @@ class BasePagingFunction(BasePage):
             elif number == '30':
                 select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '50':
-                select_element.send_keys(Keys.DOWN  + Keys.ENTER)
+                select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '100':
                 select_element.send_keys(Keys.DOWN + Keys.DOWN + Keys.DOWN + Keys.ENTER)
             sleep(3)
@@ -274,7 +275,7 @@ class BasePagingFunction(BasePage):
             elif number == '30':
                 select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '50':
-                select_element.send_keys(Keys.DOWN  + Keys.ENTER)
+                select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '100':
                 select_element.send_keys(Keys.DOWN + Keys.DOWN + Keys.DOWN + Keys.ENTER)
             sleep(3)
@@ -290,7 +291,7 @@ class BasePagingFunction(BasePage):
             elif number == '30':
                 select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '50':
-                select_element.send_keys(Keys.DOWN  + Keys.ENTER)
+                select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '100':
                 select_element.send_keys(Keys.DOWN + Keys.DOWN + Keys.DOWN + Keys.ENTER)
             sleep(3)
@@ -306,7 +307,7 @@ class BasePagingFunction(BasePage):
             elif number == '30':
                 select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '50':
-                select_element.send_keys(Keys.DOWN  + Keys.ENTER)
+                select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '100':
                 select_element.send_keys(Keys.DOWN + Keys.DOWN + Keys.DOWN + Keys.ENTER)
             sleep(3)
@@ -322,7 +323,7 @@ class BasePagingFunction(BasePage):
             elif number == '30':
                 select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '50':
-                select_element.send_keys(Keys.DOWN  + Keys.ENTER)
+                select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '100':
                 select_element.send_keys(Keys.DOWN + Keys.DOWN + Keys.DOWN + Keys.ENTER)
             sleep(3)
@@ -354,7 +355,7 @@ class BasePagingFunction(BasePage):
             elif number == '30':
                 select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '50':
-                select_element.send_keys(Keys.DOWN  + Keys.ENTER)
+                select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '100':
                 select_element.send_keys(Keys.DOWN + Keys.DOWN + Keys.DOWN + Keys.ENTER)
             sleep(3)
@@ -370,7 +371,7 @@ class BasePagingFunction(BasePage):
             elif number == '30':
                 select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '50':
-                select_element.send_keys(Keys.DOWN  + Keys.ENTER)
+                select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '100':
                 select_element.send_keys(Keys.DOWN + Keys.DOWN + Keys.DOWN + Keys.ENTER)
             sleep(3)
@@ -386,7 +387,7 @@ class BasePagingFunction(BasePage):
             elif number == '30':
                 select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '50':
-                select_element.send_keys(Keys.DOWN  + Keys.ENTER)
+                select_element.send_keys(Keys.DOWN + Keys.ENTER)
             elif number == '100':
                 select_element.send_keys(Keys.DOWN + Keys.DOWN + Keys.DOWN + Keys.ENTER)
             sleep(3)

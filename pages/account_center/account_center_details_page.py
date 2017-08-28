@@ -1,3 +1,4 @@
+""
 from time import sleep
 
 from selenium.webdriver.common.keys import Keys
@@ -16,8 +17,12 @@ class AccountCenterDetailsPage(BasePageServer):
     def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
 
-    # 账户总览页面跳转
+    # 点击账户总览
+    def click_account_pandect(self):
+        self.driver.click_element("zSales")
+        sleep(2)
 
+    # 账户总览页面跳转
     def account_overview(self, link_name):
 
         if link_name == '库存':
@@ -28,28 +33,28 @@ class AccountCenterDetailsPage(BasePageServer):
             self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[2]/a")
             self.driver.wait(1)
         elif link_name == '在线':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[3]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[1]/a")
             self.driver.wait(1)
         elif link_name == '离线':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[4]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[2]/a")
             self.driver.wait(1)
         elif link_name == '即将到期':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[5]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[4]/a")
             self.driver.wait(1)
         elif link_name == '已过期':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[6]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[5]/a")
             self.driver.wait(1)
         elif link_name == '已激活':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[7]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[9]/a")
             self.driver.wait(1)
         elif link_name == '未激活':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[8]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[10]/a")
             self.driver.wait(1)
         elif link_name == '告警车辆':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[9]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[8]/a")
             self.driver.wait(1)
         elif link_name == '重点关注车辆':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[1]/div/div[10]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[11]/a")
             self.driver.wait(1)
         elif link_name == '控制台':
             self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[1]/a")
@@ -58,7 +63,7 @@ class AccountCenterDetailsPage(BasePageServer):
             self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[2]/a")
             self.driver.wait(1)
         elif link_name == '围栏':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[3]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[3]/a")
             self.driver.wait(1)
         elif link_name == '下级客户管理':
             self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[4]/a")
@@ -67,13 +72,13 @@ class AccountCenterDetailsPage(BasePageServer):
             self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[5]/a")
             self.driver.wait(1)
         elif link_name == '指令管理':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[6]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[6]/a")
             self.driver.wait(1)
         elif link_name == '地标设置':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[7]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[7]/a")
             self.driver.wait(1)
         elif link_name == '告警':
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[1]/div/div[2]/div/div[8]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[12]/a")
             self.driver.wait(1)
 
     # 快捷销售
@@ -93,6 +98,7 @@ class AccountCenterDetailsPage(BasePageServer):
         # 点击搜索结果列表中唯一的账户
         self.driver.click_element("c,autocompleter-item")
         self.driver.wait(1)
+
 
     ## 快捷销售-账户查找2
     def import_account_search(self, search_account):
@@ -119,10 +125,6 @@ class AccountCenterDetailsPage(BasePageServer):
                                            "/div[1]/div[2]/div/div[1]/div/span")
             print(no_data)
             return no_data
-
-
-
-
 
     '''# 已选中账户后获取账户框内显示的账户名文本内容
     def get_selected_account(self):
@@ -162,9 +164,6 @@ class AccountCenterDetailsPage(BasePageServer):
                                       "/div[2]/div/div/div/div[3]/button[1]")
             self.driver.wait()
             return imei_count
-
-
-
 
     '''# 已添加设备imei后获取设备框内显示的设备imei文本内容
     def get_selected_device(self):
@@ -456,7 +455,7 @@ class AccountCenterDetailsPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="overdueType"]/div/span[1]/div/span[2]')
 
     def get_actual_total_actved(self):
-        return self.driver.get_text('x,//*[@id="active2"]')
+        return self.driver.get_text('x,//*[@id="activated"]')
 
     def get_total_all_actived_equipment(self):
         self.driver.click_element(
@@ -478,7 +477,7 @@ class AccountCenterDetailsPage(BasePageServer):
         return new_paging.get_total_number('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
 
     def get_actual_total_inactve(self):
-        return self.driver.get_text('x,//*[@id="noActive2"]')
+        return self.driver.get_text('notActive')
 
     def get_total_all_inactive_equipment(self):
         self.driver.click_element(
@@ -500,7 +499,7 @@ class AccountCenterDetailsPage(BasePageServer):
         return new_paging.get_total_number('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
 
     def get_actual_total_attention(self):
-        return self.driver.get_text('x,//*[@id="followNum"]')
+        return self.driver.get_text('followNum')
 
     def get_total_all_attention_equipment(self):
         return self.driver.get_text('x,//*[@id="followTotal"]')
@@ -526,13 +525,13 @@ class AccountCenterDetailsPage(BasePageServer):
         return self.driver.get_text("x,//*[@id='lowerFlag']")
 
     def get_coming_overtime_number(self):
-        return self.driver.get_text('x,//*[@id="devExpiring2"]')
+        return self.driver.get_text('x,//*[@id="soonExpiration"]')
 
     def click_coming_overtime_get_text(self):
         return self.driver.get_text('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
 
     def get_overtime_number(self):
-        return self.driver.get_text('x,//*[@id="devExpired2"]')
+        return self.driver.get_text('x,//*[@id="expiration"]')
 
     def click_clear_all_button(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/button')
@@ -630,7 +629,7 @@ class AccountCenterDetailsPage(BasePageServer):
 
     #获取app账号的服务商个数
     def get_current_account_service_number(self):
-        count = len(self.driver.get_elements("x,/html/body/div[1]/div[5]/div/div[2]/div[1]/div/div/div"))
+        count = len(self.driver.get_elements("x,//*[@id='creat-1']/div/div[2]/div/div/div/div"))
         print(count)
         return count
 
@@ -680,3 +679,43 @@ class AccountCenterDetailsPage(BasePageServer):
         title = self.driver.get_text("x,/html/body/div/div[1]/div/b")
         self.driver.default_frame()
         return title
+
+    # 点击设置记住默认选项
+    def click_memorization_default_option(self):
+        self.driver.click_element("x,/html/body/div/div/div[1]/label")
+        sleep(1)
+
+    # 选择进入的页面
+    def select_overview_or_sell_page(self, page):
+        if page == "账户总览":
+            self.click_account_pandect()
+        elif page == "快速销售":
+            self.fast_sales()
+
+    # 获取记住默认选项--状态
+    def get_memorization_default_option_state(self):
+        # 点账户中心
+        self.driver.click_element("zSales")
+        overview_state = self.driver.get_element("indexView").is_selected()
+        sleep(2)
+        self.driver.click_element("eSales")
+        sell_state = self.driver.get_element("indexView").is_selected()
+        state = {
+            "overview_state": overview_state,
+            "sell_state": sell_state
+        }
+        return state
+
+    # 账户总览--获取下载app提示
+    def get_download_app_hint(self):
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+        text = self.driver.get_text("x,//*[@id='markQRcode']/div/span")
+        self.driver.default_frame()
+        return text
+
+    # 快速销售--字体“快速销售”
+    def get_fast_sale_typeface(self):
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+        text = self.driver.get_text("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[1]/b")
+        self.driver.default_frame()
+        return text

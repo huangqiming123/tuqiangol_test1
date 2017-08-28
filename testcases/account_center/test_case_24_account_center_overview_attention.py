@@ -64,7 +64,7 @@ class TestCase24AccountCenterOverviewAttention(unittest.TestCase):
                 user_relation = cur.fetchall()
                 print(user_relation)
                 user_id = user_relation[0][0]
-                actual_url = self.base_url + '/console?userId=%s&viewFlag=4' % user_id
+                actual_url = self.base_url + '/console?viewFlag=4'
                 cur.close()
                 connect.close()
                 self.assertEqual(expect_url, actual_url, '点击重点关注车辆后，实际的url和期望的不一样！')

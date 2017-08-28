@@ -1,14 +1,14 @@
 import pymysql
 
-class DBHelper(object):
 
+class DBHelper(object):
     def read_db_for_mysql(self):
         # 创建连接
-        connect = pymysql.connect(host = "",
-                                  port = 3306,
-                                  user = "",
-                                  passwd = "",
-                                  db = "")
+        connect = pymysql.connect(host="",
+                                  port=3306,
+                                  user="",
+                                  passwd="",
+                                  db="")
 
         # 创建数据库游标
         cur = connect.cursor()

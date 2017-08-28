@@ -9,7 +9,6 @@ from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
-
 # 账户中心-消息中心-设置消息为已读
 # author:孙燕妮
 
@@ -47,7 +46,7 @@ class TestCase06AccountCenterMsgSetRead(unittest.TestCase):
 
         # 验证消息中心title是否正确显示
         self.assertIn(self.assert_text.account_center_page_message_center_text(), msg_center_title, "消息中心title有误!")
-        #退出iframe
+        # 退出iframe
         self.driver.default_frame()
 
         # 获取左侧栏目-消息中心-x条未读

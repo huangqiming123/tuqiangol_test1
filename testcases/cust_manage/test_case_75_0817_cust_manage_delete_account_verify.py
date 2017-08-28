@@ -42,6 +42,7 @@ class TestCase7508171CustManagelDeleteAccountVerify(unittest.TestCase):
     def test_cancel_and_ascertain_delete_account(self):
         '''客户管理-取消和确定删除账号操作'''
 
+
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录
@@ -69,17 +70,17 @@ class TestCase7508171CustManagelDeleteAccountVerify(unittest.TestCase):
         self.cust_manage_lower_account_page.input_search_info(account[0])
         self.cust_manage_lower_account_page.click_search_btn()
         self.assertEqual(account[0], self.cust_manage_lower_account_page.get_search_result_account(), "搜索结果账号不一致")
-        # 确定删除
+        #确定删除
         self.cust_manage_lower_account_page.delete_acc()
         self.cust_manage_lower_account_page.delete_acc_ensure()
-        # 验证有下级客户的账号
+        #验证有下级客户的账号
         self.assertEqual(self.assert_text2.cust_manage_exist_user_cannot_del(),
                          self.cust_manage_lower_account_page.get_del_status(), "删除提示不一致")
         sleep(2)
 
-        # 取消删除后的验证
+        #取消删除后的验证
         self.cust_manage_lower_account_page.delete_acc_x()
-        # 退出
+        #退出
         self.account_center_page_navi_bar.usr_logout()
         self.log_in_base.log_in_with_csv(account[0], "jimi123")
         self.driver.wait(1)

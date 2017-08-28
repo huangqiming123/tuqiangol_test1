@@ -98,7 +98,7 @@ class SetUpPage(BasePageServer):
     def check_title_text_after_click_set_up(self):
         # 检查点击设置之后左侧导航标题的文本
         actual_title_test_after_click_set_up = self.driver.get_text(
-                self.SET_UP_PAGE_CLICK_SET_UP_AFTER_TITLE_TEST_SELECTOR)
+            self.SET_UP_PAGE_CLICK_SET_UP_AFTER_TITLE_TEST_SELECTOR)
         return actual_title_test_after_click_set_up
 
     def click_set_up_page_lift_list(self, type):
@@ -121,7 +121,7 @@ class SetUpPage(BasePageServer):
 
         # 点击地标设置之后，检查右侧标题的文本
         actual_title_text_after_click_set_up_landmark = self.driver.get_text(
-                self.SET_UP_LANDMARK_TITLE_TEXT_AFTER_CLICK_SET_UP_LANDMARK_SELECROT)
+            self.SET_UP_LANDMARK_TITLE_TEXT_AFTER_CLICK_SET_UP_LANDMARK_SELECROT)
         return actual_title_text_after_click_set_up_landmark
 
     def click_set_up_landmark_page_add_landmark(self):
@@ -132,7 +132,7 @@ class SetUpPage(BasePageServer):
     def check_title_text_after_click_add_landmark(self):
         # 点击创建地标之后，检查标题文本
         actual_text_after_click_add_landmark = self.driver.get_text(
-                self.SET_UP_LANDMARK_CLILK_ADD_LANDMARK_TEST_SELECTOR)
+            self.SET_UP_LANDMARK_CLILK_ADD_LANDMARK_TEST_SELECTOR)
         return actual_text_after_click_add_landmark
 
     def close_add_landmark(self):
@@ -153,7 +153,7 @@ class SetUpPage(BasePageServer):
     def check_title_text_after_click_look_button(self):
         # 点击查看之后，返回地标标题的文本
         actual_title_text_after_click_look_button = self.driver.get_text(
-                self.SET_UP_LANDMARK_TITLE_TEXT_AFTER_CLICK_LOOK_SELECTOR)
+            self.SET_UP_LANDMARK_TITLE_TEXT_AFTER_CLICK_LOOK_SELECTOR)
         return actual_title_text_after_click_look_button
 
     def expect_landmark_text(self):
@@ -383,4 +383,3 @@ class SetUpPage(BasePageServer):
             self.driver.click_element('l,下一页')
             sleep(2)
             self.driver.click_element('1,上一页')
-

@@ -235,13 +235,12 @@ class CustManageLowerAccountPage(BasePageServer):
     # 单个用户操作-“重置密码”-X
     def click_reset_passwd_dismiss(self):
         self.acc_reset_passwd()
-        # 点X
+        #点X
         self.driver.click_element("x,/html/body/div[6]/span[1]/a")
         sleep(2)
         self.acc_reset_passwd()
-        # 取消
+        #取消
         self.reset_passwd_dismiss()
-
 
     # 单个用户操作-删除
     def delete_acc(self):
@@ -269,7 +268,6 @@ class CustManageLowerAccountPage(BasePageServer):
         self.delete_acc_dismiss()
         self.delete_acc()
         self.driver.click_element("x,/html/body/div[6]/span[1]/a")
-
 
     # 单个用户操作-转移客户
     def click_user_trans(self):

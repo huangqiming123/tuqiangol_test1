@@ -63,7 +63,7 @@ class TestCase009AccountCenterModifyInfo(unittest.TestCase):
             sleep(1)
             self.account_center_page_details.account_center_iframe()
 
-            # 获取详情中用户名跟电话
+            #获取详情中用户名跟电话
             name = self.account_center_page_navi_bar.usr_info_name()
             phone = self.account_center_page_navi_bar.usr_info_phone()
             self.assertEqual(user_to_modify_info["username"], name, "用户名称不一致")

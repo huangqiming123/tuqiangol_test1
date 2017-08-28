@@ -30,7 +30,7 @@ class TestCase117LoginSuccessWithOrdinaryUser(unittest.TestCase):
 
     def test_ordinary_user_login_by_csv(self):
         '''通过csv测试普通用户账户成功登录和成功退出功能'''
-        data = ["首页", "设备管理", "控制台", "统计报表", "安全区域", "设备分布"]
+        data = ["首页", "设备管理", "操控台", "统计报表", "安全区域", "设备分布"]
 
         csv_file = self.log_in_page_read_csv.read_csv('login_with_ordinary_user.csv')
         csv_data = csv.reader(csv_file)
@@ -47,7 +47,7 @@ class TestCase117LoginSuccessWithOrdinaryUser(unittest.TestCase):
             self.login_page.user_login(user_to_login["account"], user_to_login["passwd"])
             self.driver.wait(1)
             # 点首页
-            self.login_page.click_home_page()
+            # self.login_page.click_home_page()
             # 判断登录成功后跳转页面是否正确
             actual_url = self.driver.get_current_url()
             expect_url = self.base_url + "/nomalUserCenter"
@@ -59,6 +59,7 @@ class TestCase117LoginSuccessWithOrdinaryUser(unittest.TestCase):
             self.assertIn(expect_usr, hello_usr, "登录成功后招呼栏账户名显示错误")
 
             # 验证模块
+
             module = self.account_center_page_navi_bar.get_page_module()
             for m in range(len(module)):
                 self.assertIn(data[m], module[m], "用户账号登录，模块显示错误")
@@ -74,7 +75,7 @@ class TestCase117LoginSuccessWithOrdinaryUser(unittest.TestCase):
                 for range2 in range1:
                     current_user_info.append(range2)
             print(current_user_info)
-            get_up_account_info_sql = "SELECT o.account,o.nickName,o.phone FROM user_info o WHERE o.userId = '" + \
+            get_up_account_info_sql = "SELECT o.account,o.contact,o.phone FROM user_info o WHERE o.userId = '" + \
                                       current_user_info[0] + "';"
             cursor.execute(get_up_account_info_sql)
             get_up_user_info = cursor.fetchall()

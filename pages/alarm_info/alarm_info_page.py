@@ -474,7 +474,9 @@ class AlarmInfoPage(BasePage):
         else:
             for n in range(1, all_group_num):
                 sleep(1)
-                self.driver.click_element('x,/html/body/div/div[2]/div[1]/form/div/div[4]/div/div[1]/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(n + 1))
+                self.driver.click_element(
+                    'x,/html/body/div/div[2]/div[1]/form/div/div[4]/div/div[1]/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                        n + 1))
 
         # 选择全部设备
         self.driver.click_element('x,//*[@id="treeModal_alarmOverview"]/div[2]/label/div/ins')
@@ -545,7 +547,9 @@ class AlarmInfoPage(BasePage):
         all_group_num = len(all_group_list)
         for n in range(1, all_group_num):
             sleep(1)
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(n + 1))
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
 
         # 选择全部设备
         self.driver.click_element('x,//*[@id="treeModal_alarmDetail"]/div[2]/label/div/ins')
@@ -595,6 +599,7 @@ class AlarmInfoPage(BasePage):
         self.driver.click_element('x,//*[@id="getAlertInfo_btn"]')
         sleep(5)
         self.driver.default_frame()
+
     def get_search_total(self):
         '''
         # 获取查询后页面的页数

@@ -19,7 +19,7 @@ class GlobalDevSearchPage(BasePage):
 
     # 全局搜索栏-设备搜索按钮
     def click_easy_search(self):
-        self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/div[1]/a")
+        self.driver.click_element('x,//*[@id="globalSearch"]/a')
         self.driver.wait(1)
 
     # 全局搜索栏-设备搜索
@@ -27,9 +27,9 @@ class GlobalDevSearchPage(BasePage):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
 
         # 在设备名称/imei输入框内输入搜索关键词信息
-        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_keyword)
+        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', search_keyword)
         # 点击搜索设备按钮
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
         sleep(5)
         self.driver.default_frame()
 
@@ -548,8 +548,8 @@ class GlobalDevSearchPage(BasePage):
     def account_easy_search(self, search_data):
         # 填写用户搜索的条件，进行搜索
         self.swith_to_search_frame()
-        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_data['account_info'])
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', search_data['account_info'])
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
         sleep(5)
         self.driver.default_frame()
 
@@ -683,9 +683,9 @@ class GlobalDevSearchPage(BasePage):
 
     def click_dev_search(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
         sleep(5)
         self.driver.default_frame()
 
@@ -697,44 +697,44 @@ class GlobalDevSearchPage(BasePage):
 
     def click_app_account_search(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
         sleep(2)
         self.driver.default_frame()
 
     def app_account_easy_search(self, search_data):
         self.swith_to_search_frame()
-        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div/input', search_data['account_info'])
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/span/button')
+        self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', search_data['account_info'])
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/span/button')
         sleep(5)
         self.driver.default_frame()
 
     def get_dev_search_marked_words(self):
         self.swith_to_search_frame()
-        text = self.driver.get_element('x,/html/body/div[1]/div[1]/div/input').get_attribute('placeholder')
+        text = self.driver.get_element('x,/html/body/div[1]/div[1]/div[1]/div/input').get_attribute('placeholder')
         self.driver.default_frame()
         return text
 
     def select_search_user(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
         sleep(2)
         self.driver.default_frame()
 
     def select_search_app_user(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
         sleep(2)
         self.driver.default_frame()
 
     def click_search_button(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/span/button')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/span/button')
         sleep(5)
         self.driver.default_frame()
 
@@ -1061,7 +1061,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_search_buttons(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
         sleep(3)
         self.driver.default_frame()
 
@@ -1342,7 +1342,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_dev_search_button(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
         sleep(2)
         self.driver.default_frame()
 
@@ -1491,7 +1491,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_higher_search(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[2]')
         sleep(2)
         self.driver.default_frame()
 
@@ -1782,7 +1782,7 @@ class GlobalDevSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="instruction_deviceName"]')
 
     def click_advanced_search_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[2]')
         sleep(2)
 
     def click_search_button_in_dev_advanced_search_page(self):
@@ -2001,7 +2001,7 @@ class GlobalDevSearchPage(BasePage):
         return self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]/ul/li[3]').get_attribute('class')
 
     def click_search_button_in_user_search_page(self):
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
         sleep(3)
 
     def get_total_page_after_click_user_search_search(self):

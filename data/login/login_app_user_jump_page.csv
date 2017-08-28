@@ -1,13 +1,10 @@
-在线,/console?userId=46463&viewFlag=2
-离线,/console?userId=46463&viewFlag=3
-控制台,/console
-统计报表,/deviceReport/statisticalReport
+在线,/console?viewFlag=2
+离线,/console?viewFlag=3
 即将到期,/device/toDeviceManage?statusFlag=aboutToExpirate&lowerDevFlag=1
 已过期,/device/toDeviceManage?statusFlag=expirated&lowerDevFlag=1
-围栏,/safearea/geozonemap
+围栏,/safearea/geozonemap?flag=0
 地标设置,/safearea/geozonemap?flag=1
-设备管理,/device/toDeviceManage
-重点关注车辆,/console?userId=46463&viewFlag=4
+重点关注车辆,/console?viewFlag=4
 已激活,/device/toDeviceManage?statusFlag=actived&lowerDevFlag=1
 未激活,/device/toDeviceManage?statusFlag=inactive&lowerDevFlag=1
 指令管理,/custom/toTemplate?viewFlag=2

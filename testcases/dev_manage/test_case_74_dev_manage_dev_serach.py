@@ -30,7 +30,6 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         '''测试设备管理-设备搜索-by imei'''
         # 打开途强在线首页-登录页
         self.base_page.open_page()
-        self.base_page.click_chinese_button()
         # 登录
         self.log_in_base.log_in()
         # 点击进入设备管理
@@ -71,7 +70,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         else:
             for n in range(number):
                 platform_time = self.dev_manage_page.get_platform_time_after_search(n)
-                self.assertEqual(self.assert_text.account_center_page_expired_text(), platform_time)
+                self.assertEqual(self.assert_text.account_center_page_expired_text() + ' ', platform_time)
 
         # 过期状态选择用户即将过期，点击搜索
         self.dev_manage_page.choose_user_soon_expire_time()

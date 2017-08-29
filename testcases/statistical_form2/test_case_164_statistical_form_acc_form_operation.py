@@ -19,7 +19,6 @@ class TestCase164SportStatisticalAccFormOperation(unittest.TestCase):
         self.log_in_base = LogInBase(self.driver, self.base_url)
         # 打开页面，填写用户名、密码、点击登录
         self.base_page.open_page()
-        self.base_page.click_chinese_button()
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.log_in_base.log_in_jimitest()

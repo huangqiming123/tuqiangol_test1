@@ -29,7 +29,6 @@ class TestCase96DevManageCheckAccountInfo(unittest.TestCase):
     def test_case_dev_manage_check_account_info(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
-        self.base_page.click_chinese_button()
         # 登录
         self.log_in_base.log_in()
         # 点击进入设备管理
@@ -48,7 +47,10 @@ class TestCase96DevManageCheckAccountInfo(unittest.TestCase):
             get_user_phone_in_page = self.dev_manage_page.get_user_phone_in_page()
 
             self.assertEqual(get_account_info['nickname'], get_user_nickname_in_page)
-            self.assertEqual(get_account_info['phone'], get_user_phone_in_page)
+            if get_account_info['phone'] == None:
+                self.assertEqual('', get_user_phone_in_page)
+            else:
+                self.assertEqual(get_account_info['phone'], get_user_phone_in_page)
 
             type = self.assert_text.log_in_page_account_type(get_account_info['type'])
             self.assertEqual(get_user_type_in_page, type)
@@ -91,6 +93,9 @@ class TestCase96DevManageCheckAccountInfo(unittest.TestCase):
                 self.assertEqual(type, user_type)
                 self.assertEqual(user_name, get_user_nickname_in_page)
                 self.assertEqual(account, user_account)
-                self.assertEqual(user_phone, get_account_info['phone'])
+                if get_account_info['phone'] == None:
+                    self.assertEqual(user_phone, '')
+                else:
+                    self.assertEqual(user_phone, get_account_info['phone'])
                 self.driver.default_frame()
                 self.dev_manage_page.click_close_edit_button()

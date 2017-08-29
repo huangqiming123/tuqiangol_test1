@@ -36,7 +36,6 @@ class TestCase113UserSearchPagingFunction(unittest.TestCase):
     def test_user_search_paging_function(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
-        self.base_page.click_chinese_button()
         self.log_in_base.log_in()
         self.log_in_base.click_account_center_button()
         current_account = self.log_in_base.get_log_in_account()

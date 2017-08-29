@@ -1449,7 +1449,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_detele_dev_in_dev_tran(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[4]/a')
+        self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[6]/a')
         sleep(2)
         self.driver.default_frame()
 
@@ -1717,7 +1717,7 @@ class GlobalDevSearchPage(BasePage):
         return self.driver.get_text('c,layui-layer-content')
 
     def click_detele_dev_in_dev_transfer(self):
-        self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[4]/a')
+        self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[6]/a')
         sleep(2)
 
     def get_dev_number_in_dev_transfer_page(self):
@@ -1943,7 +1943,7 @@ class GlobalDevSearchPage(BasePage):
         sleep(2)
 
     def clcik_dev_imei_in_transfer_page(self):
-        self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[4]/a')
+        self.driver.click_element('x,//*[@id="sale_tbody_complexAllot"]/tr/td[6]/a')
         sleep(2)
 
     def click_user_to_transfer_dev_in_transfer_dev_page(self):
@@ -1963,7 +1963,7 @@ class GlobalDevSearchPage(BasePage):
         return user_account
 
     def get_dev_user_account_in_transfer_page(self):
-        return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr/td[3]')
+        return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr/td[5]')
 
     def get_second_imei_in_dev_advanced_page(self):
         return self.driver.get_text('x,//*[@id="complex_device_tbody"]/tr[2]/td[3]')
@@ -1978,7 +1978,7 @@ class GlobalDevSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="sale_count_complexAllot"]')
 
     def get_second_dev_user_account_in_transfer_page(self):
-        return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr[2]/td[3]')
+        return self.driver.get_text('x,//*[@id="sale_tbody_complexAllot"]/tr[2]/td[5]')
 
     def get_total_page_after_click_app_search(self):
         a = self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]').get_attribute('style')
@@ -2030,3 +2030,6 @@ class GlobalDevSearchPage(BasePage):
         new_paging = NewPaging(self.driver, self.base_url)
         total = new_paging.get_total_page('x,//*[@id="complex_paging_user"]')
         return total
+
+    def get_per_frist_number_in_dev_searchs(self):
+        return self.driver.get_text('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[1]')

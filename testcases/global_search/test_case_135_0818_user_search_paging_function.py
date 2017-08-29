@@ -38,7 +38,6 @@ class TestCase135UserSearchPagingFunction(unittest.TestCase):
     def test_user_search_paging_function(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
-        self.base_page.click_chinese_button()
         self.log_in_base.log_in()
         self.log_in_base.click_account_center_button()
         current_account = self.log_in_base.get_log_in_account()
@@ -75,10 +74,3 @@ class TestCase135UserSearchPagingFunction(unittest.TestCase):
                 self.global_dev_search_page.click_per_page(n)
                 get_per_first_number = self.global_dev_search_page.get_per_frist_number_in_user_search()
                 self.assertEqual(get_per_first_number, str(10 * (n + 1) - 9))
-
-            # 点击每页20条
-            list = [20, 30, 50, 100]
-            for m in list:
-                self.global_dev_search_page.click_per_page_number()
-                page_number = self.global_dev_search_page.get_page_number_in_user_search()
-                self.assertEqual(int(total[1] / m) + 1, page_number)

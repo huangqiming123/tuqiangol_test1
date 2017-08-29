@@ -37,7 +37,6 @@ class TestCase77DevManageDevOperationActiveAndStop(unittest.TestCase):
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
-        self.base_page.click_chinese_button()
         # 登录
         self.log_in_base.log_in()
 

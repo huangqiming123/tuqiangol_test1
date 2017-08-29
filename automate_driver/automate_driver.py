@@ -19,9 +19,9 @@ class AutomateDriver(object):
         # self.base_url = 'http://120.76.232.176:8180'
         # self.base_url = 'http://www.tuqiangol.com'
         # self.base_url = 'http://172.16.0.116:8680'
-        # self.base_url = 'http://tujunsat.jimicloud.com'
+        self.base_url = 'http://tujunsat.jimicloud.com'
         # self.base_url = 'http://www.skyzaixian.com:8680'
-        self.base_url = 'http://www.skyzaixian.com'
+        # self.base_url = 'http://www.skyzaixian.com'
 
     def navigate(self, url):
         self.driver.get(self.base_url + url)

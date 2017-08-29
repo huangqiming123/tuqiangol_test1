@@ -795,7 +795,7 @@ class GlobalAccountSearchPage(BasePage):
         sleep(2)
 
     def get_no_authority_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[31]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[32]/div[2]/iframe')
         a = self.driver.get_text("c,layui-layer-content")
         self.driver.default_frame()
         return a

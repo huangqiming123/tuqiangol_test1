@@ -33,7 +33,6 @@ class TestCase142SportStatisticalElectricReport(unittest.TestCase):
         self.base_page.open_page()
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
-        self.base_page.click_chinese_button()
         self.log_in_base.log_in_jimitest()
 
         # 登录之后点击控制台，然后点击设置

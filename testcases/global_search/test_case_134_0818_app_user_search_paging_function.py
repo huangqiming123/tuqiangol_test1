@@ -71,12 +71,5 @@ class TestCase134AppUserSearchPagingFunction(unittest.TestCase):
         else:
             for n in range(total_page[0]):
                 self.global_dev_search_page.click_per_page(n)
-                get_per_first_number = self.global_dev_search_page.get_per_frist_number_in_dev_search()
+                get_per_first_number = self.global_dev_search_page.get_per_frist_number_in_dev_searchs()
                 self.assertEqual(get_per_first_number, str(10 * (n + 1) - 9))
-
-            # 点击每页20条
-            list = [20, 30, 50, 100]
-            for m in list:
-                self.global_dev_search_page.click_per_page_number()
-                page_number = self.global_dev_search_page.get_page_number_in_dev_search()
-                self.assertEqual(int(total_page[1] / m) + 1, page_number)

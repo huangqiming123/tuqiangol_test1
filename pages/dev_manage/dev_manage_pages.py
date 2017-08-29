@@ -1354,10 +1354,10 @@ class DevManagePages(BasePage):
         return self.driver.get_element('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[1]').text
 
     def get_dev_type_in_sale(self):
-        return self.driver.get_element('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[2]').text
+        return self.driver.get_element('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[4]').text
 
     def get_dev_account_name(self):
-        return self.driver.get_text('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[3]')
+        return self.driver.get_text('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[5]')
 
     def click_sale_button(self):
         self.driver.click_element('x,//*[@id="device_sale_id"]/div[3]/div[2]/button[3]')
@@ -1367,7 +1367,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('c,layui-layer-content')
 
     def click_detele_dev(self):
-        self.driver.click_element('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[4]/a')
+        self.driver.click_element('x,//*[@id="sale_tbody_device_sale_id"]/tr/td[6]/a')
         sleep(2)
 
     def add_dev_to_sale(self, imei):
@@ -1757,11 +1757,11 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="sale_count_device_sale_id"]')
 
     def delete_one_dev_in_dev_list(self):
-        self.driver.click_element('x,//*[@id="sale_tbody_device_sale_id"]/tr[1]/td[4]/a')
+        self.driver.click_element('x,//*[@id="sale_tbody_device_sale_id"]/tr[1]/td[6]/a')
         sleep(2)
 
     def delete_one_devs_in_dev_list(self):
-        self.driver.click_element('x,//*[@id="sale_tbody_device_sale_id"]/tr[3]/td[4]/a')
+        self.driver.click_element('x,//*[@id="sale_tbody_device_sale_id"]/tr[3]/td[6]/a')
         sleep(2)
 
     def get_first_imei_in_list(self):
@@ -1788,7 +1788,7 @@ class DevManagePages(BasePage):
     def choose_user_soon_expire_time(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/div/ul/li[3]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/div/ul/li[4]')
         sleep(4)
 
     def get_user_time_after_search(self, n):

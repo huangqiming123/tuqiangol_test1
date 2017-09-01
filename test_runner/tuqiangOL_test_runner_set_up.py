@@ -60,7 +60,7 @@ def send_mail(file_new):
     msg['Subject'] = Header("自动化测试报告", 'utf-8')
 
     msg['From'] = "2091566123@qq.com"
-    msg['To'] = "mail_zhangao@126.com"
+    msg['To'] = "huangqiming@jimilab.net"
 
     # 邮件正文是MIMEText
     msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
@@ -84,7 +84,7 @@ def send_mail(file_new):
     smtp = smtplib.SMTP_SSL("smtp.qq.com", 465)
     smtp.set_debuglevel(1)
     smtp.login("2091566123@qq.com", "skmicdntzetlcdcg")
-    smtp.sendmail("2091566123@qq.com", "mail_zhangao@126.com", msg.as_string())
+    smtp.sendmail("2091566123@qq.com", "huangqiming@jimilab.net", msg.as_string())
     smtp.quit()
     print('email has send out !')
 

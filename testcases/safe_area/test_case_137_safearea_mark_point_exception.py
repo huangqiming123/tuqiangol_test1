@@ -9,7 +9,6 @@ class TestCase137SafeAreaMarkPointException(unittest.TestCase):
     """
     jimitest账号，标注点分页功能
     """
-
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

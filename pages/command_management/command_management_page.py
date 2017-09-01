@@ -867,7 +867,48 @@ class CommandManagementPage(BasePage):
         self.driver.click_element('x,//*[@id="js-issued-instruction"]')
         self.driver.wait(1)
 
-    # 获取对非正常状态下的设备下发指令后的文本
+    '''# 获取对非正常状态下的设备下发指令后的文本（测试环境）
+    def get_text_after_send_command_with_abnormal_dev(self, state):
+
+        if state == '停机':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201705261957003')
+        elif state == '用户到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201708041840015')
+        elif state == '平台到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
+        elif state == '不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '123456789000000')
+        elif state == '停机+用户到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '519876810593061')
+        elif state == '停机+平台到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
+        elif state == '停机+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '172522579800256')
+        elif state == '用户到期+平台到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '812351111124333')
+        elif state == '用户到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '867597011453278')
+        elif state == '平台到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201706291706001')
+        elif state == '停机+用户到期+平台到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '519876810593091')
+        elif state == '停机+用户到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201707311700003')
+        elif state == '停机+平台到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201706301005002')
+        elif state == '用户到期+平台到期+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '351234567890017')
+        elif state == '平台到期+用户到期+停机+不支持':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '312345678901244')
+
+        self.driver.click_element('x,//*[@id="execution-instruction"]/div/form/div/div/div[1]/div/div[3]/button[1]')
+        self.driver.wait(5)
+        text = self.driver.get_text('x,//*[@id="failedList"]/tr/td[3]')
+        print(text)
+        return text
+    '''
+
+    # 获取对非正常状态下的设备下发指令后的文本(线上环境)
     def get_text_after_send_command_with_abnormal_dev(self, state):
 
         if state == '停机':
@@ -879,7 +920,7 @@ class CommandManagementPage(BasePage):
         elif state == '不支持':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201708081742001')
         elif state == '停机+用户到期':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201707071043002')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201705250093923')
         elif state == '停机+平台到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
         elif state == '停机+不支持':
@@ -911,3 +952,46 @@ class CommandManagementPage(BasePage):
     def close_send_command_fail_frame(self):
         self.driver.click_element('x,/html/body/div[4]/span[1]/a')
         self.driver.wait()
+
+    def sql_for_manager(self, user_id, search_data):
+        sql = "SELECT c.id FROM `business_command_logs` c WHERE c.receiveDevice IN " \
+              "(SELECT e.imei FROM equipment_mostly e WHERE e.fullParentId LIKE '1," \
+              + user_id + "%' OR e.userId = '" + user_id + "') AND " \
+                                                           "(c.createdBy IN (SELECT e.userId FROM equipment_mostly e WHERE " \
+                                                           "e.fullParentId LIKE '1," + user_id + "%' OR e.userId = '" + user_id + "') OR " \
+                                                                                                                                  "(c.createdBy IN (SELECT e.bindUserId FROM equipment_mostly e WHERE e.imei IN " \
+                                                                                                                                  "(SELECT e.imei FROM equipment_mostly e WHERE (e.fullParentId LIKE '1," + user_id + "%' " \
+                                                                                                                                                                                                                      "OR e.userId = '" + user_id + "') AND bindUserID != NULL))))"
+
+        if search_data['batch'] == '':
+            sql = sql
+
+            if search_data['imei'] != '':
+                sql += " and c.receiveDevice = '%s'" % search_data['imei']
+
+            if search_data['statue'] == '5':
+                sql += " and c.isOffLine = '0'"
+
+            if search_data['statue'] == '6':
+                sql += " and c.isOffLine = '1'"
+
+            if search_data['statue'] != '5' and search_data['statue'] != '6' and search_data['statue'] != '':
+                sql += " and c.IsExecute = '%s'" % search_data['statue']
+
+        elif search_data['batch'] != '':
+            sql += " and c.taskId like '%" + search_data['batch'] + "%'"
+
+            if search_data['imei'] != '':
+                sql += " and c.receiveDevice = '%s'" % search_data['imei']
+
+            if search_data['statue'] == '5':
+                sql += " and c.isOffLine = '0'"
+
+            if search_data['statue'] == '6':
+                sql += " and c.isOffLine = '1'"
+
+            if search_data['statue'] != '5' and search_data['statue'] != '6' and search_data['statue'] != '':
+                sql += " and c.IsExecute = '%s'" % search_data['statue']
+
+        sql += ";"
+        return sql

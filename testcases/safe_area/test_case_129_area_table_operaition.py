@@ -10,6 +10,7 @@ from pages.safe_area.safe_area_search_sql import SafeAreaSearchSql
 
 
 class TestCase129AreaTableOperaition(unittest.TestCase):
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -63,7 +64,7 @@ class TestCase129AreaTableOperaition(unittest.TestCase):
         # 创建游标
         cursor = connect.cursor()
         # 断言2：用修改之前的名称在数据库搜索
-        get_total_count_sql = self.search_sql.search_sql_in_test_case_129(name_text)
+        get_total_count_sql = self.search_sql.search_sql_in_test_case_129('%s') % name_text
         print(get_total_count_sql)
         cursor.execute(get_total_count_sql)
         current_total = cursor.fetchall()
@@ -74,7 +75,7 @@ class TestCase129AreaTableOperaition(unittest.TestCase):
         total = len(total_list1)
         self.assertEqual(0, total)
         # 断言3：用修改之后的名称在数据库搜索
-        get_total_count_sql = self.search_sql.search_sql_in_test_case_129(name_after_save)
+        get_total_count_sql = self.search_sql.search_sql_in_test_case_129('%s') % name_after_save
         print(get_total_count_sql)
         cursor.execute(get_total_count_sql)
         current_total = cursor.fetchall()

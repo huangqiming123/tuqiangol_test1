@@ -10,7 +10,6 @@ class TestCase133SafeAreaSwitch(unittest.TestCase):
     """
     jimitest账号，区域预警----围栏、黑车地址库验证
     """
-
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

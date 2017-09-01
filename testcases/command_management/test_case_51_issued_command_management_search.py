@@ -90,10 +90,10 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
             # 建立游标
             cursor = connect.cursor()
             # 查询登录用户的ID 和 父ID
-            get_current_user_id = \
+            get_current_user_id_sql = \
                 "select o.userId,o.fullParentId from user_info o where o.account = '" + self.current_account + "';"
             # 执行
-            cursor.execute(get_current_user_id)
+            cursor.execute(get_current_user_id_sql)
             user = cursor.fetchall()
             for row1 in user:
                 user_info = {
@@ -101,9 +101,10 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
                     'fullparent': row1[1]
                 }
 
-                # 查询当前登录用户的全部下级
+                '''# 查询当前登录用户的全部下级
                 get_next_id_sql = "select userId from user_info where fullParentId like" + \
                                   "'" + user_info["fullparent"] + user_info["id"] + "%'" + ";"
+                print(get_next_id_sql)
                 # 执行sql脚本
                 cursor.execute(get_next_id_sql)
                 current_account = cursor.fetchall()
@@ -113,12 +114,12 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
                         current_account_list.append(range2)
 
                 # 查询APP用户
-                search_userId_sql = "SELECT sk.bindUserId FROM (SELECT * FROM " \
-                                    "equipment_mostly WHERE fullParentId LIKE '" + \
-                                    user_info["fullparent"] + user_info[
-                                        "id"] + "%" + "') as sk WHERE sk.bindUserId is " \
-                                                      "NOT NULL GROUP BY sk.bindUserId"
-                cursor.execute(search_userId_sql)
+                search_user_id_sql = "SELECT sk.bindUserId FROM (SELECT * FROM " \
+                                     "equipment_mostly WHERE fullParentId LIKE '" + \
+                                     user_info["fullparent"] + user_info[
+                                         "id"] + "%" + "') as sk WHERE sk.bindUserId is " \
+                                                       "NOT NULL GROUP BY sk.bindUserId"
+                cursor.execute(search_user_id_sql)
                 app_user_id = cursor.fetchall()
                 app_user_id_list = []
                 for i in app_user_id:
@@ -129,10 +130,10 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
                 # 合并平台与APP用户
                 for k in app_user_id_tuple:
                     current_account_list.append(k)
-                current_user_next = tuple(current_account_list)
+                current_user_next = tuple(current_account_list)'''
 
                 # 判断搜索条件
-                get_sql = self.command_management_page.search_sql(current_user_next, search_data)
+                get_sql = self.command_management_page.sql_for_manager(user_info['id'], search_data)
                 # 执行sql
                 print(get_sql)
                 cursor.execute(get_sql)
@@ -142,9 +143,11 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
                 for range1 in current_total:
                     for range2 in range1:
                         total_list.append(range2)
-                total = len(total_list)
+                total_num = len(total_list)
                 web_total = self.command_management_page.search_total_number_issued_command_management()
-                self.assertEqual(total, web_total)
+                print("网页搜索数量：'%s'" % web_total)
+                print("数据库搜索结果：'%s'" % total_num)
+                self.assertEqual(total_num, web_total)
 
             cursor.close()
             connect.close()

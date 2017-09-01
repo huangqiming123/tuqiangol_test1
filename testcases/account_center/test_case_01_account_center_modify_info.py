@@ -58,10 +58,11 @@ class TestCase009AccountCenterModifyInfo(unittest.TestCase):
             # 判断是否修改成功
             self.assertEqual(self.assert_text.account_center_page_operation_done(), save_status, "修改失败")
 
-            # 点击账户中心
+            #点击账户中心
             self.account_center_page_navi_bar.click_account_center_button()
             sleep(1)
             self.account_center_page_details.account_center_iframe()
+
 
             #获取详情中用户名跟电话
             name = self.account_center_page_navi_bar.usr_info_name()

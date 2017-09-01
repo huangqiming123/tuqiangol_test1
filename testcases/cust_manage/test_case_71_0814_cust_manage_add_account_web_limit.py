@@ -88,7 +88,7 @@ class TestCase710814CustManageAddAccountWebLimit(unittest.TestCase):
             # 退出登录
             self.account_center_page_navi_bar.usr_logout()
 
-            # 没有web登录权限验证
+            #没有web登录权限验证
             if web_status == False:
                 self.log_in_base.log_in_with_csv(info["account"], info["passwd"])
                 self.assertEqual(self.assert_text2.login_no_permissions(), self.login_page.get_exception_text(),
@@ -98,7 +98,7 @@ class TestCase710814CustManageAddAccountWebLimit(unittest.TestCase):
                 self.log_in_base.log_in_with_csv(info["account"], info["passwd"])
                 hello_usr = self.account_center_page_navi_bar.hello_user_account()
                 self.assertIn(info["account"], hello_usr, "登录成功后招呼栏账户名显示错误")
-                sleep(2)
+                sleep(1)
                 self.account_center_page_navi_bar.usr_logout()
 
 

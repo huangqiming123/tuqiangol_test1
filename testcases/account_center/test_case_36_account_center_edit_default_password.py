@@ -42,10 +42,10 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
     def test_edit_default_password_success(self):
         # 用户账号修改默认密码
 
-        data = ["有默认密码的账号012", "yonghuzh012", "13129561000", "233234@qq.com", "用户1", "测试公司名称", "888888", "jimi123"]
+        data = ["有默认密码的账号112", "yonghuzh112", "13129561000", "233234@qq.com", "用户1", "测试公司名称", "888888", "jimi123"]
         identity = ["销售", "代理商", "用户"]
 
-        for user in identity:
+        for user_type in identity:
             self.log_in_base.log_in()
             sleep(1)
             # 进入客户管理页面
@@ -58,7 +58,7 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
             # 选择客户类型、添加客户数据
             self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
             # self.cust_manage_basic_info_and_add_cust_page.acc_type_choose(data[0])
-            self.cust_manage_basic_info_and_add_cust_page.acc_type_choose(user)
+            self.cust_manage_basic_info_and_add_cust_page.acc_type_choose(user_type)
             self.cust_manage_basic_info_and_add_cust_page.add_default_password_acc(data[0], data[1],
                                                                                    data[2], data[3],
                                                                                    data[4], data[5])
@@ -91,8 +91,8 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
             # 编辑用户默认密码(jimi123)
             self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit(data[7])
             sleep(2)
-            # 获取密码修改成功
-            status = self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit_prompt()
+            # 获取密码修改成功   layui-layer-content
+            status = self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit_prompt(user_type)
             self.assertIn(self.assert_text2.home_page_edit_password_success(), status, "修改密码失败！")
             sleep(2)
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "修改默认密码后，没有返回到登录页")
@@ -109,7 +109,7 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
             sleep(2)
             # 验证角色类型
             type = self.cust_manage_lower_account_page.get_list_role_type()
-            self.assertIn(user, type, "角色类型不一致")
+            self.assertIn(user_type, type, "角色类型不一致")
 
             # 删除该新增客户
             self.cust_manage_lower_account_page.delete_acc()

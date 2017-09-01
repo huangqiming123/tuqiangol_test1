@@ -2361,7 +2361,7 @@ class StatisticalFormPage(BasePage):
         sleep(3)
 
         # 点击搜索
-        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[5]/button')
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[6]/button')
         sleep(5)
 
     def click_alarm_overview_list(self):

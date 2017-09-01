@@ -66,7 +66,8 @@ class TestCase15AccountCenterOverviewNextGuest(unittest.TestCase):
                 user_id = user_relation[0][0]
                 cur.close()
                 connect.close()
-                actual_url = self.base_url + '/customer/toSearch?userId=%s&viewFlag=4' % user_id
+                # actual_url = self.base_url + '/customer/toSearch?userId=%s&viewFlag=4' % user_id
+                actual_url = self.base_url + '/customer/toSearch?viewFlag=4'
                 self.assertEqual(expect_url, actual_url, '点击下级客户管理后，实际的url和期望的不一样！')
                 sleep(2)
                 expect_next = self.account_center_page_details.get_current_account_next()

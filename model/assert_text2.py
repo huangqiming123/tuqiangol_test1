@@ -43,7 +43,7 @@ class AssertText2(object):
     def account_center_memorization_default_options(self):
         return "记住默认选项"
 
-    # 记住默认选项
+    # 设备型号设置
     def account_center_facility_Model_number_title(self):
         return "设备型号设置"
 

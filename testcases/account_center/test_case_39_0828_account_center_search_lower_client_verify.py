@@ -10,10 +10,10 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
 
-# 账户中心-账户详情-销售给--搜索不同的账号
+# 账户中心-账户详情-下级客户--搜索验证
 # author:戴招利
 
-class TestCase37AccountCenterSearchDifferentAccountVerify(unittest.TestCase):
+class TestCase37AccountCenterSearchLowerClientVerify(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -32,8 +32,8 @@ class TestCase37AccountCenterSearchDifferentAccountVerify(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_search_different_account(self):
-        '''通过csv测试账户详情--销售给--查找不同账号功能'''
+    def test_search_lower_client(self):
+        '''通过csv测试账户详情--下级客户--查找不同账号功能'''
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
@@ -54,7 +54,7 @@ class TestCase37AccountCenterSearchDifferentAccountVerify(unittest.TestCase):
             self.account_center_page_details.fast_sales()
 
             # 查找账户
-            search_result = self.account_center_page_details.import_account_search(search_account["account"])
+            search_result = self.account_center_page_details.subordinate_account_search(search_account["account"])
             if type(search_result) is str:
                 self.assertIn(self.assert_text.account_center_page_no_data_text(), search_result, "搜索结果为暂无数据时，提示不一致")
 
@@ -68,14 +68,12 @@ class TestCase37AccountCenterSearchDifferentAccountVerify(unittest.TestCase):
         # 直接选择用户
         for user in range(8):
             self.account_center_page_details.fast_sales()
-            self.account_center_page_details.click_sell_user(user + 1)
+            self.account_center_page_details.click_list_subordinate_client(user + 1)
 
         # 验证enter键输入
         self.account_center_page_details.fast_sales()
-        self.account_center_page_details.search_user_click_enter("abc")
+        self.account_center_page_details.search_subordinate_client_click_enter("1234")
 
         self.driver.wait()
         self.driver.default_frame()
         csv_file.close()
-        # 退出登录
-        self.account_center_page_navi_bar.usr_logout()

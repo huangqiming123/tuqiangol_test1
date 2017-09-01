@@ -45,7 +45,6 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
     def test_cust_manage_edit_cust_search(self):
 
         account = ["jianyigezh1", "csjianyigezh2"]
-
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录
@@ -82,7 +81,7 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
         get_text = self.cust_manage_basic_info_and_add_cust_page.get_search_no_data_text()
         self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text)
 
-        # 不能作为上级的验证
+        #不能作为上级的验证
         for user in account:
             self.cust_manage_basic_info_and_add_cust_page.search_cust(user)
             self.cust_manage_basic_info_and_add_cust_page.click_search_user()

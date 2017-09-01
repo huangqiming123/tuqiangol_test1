@@ -300,6 +300,9 @@ class AccountCenterOperationLogPage(BasePageServer):
         elif search_data["type"] == '3':
             self.driver.click_element(
                 'x,/html/body/div/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[4]')
+        elif search_data["type"] == '4':
+            self.driver.click_element(
+                'x,/html/body/div/div[2]/div[1]/form/div[2]/span[1]/div/div/ul/li[5]')    
 
         self.driver.click_element(
             'x,/html/body/div/div[2]/div[1]/form/div[2]/span[2]/div/span[2]')

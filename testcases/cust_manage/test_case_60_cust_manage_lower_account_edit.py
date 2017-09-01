@@ -74,7 +74,7 @@ class TestCase60CustManageLowerAccountEdit(unittest.TestCase):
 
             # 选择客户类型
             sleep(3)
-            # self.driver.switch_to_frame('x,/html/body/div[6]/div[2]/iframe')
+            #self.driver.switch_to_frame('x,/html/body/div[6]/div[2]/iframe')
             self.driver.switch_to_iframe("x,/html/body/div[7]/div[2]/iframe")
             self.cust_manage_lower_account_page.acc_type_choose(edit_info["acc_type"])
             # 编辑信息

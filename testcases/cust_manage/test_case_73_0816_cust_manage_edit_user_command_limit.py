@@ -91,7 +91,7 @@ class TestCase730816CustManageEditUserCommandLimit(unittest.TestCase):
             command_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_command_page_module()
 
             # 获取中文，依次是：选中发送指令、本次查询全部发送指令、选中设置工作模式、本次查询全部设置工作模式
-            # 工作模式模板管理, 下发工作模式任务管理, 下发工作模式管理, 下发指令任务管理, 下发指令管理
+            #工作模式模板管理, 下发工作模式任务管理, 下发工作模式管理, 下发指令任务管理, 下发指令管理
             send_command = self.assert_text2.dev_manage_select_send_command()
             all_send_command = self.assert_text2.dev_manage_select_all_send_command()
             working_mode = self.assert_text2.dev_manage_setting_working_mode()
@@ -102,7 +102,7 @@ class TestCase730816CustManageEditUserCommandLimit(unittest.TestCase):
             task_manage = self.assert_text2.comm_manage_command_task_manage()
             comm_manager = self.assert_text.command_manager_page_issued_command_manager()
 
-            command_list = []
+            command_list =[]
             working_mode_list = []
             #循环设备管理页面的数据
             for b in facility_manage_data:
@@ -112,6 +112,7 @@ class TestCase730816CustManageEditUserCommandLimit(unittest.TestCase):
                 #选中设置工作模式 和 本次查询全部设置工作模式
                 elif working_mode in b or all_working_mode in b:
                     working_mode_list.append(b)
+
 
             #循环指令管理页面的数据
             for c in command_manage_data:

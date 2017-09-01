@@ -85,11 +85,17 @@ class TestCase57CustManageCheckAccount(unittest.TestCase):
 
             # 断言电话
             account_phone = self.cust_manage_basic_info_and_add_cust_page.get_account_phone()
-            self.assertEqual(current_user_info[1], account_phone)
+            if current_user_info[1] == None:
+                self.assertEqual("", account_phone, "手机号不一致")
+            else:
+                self.assertEqual(current_user_info[1], account_phone)
 
             # 断言昵称
             account_name = self.cust_manage_basic_info_and_add_cust_page.get_account_name()
-            self.assertEqual(current_user_info[2], account_name)
+            if current_user_info[2] == None:
+                self.assertEqual("", account_name, "昵称不一致")
+            else:
+                self.assertEqual(current_user_info[2], account_name)
 
             # 点击监控用户
             current_window = self.driver.get_current_window_handle()

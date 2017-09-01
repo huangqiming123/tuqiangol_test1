@@ -56,11 +56,13 @@ class TestCase12AccountCenterOverviewControl(unittest.TestCase):
 
                 # 获取菜单栏中控制台的class属性
                 get_console_class = self.account_center_page_navi_bar.get_console_class_value()
-                self.assertEqual('active', get_console_class)
+                # self.assertEqual('active', get_console_class)
+                self.assertIn('active', get_console_class)
 
                 # 获取全部的li里面的class属性
                 all_dev_class_value = self.account_center_page_navi_bar.get_all_dev_button_value()
                 self.assertEqual('active', all_dev_class_value)
+                #self.assertIn('active', all_dev_class_value)
 
                 # 查看控制台告警设置能否打开
                 self.account_center_page_navi_bar.click_alarm_button_in_console()

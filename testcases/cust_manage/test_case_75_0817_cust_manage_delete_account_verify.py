@@ -56,12 +56,12 @@ class TestCase7508171CustManagelDeleteAccountVerify(unittest.TestCase):
         self.cust_manage_lower_account_page.add_data_to_search_account(search_data)
         self.assertEqual(search_data["info"], self.cust_manage_lower_account_page.get_search_result_account(),
                          "搜索结果账号不一致")
-        # 确定删除
+        #确定删除
         self.cust_manage_lower_account_page.delete_acc()
         self.cust_manage_lower_account_page.delete_acc_ensure()
         self.assertEqual(self.assert_text2.cust_manage_exist_facility_cannot_del(),
                          self.cust_manage_lower_account_page.get_del_status(), "删除提示不一致")
-        sleep(2)
+        sleep(3)
 
         # 删除有下级客户的账号
         account = ["csscgndh"]

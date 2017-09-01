@@ -17,12 +17,13 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 点击进入客户管理页面
     def enter_cust_manage(self):
-        self.driver.wait()
+        self.driver.wait(2)
         self.driver.click_element("customer")
-        self.driver.wait(1)
+        self.driver.wait(2)
 
     def click_left_tree_current_user(self):
         self.driver.click_element("treeDemo_1_span")
+        # self.driver.execute_script(current_user)
         sleep(1)
 
     # 点击进入账户中心页面
@@ -282,7 +283,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="user_account"]')
 
     def click_monitoring_account_button(self):
-        # self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
+        #self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
         self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[1]/div/button')
         sleep(2)
 
@@ -421,10 +422,10 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="treeDemo2_cusTreeKey"]', param)
         self.driver.click_element('x,//*[@id="treeDemo2_cusTreeSearchBtn"]')
-        sleep(2)
+        sleep(3)
         self.driver.default_frame()
 
-    # 编辑-搜索--点击查询结果
+    #编辑-搜索--点击查询结果
     def click_search_user(self):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         self.driver.click_element("c,autocompleter")
@@ -572,12 +573,20 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.click_element("x,//*[@id='layui-layer1']/div[3]/a")
 
     # 修改密码后的提示
-    def user_default_password_edit_prompt(self):
-        prompt = self.driver.get_text("x,/html/body/div[7]/div[2]")
-        print(prompt)
-        self.driver.wait()
-        self.driver.click_element("x,/html/body/div[7]/div[3]/a")
-        return prompt
+    def user_default_password_edit_prompt(self, user_type=""):
+        if user_type == "用户":
+            prompt = self.driver.get_text("x,/html/body/div[4]/div[2]")
+            print(prompt)
+            self.driver.wait()
+            self.driver.click_element("x,/html/body/div[4]/div[3]/a")
+            return prompt
+        else:
+            prompt = self.driver.get_text("x,/html/body/div[7]/div[2]")
+            print(prompt)
+            self.driver.wait()
+            self.driver.click_element("x,/html/body/div[7]/div[3]/a")
+            return prompt
+
 
     # 点击设备管理页面的监控用户
     def click_dev_page_monitoring_account_button(self):
@@ -660,6 +669,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             print(working_mode_status)
             return working_mode_status
 
+
     #点设备管理
     def get_facility_manage_page_function_button(self):
         self.driver.click_element("device")
@@ -668,7 +678,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         button_list = []
         all_data = len(self.driver.get_elements("x,//*[@id='allDev']/div[2]/div[2]/div/div/button"))
         for a in range(all_data):
-            text = self.driver.get_text("x,//*[@id='allDev']/div[2]/div[2]/div/div/button[" + str(a + 1) + "]")
+            text = self.driver.get_text("x,//*[@id='allDev']/div[2]/div[2]/div/div/button[" + str(a + 1) +"]")
             button_list.append(text)
 
         print("设备管理页面", button_list)
@@ -676,13 +686,13 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     #获取指令管理页面模块
     def get_command_page_module(self):
-        self.driver.click_element("x,//*[@id='systemTools']/a[1]")
+        self.driver.click_element("x,/html/body/div[2]/header/div/div[2]/div[2]/div[2]/a[1]")
         sleep(2)
         #获取指令模块
         command_module = []
         all_module = len(self.driver.get_elements("x,//*[@id='insManage_ul']/li"))
         for a in range(all_module):
-            text = self.driver.get_text("x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[" + str(a + 1) + "]")
+            text = self.driver.get_text("x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[" + str(a + 1) +"]")
             command_module.append(text)
 
         print("指令管理页面", command_module)
@@ -697,10 +707,10 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         #获取查询结果
         list_data = len(self.driver.get_elements("x,/html/body/div/div/form/div/div/div[1]/div/ul/li"))
 
-        if list_data >= 1:
+        if list_data >=1:
             list = []
             for i in range(list_data):
-                text = self.driver.get_text("x,/html/body/div/div/form/div/div/div[1]/div/ul/li[" + str(i + 1) + "]")
+                text = self.driver.get_text("x,/html/body/div/div/form/div/div/div[1]/div/ul/li[" + str(i + 1) +"]")
                 list.append(text)
             self.driver.default_frame()
             print(list)

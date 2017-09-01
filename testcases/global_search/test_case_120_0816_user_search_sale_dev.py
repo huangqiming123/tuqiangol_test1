@@ -102,12 +102,12 @@ class TestCase120UserSearchSaleDev(unittest.TestCase):
         failure_statues = self.global_account_search_page.get_failure_statue_text_in_user_detail()
         self.assertEqual(self.assert_text.dev_page_fail_text(), failure_statues)
         failure_reason = self.global_account_search_page.get_failure_reason_text_in_user_detail()
-        self.assertEqual(self.assert_text.dev_page_inexistence_text(), failure_reason)
+        self.assertEqual(self.assert_text.dev_page_repetition_text(), failure_reason)
 
         second_failure_statues = self.global_account_search_page.get_second_failure_statue_text_in_user_detail()
         self.assertEqual(self.assert_text.dev_page_fail_text(), second_failure_statues)
         second_failure_reason = self.global_account_search_page.get_second_failure_reason_text_in_user_detail()
-        self.assertEqual(self.assert_text.dev_page_repetition_text(), second_failure_reason)
+        self.assertEqual(self.assert_text.dev_page_inexistence_text(), second_failure_reason)
 
         # 关闭失败的弹窗
         self.global_account_search_page.close_failure_windows()

@@ -15,9 +15,9 @@ class AutomateDriverServer(object):
         self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
                                        desired_capabilities=DesiredCapabilities.FIREFOX)
         # self.base_url = 'http://120.76.232.176:8180'
-        # self.base_url = 'http://www.tuqiangol.com'
+        self.base_url = 'http://www.tuqiangol.com'
         # self.base_url = 'http://172.16.0.116:8680'
-        self.base_url = 'http://tujunsat.jimicloud.com'
+        # self.base_url = 'http://tujunsat.jimicloud.com'
         # self.base_url = 'http://www.skyzaixian.com:8680'
         # self.base_url = 'http://www.skyzaixian.com'
 

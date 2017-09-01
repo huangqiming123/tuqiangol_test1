@@ -13,7 +13,7 @@ from pages.cust_manage.cust_manage_basic_info_and_add_cust_page import CustManag
 from pages.login.login_page import LoginPage
 
 
-# 账户中心-账户详情--跳转页面后验证登录账户的数据
+# 账户中心-账户详情--跳转页面后，验证设备管理页面登录账户的数据
 # author:戴招利
 class TestCase34AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
     def setUp(self):
@@ -38,8 +38,7 @@ class TestCase34AccountCenterJumpPageAccountDataVerify(unittest.TestCase):
 
     def test_jump_page_account_data_verify(self):
         """ 跳转页面后验证登录账户的数据是否正确"""
-        # data = ["库存", "总进货数", "即将到期", "已过期", "设备管理", "已激活", "未激活"]
-        data = ["即将到期", "已过期", "已激活", "未激活"]
+        data = ["库存", "总进货数", "即将到期", "已过期", "设备管理", "已激活", "未激活"]
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()

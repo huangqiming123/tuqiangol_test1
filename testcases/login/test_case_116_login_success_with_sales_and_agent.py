@@ -76,18 +76,26 @@ class TestCase116LoginSuccessWithSalesAndAgent(unittest.TestCase):
             for range1 in get_account_user_info:
                 for range2 in range1:
                     current_user_info.append(range2)
-            print(current_user_info)
+            print("当前号", current_user_info)
             type = self.assert_text.log_in_page_account_type(current_user_info[0])
             usr_info_type = self.account_center_page_navi_bar.usr_info_type()
             self.assertEqual(type, usr_info_type, "账户总览左下方显示的客户类型错误")
 
+            # 用户名
             usr_info_name = self.account_center_page_navi_bar.usr_info_name()
             expect_usr_info_name = current_user_info[3]
-            self.assertEqual(expect_usr_info_name, usr_info_name, "账户总览左下方显示的用户名错误")
+            if expect_usr_info_name == None:
+                self.assertEqual("", usr_info_name, "账户总览左下方显示的用户名错误")
+            else:
+                self.assertEqual(expect_usr_info_name, usr_info_name, "账户总览左下方显示的用户名错误")
 
+            #电话
             usr_info_phone = self.account_center_page_navi_bar.usr_info_phone()
             expect_usr_info_phone = current_user_info[1]
-            self.assertEqual(expect_usr_info_phone, usr_info_phone, "账户总览左下方显示的客户电话错误")
+            if expect_usr_info_phone == None:
+                self.assertEqual("", usr_info_phone, "账户总览左下方显示的客户电话错误")
+            else:
+                self.assertEqual(expect_usr_info_phone, usr_info_phone, "账户总览左下方显示的客户电话错误")
 
             get_up_account_info_sql = "SELECT o.account,o.contact,o.phone FROM user_info o WHERE o.userId = '" + \
                                       current_user_info[2] + "';"
@@ -97,7 +105,7 @@ class TestCase116LoginSuccessWithSalesAndAgent(unittest.TestCase):
             for range1 in get_up_user_info:
                 for range2 in range1:
                     up_user_info.append(range2)
-            print("up_user_info", up_user_info)
+            print("服务商", up_user_info)
 
             usr_service_provider = self.account_center_page_navi_bar.sales_usr_service_provider()
             expect_usr_service_provider = up_user_info[0]

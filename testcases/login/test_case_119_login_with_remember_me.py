@@ -1,4 +1,6 @@
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -34,6 +36,8 @@ class TestCase119LoginWithRememberMe(unittest.TestCase):
         actual_url = self.driver.get_current_url()
         expect_url = self.base_url + "/customer/toAccountCenter"
         self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")
+
+        sleep(1)
         # 成功退出系统
         self.account_center_page_navi_bar.usr_logout()
         # 判断是否成功退出系统

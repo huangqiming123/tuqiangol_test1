@@ -117,7 +117,7 @@ class LoginPage(BasePageServer):
         self.account_input(account)
         self.password_input(password)
         self.login_button_click()
-        self.driver.wait()
+        self.driver.wait(3)
 
     def get_text_after_forget_password(self):
         # 获取点击找回密码后的文本内容
@@ -212,48 +212,58 @@ class LoginPage(BasePageServer):
 
     # 首页页面跳转
     def login_page_account_overview(self, link_name):
-        if link_name == '在线':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[1]/a")
+        if link_name == '库存':
+            self.driver.click_element("x,//*[@id='creat-0']/div[1]/a")
+            self.driver.wait(1)
+        if link_name == '总进货数':
+            self.driver.click_element("x,//*[@id='creat-0']/div[2]/a")
+            self.driver.wait(1)
+        elif link_name == '在线':
+            self.driver.click_element("x,//*[@id='creat-0']/div[3]/a")
             self.driver.wait(1)
         elif link_name == '离线':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[2]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[4]/a")
             self.driver.wait(1)
         elif link_name == '即将到期':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[4]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[5]/a")
             self.driver.wait(1)
         elif link_name == '已过期':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[5]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[6]/a")
             self.driver.wait(1)
         elif link_name == '已激活':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[9]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[7]/a")
             self.driver.wait(1)
         elif link_name == '未激活':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[10]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[8]/a")
             self.driver.wait(1)
         elif link_name == '告警车辆':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[8]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[9]/a")
             self.driver.wait(1)
         elif link_name == '重点关注车辆':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[11]/a")
+            self.driver.click_element("x,//*[@id='creat-0']/div[10]/a")
             self.driver.wait(1)
+
         elif link_name == '控制台':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[1]/a")
+            self.driver.click_element("x,//*[@id='creat-1']/div[1]/a")
             self.driver.wait(1)
         elif link_name == '统计报表':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[2]/a")
+            self.driver.click_element("x,//*[@id='creat-1']/div[2]/a")
             self.driver.wait(1)
         elif link_name == '围栏':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[3]/a")
+            self.driver.click_element("x,//*[@id='creat-1']/div[3]/a")
+            self.driver.wait(1)
+        elif link_name == '下级客户管理':
+            self.driver.click_element("x,//*[@id='creat-1']/div[4]/a")
             self.driver.wait(1)
         elif link_name == '设备管理':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div/div[5]/a")
+            self.driver.click_element("x,//*[@id='creat-1']/div[5]/a")
             self.driver.wait(1)
         elif link_name == '指令管理':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[6]/a")
+            self.driver.click_element("x,//*[@id='creat-1']/div[6]/a")
             self.driver.wait(1)
         elif link_name == '地标设置':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[7]/a")
+            self.driver.click_element("x,//*[@id='creat-1']/div[7]/a")
             self.driver.wait(1)
         elif link_name == '告警':
-            self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div/div[1]/div[12]/a")
+            self.driver.click_element("x,//*[@id='creat-1']/div[8]/a")
             self.driver.wait(1)

@@ -50,7 +50,7 @@ class TestCase124LoginSuccessWithphAppUser(unittest.TestCase):
             # 输入用户信息进行登录
             self.login_page.user_login(user_to_login["account"], user_to_login["passwd"])
             # 点首页
-            # self.login_page.click_home_page()
+            self.login_page.click_home_page()
             # 判断登录成功后跳转页面是否正确
             actual_url = self.driver.get_current_url()
             expect_url = self.base_url + "/nomalUserCenter"
@@ -62,7 +62,6 @@ class TestCase124LoginSuccessWithphAppUser(unittest.TestCase):
             self.assertEqual(expect_usr, hello_usr, "登录成功后招呼栏账户名显示错误")
 
             # 验证模块
-
             module = self.account_center_page_navi_bar.get_page_module()
             for m in range(len(module)):
                 self.assertIn(data[m], module[m], "用户账号登录，模块显示错误")
@@ -95,7 +94,8 @@ class TestCase124LoginSuccessWithphAppUser(unittest.TestCase):
             cursor.close()
             connect.close()
             # 断言
-            self.assertEqual(service_number - 1, service_total)
+            # self.assertEqual(service_number - 1, service_total)
+            self.assertEqual(service_number, service_total)
 
             # 成功退出系统
             sleep(2)

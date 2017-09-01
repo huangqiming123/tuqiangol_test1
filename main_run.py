@@ -50,7 +50,7 @@ def run_09():
     sleep(10)
 
 
-start_time = datetime.datetime(2017, 8, 10, 2, 10, 0)
+start_time = datetime.datetime(2017, 9, 1, 2, 10, 0)
 while datetime.datetime.now() < start_time:
     sleep(5)
 
@@ -84,5 +84,5 @@ for t in thread_list:
 
 # run_09()
 # 运行后自动关机
-sleep(10)
+# sleep(10)
 # os.system('shutdown -s -f')

@@ -52,7 +52,7 @@ class TestCase010AccountCenterModifyPasswd(unittest.TestCase):
                                                                                  user_to_modify_passwd["new_passwd"])
             # 判断是否修改成功
             # self.assertEqual("密码修改成功", modify_status, "密码修改失败")
-            # 点击确定7y
+            # 点击确定
             self.account_center_page_navi_bar.modify_passwd_success_comfrim()
             # 判断点击确定后是否关闭弹框并回到登录页
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "修改成功后页面跳转错误")

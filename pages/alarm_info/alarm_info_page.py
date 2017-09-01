@@ -519,7 +519,7 @@ class AlarmInfoPage(BasePage):
             self.driver.operate_input_element('x,//*[@id="endTime_alarmReport"]', data['end_time'])
         sleep(3)
         # 点击选择报警类型
-        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[5]/button')
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[6]/button')
         sleep(5)
         self.driver.default_frame()
 

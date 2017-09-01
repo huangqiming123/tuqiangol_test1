@@ -63,7 +63,7 @@ class TestCase720815CustManageAddUserCommandLimit(unittest.TestCase):
 
             # 进入客户管理页面
             self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
-
+            sleep(1)
             self.cust_manage_basic_info_and_add_cust_page.add_acc()
             self.cust_manage_basic_info_and_add_cust_page.close_add_account()
 
@@ -85,19 +85,18 @@ class TestCase720815CustManageAddUserCommandLimit(unittest.TestCase):
             sleep(1)
             # 退出登录
             self.account_center_page_navi_bar.usr_logout()
-            sleep(1)
 
             self.log_in_base.log_in_with_csv(info["account"], info["passwd"])
             hello_usr = self.account_center_page_navi_bar.hello_user_account()
             self.assertIn(info["account"], hello_usr, "登录成功后招呼栏账户名显示错误")
             sleep(1)
 
-            # 进入设备管理/指令管理页面，获取功能按钮
+            #进入设备管理/指令管理页面，获取功能按钮
             facility_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_facility_manage_page_function_button()
             sleep(2)
             command_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_command_page_module()
 
-            # 获取中文，依次是：选中发送指令、本次查询全部发送指令、选中设置工作模式、本次查询全部设置工作模式
+            #获取中文，依次是：选中发送指令、本次查询全部发送指令、选中设置工作模式、本次查询全部设置工作模式
             #工作模式模板管理, 下发工作模式任务管理, 下发工作模式管理, 下发指令任务管理, 下发指令管理
             send_command = self.assert_text2.dev_manage_select_send_command()
             all_send_command = self.assert_text2.dev_manage_select_all_send_command()
@@ -119,6 +118,7 @@ class TestCase720815CustManageAddUserCommandLimit(unittest.TestCase):
                 #选中设置工作模式 和 本次查询全部设置工作模式
                 elif working_mode in b or all_working_mode in b:
                     working_mode_list.append(b)
+
 
             #循环指令管理页面的数据
             for c in command_manage_data:

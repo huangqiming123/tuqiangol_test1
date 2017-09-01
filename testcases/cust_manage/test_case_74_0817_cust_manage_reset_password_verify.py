@@ -65,7 +65,7 @@ class TestCase7408171CustManagelResetPasswordVerify(unittest.TestCase):
         sleep(1)
         self.account_center_page_navi_bar.usr_logout()
 
-        # 再次登录，重置密码
+        #再次登录，重置密码
         self.log_in_base.log_in()
         self.driver.wait(1)
         # 进入客户管理页面

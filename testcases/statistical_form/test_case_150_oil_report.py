@@ -1,4 +1,3 @@
-import csv
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver
@@ -104,7 +103,7 @@ class TestCase150OilReport(unittest.TestCase):
             i = 0
             for m in range(page_number - 1):
                 # 获取imei
-                i = i + 1
+                i += 1
                 # 点击每一页
                 self.statistical_form_page.click_per_page_in_oil_page(m)
                 per_page_number = self.statistical_form_page.get_per_page_number_in_oil_report()

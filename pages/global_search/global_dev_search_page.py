@@ -562,7 +562,7 @@ class GlobalDevSearchPage(BasePage):
 
     def add_data_to_search_complex(self, search_data):
         # 增加数据去搜索高级
-        self.driver.switch_to_frame('x,/html/body/div[14]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         # 点击选择用户
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[2]/div/div[1]/span/button')
         sleep(1)
@@ -691,7 +691,7 @@ class GlobalDevSearchPage(BasePage):
 
     def click_senior_search_button(self):
         self.swith_to_search_frame()
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div/span/div/button[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[2]')
         sleep(2)
         self.driver.default_frame()
 

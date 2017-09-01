@@ -37,7 +37,7 @@ class TestCase380821AccountCenterPageMemorizationDefaultOption(unittest.TestCase
         self.driver.quit_browser()
 
     def test_memorization_default_option(self):
-        '''通过csv测试账户详情-查找不同账号功能'''
+        '''记住默认选项功能'''
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
@@ -69,17 +69,35 @@ class TestCase380821AccountCenterPageMemorizationDefaultOption(unittest.TestCase
             self.driver.default_frame()
             self.account_center_page_navi_bar.usr_logout()
 
-            # 验证
+            # 验证记住默认选项页面是否正确
             self.log_in_base.log_in_with_csv("dzltest", "jimi123")
             self.driver.wait(1)
             self.account_center_page_navi_bar.click_account_center_button()
-            if data["page"] == "账户总览":
+            if data["page"] == "账户总览" or data["page"] == "":
                 self.assertEqual(self.assert_text2.account_center_download_app_text(),
-                                 self.account_center_page_details.get_download_app_hint(), "提示不一致")
-            else:
+                                 self.account_center_page_details.get_download_app_hint(), "提示不一致,不是在账户总览页")
+            elif data["page"] == "快速销售":
                 self.assertEqual(self.assert_text2.account_center_fast_sale_typeface(),
-                                 self.account_center_page_details.get_fast_sale_typeface(), "字体不是快速销售")
+                                 self.account_center_page_details.get_fast_sale_typeface(), "提示不一致,不是在快速销售页")
+
+        # 账号中心设置记住，在快速销售页退出，验证
+        self.account_center_page_details.account_center_iframe()
+        self.account_center_page_details.click_account_pandect()
+        self.account_center_page_details.click_memorization_default_option()
+        state = self.account_center_page_details.get_memorization_default_option_state()
+        self.assertEqual(True, state["overview_state"], "账户总览记住默认选项状态与期望不一致")
+        self.assertEqual(False, state["sell_state"], "快速销售记住默认选项状态与期望不一致")
+        self.account_center_page_details.fast_sales()
+        self.driver.default_frame()
+
+        self.account_center_page_navi_bar.usr_logout()
+        self.log_in_base.log_in_with_csv("dzltest", "jimi123")
+        sleep(1)
+        self.account_center_page_navi_bar.click_account_center_button()
+        self.assertEqual(self.assert_text2.account_center_download_app_text(),
+                         self.account_center_page_details.get_download_app_hint(), "提示不一致，不是在账户总览页")
+
 
         csv_file.close()
         # 退出登录
-        # self.account_center_page_navi_bar.usr_logout()
+        self.account_center_page_navi_bar.usr_logout()

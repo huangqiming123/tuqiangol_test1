@@ -25,3 +25,6 @@ try:
     hanoi(n, 'A', 'B', 'C')
 except ValueError:
     print("please input a integer n(n > 0)!")
+
+import pygame
+from pygame import display, draw

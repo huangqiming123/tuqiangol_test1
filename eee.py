@@ -1,12 +1,5 @@
-class myException(Exception):
-    def __init__(self, massage):
-        Exception.__init__(self)
-        self.massage = massage
+import re
 
-
-a = input('please input a number:')
-if int(a) > 10:
-    try:
-        raise myException('my exception is a raised')
-    except myException:
-        print(myException)
+a = re.search(r'\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b',
+              '255.101.250.0')
+print(a)

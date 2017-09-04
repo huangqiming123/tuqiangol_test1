@@ -32,7 +32,6 @@ def new_report(testreport):
 
     # List[-1]取到的就是最新生成的文件或文件夹
     file_new = os.path.join(testreport, lists[-1])
-    print(file_new)
     return file_new
 
 

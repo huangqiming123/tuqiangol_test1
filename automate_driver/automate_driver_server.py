@@ -202,10 +202,10 @@ class AutomateDriverServer(object):
         el = self.get_element(selector)
         self.driver.switch_to.frame(el)
 
-    '''def switch_to_iframe(self, selector):
+    def switch_to_iframe(self, selector):
         # 进入iframe
         el = self.get_element(selector)
-        self.driver.switch_to.frame(el)'''
+        self.driver.switch_to.frame(el)
 
     def default_frame(self):
         # 退出frame

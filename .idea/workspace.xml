@@ -4,7 +4,8 @@
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/read_excel_demo.xls" afterPath="$PROJECT_DIR$/model/read_excel_demo.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/connect_sql.py" afterPath="$PROJECT_DIR$/model/connect_sql.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_127_login_forget_password_exception.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_127_login_forget_password_exception.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="tuqiangOL_test_runner_login.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5642458">
-              <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.6439169">
+              <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -87,7 +88,6 @@
         <option value="$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_150_oil_report.py" />
         <option value="$PROJECT_DIR$/testcases/global_search/test_case_107_glob_search_user_operation.py" />
-        <option value="$PROJECT_DIR$/model/connect_sql.py" />
         <option value="$PROJECT_DIR$/testcases/global_search/test_case_120_0816_user_search_sale_dev.py" />
         <option value="$PROJECT_DIR$/main_run.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
@@ -111,6 +111,7 @@
         <option value="$PROJECT_DIR$/test_runner/test_runner_path.py" />
         <option value="$PROJECT_DIR$/model/send_mail.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" />
+        <option value="$PROJECT_DIR$/model/connect_sql.py" />
       </list>
     </option>
   </component>
@@ -174,7 +175,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test_runner" />
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automate_driver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -212,29 +245,7 @@
       <recent name="E:\git\tianyanzaixian_tuqiang\testcases" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tuqiangOL_test_runner_login">
-    <configuration default="false" name="Unittests in TestCase171MovingOverviewStatistical (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form2/test_case_171_moving_overview_statistical.py" />
-      <option name="CLASS_NAME" value="TestCase171MovingOverviewStatistical" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests in TestCase127LoginForgetPasswordException">
     <configuration default="false" name="Unittests in TestCase164SportStatisticalAccFormOperation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -311,6 +322,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase127LoginForgetPasswordException" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/login" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangOL" />
+      <option name="SCRIPT_NAME" value="E:\git\tuqiangol_test\testcases\login\# test_case_127_login_forget_password_exception.py" />
+      <option name="CLASS_NAME" value="TestCase127LoginForgetPasswordException" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -436,19 +469,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase171MovingOverviewStatistical (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase164SportStatisticalAccFormOperation" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase163SportStatisticalPakingNotShutDownOperation.test_case_sport_statistical_parking_not_shut_down_operation" />
-      <item index="3" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="4" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_login" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase164SportStatisticalAccFormOperation" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase163SportStatisticalPakingNotShutDownOperation.test_case_sport_statistical_parking_not_shut_down_operation" />
+      <item index="2" class="java.lang.String" itemvalue="Python.eee" />
+      <item index="3" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_login" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase127LoginForgetPasswordException" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_login" />
-        <item index="1" class="java.lang.String" itemvalue="Python.eee" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase163SportStatisticalPakingNotShutDownOperation.test_case_sport_statistical_parking_not_shut_down_operation" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase164SportStatisticalAccFormOperation" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase171MovingOverviewStatistical (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase127LoginForgetPasswordException" />
+        <item index="1" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_login" />
+        <item index="2" class="java.lang.String" itemvalue="Python.eee" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase163SportStatisticalPakingNotShutDownOperation.test_case_sport_statistical_parking_not_shut_down_operation" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase164SportStatisticalAccFormOperation" />
       </list>
     </recent_temporary>
   </component>
@@ -462,12 +495,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00076" summary="修改代码">
-      <created>1501145202134</created>
-      <option name="number" value="00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1501145202135</updated>
     </task>
     <task id="LOCAL-00077" summary="修改代码">
       <created>1501145320387</created>
@@ -757,15 +784,21 @@
       <option name="project" value="LOCAL" />
       <updated>1504573826390</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="修改代码">
+      <created>1504574837000</created>
+      <option name="number" value="00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1504574837000</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase151StaticReport_test_case_static_report - 2017.09.01 at 14h 06m 13s.xml">
-      <configuration name="Unittest TestCase151StaticReport.test_case_static_report" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase163SportStatisticalPakingNotShutDownOperation_test_case_sport_statistical_parking_not_shut_down_operation - 2017.09.01 at 17h 59m 01s.xml">
       <configuration name="Unittest TestCase163SportStatisticalPakingNotShutDownOperation.test_case_sport_statistical_parking_not_shut_down_operation" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestCase127LoginForgetPasswordException - 2017.09.05 at 09h 42m 55s.xml">
+      <configuration name="Unittests in TestCase127LoginForgetPasswordException" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_TestCase153OilReportOperation - 2017.09.01 at 14h 07m 56s.xml">
       <configuration name="Unittests in TestCase153OilReportOperation" configurationId="tests" />
@@ -811,18 +844,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21103896" sideWeight="0.49841937" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21536796" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2391775" sideWeight="0.5015806" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26623377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21753247" sideWeight="0.5015806" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26623377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -868,13 +901,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python34/Lib/site-packages/pygame/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.369863">
-          <caret line="135" column="26" selection-start-line="135" selection-start-column="26" selection-end-line="135" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/pygame/draw.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.5570776">
@@ -1113,13 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.389049">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_runner/html_test_runner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1134,13 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/connect_sql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.389049">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/assert_text.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="13.746398">
@@ -1152,13 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68005955">
           <caret line="204" column="41" selection-start-line="204" selection-start-column="41" selection-end-line="204" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7589286">
-          <caret line="212" column="17" selection-start-line="212" selection-start-column="17" selection-end-line="212" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1219,10 +1224,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/login/# test_case_127_login_forget_password_exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7348703">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/connect_sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.610951">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40059346">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22255193">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5642458">
-          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.6439169">
+          <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

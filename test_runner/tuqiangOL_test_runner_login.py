@@ -80,7 +80,7 @@ def send_mail(file_new):
 
     smtp = smtplib.SMTP_SSL("smtp.qq.com", 465)
     smtp.set_debuglevel(1)
-    smtp.login("646642287@qq.com", "zhangao6466642287")
+    smtp.login("646642287@qq.com", "vtetgtsfhygcbehg")
     smtp.sendmail("646642287@qq.com", send_mails(), msg.as_string())
     smtp.quit()
     print('email has send out !')

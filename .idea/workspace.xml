@@ -4,16 +4,7 @@
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/read_excel_demo.xls" afterPath="$PROJECT_DIR$/model/read_excel_demo.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_117_login_success_with_ordinary_user.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_117_login_success_with_ordinary_user.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_118_login_with_logout_dismiss.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_118_login_with_logout_dismiss.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_119_login_with_remember_me.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_119_login_with_remember_me.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_120_login_forget_passwd.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_120_login_forget_passwd.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_121_login_change_language.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_121_login_change_language.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_122_login_enter_third_website.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_122_login_enter_third_website.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_123_login_success_with_virtual_user.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_123_login_success_with_virtual_user.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_124_login_success_with_app_user.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_124_login_success_with_app_user.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_125_login_app_user_jump_page.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_125_login_app_user_jump_page.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/login/test_case_126_login_exception.py" afterPath="$PROJECT_DIR$/testcases/login/# test_case_126_login_exception.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,24 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tuqiangOL_test_runner_login.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tuqiangOL_test_runner_login.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="105" column="41" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.5642458">
+              <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new_paging.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/base/new_paging.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82477677">
-              <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -127,9 +108,9 @@
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_total.py" />
         <option value="$PROJECT_DIR$/automate_driver/automate_driver.py" />
         <option value="$PROJECT_DIR$/automate_driver/automate_driver_server.py" />
-        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" />
         <option value="$PROJECT_DIR$/test_runner/test_runner_path.py" />
         <option value="$PROJECT_DIR$/model/send_mail.py" />
+        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" />
       </list>
     </option>
   </component>
@@ -193,7 +174,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testcases" />
+              <option name="myItemId" value="test_runner" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -481,12 +462,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00074" summary="修改代码">
-      <created>1501039270855</created>
-      <option name="number" value="00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1501039270855</updated>
     </task>
     <task id="LOCAL-00075" summary="修改代码">
       <created>1501053475106</created>
@@ -776,7 +751,13 @@
       <option name="project" value="LOCAL" />
       <updated>1504509620895</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="修改代码">
+      <created>1504572686350</created>
+      <option name="number" value="00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1504572686351</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -824,8 +805,9 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20600632" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19283456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24242425" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21103896" sideWeight="0.49841937" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21536796" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -833,7 +815,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1230,21 +1211,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py">
+    <entry file="file://$PROJECT_DIR$/pages/base/new_paging.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="41" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.4905028">
+          <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/base/new_paging.py">
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82477677">
-          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
-          <folding />
+        <state vertical-scroll-proportion="0.5642458">
+          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -94,9 +94,7 @@ class StatisticalFormPage(BasePage):
             self.driver.operate_input_element('x,//*[@id="endTime_sport"]', search_data['end_time'])
 
         self.driver.click_element('x,//*[@id="runForm"]/div[4]/button')
-        sleep(10)
-
-        self.driver.default_frame()
+        sleep(5)
         '''
         # 选择要搜索的日期去搜索运动总览
         if search_data['search_user'] != '':

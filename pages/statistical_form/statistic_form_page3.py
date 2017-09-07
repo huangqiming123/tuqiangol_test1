@@ -167,3 +167,39 @@ class StatisticFormPage3(BasePage):
 
     def get_at_day_time_in_tracel_report_form_with_day(self, n):
         return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[5]' % str(n + 1))
+
+    def get_total_page_in_over_speed_form(self):
+        a = self.driver.get_element('x,//*[@id="paging-overspeed"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_page('x,//*[@id="paging-overspeed"]')
+            return total
+        else:
+            return 0
+
+    def get_over_speed_report_form_begin_time(self):
+        return self.driver.get_element('x,//*[@id="startTime_overspeed"]').get_attribute('value') + ':00'
+
+    def get_over_speed_report_form_end_time(self):
+        return self.driver.get_element('x,//*[@id="endTime_overspeed"]').get_attribute('value') + ':00'
+
+    def get_total_number_per_page_in_over_speed_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="overspeed-tbody"]/tr')))
+
+    def get_imei_in_over_speed_form(self, n):
+        return self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[3]' % str(n + 1))
+
+    def get_speed_in_over_speed_form(self, n):
+        return int(self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[6]' % str(n + 1)))
+
+    def get_addr_in_over_speed_form(self, n):
+        return self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[7]' % str(n + 1))
+
+    def get_time_in_over_speed_form(self, n):
+        return self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[5]' % str(n + 1))
+
+    def get_lat_in_over_speed_form(self, n):
+        return float(self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[8]' % str(n + 1)).split('/')[1])
+
+    def get_lng_in_over_speed_form(self, n):
+        return float(self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[8]' % str(n + 1)).split('/')[0])

@@ -499,7 +499,6 @@ class StatisticalFormPage(BasePage):
         self.driver.click_element('x,//*[@id="OverspeedFrom"]/div[2]/div[3]/button')
         sleep(5)
 
-        self.driver.default_frame()
         # 添加数据去搜索超速
         '''
         if search_data['search_user'] != '':

@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>登录模块测试报告</title>
+    <meta name="generator" content="HtmlTestRunner 0.8.4"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <style type="text/css" media="screen">
+
+        /* -- css div popup ------------------------------------------------------------------------ */
+        .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        background-color: #99CCFF;
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 10pt;
+        width: 500px;
+        }
+
+        /* -- report ------------------------------------------------------------------------ */
+
+        #show_detail_line .label {
+        font-size: 85%;
+        cursor: pointer;
+        }
+
+        #show_detail_line {
+        margin: 2em auto 1em auto;
+        }
+
+        #total_row { font-weight: bold; }
+        .hiddenRow { display: none; }
+        .testcase { margin-left: 2em; }
+
+    </style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+-->
+</script>
+
+<div class="container">
+    <div class='heading'>
+        <h1>登录模块测试报告</h1>
+        <p><strong>Start Time:</strong> 2017-09-04 13:55:20</p>
+        <p><strong>Duration:</strong> 0:02:33.119758</p>
+        <p><strong>Status:</strong> <span class="text text-success">Pass <strong>1</strong></span> <span
+                class="text text-warning">Error <strong>16</strong></span></p>
+
+        <p class='description'>用例执行情况：</p>
+    </div>
+
+
+    <p id='show_detail_line'>
+        <span class="label label-primary" onclick="showCase(0)">Summary</span>
+        <span class="label label-danger" onclick="showCase(1)">Failed</span>
+        <span class="label label-default" onclick="showCase(2)">All</span>
+    </p>
+    <table id='result_table' class="table">
+        <thead>
+        <tr id='header_row'>
+            <th>Test Group/Test case
+            </td>
+            <th>Count
+            </td>
+            <th>Pass
+            </td>
+            <th>Fail
+            </td>
+            <th>Error
+            </td>
+            <th>View
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr class='text text-warning'>
+            <td>test_case_116_login_success_with_sales_and_agent.TestCase116LoginSuccessWithSalesAndAgent</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c1',1)">Detail</a></td>
+        </tr>
+
+        <tr id='ft1.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_sales_and_agent_login_by_csv: 通过csv测试销售和代理商账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft1.1')">
+                    error</a>
+
+                <div id='div_ft1.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft1.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_116_login_success_with_sales_and_agent.py", line 31, in setUp
+    self.driver.clear_cookies()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 38, in clear_cookies
+    self.driver.delete_all_cookies()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 655, in delete_all_cookies
+    self.execute(Command.DELETE_ALL_COOKIES)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: c93030fc-7379-4af8-a977-b7cc7f7b96a1
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_117_login_success_with_ordinary_user.TestCase117LoginSuccessWithOrdinaryUser</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c2',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt2.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_ordinary_user_login_by_csv: 通过csv测试普通用户账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt2.1')">
+                    pass</a>
+
+                <div id='div_pt2.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt2.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt2.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_118_login_with_logout_dismiss.TestCase118LoginWithLogoutDismiss</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c3',2)">Detail</a></td>
+        </tr>
+
+        <tr id='ft3.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_and_logout_dismiss: 测试成功登录的用户取消退出</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft3.1')">
+                    error</a>
+
+                <div id='div_ft3.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft3.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft3.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_118_login_with_logout_dismiss.py", line 31, in test_login_and_logout_dismiss
+    self.base_page.open_page()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\pages\base\base_page_server.py", line 17, in open_page
+    self.driver.navigate("/")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 25, in navigate
+    self.driver.get(self.base_url + url)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 248, in get
+    self.execute(Command.GET, {'url': url})
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: d9317f22-7a78-495f-8389-1be0e9c320d1
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr id='ft3.2' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_and_logout_dismiss: 测试成功登录的用户取消退出</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft3.2')">
+                    error</a>
+
+                <div id='div_ft3.2' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft3.2').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft3.2: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_118_login_with_logout_dismiss.py", line 26, in tearDown
+    self.driver.quit_browser()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 32, in quit_browser
+    self.driver.quit()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 520, in quit
+    self.execute(Command.QUIT)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: d9317f22-7a78-495f-8389-1be0e9c320d1
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_119_login_with_remember_me.TestCase119LoginWithRememberMe</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c4',2)">Detail</a></td>
+        </tr>
+
+        <tr id='ft4.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_with_remember_me: 测试登录时勾选记住我</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft4.1')">
+                    error</a>
+
+                <div id='div_ft4.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft4.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft4.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_119_login_with_remember_me.py", line 31, in test_login_with_remember_me
+    self.base_page.open_page()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\pages\base\base_page_server.py", line 17, in open_page
+    self.driver.navigate("/")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 25, in navigate
+    self.driver.get(self.base_url + url)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 248, in get
+    self.execute(Command.GET, {'url': url})
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 00c1b5b5-6ddb-4d21-8c0d-d2f361ca6420
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr id='ft4.2' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_with_remember_me: 测试登录时勾选记住我</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft4.2')">
+                    error</a>
+
+                <div id='div_ft4.2' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft4.2').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft4.2: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_119_login_with_remember_me.py", line 26, in tearDown
+    self.driver.quit_browser()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 32, in quit_browser
+    self.driver.quit()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 520, in quit
+    self.execute(Command.QUIT)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 00c1b5b5-6ddb-4d21-8c0d-d2f361ca6420
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_120_login_forget_passwd.TestCase120LoginForgetPasswd</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c5',2)">Detail</a></td>
+        </tr>
+
+        <tr id='ft5.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_forget_passwd: 测试忘记密码功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft5.1')">
+                    error</a>
+
+                <div id='div_ft5.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft5.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft5.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_120_login_forget_passwd.py", line 31, in test_login_forget_passwd
+    self.base_page.open_page()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\pages\base\base_page_server.py", line 17, in open_page
+    self.driver.navigate("/")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 25, in navigate
+    self.driver.get(self.base_url + url)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 248, in get
+    self.execute(Command.GET, {'url': url})
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 3560c26e-41ce-4f5e-a65f-6249ebf0fb28
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr id='ft5.2' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_forget_passwd: 测试忘记密码功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft5.2')">
+                    error</a>
+
+                <div id='div_ft5.2' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft5.2').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft5.2: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_120_login_forget_passwd.py", line 26, in tearDown
+    self.driver.quit_browser()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 32, in quit_browser
+    self.driver.quit()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 520, in quit
+    self.execute(Command.QUIT)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 3560c26e-41ce-4f5e-a65f-6249ebf0fb28
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_121_login_change_language.TestCase121LoginChangeLanguage</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c6',2)">Detail</a></td>
+        </tr>
+
+        <tr id='ft6.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_change_language: 测试登录切换语言</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft6.1')">
+                    error</a>
+
+                <div id='div_ft6.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft6.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft6.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_121_login_change_language.py", line 31, in test_change_language
+    self.base_page.open_page()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\pages\base\base_page_server.py", line 17, in open_page
+    self.driver.navigate("/")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 25, in navigate
+    self.driver.get(self.base_url + url)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 248, in get
+    self.execute(Command.GET, {'url': url})
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7858dbd2-d60e-413a-8a3f-d747c0a03921
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr id='ft6.2' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_change_language: 测试登录切换语言</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft6.2')">
+                    error</a>
+
+                <div id='div_ft6.2' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft6.2').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft6.2: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_121_login_change_language.py", line 24, in tearDown
+    self.driver.quit_browser()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 32, in quit_browser
+    self.driver.quit()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 520, in quit
+    self.execute(Command.QUIT)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7858dbd2-d60e-413a-8a3f-d747c0a03921
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_122_login_enter_third_website.TestCase122LoginEnterThirdWebsite</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c7',2)">Detail</a></td>
+        </tr>
+
+        <tr id='ft7.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_third_website: 测试登录页底部第三方链接</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft7.1')">
+                    error</a>
+
+                <div id='div_ft7.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft7.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft7.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_122_login_enter_third_website.py", line 28, in test_third_website
+    self.base_page.open_page()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\pages\base\base_page_server.py", line 17, in open_page
+    self.driver.navigate("/")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 25, in navigate
+    self.driver.get(self.base_url + url)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 248, in get
+    self.execute(Command.GET, {'url': url})
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 31b203a1-d76b-4e3a-84ab-129d772a7584
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr id='ft7.2' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_third_website: 测试登录页底部第三方链接</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft7.2')">
+                    error</a>
+
+                <div id='div_ft7.2' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft7.2').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft7.2: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_122_login_enter_third_website.py", line 20, in tearDown
+    self.driver.quit_browser()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 32, in quit_browser
+    self.driver.quit()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 520, in quit
+    self.execute(Command.QUIT)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 31b203a1-d76b-4e3a-84ab-129d772a7584
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_123_login_success_with_virtual_user.TestCase123LoginSuccessWithVirtualUser</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c8',1)">Detail</a></td>
+        </tr>
+
+        <tr id='ft8.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_virtual_user_login: 通过csv测试虚拟账户成功登录</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft8.1')">
+                    error</a>
+
+                <div id='div_ft8.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft8.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft8.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_123_login_success_with_virtual_user.py", line 30, in setUp
+    self.driver.clear_cookies()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 38, in clear_cookies
+    self.driver.delete_all_cookies()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 655, in delete_all_cookies
+    self.execute(Command.DELETE_ALL_COOKIES)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: d938fd15-93cf-4ca8-8291-8898596c7661
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_124_login_success_with_app_user.TestCase124LoginSuccessWithphAppUser</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c9',1)">Detail</a></td>
+        </tr>
+
+        <tr id='ft9.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_app_user_login_by_csv: 通过csv测试app账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft9.1')">
+                    error</a>
+
+                <div id='div_ft9.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft9.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft9.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_124_login_success_with_app_user.py", line 31, in setUp
+    self.driver.clear_cookies()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 38, in clear_cookies
+    self.driver.delete_all_cookies()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 655, in delete_all_cookies
+    self.execute(Command.DELETE_ALL_COOKIES)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 4aad9294-47de-4d63-b31c-0b1c21ee9045
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_125_login_app_user_jump_page.TestCase125AppUserJumpPage</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c10',1)">Detail</a></td>
+        </tr>
+
+        <tr id='ft10.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_app_account_jump_page: 通过csv测试app首页跳转页面</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft10.1')">
+                    error</a>
+
+                <div id='div_ft10.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft10.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft10.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_125_login_app_user_jump_page.py", line 27, in setUp
+    self.driver.clear_cookies()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 38, in clear_cookies
+    self.driver.delete_all_cookies()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 655, in delete_all_cookies
+    self.execute(Command.DELETE_ALL_COOKIES)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 26e2732d-e5ff-412d-aa5a-06cf5e414023
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_126_login_exception.TestCase126LoginException</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c11',1)">Detail</a></td>
+        </tr>
+
+        <tr id='ft11.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_case_login_exception</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft11.1')">
+                    error</a>
+
+                <div id='div_ft11.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft11.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft11.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_126_login_exception.py", line 25, in setUp
+    self.driver.clear_cookies()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 38, in clear_cookies
+    self.driver.delete_all_cookies()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 655, in delete_all_cookies
+    self.execute(Command.DELETE_ALL_COOKIES)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 48471efe-3579-400c-9617-271093467436
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-warning'>
+            <td>test_case_127_login_forget_password_exception.TestCase127LoginForgetPasswordException</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c12',1)">Detail</a></td>
+        </tr>
+
+        <tr id='ft12.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_login_forget_passwd: 测试忘记密码---异常操作提示</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft12.1')">
+                    error</a>
+
+                <div id='div_ft12.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft12.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft12.1: [' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_127_login_forget_password_exception.py", line 20, in setUp
+    self.driver.clear_cookies()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 38, in clear_cookies
+    self.driver.delete_all_cookies()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 655, in delete_all_cookies
+    self.execute(Command.DELETE_ALL_COOKIES)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 36cadf55-7913-46e8-b0e8-0ac0bcb799e8
+Stacktrace:
+
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        </tbody>
+        <tfoot>
+        <tr id='total_row'>
+            <td>Total</td>
+            <td>17</td>
+            <td class="text text-success">1</td>
+            <td class="text text-danger">0</td>
+            <td class="text text-warning">16</td>
+            <td>&nbsp;</td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <div id='ending'>&nbsp;</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>登录模块测试报告</title>
+    <meta name="generator" content="HtmlTestRunner 0.8.4"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <style type="text/css" media="screen">
+
+        /* -- css div popup ------------------------------------------------------------------------ */
+        .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        background-color: #99CCFF;
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 10pt;
+        width: 500px;
+        }
+
+        /* -- report ------------------------------------------------------------------------ */
+
+        #show_detail_line .label {
+        font-size: 85%;
+        cursor: pointer;
+        }
+
+        #show_detail_line {
+        margin: 2em auto 1em auto;
+        }
+
+        #total_row { font-weight: bold; }
+        .hiddenRow { display: none; }
+        .testcase { margin-left: 2em; }
+
+    </style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+-->
+</script>
+
+<div class="container">
+    <div class='heading'>
+        <h1>登录模块测试报告</h1>
+        <p><strong>Start Time:</strong> 2017-09-04 15:20:35</p>
+        <p><strong>Duration:</strong> 0:15:59.525882</p>
+        <p><strong>Status:</strong> <span class="text text-success">Pass <strong>12</strong></span></p>
+
+        <p class='description'>用例执行情况：</p>
+    </div>
+
+
+    <p id='show_detail_line'>
+        <span class="label label-primary" onclick="showCase(0)">Summary</span>
+        <span class="label label-danger" onclick="showCase(1)">Failed</span>
+        <span class="label label-default" onclick="showCase(2)">All</span>
+    </p>
+    <table id='result_table' class="table">
+        <thead>
+        <tr id='header_row'>
+            <th>Test Group/Test case
+            </td>
+            <th>Count
+            </td>
+            <th>Pass
+            </td>
+            <th>Fail
+            </td>
+            <th>Error
+            </td>
+            <th>View
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr class='text text-success'>
+            <td>test_case_116_login_success_with_sales_and_agent.TestCase116LoginSuccessWithSalesAndAgent</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c1',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt1.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_sales_and_agent_login_by_csv: 通过csv测试销售和代理商账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt1.1')">
+                    pass</a>
+
+                <div id='div_pt1.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt1.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt1.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_117_login_success_with_ordinary_user.TestCase117LoginSuccessWithOrdinaryUser</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c2',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt2.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_ordinary_user_login_by_csv: 通过csv测试普通用户账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt2.1')">
+                    pass</a>
+
+                <div id='div_pt2.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt2.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt2.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_118_login_with_logout_dismiss.TestCase118LoginWithLogoutDismiss</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c3',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt3.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_login_and_logout_dismiss: 测试成功登录的用户取消退出</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt3.1')">
+                    pass</a>
+
+                <div id='div_pt3.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt3.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt3.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_119_login_with_remember_me.TestCase119LoginWithRememberMe</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c4',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt4.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_login_with_remember_me: 测试登录时勾选记住我</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt4.1')">
+                    pass</a>
+
+                <div id='div_pt4.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt4.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt4.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_120_login_forget_passwd.TestCase120LoginForgetPasswd</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c5',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt5.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_login_forget_passwd: 测试忘记密码功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt5.1')">
+                    pass</a>
+
+                <div id='div_pt5.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt5.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt5.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_121_login_change_language.TestCase121LoginChangeLanguage</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c6',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt6.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_change_language: 测试登录切换语言</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt6.1')">
+                    pass</a>
+
+                <div id='div_pt6.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt6.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt6.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_122_login_enter_third_website.TestCase122LoginEnterThirdWebsite</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c7',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt7.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_third_website: 测试登录页底部第三方链接</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt7.1')">
+                    pass</a>
+
+                <div id='div_pt7.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt7.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt7.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_123_login_success_with_virtual_user.TestCase123LoginSuccessWithVirtualUser</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c8',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt8.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_virtual_user_login: 通过csv测试虚拟账户成功登录</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt8.1')">
+                    pass</a>
+
+                <div id='div_pt8.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt8.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt8.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+[]
+select i.type,i.phone,i.parentId,i.nickName from user_info i inner join user_fictitious f on i.userid = f.parent where f.account='xnzhdl勿删'
+[11, '324fssaf4', '12875', '戴zl123###']
+['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_124_login_success_with_app_user.TestCase124LoginSuccessWithphAppUser</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c9',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt9.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_app_user_login_by_csv: 通过csv测试app账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt9.1')">
+                    pass</a>
+
+                <div id='div_pt9.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt9.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt9.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+[]
+select i.type,i.phone,i.parentId,i.nickName from user_info i inner join user_fictitious f on i.userid = f.parent where f.account='xnzhdl勿删'
+[11, '324fssaf4', '12875', '戴zl123###']
+['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+服务商个数 0
+['166250']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+服务商个数 1
+['46463']
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_125_login_app_user_jump_page.TestCase125AppUserJumpPage</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c10',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt10.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_app_account_jump_page: 通过csv测试app首页跳转页面</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt10.1')">
+                    pass</a>
+
+                <div id='div_pt10.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt10.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt10.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+[]
+select i.type,i.phone,i.parentId,i.nickName from user_info i inner join user_fictitious f on i.userid = f.parent where f.account='xnzhdl勿删'
+[11, '324fssaf4', '12875', '戴zl123###']
+['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+服务商个数 0
+['166250']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+服务商个数 1
+['46463']
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_126_login_exception.TestCase126LoginException</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c11',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt11.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_case_login_exception</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt11.1')">
+                    pass</a>
+
+                <div id='div_pt11.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt11.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt11.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+[]
+select i.type,i.phone,i.parentId,i.nickName from user_info i inner join user_fictitious f on i.userid = f.parent where f.account='xnzhdl勿删'
+[11, '324fssaf4', '12875', '戴zl123###']
+['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+服务商个数 0
+['166250']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+服务商个数 1
+['46463']
+您确定要退出系统吗?
+您确定要退出系统吗?
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-success'>
+            <td>test_case_127_login_forget_password_exception.TestCase127LoginForgetPasswordException</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c12',1)">Detail</a></td>
+        </tr>
+
+        <tr id='pt12.1' class='hiddenRow'>
+            <td class='text text-success'>
+                <div class='testcase'>test_login_forget_passwd: 测试忘记密码---异常操作提示</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_pt12.1')">
+                    pass</a>
+
+                <div id='div_pt12.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_pt12.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+pt12.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '23234234$1']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '', '12900', '全中文账号勿删']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [8, '', '12900', '纯下划线7']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+['40409']
+['web_autotest', '自动化', '13825036666']
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+您确定要退出系统吗?
+[]
+select i.type,i.phone,i.parentId,i.nickName from user_info i inner join user_fictitious f on i.userid = f.parent where f.account='xnzhdl勿删'
+[11, '324fssaf4', '12875', '戴zl123###']
+['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+服务商个数 0
+['166250']
+您确定要退出系统吗?
+[' 首页', ' 设备管理', ' 操控台', ' 统计报表', ' 安全区域', ' 设备分布']
+服务商个数 1
+['46463']
+您确定要退出系统吗?
+您确定要退出系统吗?
+ 
+ 
+ 
+ 
+请输入账号 请输入账号
+请输入该账号绑定的电话 请输入该账号绑定的电话
+账号不存在 账号不存在
+请输入该账号绑定的电话 请输入该账号绑定的电话
+该帐号未设置邮箱，请联系上级用户。 该帐号未设置邮箱，请联系上级用户。
+成功 成功
+ 
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        </tbody>
+        <tfoot>
+        <tr id='total_row'>
+            <td>Total</td>
+            <td>12</td>
+            <td class="text text-success">12</td>
+            <td class="text text-danger">0</td>
+            <td class="text text-warning">0</td>
+            <td>&nbsp;</td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <div id='ending'>&nbsp;</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>登录模块测试报告</title>
+    <meta name="generator" content="HtmlTestRunner 0.8.4"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <style type="text/css" media="screen">
+
+        /* -- css div popup ------------------------------------------------------------------------ */
+        .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        background-color: #99CCFF;
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 10pt;
+        width: 500px;
+        }
+
+        /* -- report ------------------------------------------------------------------------ */
+
+        #show_detail_line .label {
+        font-size: 85%;
+        cursor: pointer;
+        }
+
+        #show_detail_line {
+        margin: 2em auto 1em auto;
+        }
+
+        #total_row { font-weight: bold; }
+        .hiddenRow { display: none; }
+        .testcase { margin-left: 2em; }
+
+    </style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+-->
+</script>
+
+<div class="container">
+    <div class='heading'>
+        <h1>登录模块测试报告</h1>
+        <p><strong>Start Time:</strong> 2017-09-05 10:55:34</p>
+        <p><strong>Duration:</strong> 0:02:06.854256</p>
+        <p><strong>Status:</strong> <span class="text text-danger">Failure <strong>1</strong></span> <span
+                class="text text-warning">Error <strong>1</strong></span></p>
+
+        <p class='description'>用例执行情况：</p>
+    </div>
+
+
+    <p id='show_detail_line'>
+        <span class="label label-primary" onclick="showCase(0)">Summary</span>
+        <span class="label label-danger" onclick="showCase(1)">Failed</span>
+        <span class="label label-default" onclick="showCase(2)">All</span>
+    </p>
+    <table id='result_table' class="table">
+        <thead>
+        <tr id='header_row'>
+            <th>Test Group/Test case
+            </td>
+            <th>Count
+            </td>
+            <th>Pass
+            </td>
+            <th>Fail
+            </td>
+            <th>Error
+            </td>
+            <th>View
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr class='text text-warning'>
+            <td>test_case_116_login_success_with_sales_and_agent.TestCase116LoginSuccessWithSalesAndAgent</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c1',1)">Detail</a></td>
+        </tr>
+
+        <tr id='ft1.1' class='text text-success'>
+            <td class='text text-warning'>
+                <div class='testcase'>test_sales_and_agent_login_by_csv: 通过csv测试销售和代理商账户成功登录和成功退出功能</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft1.1')">
+                    error</a>
+
+                <div id='div_ft1.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft1.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft1.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_116_login_success_with_sales_and_agent.py", line 57, in test_sales_and_agent_login_by_csv
+    self.account_center_page_navi_bar.click_account_center_button()
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\pages\account_center\account_center_navi_bar_page.py", line 555, in click_account_center_button
+    self.driver.click_element("x,//*[@id='accountCenter']")
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 103, in click_element
+    element = self.get_element(selector)
+  File "C:\Windows\system32\config\systemprofile\.jenkins\workspace\tuqiang\automate_driver\automate_driver_server.py", line 64, in get_element
+    element = self.driver.find_element_by_xpath(select_value)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//*[@id='accountCenter']"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'liusf-PC', ip: '172.16.0.107', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: unknown
+Screenshot: available via screen
+Stacktrace:
+    at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4975919020721879866webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement (file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4975919020721879866webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h (file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4975919020721879866webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4975919020721879866webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt; (file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4975919020721879866webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        <tr class='text text-danger'>
+            <td>test_case_127_login_forget_password_exception.TestCase127LoginForgetPasswordException</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td><a class="btn btn-xs btn-primary" href="javascript:showClassDetail('c2',1)">Detail</a></td>
+        </tr>
+
+        <tr id='ft2.1' class='text text-success'>
+            <td class='text text-danger'>
+                <div class='testcase'>test_login_forget_passwd: 测试忘记密码---异常操作提示</div>
+            </td>
+            <td colspan='5' align='center'>
+
+                <!--css div popup start-->
+                <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();'
+                   href="javascript:showTestDetail('div_ft2.1')">
+                    fail</a>
+
+                <div id='div_ft2.1' class="popup_window">
+                    <div style='text-align: right;cursor:pointer'>
+                        <a onfocus='this.blur();'
+                           onclick="document.getElementById('div_ft2.1').style.display = 'none' ">
+                            [x]</a>
+                    </div>
+        <pre>
+        
+ft2.1: 当前号 [8, '', '12900', '各种组合']
+服务商 ['dzltest', None, '324fssaf4']
+您确定要退出系统吗?
+当前号 [11, '13825036666', '12875', 'test']
+服务商 ['jimitest', '测试', '13900003222']
+您确定要退出系统吗?
+ 
+ 
+ 
+Traceback (most recent call last):
+  File "E:\git\tuqiangol_test\testcases\login\test_case_127_login_forget_password_exception.py", line 51, in test_login_forget_passwd
+    self.assertEqual(data["text"], all_prompt["text_prompt"], "弹框提示不一致")
+AssertionError: '' != '验证码错误'
++ 验证码错误 : 弹框提示不一致
+
+
+        </pre>
+                </div>
+                <!--css div popup end-->
+
+            </td>
+        </tr>
+
+        </tbody>
+        <tfoot>
+        <tr id='total_row'>
+            <td>Total</td>
+            <td>2</td>
+            <td class="text text-success">0</td>
+            <td class="text text-danger">1</td>
+            <td class="text text-warning">1</td>
+            <td>&nbsp;</td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <div id='ending'>&nbsp;</div>
+</div>
+
+</body>
+</html>

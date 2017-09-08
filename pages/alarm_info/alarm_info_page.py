@@ -521,7 +521,6 @@ class AlarmInfoPage(BasePage):
         # 点击选择报警类型
         self.driver.click_element('x,//*[@id="alarmForm"]/div/div[6]/button')
         sleep(5)
-        self.driver.default_frame()
 
     def actual_text_after_click_alarm_detail(self):
         # 点击告警之后，返回页面左上角的文本
@@ -598,7 +597,6 @@ class AlarmInfoPage(BasePage):
         sleep(2)
         self.driver.click_element('x,//*[@id="getAlertInfo_btn"]')
         sleep(5)
-        self.driver.default_frame()
 
     def get_search_total(self):
         '''

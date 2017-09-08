@@ -3408,3 +3408,41 @@ class SearchSql(StatisticalFormPage):
 
     def get_today_end_times(self):
         return (datetime.datetime.now() - datetime.timedelta(hours=1)).strftime("%Y-%m-%d %H") + ':00'
+
+    def search_current_account_user_id(self, param):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        get_user_id_sql = "select u.userId from user_info u where u.account = '%s';" % param
+        cursor.execute(get_user_id_sql)
+        user_id_list = cursor.fetchall()
+        user_id = user_id_list[0][0]
+        cursor.close()
+        connect.close()
+        return user_id
+
+    def search_current_account_user_full_id(self, param):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        get_user_id_sql = "select u.userId,u.fullParentId from user_info u where u.account = '%s';" % param
+        cursor.execute(get_user_id_sql)
+        user_id_list = cursor.fetchall()
+        full_id = user_id_list[0][1] + user_id_list[0][0]
+        cursor.close()
+        connect.close()
+        return full_id
+
+    def get_imei_account_is_band(self, imei):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        get_user_id_sql = "SELECT m.bindUserId FROM equipment_mostly m WHERE m.imei = '%s';" % imei
+        cursor.execute(get_user_id_sql)
+        user_id_list = cursor.fetchall()
+        cursor.close()
+        connect.close()
+        if user_id_list[0][0] == None:
+            return 1
+        else:
+            return 2

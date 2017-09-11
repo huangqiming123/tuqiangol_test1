@@ -1944,3 +1944,6 @@ class DevManagePages(BasePage):
 
     def get_per_imei_in_issued_work_type_page(self, m):
         return self.driver.get_text('x,//*[@id="checkTbody"]/tr[%s]/td[1]' % str(m + 1))
+
+    def click(self):
+        self.driver.click_element('x,//*[@id="deviceTableHeader"]/thead/tr/th[5]')

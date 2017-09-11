@@ -93,10 +93,10 @@ def send_mail(file_new):
 if __name__ == '__main__':
     # 指定测试用例目录
     test_runner_path = TestRunnerPath()
-    test_dir_account_center = test_runner_path.test_cases_path('cust_manage')
+    test_dir_account_center = test_runner_path.test_cases_path('statistical_form3')
 
     # 指定测试报告目录
-    test_report_account_center = test_runner_path.test_report_path('cust_manage')
+    test_report_account_center = test_runner_path.test_report_path('statistical_form3')
 
     discover_account_center = unittest.defaultTestLoader.discover(test_dir_account_center, pattern='test*.py')
 
@@ -111,7 +111,7 @@ if __name__ == '__main__':
 
     # 定义测试报告，stream指定测试报告文件，file定义测试报告标题，description定义测试报告副标题
     runner_account_center = HtmlTestRunner(stream=fp_account_center,
-                                           title='客户管理模块测试报告',
+                                           title='统计报表模块测试报告',
                                            description='用例执行情况：')
 
     runner_account_center.run(discover_account_center)  # 运行测试用例

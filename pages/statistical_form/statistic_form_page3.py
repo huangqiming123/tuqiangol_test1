@@ -633,3 +633,18 @@ class StatisticFormPage3(BasePage):
             return -1
         elif a == '已读':
             return 0
+
+    def get_web_total_in_mile_form_with_search_mile(self):
+        return self.driver.get_text('x,//*[@id="allmileages"]')
+
+    def get_web_total_in_mile_form_with_search_day(self):
+        return self.driver.get_text('x,//*[@id="allmileages-day"]')
+
+    def get_web_total_in_tracel_form_with_search_mile(self):
+        return self.driver.get_text('x,//*[@id="allmileages"]')
+
+    def get_web_total_time_in_tracel_form_with_search_mile(self):
+        return self.driver.get_text('x,//*[@id="allmileageshours"]')
+
+    def get_web_total_in_tracel_form_with_search_day(self):
+        return self.driver.get_text('x,//*[@id="allmileages-day"]')

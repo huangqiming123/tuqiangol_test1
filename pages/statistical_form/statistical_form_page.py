@@ -1699,7 +1699,7 @@ class StatisticalFormPage(BasePage):
         sleep(1)
         self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
-        sleep(2)
+        sleep(3)
         self.driver.click_element('c,autocompleter-item')
         sleep(2)
 

@@ -75,7 +75,9 @@ class TestCase144SportStatisticalSpeedForm(unittest.TestCase):
                 'end_time': row[4]
             }
             self.statistical_form_page.add_data_to_search_over_speed(search_data)
+            sleep(4)
             total_page = self.statistical_form_page3.get_total_page_in_over_speed_form()
+            print(total_page)
             begin_time = self.statistical_form_page3.get_over_speed_report_form_begin_time()
             end_time = self.statistical_form_page3.get_over_speed_report_form_end_time()
             all_dev = self.seasrch_sql.search_current_account_equipment(search_data['search_user'])

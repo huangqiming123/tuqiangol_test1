@@ -75,9 +75,15 @@ class TestCase175SportStatisticalMileReportForm(unittest.TestCase):
             }
             self.statistical_form_page.add_datas_to_search_mileage_form(search_data)
             self.statistical_form_page.switch_to_mile_report_form_frame()
+            all_dev = self.seasrch_sql.search_current_account_equipment(search_data['search_user'])
+            imeis = self.statistical_form_page3.change_dev_imei_format(all_dev)
+            begin_time = self.statistical_form_page3.get_mile_report_form_begin_time()
+            end_time = self.statistical_form_page3.get_mile_report_form_end_time()
             if search_data['type'] == 'mile':
                 # 获取页面总共得到的总页数
+                sleep(4)
                 total_page = self.statistical_form_page3.get_total_page_in_mile_report_form()
+                print(total_page)
 
                 if total_page == 0:
                     # 连接数据库
@@ -201,7 +207,9 @@ class TestCase175SportStatisticalMileReportForm(unittest.TestCase):
 
             elif search_data['type'] == 'day':
                 # 获取页面总共得到的总页数
+                sleep(4)
                 total_page = self.statistical_form_page3.get_total_page_in_mile_report_form_with_day()
+                print(total_page)
 
                 if total_page == 0:
                     # 连接数据库
@@ -324,5 +332,24 @@ class TestCase175SportStatisticalMileReportForm(unittest.TestCase):
                         data['atDay'] = data['atDay'].split(' ')[0]
                     print(res_data)
                     self.assertEqual(web_data, res_data)
+
+            # 请求行程报表总计 - 总里程
+            request_url = request_base_url()
+            req_data = {
+                '_method_': 'getMileage',
+                'imeis': imeis,
+                'startTime': begin_time,
+                'endTime': end_time,
+            }
+            res = requests.post(request_url, data=req_data)
+            response_data = res.json()
+            if response_data['code'] == 0:
+                data_total = '%.3f' % response_data['data'][0]['totalDistiance']
+                web_total = ''
+                if search_data['type'] == 'mile':
+                    web_total = self.statistical_form_page3.get_web_total_in_mile_form_with_search_mile()
+                elif search_data['type'] == 'day':
+                    web_total = self.statistical_form_page3.get_web_total_in_mile_form_with_search_day()
+                self.assertEqual(data_total, web_total)
             self.driver.default_frame()
         csv_file.close()

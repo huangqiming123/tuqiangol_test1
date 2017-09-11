@@ -184,7 +184,6 @@ class TestCase180SportStatisticalAccForm(unittest.TestCase):
                 'startTime': begin_time,
                 'endTime': end_time,
                 'acc': acc_state,
-
             }
             res = requests.post(request_url, data=request_params)
             sleep(20)

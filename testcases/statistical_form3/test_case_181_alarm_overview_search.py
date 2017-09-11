@@ -183,6 +183,9 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     for datas in web_data:
                         self.assertIn(datas, res_data)
 
+                    for datas2 in res_data:
+                        self.assertIn(datas2, web_data)
+
             elif data['is_enter_dev'] == '0':
                 if data['is_next'] == '0':
                     request_params = {
@@ -265,6 +268,10 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     for datas in web_data:
                         self.assertIn(datas, res_data)
 
+                    for datas2 in res_data:
+                        self.assertIn(datas2, web_data)
+
+
                 elif data['is_next'] == '1':
                     request_params = {
                         '_method_': 'getAlarmSummary',
@@ -346,6 +353,9 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     self.assertEqual(len(web_data), len(res_data))
                     for datas in web_data:
                         self.assertIn(datas, res_data)
+
+                    for datas2 in res_data:
+                        self.assertIn(datas2, web_data)
 
             self.driver.default_frame()
         csv_file.close()

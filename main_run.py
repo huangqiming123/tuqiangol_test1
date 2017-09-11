@@ -27,11 +27,11 @@ def run_04():
     os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form')
 
 
-'''def run_05():
-    os.system('python -m test_runner.tuqiangOL_test_runner_account_center')
+def run_05():
+    os.system('python -m test_runner.tuqiangOL_test_runner_statistical_form3')
 
 
-def run_06():
+'''def run_06():
     os.system('python -m test_runner.tuqiangOL_test_runner_command_management')
     sleep(5)
 
@@ -75,6 +75,11 @@ for i4 in range(1):
     t4 = threading.Thread(target=run_04)
     t4.setDaemon(True)
     thread_list.append(t4)
+
+for i5 in range(1):
+    t5 = threading.Thread(target=run_05)
+    t5.setDaemon(True)
+    thread_list.append(t5)
 
 for t in thread_list:
     t.start()

@@ -77,7 +77,7 @@ class TestCase75DevManageDevComplexSearch(unittest.TestCase):
             cur = connect.cursor()
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "' ;"
+            get_id_sql = "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "';"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()

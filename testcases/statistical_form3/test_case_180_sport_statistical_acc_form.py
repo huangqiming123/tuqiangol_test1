@@ -63,7 +63,7 @@ class TestCase180SportStatisticalAccForm(unittest.TestCase):
                          self.statistical_form_page.actual_text_after_click_acc_button())
         # 读数据
         # 读取查询数据
-        csv_file = self.statistical_form_page_read_csv.read_csv('sport_statistical_acc_search_data.csv')
+        csv_file = self.statistical_form_page_read_csv.read_csv('sport_statistical_acc_search_data2.csv')
         csv_data = csv.reader(csv_file)
         is_header = True
         for row in csv_data:

@@ -113,7 +113,7 @@ class TestCase178SportStatisticalStayForm(unittest.TestCase):
                 web_data = []
                 for n in range(total_number_per_page):
                     web_data.append({
-                        'addr': self.statistical_form_page4.get_addr_in_over_stay_form(n),
+                        # 'addr': self.statistical_form_page4.get_addr_in_over_stay_form(n),
                         'endTime': self.statistical_form_page4.get_end_time_in_over_stay_form(n),
                         'imei': self.statistical_form_page4.get_imei_in_over_stay_form(n),
                         'lat': self.statistical_form_page4.get_lat_in_over_stay_form(n),
@@ -146,7 +146,7 @@ class TestCase178SportStatisticalStayForm(unittest.TestCase):
                     total_number_per_page = self.statistical_form_page4.get_total_number_per_page_in_over_stay_form()
                     for n in range(total_number_per_page):
                         web_data.append({
-                            'addr': self.statistical_form_page4.get_addr_in_over_stay_form(n),
+                            # 'addr': self.statistical_form_page4.get_addr_in_over_stay_form(n),
                             'endTime': self.statistical_form_page4.get_end_time_in_over_stay_form(n),
                             'imei': self.statistical_form_page4.get_imei_in_over_stay_form(n),
                             'lat': self.statistical_form_page4.get_lat_in_over_stay_form(n),

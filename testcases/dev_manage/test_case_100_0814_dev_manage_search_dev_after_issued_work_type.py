@@ -60,6 +60,7 @@ class TestCase100DevManageSearchDevAfterIssuedWorkType(unittest.TestCase):
 
             # 点击本次查询全部发送指令
             self.dev_manage_page.click_batch_issued_work_type_button()
+            sleep(5)
             # 获取全部下发指令页面 统计的总数和列表中设备的总数
             check_number = self.dev_manage_page.get_total_number_in_issued_work_type_page()
             check_list_number = self.dev_manage_page.get_total_number_list_in_issued_work_type_page()

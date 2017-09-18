@@ -61,7 +61,7 @@ class TestCase171MovingOverviewStatistical(unittest.TestCase):
                 'end_time': row[3]
             }
             self.statistical_form_page.add_data_to_search_sport_overview(search_data)
-            self.statistical_form_page.switch_to_sport_overview_form_frame()
+
             # 获取总的里程数
             total_mile = self.statistical_form_page.get_total_mile_in_moving_overview()
             total_over_speed_times = self.statistical_form_page.get_total_over_speed_times_in_moving_overview()

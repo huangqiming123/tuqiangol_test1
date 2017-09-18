@@ -87,7 +87,6 @@ class TestCase144SportStatisticalSpeedForm(unittest.TestCase):
                 for range2 in range1:
                     total_list.append(range2)
             total = len(total_list)
-            self.statistical_form_page.switch_to_speeding_report_form_frame()
             web_total = self.statistical_form_page.get_total_search_over_speed_number()
             self.assertEqual(total, web_total)
 

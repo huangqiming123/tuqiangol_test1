@@ -93,7 +93,7 @@ class TestCase182AlarmDetailSearch(unittest.TestCase):
                     '_method_': 'getAlarmDetailNoPaging',
                     'startTime': get_alarm_begin_time,
                     'endTime': get_alarm_end_time,
-                    'userIds': get_current_userid
+                    'userIds': get_current_userid,
                 }
                 res = requests.post(request_url, data=request_params)
                 sleep(20)

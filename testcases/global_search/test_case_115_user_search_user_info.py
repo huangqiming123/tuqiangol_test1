@@ -63,8 +63,8 @@ class TestCase115UserSearchUserInfo(unittest.TestCase):
         user_name_in_detail = self.global_dev_search_page.get_user_name_in_detail()
         self.assertIn(user_name, user_name_in_detail)
 
-        user_type_in_detail = self.global_dev_search_page.get_user_type_in_detail()
-        self.assertEqual(user_type, user_type_in_detail)
+        # user_type_in_detail = self.global_dev_search_page.get_user_type_in_detail()
+        # self.assertEqual(user_type, user_type_in_detail)
 
         uesr_account_in_detail = self.global_dev_search_page.get_user_account_in_detail()
         self.assertEqual(user_account, uesr_account_in_detail)
@@ -74,5 +74,3 @@ class TestCase115UserSearchUserInfo(unittest.TestCase):
         get_up_user_name = self.global_dev_search_page.get_up_user_name_in_detail()
         get_up_user_input_value = self.global_dev_search_page.get_up_user_input_value_in_detail()
         self.assertEqual('true', get_up_user_input_value)
-
-        # 验证用户信息页面输入框的最大输入长度

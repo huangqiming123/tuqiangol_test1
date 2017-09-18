@@ -1,3 +1,4 @@
+import csv
 import unittest
 from time import sleep
 from automate_driver.automate_driver import AutomateDriver
@@ -49,7 +50,7 @@ class TestCase150OilReport(unittest.TestCase):
         self.assertEqual(self.assert_text.statistical_form_oil_form(),
                          self.statistical_form_page.actual_text_after_click_oil_report_button())
 
-        '''# # 读取查询数据
+        # # 读取查询数据
         csv_file = self.statistical_form_page_read_csv.read_csv('oil_report_search_data.csv')
         csv_data = csv.reader(csv_file)
         is_header = True
@@ -65,20 +66,9 @@ class TestCase150OilReport(unittest.TestCase):
             }
             self.statistical_form_page.switch_to_oil_report()
             self.statistical_form_page.add_data_to_search_oil_report(search_data)
-            all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
-            connect = self.connect_sql.connect_tuqiang_form()
-            cursor = connect.cursor()
-            get_total_sql = self.search_sql.get_oil_report_total_sql(all_dev)
-            cursor.execute(get_total_sql)
-            data = cursor.fetchall()
-            total = len(data)
-            web_total = self.statistical_form_page.get_total_in_oil_report()
-            self.assertEqual(total, web_total)
-            cursor.close()
-            connect.close()
             self.driver.default_frame()
-        csv_file.close'''
-        self.statistical_form_page.switch_to_oil_report()
+        csv_file.close()
+        '''self.statistical_form_page.switch_to_oil_report()
         # 输入imei搜索
         self.statistical_form_page.add_imei_to_search_oil_report()
         dev_oil_data = self.statistical_form_page.get_dev_oil_data_with_imei()
@@ -117,4 +107,4 @@ class TestCase150OilReport(unittest.TestCase):
                                                                              get_oil_RemainL[(i - 1) * 10 + n])
                     get_oil_data_in_page = self.statistical_form_page.get_oil_data_in_page(n)
                     self.assertEqual(remain_oil, get_oil_data_in_page)
-        self.driver.default_frame()
+        self.driver.default_frame()'''

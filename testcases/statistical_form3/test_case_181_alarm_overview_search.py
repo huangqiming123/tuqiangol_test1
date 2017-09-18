@@ -81,7 +81,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
             begin_time = self.statistical_form_page3.get_alarm_overview_form_begin_time()
             end_time = self.statistical_form_page3.get_alarm_overview_form_end_time()
             # 全部告警类型
-            alarm_type = '1,10,11,12,128,13,14,15,16,17,18,19,192,194,195,2,22,23,3,4,5,6,9,90,ACC_OFF,ACC_ON,in,offline,out,overSpeed,sensitiveAreasFence,stayAlert,stayTimeIn,stayTimeOut'
+            alarm_type = '1,10,11,12,128,13,14,15,16,17,18,19,192,194,195,2,22,23,3,4,5,6,9,90,ACC_OFF,ACC_ON,in,offline,out,overSpeed,riskPointAlarm,sensitiveAreasFence,stayAlert,stayTimeIn,stayTimeOut'
             all_dev = self.seasrch_sql.search_current_account_equipment(data['user_name'])
             imeis = self.statistical_form_page3.change_dev_imei_format(all_dev)
             # 用户id
@@ -163,6 +163,8 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                             'offline': self.statistical_form_page3.get_stay_alert_in_alarm_overview(n),
                             'exitGeozone': self.statistical_form_page3.get_linger_alert_in_alarm_overview(n),
                             'overspeedPlatform': self.statistical_form_page3.get_illegal_mobile_alert_in_alarm_overview(
+                                n),
+                            'riskPointAlarm': self.statistical_form_page3.get_risk_point_alert_in_alarm_overview(
                                 n),
                             'sensitiveAreasFence': self.statistical_form_page3.insufficient_battery_back_up_alert_in_alarm_overview(
                                 n),
@@ -255,6 +257,8 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                             'exitGeozone': self.statistical_form_page3.get_linger_alert_in_alarm_overview(n),
                             'overspeedPlatform': self.statistical_form_page3.get_illegal_mobile_alert_in_alarm_overview(
                                 n),
+                            'riskPointAlarm': self.statistical_form_page3.get_risk_point_alert_in_alarm_overview(
+                                n),
                             'sensitiveAreasFence': self.statistical_form_page3.insufficient_battery_back_up_alert_in_alarm_overview(
                                 n),
                             'stayAlert': self.statistical_form_page3.get_over_step_alert_in_alarm_overview(n),
@@ -340,6 +344,8 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                             'offline': self.statistical_form_page3.get_stay_alert_in_alarm_overview(n),
                             'exitGeozone': self.statistical_form_page3.get_linger_alert_in_alarm_overview(n),
                             'overspeedPlatform': self.statistical_form_page3.get_illegal_mobile_alert_in_alarm_overview(
+                                n),
+                            'riskPointAlarm': self.statistical_form_page3.get_risk_point_alert_in_alarm_overview(
                                 n),
                             'sensitiveAreasFence': self.statistical_form_page3.insufficient_battery_back_up_alert_in_alarm_overview(
                                 n),

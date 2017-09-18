@@ -71,12 +71,11 @@ class TestCase170AlarmOverviewSearch(unittest.TestCase):
             self.alarm_info_page.add_data_to_search_in_alarm_overview(data)
 
             # 获取搜索出的条数
-            web_total = self.alarm_info_page.get_web_total_in_overview_search()
+            web_total = self.alarm_info_page.get_web_total_in_overview_searchs()
             if web_total == 0:
                 self.assertIn(self.assert_text.account_center_page_no_data_text(),
-                              self.statistical_form_page.get_no_data_text_in_alarm_overview_page())
+                              self.statistical_form_page.get_no_data_text_in_alarm_overview_pages())
             else:
-                self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
                 # sos报警总数
                 sos_alarm_total = self.statistical_form_page.get_sos_total_alarm_number()
                 list_sos_alarm_total = []
@@ -372,7 +371,7 @@ class TestCase170AlarmOverviewSearch(unittest.TestCase):
                 self.assertEqual(long_time_not_out_alarm_total,
                                  str(sum(list_long_time_not_out_alarm_total)), "长时间不出数显示不一致")
 
-                self.driver.default_frame()
-                self.driver.wait()
+            self.driver.default_frame()
+            self.driver.wait()
 
         csv_file.close()

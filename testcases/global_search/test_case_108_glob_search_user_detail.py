@@ -62,8 +62,8 @@ class TestCase108GlobSearchUserDetail(unittest.TestCase):
         user_name_in_detail = self.global_dev_search_page.get_user_name_in_detail()
         self.assertIn(user_name, user_name_in_detail)
 
-        user_type_in_detail = self.global_dev_search_page.get_user_type_in_detail()
-        self.assertEqual(user_type, user_type_in_detail)
+        # user_type_in_detail = self.global_dev_search_page.get_user_type_in_detail()
+        # self.assertEqual(user_type, user_type_in_detail)
 
         uesr_account_in_detail = self.global_dev_search_page.get_user_account_in_detail()
         self.assertEqual(user_account, uesr_account_in_detail)

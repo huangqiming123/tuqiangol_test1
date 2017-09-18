@@ -58,7 +58,7 @@ def send_mail(file_new):
     # email模块的Header（）方法用来定义邮件标题
     msg['Subject'] = Header("自动化测试报告", 'utf-8')
 
-    msg['From'] = "2091566123@qq.com"
+    msg['From'] = "646642287@qq.com"
     msg['To'] = send_mails()
 
     # 邮件正文是MIMEText
@@ -82,8 +82,8 @@ def send_mail(file_new):
 
     smtp = smtplib.SMTP_SSL("smtp.qq.com", 465)
     smtp.set_debuglevel(1)
-    smtp.login("2091566123@qq.com", "skmicdntzetlcdcg")
-    smtp.sendmail("2091566123@qq.com", send_mails(), msg.as_string())
+    smtp.login("646642287@qq.com", "vtetgtsfhygcbehg")
+    smtp.sendmail("646642287@qq.com", send_mails(), msg.as_string())
     smtp.quit()
     print('email has send out !')
 

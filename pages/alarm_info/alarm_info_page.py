@@ -745,3 +745,12 @@ class AlarmInfoPage(BasePage):
 
     def switch_to_alarm_overview_frame(self):
         self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')
+
+    def get_web_total_in_overview_searchs(self):
+        # 查询报警总览搜索出的条数
+        a = self.driver.get_element('x,//*[@id="alarm_report_nodata"]').get_attribute('style')
+        if a == 'display: block;':
+            return 0
+        elif a == 'display: none;':
+            number = len(list(self.driver.get_elements('x,//*[@id="alarm_report_tbody"]/tr')))
+            return number

@@ -57,6 +57,7 @@ class TestCase91DevManageShutDownByNextUser(unittest.TestCase):
         self.dev_manage_page.click_select_shut_down()
         # 点击确定
         self.dev_manage_page.click_ensure()
+        sleep(4)
         get_dev_status = self.dev_manage_page.get_dev_status_in_list()
         self.assertEqual(self.assert_text.dev_page_closing_down(), get_dev_status)
 
@@ -78,6 +79,7 @@ class TestCase91DevManageShutDownByNextUser(unittest.TestCase):
         # 点击本次查询全部停机
         self.dev_manage_page.click_all_shut_down()
         self.dev_manage_page.click_ensure()
+        sleep(4)
 
         # 断言
         get_all_page = self.dev_manage_page.get_all_pages()

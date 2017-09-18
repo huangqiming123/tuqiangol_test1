@@ -166,3 +166,27 @@ class TestCase119UserSearchModifyWebLoginAuthority(unittest.TestCase):
             self.global_account_search_page.log_in_user(get_second_user_account, 'jimi123')
             get_text = self.global_account_search_page.get_no_login_authority_text()
             self.assertEqual(self.assert_text.no_login_authority_text(), get_text)
+
+            self.log_in_base.log_in()
+            sleep(3)
+            self.log_in_base.click_account_center_button()
+            self.global_dev_search_page.click_easy_search()
+            # 关闭
+            self.global_dev_search_page.close_search()
+            sleep(2)
+            self.global_dev_search_page.click_easy_search()
+            # 选择用户搜索
+            self.global_dev_search_page.click_dev_search()
+            self.global_dev_search_page.click_search_buttons()
+            # 点击详情
+            self.global_dev_search_page.swith_to_search_frame()
+            self.global_account_search_page.click_user_detail_button()
+            # 点击用户信息
+            self.global_account_search_page.click_user_info_in_user_detail()
+            ## 点击web登录权限
+            self.global_account_search_page.click_modify_web_login_authority_in_user_detail()
+            # 点击保存
+            self.global_account_search_page.click_ensuer_button_in_user_detail()
+            # 点击关闭
+            self.driver.default_frame()
+            self.global_account_search_page.click_close_button()

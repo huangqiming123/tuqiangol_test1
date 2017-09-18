@@ -127,8 +127,6 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                             'distance': self.statistical_form_page3.get_distance_in_tracel_form(n),
                             'startTime': self.statistical_form_page3.get_start_time_in_tracel_form(n),
                             'endTime': self.statistical_form_page3.get_end_time_in_tracel_form(n),
-                            'startAddr': self.statistical_form_page3.get_start_addr_in_tracel_form(n),
-                            'endAddr': self.statistical_form_page3.get_end_addr_in_tracel_form(n),
                             'avgSpeed': self.statistical_form_page3.get_avg_speed_in_tracel_form(n),
                             'runTimeSecond': self.statistical_form_page3.get_run_time_second_in_tracel_form(n)
                         })
@@ -178,8 +176,6 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                                 'distance': self.statistical_form_page3.get_distance_in_tracel_form(n),
                                 'startTime': self.statistical_form_page3.get_start_time_in_tracel_form(n),
                                 'endTime': self.statistical_form_page3.get_end_time_in_tracel_form(n),
-                                'startAddr': self.statistical_form_page3.get_start_addr_in_tracel_form(n),
-                                'endAddr': self.statistical_form_page3.get_end_addr_in_tracel_form(n),
                                 'avgSpeed': self.statistical_form_page3.get_avg_speed_in_tracel_form(n),
                                 'runTimeSecond': self.statistical_form_page3.get_run_time_second_in_tracel_form(n)
                             })
@@ -292,9 +288,9 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     response = res.json()
                     res_data = response['data']
                     for data in res_data:
-                        del data['avgFuel'], data['avgSpeed'], data['endAddr'], data['endLat'], data['endLng'], data[
-                            'endTime'], data['fuel'], data['lastLat'], data['lastLng'], data['runTimeSecond'], \
-                            data['startAddr'], data['startLat'], data['startLng'], data['startTime'], data['status']
+                        del data['avgFuel'], data['avgSpeed'], data['endLat'], data['endLng'], data[
+                            'endTime'], data['fuel'], data['lastLat'], data['lastLng'], data['runTimeSecond'], data[
+                            'startLat'], data['startLng'], data['startTime'], data['status']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     for data in res_data:
@@ -341,9 +337,9 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     response = res.json()
                     res_data = response['data']
                     for data in res_data:
-                        del data['avgFuel'], data['avgSpeed'], data['endAddr'], data['endLat'], data['endLng'], data[
-                            'endTime'], data['fuel'], data['lastLat'], data['lastLng'], data['runTimeSecond'], \
-                            data['startAddr'], data['startLat'], data['startLng'], data['startTime'], data['status']
+                        del data['avgFuel'], data['avgSpeed'], data['endLat'], data['endLng'], data[
+                            'endTime'], data['fuel'], data['lastLat'], data['lastLng'], data['runTimeSecond'], data[
+                            'startLat'], data['startLng'], data['startTime'], data['status']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     for data in res_data:
@@ -372,7 +368,7 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                 if search_data['type'] == 'mile':
                     web_total = self.statistical_form_page3.get_web_total_in_tracel_form_with_search_mile()
                     web_total_time = self.statistical_form_page3.get_web_total_time_in_tracel_form_with_search_mile()
-                    web_total_times = self.statistical_form_page3.get_run_time_second_in_tracel_form(web_total_time)
+                    web_total_times = self.statistical_form_page3.change_time_format(web_total_time)
                     self.assertEqual(data_total_time, web_total_times)
                 elif search_data['type'] == 'day':
                     web_total = self.statistical_form_page3.get_web_total_in_tracel_form_with_search_day()

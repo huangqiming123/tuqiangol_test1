@@ -92,7 +92,7 @@ class SearchSql(StatisticalFormPage):
         user_id_list = cursor.fetchall()
         user_id = user_id_list[0][0]
 
-        get_account_dev_sql = "select a.imei from equipment_mostly a LEFT JOIN equipment_expiration e on a.imei = e.imei where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>=0 and (e.expiration is NULL OR (e.expiration is not null and DATEDIFF(e.expiration,CURDATE())>=0)) and (e.userId is null or (e.userId is not null and e.userId = '%s'));" % (
+        get_account_dev_sql = "select a.imei from equipment_mostly a LEFT JOIN equipment_expiration e on a.imei = e.imei where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>0 and (e.expiration is NULL OR (e.expiration is not null and DATEDIFF(e.expiration,CURDATE())>0)) and (e.userId is null or (e.userId is not null and e.userId = '%s'));" % (
             user_id, user_id)
         # get_account_dev_sql = "select a.imei from equipment_mostly a where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>=0;" % user_id
         cursor.execute(get_account_dev_sql)
@@ -792,43 +792,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[   'end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -840,43 +839,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -888,43 +886,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data'end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -936,43 +933,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -984,43 +980,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -1032,43 +1027,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -1080,43 +1074,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -1128,43 +1121,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -1176,43 +1168,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -1224,43 +1215,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -1272,43 +1262,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -1320,43 +1309,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql
@@ -1368,43 +1356,42 @@ class SearchSql(StatisticalFormPage):
                 'end_time'] + "' or m.ENDTIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
                        'end_time'] + "' or (m.STARTTIME <= '" + search_data['begin_time'] + "' and m.ENDTIME >= '" + \
                    search_data['end_time'] + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "' "
         elif search_data['choose_date'] == 'today':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' or (m.STARTTIME <= '" + self.get_today_begin_date() + "' and m.ENDTIME >= '" + \
                    self.get_today_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_today_begin_date() + "' and '" + self.get_today_end_time() + "' "
 
         elif search_data['choose_date'] == 'yesterday':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' or (m.STARTTIME <= '" + self.get_yesterday_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_yesterday_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_yesterday_begin_time() + "' and '" + self.get_yesterday_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' or (m.STARTTIME <= '" + self.get_this_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_week_begin_time() + "' and '" + self.get_this_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_week':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' or (m.STARTTIME <= '" + self.get_last_week_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_week_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_week_begin_time() + "' and '" + self.get_last_week_end_time() + "' "
 
         elif search_data['choose_date'] == 'this_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' or (m.STARTTIME <= '" + self.get_this_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_this_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_this_month_begin_time() + "' and '" + self.get_this_month_end_time() + "' "
 
         elif search_data['choose_date'] == 'last_month':
             sql += " AND (m.STARTTIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or m.ENDTIME BETWEEN '" + \
                    self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' or (m.STARTTIME <= '" + self.get_last_month_begin_time() + "' and m.ENDTIME >= '" + \
                    self.get_last_month_end_time() + "'))"
-            sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
+            # sql += " and m.CREATETIME BETWEEN '" + self.get_last_month_begin_time() + "' and '" + self.get_last_month_end_time() + "' "
 
         sql += " AND m.ACC = '0';"
         return sql

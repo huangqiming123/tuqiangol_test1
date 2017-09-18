@@ -2602,3 +2602,7 @@ class StatisticalFormPage(BasePage):
 
     def get_text_after_search_in_alarm_detail_form(self):
         return self.driver.get_text('x,//*[@id="nodata_alarmDetail"]/span')
+
+    def get_no_data_text_in_alarm_overview_pages(self):
+        text = self.driver.get_text('x,//*[@id="alarm_report_nodata"]/div/span')
+        return text

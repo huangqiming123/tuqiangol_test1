@@ -274,7 +274,7 @@ class AssertText(object):
         return '必须是正整数！'
 
     def statistical_form_page_static_report_text(self):
-        return '静止统计'
+        return '静止报表'
 
     def cust_page_user_name_more_than_3s(self):
         return '昵称长度至少3位'
@@ -343,3 +343,30 @@ class AssertText(object):
             return '不支持'
         if state == '平台到期+用户到期+停机+不支持':
             return '不支持'
+
+    def no_authority_text(self):
+        return '没有权限'
+
+    def select_issued_command_text(self):
+        return '选中发送指令'
+
+    def all_issued_command_text(self):
+        return '本次查询全部发送指令'
+
+    def select_issued_work_type_text(self):
+        return '选中设置工作模式'
+
+    def all_issued_work_type_text(self):
+        return '本次查询全部设置工作模式'
+
+    def no_login_authority_text(self):
+        return '没有权限登录'
+
+    def please_select_text(self):
+        return '请选择'
+
+    def the_selected_user_cannot_be_the_superior(self):
+        return '选择的用户不能做为上级用户'
+
+    def batch_set_user_overdue_time_text(self):
+        return '批量设置用户到期'

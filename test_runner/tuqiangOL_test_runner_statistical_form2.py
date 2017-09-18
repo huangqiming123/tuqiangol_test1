@@ -111,7 +111,7 @@ if __name__ == '__main__':
 
     # 定义测试报告，stream指定测试报告文件，file定义测试报告标题，description定义测试报告副标题
     runner_account_center = HtmlTestRunner(stream=fp_account_center,
-                                           title='统计报表模块测试报告',
+                                           title='统计报表模块测试报告2',
                                            description='用例执行情况：')
 
     runner_account_center.run(discover_account_center)  # 运行测试用例

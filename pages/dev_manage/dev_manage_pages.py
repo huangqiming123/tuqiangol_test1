@@ -907,7 +907,7 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
         sleep(1)
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[11]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[12]')
         sleep(3)
 
     def click_ensure(self):
@@ -1027,7 +1027,7 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
         sleep(1)
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[10]')
         sleep(3)
 
     def choose_dev_noactive_and_statr(self):
@@ -1043,7 +1043,7 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
         sleep(1)
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[11]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[12]')
         sleep(3)
 
     def choose_dev_noactive_and_stop(self):
@@ -1059,7 +1059,7 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
         sleep(1)
 
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[10]')
         sleep(3)
 
     def choose_dev_overtime(self):
@@ -1121,7 +1121,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="sale_count_device_sale_id"]')
 
     def click_batch_issued_command_button(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[6]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[7]')
         sleep(2)
 
     def click_close_batch_batch_issued_command_button(self):
@@ -1406,7 +1406,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_all_set_up_work_command(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[8]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
         sleep(2)
 
     def click_close_all_set_up_work_command(self):
@@ -1443,7 +1443,7 @@ class DevManagePages(BasePage):
         return self.driver.get_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/input').is_selected()
 
     def click_select_send_command(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[5]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[6]')
         sleep(2)
 
     def click_close_select_send_command(self):
@@ -1478,7 +1478,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_select_set_up_work_command(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[7]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[8]')
         sleep(2)
 
     def click_close_set_up_work_command(self):
@@ -1508,7 +1508,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[9]')
 
     def click_select_shut_down(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[10]')
         sleep(2)
 
     def click_cancel(self):
@@ -1520,7 +1520,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_all_shut_down(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[10]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[11]')
         sleep(2)
 
     def get_all_pages(self):
@@ -1545,11 +1545,11 @@ class DevManagePages(BasePage):
         return text
 
     def click_select_starting_up(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[11]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[12]')
         sleep(2)
 
     def click_all_starting_up(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[12]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[13]')
         sleep(2)
 
     def search_dev(self):
@@ -1933,7 +1933,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="check-row-tbody"]/tr[%s]/td[1]' % str(m + 1))
 
     def click_batch_issued_work_type_button(self):
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[8]')
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[9]')
         sleep(3)
 
     def get_total_number_in_issued_work_type_page(self):
@@ -1947,3 +1947,35 @@ class DevManagePages(BasePage):
 
     def click(self):
         self.driver.click_element('x,//*[@id="deviceTableHeader"]/thead/tr/th[5]')
+
+    def click_batch_set_user_overdue_time_button(self):
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[4]')
+        sleep(3)
+
+    def click_close_set_user_overdue_time_button(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def click_clance_set_user_overdue_time_button(self):
+        self.driver.click_element('x,//*[@id="user_device_expires_id"]/div[2]/div[2]/button[1]')
+        sleep(2)
+
+    def get_text_after_click_set_user_overdue_time_button(self):
+        return self.driver.get_text('c,layui-layer-title')
+
+    def click_add_imei_to_set_user_overdue_time(self, param):
+        self.driver.click_element('x,//*[@id="sale_imei_user_device_expires_id"]')
+        sleep(1)
+        self.driver.operate_input_element('x,//*[@id="sale_imei_user_device_expires_id"]', param)
+        self.driver.click_element('x,//*[@id="user_device_expires_id"]/div[1]/div/div[1]/div/div[3]/button[1]')
+        sleep(2)
+
+    def get_fail_status_after_clcik_ensure(self):
+        return self.driver.get_text('x,//*[@id="device_sale_add_result_div"]/div[2]/table/tbody/tr/td[2]/span')
+
+    def get_fail_reason_after_click_ensure(self):
+        return self.driver.get_text('x,//*[@id="device_sale_add_result_div"]/div[2]/table/tbody/tr/td[3]')
+
+    def click_close_fail_text(self):
+        self.driver.click_element('x,/html/body/div[30]/span[1]/a')
+        sleep(2)

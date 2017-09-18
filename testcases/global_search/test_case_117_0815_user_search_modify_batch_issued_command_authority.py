@@ -106,7 +106,9 @@ class TestCase117UserSearchModifyBatchIssuedCommandAuthority(unittest.TestCase):
 
             # 登录web_autotest
             self.log_in_base.log_in()
+            sleep(3)
             self.log_in_base.click_account_center_button()
+            sleep(3)
             self.global_dev_search_page.click_easy_search()
             # 关闭
             self.global_dev_search_page.close_search()
@@ -182,7 +184,9 @@ class TestCase117UserSearchModifyBatchIssuedCommandAuthority(unittest.TestCase):
 
             # 登录web_autotest
             self.log_in_base.log_in()
+            sleep(3)
             self.log_in_base.click_account_center_button()
+            sleep(4)
             self.global_dev_search_page.click_easy_search()
             # 关闭
             self.global_dev_search_page.close_search()

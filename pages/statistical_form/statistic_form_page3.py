@@ -139,10 +139,13 @@ class StatisticFormPage3(BasePage):
 
     def get_run_time_second_in_tracel_form(self, n):
         a = self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[10]' % str(n + 1))
-        hour = int(a.split('小')[0])
-        min = int(a.split('时')[1].split('分')[0])
-        sec = int(a.split('分')[1].split('秒')[0])
-        return hour * 3600 + min * 60 + sec
+        if a == '0':
+            return 0
+        else:
+            hour = int(a.split('小')[0])
+            min = int(a.split('时')[1].split('分')[0])
+            sec = int(a.split('分')[1].split('秒')[0])
+            return hour * 3600 + min * 60 + sec
 
     def get_tracel_form_begin_time(self):
         return
@@ -492,27 +495,27 @@ class StatisticFormPage3(BasePage):
         return int(number)
 
     def insufficient_battery_back_up_alert_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[31]'))
-        sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[31]' % str(n + 1))
-        return int(number)
-
-    def get_over_step_alert_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[32]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[32]' % str(n + 1))
         return int(number)
 
-    def get_sensitive_areas_fence_in_alarm_overview(self, n):
+    def get_over_step_alert_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[33]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[33]' % str(n + 1))
         return int(number)
 
-    def get_over_speed_platform_in_alarm_overview(self, n):
+    def get_sensitive_areas_fence_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[34]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[34]' % str(n + 1))
+        return int(number)
+
+    def get_over_speed_platform_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[35]'))
+        sleep(1)
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[35]' % str(n + 1))
         return int(number)
 
     def select_all_alarm_type_in_alarm_detail_search(self):
@@ -648,3 +651,16 @@ class StatisticFormPage3(BasePage):
 
     def get_web_total_in_tracel_form_with_search_day(self):
         return self.driver.get_text('x,//*[@id="allmileages-day"]')
+
+    def get_risk_point_alert_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[31]'))
+        sleep(1)
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[31]' % str(n + 1))
+        return int(number)
+
+    def change_time_format(self, web_total_time):
+        a = web_total_time
+        hour = int(a.split('小')[0])
+        min = int(a.split('时')[1].split('分')[0])
+        sec = int(a.split('分')[1].split('秒')[0])
+        return hour * 3600 + min * 60 + sec

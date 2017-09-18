@@ -19,8 +19,6 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 class TestCase182AlarmDetailSearch(unittest.TestCase):
     # 告警详情页面搜索
-
-
     def setUp(self):
         # 前置条件
         # 实例化对象

@@ -4,5 +4,5 @@ def send_mails():
 
 
 def request_base_url():
-    # return 'http://119.23.160.20:9080/api/gpscontroll/v1'
-    return 'http://172.16.0.105:9080/api/gpscontroll/v1'
+    return 'http://119.23.160.20:9080/api/gpscontroll/v1'
+    # return 'http://172.16.0.105:9080/api/gpscontroll/v1'

@@ -33,7 +33,7 @@ class ConnectSql(object):
     def connect_tuqiang_sql(self):
         # 连接图强测试环境的第一台数据库
         connect = pymysql.connect(
-            host='172.16.0.103',
+            host='172.16.10.103',
             port=3306,
             user='root',
             passwd='123456',

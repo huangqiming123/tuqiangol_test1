@@ -1,6 +1,28 @@
+from model.connect_sql import ConnectSql
+
+
 class SearchSql(object):
+    # 获取当前登录账号数据（id、账号、类型）
+    def search_current_account_data(self, user_account):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+
+        get_user_id_sql = "select u.userId,u.account,u.type from user_info u where u.account = '%s';" % user_account
+        cursor.execute(get_user_id_sql)
+        user_data_list = cursor.fetchall()
+
+        list_data = []
+        for range1 in user_data_list:
+            for range2 in range1:
+                list_data.append(range2)
+        all_data = tuple(list_data)
+        cursor.close()
+        connect.close()
+        return all_data
+
+    # 搜索设备管理的sql语句
     def search_equipment_manager_sql(self, lower_account_tuple, search_data):
-        # 搜索设备管理的sql语句
         sql = "select l.id from operation_log l INNER JOIN user_info o ON l.created_by = o.userId where l.created_by in %s and l.serviceType = '1'" % str(
             lower_account_tuple)
         if search_data['type'] == '5':
@@ -77,4 +99,37 @@ class SearchSql(object):
             sql += " and m.readFlag = '%s'" % search_data['status']
 
         sql += ";"
+        return sql
+
+    # 搜索充值卡--申请记录的sql   根据状态搜索
+    def search_apply_record_sql(self, id, state):
+        sql = "select status from rc_recharge_card_order where userid=%s" % id
+        if state != "":
+            sql += " and status=%s" % state
+
+        sql += ";"
+        return sql
+
+    # 搜索充值卡--转移记录的sql
+    def search_transfer_record_sql(self, id, state):
+        sql = "select creationDate from rc_recharge_card_transfer where userId=%s" % id
+        if state != "":
+            sql += " and `inOut` =%s" % state
+
+        sql += ";"
+        return sql
+
+    # 搜索充值卡--充值记录的sql
+    def search_refill_record_sql(self, id, type):
+        sql = "select imei from rc_recharge where userId=%s" % id
+        if type != "":
+            sql += " and cardType=%s" % type
+
+        sql += ";"
+        return sql
+
+    # 充值记录的sql--最后时间
+    def search_refill_record_time_sql(self, id):
+        sql = "select max(newExpiration) from rc_recharge where userId=%s;" % id
+        print(sql)
         return sql

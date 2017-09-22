@@ -551,7 +551,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     #点账户中心
     def click_account_center_button(self):
-        sleep(2)
+        sleep(3)
         self.driver.click_element("x,//*[@id='accountCenter']")
         sleep(2)
 

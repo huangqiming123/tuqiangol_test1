@@ -49,7 +49,8 @@ class TestCase61CustManageLowerAccountOperate(unittest.TestCase):
         self.driver.wait(1)
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
-        account = self.cust_manage_basic_info_and_add_cust_page.get_account_text()
+        self.driver.wait()
+        # account = self.cust_manage_basic_info_and_add_cust_page.get_account_text()
 
         # 点击单个用户的重置密码
         self.cust_manage_lower_account_page.acc_reset_passwd()

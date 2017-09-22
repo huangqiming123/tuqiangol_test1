@@ -44,7 +44,6 @@ class TestCase70CustManageCustSearch(unittest.TestCase):
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
-
         self.cust_manage_basic_info_and_add_cust_page.add_acc()
         self.cust_manage_basic_info_and_add_cust_page.cancel_add_account()
         self.cust_manage_basic_info_and_add_cust_page.add_acc()

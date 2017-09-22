@@ -53,7 +53,7 @@ class TestCase23AccountCenterOverviewInactive(unittest.TestCase):
                 expect_url = self.driver.get_current_url()
                 actual_url = self.base_url + '/device/toDeviceManage?statusFlag=inactive&lowerDevFlag=1'
                 self.assertEqual(expect_url, actual_url, '点击未激活后，实际的url和期望的不一样！')
-                sleep(2)
+                sleep(3)
                 self.account_center_page_details.click_more_in_dev_manage()
                 self.assertEqual(self.assert_text.account_center_page_activing_text(), self.driver.get_text(
                     'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]'))

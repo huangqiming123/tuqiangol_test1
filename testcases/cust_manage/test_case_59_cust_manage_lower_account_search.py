@@ -1,5 +1,6 @@
 import csv
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
@@ -54,10 +55,8 @@ class TestCase59CustManageLowerAccountSearch(unittest.TestCase):
         # 登录
         self.log_in_base.log_in()
         # 点击账户中心
-        self.account_center_page_navi_bar.click_account_center_button()
-        self.account_center_page_details.account_center_iframe()
+        # self.account_center_page_navi_bar.click_account_center_button()
         # current_account = self.log_in_base.get_log_in_account()
-        self.driver.default_frame()
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
@@ -74,6 +73,7 @@ class TestCase59CustManageLowerAccountSearch(unittest.TestCase):
                 "account_type": row[1],
                 "info": row[2]
             }
+            sleep(1)
             self.cust_manage_lower_account_page.add_data_to_search_account(search_data)
             connect = self.connect_sql.connect_tuqiang_sql()
             # 创建数据库游标

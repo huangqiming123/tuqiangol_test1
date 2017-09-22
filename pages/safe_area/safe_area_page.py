@@ -86,7 +86,7 @@ class SafeAreaPage(BasePageServer):
 
         if data['email'] == '1':
             a = self.driver.get_element('x,//*[@id="accEmailSend"]').is_selected()
-            if a == False:
+            if a is False:
                 self.driver.click_element('x,//*[@id="acc_configure_form"]/div[3]/div/label/div/ins')
                 self.driver.operate_input_element('x,//*[@id="acc_configure_form"]/div[3]/div/ul/li[1]/input',
                                                   '123@123.com')
@@ -386,3 +386,5 @@ class SafeAreaPage(BasePageServer):
     def get_first_mark_name_text(self):
         text = self.driver.get_element('x,//*[@id="marktbody"]/tr[1]/td[1]').get_attribute('title')
         return text
+
+########################################################################################################################

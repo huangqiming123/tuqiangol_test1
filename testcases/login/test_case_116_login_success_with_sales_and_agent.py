@@ -54,7 +54,7 @@ class TestCase116LoginSuccessWithSalesAndAgent(unittest.TestCase):
             self.login_page.user_login(user_to_login["account"], user_to_login["passwd"])
             # 点账户中心
             self.account_center_page_navi_bar.click_account_center_button()
-            self.account_center_page_navi_bar.click_account_center_button()
+            # self.account_center_page_navi_bar.click_account_center_button()
             # 判断登录成功后跳转页面是否正确
             actual_url = self.driver.get_current_url()
             expect_url = self.base_url + "/customer/toAccountCenter"
@@ -116,9 +116,10 @@ class TestCase116LoginSuccessWithSalesAndAgent(unittest.TestCase):
                 expect_service_provider_connect = up_user_info[1]
                 self.assertIn(expect_service_provider_connect, service_provider_connect, "联系人显示错误")
 
-            service_provider_phone = self.account_center_page_navi_bar.sales_usr_service_provider_phone()
-            expect_service_provider_phone = up_user_info[2]
-            self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")
+            if up_user_info[2] != None:
+                expect_service_provider_phone = up_user_info[2]
+                service_provider_phone = self.account_center_page_navi_bar.sales_usr_service_provider_phone()
+                self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")
 
             cursor.close()
             connect.close()

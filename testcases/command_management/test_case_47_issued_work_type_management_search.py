@@ -15,7 +15,7 @@ from pages.command_management.search_sql import SearchSql
 class TestCase47IssuedWorkTypeManagementSearch(unittest.TestCase):
     """
     用例第130条，下发工作模式管理页面搜索
-    author：zhangAo
+    author：邓肖斌
     """
     driver = None
     base_url = None

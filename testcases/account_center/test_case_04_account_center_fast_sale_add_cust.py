@@ -69,7 +69,8 @@ class TestCase04AccountCenterFastSaleAddCust(unittest.TestCase):
             search_info = {
                 "device_imei": row[8],
                 "imei_count": row[9],
-                "selected_dev": row[10]
+                "selected_dev": row[10],
+                "search_user": row[11]
             }
             # 打开途强在线首页-登录页
             self.base_page.open_page()
@@ -81,8 +82,36 @@ class TestCase04AccountCenterFastSaleAddCust(unittest.TestCase):
             self.account_center_page_details.account_center_iframe()
             self.account_center_page_details.fast_sales()
             self.driver.default_frame()
-
+            # 取消
             self.account_center_page_details.add_cust_cancel()
+
+            # 验证所选中的上级用户类型来显示可创建的下级类型
+            self.account_center_page_details.click_add()
+            user_list = search_info["search_user"].split("/")
+            for type in user_list:
+                self.account_center_page_details.add_account_search_user(type)
+                type_list = self.account_center_page_details.get_fast_sale_acc_user_type_list()
+                sql_data = self.search_sql.search_current_account_data(type)
+                user_type = self.assert_text.log_in_page_account_type(sql_data[2])
+                print(user_type)
+
+                if user_type == "销售":
+                    self.assertEqual(3, type_list["length"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(11), type_list["sale"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(8), type_list["distributor"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
+
+                elif user_type == "代理商":
+                    self.assertEqual(2, type_list["length"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(8), type_list["distributor"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
+
+                elif user_type == "用户":
+                    self.assertEqual(1, type_list["length"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
+
+
+
             # 新增客户
             self.account_center_page_details.add_cust(add_info["acc_type"],
                                                       add_info["acc_name"],

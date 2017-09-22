@@ -22,10 +22,7 @@ class TestCase7408171CustManagelResetPasswordVerify(unittest.TestCase):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
-        self.login_page = LoginPage(self.driver, self.base_url)
         self.cust_manage_basic_info_and_add_cust_page = CustManageBasicInfoAndAddCustPage(self.driver, self.base_url)
-        self.cust_manage_cust_list_page = CustManageCustListPage(self.driver, self.base_url)
-        self.cust_manage_my_dev_page = CustManageMyDevPage(self.driver, self.base_url)
         self.cust_manage_lower_account_page = CustManageLowerAccountPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.assert_text2 = AssertText2()

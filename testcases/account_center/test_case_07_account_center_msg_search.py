@@ -50,7 +50,7 @@ class TestCase07AccountCenterMsgSearch(unittest.TestCase):
 
         # 进入消息中心
         self.account_center_page_msg_center.enter_msg_center()
-        self.driver.wait(5)
+        self.driver.wait(23)
 
         # 进入iframe
         self.account_center_page_msg_center.message_center_iframe()
@@ -71,6 +71,7 @@ class TestCase07AccountCenterMsgSearch(unittest.TestCase):
                 'type': row[1],
                 'status': row[2]
             }
+            # 搜索
             self.account_center_page_operation_log.add_data_to_search_massages(search_data)
             connect1 = self.connect_sql.connect_tuqiang_sql()
             # 创建数据库游标

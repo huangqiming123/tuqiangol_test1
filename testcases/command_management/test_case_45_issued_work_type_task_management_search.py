@@ -15,7 +15,7 @@ from pages.command_management.search_sql import SearchSql
 class TestCase45IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
     """
     下发工作模式任务管理搜索功能
-    author:zhangAo
+    author:邓肖斌
     """
     driver = None
     base_url = None
@@ -117,3 +117,7 @@ class TestCase45IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
             cursor.close()
             connect.close()
         csv_file.close()
+
+
+if __name__ == "__main__":
+    unittest.main()

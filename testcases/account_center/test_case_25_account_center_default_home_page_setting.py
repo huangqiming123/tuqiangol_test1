@@ -57,6 +57,7 @@ class TestCase25AccountCenterDefaultHomePageSetting(unittest.TestCase):
             self.account_center_page_home_page_setting.default_home_page_iframe()
             text = self.account_center_page_home_page_setting.get_default_setting_text(i + 1)
             if text["state"] == is_default:
+                self.driver.default_frame()
                 continue
             else:
 

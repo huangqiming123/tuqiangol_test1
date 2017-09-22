@@ -52,7 +52,7 @@ class TestCase17AccountCenterOverviewCommand(unittest.TestCase):
                 expect_url = self.driver.get_current_url()
                 actual_url = self.base_url + '/custom/toTemplate?viewFlag=2'
                 self.assertEqual(expect_url, actual_url, '点击指令管理后，实际的url和期望的不一样！')
-                sleep(2)
+                sleep(3)
 
                 actual_text = self.account_center_page_details.get_actual_text_after_click_command()
                 self.assertEqual(self.assert_text.account_center_page_issued_command_manager(), actual_text,

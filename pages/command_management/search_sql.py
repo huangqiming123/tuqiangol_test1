@@ -37,3 +37,55 @@ class SearchSql(object):
 
         sql += ";"
         return sql
+
+    def search_sql_for_issued_command_management_search(self, user_id, search_data):
+        sql_01 = "SELECT l.id FROM user_info u LEFT JOIN business_command_logs l " \
+                 "ON l.createdBy = u.userId WHERE l.id IS NOT NULL " \
+                 "AND (u.userId = '" + user_id + "' OR u.fullParentId LIKE CONCAT('1," + user_id + "',',','%'))"
+
+        sql_02 = " UNION ALL SELECT l.id FROM equipment_mostly d LEFT JOIN business_command_logs l " \
+                 "ON d.bindUserId = l.createdBy AND d.imei = l.receiveDevice WHERE l.id IS NOT NULL " \
+                 "AND (d.userId = '" + user_id + "' OR d.fullParentId LIKE CONCAT('1," + user_id + "',',','%'))"
+
+        if search_data['batch'] == '':
+            sql_01 = sql_01
+            sql_02 = sql_02
+
+            if search_data['imei'] != '':
+                sql_01 += " and c.receiveDevice = '%s'" % search_data['imei']
+                sql_02 += " and c.receiveDevice = '%s'" % search_data['imei']
+
+            if search_data['statue'] == '5':
+                sql_01 += " and c.isOffLine = '0'"
+                sql_02 += " and c.isOffLine = '0'"
+
+            if search_data['statue'] == '6':
+                sql_01 += " and c.isOffLine = '1'"
+                sql_02 += " and c.isOffLine = '1'"
+
+            if search_data['statue'] != '5' and search_data['statue'] != '6' and search_data['statue'] != '':
+                sql_02 += " and c.IsExecute = '%s'" % search_data['statue']
+                sql_02 += " and c.IsExecute = '%s'" % search_data['statue']
+
+        elif search_data['batch'] != '':
+            sql_01 += " and c.taskId like '%" + search_data['batch'] + "%'"
+            sql_02 += " and c.taskId like '%" + search_data['batch'] + "%'"
+
+            if search_data['imei'] != '':
+                sql_01 += " and c.receiveDevice = '%s'" % search_data['imei']
+                sql_02 += " and c.receiveDevice = '%s'" % search_data['imei']
+
+            if search_data['statue'] == '5':
+                sql_01 += " and c.isOffLine = '0'"
+                sql_02 += " and c.isOffLine = '0'"
+
+            if search_data['statue'] == '6':
+                sql_01 += " and c.isOffLine = '1'"
+                sql_02 += " and c.isOffLine = '1'"
+
+            if search_data['statue'] != '5' and search_data['statue'] != '6' and search_data['statue'] != '':
+                sql_01 += " and c.IsExecute = '%s'" % search_data['statue']
+                sql_02 += " and c.IsExecute = '%s'" % search_data['statue']
+
+        sql = sql_01 + sql_02 + ";"
+        return sql

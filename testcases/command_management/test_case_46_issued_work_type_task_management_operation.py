@@ -11,7 +11,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 class TestCase46IssuedWorkTaskManagementOperation(unittest.TestCase):
     """
     下发工作模式任务管理，查看设备
-    author：zhangAo
+    author：邓肖斌
     """
     driver = None
     base_url = None

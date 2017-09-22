@@ -1,4 +1,6 @@
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
@@ -46,7 +48,7 @@ class TestCase65CustManageEditCustExpection(unittest.TestCase):
 
         # 进入客户管理页面
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
-
+        sleep(1)
         # 获取选中客户的类型
         cust_type = self.cust_manage_basic_info_and_add_cust_page.get_cust_type()
         cust_account = self.cust_manage_basic_info_and_add_cust_page.get_cust_account()

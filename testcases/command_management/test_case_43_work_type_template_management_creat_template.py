@@ -13,7 +13,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 class TestCase43WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
     """
     创建模板
-    author:zhangAo
+    author:邓肖斌
     """
     driver = None
     base_url = None
@@ -122,3 +122,7 @@ class TestCase43WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
             # 点击删除
             self.command_management_page.delete_add_new_template()
         csv_file.close()
+
+
+if __name__ == "__main__":
+    unittest.main()

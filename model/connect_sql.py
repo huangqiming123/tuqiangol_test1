@@ -28,8 +28,7 @@ class ConnectSql(object):
         return connect
 
 
-'''
-
+    '''
     def connect_tuqiang_sql(self):
         # 连接图强测试环境的第一台数据库
         connect = pymysql.connect(

@@ -20,7 +20,7 @@ class CustManageCustListPage(BasePageServer):
         self.driver.operate_input_element("treeDemo_cusTreeKey", keyword)
         # 点击搜索按钮
         self.driver.click_element("treeDemo_cusTreeSearchBtn")
-        self.driver.wait(1)
+        self.driver.wait(3)
         # 选择列表中第一个搜索结果
         self.driver.click_element("c,autocompleter-item")
         self.driver.wait(1)

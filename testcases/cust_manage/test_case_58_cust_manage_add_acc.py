@@ -12,6 +12,7 @@ from pages.cust_manage.cust_manage_cust_list_page import CustManageCustListPage
 from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAccountPage
 from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
 from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
+from pages.cust_manage.search_sql import SearchSql
 from pages.login.login_page import LoginPage
 
 
@@ -29,6 +30,7 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
         self.cust_manage_my_dev_page = CustManageMyDevPage(self.driver, self.base_url)
         self.cust_manage_lower_account_page = CustManageLowerAccountPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
+        self.search_sql = SearchSql()
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.cust_manage_page_read_csv = CustManagePageReadCsv()
@@ -69,7 +71,8 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
                 "phone": row[5],
                 "email": row[6],
                 "conn": row[7],
-                "com": row[8]
+                "com": row[8],
+                "search_user": row[9]
             }
 
             # 左侧客户列表搜索并选中唯一客户
@@ -78,6 +81,32 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
             # 点击新增用户
             self.cust_manage_basic_info_and_add_cust_page.add_acc()
             sleep(2)
+
+            # 验证所选中的上级用户类型来显示可创建的下级类型
+            user_list = add_info["search_user"].split("/")
+            for type in user_list:
+                self.cust_manage_basic_info_and_add_cust_page.acc_search(type)
+                type_list = self.cust_manage_basic_info_and_add_cust_page.get_acc_user_type_list()
+                sql_data = self.search_sql.search_current_account_data(type)
+                user_type = self.assert_text.log_in_page_account_type(sql_data[2])
+                print(user_type)
+
+                if user_type == "销售":
+                    self.assertEqual(3, type_list["length"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(11), type_list["sale"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(8), type_list["distributor"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
+
+                elif user_type == "代理商":
+                    self.assertEqual(2, type_list["length"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(8), type_list["distributor"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
+
+                elif user_type == "用户":
+                    self.assertEqual(1, type_list["length"])
+                    self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
+
+
             # 右侧搜索栏中搜索并选中作为上级用户
             self.cust_manage_basic_info_and_add_cust_page.acc_search(add_info["keyword"])
             # 选择客户类型

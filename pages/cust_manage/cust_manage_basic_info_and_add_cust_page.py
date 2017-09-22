@@ -17,9 +17,9 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 点击进入客户管理页面
     def enter_cust_manage(self):
-        self.driver.wait(2)
+        self.driver.wait(3)
         self.driver.click_element("customer")
-        self.driver.wait(2)
+        self.driver.wait(3)
 
     def click_left_tree_current_user(self):
         self.driver.click_element("treeDemo_1_span")
@@ -106,15 +106,29 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.wait()
 
     # 当前账户-编辑用户-选择客户类型
-    def acc_type_choose(self, acc_type):
+    def acc_type_choose(self, acc_type, type_id=""):
         if acc_type == '销售':
-            self.driver.click_element("labelSale")
+            # self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[1]")
+            self.driver.click_element("x,//*[@id='typeRoleRadio1']/label[1]")
 
         elif acc_type == '代理商':
-            self.driver.click_element("labelDistributor")
+            try:
+                # self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[2]")
+                self.driver.click_element("x,//*[@id='typeRoleRadio1']/label[2]")
+            except:
+                self.driver.click_element("x,//*[@id='typeRoleRadio2']/label[1]")
+                #self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[3]/label[1]")
 
         elif acc_type == '用户':
-            self.driver.click_element("labelUser")
+            if type_id == "typeRoleRadio1":
+                self.driver.click_element("x,//*[@id='typeRoleRadio1']/label[3]")
+
+            if type_id == "typeRoleRadio2":
+                self.driver.click_element("x,//*[@id='typeRoleRadio2']/label[2]")
+
+            if type_id == "typeRoleRadio3":
+                self.driver.click_element("x,//*[@id='typeRoleRadio3']/label")
+
 
     # 当前账户-编辑用户-编辑用户输入框信息
     def acc_input_info_edit(self, acc_name, phone, email, conn, com):
@@ -200,7 +214,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.operate_input_element("treeDemo2_cusTreeKey", keyword)
         # 点击搜索按钮
         self.driver.click_element("treeDemo2_cusTreeSearchBtn")
-        self.driver.wait(1)
+        self.driver.wait(3)
         # 选择列表中第一个搜索结果
         self.driver.click_element('c,autocompleter-item')
         self.driver.default_frame()
@@ -422,14 +436,13 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="treeDemo2_cusTreeKey"]', param)
         self.driver.click_element('x,//*[@id="treeDemo2_cusTreeSearchBtn"]')
-        sleep(3)
+        sleep(4)
         self.driver.default_frame()
 
     #编辑-搜索--点击查询结果
     def click_search_user(self):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         self.driver.click_element("c,autocompleter")
-
         self.driver.default_frame()
 
     def get_search_no_data_text(self):
@@ -716,8 +729,63 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             print(list)
             return list
         else:
-
             no_data = self.driver.get_text('x,//*[@id="treeRoleBox"]/div[1]/div[1]/span')
             self.driver.default_frame()
             print(no_data)
             return no_data
+
+    # 获取客户类型列表
+    def get_acc_user_type_list(self):
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        type_list_len = len(self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div"))
+        print(type_list_len)
+        for i in range(type_list_len):
+            # 获取style状态
+            state = self.driver.get_element("x,//*[@id='typeRoleRadio" + str(i + 1) + "']").get_attribute('style')
+            if state == "display: none;":
+                continue
+            else:
+                print("else", ("x,//*[@id='typeRoleRadio" + str(i + 1) + "']"))
+                list_len = len(
+                    self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div[" + str(i + 2) + "]/label"))
+                if list_len == 3:
+                    sale = self.driver.get_text("x,//*[@id='typeRoleRadio1']/label[1]")
+                    distributor = self.driver.get_text("x,//*[@id='typeRoleRadio1']/label[2]")
+                    user = self.driver.get_text("x,//*[@id='typeRoleRadio1']/label[3]")
+
+                    type_data = {"sale": sale,
+                                 "distributor": distributor,
+                                 "user": user,
+                                 "length": list_len,
+                                 "type_id": "typeRoleRadio1"
+                                 }
+                    print("333", type_data)
+                    self.driver.default_frame()
+                    return type_data
+                elif list_len == 2:
+                    distributor = self.driver.get_text("x,//*[@id='typeRoleRadio2']/label[1]")
+                    user = self.driver.get_text("x,//*[@id='typeRoleRadio2']/label[2]")
+                    type_data = {
+                        "distributor": distributor,
+                        "user": user,
+                        "length": list_len,
+                        "type_id": "typeRoleRadio2"
+                    }
+                    print("222", type_data)
+                    self.driver.default_frame()
+                    return type_data
+                else:
+                    user = self.driver.get_text("x,//*[@id='typeRoleRadio3']/label")
+                    type_data = {"user": user,
+                                 "length": list_len,
+                                 "type_id": "typeRoleRadio3"
+                                 }
+                    print("1111", type_data)
+                    self.driver.default_frame()
+                    return type_data
+
+    # 点击编辑-取消--编辑
+    def click_edit_customer_process(self):
+        self.click_edit_customer()
+        self.click_cancel_edit()
+        self.click_edit_customer()

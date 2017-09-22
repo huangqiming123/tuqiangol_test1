@@ -119,3 +119,4 @@ class TestCase710814CustManageAddAccountWebLimit(unittest.TestCase):
             # 退出登录
             sleep(1)
             self.account_center_page_navi_bar.usr_logout()
+        csv_file.close()

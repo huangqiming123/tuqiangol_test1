@@ -113,9 +113,11 @@ class TestCase123LoginSuccessWithVirtualUser(unittest.TestCase):
                 expect_service_provider_connect = up_user_info[1]
                 self.assertIn(expect_service_provider_connect, service_provider_connect, "联系人显示错误")
 
-            service_provider_phone = self.account_center_page_navi_bar.sales_usr_service_provider_phone()
-            expect_service_provider_phone = up_user_info[2]
-            self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")
+            if up_user_info[2] != None:
+                service_provider_phone = self.account_center_page_navi_bar.sales_usr_service_provider_phone()
+                expect_service_provider_phone = up_user_info[2]
+                self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")
+
 
             cursor.close()
             connect.close()

@@ -9,6 +9,7 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 class TestCase133SafeAreaSwitch(unittest.TestCase):
     """
     jimitest账号，区域预警----围栏、黑车地址库验证
+    author：邓肖斌
     """
     def setUp(self):
         self.driver = AutomateDriverServer()

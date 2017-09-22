@@ -39,6 +39,7 @@ class TestCase06AccountCenterMsgSetRead(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         # 进入消息中心
         self.account_center_page_msg_center.enter_msg_center()
+        self.driver.wait(8)
         # 进入iframe
         self.account_center_page_msg_center.message_center_iframe()
         # 获取消息中心title
@@ -56,7 +57,7 @@ class TestCase06AccountCenterMsgSetRead(unittest.TestCase):
             self.account_center_page_msg_center.message_center_iframe()
             # 设置搜索条件-消息状态为“未读”，搜索出结果，统计当前未读消息总数
             self.account_center_page_msg_center.set_search_status_unread()
-            self.driver.wait(1)
+            self.driver.wait(4)
 
             # 判断消息中心左侧栏目的未读消息与搜索结果的未读消息数量是否一致
             count_unread_msg_num = self.account_center_page_msg_center.get_total_unread_logs_num()

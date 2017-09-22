@@ -12,7 +12,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 class TestCase44WorkTypeTemplateManagementOperation(unittest.TestCase):
     """
     工作模板的操作：修改、删除、下发指令
-    author：zhangAo
+    author：邓肖斌
     """
     driver = None
     base_url = None
@@ -117,3 +117,7 @@ class TestCase44WorkTypeTemplateManagementOperation(unittest.TestCase):
         # 断言
         self.assertEqual(expect_title_text_after_click_work_type_template_management,
                          self.command_management_page.actual_title_text_after_click_work_type_template_management())
+
+
+if __name__ == "__main__":
+    unittest.main()

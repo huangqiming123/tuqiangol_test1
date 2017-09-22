@@ -9,6 +9,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
+# author：邓肖斌
 class TestCase56CommandManagerAbnormalStateSendCommand(unittest.TestCase):
     def setUp(self):
         # 前置条件

@@ -34,7 +34,8 @@ class TestCase22AccountCenterOverviewActived(unittest.TestCase):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录账号
-        self.log_in_base.log_in()
+        # self.log_in_base.log_in()
+        self.log_in_base.log_in_with_csv("kankan111", "jimi123")
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
         account_center_handle = self.driver.get_current_window_handle()
@@ -53,7 +54,7 @@ class TestCase22AccountCenterOverviewActived(unittest.TestCase):
                 expect_url = self.driver.get_current_url()
                 actual_url = self.base_url + '/device/toDeviceManage?statusFlag=actived&lowerDevFlag=1'
                 self.assertEqual(expect_url, actual_url, '点击已激活后，实际的url和期望的不一样！')
-                sleep(2)
+                sleep(3)
                 self.account_center_page_details.click_more_in_dev_manage()
                 self.assertEqual(self.assert_text.account_center_page_actived_text(), self.driver.get_text(
                     'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]'))

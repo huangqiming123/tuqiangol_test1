@@ -319,7 +319,8 @@ class AccountCenterOperationLogPage(BasePageServer):
                 'x,/html/body/div/div[2]/div[1]/form/div[2]/span[2]/div/div/ul/li[3]')
 
         self.driver.click_element('x,/html/body/div/div[2]/div[1]/form/div[2]/button')
-        sleep(10)
+        # sleep(10)
+        sleep(16)
 
     def get_msg_number(self):
         a = self.driver.get_element('x,//*[@id="msg_paging"]').get_attribute('style')

@@ -357,10 +357,10 @@ class AccountCenterDetailsPage(BasePageServer):
 
     # 快捷销售-新增客户
     def add_cust(self, acc_type, acc_name, account, pwd, phone, email, conn, com):
-        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+        # self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
         # 点击新增客户
-        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
-        self.driver.default_frame()
+        # self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
+        #self.driver.default_frame()
         sleep(2)
 
         # 选择客户类型
@@ -409,11 +409,23 @@ class AccountCenterDetailsPage(BasePageServer):
         sleep(2)
 
     #点击添加按钮
-
     def click_add(self):
         self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
         self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
         self.driver.default_frame()
+
+    # 添加账号--搜索用户
+    def add_account_search_user(self, user):
+        # 将滚动条滚动至搜索输入框处
+        ele = self.driver.get_element("ac_addRole_globalSearch_SalesName")
+        self.driver.execute_script(ele)
+        # 输入账号搜索
+        self.driver.operate_input_element("ac_addRole_globalSearch_SalesName", user)
+        self.driver.click_element("ac_addRole_globalSearch_btn")
+        sleep(3)
+        self.driver.click_element("c,autocompleter")
+        sleep(2)
+
 
 
     # 获取新增客户保存状态
@@ -896,7 +908,7 @@ class AccountCenterDetailsPage(BasePageServer):
             # 点击编辑
             self.driver.click_element("x,//*[@id='markDevTable']/tr[" + str(i + 1) + "]/td[12]/a[1]")
             sleep(5)
-            # 修改设备名称、sim卡号  /html/body/div[33]/div[2]/iframe
+            # 修改设备名称、sim卡号
             self.driver.switch_to_iframe("x,/html/body/div[" + str(32 + i) + "]/div[2]/iframe")
             self.driver.operate_input_element("x,//*[@id='device_info_a']/fieldset[1]/div[2]/div[1]/input", name)
             self.driver.operate_input_element("x,//*[@id='device_info_a']/fieldset[1]/div[2]/div[2]/input", sim)
@@ -920,3 +932,62 @@ class AccountCenterDetailsPage(BasePageServer):
                                               "div/div[2]/table/tr/td[3]/input").get_attribute("maxlength"))
         self.driver.default_frame()
         return sim_len
+
+    # 销售销售--获取用户到期文本
+    def get_account_expired_time_text(self):
+        text = self.driver.get_text("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/span[2]")
+        return text
+
+    # 快速销售--获取客户类型列表
+    def get_fast_sale_acc_user_type_list(self):
+
+        # type_list_len = len(self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div"))
+        type_list_len = len(self.driver.get_elements("x,//*[@id='addRole_userForm']/div[2]/div/div/label"))
+        print(type_list_len)
+        display_type_list = []
+
+        for i in range(type_list_len):
+            # 获取style状态
+            state = self.driver.get_element(
+                "x,/html/body/div[1]/div[7]/div[2]/div/div/form/div[2]/div/div/label[" + str(
+                    i + 1) + "]").get_attribute('style')
+            if state == "display: none;":
+                continue
+            else:
+                display_type_list.append(i)
+        display_type_len = len(display_type_list)
+        if display_type_len == 2:
+            distributor = self.driver.get_text("x,//*[@id='type8']")
+            user = self.driver.get_text("x,//*[@id='type9']")
+            type_data = {
+                "distributor": distributor,
+                "user": user,
+                "length": display_type_len
+            }
+            print("222", type_data)
+
+            return type_data
+        elif display_type_len == 1:
+            user = self.driver.get_text("x,//*[@id='type9']")
+            type_data = {"user": user,
+                         "length": display_type_len,
+
+                         }
+            print("1111", type_data)
+
+            return type_data
+
+        else:
+            sale = self.driver.get_text("x,//*[@id='type11']")
+            distributor = self.driver.get_text("x,//*[@id='type8']")
+            user = self.driver.get_text("x,//*[@id='type9']")
+
+            type_data = {"sale": sale,
+                         "distributor": distributor,
+                         "user": user,
+                         "length": display_type_len
+
+                         }
+            print("333", type_data)
+
+            return type_data

@@ -85,3 +85,24 @@ class AssertText2(object):
 
     def account_center_fast_sale_typeface(self):
         return "快速销售"
+
+    def account_center_please_select(self):
+        return "请选择"
+
+    def account_center_refill_card_apply_succeed(self):
+        return "提交申请成功!"
+
+    def account_center_refill_card_transfer_succeed(self):
+        return "转移充值卡成功!"
+
+    def account_center_refill_card_refill_succeed(self):
+        return "续费成功!"
+
+    def cust_manage_sell_shift_agent_prompt(self):
+        return '转移客户中不能包含销售'
+
+    def cust_manage_sell_shift_user_prompt(self):
+        return '转移的客户中不能包含代理商和销售'
+
+    def cust_manage_shift_user_prompt(self):
+        return '转移的客户中不能包含代理商和销售'

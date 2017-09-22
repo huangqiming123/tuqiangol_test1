@@ -14,6 +14,7 @@ from pages.safe_area.safe_area_search_sql import SafeAreaSearchSql
 class TestCase131MarkOperation(unittest.TestCase):
     """
     web_autotest账号，标注点页面操作
+    author：邓肖斌
     """
     def setUp(self):
         self.driver = AutomateDriverServer()

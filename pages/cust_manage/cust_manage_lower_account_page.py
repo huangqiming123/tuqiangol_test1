@@ -298,7 +298,6 @@ class CustManageLowerAccountPage(BasePageServer):
         return status
 
     def add_data_to_search_account(self, search_data):
-
         self.driver.operate_input_element('x,//*[@id="treeDemo_cusTreeKey"]', search_data['account'])
         sleep(2)
         # 点击搜索
@@ -347,4 +346,9 @@ class CustManageLowerAccountPage(BasePageServer):
     def get_list_role_type(self):
         type = self.driver.get_text("x,//*[@id='customerlist']/tr/td[3]")
         print(type)
+        return type
+
+    # 获取搜索结果账号类型(一个)
+    def get_search_result_account_type(self):
+        type = self.driver.get_element("x,//*[@id='customerlist']/tr/td[3]").text
         return type

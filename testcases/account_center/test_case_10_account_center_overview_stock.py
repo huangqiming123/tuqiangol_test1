@@ -38,6 +38,7 @@ class TestCase10AccountCenterOverviewStock(unittest.TestCase):
         self.base_page.open_page()
         # 登录账号
         self.log_in_base.log_in()
+        # self.log_in_base.log_in_with_csv("kankan111","jimi123")
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
         self.account_center_page_details.account_center_iframe()
@@ -61,7 +62,7 @@ class TestCase10AccountCenterOverviewStock(unittest.TestCase):
                 # 判断包涵下级的input框未被勾选上
                 input_value = self.account_center_page_navi_bar.check_next_user_input_value()
                 self.assertEqual(False, input_value)
-
+                sleep(3)
                 actual_total = self.account_center_page_details.get_actual_current_account_all_equipment()
                 self.assertEqual(expect_total, str(actual_total), '当前用户库存的总数和实际不一致！')
 

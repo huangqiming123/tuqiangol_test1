@@ -69,7 +69,7 @@ class TestCase15AccountCenterOverviewNextGuest(unittest.TestCase):
                 # actual_url = self.base_url + '/customer/toSearch?userId=%s&viewFlag=4' % user_id
                 actual_url = self.base_url + '/customer/toSearch?viewFlag=4'
                 self.assertEqual(expect_url, actual_url, '点击下级客户管理后，实际的url和期望的不一样！')
-                sleep(2)
+                sleep(3)
                 expect_next = self.account_center_page_details.get_current_account_next()
                 actual_next = self.account_center_page_details.get_actual_current_account_next()
                 self.assertEqual(expect_next, actual_next, '左侧列表的下级总数和右侧不一致！')

@@ -15,6 +15,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
     """
     用例第136条，下发指令管理页面的搜索
+    author:邓肖斌
     """
     driver = None
     base_url = None
@@ -133,7 +134,8 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
                 current_user_next = tuple(current_account_list)'''
 
                 # 判断搜索条件
-                get_sql = self.command_management_page.sql_for_manager(user_info['id'], search_data)
+                get_sql = self.command_management_page. \
+                    search_sql_for_issued_command_management_search(user_info['id'], search_data)
                 # 执行sql
                 print(get_sql)
                 cursor.execute(get_sql)

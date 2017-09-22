@@ -73,7 +73,6 @@ class CommandManagementPage(BasePage):
 
     def click_control_after_click_command_management(self):
         # 点击控制台后点击指令管理
-
         self.driver.click_element('p,指令管理')
 
     def actual_url_click_command_management(self):
@@ -867,25 +866,25 @@ class CommandManagementPage(BasePage):
         self.driver.click_element('x,//*[@id="js-issued-instruction"]')
         self.driver.wait(1)
 
-    '''# 获取对非正常状态下的设备下发指令后的文本（测试环境）
-    def get_text_after_send_command_with_abnormal_dev(self, state):
+        # 获取对非正常状态下的设备下发指令后的文本（测试环境）
+        '''def get_text_after_send_command_with_abnormal_dev(self, state):
 
         if state == '停机':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201705261957003')
         elif state == '用户到期':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201708041840015')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '978456123045612')
         elif state == '平台到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
         elif state == '不支持':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '123456789000000')
         elif state == '停机+用户到期':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '519876810593061')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '868120111111113')
         elif state == '停机+平台到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
         elif state == '停机+不支持':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '172522579800256')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201708141550004')
         elif state == '用户到期+平台到期':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '812351111124333')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '519876810593085')
         elif state == '用户到期+不支持':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '867597011453278')
         elif state == '平台到期+不支持':
@@ -893,7 +892,7 @@ class CommandManagementPage(BasePage):
         elif state == '停机+用户到期+平台到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '519876810593091')
         elif state == '停机+用户到期+不支持':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201707311700003')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '912325678012479')
         elif state == '停机+平台到期+不支持':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201706301005002')
         elif state == '用户到期+平台到期+不支持':
@@ -912,7 +911,7 @@ class CommandManagementPage(BasePage):
     def get_text_after_send_command_with_abnormal_dev(self, state):
 
         if state == '停机':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201705261957003')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '312345123453104')
         elif state == '用户到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '103456789012341')
         elif state == '平台到期':
@@ -953,45 +952,55 @@ class CommandManagementPage(BasePage):
         self.driver.click_element('x,/html/body/div[4]/span[1]/a')
         self.driver.wait()
 
-    def sql_for_manager(self, user_id, search_data):
-        sql = "SELECT c.id FROM `business_command_logs` c WHERE c.receiveDevice IN " \
-              "(SELECT e.imei FROM equipment_mostly e WHERE e.fullParentId LIKE '1," \
-              + user_id + "%' OR e.userId = '" + user_id + "') AND " \
-                                                           "(c.createdBy IN (SELECT e.userId FROM equipment_mostly e WHERE " \
-                                                           "e.fullParentId LIKE '1," + user_id + "%' OR e.userId = '" + user_id + "') OR " \
-                                                                                                                                  "(c.createdBy IN (SELECT e.bindUserId FROM equipment_mostly e WHERE e.imei IN " \
-                                                                                                                                  "(SELECT e.imei FROM equipment_mostly e WHERE (e.fullParentId LIKE '1," + user_id + "%' " \
-                                                                                                                                                                                                                      "OR e.userId = '" + user_id + "') AND bindUserID != NULL))))"
+    # 下发指令管理搜索sql
+    def search_sql_for_issued_command_management_search(self, user_id, search_data):
+        sql_01 = "SELECT l.id FROM user_info u LEFT JOIN business_command_logs l " \
+                 "ON l.createdBy = u.userId WHERE l.id IS NOT NULL " \
+                 "AND (u.userId = '" + user_id + "' OR u.fullParentId LIKE CONCAT('1," + user_id + "',',','%'))"
+
+        sql_02 = " UNION ALL SELECT l.id FROM equipment_mostly d LEFT JOIN business_command_logs l " \
+                 "ON d.bindUserId = l.createdBy AND d.imei = l.receiveDevice WHERE l.id IS NOT NULL " \
+                 "AND (d.userId = '" + user_id + "' OR d.fullParentId LIKE CONCAT('1," + user_id + "',',','%'))"
 
         if search_data['batch'] == '':
-            sql = sql
+            sql_01 = sql_01
+            sql_02 = sql_02
 
             if search_data['imei'] != '':
-                sql += " and c.receiveDevice = '%s'" % search_data['imei']
+                sql_01 += " and l.receiveDevice = '%s'" % search_data['imei']
+                sql_02 += " and l.receiveDevice = '%s'" % search_data['imei']
 
             if search_data['statue'] == '5':
-                sql += " and c.isOffLine = '0'"
+                sql_01 += " and l.isOffLine = '0'"
+                sql_02 += " and l.isOffLine = '0'"
 
             if search_data['statue'] == '6':
-                sql += " and c.isOffLine = '1'"
+                sql_01 += " and l.isOffLine = '1'"
+                sql_02 += " and l.isOffLine = '1'"
 
             if search_data['statue'] != '5' and search_data['statue'] != '6' and search_data['statue'] != '':
-                sql += " and c.IsExecute = '%s'" % search_data['statue']
+                sql_01 += " and l.IsExecute = '%s'" % search_data['statue']
+                sql_02 += " and l.IsExecute = '%s'" % search_data['statue']
 
         elif search_data['batch'] != '':
-            sql += " and c.taskId like '%" + search_data['batch'] + "%'"
+            sql_01 += " and l.taskId like '%" + search_data['batch'] + "%'"
+            sql_02 += " and l.taskId like '%" + search_data['batch'] + "%'"
 
             if search_data['imei'] != '':
-                sql += " and c.receiveDevice = '%s'" % search_data['imei']
+                sql_01 += " and l.receiveDevice = '%s'" % search_data['imei']
+                sql_02 += " and l.receiveDevice = '%s'" % search_data['imei']
 
             if search_data['statue'] == '5':
-                sql += " and c.isOffLine = '0'"
+                sql_01 += " and l.isOffLine = '0'"
+                sql_02 += " and l.isOffLine = '0'"
 
             if search_data['statue'] == '6':
-                sql += " and c.isOffLine = '1'"
+                sql_01 += " and l.isOffLine = '1'"
+                sql_02 += " and l.isOffLine = '1'"
 
             if search_data['statue'] != '5' and search_data['statue'] != '6' and search_data['statue'] != '':
-                sql += " and c.IsExecute = '%s'" % search_data['statue']
+                sql_01 += " and l.IsExecute = '%s'" % search_data['statue']
+                sql_02 += " and l.IsExecute = '%s'" % search_data['statue']
 
-        sql += ";"
+        sql = sql_01 + sql_02 + ";"
         return sql

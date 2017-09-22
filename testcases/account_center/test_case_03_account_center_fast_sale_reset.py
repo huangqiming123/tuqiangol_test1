@@ -1,6 +1,7 @@
 import csv
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.assert_text2 import AssertText2
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
@@ -19,6 +20,7 @@ class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
         self.login_page = LoginPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.account_center_page_details = AccountCenterDetailsPage(self.driver, self.base_url)
+        self.assert_text2 = AssertText2()
         self.driver.set_window_max()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
@@ -91,8 +93,20 @@ class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
 
             self.assertEqual(0, self.account_center_page_details.get_selected_device_num(), "删除设备后，已选设备数不是0")
 
-            # 重置
+            # 重置验证
+            self.account_center_page_details.fast_sales_find_and_add_device(search_account["device_imei"])
+            self.driver.default_frame()
+            self.account_center_page_details.click_prompt_close()
+            self.account_center_page_details.account_center_iframe()
+            self.account_center_page_details.choose_account_expired_time("三个月")
+            self.driver.wait(1)
             self.account_center_page_details.reset_device()
+
+            self.assertEqual(0, self.account_center_page_details.get_list_succeed_count(), "重置后，列表中已添加的设备的数不是0")
+            self.assertEqual(0, self.account_center_page_details.get_selected_device_num(), "重置后，已选设备数不是0")
+            self.assertEqual(self.assert_text2.account_center_please_select(),
+                             self.account_center_page_details.get_account_expired_time_text(), "重置后,用户到期时间不是请选择")
+
             self.driver.default_frame()
         csv_file.close()
         # 退出登录

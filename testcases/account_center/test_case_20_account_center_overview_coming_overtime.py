@@ -52,7 +52,7 @@ class TestCase20AccountCenterOverviewComingOvertime(unittest.TestCase):
                 expect_url = self.driver.get_current_url()
                 actual_url = self.base_url + '/device/toDeviceManage?statusFlag=aboutToExpirate&lowerDevFlag=1'
                 self.assertEqual(expect_url, actual_url, '点击即将到期后，实际的url和期望的不一样！')
-                sleep(2)
+                sleep(3)
                 self.account_center_page_details.click_more_in_dev_manage()
                 get_text = self.account_center_page_details.click_coming_overtime_get_text()
                 self.assertEqual(self.assert_text.account_center_page_expiring_text(), get_text)

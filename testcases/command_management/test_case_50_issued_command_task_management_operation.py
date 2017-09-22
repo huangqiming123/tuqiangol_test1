@@ -12,7 +12,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 class TestCase50IssuedCommandTaskManagementOperation(unittest.TestCase):
     """
     用例第134条，下发工作指令任务的操作
-    author:zhangAo
+    author:邓肖斌
     """
     driver = None
     base_url = None

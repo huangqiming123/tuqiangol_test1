@@ -1,4 +1,26 @@
+from model.connect_sql import ConnectSql
+
+
 class SearchSql(object):
+    def search_current_account_data(self, user_account):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+
+        get_user_id_sql = "select u.userId,u.account,u.type from user_info u where u.account = '%s';" % user_account
+        cursor.execute(get_user_id_sql)
+        user_data_list = cursor.fetchall()
+
+        list_data = []
+        for range1 in user_data_list:
+            for range2 in range1:
+                list_data.append(range2)
+        all_data = tuple(list_data)
+        cursor.close()
+        connect.close()
+        return all_data
+
+
     def search_dev_sql(self, user_id, search_data):
         # 搜索设备的sql
         sql = "select o.id from assets_organize o inner join assets_device d on o.id = d.orgId where d.userId = '%s'" % user_id

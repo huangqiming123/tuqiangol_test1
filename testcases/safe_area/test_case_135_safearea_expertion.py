@@ -9,6 +9,7 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 class TestCase135SafeAreaExpertion(unittest.TestCase):
     """
     web_autotest账号，分别选择区域预警、黑车地址库、围栏进行操作
+    author：邓肖斌
     """
     def setUp(self):
         self.driver = AutomateDriverServer()
@@ -82,11 +83,13 @@ class TestCase135SafeAreaExpertion(unittest.TestCase):
         self.safe_area_page.click_select_fence_button()
         # 获取第一个围栏的名称
         fence_name = self.safe_area_page.get_first_list_fence_name()
+        print('1 = %s' % fence_name)
 
         # 点击编辑
         self.safe_area_page.click_edit_fence()
         # 获取打开编辑之后的围栏名称
         names = self.safe_area_page.get_fence_name_after_edit()
+        print('2 = %s' % names)
         self.assertEqual(fence_name, names)
         # 点击取消
         self.safe_area_page.click_cancel_edit()

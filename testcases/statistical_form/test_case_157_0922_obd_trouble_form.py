@@ -12,7 +12,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase156ObdVehicleConditionForm(unittest.TestCase):
+class TestCase157ObdTroubleForm(unittest.TestCase):
     def setUp(self):
         # 前置条件
         # 实例化对象
@@ -41,16 +41,16 @@ class TestCase156ObdVehicleConditionForm(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_obd_vehicle_condition_form(self):
+    def test_case_obd_trouble_form(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,
                          self.statistical_form_page.actual_url_after_statistical_form())
 
         # 点击obd统计的里程报表
-        self.obd_form_page.click_obd_vehicle_condition_condition_form_button()
+        self.obd_form_page.click_obd_trouble_form_button()
         # 切换到odb里程统计的frame里面
-        self.obd_form_page.switch_to_obd_vehicle_condition_form_frame()
+        self.obd_form_page.switch_to_obd_trouble_form_frame()
 
         csv_file = self.statistical_form_page_read_csv.read_csv('obd_milage_report_search_data.csv')
         csv_data = csv.reader(csv_file)
@@ -65,7 +65,7 @@ class TestCase156ObdVehicleConditionForm(unittest.TestCase):
                 'begin_time': row[3],
                 'end_time': row[4]
             }
-            self.obd_form_page.add_data_to_search_obd_vehicle_condition_form(search_data)
+            self.obd_form_page.add_data_to_search_obd_trouble_form(search_data)
 
             # 获取页面上设备的信息
             dev_name = self.obd_form_page.get_dev_name_in_obd_vehicle_condition_form()
@@ -77,7 +77,7 @@ class TestCase156ObdVehicleConditionForm(unittest.TestCase):
             # 查询设备的名称
             sql_check_dev_name = self.obd_form_page.get_dev_name_in_sql(self.obd_form_page.search_imei())
             # 查询数据库的条数
-            get_sql_total_number = self.obd_form_page.get_sql_total_number_in_obd_vehicel_condition_form()
+            get_sql_total_number = self.obd_form_page.get_sql_total_number_in_obd_trouble_form()
             get_web_total_number = self.obd_form_page.get_web_total_number_in_vehicel_condition_form()
             self.assertEqual(get_sql_total_number, get_web_total_number)
 

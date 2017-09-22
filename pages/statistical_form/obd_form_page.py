@@ -299,3 +299,94 @@ class ObdFormPage(BasePage):
 
     def get_dev_total_oil_obd_vehicle_condition_form(self):
         return self.driver.get_text('x,//*[@id="totalFuel"]')
+
+    def get_sql_total_number_in_obd_vehicel_condition_form(self):
+        begin_time = self.driver.get_element('x,//*[@id="startTime_travel"]').get_attribute('value')
+        end_time = self.driver.get_element('x,//*[@id="endTime_travel"]').get_attribute('value')
+
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_form()
+        cursor = connect.cursor()
+        sql = "SELECT DEVICE_IMEI FROM gt_obd_his WHERE DEVICE_IMEI = '" + self.search_imei() + "' and CREATE_TIME BETWEEN '" + begin_time + "' and '" + end_time + "' and ERROR_CODE is NULL and RAPID_ACCELERATION = 0 and RAPID_DECELERATION = 0;"
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        cursor.close()
+        connect.close()
+        return len(data)
+
+    def get_web_total_number_in_vehicel_condition_form(self):
+        a = self.driver.get_element('x,//*[@id="paging-day"]').get_attribute('style')
+        if a == 'display: block;':
+            new_page = NewPaging(self.driver, self.base_url)
+            return new_page.get_total_number('x,//*[@id="paging-day"]', 'x,//*[@id="mileage-day-tbody"]')
+        else:
+            return 0
+
+    def click_obd_trouble_form_button(self):
+        self.driver.click_element('x,//*[@id="OBDfailureReport"]/a')
+        sleep(2)
+
+    def switch_to_obd_trouble_form_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="OBDfailureReportFrame"]')
+
+    def add_data_to_search_obd_trouble_form(self, data):
+        # 选择时间
+        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+        sleep(2)
+        if data['choose_date'] == '':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[1]')
+            sleep(2)
+            self.driver.operate_input_element('x,//*[@id="startTime_travel"]', data['begin_time'])
+            sleep(1)
+            self.driver.operate_input_element('x,//*[@id="endTime_travel"]', data['end_time'])
+
+        elif data['choose_date'] == 'today':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[2]')
+
+        elif data['choose_date'] == 'yesterday':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[3]')
+
+        elif data['choose_date'] == 'this_week':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[4]')
+
+        elif data['choose_date'] == 'last_week':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[5]')
+
+        elif data['choose_date'] == 'this_month':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[6]')
+
+        elif data['choose_date'] == 'last_month':
+            self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[7]')
+
+        sleep(2)
+
+        # 选择用户
+        self.driver.click_element('x,//*[@id="FailureFrom"]/div[1]/div[3]/div/div[1]/span/button')
+        sleep(1)
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', data['user_name'])
+        self.driver.click_element('x,//*[@id="search_user_btn"]')
+        sleep(3)
+        self.driver.click_element('c,autocompleter-item')
+        sleep(3)
+
+        # TODO:obd form choose imei
+        # 输入设备imei
+        self.driver.operate_input_element('x,//*[@id="imei"]', self.search_imei())
+
+        # 点击搜索按钮
+        self.driver.click_element('x,//*[@id="FailureFrom"]/div[1]/div[5]/button')
+        sleep(5)
+
+    def get_sql_total_number_in_obd_trouble_form(self):
+        begin_time = self.driver.get_element('x,//*[@id="startTime_travel"]').get_attribute('value')
+        end_time = self.driver.get_element('x,//*[@id="endTime_travel"]').get_attribute('value')
+
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_form()
+        cursor = connect.cursor()
+        sql = "SELECT DEVICE_IMEI FROM gt_obd_his WHERE DEVICE_IMEI = '" + self.search_imei() + "' and CREATE_TIME BETWEEN '" + begin_time + "' and '" + end_time + "' and ERROR_CODE is not NULL;"
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        cursor.close()
+        connect.close()
+        return len(data)

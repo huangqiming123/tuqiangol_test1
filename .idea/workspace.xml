@@ -2,120 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/account_center/apply_refill_card.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/account_center/apply_refill_card_exception.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/account_center/equipment_refill.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/account_center/search_apply_record_data.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/account_center/transfer_refill_card.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/account_center/transfer_refill_card_exception.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/cust_manage/edit_user_tree.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/account_center/account_center_refill_card_page.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_27_account_center_modify_info_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_28_account_center_modify_password_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_29_account_center_visual_account_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_30_account_center_visual_edit_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_31_account_center_overview_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_32_account_center_msg_edit_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_33_account_center_add_visual_account_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_34_account_center_jump_page_account_data_verify.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_35_account_center_left_cycle_click_module.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_36_account_center_edit_default_password.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_37_account_center_search_different_account_verify.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_38_0821_account_center_page_memorization_default_option.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_39_0828_account_center_search_lower_client_verify.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_40_0830_account_center_fast_sale_edit_add_facility.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_41_0918_account_center_refill_card_add_apply.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_42_0918_account_center_refill_card_apply_record_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_43_0918_account_center_refill_card_apply_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_44_0919_account_center_refill_card_transfer_record_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_45_0919_account_center_refill_card_refill_record_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_46_0919_account_center_refill_card_transfer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_47_0919_account_center_refill_card_transfer_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_48_0921_account_center_refill_card_equipment_refill.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_49_0921_account_center_refill_card_equipment_refill_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_154_0922_obd_mileage_form.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_157_0922_obd_trouble_form.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/read_excel_demo.xls" afterPath="$PROJECT_DIR$/model/read_excel_demo.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/change_data.py" afterPath="$PROJECT_DIR$/change_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/account_center/fast_sale_add_cust_and_sale.csv" afterPath="$PROJECT_DIR$/data/account_center/fast_sale_add_cust_and_sale.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/account_center/search_massage_data.csv" afterPath="$PROJECT_DIR$/data/account_center/search_massage_data.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/command_management/issued_command_management_search_data.csv" afterPath="$PROJECT_DIR$/data/command_management/issued_command_management_search_data.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cust_manage/acc_add.csv" afterPath="$PROJECT_DIR$/data/cust_manage/acc_add.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/login/login_with_sales_and_agent_user.csv" afterPath="$PROJECT_DIR$/data/login/login_with_sales_and_agent_user.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eee.py" afterPath="$PROJECT_DIR$/eee.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_run.py" afterPath="$PROJECT_DIR$/main_run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/assert_text2.py" afterPath="$PROJECT_DIR$/model/assert_text2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/connect_sql.py" afterPath="$PROJECT_DIR$/model/connect_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/send_mail.py" afterPath="$PROJECT_DIR$/model/send_mail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/search_sql.py" afterPath="$PROJECT_DIR$/pages/account_center/search_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/command_management/command_management_page.py" afterPath="$PROJECT_DIR$/pages/command_management/command_management_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/command_management/command_management_page_read_csv.py" afterPath="$PROJECT_DIR$/pages/command_management/command_management_page_read_csv.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/command_management/search_sql.py" afterPath="$PROJECT_DIR$/pages/command_management/search_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" afterPath="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/cust_manage_cust_list_page.py" afterPath="$PROJECT_DIR$/pages/cust_manage/cust_manage_cust_list_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/cust_manage_lower_account_page.py" afterPath="$PROJECT_DIR$/pages/cust_manage/cust_manage_lower_account_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/search_sql.py" afterPath="$PROJECT_DIR$/pages/cust_manage/search_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" afterPath="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/safe_area/safe_area_search_sql.py" afterPath="$PROJECT_DIR$/pages/safe_area/safe_area_search_sql.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/obd_form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/obd_form_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_04_account_center_fast_sale_add_cust.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_04_account_center_fast_sale_add_cust.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_05_account_center_msg_unread.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_05_account_center_msg_unread.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_06_account_center_msg_set_read.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_06_account_center_msg_set_read.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_07_account_center_msg_search.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_07_account_center_msg_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_10_account_center_overview_stock.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_10_account_center_overview_stock.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_11_account_center_overview_total.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_11_account_center_overview_total.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_15_account_center_overview_next_guest.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_15_account_center_overview_next_guest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_17_account_center_overview_command.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_17_account_center_overview_command.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_20_account_center_overview_coming_overtime.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_20_account_center_overview_coming_overtime.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_22_account_center_overview_actived.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_22_account_center_overview_actived.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_23_account_center_overview_inactive.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_23_account_center_overview_inactive.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_43_work_type_template_management_creat_template.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_43_work_type_template_management_creat_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_44_work_type_template_management_operation.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_44_work_type_template_management_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_45_issued_work_type_task_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_45_issued_work_type_task_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_46_issued_work_type_task_management_operation.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_46_issued_work_type_task_management_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_47_issued_work_type_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_47_issued_work_type_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_48_issued_work_type_management_operation.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_48_issued_work_type_management_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_49_issued_command_task_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_49_issued_command_task_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_50_issued_command_task_management_operation.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_50_issued_command_task_management_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_51_issued_command_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_51_issued_command_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_52_command_manage_create_template.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_52_command_manage_create_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_53_command_manage_create_template_week_patterns.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_53_command_manage_create_template_week_patterns.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_54_command_manage_create_template_normal_mode.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_54_command_manage_create_template_normal_mode.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_55_command_manage_create_template_modify_template.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_55_command_manage_create_template_modify_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_58_cust_manage_add_acc.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_58_cust_manage_add_acc.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_59_cust_manage_lower_account_search.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_59_cust_manage_lower_account_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_61_cust_manage_lower_account_operate.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_61_cust_manage_lower_account_operate.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_65_cust_manage_edit_cust_expection.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_65_cust_manage_edit_cust_expection.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_66_cust_manage_edit_cust_search.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_66_cust_manage_edit_cust_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_70_cust_manage_add_virtual_user_expection.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_70_cust_manage_add_virtual_user_expection.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_71_0814_cust_manage_add_account_web_limit.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_71_0814_cust_manage_add_account_web_limit.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_72_0815_cust_manage_add_user_command_limit.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_72_0815_cust_manage_add_user_command_limit.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_73_0816_cust_manage_edit_user_command_limit.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_73_0816_cust_manage_edit_user_command_limit.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_74_0817_cust_manage_reset_password_verify.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_74_0817_cust_manage_reset_password_verify.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_75_0817_cust_manage_delete_account_verify.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_75_0817_cust_manage_delete_account_verify.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/login/test_case_116_login_success_with_sales_and_agent.py" afterPath="$PROJECT_DIR$/testcases/login/test_case_116_login_success_with_sales_and_agent.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/login/test_case_123_login_success_with_virtual_user.py" afterPath="$PROJECT_DIR$/testcases/login/test_case_123_login_success_with_virtual_user.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_129_area_table_operaition.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_129_area_table_operaition.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_130_area_table_paging.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_130_area_table_paging.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_131_mark_operation.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_131_mark_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_132_mark_paging.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_132_mark_paging.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_133_safearea_switch.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_133_safearea_switch.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_134_safearea_paging.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_134_safearea_paging.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_135_safearea_expertion.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_135_safearea_expertion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_136_safearea_relevance.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_136_safearea_relevance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_137_safearea_mark_point_exception.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_137_safearea_mark_point_exception.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/statistical_form/# test_case_154_0918_obd_mileage_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_156_0922_obd_vehicle_condition_form.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/statistical_form/# test_case_155_0918_obd_tracel_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_155_0922_obd_tracel_form.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/statistical_form2/test_case_172_alarm_overview_test.py" afterPath="$PROJECT_DIR$/testcases/statistical_form2/# test_case_172_alarm_overview_test.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/statistical_form2/test_case_173_alarm_detail_test.py" afterPath="$PROJECT_DIR$/testcases/statistical_form2/# test_case_173_alarm_detail_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form/test_case_156_0922_obd_vehicle_condition_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form/test_case_156_0922_obd_vehicle_condition_form.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -136,12 +27,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="assert_text2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/assert_text2.py">
+      <file leaf-file-name="test_case_157_0922_obd_trouble_form.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_157_0922_obd_trouble_form.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.41095892">
+              <caret line="72" column="89" selection-start-line="72" selection-start-column="89" selection-end-line="72" selection-end-column="89" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,8 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_page_navi_bar2.py" />
-        <option value="$PROJECT_DIR$/testcases/account_log/test_case_41_oper_device_log_paging.py" />
         <option value="$PROJECT_DIR$/pages/alarm_info/alarm_info_page.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form2/test_case_170_alarm_overview_search.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
@@ -218,8 +109,10 @@
         <option value="$PROJECT_DIR$/change_data.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_154_0918_obd_mileage_form.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_155_0922_obd_tracel_form.py" />
+        <option value="$PROJECT_DIR$/model/assert_text2.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/obd_form_page.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_156_0922_obd_vehicle_condition_form.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_157_0922_obd_trouble_form.py" />
       </list>
     </option>
   </component>
@@ -287,6 +180,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statistical_form2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statistical_form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -321,51 +250,7 @@
       <recent name="E:\git\tuqiangol_test\testcases\account_center" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase155ObdTracelForm.test_case_obd_tracel_form (1)">
-    <configuration default="false" name="Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form2/test_case_157_alarm_overview_exception_search.py" />
-      <option name="CLASS_NAME" value="TestCase157AlarmOverviewExceptionSearch" />
-      <option name="METHOD_NAME" value="test_alarm_overview_exception_search" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangOL" />
-      <option name="SCRIPT_NAME" value="E:\git\tuqiangol_test\testcases\statistical_form\test_case_154_0922_obd_mileage_form.py" />
-      <option name="CLASS_NAME" value="TestCase154ObdMileageForm" />
-      <option name="METHOD_NAME" value="test_case_obd_mileage_form" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest TestCase157ObdTroubleForm.test_case_obd_trouble_form">
     <configuration default="false" name="Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -423,6 +308,50 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_156_0922_obd_vehicle_condition_form.py" />
       <option name="CLASS_NAME" value="TestCase156ObdVehicleConditionForm" />
       <option name="METHOD_NAME" value="test_case_obd_vehicle_condition_form" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangOL" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_156_0922_obd_vehicle_condition_form.py" />
+      <option name="CLASS_NAME" value="TestCase156ObdVehicleConditionForm" />
+      <option name="METHOD_NAME" value="test_case_obd_vehicle_condition_form" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase157ObdTroubleForm.test_case_obd_trouble_form" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangOL" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form/test_case_157_0922_obd_trouble_form.py" />
+      <option name="CLASS_NAME" value="TestCase157ObdTroubleForm" />
+      <option name="METHOD_NAME" value="test_case_obd_trouble_form" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -573,18 +502,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase155ObdTracelForm.test_case_obd_tracel_form (1)" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase155ObdTracelForm.test_case_obd_tracel_form (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form (1)" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase157ObdTroubleForm.test_case_obd_trouble_form" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase155ObdTracelForm.test_case_obd_tracel_form (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase157ObdTroubleForm.test_case_obd_trouble_form" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase155ObdTracelForm.test_case_obd_tracel_form (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form" />
       </list>
     </recent_temporary>
   </component>
@@ -598,12 +528,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00088" summary="修改代码">
-      <created>1502675056048</created>
-      <option name="number" value="00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1502675056051</updated>
     </task>
     <task id="LOCAL-00089" summary="修改代码">
       <created>1502679928271</created>
@@ -893,16 +817,16 @@
       <option name="project" value="LOCAL" />
       <updated>1505994614270</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="修改代码">
+      <created>1506076483506</created>
+      <option name="number" value="00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1506076483508</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase154ObdMileageForm_test_case_obd_mileage_form - 2017.09.22 at 14h 56m 52s.xml">
-      <configuration name="Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase154ObdMileageForm_test_case_obd_mileage_form - 2017.09.22 at 14h 59m 02s.xml">
-      <configuration name="Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase154ObdMileageForm_test_case_obd_mileage_form - 2017.09.22 at 15h 00m 24s.xml">
       <configuration name="Unittest TestCase154ObdMileageForm.test_case_obd_mileage_form" configurationId="tests" />
     </history-entry>
@@ -927,6 +851,12 @@
     <history-entry file="Unittest_TestCase156ObdVehicleConditionForm_test_case_obd_vehicle_condition_form - 2017.09.22 at 17h 05m 03s.xml">
       <configuration name="Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittest_TestCase156ObdVehicleConditionForm_test_case_obd_vehicle_condition_form_(1) - 2017.09.22 at 18h 57m 35s.xml">
+      <configuration name="Unittest TestCase156ObdVehicleConditionForm.test_case_obd_vehicle_condition_form (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase157ObdTroubleForm_test_case_obd_trouble_form - 2017.09.22 at 19h 11m 44s.xml">
+      <configuration name="Unittest TestCase157ObdTroubleForm.test_case_obd_trouble_form" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -943,16 +873,16 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20126449" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24242425" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835498" sideWeight="0.50263435" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26702702" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2965368" sideWeight="0.49736565" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25757575" sideWeight="0.49736565" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2943723" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1004,13 +934,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_127_0817_dev_search_issued_command.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7798165">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_128_0817_dev_advanced_search_with_delete_user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.73394495">
@@ -1197,6 +1120,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59799">
           <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1298,16 +1222,8 @@
         <state vertical-scroll-proportion="0.8067633">
           <caret line="74" column="95" selection-start-line="69" selection-start-column="12" selection-end-line="74" selection-end-column="95" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_155_0922_obd_tracel_form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6231884">
-          <caret line="80" column="72" selection-start-line="75" selection-start-column="12" selection-end-line="80" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1343,22 +1259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/obd_form_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38164252">
-          <caret line="65" column="31" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_156_0922_obd_vehicle_condition_form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42028984">
-          <caret line="77" column="95" selection-start-line="77" selection-start-column="95" selection-end-line="77" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1385,9 +1285,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/assert_text2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.62801933">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/obd_form_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37899545">
+          <caret line="65" column="31" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_155_0922_obd_tracel_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7716895">
+          <caret line="134" column="71" selection-start-line="82" selection-start-column="12" selection-end-line="134" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_156_0922_obd_vehicle_condition_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4520548">
+          <caret line="105" column="30" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_157_0922_obd_trouble_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41095892">
+          <caret line="72" column="89" selection-start-line="72" selection-start-column="89" selection-end-line="72" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

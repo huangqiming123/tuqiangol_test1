@@ -79,10 +79,12 @@ class TestCase156ObdVehicleConditionForm(unittest.TestCase):
             # 查询数据库的条数
             get_sql_total_number = self.obd_form_page.get_sql_total_number_in_obd_vehicel_condition_form()
             get_web_total_number = self.obd_form_page.get_web_total_number_in_vehicel_condition_form()
-            self.assertEqual(get_sql_total_number, get_web_total_number)
+            self.assertEqual(len(get_sql_total_number), get_web_total_number[1])
 
             # 获取查询出来的 页数
-            total_page = self.obd_form_page.get_obd_list_total_page_number()
+            # if get_web_total_number[0] != 0 and get_web_total_number[0] != 1:
+            #   self.obd_form_page.click_first_page()
+            total_page = get_web_total_number[0]
             if total_page == 0:
                 self.assertEqual('0', dev_total_mile)
                 self.assertEqual('0', dev_avg_oil)
@@ -93,29 +95,36 @@ class TestCase156ObdVehicleConditionForm(unittest.TestCase):
                 # 断言平均油耗
                 # 查询设备的名称
                 self.assertEqual(dev_name, sql_check_dev_name)
-                count_avg_oil = (float(dev_total_oil) / float(dev_total_mile)) * 100
-                self.assertAlmostEqual(count_avg_oil, float(dev_avg_oil))
+                count_avg_oil = '%.2f' % ((float(dev_total_oil) / float(dev_total_mile)) * 100)
+                self.assertEqual(count_avg_oil, dev_avg_oil)
                 # 获取页面上的里程和耗油
                 mile_and_oil_list = []
                 per_page_total_number = self.obd_form_page.get_per_page_total_number()
                 for n in range(per_page_total_number):
                     mile_and_oil_list.append({
-                        'mile': float(self.obd_form_page.get_per_mile_in_obd_tracel_form(n)),
-                        'oil': float(self.obd_form_page.get_per_oil_in_obd_tracel_form(n)),
+                        'begin_time': self.obd_form_page.get_begin_time_in_vehicle_condition_form(n),
+                        'speed': float(self.obd_form_page.get_speed_in_vehicle_condition_form(n)),
+                        'rotating_speed': float(self.obd_form_page.get_rotating_speed_in_vehicle_condition_form(n)),
+                        'water_temperature': float(
+                            self.obd_form_page.get_water_temperature_in_vehicle_condition_form(n)),
+                        'battery_voltage': float(self.obd_form_page.get_battery_voltage_in_vehicle_condition_form(n)),
+                        'fuel': float(self.obd_form_page.get_fuel_in_vehicle_condition_form(n)),
+                        'total_mileage': float(self.obd_form_page.get_total_mileage_in_vehicle_condition_form(n))
                     })
-                total_mile = 0
+                '''total_mile = 0
                 total_oil = 0
                 for data in mile_and_oil_list:
                     total_mile += data['mile']
                     total_oil += data['oil']
                 self.assertAlmostEqual(float(dev_total_mile), total_mile)
-                self.assertAlmostEqual(float(dev_total_oil), total_oil)
+                self.assertAlmostEqual(float(dev_total_oil), total_oil)'''
+                self.assertEqual(get_sql_total_number, mile_and_oil_list)
 
             else:
                 # 断言平均油耗
                 self.assertEqual(dev_name, sql_check_dev_name)
-                count_avg_oil = (float(dev_total_oil) / float(dev_total_mile)) * 100
-                self.assertAlmostEqual(count_avg_oil, dev_avg_oil)
+                count_avg_oil = '%.2f' % ((float(dev_total_oil) / float(dev_total_mile)) * 100)
+                self.assertEqual(count_avg_oil, dev_avg_oil)
                 mile_and_oil_list = []
                 for i in range(total_page):
                     # 循环点击每一页
@@ -124,15 +133,23 @@ class TestCase156ObdVehicleConditionForm(unittest.TestCase):
                     per_page_total_number = self.obd_form_page.get_per_page_total_number()
                     for n in range(per_page_total_number):
                         mile_and_oil_list.append({
-                            'mile': float(self.obd_form_page.get_per_mile_in_obd_tracel_form(n)),
-                            'oil': float(self.obd_form_page.get_per_oil_in_obd_tracel_form(n)),
+                            'begin_time': self.obd_form_page.get_begin_time_in_vehicle_condition_form(n),
+                            'speed': float(self.obd_form_page.get_speed_in_vehicle_condition_form(n)),
+                            'rotating_speed': float(self.obd_form_page.get_rotating_speed_in_vehicle_condition_form(n)),
+                            'water_temperature': float(
+                                self.obd_form_page.get_water_temperature_in_vehicle_condition_form(n)),
+                            'battery_voltage': float(
+                                self.obd_form_page.get_battery_voltage_in_vehicle_condition_form(n)),
+                            'fuel': float(self.obd_form_page.get_fuel_in_vehicle_condition_form(n)),
+                            'total_mileage': float(self.obd_form_page.get_total_mileage_in_vehicle_condition_form(n))
                         })
-                total_mile = 0
+                '''total_mile = 0
                 total_oil = 0
                 for data in mile_and_oil_list:
                     total_mile += data['mile']
                     total_oil += data['oil']
                 self.assertAlmostEqual(float(dev_total_mile), total_mile)
-                self.assertAlmostEqual(float(dev_total_oil), total_oil)
-
+                self.assertAlmostEqual(float(dev_total_oil), total_oil)'''
+                self.assertEqual(get_sql_total_number, mile_and_oil_list)
+        csv_file.close()
         self.driver.default_frame()

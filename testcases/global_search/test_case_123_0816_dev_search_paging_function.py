@@ -73,4 +73,8 @@ class TestCase123DevSearchPagingFunction(unittest.TestCase):
             for m in list:
                 self.global_dev_search_page.click_per_page_number()
                 page_number = self.global_dev_search_page.get_page_number_in_dev_search()
-                self.assertEqual(int(total_page[1] / m) + 1, page_number)
+                if int(total_page[1] % m) != 0:
+                    a = int(total_page[1] / m) + 1
+                else:
+                    a = int(total_page[1] / m)
+                self.assertEqual(a, page_number)

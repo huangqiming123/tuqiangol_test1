@@ -54,7 +54,7 @@ def send_mail(file_new):
     msg = MIMEMultipart()
 
     # email模块的MIMEText（）方法用来定义邮件正文，参数为html格式的文本
-    msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
+    # msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
 
     # email模块的Header（）方法用来定义邮件标题
     msg['Subject'] = Header("自动化测试报告", 'utf-8')
@@ -63,7 +63,7 @@ def send_mail(file_new):
     msg['To'] = send_mails()
 
     # 邮件正文是MIMEText
-    msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
+    # msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
 
     # 添加附件就是加上一个MIMEBase,从本地读取测试报告
     mime = MIMEBase('text', 'html', filename=file_new)

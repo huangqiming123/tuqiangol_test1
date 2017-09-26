@@ -145,7 +145,6 @@ class TestCase175SportStatisticalMileReportForm(unittest.TestCase):
                         'type': req_type,
                         'startTime': begin_time,
                         'endTime': end_time,
-                        'startRow': 0
                     }
                     res = requests.post(request_url, data=request_params)
                     sleep(30)

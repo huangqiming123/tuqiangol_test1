@@ -51,7 +51,7 @@ def send_mail(file_new):
     msg = MIMEMultipart()
 
     # email模块的MIMEText（）方法用来定义邮件正文，参数为html格式的文本
-    msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
+    # msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
 
     # email模块的Header（）方法用来定义邮件标题
     msg['Subject'] = Header("自动化测试报告", 'utf-8')

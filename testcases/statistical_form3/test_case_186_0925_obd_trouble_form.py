@@ -1,9 +1,13 @@
 import csv
 import unittest
 from time import sleep
+
+import requests
+
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
+from model.send_mail import request_base_url
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.statistical_form.obd_form_page import ObdFormPage
@@ -68,22 +72,24 @@ class TestCase157ObdTroubleForm(unittest.TestCase):
             self.obd_form_page.add_data_to_search_obd_trouble_form(search_data)
 
             # 获取页面上设备的信息
-            dev_name = self.obd_form_page.get_dev_name_in_obd_vehicle_condition_form()
             dev_total_mile = self.obd_form_page.get_dev_total_mile_obd_vehicle_condition_form()
             dev_avg_oil = self.obd_form_page.get_dev_avg_oil_obd_vehicle_condition_form()
             dev_avg_speed = self.obd_form_page.get_avg_oil_obd_vehicle_condition_form()
             dev_total_oil = self.obd_form_page.get_dev_total_oil_obd_vehicle_condition_form()
+            begin_time = self.obd_form_page.get_begin_time()
+            end_time = self.obd_form_page.get_end_time()
 
-            # 查询设备的名称
-            sql_check_dev_name = self.obd_form_page.get_dev_name_in_sql(self.obd_form_page.search_imei())
-            # 查询数据库的条数
-            get_sql_total_number = self.obd_form_page.get_sql_total_number_in_obd_trouble_form()
-            get_web_total_number = self.obd_form_page.get_web_total_number_in_vehicel_condition_form()
-            self.assertEqual(len(get_sql_total_number), get_web_total_number[1])
+            request_url = request_base_url()
+            header = {
+                '_method_': 'getObdVehicleCondition',
+                'imeis': self.obd_form_page.search_imei(),
+                'startTime': begin_time,
+                'endTime': end_time,
+                'type': 'carfault'
+            }
+            sleep(10)
+            res_json = requests.post(request_url, data=header).json()
 
-            # 获取查询出来的 页数
-            if get_web_total_number[0] != 0 and get_web_total_number[0] != 1:
-                self.obd_form_page.click_first_page()
             total_page = self.obd_form_page.get_obd_list_total_page_number()
             if total_page == 0:
                 self.assertEqual('0', dev_total_mile)
@@ -92,35 +98,30 @@ class TestCase157ObdTroubleForm(unittest.TestCase):
                 self.assertEqual('0', dev_total_oil)
 
             elif total_page == 1:
-                # 断言平均油耗
-                # 查询设备的名称
-                self.assertEqual(dev_name, sql_check_dev_name)
-                count_avg_oil = '%.2f' % ((float(dev_total_oil) / float(dev_total_mile)) * 100)
-                self.assertEqual(count_avg_oil, dev_avg_oil)
                 # 获取页面上的里程和耗油
                 mile_and_oil_list = []
                 per_page_total_number = self.obd_form_page.get_per_page_total_number()
                 for n in range(per_page_total_number):
                     mile_and_oil_list.append({
-                        'begin_time': self.obd_form_page.get_begin_time_in_trouble_form(n),
-                        'lot': float(self.obd_form_page.get_lot_in_trouble_form(n)),
+                        'gpsTime': self.obd_form_page.get_gps_time_in_vehicle_condition_form(n),
+                        'lng': float(self.obd_form_page.get_lot_in_trouble_form(n)),
                         'lat': float(self.obd_form_page.get_lat_in_trouble_form(n)),
-                        'error_code': self.obd_form_page.get_error_code_in_trouble_form(n)
+                        'errorCode': self.obd_form_page.get_error_code_in_trouble_form(n)
                     })
-                '''total_mile = 0
-                total_oil = 0
-                for data in mile_and_oil_list:
-                    total_mile += data['mile']
-                    total_oil += data['oil']
-                self.assertAlmostEqual(float(dev_total_mile), total_mile)
-                self.assertAlmostEqual(float(dev_total_oil), total_oil)'''
-                self.assertEqual(get_sql_total_number, mile_and_oil_list)
 
+                res_data = res_json['data']
+                for data in res_data:
+                    del data['acc'], data['addr'], data['batteryVoltage'], data['direction'], data[
+                        'engineLoad'], data['fuelConsumption1'], data['fuelConsumption2'], data['gpsInfo'], data[
+                        'gpsSpeed'], data['heatingTime'], \
+                        data['idleTime'], data['imei'], data[
+                        'maxSpeed'], data['oilPer'], data['rapidAcceleration'], data['rapidDeceleration'], data[
+                        'rotatingSpeed'], data[
+                        'speed'], data['throttlePosition'], data['totalMileage'], data['waterTemperature']
+                print(mile_and_oil_list)
+                print(res_data)
+                self.assertEqual(mile_and_oil_list, res_data)
             else:
-                # 断言平均油耗
-                self.assertEqual(dev_name, sql_check_dev_name)
-                count_avg_oil = '%.2f' % ((float(dev_total_oil) / float(dev_total_mile)) * 100)
-                self.assertEqual(count_avg_oil, dev_avg_oil)
                 mile_and_oil_list = []
                 for i in range(total_page):
                     # 循环点击每一页
@@ -129,18 +130,23 @@ class TestCase157ObdTroubleForm(unittest.TestCase):
                     per_page_total_number = self.obd_form_page.get_per_page_total_number()
                     for n in range(per_page_total_number):
                         mile_and_oil_list.append({
-                            'begin_time': self.obd_form_page.get_begin_time_in_trouble_form(n),
-                            'lot': float(self.obd_form_page.get_lot_in_trouble_form(n)),
+                            'gpsTime': self.obd_form_page.get_gps_time_in_vehicle_condition_form(n),
+                            'lng': float(self.obd_form_page.get_lot_in_trouble_form(n)),
                             'lat': float(self.obd_form_page.get_lat_in_trouble_form(n)),
-                            'error_code': self.obd_form_page.get_error_code_in_trouble_form(n)
+                            'errorCode': self.obd_form_page.get_error_code_in_trouble_form(n)
                         })
-                '''total_mile = 0
-                total_oil = 0
-                for data in mile_and_oil_list:
-                    total_mile += data['mile']
-                    total_oil += data['oil']
-                self.assertAlmostEqual(float(dev_total_mile), total_mile)
-                self.assertAlmostEqual(float(dev_total_oil), total_oil)'''
-                self.assertEqual(get_sql_total_number, mile_and_oil_list)
+
+                res_data = res_json['data']
+                for data in res_data:
+                    del data['acc'], data['addr'], data['batteryVoltage'], data['direction'], data[
+                        'engineLoad'], data['fuelConsumption1'], data['fuelConsumption2'], data['gpsInfo'], data[
+                        'gpsSpeed'], data['heatingTime'], \
+                        data['idleTime'], data['imei'], data[
+                        'maxSpeed'], data['oilPer'], data['rapidAcceleration'], data['rapidDeceleration'], data[
+                        'rotatingSpeed'], data[
+                        'speed'], data['throttlePosition'], data['totalMileage'], data['waterTemperature']
+                print(mile_and_oil_list)
+                print(res_data)
+                self.assertEqual(mile_and_oil_list, res_data)
         csv_file.close()
         self.driver.default_frame()

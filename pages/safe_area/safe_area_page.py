@@ -214,6 +214,7 @@ class SafeAreaPage(BasePageServer):
 
     def click_ensure(self):
         self.driver.click_element('c,layui-layer-btn0')
+        # self.driver.click_element('l,保存')
         sleep(2)
 
     def click_close(self):

@@ -4,6 +4,7 @@ from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
+from model.assert_text2 import AssertText2
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -35,6 +36,7 @@ class TestCase04AccountCenterFastSaleAddCust(unittest.TestCase):
         self.cust_manage_lower_account_page = CustManageLowerAccountPage(self.driver, self.base_url)
         self.cust_manage_cust_list_page = CustManageCustListPage(self.driver, self.base_url)
         self.cust_manage_my_dev_page = CustManageMyDevPage(self.driver, self.base_url)
+        self.assert_text2 = AssertText2()
         self.assert_text = AssertText()
         self.driver.set_window_max()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
@@ -85,7 +87,7 @@ class TestCase04AccountCenterFastSaleAddCust(unittest.TestCase):
             # 取消
             self.account_center_page_details.add_cust_cancel()
 
-            # 验证所选中的上级用户类型来显示可创建的下级类型
+            #验证所选中的上级用户类型来显示可创建的下级类型
             self.account_center_page_details.click_add()
             user_list = search_info["search_user"].split("/")
             for type in user_list:
@@ -107,9 +109,13 @@ class TestCase04AccountCenterFastSaleAddCust(unittest.TestCase):
                     self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
 
                 elif user_type == "用户":
-                    self.assertEqual(1, type_list["length"])
-                    self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
+                    self.assertNotEqual(1, type_list["length"])
+                    #self.assertIn(self.assert_text.log_in_page_account_type(9),type_list["user"])
 
+            # 输入用户账号，获取提示
+            # self.account_center_page_details.add_account_search_user("kehushuyh1")
+            # status = self.account_center_page_details.get_add_save_status()
+            #self.assertEqual(self.assert_text2.cust_manage_add_user_type_prompt(), status, "提示显示不一致")
 
 
             # 新增客户

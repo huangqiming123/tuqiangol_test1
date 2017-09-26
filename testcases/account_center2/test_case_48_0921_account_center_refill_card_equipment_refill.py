@@ -68,15 +68,17 @@ class TestCase480921AccountCenterRefillCardEquipmentRefill(unittest.TestCase):
             my_account = self.account_center_page_refill_card.get_title_display_account()
             self.assertIn(self.account_center_page_refill_card.get_current_login_account(), my_account, "登录账号显示一致")
 
+
             # 验证顶部充值卡数量
             top_quantity = self.account_center_page_refill_card.get_refill_card_page_top_quantity()
             # 点击设备充值
             self.account_center_page_refill_card.click_equipment_refill()
             sleep(1)
             # 获取设备充值-数量
-            # equipment_number =self.account_center_page_refill_card.get_equipment_refill_number()
-            # self.assertEqual(top_quantity["year_number"],equipment_number["year_quantity"]+"张","页面顶部与设备充值中显示的年卡不一致")
-            # self.assertEqual(top_quantity["lifetime_number"],equipment_number["lifetime_quantity"]+"张","页面顶部与设备充值中显示的终身卡不一致")
+            equipment_number = self.account_center_page_refill_card.get_equipment_refill_number()
+            self.assertEqual(top_quantity["year_number"], equipment_number["year_quantity"], "页面顶部与设备充值中显示的年卡不一致")
+            self.assertEqual(top_quantity["lifetime_number"], equipment_number["lifetime_quantity"],
+                             "页面顶部与设备充值中显示的终身卡不一致")
 
             # 输入设备个数验证
             information = self.account_center_page_refill_card.equipment_refill(data["type"], data["imei"])
@@ -98,7 +100,6 @@ class TestCase480921AccountCenterRefillCardEquipmentRefill(unittest.TestCase):
             # statu = self.account_center_page_refill_card.get_equipment_status()
             # self.assertEqual(self.assert_text2.account_center_refill_card_refill_succeed(),statu,"续费失败")
 
-
             # 获取当前账号id
             sql_data = self.search_sql.search_current_account_data(my_account)
             connect1 = self.connect_sql.connect_tuqiang_sql()
@@ -109,7 +110,7 @@ class TestCase480921AccountCenterRefillCardEquipmentRefill(unittest.TestCase):
             # 读取数据
             date = cur.fetchall()
             print("读取", date)
-            sleep(2)
+            sleep(3)
             # 设备充值后，最后时间
             update_time = self.account_center_page_refill_card.get_article_one_time()
             self.assertEqual(str(date[0][0]), update_time, "充值后设备到期时间显示不一致")

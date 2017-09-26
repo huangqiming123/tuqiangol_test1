@@ -76,8 +76,8 @@ class TestCase154ObdMileageForm(unittest.TestCase):
             dev_avg_oil = self.obd_form_page.get_dev_avg_oil_obd_mileage_statistical_form()
             dev_avg_speed = self.obd_form_page.get_avg_oil_obd_mileage_statistical_form()
             dev_total_oil = self.obd_form_page.get_dev_total_oil_obd_mileage_statistical_form()
-            begin_time = self.obd_form_page.get_begin_time()
-            end_time = self.obd_form_page.get_end_time()
+            begin_time = self.obd_form_page.get_begin_times()
+            end_time = self.obd_form_page.get_end_times()
 
             # 请求里程报表统计
             request_url = request_base_url()
@@ -130,7 +130,7 @@ class TestCase154ObdMileageForm(unittest.TestCase):
                 for data in res_data:
                     del data['endLat'], data['endLng'], data['imei'], data['maxSpeed'], data[
                         'rapidAcceleration'], data['rapidDeceleration'], data['startLat'], data['startLng'], data[
-                        'tripTime']
+                        'tripTime'], data['avgSpeed']
                 self.assertEqual(mile_and_oil_list, res_data)
             else:
                 mile_and_oil_list = []
@@ -152,7 +152,7 @@ class TestCase154ObdMileageForm(unittest.TestCase):
                 for data in res_data:
                     del data['endLat'], data['endLng'], data['imei'], data['maxSpeed'], data[
                         'rapidAcceleration'], data['rapidDeceleration'], data['startLat'], data['startLng'], data[
-                        'tripTime']
+                        'tripTime'], data['avgSpeed']
                 self.assertEqual(mile_and_oil_list, res_data)
         csv_file.close()
         self.driver.default_frame()

@@ -21,6 +21,7 @@ class SearchSql(object):
         connect.close()
         return all_data
 
+
     # 搜索设备管理的sql语句
     def search_equipment_manager_sql(self, lower_account_tuple, search_data):
         sql = "select l.id from operation_log l INNER JOIN user_info o ON l.created_by = o.userId where l.created_by in %s and l.serviceType = '1'" % str(

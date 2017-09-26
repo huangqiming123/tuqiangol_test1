@@ -181,8 +181,8 @@ class ObdFormPage(BasePage):
         self.driver.click_element('l,%s' % str(i + 1))
 
     def get_sql_total_number(self):
-        begin_time = self.driver.get_element('x,//*[@id="startTime_travel"]').get_attribute('value')
-        end_time = self.driver.get_element('x,//*[@id="endTime_travel"]').get_attribute('value')
+        begin_time = self.driver.get_element('x,//*[@id="startTime_travel"]').get_attribute('value') + ' 00:00'
+        end_time = self.driver.get_element('x,//*[@id="endTime_travel"]').get_attribute('value') + ' 23:59'
 
         connect_sql = ConnectSql()
         connect = connect_sql.connect_tuqiang_form()
@@ -529,3 +529,9 @@ class ObdFormPage(BasePage):
         else:
             return '%s小时,%s分钟,%s秒' % (str(h), str(m), str(s))'''
         return '%s:%s:%s' % (str(h), str(m), str(s))
+
+    def get_begin_times(self):
+        return self.driver.get_element('startTime_travel').get_attribute('value') + ' 00:00:00'
+
+    def get_end_times(self):
+        return self.driver.get_element('endTime_travel').get_attribute('value') + ' 23:59:00'

@@ -62,7 +62,7 @@ class TestCase135SafeAreaExpertion(unittest.TestCase):
         # 验证黑车库的按钮是否被选中
         black_address_value = self.safe_area_page.get_black_address_input_value()
         self.assertEqual(True, black_address_value)
-        # 点击关闭
+        # 点击取消
         self.safe_area_page.click_cancel_edit()
 
         # 点击编辑
@@ -73,10 +73,12 @@ class TestCase135SafeAreaExpertion(unittest.TestCase):
         # 验证黑车库的按钮是否被选中
         black_address_value = self.safe_area_page.get_black_address_input_value()
         self.assertEqual(True, black_address_value)
-        # 点击关闭
+        # 点击保存
         self.safe_area_page.click_ensure()
         # 获取保存后的文本
         text = self.safe_area_page.get_text_after_ensure()
+        print(self.assert_text.account_center_page_operation_done())
+        print(text)
         self.assertIn(self.assert_text.account_center_page_operation_done(), text)
 
         # 选择围栏编辑

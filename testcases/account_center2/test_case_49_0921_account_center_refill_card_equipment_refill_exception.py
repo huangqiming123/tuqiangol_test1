@@ -63,10 +63,10 @@ class TestCase490921AccountCenterRefillCardEquipmentRefillException(unittest.Tes
             # 进入充值卡页面
             self.account_center_page_refill_card.click_refill_card()
 
-            # 点击设备充值
+            #点击设备充值
             self.account_center_page_refill_card.click_equipment_refill()
             sleep(1)
-            # 取消
+            #取消
             self.account_center_page_refill_card.equipment_refill_cancel()
             self.account_center_page_refill_card.click_equipment_refill()
 
@@ -75,26 +75,26 @@ class TestCase490921AccountCenterRefillCardEquipmentRefillException(unittest.Tes
             self.assertEqual(information["import_count"], int(information["add_count"]), '输入的imei计数不一致')
             sleep(1)
 
-            # 获取添加结果中的信息
+            #获取添加结果中的信息
             list_failure_count = self.account_center_page_refill_card.list_failure_count()
             add_results = self.account_center_page_refill_card.equipment_refill_add_results_data()
 
             # 验证失败个数
             self.assertEqual(list_failure_count, add_results["fail_unmber"], "添加结果中的失败个数与行数不一致")
 
-            # 断言失败提示中的信息
+            #断言失败提示中的信息
             for s in range(list_failure_count):
                 self.assertIsNotNone(add_results["imei"], "sim卡号为空")
                 self.assertIsNotNone(add_results["cause"], "失败原因中存在空数据")
 
-            # 点击关闭
+            #点击关闭
             self.account_center_page_refill_card.add_results_x()
 
-            # 验证成功个数
+            #验证成功个数
             list_count = self.account_center_page_refill_card.get_list_imei_number()
             self.assertEqual(list_count, add_results["succeed_unmber"], "添加结果中的成功个数与列表中的不一致")
 
-            # 删除
+            #删除
             self.account_center_page_refill_card.delete_list_device()
             self.assertEqual(0, self.account_center_page_refill_card.get_list_imei_number(), "删除设备后，列表中imei不是0")
 
@@ -105,6 +105,9 @@ class TestCase490921AccountCenterRefillCardEquipmentRefillException(unittest.Tes
             self.account_center_page_refill_card.click_reset_button()
             self.assertEqual(0, self.account_center_page_refill_card.get_list_imei_number(), "重置后，列表中imei不是0")
 
+
+
+
         csv_file.close()
         # 退出登录
-        # self.account_center_page_navi_bar.usr_logout()
+        #self.account_center_page_navi_bar.usr_logout()

@@ -76,24 +76,27 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
             sleep(1)
             search_user = info["search_user"].split("/")
             for user in search_user:
-                # 搜索用户
+                #搜索用户
                 self.cust_manage_basic_info_and_add_cust_page.search_cust(user)
                 self.cust_manage_basic_info_and_add_cust_page.click_search_user()
                 sleep(2)
                 # 获取提示
+                self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
                 status = self.cust_manage_lower_account_page.edit_info_save_status()
-                if type == "销售":
+                self.driver.default_frame()
+                print(status)
+
+                if type == " 销售":
                     try:
                         self.assertEqual(self.assert_text2.cust_manage_sell_shift_agent_prompt(), status,
                                          "销售转移给代理商时,提示不一致")
-
                     except:
                         self.assertEqual(self.assert_text2.cust_manage_sell_shift_user_prompt(), status,
                                          "销售转移给用户时,提示不一致")
-
-                elif type == "代理商":
-                    self.assertEqual(self.assert_text2.cust_manage_shift_user_prompt(), status, "代理商账号，转移客户是提示不一致")
-            # 取消
+                elif type == " 代理商":
+                    self.assertEqual(self.assert_text2.cust_manage_agent_shift_user_prompt(), status,
+                                     "代理商账号，转移客户时提示不一致")
+            #取消
             self.cust_manage_basic_info_and_add_cust_page.click_cancel_edit()
 
 
@@ -103,7 +106,7 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
         # 点击编辑用户
         self.cust_manage_basic_info_and_add_cust_page.click_edit_customer_process()
 
-        # 验证不能作为上级的验证
+        #验证不能作为上级的验证
         for user in account:
             self.cust_manage_basic_info_and_add_cust_page.search_cust(user)
             self.cust_manage_basic_info_and_add_cust_page.click_search_user()
@@ -119,18 +122,20 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
         self.assertIn(self.assert_text.account_center_page_no_data_text(), get_text)
         self.cust_manage_basic_info_and_add_cust_page.click_cancel_edit()
 
-        # 验证循环点击五次
+        #验证循环点击五次
         self.cust_manage_lower_account_page.input_search_info("yonghu123")
         self.cust_manage_lower_account_page.click_search_btn()
         self.cust_manage_basic_info_and_add_cust_page.click_edit_customer_process()
         for n in range(5):
             self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
-            self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 3))
+            # self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 3))
+            self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 2))
             sleep(2)
-            text = self.driver.get_text('x,//*[@id="treeDemo2_%s_span"]' % str(n + 3))
+            text = self.driver.get_text('x,//*[@id="treeDemo2_%s_span"]' % str(n + 2))
             account_name = text.split('(')[0]
             value = self.driver.get_element('x,//*[@id="topUser"]').get_attribute('value')
             self.assertEqual(account_name, value)
             self.driver.default_frame()
+
 
         csv_file.close()

@@ -8,7 +8,6 @@ l.sort(key=lambda fn: os.path.getmtime(base_dir + fn) if not os.path.isdir(base_
 d = datetime.datetime.fromtimestamp(os.path.getmtime(base_dir + l[-1]))
 # print('最后改动的文件是' + l[-1] + ",时间:" + d.strftime("%Y年%m月%d日 %H时%M分%S秒"))
 print(l[-1])'''
-import datetime
 
 
 def move(n, a, b, c):
@@ -20,4 +19,4 @@ def move(n, a, b, c):
         move((n - 1), b, a, c)
 
 
-move(7, 'A', 'B', 'C')
+move(1, 'A', 'B', 'C')

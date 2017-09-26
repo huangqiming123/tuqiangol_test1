@@ -113,7 +113,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
         elif acc_type == '代理商':
             try:
-                # self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[2]")
+                #self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[2]")
                 self.driver.click_element("x,//*[@id='typeRoleRadio1']/label[2]")
             except:
                 self.driver.click_element("x,//*[@id='typeRoleRadio2']/label[1]")
@@ -214,7 +214,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.operate_input_element("treeDemo2_cusTreeKey", keyword)
         # 点击搜索按钮
         self.driver.click_element("treeDemo2_cusTreeSearchBtn")
-        self.driver.wait(3)
+        self.driver.wait(4)
         # 选择列表中第一个搜索结果
         self.driver.click_element('c,autocompleter-item')
         self.driver.default_frame()
@@ -734,7 +734,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             print(no_data)
             return no_data
 
-    # 获取客户类型列表
+    #获取客户类型列表
     def get_acc_user_type_list(self):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         type_list_len = len(self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div"))
@@ -784,7 +784,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
                     self.driver.default_frame()
                     return type_data
 
-    # 点击编辑-取消--编辑
+    #点击编辑-取消--编辑
     def click_edit_customer_process(self):
         self.click_edit_customer()
         self.click_cancel_edit()

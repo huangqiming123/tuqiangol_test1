@@ -8,7 +8,6 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
 from pages.safe_area.safe_area_search_sql import SafeAreaSearchSql
 
-
 # author：邓肖斌
 class TestCase129AreaTableOperaition(unittest.TestCase):
 

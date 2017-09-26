@@ -52,7 +52,7 @@ class TestCase470919AccountCenterRefillCardTransferException(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         # 进入充值卡页面
         self.account_center_page_refill_card.click_refill_card()
-        # 点转移
+        #点转移
         self.account_center_page_refill_card.click_refill_card_transfer_button()
 
         csv_file = self.account_center_page_read_csv.read_csv('transfer_refill_card_exception.csv')
@@ -70,17 +70,17 @@ class TestCase470919AccountCenterRefillCardTransferException(unittest.TestCase):
 
             self.account_center_page_refill_card.refill_card_transfer(data["user"], data["year_number"],
                                                                       data["lifetime_number"])
-            # 提示
+            #提示
             prompt = self.account_center_page_refill_card.get_transfer_refill_card_exception_hint()
 
             self.assertEqual(data["user_hint"], prompt["user_prompt2"], "目标用户提示不一致")
             self.assertIn(data["year_hint"], prompt["year_prompt2"], "一年充值卡提示不一致")
             self.assertIn(data["lifetime_hint"], prompt["lifetimet_prompt2"], "终身充值卡提示不一致")
 
-            # 取消
-            # self.account_center_page_refill_card.click_refill_card_transfer_cancel()
-            # 循环点击下级用户
-            # for i in range(5):
-            # self.account_center_page_refill_card.click_transfer_target_user(i)
+        # 取消
+        # self.account_center_page_refill_card.click_refill_card_transfer_cancel()
+        # 循环点击下级用户
+        for i in range(5):
+            self.account_center_page_refill_card.click_transfer_target_user(i)
 
         csv_file.close()

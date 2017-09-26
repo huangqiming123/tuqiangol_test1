@@ -65,12 +65,12 @@ class TestCase410918AccountCenterRefillCardAddApply(unittest.TestCase):
             # 进入充值卡页面
             self.account_center_page_refill_card.click_refill_card()
 
-            # 验证页面顶部我的账号
+            #验证页面顶部我的账号
             my_account = self.account_center_page_refill_card.get_title_display_account()
-            # 取消
+            #取消
             self.account_center_page_refill_card.apply_refill_card_cancel()
 
-            # 验证账号
+            #验证账号
             self.account_center_page_refill_card.click_apply_refill_card_button()
             apply_page_account = self.account_center_page_refill_card.get_refill_account()
             self.assertEqual(my_account, apply_page_account, "充值账号显示不一致")
@@ -92,6 +92,7 @@ class TestCase410918AccountCenterRefillCardAddApply(unittest.TestCase):
             self.assertEqual(data["name"], information["name"], "申请人信息中，付款人姓名显示不一致")
             self.assertEqual(data["phone"], information["phone"], "申请人信息中，充值联系方式显示不一致")
             self.assertEqual(data["payment_account"], information["payment_account"], "申请人信息中，付款账号显示不一致")
+
 
         csv_file.close()
         # 退出登录

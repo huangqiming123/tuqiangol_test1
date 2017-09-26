@@ -99,10 +99,14 @@ class AssertText2(object):
         return "续费成功!"
 
     def cust_manage_sell_shift_agent_prompt(self):
-        return '转移客户中不能包含销售'
+        return '销售不能转移到代理商'
 
     def cust_manage_sell_shift_user_prompt(self):
-        return '转移的客户中不能包含代理商和销售'
+        return '销售和代理商不能转移到用户'
 
-    def cust_manage_shift_user_prompt(self):
-        return '转移的客户中不能包含代理商和销售'
+    # 销售和代理商不能转移到用户
+    def cust_manage_agent_shift_user_prompt(self):
+        return '销售和代理商不能转移到用户'
+
+    def cust_manage_add_user_type_prompt(self):
+        return "用户不能作为上级用户"

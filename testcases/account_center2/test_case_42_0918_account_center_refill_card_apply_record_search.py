@@ -55,7 +55,7 @@ class TestCase420918AccountCenterRefillCardApplyRecordSearch(unittest.TestCase):
         # 进入充值卡页面
         self.account_center_page_refill_card.click_refill_card()
 
-        # 验证页面顶部我的账号
+        #验证页面顶部我的账号
         my_account = self.account_center_page_refill_card.get_title_display_account()
         self.assertIn(self.account_center_page_refill_card.get_current_login_account(), my_account, "登录账号显示一致")
 
@@ -65,15 +65,16 @@ class TestCase420918AccountCenterRefillCardApplyRecordSearch(unittest.TestCase):
 
             }
 
+
             self.account_center_page_refill_card.refill_card_page_iframe()
-            # 点击申请记录
+            #点击申请记录
             self.account_center_page_refill_card.click_apply_record()
-            # 搜索
+            #搜索
             self.account_center_page_refill_card.apply_record_search_data(data["state"])
 
-            # 获取页面列表条数
+            #获取页面列表条数
             page_number = self.account_center_page_refill_card.get_apply_record_number()
-            # 获取当前账号id
+            #获取当前账号id
             sql_data = self.search_sql.search_current_account_data(my_account)
 
             connect1 = self.connect_sql.connect_tuqiang_sql()

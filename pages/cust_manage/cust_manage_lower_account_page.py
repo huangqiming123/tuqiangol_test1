@@ -352,3 +352,4 @@ class CustManageLowerAccountPage(BasePageServer):
     def get_search_result_account_type(self):
         type = self.driver.get_element("x,//*[@id='customerlist']/tr/td[3]").text
         return type
+

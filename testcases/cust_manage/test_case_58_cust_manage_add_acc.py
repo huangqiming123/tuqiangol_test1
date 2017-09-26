@@ -3,6 +3,7 @@ import unittest
 from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
+from model.assert_text2 import AssertText2
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -30,6 +31,7 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
         self.cust_manage_my_dev_page = CustManageMyDevPage(self.driver, self.base_url)
         self.cust_manage_lower_account_page = CustManageLowerAccountPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
+        self.assert_text2 = AssertText2()
         self.search_sql = SearchSql()
         self.driver.set_window_max()
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
@@ -103,8 +105,16 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
                     self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
 
                 elif user_type == "用户":
-                    self.assertEqual(1, type_list["length"])
-                    self.assertIn(self.assert_text.log_in_page_account_type(9), type_list["user"])
+                    self.assertNotEqual(1, type_list["length"])
+                    # self.assertIn(self.assert_text.log_in_page_account_type(9),type_list["user"])
+                sleep(1)
+            # 添加用户类型获取提示
+            self.cust_manage_basic_info_and_add_cust_page.acc_search("yonghu222")
+            sleep(2)
+            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+            status = self.cust_manage_lower_account_page.edit_info_save_status()
+            self.driver.default_frame()
+            self.assertEqual(self.assert_text2.cust_manage_add_user_type_prompt(), status, "提示显示不一致")
 
 
             # 右侧搜索栏中搜索并选中作为上级用户

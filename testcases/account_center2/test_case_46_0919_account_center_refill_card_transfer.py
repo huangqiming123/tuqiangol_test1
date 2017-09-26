@@ -60,22 +60,23 @@ class TestCase460918AccountCenterRefillCardTransfer(unittest.TestCase):
                 "lifetime_number": row[2],
                 "username": row[3]
 
+
             }
             # 进入充值卡页面
             self.account_center_page_refill_card.click_refill_card()
             sleep(2)
-            # 获取头部数量
+            #获取头部数量
             top_quantity = self.account_center_page_refill_card.get_refill_card_page_top_quantity()
 
-            # 点转移
+            #点转移
             self.account_center_page_refill_card.click_refill_card_transfer_button()
-            # 获取数量
+            #获取数量
             transfer_quantity = self.account_center_page_refill_card.get_refill_card_transfer_quantity()
             self.assertEqual(top_quantity["year_number"], transfer_quantity["year_quantity"] + "张", "页面顶部与转移中显示的年卡不一致")
             self.assertEqual(top_quantity["lifetime_number"], transfer_quantity["lifetime_quantity"] + "张",
                              "页面顶部与转移中显示的终身卡不一致")
 
-            # 充值卡转移-取消
+            #充值卡转移-取消
             self.account_center_page_refill_card.refill_card_transfer_cancel()
             self.account_center_page_refill_card.click_refill_card_transfer_button()
             # 充值卡转移
@@ -91,6 +92,7 @@ class TestCase460918AccountCenterRefillCardTransfer(unittest.TestCase):
             self.assertEqual(data["username"], information["target_user"], "转移提示中，目标账号显示不一致")
             self.assertEqual(data["year_number"] + " 张", information["year_number"], "转移提示中，一年充值卡显示不一致")
             self.assertEqual(data["lifetime_number"] + " 张", information["lifetime_number"], "转移提示中，终身充值卡显示不一致")
+
 
         csv_file.close()
         # 退出登录

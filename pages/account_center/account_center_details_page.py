@@ -359,7 +359,7 @@ class AccountCenterDetailsPage(BasePageServer):
     def add_cust(self, acc_type, acc_name, account, pwd, phone, email, conn, com):
         # self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
         # 点击新增客户
-        # self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
+        #self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
         #self.driver.default_frame()
         sleep(2)
 
@@ -933,18 +933,19 @@ class AccountCenterDetailsPage(BasePageServer):
         self.driver.default_frame()
         return sim_len
 
-    # 销售销售--获取用户到期文本
+    #销售销售--获取用户到期文本
     def get_account_expired_time_text(self):
         text = self.driver.get_text("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/span[2]")
         return text
 
-    # 快速销售--获取客户类型列表
+    #快速销售--获取客户类型列表
     def get_fast_sale_acc_user_type_list(self):
 
-        # type_list_len = len(self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div"))
+        #type_list_len = len(self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div"))
         type_list_len = len(self.driver.get_elements("x,//*[@id='addRole_userForm']/div[2]/div/div/label"))
         print(type_list_len)
         display_type_list = []
+
 
         for i in range(type_list_len):
             # 获取style状态
@@ -977,7 +978,7 @@ class AccountCenterDetailsPage(BasePageServer):
 
             return type_data
 
-        else:
+        else :
             sale = self.driver.get_text("x,//*[@id='type11']")
             distributor = self.driver.get_text("x,//*[@id='type8']")
             user = self.driver.get_text("x,//*[@id='type9']")

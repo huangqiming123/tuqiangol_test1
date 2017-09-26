@@ -84,7 +84,7 @@ class TestCase430918AccountCenterRefillCardApplyException(unittest.TestCase):
             self.assertEqual(data["phone_prompt1"], prompt["phone_prompt2"], "付款手机号卡提示不一致")
             self.assertEqual(data["account_prompt1"], prompt["account_prompt2"], "付款账号提示不一致")
 
-        # 长度
+        #长度
         length = self.account_center_page_refill_card.get_apply_refill_card_len()
         self.assertEqual(5, length["year_len"], "一年充值卡长度不一致")
         self.assertEqual(5, length["lifetime_len"], "终身充值卡长度不一致")

@@ -2,7 +2,7 @@ import pymysql
 
 
 class ConnectSql(object):
-    '''
+
     def connect_tuqiang_sql(self):
         # 连接图强的第一台数据库
         connect = pymysql.connect(
@@ -27,9 +27,7 @@ class ConnectSql(object):
         )
         return connect
 
-
-    '''
-    def connect_tuqiang_sql(self):
+    '''def connect_tuqiang_sql(self):
         # 连接图强测试环境的第一台数据库
         connect = pymysql.connect(
             host='172.16.10.103',
@@ -52,3 +50,4 @@ class ConnectSql(object):
             charset='utf8'
         )
         return connect
+    '''

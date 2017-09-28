@@ -7,9 +7,9 @@ from selenium.webdriver.support.select import Select
 from change_data import ChangeData
 from driver.driver_choose import browser
 
-
 # webdirver封装
 # author:孙燕妮
+
 
 class AutomateDriver(object):
     def __init__(self, choose=None):
@@ -17,7 +17,6 @@ class AutomateDriver(object):
             self.driver = browser('firefox')
         else:
             self.driver = browser('chrome')
-
         self.base_url = ChangeData().switch_tuqiang_url()
 
     def navigate(self, url):

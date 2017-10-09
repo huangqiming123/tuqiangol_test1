@@ -191,7 +191,7 @@ class AssertText(object):
         return 'IMEI/设备名称'
 
     def glob_search_page_search_account_text(self):
-        return '请输入用户名称/账号'
+        return '请输入客户名称/账号'
 
     def glob_search_please_add_dev_text(self):
         return '请添加设备'
@@ -366,7 +366,10 @@ class AssertText(object):
         return '请选择'
 
     def the_selected_user_cannot_be_the_superior(self):
-        return '选择的用户不能做为上级用户'
+        return '选择的客户不能作为上级'
 
     def batch_set_user_overdue_time_text(self):
         return '批量设置用户到期'
+
+    def glob_search_page_search_account_texts(self):
+        return '请输入客户名称/账号/IMEI'

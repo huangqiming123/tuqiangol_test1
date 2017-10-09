@@ -159,7 +159,8 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     res_data = response['data']
                     for data in res_data:
                         del data['avgFuel'], data['startLat'], data['startLng'], data['endLat'], data['endLng'], data[
-                            'status'], data['lastLat'], data['lastLng'], data['fuel']
+                            'status'], data['lastLat'], data['lastLng'], data['fuel'], data['endAddr'], data[
+                            'startAddr']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     print(res_data)
@@ -208,7 +209,8 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     res_data = response['data']
                     for data in res_data:
                         del data['avgFuel'], data['startLat'], data['startLng'], data['endLat'], data['endLng'], data[
-                            'status'], data['lastLat'], data['lastLng'], data['fuel']
+                            'status'], data['lastLat'], data['lastLng'], data['fuel'], data['endAddr'], data[
+                            'startAddr']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     print(res_data)
@@ -290,7 +292,8 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     for data in res_data:
                         del data['avgFuel'], data['avgSpeed'], data['endLat'], data['endLng'], data[
                             'endTime'], data['fuel'], data['lastLat'], data['lastLng'], data['runTimeSecond'], data[
-                            'startLat'], data['startLng'], data['startTime'], data['status']
+                            'startLat'], data['startLng'], data['startTime'], data['status'], data['startAddr'], data[
+                            'endAddr']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     for data in res_data:
@@ -339,7 +342,8 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     for data in res_data:
                         del data['avgFuel'], data['avgSpeed'], data['endLat'], data['endLng'], data[
                             'endTime'], data['fuel'], data['lastLat'], data['lastLng'], data['runTimeSecond'], data[
-                            'startLat'], data['startLng'], data['startTime'], data['status']
+                            'startLat'], data['startLng'], data['startTime'], data['status'], data['startAddr'], data[
+                            'endAddr']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     for data in res_data:

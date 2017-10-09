@@ -965,6 +965,7 @@ class StatisticalFormPage(BasePage):
 
         elif search_data['status'] == '0':
             self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[3]/div/span/div/div/ul/li[3]')
+        sleep(3)
         # 点击搜索
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/button')
         sleep(5)

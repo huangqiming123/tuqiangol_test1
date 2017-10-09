@@ -57,4 +57,4 @@ class TestCase104GlobSearchCheckMarkedWords(unittest.TestCase):
         # 选择搜索app用户
         self.global_dev_search_page.select_search_app_user()
         get_user_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
-        self.assertEqual(self.assert_text.glob_search_page_search_account_text(), get_user_search_marked_words)
+        self.assertEqual(self.assert_text.glob_search_page_search_account_texts(), get_user_search_marked_words)

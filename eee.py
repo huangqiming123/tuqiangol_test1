@@ -1,3 +1,26 @@
+'''import os
+import os.path
+import datetime
+
+base_dir = "E:\\git\\jimi10086_test\\data\\"
+l = os.listdir(base_dir)
+l.sort(key=lambda fn: os.path.getmtime(base_dir + fn) if not os.path.isdir(base_dir + fn) else 0)
+d = datetime.datetime.fromtimestamp(os.path.getmtime(base_dir + l[-1]))
+# print('最后改动的文件是' + l[-1] + ",时间:" + d.strftime("%Y年%m月%d日 %H时%M分%S秒"))
+print(l[-1])
+
+
+def move(n, a, b, c):
+    if n == 1:
+        print('%s --> %s' % (a, c))
+    else:
+        move((n - 1), a, c, b)
+        move(1, a, b, c)
+        move((n - 1), b, a, c)
+
+
+move(2, 'A', 'B', 'C')'''
+
 import os
 from time import sleep
 from tkinter import *
@@ -56,6 +79,7 @@ e6.grid(row=7, column=0)
 l7 = Label(master, text='秒').grid(row=7, column=1)
 
 var = IntVar()
+var2 = IntVar()
 
 
 def test_and_on_line():
@@ -65,12 +89,23 @@ def test_and_on_line():
         return '线上'
 
 
+l8 = Label(master, text='运行环境：').grid(row=8, column=0, sticky=W)
+
 r1 = Radiobutton(master, text="测试", variable=var, value=1, command=test_and_on_line)
-r1.grid(row=8, column=0)
+r1.grid(row=9, column=0)
 
 r2 = Radiobutton(master, text="线上", variable=var, value=2, command=test_and_on_line)
-r2.grid(row=8, column=1)
-Button(master, text='开始执行', command=begin_test, width=10, height=1).grid(row=9, column=0)
-Button(master, text='退出', command=quit, width=10, height=1).grid(row=9, column=1)
+r2.grid(row=9, column=1)
+
+l9 = Label(master, text='是否运行后关机：').grid(row=10, column=0, sticky=W)
+
+r1 = Radiobutton(master, text="是", variable=var2, value=3, command=test_and_on_line)
+r1.grid(row=11, column=0)
+
+r2 = Radiobutton(master, text="否", variable=var2, value=4, command=test_and_on_line)
+r2.grid(row=11, column=1)
+
+Button(master, text='开始执行', command=begin_test, width=10, height=1).grid(row=12, column=0)
+Button(master, text='退出', command=quit, width=10, height=1).grid(row=12, column=1)
 
 mainloop()

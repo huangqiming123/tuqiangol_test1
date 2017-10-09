@@ -43,6 +43,7 @@ class TestCase76DevManageDevOperationNOActiveAndStop(unittest.TestCase):
         # 选择已激活和开机的设备
         self.dev_manage_page.choose_dev_noactive_and_stop()
         self.dev_manage_page.click_ensure()
+        sleep(4)
         imei = self.dev_manage_page.get_imei_number()
         self.dev_manage_page.click_edit_button()
         self.dev_manage_page.click_close_edit_button()
@@ -70,6 +71,7 @@ class TestCase76DevManageDevOperationNOActiveAndStop(unittest.TestCase):
             }
             self.dev_manage_page.add_data_to_edit_dev_detila(self.data)
             # 验证是否修改成功
+            sleep(4)
             text = self.dev_manage_page.get_dev_name()
             self.assertEqual(self.data['dev_name'], text)
         csv_file.close()

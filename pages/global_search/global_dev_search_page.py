@@ -2033,3 +2033,25 @@ class GlobalDevSearchPage(BasePage):
 
     def get_per_frist_number_in_dev_searchs(self):
         return self.driver.get_text('x,//*[@id="complex_mobileUser_tbody"]/tr[1]/td[1]')
+
+    def get_dev_imei_in_details(self):
+        return self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[3]')
+
+    def get_dev_status_in_dev_detail(self):
+        return self.driver.get_text('x,//*[@id="complex_device_detail_tbody"]/tr/td[9]')
+
+    def click_close_button(self):
+        self.driver.click_element('c,layui-layer-ico')
+        sleep(2)
+
+    def click_cancel_page_button(self):
+        self.driver.click_element('x,//*[@id="console"]/a')
+        sleep(2)
+
+    def add_dev_imei_to_search_in_console(self, get_dev_imei):
+        self.driver.operate_input_element('x,//*[@id="key2"]', get_dev_imei)
+        self.driver.click_element('x,//*[@id="console_equipment_searchBtn"]')
+        sleep(3)
+
+    def get_dev_status_in_console_page(self):
+        return self.driver.get_text('x,//*[@id="normal_search_ul"]/li/div/div[1]/div[3]/div[1]/span[2]')

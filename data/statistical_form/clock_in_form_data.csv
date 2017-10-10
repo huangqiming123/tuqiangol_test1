@@ -1,4 +1,4 @@
-时间类型,开始时间,结束时间,选择用户,选择设备,打卡类型
-today,,,jimitest,,all
-this_week,,,jimitest,,1
-this_month,,,jimitest,,2
+时间类型,开始时间,结束时间,输入设备类型,设备IMEI,打卡类型
+today,,,,860123456788888,all
+this_week,,,,860123456788888,1
+this_month,,,,860123456788888,2

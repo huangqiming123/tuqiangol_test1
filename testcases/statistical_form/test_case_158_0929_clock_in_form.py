@@ -65,12 +65,13 @@ class TestCase158ClockInForm(unittest.TestCase):
                 'date_type': row[0],
                 'begin_time': row[1],
                 'end_time': row[2],
-                'user': row[3],
+                'dev_type': row[3],
                 'dev_imei': row[4],
                 'clock_in_type': row[5]
             }
             self.clock_in_page.add_data_to_search_click_in_form(data)
             get_sql_data = self.clock_in_page.get_sql_data_in_clock_in_form(data)
+            print(get_sql_data)
             web_list = []
             # 获取查询的页数
             number = self.clock_in_page.get_page_number_after_search_clock_in_form()
@@ -87,6 +88,7 @@ class TestCase158ClockInForm(unittest.TestCase):
                         'time': self.clock_in_page.get_time_in_clock_form(n),
                         'on_off': self.clock_in_page.get_on_off_in_clock_form(n)
                     })
+                print(web_list)
                 self.assertEqual(get_sql_data, web_list)
             else:
                 # 循环点击每一页
@@ -99,5 +101,6 @@ class TestCase158ClockInForm(unittest.TestCase):
                             'time': self.clock_in_page.get_time_in_clock_form(n),
                             'on_off': self.clock_in_page.get_on_off_in_clock_form(n)
                         })
+                print(web_list)
                 self.assertEqual(get_sql_data, web_list)
         self.driver.default_frame()

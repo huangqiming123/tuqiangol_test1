@@ -90,7 +90,8 @@ class TestCase103GlobAppAccountSearch(unittest.TestCase):
                 for range1 in lower_account:
                     for range2 in range1:
                         lower_account_list.append(range2)
-                lower_account_tuple = tuple(lower_account_list)
+                set_list = list(set(lower_account_list))
+                lower_account_tuple = tuple(set_list)
 
                 # 搜索下级用户绑定的所有app用户
                 get_app_account_sql = "SELECT m.bindUserId FROM equipment_mostly m WHERE m.userId in %s and m.bindUserId is not NULL " % str(
@@ -103,7 +104,8 @@ class TestCase103GlobAppAccountSearch(unittest.TestCase):
                 for range1 in lower_app_account:
                     for range2 in range1:
                         lower_app_account_list.append(range2)
-                lower_app_account_tuple = tuple(lower_app_account_list)
+                set_lists = list(set(lower_app_account_list))
+                lower_app_account_tuple = tuple(set_lists)
 
                 get_total_sql = self.search_sql.search_account_sql(lower_app_account_tuple, search_data)
                 print(get_total_sql)

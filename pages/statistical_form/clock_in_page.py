@@ -23,7 +23,6 @@ class ClockInPage(BasePage):
         if data['date_type'] == '':
             self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[1]')
             sleep(2)
-            # TODO:need js?
             self.driver.operate_input_element('x,//*[@id="startTime_travel"]', data['begin_time'])
             sleep(1)
             self.driver.operate_input_element('x,//*[@id="endTime_travel"]', data['end_time'])
@@ -47,8 +46,11 @@ class ClockInPage(BasePage):
             self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[7]')
 
         sleep(2)
+        # 输入设备imei
+        self.driver.operate_input_element('x,//*[@id="imeis"]', self.get_dev_imei())
 
-        # TODO:need choose user and dev imei？
+        # 输入设备型号
+        self.driver.operate_input_element('x,//*[@id="deviceName"]', data['dev_type'])
         # 选择打卡类型
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[1]/div[4]/div/div/div/span[2]')
         sleep(1)
@@ -85,18 +87,17 @@ class ClockInPage(BasePage):
         connect_sql = ConnectSql()
         connect = connect_sql.connect_tuqiang_form()
         cursor = connect.cursor()
-        sql = "SELECT DEVICE_IMEI,GPS_TIME,ON_OFF FROM clock_on_off WHERE DEVICE_IMEI = '" + data[
-            'dev_imei'] + "' and GPS_TIME BETWEEN '" + begin_time + "' and '" + end_time + "'"
+        sql = "SELECT DEVICE_IMEI,GPS_TIME,ON_OFF FROM clock_on_off WHERE DEVICE_IMEI = '" + self.get_dev_imei() + "' and GPS_TIME BETWEEN '" + begin_time + "' and '" + end_time + "'"
         if data['clock_in_type'] != 'all':
             sql += " and ON_OFF = '" + data['clock_in_type'] + "'"
-        sql += ";"
+        sql += " order by GPS_TIME desc;"
         cursor.execute(sql)
         data = cursor.fetchall()
         data_list = []
         for range in data:
             data_list.append({
                 'imei': range[0],
-                'time': range[1],
+                'time': str(range[1]),
                 'on_off': range[2]
             })
         cursor.close()
@@ -128,3 +129,6 @@ class ClockInPage(BasePage):
 
     def get_end_time_in_clock_in_form(self):
         return self.driver.get_element('endTime_travel').get_attribute('value') + ':00'
+
+    def get_dev_imei(self):
+        return '860123456788888'

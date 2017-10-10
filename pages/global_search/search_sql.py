@@ -12,13 +12,14 @@ class SearchSql(object):
 
     def search_account_sql(self, lower_account_tuple, search_data):
         # 全局搜索，搜索用户的sql
-        sql = "select o.id from user_info o where o.userId in " + str(lower_account_tuple)
+        sql = "select o.id from user_info o INNER JOIN equipment_mostly m on o.userId = m.bindUserId where o.userId in " + str(
+            lower_account_tuple)
 
         if search_data['account_info'] != '':
             sql += " and ( o.nickName like '%" + search_data['account_info'] + "%' or o.account like '%" + search_data[
-                'account_info'] + "%')"
+                'account_info'] + "%' or m.imei = '" + search_data['account_info'] + "')"
 
-        sql += ";"
+        sql += " GROUP BY o.id;"
         return sql
 
     def search_complex_sql(self, user_id, search_data):

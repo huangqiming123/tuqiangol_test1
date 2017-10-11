@@ -126,10 +126,12 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                 sleep(30)
                 response = res.json()
                 res_data = response['data']
-                for data in res_data:
+                res_datas = list(set(res_data))
+                res_datas.sort(key=res_data.index)
+                for data in res_datas:
                     del data['status'], data['times']
-                print(res_data)
-                self.assertEqual(web_data, res_data)
+                print(res_datas)
+                self.assertEqual(web_data, res_datas)
             else:
                 web_data = []
                 for i in range(total_page):
@@ -159,9 +161,11 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                 sleep(30)
                 response = res.json()
                 res_data = response['data']
-                for data in res_data:
+                res_datas = list(set(res_data))
+                res_datas.sort(key=res_data.index)
+                for data in res_datas:
                     del data['status'], data['times']
-                print(res_data)
-                self.assertEqual(web_data, res_data)
+                print(res_datas)
+                self.assertEqual(web_data, res_datas)
             self.driver.default_frame()
         csv_file.close()

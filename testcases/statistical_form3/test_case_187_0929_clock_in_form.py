@@ -69,7 +69,7 @@ class TestCase187ClockInForm(unittest.TestCase):
                 'date_type': row[0],
                 'begin_time': row[1],
                 'end_time': row[2],
-                'user': row[3],
+                'dev_type': row[3],
                 'dev_imei': row[4],
                 'clock_in_type': row[5]
             }
@@ -80,9 +80,8 @@ class TestCase187ClockInForm(unittest.TestCase):
 
             request_url = request_base_url()
             header = {
-                # TODO:method need change
-                '_method_': 'getObdVehicleCondition',
-                'imeis': data['dev_imei'],
+                '_method_': 'getClock',
+                'imeis': self.clock_in_page.get_dev_imei(),
                 'startTime': begin_time,
                 'endTime': end_time
             }
@@ -102,13 +101,15 @@ class TestCase187ClockInForm(unittest.TestCase):
                 for n in range(per_page_number):
                     web_list.append({
                         'imei': self.clock_in_page.get_imei_in_clock_in_form(n),
-                        'time': self.clock_in_page.get_time_in_clock_form(n),
-                        'on_off': self.clock_in_page.get_on_off_in_clock_form(n)
+                        'gpsTime': self.clock_in_page.get_time_in_clock_form(n),
+                        'clockType': self.clock_in_page.get_on_off_in_clock_form(n),
+                        'addr': self.clock_in_page.get_addr_in_clock_form(n)
                     })
                 res_data = res_json['data']
                 for data in res_data:
-                    # TODO:need choose delete key
-                    del data['']
+                    del data['lat'], data['lng'], data['posMode']
+                print(res_data)
+                print(web_list)
                 self.assertEqual(res_data, web_list)
             else:
                 # 循环点击每一页
@@ -118,12 +119,14 @@ class TestCase187ClockInForm(unittest.TestCase):
                     for n in range(per_page_number):
                         web_list.append({
                             'imei': self.clock_in_page.get_imei_in_clock_in_form(n),
-                            'time': self.clock_in_page.get_time_in_clock_form(n),
-                            'on_off': self.clock_in_page.get_on_off_in_clock_form(n)
+                            'gpsTime': self.clock_in_page.get_time_in_clock_form(n),
+                            'clockType': self.clock_in_page.get_on_off_in_clock_form(n),
+                            'addr': self.clock_in_page.get_addr_in_clock_form(n)
                         })
                 res_data = res_json['data']
                 for data in res_data:
-                    # TODO:need choose delete key
-                    del data['']
+                    del data['lat'], data['lng'], data['posMode']
+                print(res_data)
+                print(web_list)
                 self.assertEqual(res_data, web_list)
         self.driver.default_frame()

@@ -99,7 +99,7 @@ class ClockInPage(BasePage):
             # TODO:mqsql plus 8 hours
             data_list.append({
                 'imei': range[0],
-                'time': str(range[1] + datetime.timedelta(hours=8)),
+                'time': str(range[1]),
                 'on_off': range[2]
             })
         cursor.close()
@@ -134,3 +134,6 @@ class ClockInPage(BasePage):
 
     def get_dev_imei(self):
         return '860123456788888'
+
+    def get_addr_in_clock_form(self, n):
+        return self.driver.get_text('x,//*[@id="punchTheClock-day-tbody"]/tr[%s]/td[6]' % str(n + 1))

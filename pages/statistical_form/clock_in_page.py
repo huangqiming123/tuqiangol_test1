@@ -1,3 +1,4 @@
+import datetime
 from time import sleep
 
 from model.connect_sql import ConnectSql
@@ -95,9 +96,10 @@ class ClockInPage(BasePage):
         data = cursor.fetchall()
         data_list = []
         for range in data:
+            # TODO:mqsql plus 8 hours
             data_list.append({
                 'imei': range[0],
-                'time': str(range[1]),
+                'time': str(range[1] + datetime.timedelta(hours=8)),
                 'on_off': range[2]
             })
         cursor.close()

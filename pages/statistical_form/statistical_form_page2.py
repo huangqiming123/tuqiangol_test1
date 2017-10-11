@@ -420,6 +420,8 @@ class StatisticalFormPage2(BasePage):
     # 总计--开机报警数
     def get_starting_up_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
+        print(text)
+        print(text.split(' '))
         return text.split(' ')[7]
 
     # 列表--开机报警数

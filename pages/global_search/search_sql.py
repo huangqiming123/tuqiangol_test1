@@ -78,3 +78,12 @@ class SearchSql(object):
 
         sql += ";"
         return sql
+
+    def search_account_sqls(self, lower_account_tuple, search_data):
+        # 全局搜索，搜索用户的sql
+        sql = "select o.id from user_info o where o.userId in " + str(lower_account_tuple)
+        if search_data['account_info'] != '':
+            sql += " and ( o.nickName like '%" + search_data['account_info'] + "%' or o.account like '%" + search_data[
+                'account_info'] + "%')"
+        sql += ";"
+        return sql

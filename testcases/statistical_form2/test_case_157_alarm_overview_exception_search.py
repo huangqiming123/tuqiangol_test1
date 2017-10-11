@@ -108,7 +108,7 @@ class TestCase157AlarmOverviewExceptionSearch(unittest.TestCase):
         selected_true = self.statistical_form_page2.setting_alarm_type("取消")
         print(selected_true)
         for state_true in selected_true:
-            self.assertEqual(False, state_true, "全选保存后,再次点击查看勾选状态，状态显示错误")
+            self.assertEqual(True, state_true, "全选保存后,再次点击查看勾选状态，状态显示错误")
 
         # 未勾选全选
         self.statistical_form_page2.click_setting_alarm_type()
@@ -118,7 +118,7 @@ class TestCase157AlarmOverviewExceptionSearch(unittest.TestCase):
         no_choice = self.statistical_form_page2.setting_alarm_type("保存")
         print(no_choice)
         for state_false in no_choice:
-            self.assertEqual(True, state_false, "取消全选保存后,再次点击查看勾选状态，状态显示错误")
+            self.assertEqual(False, state_false, "取消全选保存后,再次点击查看勾选状态，状态显示错误")
 
         # 取消全选保存成功后，验证是否为勾选状态
         self.statistical_form_page2.click_setting_alarm_type()

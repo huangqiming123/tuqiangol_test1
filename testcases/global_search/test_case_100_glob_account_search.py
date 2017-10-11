@@ -90,7 +90,7 @@ class TestCase100GlobAccountSearch(unittest.TestCase):
                         lower_account_list.append(range2)
                 lower_account_tuple = tuple(lower_account_list)
 
-                get_total_sql = self.search_sql.search_account_sql(lower_account_tuple, search_data)
+                get_total_sql = self.search_sql.search_account_sqls(lower_account_tuple, search_data)
                 print(get_total_sql)
                 cur.execute(get_total_sql)
                 # 读取数据

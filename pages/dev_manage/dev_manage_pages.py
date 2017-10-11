@@ -973,7 +973,7 @@ class DevManagePages(BasePage):
 
     def get_dev_name(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
-        sleep(2)
+        sleep(5)
         return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[2]')
 
     def click_look_place_button(self):

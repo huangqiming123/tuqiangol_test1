@@ -44,6 +44,7 @@ class TestCase131MarkOperation(unittest.TestCase):
         self.safe_area_page.click_mark_button()
         sleep(2)
 
+        # 全选
         self.safe_area_page.click_all_select_button_with_mark()
         # 点击删除
         self.safe_area_page.click_detele_button_with_mark()

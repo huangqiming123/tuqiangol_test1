@@ -37,6 +37,7 @@ class TestCase129AreaTableOperaition(unittest.TestCase):
 
         # 点击全选按钮
         self.safe_area_page.click_all_select_button()
+
         # 点击删除
         self.safe_area_page.click_delete_button()
         sleep(1)

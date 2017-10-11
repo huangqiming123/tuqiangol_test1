@@ -1,6 +1,4 @@
 import unittest
-from time import sleep
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
@@ -14,7 +12,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 
 # 菜单栏 帮助 意见反馈
-
+# author：邓肖斌
 class TestCase37FeedbackTest(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()

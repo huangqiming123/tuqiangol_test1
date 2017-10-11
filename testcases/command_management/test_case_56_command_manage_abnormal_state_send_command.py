@@ -74,7 +74,6 @@ class TestCase56CommandManagerAbnormalStateSendCommand(unittest.TestCase):
                 get_text_after_send_command_with_abnormal_dev(abnormal_state_data["state"])
 
             # 断言
-            print(send_command_text)
             self.assertEqual(send_command_text, self.assert_text.
                              text_with_abnormal_dev_send_command(abnormal_state_data["state"]))
 

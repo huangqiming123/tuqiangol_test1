@@ -3,15 +3,12 @@ import unittest
 from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
-from model.assert_text import AssertText
 from model.assert_text2 import AssertText2
-from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.account_center.account_center_refill_card_page import AccountCenterRefillCardPage
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
-from pages.account_center.search_sql import SearchSql
 from pages.login.login_page import LoginPage
 
 
@@ -24,15 +21,12 @@ class TestCase410918AccountCenterRefillCardAddApply(unittest.TestCase):
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
-        self.account_center_page_details = AccountCenterDetailsPage(self.driver, self.base_url)
         self.account_center_page_refill_card = AccountCenterRefillCardPage(self.driver, self.base_url)
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
-        self.search_sql = SearchSql()
-        self.assert_text = AssertText()
-        self.assert_text2 = AssertText2()
-        self.driver.set_window_max()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
+        self.assert_text2 = AssertText2()
+        self.driver.set_window_max()
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)

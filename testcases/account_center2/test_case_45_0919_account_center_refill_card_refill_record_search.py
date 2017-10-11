@@ -42,7 +42,7 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
 
     def test_refill_record_search(self):
         '''充值卡-充值记录--搜索'''
-        csv_file = self.account_center_page_read_csv.read_csv('search_apply_record_data.csv')
+        csv_file = self.account_center_page_read_csv.read_csv('search_refill_record_data.csv')
         csv_data = csv.reader(csv_file)
 
         # 打开途强在线首页-登录页
@@ -60,7 +60,8 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
 
         for row in csv_data:
             data = {
-                "refill_type": row[2],
+                "refill_type": row[0],
+                "device_imei": row[1]
 
             }
 
@@ -68,7 +69,11 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
             #点击充值记录
             self.account_center_page_refill_card.click_refill_record()
             #搜索
-            self.account_center_page_refill_card.refill_record_search_data(data["refill_type"])
+            count = self.account_center_page_refill_card.refill_record_search_data(data["refill_type"],
+                                                                                   data["device_imei"])
+            # 验证imei计数
+            self.assertEqual(count["import_count"], int(count["add_count"]), "输入框中imei的计数显示错误")
+
 
             #获取页面列表条数
             page_number = self.account_center_page_refill_card.get_refill_record_number()
@@ -80,7 +85,7 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
             # 创建数据库游标
             cur = connect1.cursor()
             # 获取数据库条数
-            get_sql = self.search_sql.search_refill_record_sql(sql_data[0], data["refill_type"])
+            get_sql = self.search_sql.search_refill_record_sql(sql_data[0], data)
             print(get_sql)
             cur.execute(get_sql)
             # 读取数据
@@ -94,9 +99,40 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
             print('本次查询数据库的条数为：%s' % total)
 
             # 获取数据库条数
-
             self.assertEqual(total, page_number, "转移记录中，平台与sql搜索出来的数据条数不一致")
             self.driver.default_frame()
+
+        # 分页功能
+        self.account_center_page_refill_card.refill_card_page_iframe()
+        # 点击充值记录
+        self.account_center_page_refill_card.click_refill_record()
+        # 获取设备有多少个分页
+        total_page = self.account_center_page_refill_card.get_total_page_number_search_refill_record()
+        print(total_page)
+        if total_page[0] == 0:
+            text = self.account_center_page_refill_card.get_refill_record_page_no_data_text()
+            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+
+        elif total_page[0] == 1:
+            up_page_class = self.account_center_page_refill_card.get_up_page_class_active_in_refill_search()
+            self.assertEqual('active', up_page_class)
+
+        else:
+            for n in range(total_page[0]):
+                self.account_center_page_refill_card.click_per_page(n)
+                get_per_first_number = self.account_center_page_refill_card.get_per_frist_number_in_refill_search()
+                self.assertEqual(get_per_first_number, str(10 * (n + 1) - 9))
+
+            # 点击每页20条
+            list = [20, 30, 50, 100]
+            for m in list:
+                self.account_center_page_refill_card.click_per_page_number_refill_record()
+                page_number = self.account_center_page_refill_card.get_page_number_in_refill_record_search()
+                print(page_number)
+                self.assertEqual(int(total_page[1] / m) + 1, page_number)
+
+        self.driver.default_frame()
+
         csv_file.close()
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()

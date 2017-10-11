@@ -734,6 +734,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             print(no_data)
             return no_data
 
+
     #获取客户类型列表
     def get_acc_user_type_list(self):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')

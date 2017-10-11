@@ -938,6 +938,7 @@ class AccountCenterDetailsPage(BasePageServer):
         text = self.driver.get_text("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/span[2]")
         return text
 
+
     #快速销售--获取客户类型列表
     def get_fast_sale_acc_user_type_list(self):
 

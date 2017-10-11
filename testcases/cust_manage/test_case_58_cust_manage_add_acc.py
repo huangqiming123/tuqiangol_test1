@@ -106,9 +106,9 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
 
                 elif user_type == "用户":
                     self.assertNotEqual(1, type_list["length"])
-                    # self.assertIn(self.assert_text.log_in_page_account_type(9),type_list["user"])
+                    #self.assertIn(self.assert_text.log_in_page_account_type(9),type_list["user"])
                 sleep(1)
-            # 添加用户类型获取提示
+            #添加用户类型获取提示
             self.cust_manage_basic_info_and_add_cust_page.acc_search("yonghu222")
             sleep(2)
             self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')

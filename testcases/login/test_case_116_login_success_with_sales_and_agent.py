@@ -59,7 +59,7 @@ class TestCase116LoginSuccessWithSalesAndAgent(unittest.TestCase):
             actual_url = self.driver.get_current_url()
             expect_url = self.base_url + "/customer/toAccountCenter"
             self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")
-
+            sleep(1)
             self.account_center_page_details.account_center_iframe()
             # 断言当前登录账号的用户名
             usr_info_account = self.account_center_page_navi_bar.usr_info_account()

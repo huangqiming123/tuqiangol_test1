@@ -60,7 +60,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
         # 选择全部告警类型
         self.statistical_form_page3.select_all_alarm_type_in_alarm_overview_search()
         # 输入数据搜索
-        csv_file = self.statistical_form_page_read_csv.read_csv('alarm_overview_search_data.csv')
+        csv_file = self.statistical_form_page_read_csv.read_csv('alarm_overview_search_datas.csv')
         csv_data = csv.reader(csv_file)
         is_header = True
         for row in csv_data:
@@ -81,7 +81,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
             begin_time = self.statistical_form_page3.get_alarm_overview_form_begin_time()
             end_time = self.statistical_form_page3.get_alarm_overview_form_end_time()
             # 全部告警类型
-            alarm_type = '1,10,11,12,128,13,14,15,16,17,18,19,192,194,195,2,22,23,3,4,5,6,9,90,ACC_OFF,ACC_ON,in,offline,out,overSpeed,riskPointAlarm,sensitiveAreasFence,stayAlert,stayTimeIn,stayTimeOut'
+            alarm_type = '1,10,11,12,128,13,14,15,16,17,18,19,192,194,195,2,22,23,24,25,3,32,4,5,6,9,90,ACC_OFF,ACC_ON,in,offline,out,overSpeed,riskPointAlarm,sensitiveAreasFence,stayAlert,stayTimeIn,stayTimeOut'
             all_dev = self.seasrch_sql.search_current_account_equipment(data['user_name'])
             imeis = self.statistical_form_page3.change_dev_imei_format(all_dev)
             # 用户id
@@ -146,8 +146,11 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                             'cutPower': self.statistical_form_page3.get_low_power_in_alarm_overview(n),
                             'voice': self.statistical_form_page3.get_exit_geozone_in_alarm_overview(n),
                             'lingerAlert': self.statistical_form_page3.enter_geozone_in_alarm_overview(n),
+                            'openCoverAlarm': self.statistical_form_page3.open_conver_in_alarm_overview(n),
+                            'lowPowerAlarm': self.statistical_form_page3.low_power_in_alarm_overview(n),
                             'vibration': self.statistical_form_page3.rearview_mirror_vibration_alert_in_alarm_overview(
                                 n),
+                            'sleepAlarm': self.statistical_form_page3.sleep_alarm_in_alarm_overview(n),
                             'enterTerminalGeozone': self.statistical_form_page3.get_enter_terminal_geozone_in_alarm_overview(
                                 n),
                             'exitTerminalGeozone': self.statistical_form_page3.get_exit_terminal_geozone_in_alarm_overview(
@@ -178,7 +181,8 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     res_data = response['data']
                     for data_1 in res_data:
                         del data_1['carCrash'], data_1['dvrVibration'], data_1['overspeedDVR'], data_1[
-                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status']
+                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status'], \
+                            data_1['doorAlarm']
                     print(res_data)
                     # self.assertEqual(web_data, res_data)
                     self.assertEqual(len(web_data), len(res_data))
@@ -203,7 +207,8 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     res_data = response['data']
                     for data_1 in res_data:
                         del data_1['carCrash'], data_1['dvrVibration'], data_1['overspeedDVR'], data_1[
-                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status']
+                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status'], \
+                            data_1['doorAlarm']
                     print(res_data)
                     # 获取页面上的数据
                     web_total_number = self.statistical_form_page3.get_web_total_number_alarm_overview()
@@ -239,8 +244,11 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                             'cutPower': self.statistical_form_page3.get_low_power_in_alarm_overview(n),
                             'voice': self.statistical_form_page3.get_exit_geozone_in_alarm_overview(n),
                             'lingerAlert': self.statistical_form_page3.enter_geozone_in_alarm_overview(n),
+                            'openCoverAlarm': self.statistical_form_page3.open_conver_in_alarm_overview(n),
+                            'lowPowerAlarm': self.statistical_form_page3.low_power_in_alarm_overview(n),
                             'vibration': self.statistical_form_page3.rearview_mirror_vibration_alert_in_alarm_overview(
                                 n),
+                            'sleepAlarm': self.statistical_form_page3.sleep_alarm_in_alarm_overview(n),
                             'enterTerminalGeozone': self.statistical_form_page3.get_enter_terminal_geozone_in_alarm_overview(
                                 n),
                             'exitTerminalGeozone': self.statistical_form_page3.get_exit_terminal_geozone_in_alarm_overview(
@@ -291,7 +299,8 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     res_data = response['data']
                     for data_1 in res_data:
                         del data_1['carCrash'], data_1['dvrVibration'], data_1['overspeedDVR'], data_1[
-                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status']
+                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status'], \
+                            data_1['doorAlarm']
                     print(res_data)
                     # 获取页面上的数据
                     web_total_number = self.statistical_form_page3.get_web_total_number_alarm_overview()
@@ -327,8 +336,11 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                             'cutPower': self.statistical_form_page3.get_low_power_in_alarm_overview(n),
                             'voice': self.statistical_form_page3.get_exit_geozone_in_alarm_overview(n),
                             'lingerAlert': self.statistical_form_page3.enter_geozone_in_alarm_overview(n),
+                            'openCoverAlarm': self.statistical_form_page3.open_conver_in_alarm_overview(n),
+                            'lowPowerAlarm': self.statistical_form_page3.low_power_in_alarm_overview(n),
                             'vibration': self.statistical_form_page3.rearview_mirror_vibration_alert_in_alarm_overview(
                                 n),
+                            'sleepAlarm': self.statistical_form_page3.sleep_alarm_in_alarm_overview(n),
                             'enterTerminalGeozone': self.statistical_form_page3.get_enter_terminal_geozone_in_alarm_overview(
                                 n),
                             'exitTerminalGeozone': self.statistical_form_page3.get_exit_terminal_geozone_in_alarm_overview(

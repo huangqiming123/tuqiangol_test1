@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eee.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/statistical_form/alarm_overview_search_datas.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_run.py" afterPath="$PROJECT_DIR$/main_run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/dev_manage/dev_manage_pages.py" afterPath="$PROJECT_DIR$/pages/dev_manage/dev_manage_pages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/global_search/search_sql.py" afterPath="$PROJECT_DIR$/pages/global_search/search_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/clock_in_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/clock_in_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistic_form_page3.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistic_form_page3.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/dev_manage/test_case_78_dev_manage_dev_operation_noactive_and_start.py" afterPath="$PROJECT_DIR$/testcases/dev_manage/test_case_78_dev_manage_dev_operation_noactive_and_start.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/global_search/test_case_100_glob_account_search.py" afterPath="$PROJECT_DIR$/testcases/global_search/test_case_100_glob_account_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form2/test_case_157_alarm_overview_exception_search.py" afterPath="$PROJECT_DIR$/testcases/statistical_form2/test_case_157_alarm_overview_exception_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form2/test_case_170_alarm_overview_search.py" afterPath="$PROJECT_DIR$/testcases/statistical_form2/test_case_170_alarm_overview_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py" afterPath="$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,24 +28,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_170_alarm_overview_search.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form2/test_case_170_alarm_overview_search.py">
+      <file leaf-file-name="test_case_181_alarm_overview_search.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58112586">
-              <caret line="271" column="57" selection-start-line="271" selection-start-column="57" selection-end-line="271" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.9150943">
+              <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="statistical_form_page2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="423" column="27" selection-start-line="423" selection-start-column="27" selection-end-line="423" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -77,10 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_alarm_manager.py" />
-        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_command_management.py" />
-        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_console.py" />
-        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_cust_manage.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_dev_manage.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_global_search.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_login.py" />
@@ -128,6 +110,10 @@
         <option value="$PROJECT_DIR$/pages/global_search/search_sql.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form2/test_case_157_alarm_overview_exception_search.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form2/test_case_170_alarm_overview_search.py" />
+        <option value="$PROJECT_DIR$/data/statistical_form/alarm_overview_search_datas.csv" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py" />
+        <option value="$PROJECT_DIR$/pages/statistical_form/statistic_form_page3.py" />
       </list>
     </option>
   </component>
@@ -208,7 +194,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="statistical_form2" />
+              <option name="myItemId" value="statistical_form3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -240,36 +240,14 @@
       <recent name="E:\git\tuqiangol_test\testcases\account_center" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\tuqiangol_test\data\statistical_form" />
       <recent name="E:\git\tuqiangol_test\pages\global_search" />
       <recent name="E:\git\tuqiangol_test\testcases\global_search" />
       <recent name="E:\git\tuqiangol_test" />
       <recent name="E:\git\tuqiangol_test\testcases\total" />
-      <recent name="E:\git\tuqiangol_test\testcases\statistical_form3" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search">
-    <configuration default="false" name="Unittests in TestCase157AlarmOverviewExceptionSearch" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form2/test_case_157_alarm_overview_exception_search.py" />
-      <option name="CLASS_NAME" value="TestCase157AlarmOverviewExceptionSearch" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search">
     <configuration default="false" name="Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -348,6 +326,28 @@
       <module name="tuqiangol_test" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form2/test_case_170_alarm_overview_search.py" />
       <option name="CLASS_NAME" value="TestCase170AlarmOverviewSearch" />
+      <option name="METHOD_NAME" value="test_case_alarm_overview_search" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py" />
+      <option name="CLASS_NAME" value="TestCase181AlarmOverviewSearch" />
       <option name="METHOD_NAME" value="test_case_alarm_overview_search" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
@@ -499,19 +499,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase157AlarmOverviewExceptionSearch" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase167OffLineFormOperation" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase170AlarmOverviewSearch" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase167OffLineFormOperation" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase170AlarmOverviewSearch" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase170AlarmOverviewSearch" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase167OffLineFormOperation" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase157AlarmOverviewExceptionSearch" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase170AlarmOverviewSearch" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase167OffLineFormOperation" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" />
       </list>
     </recent_temporary>
   </component>
@@ -525,12 +525,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00095" summary="修改代码">
-      <created>1502705852421</created>
-      <option name="number" value="00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1502705852425</updated>
     </task>
     <task id="LOCAL-00096" summary="修改代码">
       <created>1502706442417</created>
@@ -820,39 +814,45 @@
       <option name="project" value="LOCAL" />
       <updated>1507600473970</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="修改代码">
+      <created>1507700111325</created>
+      <option name="number" value="00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1507700111326</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase116UserSearchModifyWebDevEditAuthority_test_case_user_search_modify_web_dev_edit_authority - 2017.10.11 at 11h 09m 08s.xml">
-      <configuration name="Unittest TestCase116UserSearchModifyWebDevEditAuthority.test_case_user_search_modify_web_dev_edit_authority" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase157AlarmOverviewExceptionSearch_test_alarm_overview_exception_search - 2017.10.11 at 11h 27m 27s.xml">
-      <configuration name="Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase157AlarmOverviewExceptionSearch_test_alarm_overview_exception_search - 2017.10.11 at 11h 31m 36s.xml">
-      <configuration name="Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase157AlarmOverviewExceptionSearch_test_alarm_overview_exception_search - 2017.10.11 at 11h 35m 03s.xml">
-      <configuration name="Unittest TestCase157AlarmOverviewExceptionSearch.test_alarm_overview_exception_search" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase170AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 11h 41m 07s.xml">
       <configuration name="Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittest_TestCase170AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 11h 46m 59s.xml">
       <configuration name="Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase113UserSearchPagingFunction - 2017.10.11 at 11h 00m 26s.xml">
-      <configuration name="Unittests in TestCase113UserSearchPagingFunction" configurationId="tests" />
+    <history-entry file="Unittest_TestCase170AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 13h 55m 30s.xml">
+      <configuration name="Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase157AlarmOverviewExceptionSearch - 2017.10.11 at 11h 23m 10s.xml">
-      <configuration name="Unittests in TestCase157AlarmOverviewExceptionSearch" configurationId="tests" />
+    <history-entry file="Unittest_TestCase170AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 14h 03m 05s.xml">
+      <configuration name="Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase167OffLineFormOperation - 2017.10.11 at 11h 37m 33s.xml">
-      <configuration name="Unittests in TestCase167OffLineFormOperation" configurationId="tests" />
+    <history-entry file="Unittest_TestCase181AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 14h 06m 57s.xml">
+      <configuration name="Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase170AlarmOverviewSearch - 2017.10.11 at 11h 38m 54s.xml">
-      <configuration name="Unittests in TestCase170AlarmOverviewSearch" configurationId="tests" />
+    <history-entry file="Unittest_TestCase181AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 14h 08m 07s.xml">
+      <configuration name="Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase181AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 14h 11m 21s.xml">
+      <configuration name="Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase181AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 14h 42m 38s.xml">
+      <configuration name="Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase181AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 14h 53m 55s.xml">
+      <configuration name="Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase181AlarmOverviewSearch_test_case_alarm_overview_search - 2017.10.11 at 15h 06m 46s.xml">
+      <configuration name="Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -868,18 +868,18 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20179136" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1923077" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24242425" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835498" sideWeight="0.50263435" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23701298" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31493506" sideWeight="0.49736565" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28030303" sideWeight="0.49736565" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2943723" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -938,34 +938,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_153_oil_report_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49423394">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_151_static_report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.752883">
-          <caret line="49" column="85" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_150_oil_report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7413509">
-          <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_acc_form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49423394">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/statistical_form/test_case_148_sport_statistical_sport_overview.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50576603">
@@ -1022,13 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="1684" column="8" selection-start-line="1684" selection-start-column="8" selection-end-line="1684" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/statistical_form/search_sql.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.4885845">
@@ -1048,14 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.296875">
           <caret line="131" column="84" selection-start-line="131" selection-start-column="84" selection-end-line="131" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/send_mail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26785713">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1363,18 +1320,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7003058">
+          <caret line="1897" column="0" selection-start-line="1897" selection-start-column="0" selection-end-line="1897" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="423" column="27" selection-start-line="423" selection-start-column="27" selection-end-line="423" selection-end-column="27" />
+        <state vertical-scroll-proportion="3.2232416">
+          <caret line="748" column="92" selection-start-line="748" selection-start-column="92" selection-end-line="748" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/alarm_overview_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2293578">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/statistical_form2/test_case_170_alarm_overview_search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58112586">
-          <caret line="271" column="57" selection-start-line="271" selection-start-column="57" selection-end-line="271" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.5168196">
+          <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/alarm_overview_search_datas.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/send_mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistic_form_page3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48873484">
+          <caret line="469" column="92" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9150943">
+          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

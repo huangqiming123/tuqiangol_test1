@@ -1,0 +1,4 @@
+用户名搜索,时间选择,输入时间1,输入时间2,是否包含下级,是否输入设备
+jimitest,this_month,,,0,1
+jimitest,today,,,1,0
+jimitest,yesterday,,,0,0

@@ -55,7 +55,7 @@ class TestCase170AlarmOverviewSearch(unittest.TestCase):
         self.alarm_info_page.click_alarm_overview_list()
 
         # 输入数据搜索
-        csv_file = self.statistical_form_page_read_csv.read_csv('alarm_overview_search_data.csv')
+        csv_file = self.statistical_form_page_read_csv.read_csv('alarm_overview_search_datas.csv')
         csv_data = csv.reader(csv_file)
         is_header = True
         for row in csv_data:

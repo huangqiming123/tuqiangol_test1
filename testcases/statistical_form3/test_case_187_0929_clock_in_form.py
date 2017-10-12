@@ -79,13 +79,21 @@ class TestCase187ClockInForm(unittest.TestCase):
             end_time = self.clock_in_page.get_end_time_in_clock_in_form()
 
             request_url = request_base_url()
-            header = {
-                '_method_': 'getClock',
-                'imeis': self.clock_in_page.get_dev_imei(),
-                'startTime': begin_time,
-                'endTime': end_time,
-                'clockType': data['clock_in_type']
-            }
+            if data['clock_in_type'] != 'all':
+                header = {
+                    '_method_': 'getClock',
+                    'imeis': self.clock_in_page.get_dev_imei(),
+                    'startTime': begin_time,
+                    'endTime': end_time,
+                    'clockType': data['clock_in_type']
+                }
+            else:
+                header = {
+                    '_method_': 'getClock',
+                    'imeis': self.clock_in_page.get_dev_imei(),
+                    'startTime': begin_time,
+                    'endTime': end_time
+                }
             sleep(10)
             res_json = requests.post(request_url, data=header).json()
 

@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/change_data.py" afterPath="$PROJECT_DIR$/change_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/connect_sql.py" afterPath="$PROJECT_DIR$/model/connect_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/send_mail.py" afterPath="$PROJECT_DIR$/model/send_mail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistic_form_page3.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistic_form_page3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form3/test_case_174_sport_statistical_sport_overview.py" afterPath="$PROJECT_DIR$/testcases/statistical_form3/test_case_174_sport_statistical_sport_overview.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py" afterPath="$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form3/test_case_187_0929_clock_in_form.py" afterPath="$PROJECT_DIR$/testcases/statistical_form3/test_case_187_0929_clock_in_form.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
@@ -32,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_182_alarm_detail_search.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_182_alarm_detail_search.py">
+      <file leaf-file-name="test_case_187_0929_clock_in_form.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_187_0929_clock_in_form.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.377551">
-              <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.45918366">
+              <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -109,7 +101,6 @@
         <option value="$PROJECT_DIR$/testcases/global_search/test_case_137_1011_search_user_by_type_creat_new_user.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/clock_in_page.py" />
         <option value="$PROJECT_DIR$/pages/help/help_page.py" />
-        <option value="$PROJECT_DIR$/testcases/statistical_form3/test_case_187_0929_clock_in_form.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page2.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form3/test_case_174_sport_statistical_sport_overview.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
@@ -118,6 +109,7 @@
         <option value="$PROJECT_DIR$/model/send_mail.py" />
         <option value="$PROJECT_DIR$/model/connect_sql.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistic_form_page3.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form3/test_case_187_0929_clock_in_form.py" />
       </list>
     </option>
   </component>
@@ -297,29 +289,7 @@
       <recent name="E:\git\tuqiangol_test\data\statistical_form" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase182AlarmDetailSearch.test_case_alarm_detail_search">
-    <configuration default="false" name="Unittests in test_case_134_0818_app_user_search_paging_function" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/global_search" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/global_search/test_case_134_0818_app_user_search_paging_function.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest TestCase187ClockInForm.test_case_clock_in_form">
     <configuration default="false" name="Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -399,6 +369,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form3/test_case_182_alarm_detail_search.py" />
       <option name="CLASS_NAME" value="TestCase182AlarmDetailSearch" />
       <option name="METHOD_NAME" value="test_case_alarm_detail_search" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase187ClockInForm.test_case_clock_in_form" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form3/test_case_187_0929_clock_in_form.py" />
+      <option name="CLASS_NAME" value="TestCase187ClockInForm" />
+      <option name="METHOD_NAME" value="test_case_clock_in_form" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -549,19 +541,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_134_0818_app_user_search_paging_function" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase174SportStatisticalOverview.test_case_sport_statistical_sport_overview" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase182AlarmDetailSearch.test_case_alarm_detail_search" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase174SportStatisticalOverview.test_case_sport_statistical_sport_overview" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase182AlarmDetailSearch.test_case_alarm_detail_search" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase187ClockInForm.test_case_clock_in_form" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase182AlarmDetailSearch.test_case_alarm_detail_search" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase174SportStatisticalOverview.test_case_sport_statistical_sport_overview" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_134_0818_app_user_search_paging_function" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase187ClockInForm.test_case_clock_in_form" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase182AlarmDetailSearch.test_case_alarm_detail_search" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase181AlarmOverviewSearch.test_case_alarm_overview_search" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase174SportStatisticalOverview.test_case_sport_statistical_sport_overview" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase170AlarmOverviewSearch.test_case_alarm_overview_search" />
       </list>
     </recent_temporary>
   </component>
@@ -575,12 +567,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00100" summary="修改代码">
-      <created>1502941810057</created>
-      <option name="number" value="00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1502941810057</updated>
     </task>
     <task id="LOCAL-00101" summary="修改代码">
       <created>1502965958215</created>
@@ -870,16 +856,16 @@
       <option name="project" value="LOCAL" />
       <updated>1507725302976</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="修改代码">
+      <created>1507797280664</created>
+      <option name="number" value="00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1507797280664</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase174SportStatisticalOverview_test_case_sport_statistical_sport_overview - 2017.10.12 at 14h 39m 51s.xml">
-      <configuration name="Unittest TestCase174SportStatisticalOverview.test_case_sport_statistical_sport_overview" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase174SportStatisticalOverview_test_case_sport_statistical_sport_overview - 2017.10.12 at 14h 41m 23s.xml">
-      <configuration name="Unittest TestCase174SportStatisticalOverview.test_case_sport_statistical_sport_overview" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase174SportStatisticalOverview_test_case_sport_statistical_sport_overview - 2017.10.12 at 14h 45m 15s.xml">
       <configuration name="Unittest TestCase174SportStatisticalOverview.test_case_sport_statistical_sport_overview" configurationId="tests" />
     </history-entry>
@@ -904,6 +890,12 @@
     <history-entry file="Unittest_TestCase182AlarmDetailSearch_test_case_alarm_detail_search - 2017.10.12 at 16h 00m 10s.xml">
       <configuration name="Unittest TestCase182AlarmDetailSearch.test_case_alarm_detail_search" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittest_TestCase187ClockInForm_test_case_clock_in_form - 2017.10.12 at 16h 42m 45s.xml">
+      <configuration name="Unittest TestCase187ClockInForm.test_case_clock_in_form" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase187ClockInForm_test_case_clock_in_form - 2017.10.12 at 16h 47m 06s.xml">
+      <configuration name="Unittest TestCase187ClockInForm.test_case_clock_in_form" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -920,6 +912,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20337197" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24242425" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29545453" sideWeight="0.50474185" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23701298" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -929,7 +922,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2943723" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -988,13 +980,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_120_0816_user_search_sale_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29654035">
-          <caret line="62" column="59" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/base/new_paging.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.39538714">
@@ -1013,13 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6540362">
           <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/clock_in_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55518943">
-          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1226,13 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_187_0929_clock_in_form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3212521">
-          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/global_search/test_case_134_0818_app_user_search_paging_function.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2632425">
@@ -1358,10 +1329,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model/assert_text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.387755">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/clock_in_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9625851">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_182_alarm_detail_search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.377551">
-          <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+        <state vertical-scroll-proportion="-0.37755102">
+          <caret line="100" column="54" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_187_0929_clock_in_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45918366">
+          <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

@@ -81,7 +81,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
             begin_time = self.statistical_form_page3.get_alarm_overview_form_begin_time()
             end_time = self.statistical_form_page3.get_alarm_overview_form_end_time()
             # 全部告警类型
-            alarm_type = '1,10,11,12,128,13,14,15,16,17,18,19,192,194,195,2,22,23,24,25,3,32,4,5,6,9,90,ACC_OFF,ACC_ON,in,offline,out,overSpeed,riskPointAlarm,sensitiveAreasFence,stayAlert,stayTimeIn,stayTimeOut'
+            alarm_type = '1,10,11,12,128,13,14,15,16,17,18,19,20,192,194,195,2,22,23,24,25,3,32,4,5,6,9,90,ACC_OFF,ACC_ON,in,offline,out,overSpeed,riskPointAlarm,sensitiveAreasFence,stayAlert,stayTimeIn,stayTimeOut'
             all_dev = self.seasrch_sql.search_current_account_equipment(data['user_name'])
             imeis = self.statistical_form_page3.change_dev_imei_format(all_dev)
             # 用户id
@@ -144,6 +144,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                                 n),
                             'overStepAlert': self.statistical_form_page3.get_movement_in_alarm_overview(n),
                             'cutPower': self.statistical_form_page3.get_low_power_in_alarm_overview(n),
+                            'doorAlarm': self.statistical_form_page3.get_door_alarm_in_alarm_overview(n),
                             'voice': self.statistical_form_page3.get_exit_geozone_in_alarm_overview(n),
                             'lingerAlert': self.statistical_form_page3.enter_geozone_in_alarm_overview(n),
                             'openCoverAlarm': self.statistical_form_page3.open_conver_in_alarm_overview(n),
@@ -181,8 +182,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     res_data = response['data']
                     for data_1 in res_data:
                         del data_1['carCrash'], data_1['dvrVibration'], data_1['overspeedDVR'], data_1[
-                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status'], \
-                            data_1['doorAlarm']
+                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status']
                     print(res_data)
                     # self.assertEqual(web_data, res_data)
                     self.assertEqual(len(web_data), len(res_data))
@@ -207,8 +207,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     res_data = response['data']
                     for data_1 in res_data:
                         del data_1['carCrash'], data_1['dvrVibration'], data_1['overspeedDVR'], data_1[
-                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status'], \
-                            data_1['doorAlarm']
+                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status']
                     print(res_data)
                     # 获取页面上的数据
                     web_total_number = self.statistical_form_page3.get_web_total_number_alarm_overview()
@@ -242,6 +241,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                                 n),
                             'overStepAlert': self.statistical_form_page3.get_movement_in_alarm_overview(n),
                             'cutPower': self.statistical_form_page3.get_low_power_in_alarm_overview(n),
+                            'doorAlarm': self.statistical_form_page3.get_door_alarm_in_alarm_overview(n),
                             'voice': self.statistical_form_page3.get_exit_geozone_in_alarm_overview(n),
                             'lingerAlert': self.statistical_form_page3.enter_geozone_in_alarm_overview(n),
                             'openCoverAlarm': self.statistical_form_page3.open_conver_in_alarm_overview(n),
@@ -299,8 +299,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                     res_data = response['data']
                     for data_1 in res_data:
                         del data_1['carCrash'], data_1['dvrVibration'], data_1['overspeedDVR'], data_1[
-                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status'], \
-                            data_1['doorAlarm']
+                            'rapidAcceleration'], data_1['rapidDeceleration'], data_1['sharpTurn'], data_1['status']
                     print(res_data)
                     # 获取页面上的数据
                     web_total_number = self.statistical_form_page3.get_web_total_number_alarm_overview()
@@ -334,6 +333,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                                 n),
                             'overStepAlert': self.statistical_form_page3.get_movement_in_alarm_overview(n),
                             'cutPower': self.statistical_form_page3.get_low_power_in_alarm_overview(n),
+                            'doorAlarm': self.statistical_form_page3.get_door_alarm_in_alarm_overview(n),
                             'voice': self.statistical_form_page3.get_exit_geozone_in_alarm_overview(n),
                             'lingerAlert': self.statistical_form_page3.enter_geozone_in_alarm_overview(n),
                             'openCoverAlarm': self.statistical_form_page3.open_conver_in_alarm_overview(n),

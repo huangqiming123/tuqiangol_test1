@@ -85,13 +85,15 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
             imeis = self.statistical_form_page3.change_dev_imei_format(all_dev)
             begin_time = self.statistical_form_page3.get_sport_overview_form_begin_time()
             end_time = self.statistical_form_page3.get_sport_overview_form_end_time()
+            get_current_userid = self.search_sql.search_current_account_user_id(search_data['search_user'])
             # 连接接口
             request_url = request_base_url()
             request_params = {
                 '_method_': 'getRunSummary',
                 'imeis': imeis,
                 'startTime': begin_time,
-                'endTime': end_time
+                'endTime': end_time,
+                'userIds': get_current_userid
             }
             res = requests.post(request_url, data=request_params)
             sleep(30)

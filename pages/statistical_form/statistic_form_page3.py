@@ -411,111 +411,111 @@ class StatisticFormPage3(BasePage):
         return int(number)
 
     def get_exit_geozone_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[17]'))
-        sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[17]' % str(n + 1))
-        return int(number)
-
-    def enter_geozone_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[18]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[18]' % str(n + 1))
         return int(number)
 
-    def rearview_mirror_vibration_alert_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[21]'))
+    def enter_geozone_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[19]'))
         sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[21]' % str(n + 1))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[19]' % str(n + 1))
+        return int(number)
+
+    def rearview_mirror_vibration_alert_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[22]'))
+        sleep(1)
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[22]' % str(n + 1))
         return int(number)
 
     def get_enter_terminal_geozone_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[23]'))
-        sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[23]' % str(n + 1))
-        return int(number)
-
-    def get_exit_terminal_geozone_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[24]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[24]' % str(n + 1))
         return int(number)
 
-    def get_off_line_in_alarm_overview(self, n):
+    def get_exit_terminal_geozone_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[25]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[25]' % str(n + 1))
         return int(number)
 
-    def get_voice_in_alarm_overview(self, n):
+    def get_off_line_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[26]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[26]' % str(n + 1))
         return int(number)
 
-    def get_acc_open_in_alarm_overview(self, n):
+    def get_voice_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[27]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[27]' % str(n + 1))
         return int(number)
 
-    def get_acc_shut_down_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[29]'))
-        sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[29]' % str(n + 1))
-        return int(number)
-
-    def get_long_time_not_out_fence_in_alarm_overview(self, n):
+    def get_acc_open_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[28]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[28]' % str(n + 1))
         return int(number)
 
-    def get_long_time_not_into_fence_in_alarm_overview(self, n):
+    def get_acc_shut_down_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[30]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[30]' % str(n + 1))
         return int(number)
 
-    def get_stay_alert_in_alarm_overview(self, n):
+    def get_long_time_not_out_fence_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[29]'))
+        sleep(1)
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[29]' % str(n + 1))
+        return int(number)
+
+    def get_long_time_not_into_fence_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[31]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[31]' % str(n + 1))
         return int(number)
 
-    def get_linger_alert_in_alarm_overview(self, n):
+    def get_stay_alert_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[32]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[32]' % str(n + 1))
         return int(number)
 
-    def get_illegal_mobile_alert_in_alarm_overview(self, n):
+    def get_linger_alert_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[33]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[33]' % str(n + 1))
         return int(number)
 
-    def insufficient_battery_back_up_alert_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[35]'))
+    def get_illegal_mobile_alert_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[34]'))
         sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[35]' % str(n + 1))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[34]' % str(n + 1))
         return int(number)
 
-    def get_over_step_alert_in_alarm_overview(self, n):
+    def insufficient_battery_back_up_alert_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[36]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[36]' % str(n + 1))
         return int(number)
 
-    def get_sensitive_areas_fence_in_alarm_overview(self, n):
+    def get_over_step_alert_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[37]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[37]' % str(n + 1))
         return int(number)
 
-    def get_over_speed_platform_in_alarm_overview(self, n):
+    def get_sensitive_areas_fence_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[38]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[38]' % str(n + 1))
+        return int(number)
+
+    def get_over_speed_platform_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[39]'))
+        sleep(1)
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[39]' % str(n + 1))
         return int(number)
 
     def select_all_alarm_type_in_alarm_detail_search(self):
@@ -653,9 +653,9 @@ class StatisticFormPage3(BasePage):
         return self.driver.get_text('x,//*[@id="allmileages-day"]')
 
     def get_risk_point_alert_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[34]'))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[35]'))
         sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[34]' % str(n + 1))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[35]' % str(n + 1))
         return int(number)
 
     def change_time_format(self, web_total_time):
@@ -666,19 +666,25 @@ class StatisticFormPage3(BasePage):
         return hour * 3600 + min * 60 + sec
 
     def open_conver_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[19]'))
-        sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[19]' % str(n + 1))
-        return int(number)
-
-    def low_power_in_alarm_overview(self, n):
         self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[20]'))
         sleep(1)
         number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[20]' % str(n + 1))
         return int(number)
 
-    def sleep_alarm_in_alarm_overview(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[22]'))
+    def low_power_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[21]'))
         sleep(1)
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[22]' % str(n + 1))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[21]' % str(n + 1))
+        return int(number)
+
+    def sleep_alarm_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[23]'))
+        sleep(1)
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[23]' % str(n + 1))
+        return int(number)
+
+    def get_door_alarm_in_alarm_overview(self, n):
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[17]'))
+        sleep(1)
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[17]' % str(n + 1))
         return int(number)

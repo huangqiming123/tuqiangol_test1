@@ -565,188 +565,188 @@ class StatisticalFormPage2(BasePage):
     # 总计--声控报警数
     def get_acoustic_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[33]
+        return text.split(' ')[35]
 
     # 列表--声控报警数
     def get_list_acoustic_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[17]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[17]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[18]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[18]' % str(n + 1))
         return number
 
     # 总计--伪基站报警数
     def get_pseudo_base_station_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[35]
+        return text.split(' ')[37]
 
     # 列表--伪基站报警数
     def get_list_pseudo_base_station_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[18]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[18]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[19]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[19]' % str(n + 1))
         return number
 
     # 总计--震动报警数
     def get_vibration_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[41]
+        return text.split(' ')[43]
 
     # 列表--震动报警数
     def get_list_vibration_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[21]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[21]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[22]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[22]' % str(n + 1))
         return number
 
     # 总计--进入电子围栏报警数
     def get_enter_electronic_fence_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[45]
+        return text.split(' ')[47]
 
     # 列表--进入电子围栏报警数
     def get_list_enter_electronic_fence_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[23]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[23]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[24]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[24]' % str(n + 1))
         return number
 
     # 总计--离开电子围栏报警数
     def get_leave_electronic_fence_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[47]
+        return text.split(' ')[49]
 
     # 列表--离开电子围栏报警数
     def get_list_leave_electronic_fence_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[24]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[24]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[25]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[25]' % str(n + 1))
         return number
 
     # 总计--超速报警数
     def get_super_speed_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[49]
+        return text.split(' ')[51]
 
     # 列表--超速报警数
     def get_list_super_speed_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[25]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[25]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[26]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[26]' % str(n + 1))
         return number
 
     # 总计--位移报警数
     def get_displacement_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[51]
+        return text.split(' ')[53]
 
     # 列表--位移报警数
     def get_list_displacement_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[26]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[26]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[27]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[27]' % str(n + 1))
         return number
 
     # 总计--低电报警数
     def get_low_electricity_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[53]
+        return text.split(' ')[55]
 
     # 列表--低电报警数
     def get_list_low_electricity_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[27]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[27]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[28]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[28]' % str(n + 1))
         return number
 
     # 总计--ACC关闭数
     def get_acc_close_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[55]
+        return text.split(' ')[57]
 
     # 列表--ACC关闭数
     def get_list_acc_close_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[28]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[28]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[29]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[29]' % str(n + 1))
         return number
 
     # 总计--ACC打开数
     def get_acc_open_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[57]
+        return text.split(' ')[59]
 
     # 列表--ACC打开数
     def get_list_acc_open_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[29]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[29]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[30]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[30]' % str(n + 1))
         return number
 
     # 总计--进入围栏数
     def get_enter_fence_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[59]
+        return text.split(' ')[61]
 
     # 列表--进入围栏数
     def get_list_enter_fence_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[30]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[30]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[31]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[31]' % str(n + 1))
         return number
 
     # 总计--离线告警数
     def get_offline_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[61]
+        return text.split(' ')[63]
 
     # 列表--离线告警数
     def get_list_offline_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[31]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[31]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[32]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[32]' % str(n + 1))
         return number
 
     # 总计--离开围栏数
     def get_leave_fence_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[63]
+        return text.split(' ')[65]
 
     # 列表--离开围栏数
     def get_list_leave_fence_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[32]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[32]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[33]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[33]' % str(n + 1))
         return number
 
     # 总计--黑车围栏数
     def get_illegal_taxis_fence_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[69]
+        return text.split(' ')[71]
 
     # 列表--黑车围栏数
     def get_list_illegal_taxis_fence_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[35]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[35]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[36]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[36]' % str(n + 1))
         return number
 
     # 总计--停留告警数
     def get_stay_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[71]
+        return text.split(' ')[73]
 
     # 列表--停留告警数
     def get_list_stay_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[36]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[36]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[37]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[37]' % str(n + 1))
         return number
 
     # 总计--长时间不进数
     def get_long_time_not_enter_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[73]
+        return text.split(' ')[75]
 
     # 列表--长时间不进数
     def get_list_long_time_not_enter_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[37]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[37]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[38]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[38]' % str(n + 1))
         return number
 
     # 总计--长时间不出数
     def get_long_time_not_out_alarm_total(self):
         text = self.driver.get_text('x,//*[@id="alarmTableTotal"]')
-        return text.split(' ')[75]
+        return text.split(' ')[77]
 
     # 列表--长时间不出数
     def get_list_long_time_not_out_alarm_total_number(self, n):
-        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[38]'))
-        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[38]' % str(n + 1))
+        self.driver.execute_script(self.driver.get_element('x,//*[@id="tableXScrollCon"]/table/tbody/tr[1]/td[39]'))
+        number = self.driver.get_text('x,//*[@id="tableXScrollCon"]/table/tbody/tr[%s]/td[39]' % str(n + 1))
         return number
 
     def get_imei(self):

@@ -83,7 +83,8 @@ class TestCase187ClockInForm(unittest.TestCase):
                 '_method_': 'getClock',
                 'imeis': self.clock_in_page.get_dev_imei(),
                 'startTime': begin_time,
-                'endTime': end_time
+                'endTime': end_time,
+                'clockType': data['clock_in_type']
             }
             sleep(10)
             res_json = requests.post(request_url, data=header).json()

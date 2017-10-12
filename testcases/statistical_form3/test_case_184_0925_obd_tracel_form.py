@@ -90,10 +90,13 @@ class TestCase184ObdTracelForm(unittest.TestCase):
             req_json = requests.post(request_url, data=header).json()
             print(req_json)
             # 断言
-            self.assertEqual(float(dev_total_mile), req_json['data'][0]['totalMileage'])
-            self.assertEqual(float(dev_avg_oil), req_json['data'][0]['totalAvgFuelConsumption'])
-            self.assertEqual(float(dev_avg_speed), req_json['data'][0]['totalAvgSpeed'])
-            self.assertEqual(float(dev_total_oil), req_json['data'][0]['totalFuelConsumption'])
+            try:
+                self.assertEqual(float(dev_total_mile), req_json['data'][0]['totalMileage'])
+                self.assertEqual(float(dev_avg_oil), req_json['data'][0]['totalAvgFuelConsumption'])
+                self.assertEqual(float(dev_avg_speed), req_json['data'][0]['totalAvgSpeed'])
+                self.assertEqual(float(dev_total_oil), req_json['data'][0]['totalFuelConsumption'])
+            except:
+                self.assertEqual([None], req_json['data'])
 
             request_url = request_base_url()
             header = {

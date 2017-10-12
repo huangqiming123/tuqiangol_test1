@@ -82,6 +82,7 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
             end_time = self.statistical_form_page3.get_over_speed_report_form_end_time()
             all_dev = self.seasrch_sql.search_current_account_equipment(search_data['search_user'])
             imeis = self.statistical_form_page3.change_dev_imei_format(all_dev)
+            get_current_userid = self.seasrch_sql.search_current_account_user_id(search_data['search_user'])
 
             if total_page == 0:
                 # 连接接口
@@ -91,7 +92,8 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                     'imeis': imeis,
                     'startTime': begin_time,
                     'endTime': end_time,
-                    'speed': int(search_data['speed'])
+                    'speed': int(search_data['speed']),
+                    'userIds': get_current_userid
                 }
                 res = requests.post(request_url, data=request_params)
                 sleep(30)
@@ -120,14 +122,13 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                     'imeis': imeis,
                     'startTime': begin_time,
                     'endTime': end_time,
-                    'speed': int(search_data['speed'])
+                    'speed': int(search_data['speed']),
+                    'userIds': get_current_userid
                 }
                 res = requests.post(request_url, data=request_params)
                 sleep(30)
                 response = res.json()
-                res_data = response['data']
-                res_datas = list(set(res_data))
-                res_datas.sort(key=res_data.index)
+                res_datas = response['data']
                 for data in res_datas:
                     del data['status'], data['times']
                 print(res_datas)
@@ -155,14 +156,13 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                     'imeis': imeis,
                     'startTime': begin_time,
                     'endTime': end_time,
-                    'speed': int(search_data['speed'])
+                    'speed': int(search_data['speed']),
+                    'userIds': get_current_userid
                 }
                 res = requests.post(request_url, data=request_params)
                 sleep(30)
                 response = res.json()
-                res_data = response['data']
-                res_datas = list(set(res_data))
-                res_datas.sort(key=res_data.index)
+                res_datas = response['data']
                 for data in res_datas:
                     del data['status'], data['times']
                 print(res_datas)

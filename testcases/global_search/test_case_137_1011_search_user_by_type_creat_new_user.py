@@ -60,11 +60,9 @@ class TestCase137SearchUserByTypeCreatNewUser(unittest.TestCase):
             for i in range(number):
                 # 获取各个用户的用户类型
                 user_type = self.global_dev_search_page.get_user_type_in_search_user(i)
-                print(user_type)
                 user_account = self.global_dev_search_page.get_user_account_in_search_user(i)
                 if user_type == '销售':
                     break
-        print(user_account)
         # 搜索获取到的销售类型的用户，搜索
         self.global_dev_search_page.search_user(user_account)
         # 点击新增下级用户
@@ -72,4 +70,45 @@ class TestCase137SearchUserByTypeCreatNewUser(unittest.TestCase):
         # 获取新增下级用户时，下级的客户类型有几种
         user_type_number = self.global_dev_search_page.get_user_type_number_in_search_user()
         self.assertEqual(3, user_type_number)
+
+        self.global_dev_search_page.search_user('')
+        user_account = ''
+        total_page = self.global_dev_search_page.get_total_page_after_search_user()
+        for n in range(total_page):
+            self.global_dev_search_page.click_per_page(n)
+            # 获取每页有多少条
+            number = self.global_dev_search_page.get_per_page_total_number_in_search_user()
+            for i in range(number):
+                # 获取各个用户的用户类型
+                user_type = self.global_dev_search_page.get_user_type_in_search_user(i)
+                user_account = self.global_dev_search_page.get_user_account_in_search_user(i)
+                if user_type == '代理商':
+                    break
+        # 搜索获取到的销售类型的用户，搜索
+        self.global_dev_search_page.search_user(user_account)
+        # 点击新增下级用户
+        self.global_dev_search_page.click_add_next_user_in_search_user()
+        # 获取新增下级用户时，下级的客户类型有几种
+        user_type_number = self.global_dev_search_page.get_user_type_number_in_search_user()
+        self.assertEqual(2, user_type_number)
+
+        self.global_dev_search_page.search_user('')
+        user_account = ''
+        total_page = self.global_dev_search_page.get_total_page_after_search_user()
+        for n in range(total_page):
+            self.global_dev_search_page.click_per_page(n)
+            # 获取每页有多少条
+            number = self.global_dev_search_page.get_per_page_total_number_in_search_user()
+            for i in range(number):
+                # 获取各个用户的用户类型
+                user_type = self.global_dev_search_page.get_user_type_in_search_user(i)
+                user_account = self.global_dev_search_page.get_user_account_in_search_user(i)
+                if user_type == '用户':
+                    break
+        # 搜索获取到的销售类型的用户，搜索
+        self.global_dev_search_page.search_user(user_account)
+        # 获取新增下级用户的display值
+        get_new_next_display = self.global_dev_search_page.get_new_next_display_in_search_user()
+        self.assertEqual('display: none;', get_new_next_display)
+
         self.driver.default_frame()

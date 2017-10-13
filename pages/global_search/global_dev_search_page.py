@@ -2057,7 +2057,7 @@ class GlobalDevSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="normal_search_ul"]/li/div/div[1]/div[3]/div[1]/span[2]')
 
     def get_total_page_after_search_user(self):
-        a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('value')
+        a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
             return new_paging.get_total_page('x,//*[@id="complex_paging_user"]')
@@ -2072,8 +2072,7 @@ class GlobalDevSearchPage(BasePage):
             'title')
 
     def get_user_account_in_search_user(self, i):
-        return self.driver.get_element('x,//*[@id="complex_user_tbody"]/tr[%s]/td[4]/div' % str(i + 1)).get_attribute(
-            'title')
+        return self.driver.get_text('x,//*[@id="complex_user_tbody"]/tr[%s]/td[4]' % str(i + 1))
 
     def search_user(self, user_account):
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', user_account)
@@ -2086,3 +2085,6 @@ class GlobalDevSearchPage(BasePage):
 
     def get_user_type_number_in_search_user(self):
         return len(list(self.driver.get_elements('x,//*[@id="complex_addUser_form"]/div[2]/div[1]/div/label')))
+
+    def get_new_next_display_in_search_user(self):
+        return self.driver.get_element('x,/html/body/div[2]/div[2]/div[1]/ul/li[4]').get_attribute('style')

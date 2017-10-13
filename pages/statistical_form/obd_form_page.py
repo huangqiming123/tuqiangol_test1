@@ -54,7 +54,6 @@ class ObdFormPage(BasePage):
         self.driver.click_element('c,autocompleter-item')
         sleep(3)
 
-        # TODO:obd form choose imei
         # 输入设备imei
         self.driver.operate_input_element('x,//*[@id="imeiInput_travelReport"]', self.search_imei())
 

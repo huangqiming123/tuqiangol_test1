@@ -96,7 +96,6 @@ class ClockInPage(BasePage):
         data = cursor.fetchall()
         data_list = []
         for range in data:
-            # TODO:mqsql plus 8 hours
             data_list.append({
                 'imei': range[0],
                 'time': str(range[1]),

@@ -200,6 +200,7 @@ class TestCase181AlarmOverviewSearch(unittest.TestCase):
                         'startTime': begin_time,
                         'endTime': end_time,
                         'status': alarm_type,
+                        'imeis': imeis,
                     }
                     res = requests.post(request_url, data=request_params)
                     time.sleep(10)

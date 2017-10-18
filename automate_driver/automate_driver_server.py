@@ -6,16 +6,19 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.support.select import Select
 
-
 # webdirver封装
 # author:孙燕妮
 from change_data import ChangeData
 
 
 class AutomateDriverServer(object):
-    def __init__(self):
-        self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
-                                       desired_capabilities=DesiredCapabilities.FIREFOX)
+    def __init__(self, choose=None):
+        if choose != None:
+            self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+                                           desired_capabilities=DesiredCapabilities.CHROME)
+        else:
+            self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+                                           desired_capabilities=DesiredCapabilities.FIREFOX)
 
         self.base_url = ChangeData().switch_tuqiang_url()
 

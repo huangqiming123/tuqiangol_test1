@@ -604,7 +604,7 @@ class StatisticalFormPage(BasePage):
         sleep(1)
         self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
-        sleep(2)
+        sleep(4)
         self.driver.click_element('c,autocompleter-item')
         sleep(2)
 
@@ -755,7 +755,7 @@ class StatisticalFormPage(BasePage):
         sleep(1)
         self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
-        sleep(2)
+        sleep(4)
         self.driver.click_element('c,autocompleter-item')
         sleep(2)
 
@@ -905,7 +905,7 @@ class StatisticalFormPage(BasePage):
         sleep(1)
         self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_data['search_user'])
         self.driver.click_element('x,//*[@id="search_user_btn"]')
-        sleep(2)
+        sleep(4)
         self.driver.click_element('c,autocompleter-item')
         sleep(2)
 
@@ -2607,3 +2607,20 @@ class StatisticalFormPage(BasePage):
     def get_no_data_text_in_alarm_overview_pages(self):
         text = self.driver.get_text('x,//*[@id="alarm_report_nodata"]/div/span')
         return text
+
+    def click_status_statistical_form_button(self):
+        self.driver.click_element('x,//*[@id="staticReport"]/a')
+        sleep(2)
+
+    def switch_to_status_statistical_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="staticReportFrame"]')
+
+    def select_all_status_in_status_statistical_form(self):
+        self.driver.click_element('x,//*[@id="equipmentStatus"]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="equipmentStatus"]/option[1]')
+        sleep(3)
+
+    def click_search_button_in_status_statistical_form(self):
+        self.driver.click_element('x,//*[@id="OffLineFrom"]/div[3]/div[4]/button[1]')
+        sleep(2)

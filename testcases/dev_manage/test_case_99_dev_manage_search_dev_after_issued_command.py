@@ -44,7 +44,7 @@ class TestCase99DevManageSearchDevAfterIssuedCommand(unittest.TestCase):
             # 点击本次查询全部发送指令
             self.dev_manage_page.click_batch_issued_command_button()
             # 断言数据为零
-            self.assertEqual('0', self.dev_manage_page.get_total_number_in_issued_command_page())
+            self.assertEqual('', self.dev_manage_page.get_total_number_in_issued_command_page())
             self.assertEqual(0, self.dev_manage_page.get_total_number_list_in_issued_command_page())
 
         elif page_number == 1:

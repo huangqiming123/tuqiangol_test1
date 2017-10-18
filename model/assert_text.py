@@ -373,3 +373,9 @@ class AssertText(object):
 
     def glob_search_page_search_account_texts(self):
         return '请输入客户名称/账号/IMEI'
+
+    def dev_total_mileage_text1(self):
+        return '必须为数字(最多保留两位小数)'
+
+    def dev_total_mileage_text2(self):
+        return '必须在0 ~ 9999999.99之间'

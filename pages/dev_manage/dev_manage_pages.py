@@ -1979,3 +1979,54 @@ class DevManagePages(BasePage):
     def click_close_fail_text(self):
         self.driver.click_element('x,/html/body/div[30]/span[1]/a')
         sleep(2)
+
+    def get_dev_total_mileage_max_len(self):
+        self.switch_to_dev_edit_frame()
+        a = self.driver.get_element('x,//*[@id="totalKm"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def input_dev_total_mileage_in_dev_detail(self, param):
+        self.switch_to_dev_edit_frame()
+        self.driver.operate_input_element('x,//*[@id="totalKm"]', param)
+        sleep(2)
+        self.driver.default_frame()
+
+    def get_text_after_input_dev_total_mileage(self):
+        self.switch_to_dev_edit_frame()
+        a = self.driver.get_text('x,//*[@id="device_info_b"]/fieldset[1]/div[5]/div[1]/label')
+        self.driver.default_frame()
+        return a
+
+    def search_dev_in_dev_manage_page(self, param):
+        self.driver.click_element('x,//*[@id="searchIMEI"]')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="searchIMEI"]', param)
+        sleep(1)
+        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
+        sleep(4)
+
+    def click_look_dev_fence_in_dev_page(self):
+        self.driver.click_element('x,//*[@id="markDevTable"]/tr/td[12]/a[4]')
+        sleep(2)
+        self.driver.click_element('l,查看围栏')
+        sleep(2)
+
+    def get_in_fence_select_in_look_fence_page(self):
+        a = self.driver.get_element('x,//*[@id="option0"]/td[2]/label[1]/div/input').is_selected()
+        return a
+
+    def get_out_fence_select_in_look_fence_page(self):
+        a = self.driver.get_element('x,//*[@id="option0"]/td[2]/label[2]/div/input').is_selected()
+        return a
+
+    def click_in_fence_input_checkbox(self):
+        self.driver.click_element('x,//*[@id="option0"]/td[2]/label[1]/div/ins')
+        sleep(1)
+
+    def click_out_fence_input_checkbox(self):
+        self.driver.click_element('x,//*[@id="option0"]/td[2]/label[2]/div/ins')
+        sleep(1)
+
+    def get_text_after_click_ensure(self):
+        return self.driver.get_text('c,layui-layer-content')

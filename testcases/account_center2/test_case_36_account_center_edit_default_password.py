@@ -53,11 +53,12 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
             self.cust_manage_basic_info_and_add_cust_page.add_acc()
             self.cust_manage_basic_info_and_add_cust_page.cancel_add_account()
             self.cust_manage_basic_info_and_add_cust_page.add_acc()
-            sleep(2)
+            sleep(3)
             type_data = self.cust_manage_basic_info_and_add_cust_page.get_acc_user_type_list()
 
             # 选择客户类型、添加客户数据
-            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+
             self.cust_manage_basic_info_and_add_cust_page.acc_type_choose(user_type, type_data["type_id"])
             self.cust_manage_basic_info_and_add_cust_page.add_default_password_acc(data[0], data[1],
                                                                                    data[2], data[3],

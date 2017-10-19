@@ -113,7 +113,7 @@ class TestCase04AccountCenterFastSaleAddCust(unittest.TestCase):
                     #self.assertIn(self.assert_text.log_in_page_account_type(9),type_list["user"])
 
             # 输入用户账号，获取提示
-            # self.account_center_page_details.add_account_search_user("kehushuyh1")
+            #self.account_center_page_details.add_account_search_user("kehushuyh1")
             #status = self.account_center_page_details.get_add_save_status()
             #self.assertEqual(self.assert_text2.cust_manage_add_user_type_prompt(), status, "提示显示不一致")
 

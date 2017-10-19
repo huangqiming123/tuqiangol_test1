@@ -56,7 +56,7 @@ class TestCase63CustManageAddCycleClickUser(unittest.TestCase):
 
         # 循环点击五次
         for n in range(5):
-            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
             self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 2))
             sleep(2)
             text = self.driver.get_text('x,//*[@id="treeDemo2_%s_span"]' % str(n + 2))

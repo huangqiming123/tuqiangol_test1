@@ -52,7 +52,7 @@ class TestCase470919AccountCenterRefillCardTransferException(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         # 进入充值卡页面
         self.account_center_page_refill_card.click_refill_card()
-        # 获取顶部张数
+        #获取顶部张数
         top_quantity = self.account_center_page_refill_card.get_refill_card_page_top_quantity()
 
         #点转移
@@ -77,14 +77,14 @@ class TestCase470919AccountCenterRefillCardTransferException(unittest.TestCase):
             prompt = self.account_center_page_refill_card.get_transfer_refill_card_exception_hint()
 
             self.assertEqual(data["user_hint"], prompt["user_prompt2"], "目标用户提示不一致")
-            # 一年卡
+            #一年卡
             try:
                 self.assertIn(data["year_hint"], prompt["year_prompt2"], "一年充值卡提示不一致")
             except:
                 year_number = top_quantity["year_number"].split("张")[0]
                 self.assertEqual("请输入0~" + year_number + "的整数", prompt["year_prompt2"], "一年卡张数不一致")
 
-            # 终身卡
+            #终身卡
             try:
                 self.assertIn(data["lifetime_hint"], prompt["lifetimet_prompt2"], "终身充值卡提示不一致")
             except:
@@ -94,11 +94,11 @@ class TestCase470919AccountCenterRefillCardTransferException(unittest.TestCase):
         # 验证输入用户提示
         # self.account_center_page_refill_card.transfer_refill_card_search_user("用户111")
         # status = self.account_center_page_refill_card.get_operate_status()
-        # self.assertEqual("普通用户不能作为转移目标用户",status,"提示不一致")
+        #self.assertEqual("普通用户不能作为转移目标用户",status,"提示不一致")
 
 
         # 取消
-        # self.account_center_page_refill_card.click_refill_card_transfer_cancel()
+        #self.account_center_page_refill_card.click_refill_card_transfer_cancel()
         #循环点击下级用户
         for i in range(5):
             self.account_center_page_refill_card.click_transfer_target_user(i)

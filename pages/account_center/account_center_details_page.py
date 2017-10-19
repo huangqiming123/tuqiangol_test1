@@ -93,7 +93,7 @@ class AccountCenterDetailsPage(BasePageServer):
         self.driver.operate_input_element("ac_putDevice_globalSearch_SalesName", search_account)
         # 点击搜索按钮
         self.driver.click_element("ac_putDevice_globalSearch_btn")
-        self.driver.wait(2)
+        self.driver.wait(3)
         # 点击搜索结果列表中唯一的账户
         self.driver.click_element("c,autocompleter-item")
         self.driver.wait(1)
@@ -263,6 +263,7 @@ class AccountCenterDetailsPage(BasePageServer):
     # 快捷销售-设备查找-获取输入imei计数
     def get_device_imei_count(self):
         dev_num = self.driver.get_element("ac_dev_num").text
+        sleep(1)
         return dev_num
 
     # 快捷销售-设备查找-获取已选设备个数

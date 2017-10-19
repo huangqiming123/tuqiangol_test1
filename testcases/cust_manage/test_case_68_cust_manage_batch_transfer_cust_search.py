@@ -61,7 +61,7 @@ class TestCase68CustManageCustBatchTransferCustSearch(unittest.TestCase):
         self.cust_manage_basic_info_and_add_cust_page.click_batch_transfer_customer()
         # 循环点击五次
         for n in range(5):
-            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
             self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 3))
             sleep(2)
             self.driver.default_frame()

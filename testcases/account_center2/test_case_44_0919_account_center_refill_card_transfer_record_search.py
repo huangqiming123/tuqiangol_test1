@@ -19,7 +19,7 @@ from pages.login.login_page import LoginPage
 # author:戴招利
 class TestCase440919AccountCenterRefillCardTransferRecordSearch(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='CHROME')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -97,7 +97,7 @@ class TestCase440919AccountCenterRefillCardTransferRecordSearch(unittest.TestCas
 
         print("后面那一部分")
         self.account_center_page_refill_card.refill_card_page_iframe()
-        # 点击转移记录
+        #点击转移记录
         self.account_center_page_refill_card.click_transfer_record()
         # 获取设备有多少个分页
         total_page = self.account_center_page_refill_card.get_total_page_number_search_transfer_record()
@@ -119,13 +119,15 @@ class TestCase440919AccountCenterRefillCardTransferRecordSearch(unittest.TestCas
             # 点击每页20条
             list = [20, 30, 50, 100]
             for m in list:
-                # self.account_center_page_refill_card.click_per_page_number()
+                print(m)
+                #self.account_center_page_refill_card.click_per_page_number()
                 self.account_center_page_refill_card.click_per_page_number_transfer_record()
                 page_number = self.account_center_page_refill_card.get_page_number_in_transfer_record_search()
                 print(page_number)
                 self.assertEqual(int(total_page[1] / m) + 1, page_number)
 
+
         self.driver.default_frame()
         csv_file.close()
         # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
+        #self.account_center_page_navi_bar.usr_logout()

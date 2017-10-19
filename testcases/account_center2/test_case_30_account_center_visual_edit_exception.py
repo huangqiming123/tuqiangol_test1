@@ -1,5 +1,7 @@
 import csv
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
@@ -33,6 +35,7 @@ class TestCase30AccountCenterVisualEditException(unittest.TestCase):
         # 登录
         self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
+        sleep(1)
         # 进入虚拟账户管理
         self.visual_account_page.enter_visual_account()
         # 添加虚拟账号、保存

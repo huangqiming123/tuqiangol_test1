@@ -126,6 +126,15 @@ class TestCase59CustManageLowerAccountSearch(unittest.TestCase):
                 web_total = self.cust_manage_lower_account_page.get_account_number()
                 print('本次查询页面的条数是：%s' % web_total)
                 self.assertEqual(total, web_total)
+                """
+                show_total = self.cust_manage_lower_account_page.get_list_tota_count(web_total)
+                if  "暂无数据" in show_total:
+                    self.assertIn('暂无数据',show_total)
+                    print("暂无数据")
+                else:
+                    self.assertEqual("总计"+str(web_total)+"条",show_total,"总计条数不一致")
+                    print('本次查询总计条数是：%s' % show_total)
+                    """
 
             cur.close()
             connect.close()

@@ -21,6 +21,10 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.click_element("customer")
         self.driver.wait(3)
 
+    # 定位iframe
+    def locate_to_iframe(self):
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+
     def click_left_tree_current_user(self):
         self.driver.click_element("treeDemo_1_span")
         # self.driver.execute_script(current_user)
@@ -108,7 +112,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     # 当前账户-编辑用户-选择客户类型
     def acc_type_choose(self, acc_type, type_id=""):
         if acc_type == '销售':
-            # self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[1]")
+            #self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[1]")
             self.driver.click_element("x,//*[@id='typeRoleRadio1']/label[1]")
 
         elif acc_type == '代理商':
@@ -206,7 +210,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 当前账户-编辑用户-搜索客户名称/账户
     def acc_search(self, keyword):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         # 将滚动条滚动至搜索输入框处
         ele = self.driver.get_element("treeDemo2_cusTreeKey")
         self.driver.execute_script(ele)
@@ -317,8 +321,9 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
+    #/html/body/div[7]/div[2]/iframe
     def get_account_name_after_click_edit(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_element('x,//*[@id="topUser"]').get_attribute('value')
         self.driver.default_frame()
         return text
@@ -327,41 +332,41 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.click_element('c,layui-layer-btn1')
 
     def get_up_account_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         value = self.driver.get_element('x,//*[@id="topUser"]').get_attribute('readonly')
         self.driver.default_frame()
         return value
 
     def get_account_name_input(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="nickName"]').get_attribute('readonly')
         self.driver.default_frame()
         return a
 
     def add_account_name(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="nickName"]', param)
         self.driver.default_frame()
 
     def get_add_account_name_exception_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="userForm"]/div[3]/div/label')
         self.driver.default_frame()
         return text
 
     def add_account(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="account"]', param)
         self.driver.default_frame()
 
     def get_add_account_exception_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="userForm"]/div[4]/div/label')
         self.driver.default_frame()
         return text
 
     def get_account_name_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="nickName"]').get_attribute('maxlength')
         self.driver.default_frame()
         return a
@@ -370,70 +375,70 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.click_element('c,layui-layer-btn0')
 
     def get_account_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="account"]').get_attribute('maxlength')
         self.driver.default_frame()
         return a
 
     def add_password_first(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="password"]', param)
         self.driver.default_frame()
 
     def add_password_second(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="pswAgain"]', param)
         self.driver.default_frame()
 
     def get_text_first_password(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="markPassword"]/div[1]/div/label')
         self.driver.default_frame()
         return text
 
     def get_text_second_password(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="markPswAgain"]/div/label')
         self.driver.default_frame()
         return text
 
     def get_phone_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="phone"]').get_attribute('maxlength')
         self.driver.default_frame()
         return a
 
     def get_email_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="email"]').get_attribute('maxlength')
         self.driver.default_frame()
         return a
 
     def get_connect_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="contact"]').get_attribute('maxlength')
         self.driver.default_frame()
         return a
 
     def get_comp_max_len(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="companyName"]').get_attribute('maxlength')
         self.driver.default_frame()
         return a
 
     def add_email_format(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="email"]', param)
         self.driver.default_frame()
 
     def get_text_email_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="userForm"]/div[7]/div/label')
         self.driver.default_frame()
         return text
 
     def search_cust(self, param):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         self.driver.operate_input_element('x,//*[@id="treeDemo2_cusTreeKey"]', param)
         self.driver.click_element('x,//*[@id="treeDemo2_cusTreeSearchBtn"]')
         sleep(4)
@@ -441,12 +446,12 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     #编辑-搜索--点击查询结果
     def click_search_user(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         self.driver.click_element("c,autocompleter")
         self.driver.default_frame()
 
     def get_search_no_data_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="treeRoleBox"]/div[1]/div[1]/span')
         self.driver.default_frame()
         return text
@@ -473,7 +478,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         return text
 
     def get_account_after_edit(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_element('s,#account').get_attribute('value')
         self.driver.default_frame()
         return text
@@ -483,13 +488,13 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         sleep(2)
 
     def get_up_account_after_edit(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_element('s,#topUser').get_attribute('value')
         self.driver.default_frame()
         return text
 
     def get_account_type_after_edit(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('s,#labelSale > div > input[type="radio"]').is_selected()
         b = self.driver.get_element('s,#labelDistributor > div > input[type="radio"]').is_selected()
         c = self.driver.get_element('s,#labelUser > div > input[type="radio"]').is_selected()
@@ -507,13 +512,13 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             return " 用户"
 
     def get_up_input_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_element('s,#topUser').get_attribute('readonly')
         self.driver.default_frame()
         return text
 
     def get_account_value(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_element('s,#account').get_attribute('disabled')
         self.driver.default_frame()
         return text
@@ -552,7 +557,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         sleep(2)
 
     def get_texts_email_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         text = self.driver.get_text('x,//*[@id="userForm"]/div[6]/div/label')
         self.driver.default_frame()
         return text
@@ -594,10 +599,11 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             self.driver.click_element("x,/html/body/div[4]/div[3]/a")
             return prompt
         else:
-            prompt = self.driver.get_text("x,/html/body/div[7]/div[2]")
+
+            prompt = self.driver.get_text("x,/html/body/div[8]/div[2]")
             print(prompt)
             self.driver.wait()
-            self.driver.click_element("x,/html/body/div[7]/div[3]/a")
+            self.driver.click_element("x,/html/body/div[8]/div[3]/a")
             return prompt
 
 
@@ -716,7 +722,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         # 点击下拉箭头图标
         self.search_cust(search_account)
         self.driver.wait(3)
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         #获取查询结果
         list_data = len(self.driver.get_elements("x,/html/body/div/div/form/div/div/div[1]/div/ul/li"))
 
@@ -734,10 +740,9 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             print(no_data)
             return no_data
 
-
-    #获取客户类型列表
+    #获取客户类型列表 /html/body/div[7]/div[2]/iframe
     def get_acc_user_type_list(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         type_list_len = len(self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div"))
         print(type_list_len)
         for i in range(type_list_len):

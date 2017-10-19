@@ -198,7 +198,7 @@ class CustManageLowerAccountPage(BasePageServer):
         self.driver.click_element("c,layui-layer-btn1")
         sleep(2)
         self.click_acc_edit()
-        self.driver.click_element("x,/html/body/div[7]/span[1]/a")
+        self.driver.click_element("x,/html/body/div[8]/span[1]/a")
         sleep(2)
 
 
@@ -236,7 +236,7 @@ class CustManageLowerAccountPage(BasePageServer):
     def click_reset_passwd_dismiss(self):
         self.acc_reset_passwd()
         #点X
-        self.driver.click_element("x,/html/body/div[6]/span[1]/a")
+        self.driver.click_element("c,layui-layer-close")
         sleep(2)
         self.acc_reset_passwd()
         #取消
@@ -267,8 +267,8 @@ class CustManageLowerAccountPage(BasePageServer):
         self.delete_acc()
         self.delete_acc_dismiss()
         self.delete_acc()
-        self.driver.click_element("x,/html/body/div[6]/span[1]/a")
-
+        # self.driver.click_element("x,/html/body/div[6]/span[1]/a")
+        self.driver.click_element("c,layui-layer-close")
 
     # 单个用户操作-转移客户
     def click_user_trans(self):
@@ -353,3 +353,12 @@ class CustManageLowerAccountPage(BasePageServer):
         type = self.driver.get_element("x,//*[@id='customerlist']/tr/td[3]").text
         return type
 
+    # 获取总计条数
+    def get_list_tota_count(self, web_total):
+        if web_total == 0:
+            data = self.driver.get_text("x,//*[@id='user-noData']/div/span")
+            return data
+        else:
+            paging_count = len(self.driver.get_elements("x,//*[@id='pagingCustomer']/ul/li"))
+            data = self.driver.get_text("x,//*[@id='pagingCustomer']/ul/li[" + str(paging_count) + "]/span")
+            return data

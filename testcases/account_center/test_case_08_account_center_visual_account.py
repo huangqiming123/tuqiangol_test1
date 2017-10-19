@@ -77,6 +77,7 @@ class TestCase08AccountCenterVisualAccount(unittest.TestCase):
             # 退出登录验证虚拟账号
             self.account_center_page_navi_bar.usr_logout()
             self.log_in_base.log_in_with_csv(acc_to_add["account"], acc_to_add["passwd"])
+            sleep(1)
             self.assertEqual(acc_to_add["account"], self.account_center_page_navi_bar.hello_user_account(),
                              "招呼栏登录账号显示不一致")
             self.account_center_page_navi_bar.usr_logout()

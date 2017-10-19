@@ -1,5 +1,7 @@
 import csv
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text2 import AssertText2
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
@@ -52,6 +54,7 @@ class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
                 "selected_dev": row[2]
             }
             # 进入快捷销售页面
+            sleep(1)
             self.account_center_page_details.account_center_iframe()
             self.account_center_page_details.fast_sales()
 

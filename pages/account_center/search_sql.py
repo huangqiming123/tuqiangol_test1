@@ -91,7 +91,7 @@ class SearchSql(object):
         sql = "select m.id from user_message m where m.userId in %s" % str(current_account)
 
         if search_data['imei'] != '':
-            # sql += " and m.imeis like '%" + search_data['imei'] + "%'"
+            #sql += " and m.imeis like '%" + search_data['imei'] + "%'"
             sql += " and m.imeis=" + search_data['imei']
 
         if search_data['type'] != '':
@@ -128,7 +128,7 @@ class SearchSql(object):
             sql += " and cardType=%s" % data["refill_type"]
 
         if data['device_imei'] != '':
-            # 多个imei，精确搜索
+            #多个imei，精确搜索
             if "/" in data['device_imei']:
                 imeis = data['device_imei'].split("/")
                 device_imei = tuple(imeis)
@@ -142,8 +142,15 @@ class SearchSql(object):
         sql += ";"
         return sql
 
+    # 充值记录的sql--最新时间
+    def search_refill_record_reill_time_sql(self, id, imei):
+        sql = "select max(updationDate) from rc_recharge where userId='%s' and imei='%s' ORDER BY updationDate DESC;" % (
+        id, imei)
+        print(sql)
+        return sql
+
     # 充值记录的sql--最后时间
-    def search_refill_record_time_sql(self,id):
-        sql = "select max(newExpiration) from rc_recharge where userId=%s;" % id
+    def search_refill_record_expire_time_sql(self, time):
+        sql = "select max(newExpiration) from rc_recharge where updationDate='%s';" % time
         print(sql)
         return sql

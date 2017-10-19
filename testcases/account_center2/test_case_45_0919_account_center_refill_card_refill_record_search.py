@@ -19,7 +19,7 @@ from pages.login.login_page import LoginPage
 # author:戴招利
 class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='CHROME')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -102,9 +102,9 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
             self.assertEqual(total, page_number, "转移记录中，平台与sql搜索出来的数据条数不一致")
             self.driver.default_frame()
 
-        # 分页功能
+        #分页功能
         self.account_center_page_refill_card.refill_card_page_iframe()
-        # 点击充值记录
+        #点击充值记录
         self.account_center_page_refill_card.click_refill_record()
         # 获取设备有多少个分页
         total_page = self.account_center_page_refill_card.get_total_page_number_search_refill_record()
@@ -131,8 +131,9 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
                 print(page_number)
                 self.assertEqual(int(total_page[1] / m) + 1, page_number)
 
+
         self.driver.default_frame()
 
         csv_file.close()
         # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
+        #self.account_center_page_navi_bar.usr_logout()

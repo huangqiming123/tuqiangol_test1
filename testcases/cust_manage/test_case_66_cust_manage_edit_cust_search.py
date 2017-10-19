@@ -81,7 +81,7 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
                 self.cust_manage_basic_info_and_add_cust_page.click_search_user()
                 sleep(2)
                 #获取提示
-                self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+                self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
                 status = self.cust_manage_lower_account_page.edit_info_save_status()
                 self.driver.default_frame()
                 print(status)
@@ -110,7 +110,7 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
             self.cust_manage_basic_info_and_add_cust_page.search_cust(user)
             self.cust_manage_basic_info_and_add_cust_page.click_search_user()
             sleep(2)
-            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
             status = self.cust_manage_lower_account_page.edit_info_save_status()
             self.driver.default_frame()
             self.assertEqual(self.assert_text2.cust_manage_select_user_unable_superior(), status, "提示显示不一致")
@@ -126,7 +126,7 @@ class TestCase66CustManageCustEditCustSearch(unittest.TestCase):
         self.cust_manage_lower_account_page.click_search_btn()
         self.cust_manage_basic_info_and_add_cust_page.click_edit_customer_process()
         for n in range(5):
-            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
             #self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 3))
             self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 2))
             sleep(2)

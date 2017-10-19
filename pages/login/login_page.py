@@ -100,17 +100,28 @@ class LoginPage(BasePageServer):
             return login_button_text
 
     # 底部第三方网站链接点击操作
-    def enter_third_party_website(self, web_name):
-        if web_name == '工商网监':
-            self.driver.click_element('x,/html/body/footer/div[3]/a[1]')
-        elif web_name == '可信网站':
-            self.driver.click_element('x,/html/body/footer/div[3]/a[2]')
-        elif web_name == '网络警察':
-            self.driver.click_element('x,/html/body/footer/div[3]/a[3]')
-        elif web_name == '公共信息网络安全监察':
-            self.driver.click_element('x,/html/body/footer/div[3]/a[4]')
-        elif web_name == '不良信息举报中心':
-            self.driver.click_element('x,/html/body/footer/div[3]/a[5]')
+    def enter_third_party_website(self, web_name, count):
+        if count == 5:
+            if web_name == '工商网监':
+                self.driver.click_element('x,/html/body/footer/div[3]/a[1]')
+            elif web_name == '可信网站':
+                self.driver.click_element('x,/html/body/footer/div[3]/a[2]')
+            elif web_name == '网络警察':
+                self.driver.click_element('x,/html/body/footer/div[3]/a[3]')
+            elif web_name == '公共信息网络安全监察':
+                self.driver.click_element('x,/html/body/footer/div[3]/a[4]')
+            elif web_name == '不良信息举报中心':
+                self.driver.click_element('x,/html/body/footer/div[3]/a[5]')
+        else:
+            if web_name == '工商网监':
+                self.driver.click_element('x,/html/body/footer/div[2]/a[1]')
+            elif web_name == '网络警察':
+                self.driver.click_element('x,/html/body/footer/div[2]/a[2]')
+            elif web_name == '公共信息网络安全监察':
+                self.driver.click_element('x,/html/body/footer/div[2]/a[3]')
+            elif web_name == '不良信息举报中心':
+                self.driver.click_element('x,/html/body/footer/div[2]/a[4]')
+
 
     # 封装登录操作
     def user_login(self, account, password):
@@ -186,8 +197,7 @@ class LoginPage(BasePageServer):
             prompt = self.driver.get_text(select)
             return prompt
         except:
-            prompt = ""
-            return prompt
+            return ""
 
     # 点击首页
     def click_home_page(self):
@@ -267,3 +277,16 @@ class LoginPage(BasePageServer):
         elif link_name == '告警':
             self.driver.click_element("x,//*[@id='creat-1']/div[8]/a")
             self.driver.wait(1)
+
+    # 获取底部网站个数 /html/body/footer/div[2]/a[1]  /html/body/footer/div[3]/a[1]
+    def get_login_page_website_count(self, url):
+        print(url)
+        # 线上环境
+        if url == "http://www.tuqiangol.com":
+            count = len(self.driver.get_elements("x,/html/body/footer/div[3]/a"))
+            print("线上个数", count)
+            return count
+        else:
+            count = len(self.driver.get_elements("x,/html/body/footer/div[2]/a"))
+            print("测试个数", count)
+            return count

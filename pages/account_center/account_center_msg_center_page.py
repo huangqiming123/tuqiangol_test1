@@ -148,7 +148,8 @@ class AccountCenterMsgCenterPage(BasePageServer):
         self.driver.default_frame()
         self.driver.wait(3)
         # 切换到iframe
-        self.driver.switch_to_iframe('x,/html/body/div[6]/div[2]/iframe')
+        # self.driver.switch_to_iframe('x,/html/body/div[6]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,/html/body/div[7]/div[2]/iframe')
 
         # 基本信息
         device_name = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[1]/input")
@@ -167,6 +168,8 @@ class AccountCenterMsgCenterPage(BasePageServer):
         phone = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[1]/div[2]/input")
         # id_card = self.get_length('x,//*[@id="device_info_b]/fieldset[1]/div[2]/div[2]/input')
         car_frame = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[3]/div[2]/input")
+        total_mileage = self.get_length("totalKm")
+
 
         # 安装信息
         install_company = self.get_length("x,//*[@id='device_info_b']/fieldset[2]/div[2]/div[1]/input")
@@ -184,6 +187,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
             "phone": phone,
             # "id_card": id_card,
             "car_frame": car_frame,
+            "total_mileage": total_mileage,
             "install_company": install_company,
             "install_personnel": install_personnel,
             "install_address": install_address,

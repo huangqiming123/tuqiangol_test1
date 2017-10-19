@@ -19,7 +19,7 @@ from pages.login.login_page import LoginPage
 # author:戴招利
 class TestCase420918AccountCenterRefillCardApplyRecordSearch(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer(choose='CHROME')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -99,7 +99,7 @@ class TestCase420918AccountCenterRefillCardApplyRecordSearch(unittest.TestCase):
 
         print("后面那一部分")
         self.account_center_page_refill_card.refill_card_page_iframe()
-        # 点击申请记录
+        #点击申请记录
         self.account_center_page_refill_card.click_apply_record()
         # 获取设备有多少个分页
         total_page = self.account_center_page_refill_card.get_total_page_number_search_apply_record()
@@ -126,7 +126,8 @@ class TestCase420918AccountCenterRefillCardApplyRecordSearch(unittest.TestCase):
                 print(page_number)
                 self.assertEqual(int(total_page[1] / m) + 1, page_number)
 
+
         self.driver.default_frame()
         csv_file.close()
         # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
+        #self.account_center_page_navi_bar.usr_logout()

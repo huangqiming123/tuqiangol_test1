@@ -65,7 +65,7 @@ class TestCase730816CustManageEditUserCommandLimit(unittest.TestCase):
             self.cust_manage_basic_info_and_add_cust_page.click_edit_customer()
             self.cust_manage_basic_info_and_add_cust_page.click_cancel_edit()
             self.cust_manage_basic_info_and_add_cust_page.click_edit_customer()
-            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
 
             # 是或否批量下发指令 和批量下发工作模式
             command_status = self.cust_manage_basic_info_and_add_cust_page.setting_command_permissions(info["command"])
@@ -81,6 +81,7 @@ class TestCase730816CustManageEditUserCommandLimit(unittest.TestCase):
             self.account_center_page_navi_bar.usr_logout()
 
             self.log_in_base.log_in_with_csv(info["wdit_account"], info["passwd"])
+            sleep(1)
             hello_usr = self.account_center_page_navi_bar.hello_user_account()
             self.assertIn(info["wdit_account"], hello_usr, "登录成功后招呼栏账户名显示错误")
             sleep(1)

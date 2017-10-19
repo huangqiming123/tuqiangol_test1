@@ -86,12 +86,14 @@ class TestCase480921AccountCenterRefillCardEquipmentRefill(unittest.TestCase):
             self.assertEqual(import_imei["import_count"], int(import_imei["add_count"]), '输入的imei计数不一致')
 
             # 验证充值提示信息
-            list_imei_number = self.account_center_page_refill_card.get_list_imei_number()
+            list_data = self.account_center_page_refill_card.get_list_imei_number()
             # 取消提示
             self.account_center_page_refill_card.equipment_refill_hint()
             # 获取充值提示数据
             prompt_data = self.account_center_page_refill_card.equipment_refill_hint_data()
-            self.assertEqual(list_imei_number, int(prompt_data["prompt_refill_count"]), '充值提示中的台数跟列表添加数不一致')
+            self.assertEqual(list_data["number"], int(prompt_data["prompt_refill_count"]), '充值提示中的台数跟列表添加数不一致')
+
+
             self.assertEqual(data["type"], prompt_data["time_limit"], '充值提示中，充值年限与设置的不一致')
             # 确定充值按钮
             self.account_center_page_refill_card.click_confirm_refill()
@@ -105,7 +107,15 @@ class TestCase480921AccountCenterRefillCardEquipmentRefill(unittest.TestCase):
             connect1 = self.connect_sql.connect_tuqiang_sql()
             # 创建数据库游标
             cur = connect1.cursor()
-            get_sql = self.search_sql.search_refill_record_time_sql(sql_data[0])
+            reill_time_sql = self.search_sql.search_refill_record_reill_time_sql(sql_data[0], list_data["imei"])
+            cur.execute(reill_time_sql)
+            # 读取数据
+            reill_time = cur.fetchall()
+            print("读取", reill_time)
+            sleep(2)
+            print(reill_time[0][0])
+
+            get_sql = self.search_sql.search_refill_record_expire_time_sql(str(reill_time[0][0]))
             cur.execute(get_sql)
             # 读取数据
             date = cur.fetchall()

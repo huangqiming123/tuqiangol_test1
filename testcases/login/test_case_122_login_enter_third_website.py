@@ -27,29 +27,37 @@ class TestCase122LoginEnterThirdWebsite(unittest.TestCase):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
 
+        # 获取网站个数
+        url = self.base_url
+        count = self.login_page.get_login_page_website_count(url)
+
         # 获取当前窗口句柄
         tuqiang_handle = self.driver.get_current_window_handle()
+        try:
+            # 点击底部第三方链接-可信网站
+            expect_url_00 = "https://ss.knet.cn/verifyseal.dll?sn=e16112844030065399aooh000000&ct=df&a=1&pa=0.5438364866062911"
+            self.login_page.enter_third_party_website(websites[0], count)
+            self.driver.wait()
+            # 获取当前所有窗口句柄
+            all_handles = self.driver.get_all_window_handles()
+            for handle in all_handles:
+                if handle != tuqiang_handle:
+                    self.driver.switch_to_window(handle)
+                    self.driver.wait(1)
+                    web_url_00 = self.driver.get_current_url()
+                    # 判断当前第三方链接跳转是否正确
+                    self.assertEqual(expect_url_00, web_url_00, "当前第三方链接跳转错误")
 
-        # 点击底部第三方链接-可信网站
-        expect_url_00 = "https://ss.knet.cn/verifyseal.dll?sn=e16112844030065399aooh000000&ct=df&a=1&pa=0.5438364866062911"
-        self.login_page.enter_third_party_website(websites[0])
-        self.driver.wait()
-        # 获取当前所有窗口句柄
-        all_handles = self.driver.get_all_window_handles()
-        for handle in all_handles:
-            if handle != tuqiang_handle:
-                self.driver.switch_to_window(handle)
-                self.driver.wait(1)
-                web_url_00 = self.driver.get_current_url()
-                # 判断当前第三方链接跳转是否正确
-                self.assertEqual(expect_url_00, web_url_00, "当前第三方链接跳转错误")
+                    self.driver.close_window()
+                    self.driver.switch_to_window(tuqiang_handle)
+                    print("有可信网站")
+        except:
+            print("没有可信网站############")
 
-                self.driver.close_window()
-                self.driver.switch_to_window(tuqiang_handle)
 
         # 点击底部第三方链接-01
         expect_url_01 = "http://www.cyberpolice.cn/wfjb/"
-        self.login_page.enter_third_party_website(websites[1])
+        self.login_page.enter_third_party_website(websites[1], count)
         self.driver.wait()
         # 获取当前所有窗口句柄
         all_handles = self.driver.get_all_window_handles()
@@ -70,7 +78,7 @@ class TestCase122LoginEnterThirdWebsite(unittest.TestCase):
         self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "回到原窗口失败")
 
         expect_url_02 = "http://www.500wan.com/pages/info/about/wangan/index.htm"
-        self.login_page.enter_third_party_website(websites[2])
+        self.login_page.enter_third_party_website(websites[2], count)
         self.driver.wait()
         # 获取当前所有窗口句柄
         all_handles = self.driver.get_all_window_handles()
@@ -91,7 +99,7 @@ class TestCase122LoginEnterThirdWebsite(unittest.TestCase):
         self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "回到原窗口失败")
 
         expect_url_03 = "http://www.12377.cn/"
-        self.login_page.enter_third_party_website(websites[3])
+        self.login_page.enter_third_party_website(websites[3], count)
         self.driver.wait()
         # 获取当前所有窗口句柄
         all_handles = self.driver.get_all_window_handles()
@@ -111,7 +119,7 @@ class TestCase122LoginEnterThirdWebsite(unittest.TestCase):
         self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "回到原窗口失败")
 
         expect_url_04 = "http://szcert.ebs.org.cn/2a950f00-00fb-495c-8e30-5a04100f9b17"
-        self.login_page.enter_third_party_website(websites[4])
+        self.login_page.enter_third_party_website(websites[4], count)
         self.driver.wait()
         # 获取当前所有窗口句柄
         all_handles = self.driver.get_all_window_handles()

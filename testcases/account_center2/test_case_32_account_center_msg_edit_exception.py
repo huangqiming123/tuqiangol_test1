@@ -56,6 +56,7 @@ class TestCase32AccountCenterMsgEdit_Exception(unittest.TestCase):
         self.assertEqual(20, len["phone"], "车架号长度不相同")
         # self.assertEqual(18, len["id_card"], "电话长度不相同")
         self.assertEqual(50, len["car_frame"], "身份证号长度不相同")
+        self.assertEqual(10, len["total_mileage"], "总里程长度不相同")
         # 安装信息
         self.assertEqual(100, len["install_company"], "安装公司长度不相同")
         self.assertEqual(50, len["install_personnel"], "安装人员长度不相同")

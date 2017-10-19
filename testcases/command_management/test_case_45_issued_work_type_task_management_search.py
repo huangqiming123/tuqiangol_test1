@@ -1,7 +1,6 @@
 import csv
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
@@ -13,10 +12,8 @@ from pages.command_management.search_sql import SearchSql
 
 
 class TestCase45IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
-    """
-    下发工作模式任务管理搜索功能
-    author:邓肖斌
-    """
+    """ 发工作模式任务管理搜索功能 """
+    # author:邓肖斌
     driver = None
     base_url = None
     base_page = None
@@ -93,10 +90,10 @@ class TestCase45IssuedWorkTypetTaskManagementSearch(unittest.TestCase):
             cursor.execute(get_current_user_id_sql)
 
             user_relation = cursor.fetchall()
-            for row in user_relation:
+            for row1 in user_relation:
                 user_id = {
-                    'user_account': row[0],
-                    'user_id': row[1]
+                    'user_account': row1[0],
+                    'user_id': row1[1]
                 }
                 get_total_sql = self.search_sql.search_work_task_manager_sql(user_id['user_id'], search_data)
                 print(get_total_sql)

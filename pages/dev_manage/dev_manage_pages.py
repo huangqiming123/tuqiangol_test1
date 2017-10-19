@@ -1090,7 +1090,7 @@ class DevManagePages(BasePage):
     def search_customer(self, param):
         self.driver.operate_input_element('x,//*[@id="deviceManage_cusTreeKey"]', param)
         self.driver.click_element('x,//*[@id="deviceManage_cusTreeSearchBtn"]')
-        sleep(2)
+        sleep(4)
 
     def get_search_customer_no_data_text(self):
         return self.driver.get_text('x,/html/body/div[2]/div[6]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/span')
@@ -1109,7 +1109,7 @@ class DevManagePages(BasePage):
     def search_customer_after_click_batch_sale_dev(self, param):
         self.driver.operate_input_element('x,//*[@id="device_sale_globalSearch_input"]', param)
         self.driver.click_element('x,//*[@id="device_sale_globalSearch_btn"]')
-        sleep(2)
+        sleep(4)
 
     def get_search_customer_no_data_text_after_batch_sale_dev(self):
         return self.driver.get_text('x,//*[@id="device_sale_id"]/div[2]/div/div/div/div/span')
@@ -1285,7 +1285,7 @@ class DevManagePages(BasePage):
         return b
 
     def switch_to_dev_edit_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[33]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[34]/div[2]/iframe')
 
     def get_imei_in_detail(self):
         self.switch_to_dev_edit_frame()

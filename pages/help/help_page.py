@@ -7,6 +7,7 @@ from pages.base.new_paging import NewPaging
 # 帮助页面
 # author：邓肖斌
 class HelpPage(BasePageServer, NewPaging):
+
     def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
 
@@ -181,10 +182,10 @@ class HelpPage(BasePageServer, NewPaging):
     def get_current_customer_log(self):
         # 设置列表底部每页共10条
         self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
-        a = self.driver.get_element('x,//*[@id="paging_fp"]').get_attribute('style')
+        a = self.driver.get_element('x,//*[@id="paging_xf"]').get_attribute('style')
 
         if a == 'display: block;':
-            total = self.get_customer_manager_log_total_number('x,//*[@id="paging_fp"]', 'x,//*[@id="logslist_fp"]')
+            total = self.get_customer_manager_log_total_number('x,//*[@id="paging_xf"]', 'x,//*[@id="logslist_xf"]')
             self.driver.default_frame()
             return total
         elif a == 'display: none;':
@@ -222,7 +223,7 @@ class HelpPage(BasePageServer, NewPaging):
             total = int(pages) * 10 + last_page_number
             return total
 
-        ########################################################################################################################
+        # 登录日志###############################################################################################################
 
     # 搜索登录日志
     def search_login_log(self, search_data):
@@ -238,7 +239,7 @@ class HelpPage(BasePageServer, NewPaging):
         self.driver.click_element('x,//*[@id="loginAccount_sport"]')
         sleep(1)
         self.driver.click_element('x,/html/body/div/div/div[2]/div/div[1]/form/div/div/span')
-        sleep(10)
+        sleep(15)
         self.driver.default_frame()
 
     # 获取登录日志的条数
@@ -269,7 +270,7 @@ class HelpPage(BasePageServer, NewPaging):
                 page = self.get_li_total_number(param)
                 self.driver.click_element(param + "/ul/li[" + str(int(page) + 1) + "]/a")
                 try:
-                    sleep(15)
+                    sleep(20)
                     self.driver.get_text('l,下一页') == '下一页'
                     continue
                 except:
@@ -286,3 +287,132 @@ class HelpPage(BasePageServer, NewPaging):
             total = int(pages) * 10 + last_page_number
             print(int(pages))
             return total
+
+        # 业务日志###############################################################################################################
+
+    # 搜索业务日志
+    def search_business_log(self, search_data):
+
+        # 选择业务日志类型
+        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
+        self.driver.click_element('x,//*[@id="serviceType"]/div/span[2]')
+        sleep(1)
+        if search_data["search_type"] == '设备管理-设备修改':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[1]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[1]')
+            sleep(2)
+        elif search_data["search_type"] == '设备管理-设备分配':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[1]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[2]')
+            sleep(2)
+        elif search_data["search_type"] == '客户管理-新增客户':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[2]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[1]')
+            sleep(2)
+        elif search_data["search_type"] == '客户管理-修改用户信息':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[2]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[2]')
+            sleep(2)
+        elif search_data["search_type"] == '客户管理-删除用户信息':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[2]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[3]')
+            sleep(2)
+        elif search_data["search_type"] == '客户管理-修改密码':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[2]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[4]')
+            sleep(2)
+        elif search_data["search_type"] == '客户管理-重置密码':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[2]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[5]')
+            sleep(2)
+        elif search_data["search_type"] == '客户管理-转移客户':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[2]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[6]')
+            sleep(2)
+        elif search_data["search_type"] == '安全区域-新增、编辑区域':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[3]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[1]')
+            sleep(2)
+        elif search_data["search_type"] == '安全区域-删除区域':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[3]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[2]')
+            sleep(2)
+        elif search_data["search_type"] == '安全区域-关联设备':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[3]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[3]')
+            sleep(2)
+        elif search_data["search_type"] == '告警设置-推送设置':
+            self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[4]')
+            sleep(2)
+            self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[1]')
+            sleep(2)
+
+        # 填写开始时间，结束时间
+        js = 'document.getElementById("createTimeStart_xf").removeAttribute("readonly")'
+        self.driver.execute_js(js)
+        if search_data['begin_time'] != '':
+            self.driver.operate_input_element('x,//*[@id="createTimeStart_xf"]', search_data['begin_time'])
+            sleep(1)
+            self.driver.click_element('x,//*[@id="key"]')
+            sleep(1)
+        if search_data['begin_time'] == '':
+            self.driver.click_element('x,//*[@id="createTimeStart_xf"]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="laydate_clear"]')
+            sleep(1)
+
+        js = 'document.getElementById("createTimeEnd_xf").removeAttribute("readonly")'
+        self.driver.execute_js(js)
+        if search_data['end_time'] != '':
+            self.driver.operate_input_element('x,//*[@id="createTimeEnd_xf"]', search_data['end_time'])
+            sleep(1)
+            self.driver.click_element('x,//*[@id="key"]')
+            sleep(1)
+        if search_data['end_time'] == '':
+            self.driver.click_element('x,//*[@id="createTimeEnd_xf"]')
+            sleep(1)
+            self.driver.click_element('x,//*[@id="laydate_clear"]')
+            sleep(1)
+
+        # 填写其他的搜索条件
+        self.driver.operate_input_element('x,//*[@id="key"]', search_data['more'])
+
+        # 点搜索
+        self.driver.click_element('x,//*[@id="search_xf"]')
+        sleep(5)
+        self.driver.default_frame()

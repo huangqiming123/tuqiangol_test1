@@ -8,8 +8,11 @@ from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
-# author：邓肖斌
+
 class TestCase56CommandManagerAbnormalStateSendCommand(unittest.TestCase):
+    """ 异常状态imei下发模板 """
+
+    # author：邓肖斌
     def setUp(self):
         # 前置条件
         # 实例化对象

@@ -1,6 +1,5 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from pages.base.base_page import BasePage
@@ -61,12 +60,14 @@ class TestCase55CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
 
         # 获取第一个模板的名称
         get_template_name = self.command_management_page.get_template_name()
+        print('当前模板名称为：%s' % get_template_name)
 
-        # 点击编辑模板
+        # 点击修改模板
         self.command_management_page.click_modify_template_button()
 
         # 获取点击修改后的模板名称
         get_template_name_again = self.command_management_page.get_template_name_again()
+        print('修改之后的模板名称为：%s' % get_template_name_again)
         self.assertIn(get_template_name, get_template_name_again)
 
         self.command_management_page.add_template_name_in_create_template('')

@@ -1,6 +1,5 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from pages.base.base_page import BasePage
@@ -8,8 +7,10 @@ from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
-# author：邓肖斌
+
 class TestCase54CommandManageCreateTemplateNormalMode(unittest.TestCase):
+    """ 创建模板的异常操作--上报周期为普通模式 """
+    # author：邓肖斌
     driver = None
     base_url = None
     base_page = None

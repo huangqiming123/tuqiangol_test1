@@ -1,6 +1,5 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from pages.base.base_page import BasePage
@@ -10,10 +9,9 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 
 class TestCase44WorkTypeTemplateManagementOperation(unittest.TestCase):
-    """
-    工作模板的操作：修改、删除、下发指令
-    author：邓肖斌
-    """
+    """ 工作模板的操作：修改、删除、下发指令 """
+    # author：邓肖斌
+    
     driver = None
     base_url = None
     base_page = None

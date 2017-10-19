@@ -1,6 +1,5 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
@@ -9,10 +8,10 @@ from pages.safe_area.safe_area_page_read_csv import SafeAreaPageReadCsv
 
 
 class TestCase132MarkPaging(unittest.TestCase):
-    """
-    web_autotest账号，标注点页面分页功能
-    author：邓肖斌
-    """
+    """ web_autotest账号，标注点页面分页功能 """
+
+    # author：邓肖斌
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

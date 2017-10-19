@@ -7,10 +7,10 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 
 
 class TestCase135SafeAreaExpertion(unittest.TestCase):
-    """
-    web_autotest账号，分别选择区域预警、黑车地址库、围栏进行操作
-    author：邓肖斌
-    """
+    """ web_autotest账号，选择单个区域右侧编辑操作 """
+
+    # author：邓肖斌
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

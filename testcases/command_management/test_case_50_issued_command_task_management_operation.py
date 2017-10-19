@@ -1,6 +1,5 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from pages.base.base_page import BasePage
@@ -10,10 +9,9 @@ from pages.command_management.command_management_page import CommandManagementPa
 
 
 class TestCase50IssuedCommandTaskManagementOperation(unittest.TestCase):
-    """
-    用例第134条，下发工作指令任务的操作
-    author:邓肖斌
-    """
+    """ 发工作指令任务的操作 """
+    # author:邓肖斌
+
     driver = None
     base_url = None
     base_page = None

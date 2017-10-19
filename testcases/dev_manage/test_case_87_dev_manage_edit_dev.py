@@ -51,7 +51,7 @@ class TestCase87DevManageEditDev(unittest.TestCase):
         self.assertEqual(active_time_in_list, active_time_in_detail)
 
         expire_time_in_detail = self.dev_manage_page.get_expire_time_in_detail()
-        self.assertEqual(expire_time_in_list, expire_time_in_detail)
+        self.assertIn(expire_time_in_detail, expire_time_in_list)
 
         dev_type_in_detail = self.dev_manage_page.get_dev_type_in_detail()
         self.assertEqual(dev_type_in_list, dev_type_in_detail)

@@ -475,7 +475,7 @@ class GlobalAccountSearchPage(BasePage):
 
     def easy_search_results(self):
         # 获取用户搜索的结果
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('style')
         print(a)
         b = self.driver.get_element('x,//*[@id="complex_user_table_nodata"]').get_attribute('style')
@@ -538,7 +538,7 @@ class GlobalAccountSearchPage(BasePage):
 
     def app_easy_search_results(self):
         # 获取用户搜索的结果
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]').get_attribute('style')
         b = self.driver.get_element('x,//*[@id="complex_mobileUser_table_nodata"]').get_attribute('style')
         if a == 'display: block;':
@@ -564,7 +564,7 @@ class GlobalAccountSearchPage(BasePage):
         sleep(2)
 
     def switch_to_add_user_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
         sleep(2)
 
     def click_close_add_user_page(self):
@@ -599,7 +599,7 @@ class GlobalAccountSearchPage(BasePage):
         sleep(3)
 
     def switch_to_search_user_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
 
     def search_user_by_account_in_global_search(self, param):
         self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
@@ -795,9 +795,9 @@ class GlobalAccountSearchPage(BasePage):
         sleep(2)
 
     def get_no_authority_text(self):
-        self.driver.switch_to_frame('x,/html/body/div[32]/div[2]/iframe')
+        # self.driver.switch_to_frame('x,/html/body/div[34]/div[2]/iframe')
         a = self.driver.get_text("c,layui-layer-content")
-        self.driver.default_frame()
+        # self.driver.default_frame()
         return a
 
     def get_authority_text(self):

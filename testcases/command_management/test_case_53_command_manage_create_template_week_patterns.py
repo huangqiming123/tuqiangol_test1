@@ -10,6 +10,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 # author：邓肖斌
 class TestCase53CommandManageCreateTemplateWeekPatterns(unittest.TestCase):
+    """ 创建模板的异常操作--上报周期为星期模式 """
     driver = None
     base_url = None
     base_page = None

@@ -1,6 +1,5 @@
 import csv
 import unittest
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
@@ -11,9 +10,10 @@ from pages.help.help_page_sql import HelpPageSql
 from pages.login.login_page import LoginPage
 
 
-# 账户中心招呼栏业务日志-客户管理日志查询
-# author:邓肖斌
 class TestCase39AccountCenterOperCustLog(unittest.TestCase):
+    """ 帮助--业务日志 """
+
+    # author:邓肖斌
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -45,8 +45,6 @@ class TestCase39AccountCenterOperCustLog(unittest.TestCase):
         # 判断当前页面是否正确跳转至业务日志页面
         expect_url = self.base_url + "/userFeedback/toHelp"
         self.assertEqual(expect_url, self.driver.get_current_url(), "当前页面跳转错误")
-        # 点击客户管理
-        self.help_page.log_cust_modify()
 
         i = 0
 
@@ -58,12 +56,12 @@ class TestCase39AccountCenterOperCustLog(unittest.TestCase):
                 is_header = False
                 continue
             search_data = {
-                'type': row[0],
+                'search_type': row[0],
                 'begin_time': row[1],
                 'end_time': row[2],
                 'more': row[3]
             }
-            self.help_page.search_customer_manager_log(search_data)
+            self.help_page.search_business_log(search_data)
 
             connect = self.connect_sql.connect_tuqiang_sql()
             # 创建数据库游标
@@ -71,16 +69,17 @@ class TestCase39AccountCenterOperCustLog(unittest.TestCase):
 
             # 执行sql脚本查询当前登录账号的userId,fullParent
             get_id_sql = \
-                "select o.account,o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "' ;"
+                "select o.account,o.userId,o.fullParentId from user_info o where o.account = " \
+                "'" + current_account + "' ;"
             cur.execute(get_id_sql)
             # 读取数据
             user_relation = cur.fetchall()
             # 遍历数据
-            for row in user_relation:
+            for row1 in user_relation:
                 user_relation_id = {
-                    "account": row[0],
-                    "userId": row[1],
-                    "fullParent": row[2]
+                    "account": row1[0],
+                    "userId": row1[1],
+                    "fullParent": row1[2]
                 }
 
                 # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
@@ -94,16 +93,16 @@ class TestCase39AccountCenterOperCustLog(unittest.TestCase):
                     for range2 in range1:
                         lower_account_list.append(range2)
                 lower_account_tuple = tuple(lower_account_list)
-                get_total_sql = self.help_page_sql.search_cus_manager_sql(lower_account_tuple, search_data)
+                get_total_sql = self.help_page_sql.business_log_sql(lower_account_tuple, search_data)
                 print(get_total_sql)
                 cur.execute(get_total_sql)
                 # 读取数据
                 total_data = cur.fetchall()
                 # 从数据tuple中获取最终查询记录统计条数
                 total_list = []
-                for range1 in total_data:
-                    for range2 in range1:
-                        total_list.append(range2)
+                for range3 in total_data:
+                    for range4 in range3:
+                        total_list.append(range4)
                 total = len(total_list)
                 i += 1
                 print('第%s次查询数据库的条数为：%s' % (i, total))

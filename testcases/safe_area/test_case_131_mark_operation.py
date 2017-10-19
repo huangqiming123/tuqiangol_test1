@@ -1,6 +1,5 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
@@ -12,10 +11,10 @@ from pages.safe_area.safe_area_search_sql import SafeAreaSearchSql
 
 
 class TestCase131MarkOperation(unittest.TestCase):
-    """
-    web_autotest账号，标注点页面操作
-    author：邓肖斌
-    """
+    """ web_autotest账号，标注点页面操作 """
+
+    # author：邓肖斌
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

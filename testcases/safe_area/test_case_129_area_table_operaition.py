@@ -8,9 +8,11 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.safe_area.safe_area_page import SafeAreaPage
 from pages.safe_area.safe_area_search_sql import SafeAreaSearchSql
 
-# author：邓肖斌
-class TestCase129AreaTableOperaition(unittest.TestCase):
 
+class TestCase129AreaTableOperaition(unittest.TestCase):
+    """ 围栏页面操作 """
+
+    # author：邓肖斌
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -54,7 +56,7 @@ class TestCase129AreaTableOperaition(unittest.TestCase):
         # 断言
         self.assertEqual(self.assert_text.safe_area_page_edit_text(), self.safe_area_page.get_text_after_click_edit())
         # 输入内容保存
-        self.safe_area_page.ensure_edit_list('名称1', '描述1')
+        self.safe_area_page.ensure_edit_list('名称b', '描述b')
         # 获取保存之后的名称
         name_after_save = self.safe_area_page.get_first_fence_name_text()
 
@@ -86,12 +88,12 @@ class TestCase129AreaTableOperaition(unittest.TestCase):
                 total_list2.append(range2)
         total = len(total_list2)
         self.assertEqual(1, total)
-        self.assertEqual('描述1', total_list2[0])
+        self.assertEqual('描述b', total_list2[0])
 
         # 点击列表中的编辑
         self.safe_area_page.click_list_edit_button()
         # 输入内容保存
-        self.safe_area_page.ensure_edit_list('名称', '描述')
+        self.safe_area_page.ensure_edit_list('名称a', '描述a')
 
         # 点击列表中的编辑
         self.safe_area_page.click_list_edit_button()
@@ -107,6 +109,17 @@ class TestCase129AreaTableOperaition(unittest.TestCase):
 
         # 点击列表中的删除
         self.safe_area_page.click_list_delete_button()
+        # 关闭
+        self.safe_area_page.click_close_detele_button()
+
+        # 点击列表中的编辑
+        self.safe_area_page.click_list_edit_button()
+        # 点击关联列表中的删除
+        self.safe_area_page.click_del_in_fences_edit_page()
+        # 获取文本
+        text = self.safe_area_page.get_text_in_fence_edit_page_after_click_del()
+        # 断言
+        self.assertEqual(text, "请选择要删除的记录")
         # 关闭
         self.safe_area_page.click_close_detele_button()
 

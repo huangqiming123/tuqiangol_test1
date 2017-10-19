@@ -1,7 +1,6 @@
 import csv
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
@@ -13,10 +12,9 @@ from pages.command_management.search_sql import SearchSql
 
 
 class TestCase47IssuedWorkTypeManagementSearch(unittest.TestCase):
-    """
-    用例第130条，下发工作模式管理页面搜索
-    author：邓肖斌
-    """
+    """ 下发工作模式管理页面搜索 """
+    # author：邓肖斌
+
     driver = None
     base_url = None
     base_page = None

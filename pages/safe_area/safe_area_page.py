@@ -4,7 +4,7 @@ from pages.base.base_page_server import BasePageServer
 
 class SafeAreaPage(BasePageServer):
     def click_control_after_click_safe_area(self):
-        # 点击控制台后点击指令管理
+        # 点击安全区域
         self.driver.click_element('x,//*[@id="geozone"]/a')
         sleep(2)
 
@@ -389,3 +389,84 @@ class SafeAreaPage(BasePageServer):
         return text
 
 ########################################################################################################################
+
+    # 获取围栏关联的设备总数
+    def get_total_num_of_dev_relation_fences(self):
+        num = self.driver.get_text('x,//*[@id="devNumber"]')
+        return int(num)
+
+    # 获取当前围栏实际关联设备数
+    def get_all_num_of_dev_relation_fences(self):
+        ele_list = self.driver.get_elements('x,//*[@id="checkList"]/li')
+
+        # 获取最后一页总共有多少条记录
+        number = len(ele_list)
+        if number == '0':
+            return '0'
+        else:
+            return number
+
+    # 点击围栏编辑页面中的选择用户下拉框
+    def click_fences_edit_select_users(self):
+        self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[1]/div[1]/span/button')
+        sleep(2)
+
+    # 围栏编辑页面点击删除
+    def fences_edit_page_click_delete(self):
+        self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/span/div/button[2]')
+        sleep(1)
+
+    # 围栏编辑页面搜索用户
+    def fences_edit_pages_search_user(self, search_user):
+        self.driver.operate_input_element('x,//*[@id="search_user_text"]', search_user)
+        sleep(1)
+        self.driver.click_element('x,//*[@id="search_user_btn"]')
+
+    # 围栏编辑页面搜索设备
+    def fences_edit_page_search_dev(self, data):
+        self.driver.operate_input_element('x,//*[@id="search_text"]', data["account"])
+        sleep(2)
+        self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/div/div/div/span[3]')
+        sleep(1)
+        if data["search_type"] == 'imei':
+            self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/div/div/div/div/ul/li[1]')
+            sleep(1)
+            self.driver.operate_input_element('x,//*[@id="searchtext"]', data["search_content"])
+            sleep(1)
+            self.driver.click_element('x,//*[@id="searchAlarmConfigInfoBtn"]')
+            sleep(2)
+        if data["search_type"] == '设备名':
+            self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/div/div/div/div/ul/li[2]')
+            sleep(2)
+            self.driver.operate_input_element('x,//*[@id="searchtext"]', data["search_content"])
+            sleep(1)
+            self.driver.click_element('x,//*[@id="searchAlarmConfigInfoBtn"]')
+            sleep(2)
+        if data["search_type"] == '':
+            self.driver.click_element('x,//*[@id="searchtext"]')
+            sleep(1)
+            self.driver.operate_input_element('x,//*[@id="searchtext"]', data["search_content"])
+            sleep(1)
+            self.driver.click_element('x,//*[@id="searchAlarmConfigInfoBtn"]')
+            sleep(2)
+
+    # 获取搜索到的该围栏关联的设备数
+    def get_fence_relation_dev_num(self):
+        ele = self.driver.get_elements('x,//*[@id="alarmconfiginfobody"]/tr')
+        num = len(ele)
+        return num
+
+    # 获取当前编辑的围栏名称
+    def get_fence_name_of_cur_edit(self):
+        name = self.driver.get_element('x,//*[@id="areatbody"]/tr[1]/td[1]').get_attribute('title')
+        return name
+
+    # 点击围栏编辑页面关联设备列表中的删除
+    def click_del_in_fences_edit_page(self):
+        self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/span/div/button[2]')
+        sleep(1)
+
+    # 围栏编辑页面关联设备列表点击删除之后的文本获取
+    def get_text_in_fence_edit_page_after_click_del(self):
+        text = self.driver.get_text('x,/html/body/div[13]/div[2]')
+        return text

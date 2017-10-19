@@ -1,6 +1,5 @@
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from pages.base.base_page import BasePage
@@ -9,10 +8,9 @@ from pages.command_management.command_management_page import CommandManagementPa
 
 
 class TestCase48IssuedWorkTypeManagementOperation(unittest.TestCase):
-    """
-    用例第131条，下发工作模式管理的操作
-    author:邓肖斌
-    """
+    """ 下发工作模式管理的操作 """
+    # author:邓肖斌
+
     driver = None
     base_url = None
     base_page = None

@@ -7,10 +7,10 @@ from pages.safe_area.safe_area_page import SafeAreaPage
 
 
 class TestCase136SafeAreaRelevance(unittest.TestCase):
-    """
-    jimitest账号，围栏关联设备
-    author：邓肖斌
-    """
+    """ jimitest账号，围栏关联设备 """
+
+    # author：邓肖斌
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -37,12 +37,17 @@ class TestCase136SafeAreaRelevance(unittest.TestCase):
         self.safe_area_page.click_select_fence_button()
         # 点击关联
         self.safe_area_page.click_relevance_button()
+        # 获取当前围栏关联的设备总数
+        dev_num = self.safe_area_page.get_total_num_of_dev_relation_fences()
+        # 获取实际条数
+        cur_num = self.safe_area_page.get_all_num_of_dev_relation_fences()
         # 关闭
         self.safe_area_page.click_close()
+        self.assertEqual(dev_num, cur_num)
 
         # 点击关联
         self.safe_area_page.click_relevance_button()
-        # 关闭
+        # 取消
         self.safe_area_page.click_cancel_edit()
 
         # 点击关联

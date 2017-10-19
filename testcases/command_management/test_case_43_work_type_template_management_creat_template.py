@@ -1,7 +1,6 @@
 import csv
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from pages.base.base_page import BasePage
@@ -11,10 +10,9 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 
 class TestCase43WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
-    """
-    创建模板
-    author:邓肖斌
-    """
+    """ 创建模板 """
+    # author:邓肖斌
+
     driver = None
     base_url = None
     base_page = None

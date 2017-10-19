@@ -1,4 +1,4 @@
-import csv
+"""import csv
 import unittest
 
 from automate_driver.automate_driver_server import AutomateDriverServer
@@ -111,4 +111,4 @@ class TestCase38AccountCenterOperDeviceLog(unittest.TestCase):
             cur.close()
             connect.close()
 
-        csv_file.close()
+        csv_file.close()"""

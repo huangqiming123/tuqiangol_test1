@@ -1,7 +1,6 @@
 import csv
 import unittest
 from time import sleep
-
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
@@ -13,10 +12,9 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 
 class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
-    """
-    用例第136条，下发指令管理页面的搜索
-    author:邓肖斌
-    """
+    """ 下发指令管理页面的搜索 """
+    # author:邓肖斌
+
     driver = None
     base_url = None
     base_page = None
@@ -96,42 +94,12 @@ class TestCase51IssuedCommandManagementSearch(unittest.TestCase):
             # 执行
             cursor.execute(get_current_user_id_sql)
             user = cursor.fetchall()
+            print(user)
             for row1 in user:
                 user_info = {
                     'id': row1[0],
                     'fullparent': row1[1]
                 }
-
-                '''# 查询当前登录用户的全部下级
-                get_next_id_sql = "select userId from user_info where fullParentId like" + \
-                                  "'" + user_info["fullparent"] + user_info["id"] + "%'" + ";"
-                print(get_next_id_sql)
-                # 执行sql脚本
-                cursor.execute(get_next_id_sql)
-                current_account = cursor.fetchall()
-                current_account_list = [user_info['id']]
-                for range1 in current_account:
-                    for range2 in range1:
-                        current_account_list.append(range2)
-
-                # 查询APP用户
-                search_user_id_sql = "SELECT sk.bindUserId FROM (SELECT * FROM " \
-                                     "equipment_mostly WHERE fullParentId LIKE '" + \
-                                     user_info["fullparent"] + user_info[
-                                         "id"] + "%" + "') as sk WHERE sk.bindUserId is " \
-                                                       "NOT NULL GROUP BY sk.bindUserId"
-                cursor.execute(search_user_id_sql)
-                app_user_id = cursor.fetchall()
-                app_user_id_list = []
-                for i in app_user_id:
-                    for j in i:
-                        app_user_id_list.append(j)
-                app_user_id_tuple = tuple(app_user_id_list)
-
-                # 合并平台与APP用户
-                for k in app_user_id_tuple:
-                    current_account_list.append(k)
-                current_user_next = tuple(current_account_list)'''
 
                 # 判断搜索条件
                 get_sql = self.command_management_page. \

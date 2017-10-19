@@ -1,4 +1,4 @@
-import unittest
+'''import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
@@ -7,10 +7,9 @@ from pages.safe_area.safe_area_page_read_csv import SafeAreaPageReadCsv
 
 
 class TestCase130AreaTablePaging(unittest.TestCase):
-    """
-    web_autotest账号，区域告警--分页功能
-    author：邓肖斌
-    """
+    """ web_autotest账号，区域告警--分页功能 """
+    # author：邓肖斌
+
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -34,7 +33,6 @@ class TestCase130AreaTablePaging(unittest.TestCase):
         self.assertEqual(expect_url, self.driver.get_current_url())
 
         # 获取当前页面和总数
-        current_page = self.safe_area_page.get_current_page_number()
         total_page = self.safe_area_page.get_total_page_num()
 
         if total_page == '0':
@@ -55,3 +53,4 @@ class TestCase130AreaTablePaging(unittest.TestCase):
             # 点击首页
             self.safe_area_page.clcik_first_page()
             self.assertEqual('1', self.safe_area_page.get_current_page_number())
+'''

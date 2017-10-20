@@ -57,7 +57,7 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
             type_data = self.cust_manage_basic_info_and_add_cust_page.get_acc_user_type_list()
 
             # 选择客户类型、添加客户数据
-            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+            self.cust_manage_basic_info_and_add_cust_page.locate_to_iframe()
 
             self.cust_manage_basic_info_and_add_cust_page.acc_type_choose(user_type, type_data["type_id"])
             self.cust_manage_basic_info_and_add_cust_page.add_default_password_acc(data[0], data[1],
@@ -92,7 +92,7 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
             # 编辑用户默认密码(jimi123)
             self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit(data[7])
             sleep(2)
-            # 获取密码修改成功   layui-layer-content
+            # 获取密码修改成功
             status = self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit_prompt(user_type)
             self.assertIn(self.assert_text2.home_page_edit_password_success(), status, "修改密码失败！")
             sleep(2)

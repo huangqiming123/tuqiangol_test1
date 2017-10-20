@@ -93,11 +93,11 @@ class TestCase470919AccountCenterRefillCardTransferException(unittest.TestCase):
 
         # 验证输入用户提示
         # self.account_center_page_refill_card.transfer_refill_card_search_user("用户111")
-        # status = self.account_center_page_refill_card.get_operate_status()
+        #status = self.account_center_page_refill_card.get_operate_status()
         #self.assertEqual("普通用户不能作为转移目标用户",status,"提示不一致")
 
 
-        # 取消
+        #取消
         #self.account_center_page_refill_card.click_refill_card_transfer_cancel()
         #循环点击下级用户
         for i in range(5):

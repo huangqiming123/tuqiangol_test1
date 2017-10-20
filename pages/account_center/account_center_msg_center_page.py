@@ -148,8 +148,8 @@ class AccountCenterMsgCenterPage(BasePageServer):
         self.driver.default_frame()
         self.driver.wait(3)
         # 切换到iframe
-        # self.driver.switch_to_iframe('x,/html/body/div[6]/div[2]/iframe')
-        self.driver.switch_to_iframe('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,/html/body/div[6]/div[2]/iframe')
+        # self.driver.switch_to_iframe('x,/html/body/div[7]/div[2]/iframe')
 
         # 基本信息
         device_name = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[1]/input")

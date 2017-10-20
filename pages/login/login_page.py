@@ -281,7 +281,7 @@ class LoginPage(BasePageServer):
     # 获取底部网站个数 /html/body/footer/div[2]/a[1]  /html/body/footer/div[3]/a[1]
     def get_login_page_website_count(self, url):
         print(url)
-        # 线上环境
+        #线上环境
         if url == "http://www.tuqiangol.com":
             count = len(self.driver.get_elements("x,/html/body/footer/div[3]/a"))
             print("线上个数", count)

@@ -68,7 +68,7 @@ class TestCase720815CustManageAddUserCommandLimit(unittest.TestCase):
             self.cust_manage_basic_info_and_add_cust_page.close_add_account()
 
             self.cust_manage_basic_info_and_add_cust_page.add_acc()
-            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+            self.cust_manage_basic_info_and_add_cust_page.locate_to_iframe()
             self.cust_manage_basic_info_and_add_cust_page.add_acc_input_info_edit(info["name"], info["account"],
                                                                                   info["passwd"],
                                                                                   info["phone"], info["email"],

@@ -198,7 +198,8 @@ class CustManageLowerAccountPage(BasePageServer):
         self.driver.click_element("c,layui-layer-btn1")
         sleep(2)
         self.click_acc_edit()
-        self.driver.click_element("x,/html/body/div[8]/span[1]/a")
+        # self.driver.click_element("x,/html/body/div[8]/span[1]/a")
+        self.driver.click_element("c,layui-layer-close")
         sleep(2)
 
 
@@ -267,7 +268,7 @@ class CustManageLowerAccountPage(BasePageServer):
         self.delete_acc()
         self.delete_acc_dismiss()
         self.delete_acc()
-        # self.driver.click_element("x,/html/body/div[6]/span[1]/a")
+        #self.driver.click_element("x,/html/body/div[6]/span[1]/a")
         self.driver.click_element("c,layui-layer-close")
 
     # 单个用户操作-转移客户
@@ -302,9 +303,13 @@ class CustManageLowerAccountPage(BasePageServer):
         sleep(2)
         # 点击搜索
         self.driver.click_element('x,//*[@id="treeDemo_cusTreeSearchBtn"]')
-        sleep(4)
         # 选择列表中搜索结果
-        self.driver.click_element("c,autocompleter-item")
+        try:
+            sleep(3)
+            self.driver.click_element("c,autocompleter-item")
+        except:
+            sleep(6)
+            self.driver.click_element("c,autocompleter-item")
         sleep(2)
 
         self.driver.click_element(

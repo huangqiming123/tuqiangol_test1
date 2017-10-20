@@ -96,7 +96,7 @@ class TestCase108GlobSearchUserDetail(unittest.TestCase):
 
         # 循环点击五次
         for n in range(5):
-            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+            self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
             self.driver.click_element('x,//*[@id="complex_userInfo_tree_complexUpdate_%s_a"]' % str(n + 15))
             get_up_user_name = self.global_dev_search_page.get_up_user_name_in_details()
             select_up_name = self.driver.get_text(

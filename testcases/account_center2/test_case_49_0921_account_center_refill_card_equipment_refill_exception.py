@@ -92,18 +92,20 @@ class TestCase490921AccountCenterRefillCardEquipmentRefillException(unittest.Tes
 
             #验证成功个数
             list_count = self.account_center_page_refill_card.get_list_imei_number()
-            self.assertEqual(list_count, add_results["succeed_unmber"], "添加结果中的成功个数与列表中的不一致")
+            self.assertEqual(list_count["number"], add_results["succeed_unmber"], "添加结果中的成功个数与列表中的不一致")
 
             #删除
             self.account_center_page_refill_card.delete_list_device()
-            self.assertEqual(0, self.account_center_page_refill_card.get_list_imei_number(), "删除设备后，列表中imei不是0")
+            list_data = self.account_center_page_refill_card.get_list_imei_number()
+            self.assertEqual(0, list_data["number"], "删除设备后，列表中imei不是0")
 
             # 重置
             information = self.account_center_page_refill_card.inport_equipment(data["more_imei"])
             self.account_center_page_refill_card.add_results_x()
             sleep(2)
             self.account_center_page_refill_card.click_reset_button()
-            self.assertEqual(0, self.account_center_page_refill_card.get_list_imei_number(), "重置后，列表中imei不是0")
+            count = self.account_center_page_refill_card.get_list_imei_number()
+            self.assertEqual(0, list_data["number"], "重置后，列表中imei不是0")
 
 
 

@@ -111,7 +111,7 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
             #添加用户类型获取提示
             self.cust_manage_basic_info_and_add_cust_page.acc_search("yonghu222")
             sleep(2)
-            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+            self.cust_manage_basic_info_and_add_cust_page.locate_to_iframe()
             status = self.cust_manage_lower_account_page.edit_info_save_status()
             self.driver.default_frame()
             self.assertEqual(self.assert_text2.cust_manage_add_user_type_prompt(), status, "提示显示不一致")
@@ -120,7 +120,7 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
             # 右侧搜索栏中搜索并选中作为上级用户
             self.cust_manage_basic_info_and_add_cust_page.acc_search(add_info["keyword"])
             # 选择客户类型
-            self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+            self.cust_manage_basic_info_and_add_cust_page.locate_to_iframe()
             self.cust_manage_basic_info_and_add_cust_page.acc_type_choose(add_info["acc_type"])
             # 编辑用户输入框信息
             self.cust_manage_basic_info_and_add_cust_page.add_acc_input_info_edit(add_info["acc_name"],

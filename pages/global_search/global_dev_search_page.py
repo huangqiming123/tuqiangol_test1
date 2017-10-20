@@ -24,7 +24,7 @@ class GlobalDevSearchPage(BasePage):
 
     # 全局搜索栏-设备搜索
     def device_easy_search(self, search_keyword):
-        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
 
         # 在设备名称/imei输入框内输入搜索关键词信息
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', search_keyword)
@@ -55,7 +55,7 @@ class GlobalDevSearchPage(BasePage):
     # 设备搜索-获取搜索结果共多少条
     def easy_search_result(self):
         # 当搜索结果只有一条时，必可获取到用户关系--一级用户--查看
-        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_device"]').get_attribute('style')
         b = self.driver.get_element('x,//*[@id="complex_device_table_nodata"]').get_attribute('style')
         if a == 'display: block;':
@@ -562,7 +562,7 @@ class GlobalDevSearchPage(BasePage):
 
     def add_data_to_search_complex(self, search_data):
         # 增加数据去搜索高级
-        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         # 点击选择用户
         self.driver.click_element('x,//*[@id="complex_advanced_search_form"]/div[2]/div/div[1]/span/button')
         sleep(1)
@@ -679,7 +679,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.click_element('c,layui-layer-ico')
 
     def swith_to_search_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[8]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
 
     def click_dev_search(self):
         self.swith_to_search_frame()

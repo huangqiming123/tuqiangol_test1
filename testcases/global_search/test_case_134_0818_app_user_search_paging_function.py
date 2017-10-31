@@ -44,9 +44,9 @@ class TestCase134AppUserSearchPagingFunction(unittest.TestCase):
         self.global_dev_search_page.close_search()
         sleep(2)
         self.global_dev_search_page.click_easy_search()
-        self.global_dev_search_page.select_search_app_user()
+        self.global_dev_search_page.select_search_app_users()
         # 点击搜索
-        self.global_dev_search_page.click_search_button()
+        self.global_dev_search_page.click_search_buttonss()
 
         # 获取页面的总数
         self.global_dev_search_page.swith_to_search_frame()

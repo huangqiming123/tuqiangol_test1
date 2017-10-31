@@ -756,14 +756,14 @@ class DevManagePages(BasePage):
         self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[2]/input', search_data['dev_name'])
 
         # 设备型号
-        self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[3]/div/div/div/span[2]')
+        '''self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[3]/div/div/div/span[2]')
         sleep(2)
         if search_data['dev_type'] == 'ET200':
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[3]/div/div/div/div/ul/li[2]')
 
         elif search_data['dev_type'] == '':
             self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[3]/div/div/div/div/ul/li[1]')
-        sleep(2)
+        sleep(2)'''
 
         # 选择过期状态
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
@@ -929,7 +929,7 @@ class DevManagePages(BasePage):
         # 设备名称
         self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[1]/input', data['dev_name'])
         # sim卡号
-        self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[2]/input', data['sim'])
+        self.driver.operate_input_element('x,//*[@id="device_info_a"]/fieldset[2]/div[1]/div[1]/input', data['sim'])
         # 备注
         self.driver.operate_input_element('x,//*[@id="reMark"]', data['mark'])
 
@@ -1093,7 +1093,7 @@ class DevManagePages(BasePage):
         sleep(4)
 
     def get_search_customer_no_data_text(self):
-        return self.driver.get_text('x,/html/body/div[2]/div[6]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/span')
+        return self.driver.get_text('x,/html/body/div[2]/div[7]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/span')
 
     def click_batch_sale_button(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[3]')
@@ -1181,7 +1181,7 @@ class DevManagePages(BasePage):
 
     def get_dev_sim_max_len(self):
         self.switch_to_dev_edit_frame()
-        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[2]/input').get_attribute(
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[2]/div[1]/div[1]/input').get_attribute(
             'maxlength')
         self.driver.default_frame()
         return a
@@ -1332,7 +1332,7 @@ class DevManagePages(BasePage):
 
     def get_dev_sim_in_detail(self):
         self.switch_to_dev_edit_frame()
-        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset/div[2]/div[2]/input').get_attribute('value')
+        a = self.driver.get_element('x,//*[@id="device_info_a"]/fieldset[2]/div[1]/div[1]/input').get_attribute('value')
         self.driver.default_frame()
         return a
 
@@ -1470,7 +1470,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="check-total"]')
 
     def click_detele_dev_in_send_command(self):
-        self.driver.click_element('x,//*[@id="check-row-tbody"]/tr/td[6]')
+        self.driver.click_element('x,//*[@id="check-row-tbody"]/tr/td[5]')
         sleep(2)
 
     def click_send_command_in_send_command(self):
@@ -2029,4 +2029,10 @@ class DevManagePages(BasePage):
         sleep(1)
 
     def get_text_after_click_ensure(self):
+        return self.driver.get_text('c,layui-layer-content')
+
+    def get_text_after_click_all_issued_command(self):
+        return self.driver.get_text('c,layui-layer-content')
+
+    def get_text_after_click_issued_work_template(self):
         return self.driver.get_text('c,layui-layer-content')

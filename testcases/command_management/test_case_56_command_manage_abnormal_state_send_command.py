@@ -82,3 +82,4 @@ class TestCase56CommandManagerAbnormalStateSendCommand(unittest.TestCase):
 
             # 关闭提示框
             self.command_management_page.close_send_command_fail_frame()
+        csv_file.close()

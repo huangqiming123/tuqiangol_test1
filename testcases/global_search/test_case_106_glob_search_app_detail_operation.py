@@ -45,6 +45,7 @@ class TestCase106GlobSearchAppDetailOperation(unittest.TestCase):
         sleep(2)
 
         self.global_dev_search_page.click_easy_search()
+        self.global_dev_search_page.swith_to_search_frame()
         self.global_dev_search_page.select_search_app_user()
 
         # 点击搜索
@@ -67,6 +68,7 @@ class TestCase106GlobSearchAppDetailOperation(unittest.TestCase):
 
         # 重置密码
         # 点击重置密码
+        self.global_dev_search_page.swith_to_search_frame()
         self.global_dev_search_page.click_reset_password_button_in_app_detail()
         # 点击关闭
         self.global_dev_search_page.close_button()
@@ -91,7 +93,7 @@ class TestCase106GlobSearchAppDetailOperation(unittest.TestCase):
         get_dev_active_time = self.global_dev_search_page.get_dev_active_time_in_app_detail()
         get_dev_expire_time = self.global_dev_search_page.get_dev_expire_time_in_app_detail()
         get_dev_bound_user = self.global_dev_search_page.get_dev_bound_user_in_app_detail()
-
+        self.driver.default_frame()
         # 点击设备的操作
         # 详情
         self.global_dev_search_page.click_dev_operation_detail_in_app_detail()

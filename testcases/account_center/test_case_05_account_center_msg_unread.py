@@ -15,7 +15,7 @@ from pages.login.login_page import LoginPage
 
 class TestCase020AccountCenterMsgUnread(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -61,8 +61,8 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
             self.assertEqual(unread_msg_num, count_unread_msg_num, "消息中心左侧栏目的未读消息与搜索结果的未读消息数量不一致")
             self.driver.default_frame()
             # 退出登录
-            self.account_center_page_navi_bar.usr_logout()
+            # self.account_center_page_navi_bar.usr_logout()
         else:
             print("当前未读消息共：" + str(unread_msg_num) + "条!")
             # 退出登录
-            self.account_center_page_navi_bar.usr_logout()
+            # self.account_center_page_navi_bar.usr_logout()

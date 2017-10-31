@@ -14,7 +14,7 @@ from pages.login.login_page import LoginPage
 # author:邓肖斌
 class TestCase40AccountCenterOperLoginLog(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)

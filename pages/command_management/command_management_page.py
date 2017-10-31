@@ -13,12 +13,12 @@ class CommandManagementPage(BasePage):
     # 常量
     CONTROL_SELECTOR = 'x,//*[@id="index"]/a'
     COMMAND_MANAGEMENT_SELECTOR = 'x,//*[@id="commandManagement"]/a'
-    ACTUAL_TITLE_TEXT_AFTER_CLICK_COMMAND_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[1]/b'
+    ACTUAL_TITLE_TEXT_AFTER_CLICK_COMMAND_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[1]/b'
 
     # 左侧列表
     WORK_TYPE_TEMPLATE_MANAGEMENT_SELECTOR = 'x,//*[@id="templateList_li"]/a'
 
-    ACTUAL_TITLE_TEXT_AFTER_CLICK_WORK_TYPE_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[5]/div/div/div[2]/div[1]/div[1]/div/b'
+    ACTUAL_TITLE_TEXT_AFTER_CLICK_WORK_TYPE_MANAGEMENT_SELECTOR = 'x,/html/body/div[1]/div[6]/div/div/div[2]/div[1]/div[1]/div/b'
 
     WORK_TYPE_MANAGEMENT_CREATE_TEMPLATE_BUTTON_SELECTOR = 'x,//*[@id="create-instructionRules"]'
     WORK_TYPE_MANAGEMENT_ACTUAL_TITLE_TEXT_CLICK_CREATE_TEMPLATE_SELECTOR = 'c,layui-layer-title'
@@ -308,7 +308,7 @@ class CommandManagementPage(BasePage):
 
     def actual_title_text_click_issued_work_type_task_management(self):
         # 点击下发工作模式任务管理后，获取右侧区域左上角的文本
-        actual_text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[1]/div/b')
+        actual_text = self.driver.get_text('x,/html/body/div[1]/div[6]/div/div/div[2]/div[2]/div[1]/div/b')
         return actual_text
 
     def issued_work_type_task_management_search(self, id, name):
@@ -317,7 +317,7 @@ class CommandManagementPage(BasePage):
 
         self.driver.operate_input_element('x,//*[@id="issuedTemplateName"]', name)
 
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[2]/div[2]/form/div[3]/button')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div[2]/div[2]/form/div[3]/button')
         sleep(5)
 
     def search_total_number(self, type):
@@ -364,7 +364,7 @@ class CommandManagementPage(BasePage):
 
     def actual_text_click_look_equipment(self):
         # 点击查看设备后，获取页面右上角的文本
-        actual_text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[1]/div/b')
+        actual_text = self.driver.get_text('x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[1]/div/b')
         return actual_text
 
     def add_data_to_search(self, search_data):
@@ -375,65 +375,65 @@ class CommandManagementPage(BasePage):
         sleep(3)
         if search_data['execute_state'] == '5':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[3]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[3]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[2]')
 
         elif search_data['execute_state'] == '1':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(3)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[3]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[3]')
 
         elif search_data['execute_state'] == '2':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[4]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[4]')
 
         elif search_data['execute_state'] == '3':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[5]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[5]')
 
         elif search_data['execute_state'] == '4':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[6]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[6]')
         else:
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[1]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[2]/div/span/div/div/ul/li[1]')
 
         # 选择状态
 
         if search_data['state'] == '1':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[2]')
         elif search_data['state'] == '2':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[3]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[3]')
         else:
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/span[2]')
             sleep(2)
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[1]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[3]/div/span/div/div/ul/li[1]')
 
         # 输入imei
         self.driver.click_element('x,//*[@id="searchIssuedTemplateIMEI"]')
@@ -443,7 +443,7 @@ class CommandManagementPage(BasePage):
         # self.driver.click_element(
         #    's,body > div.wrapper > div.main.oh > div > div > div.customer-rightsidebar.p-15.mih-400 > div.tab-con-sendworkmode.b1-ccc.bc-fff > div.funcbar.clearfix > form > div:nth-child(4) > div > div > div.fr > button.btn.btn-success.btn-sm.mw-80.js-add-results-btn')
 
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/div[2]/form/div[5]/button')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/div[2]/form/div[5]/button')
         sleep(5)
 
     def click_look_issued_work_type(self):
@@ -499,7 +499,7 @@ class CommandManagementPage(BasePage):
 
     def actual_text_after_click_issued_command_task(self):
         # 点击下发指令任务管理后，获取页面右上角的文本
-        actual_text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[4]/div[1]/div/b')
+        actual_text = self.driver.get_text('x,/html/body/div[1]/div[6]/div/div/div[2]/div[4]/div[1]/div/b')
         return actual_text
 
     def issued_command_task_add_data_to_search(self, search_data):
@@ -520,7 +520,7 @@ class CommandManagementPage(BasePage):
 
     def actual_text_after_click_look_equipment(self):
         # 点击查看设备后，返回真实的title文本
-        actual_text = self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[5]/div[1]/div/b')
+        actual_text = self.driver.get_text('x,/html/body/div[1]/div[6]/div/div/div[2]/div[5]/div[1]/div/b')
         return actual_text
 
     def issued_command_management_search_data(self, search_data):
@@ -873,11 +873,11 @@ class CommandManagementPage(BasePage):
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201705261957003')
         elif state == '用户到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '978456123045612')
-        elif state == '平台到期':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
+        # elif state == '平台到期':
+        #    self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
         elif state == '不支持':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '123456789000000')
-        elif state == '停机+用户到期':
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '358740054888911')
+        '''elif state == '停机+用户到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '868120111111113')
         elif state == '停机+平台到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '')
@@ -898,7 +898,7 @@ class CommandManagementPage(BasePage):
         elif state == '用户到期+平台到期+不支持':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '351234567890017')
         elif state == '平台到期+用户到期+停机+不支持':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '312345678901244')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '312345678901244')'''
 
         self.driver.click_element('x,//*[@id="execution-instruction"]/div/form/div/div/div[1]/div/div[3]/button[1]')
         self.driver.wait(5)

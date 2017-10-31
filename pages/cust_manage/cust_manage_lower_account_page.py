@@ -47,12 +47,12 @@ class CustManageLowerAccountPage(BasePageServer):
     # 点击搜索
     def click_search_btn(self):
         # self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
-        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button")
+        self.driver.click_element("x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button")
         self.driver.wait()
 
     # 获取搜索结果账号
     def get_search_result_acc(self):
-        result_acc = self.driver.get_element("x,/html/body/div[2]/div[5]/div/div/div[2]/div/div[2]/div[1]/"
+        result_acc = self.driver.get_element("x,/html/body/div[2]/div[6]/div/div/div[2]/div/div[2]/div[1]/"
                                              "div[2]/div[2]/div[3]/table/tbody/tr/td[2]").text
         return result_acc
 
@@ -313,24 +313,24 @@ class CustManageLowerAccountPage(BasePageServer):
         sleep(2)
 
         self.driver.click_element(
-            'x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/span[2]')
+            'x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/span[2]')
         sleep(2)
         if search_data['account_type'] == '':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[1]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[1]')
         elif search_data['account_type'] == '销售':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[4]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[4]')
         elif search_data['account_type'] == '代理商':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[2]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[2]')
         elif search_data['account_type'] == '用户':
             self.driver.click_element(
-                'x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[3]')
+                'x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div/ul/li[3]')
         sleep(3)
 
         self.driver.operate_input_element('x,//*[@id="searchaccount"]', search_data['info'])
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
         sleep(5)
 
     def get_account_number(self):

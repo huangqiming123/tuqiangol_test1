@@ -68,6 +68,7 @@ class TestCase102GlobComplexSearchByAllCondi(unittest.TestCase):
                 'arrearage': row[6],
                 'no_active': row[7]
             }
+            self.global_dev_search_page.swith_to_search_frame()
             self.global_dev_search_page.add_data_to_search_complex(search_data)
             connect = self.connect_sql.connect_tuqiang_sql()
             # 创建数据库游标
@@ -101,7 +102,7 @@ class TestCase102GlobComplexSearchByAllCondi(unittest.TestCase):
                 web_total = self.global_dev_search_page.easy_search_result()
                 print('本次查询页面的条数是：%s' % web_total)
                 self.assertEqual(total, web_total)
-
+                self.driver.default_frame()
             cur.close()
             connect.close()
 

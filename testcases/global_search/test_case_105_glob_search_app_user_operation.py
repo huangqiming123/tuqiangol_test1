@@ -45,6 +45,7 @@ class TestCase105GlobSearchAppUserOperation(unittest.TestCase):
         sleep(2)
 
         self.global_dev_search_page.click_easy_search()
+        self.global_dev_search_page.swith_to_search_frame()
         self.global_dev_search_page.select_search_app_user()
 
         # 点击搜索
@@ -64,6 +65,7 @@ class TestCase105GlobSearchAppUserOperation(unittest.TestCase):
                 self.driver.switch_to_window(current_handle)
 
         # 获取第一个app用户的详情
+        self.global_dev_search_page.swith_to_search_frame()
         app_user_name = self.global_dev_search_page.get_app_user_name_in_app_search()
         app_user_type = self.global_dev_search_page.get_app_user_type_in_app_search()
         app_user_account = self.global_dev_search_page.get_app_user_account_in_app_search()
@@ -112,3 +114,4 @@ class TestCase105GlobSearchAppUserOperation(unittest.TestCase):
 
         get_text = self.global_dev_search_page.get_text_after_succeed()
         self.assertEqual(self.assert_text.account_center_page_operation_done(), get_text)
+        self.driver.default_frame()

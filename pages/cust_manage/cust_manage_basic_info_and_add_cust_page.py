@@ -227,7 +227,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     # 新增客户
     def add_acc(self):
         # 点击新增客户
-        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[2]/div/button[1]")
+        self.driver.click_element("x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[2]/div/button[1]")
         self.driver.wait()
 
     # 当前账户-新增用户-编辑用户输入框信息
@@ -303,7 +303,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     def click_monitoring_account_button(self):
         #self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[1]/div/button')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[1]/div/button')
         sleep(2)
 
     def get_text_after_click(self):

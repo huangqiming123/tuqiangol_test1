@@ -15,7 +15,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 # author:戴招利
 class TestCase30AccountCenterVisualEditException(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.visual_account_page = AccountCenterVisualAccountPage(self.driver, self.base_url)
@@ -86,7 +86,7 @@ class TestCase30AccountCenterVisualEditException(unittest.TestCase):
         self.driver.default_frame()
         self.driver.wait()
         # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
+        # self.account_center_page_navi_bar.usr_logout()
 
     def tearDown(self):
         self.driver.quit_browser()

@@ -60,6 +60,7 @@ class TestCase103GlobAppAccountSearch(unittest.TestCase):
             search_data = {
                 'account_info': row[0]
             }
+            self.global_dev_search_page.swith_to_search_frame()
             self.global_dev_search_page.app_account_easy_search(search_data)
 
             connect = self.connect_sql.connect_tuqiang_sql()
@@ -122,7 +123,7 @@ class TestCase103GlobAppAccountSearch(unittest.TestCase):
                 web_total = self.global_account_search_page.app_easy_search_results()
                 print('本次查询页面的条数是：%s' % web_total)
                 self.assertEqual(total, web_total)
-
+                self.driver.default_frame()
             cur.close()
             connect.close()
 

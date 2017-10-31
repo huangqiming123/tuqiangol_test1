@@ -19,7 +19,7 @@ from pages.login.login_page import LoginPage
 
 class TestCase63CustManageCustSearch(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -55,7 +55,7 @@ class TestCase63CustManageCustSearch(unittest.TestCase):
         self.cust_manage_basic_info_and_add_cust_page.add_acc()
 
         # 循环点击五次
-        for n in range(5):
+        for n in range(4):
             self.cust_manage_basic_info_and_add_cust_page.locate_to_iframe()
             self.driver.click_element('x,//*[@id="treeDemo2_%s_span"]' % str(n + 2))
             sleep(2)

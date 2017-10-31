@@ -21,19 +21,17 @@ class TestCase71DevManageDevSearchByIMEI(unittest.TestCase):
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
-
-    def tearDown(self):
-        self.driver.quit_browser()
-
-    def test_dev_manage_dev_search_by_imei(self):
-        '''测试设备管理-设备搜索-by imei'''
-
         # 打开途强在线首页-登录页
         self.base_page.open_page()
 
         # 登录
         self.log_in_base.log_in()
 
+    def tearDown(self):
+        self.driver.quit_browser()
+
+    def test_dev_manage_dev_search_by_imei(self):
+        '''测试设备管理-设备搜索-by imei'''
         # 点击进入设备管理
         self.dev_manage_page.enter_dev_manage()
 

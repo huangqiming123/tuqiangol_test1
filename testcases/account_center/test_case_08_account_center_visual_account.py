@@ -17,7 +17,7 @@ from pages.login.login_page import LoginPage
 class TestCase08AccountCenterVisualAccount(unittest.TestCase):
 
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -80,6 +80,6 @@ class TestCase08AccountCenterVisualAccount(unittest.TestCase):
             sleep(1)
             self.assertEqual(acc_to_add["account"], self.account_center_page_navi_bar.hello_user_account(),
                              "招呼栏登录账号显示不一致")
-            self.account_center_page_navi_bar.usr_logout()
+            # self.account_center_page_navi_bar.usr_logout()
 
         csv_file.close()

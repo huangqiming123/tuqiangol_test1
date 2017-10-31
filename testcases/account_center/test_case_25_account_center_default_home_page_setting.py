@@ -15,7 +15,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 # author:戴招利
 class TestCase25AccountCenterDefaultHomePageSetting(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
@@ -93,4 +93,4 @@ class TestCase25AccountCenterDefaultHomePageSetting(unittest.TestCase):
                 sleep(2)
 
         sleep(2)
-        self.account_center_page_navi_bar.usr_logout()
+        # self.account_center_page_navi_bar.usr_logout()

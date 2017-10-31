@@ -16,13 +16,9 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
 
-# 客户管理-下级客户-单个客户编辑
-
-# author:孙燕妮
-
 class TestCase60CustManageLowerAccountEdit(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)

@@ -8,6 +8,7 @@ from pages.base.base_page import BasePage
 # 全局搜索-用户搜索功能的元素及操作
 # author:孙燕妮
 from pages.base.new_paging import NewPaging
+from pages.global_search.global_dev_search_page import GlobalDevSearchPage
 
 
 class GlobalAccountSearchPage(BasePage):
@@ -475,7 +476,8 @@ class GlobalAccountSearchPage(BasePage):
 
     def easy_search_results(self):
         # 获取用户搜索的结果
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        # 　self.global_dev_search_page = GlobalDevSearchPage(self.driver,self.base_url)
+        # self.global_dev_search_page.swith_to_search_frame()
         a = self.driver.get_element('x,//*[@id="complex_paging_user"]').get_attribute('style')
         print(a)
         b = self.driver.get_element('x,//*[@id="complex_user_table_nodata"]').get_attribute('style')
@@ -483,14 +485,14 @@ class GlobalAccountSearchPage(BasePage):
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
             total = new_paging.get_total_number('x,//*[@id="complex_paging_user"]', 'x,//*[@id="complex_user_tbody"]')
-            self.driver.default_frame()
+            # self.driver.default_frame()
             return total
         else:
             if a == 'display: none;' and b == 'display: none;':
-                self.driver.default_frame()
+                # self.driver.default_frame()
                 return 1
             elif a == 'display: none;' and b == 'display: block;':
-                self.driver.default_frame()
+                # self.driver.default_frame()
                 return 0
 
     def click_search_button(self):
@@ -538,21 +540,21 @@ class GlobalAccountSearchPage(BasePage):
 
     def app_easy_search_results(self):
         # 获取用户搜索的结果
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        # self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
         a = self.driver.get_element('x,//*[@id="complex_paging_mobileUser"]').get_attribute('style')
         b = self.driver.get_element('x,//*[@id="complex_mobileUser_table_nodata"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
             total = new_paging.get_total_number('x,//*[@id="complex_paging_mobileUser"]',
                                                 'x,//*[@id="complex_mobileUser_tbody"]')
-            self.driver.default_frame()
+            # self.driver.default_frame()
             return total
         else:
             if a == 'display: none;' and b == 'display: none;':
-                self.driver.default_frame()
+                # self.driver.default_frame()
                 return 1
             elif a == 'display: none;' and b == 'display: block;':
-                self.driver.default_frame()
+                # self.driver.default_frame()
                 return 0
 
     def click_cust_manager_button(self):
@@ -560,7 +562,7 @@ class GlobalAccountSearchPage(BasePage):
         sleep(2)
 
     def click_add_new_user_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[2]/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[2]/div/button[1]')
         sleep(2)
 
     def switch_to_add_user_frame(self):
@@ -588,7 +590,7 @@ class GlobalAccountSearchPage(BasePage):
 
     def search_user_by_account_in_cust_manage(self, param):
         self.driver.operate_input_element('x,//*[@id="searchaccount"]', param)
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
         sleep(5)
         self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[3]')
         self.driver.click_element('c,layui-layer-btn0')

@@ -1,6 +1,7 @@
 import unittest
 
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.dev_manage.dev_manage_page_read_csv import DevManagePageReadCsv
@@ -13,6 +14,7 @@ class TestCase84DevManageBatchIssuedCommand(unittest.TestCase):
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
         self.dev_manage_page = DevManagePages(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.dev_manage_page_read_csv = DevManagePageReadCsv()
@@ -39,6 +41,9 @@ class TestCase84DevManageBatchIssuedCommand(unittest.TestCase):
         self.dev_manage_page.click_batch_issued_command_button()
 
         # 获取选中的设备数量
-        dev_number = self.dev_manage_page.get_dev_number_after_click_issued_command()
+        '''dev_number = self.dev_manage_page.get_dev_number_after_click_issued_command()
         dev_number_count = self.dev_manage_page.get_count_number_after_click_issued_command()
-        self.assertEqual(str(dev_number), dev_number_count)
+        self.assertEqual(str(dev_number), dev_number_count)'''
+        # 获取提示语
+        text = self.dev_manage_page.get_text_after_click_all_issued_command()
+        self.assertEqual(self.assert_text.dev_type_is_different(), text)

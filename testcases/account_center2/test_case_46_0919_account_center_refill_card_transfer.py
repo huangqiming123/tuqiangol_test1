@@ -19,7 +19,7 @@ from pages.login.login_page import LoginPage
 # author:戴招利
 class TestCase460918AccountCenterRefillCardTransfer(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -96,4 +96,4 @@ class TestCase460918AccountCenterRefillCardTransfer(unittest.TestCase):
 
         csv_file.close()
         # 退出登录
-        self.account_center_page_navi_bar.usr_logout()
+        # self.account_center_page_navi_bar.usr_logout()

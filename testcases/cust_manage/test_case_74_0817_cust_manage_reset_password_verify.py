@@ -8,11 +8,7 @@ from pages.account_center.account_center_navi_bar_page import AccountCenterNaviB
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.cust_manage.cust_manage_basic_info_and_add_cust_page import CustManageBasicInfoAndAddCustPage
-from pages.cust_manage.cust_manage_cust_list_page import CustManageCustListPage
 from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAccountPage
-from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
-
-from pages.login.login_page import LoginPage
 
 
 # 客户管理-单个客户操作 --取消和确定重置密码验证

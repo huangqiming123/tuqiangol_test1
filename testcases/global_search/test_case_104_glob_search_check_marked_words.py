@@ -45,7 +45,7 @@ class TestCase104GlobSearchCheckMarkedWords(unittest.TestCase):
         sleep(2)
 
         self.global_dev_search_page.click_easy_search()
-
+        self.global_dev_search_page.swith_to_search_frame()
         get_dev_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
         self.assertEqual(self.assert_text.glob_search_page_search_dev_text(), get_dev_search_marked_words)
 
@@ -58,3 +58,4 @@ class TestCase104GlobSearchCheckMarkedWords(unittest.TestCase):
         self.global_dev_search_page.select_search_app_user()
         get_user_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
         self.assertEqual(self.assert_text.glob_search_page_search_account_texts(), get_user_search_marked_words)
+        self.driver.default_frame()

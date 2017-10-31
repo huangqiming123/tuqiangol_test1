@@ -1,5 +1,6 @@
 import unittest
 from automate_driver.automate_driver import AutomateDriver
+from model.assert_text import AssertText
 from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
@@ -13,6 +14,7 @@ class TestCase85DevManageSelectSetUpWorkCommand(unittest.TestCase):
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
         self.dev_manage_page = DevManagePages(self.driver, self.base_url)
+        self.assert_text = AssertText()
         self.driver.set_window_max()
         self.log_in_base = LogInBase(self.driver, self.base_url)
         self.dev_manage_page_read_csv = DevManagePageReadCsv()
@@ -41,47 +43,51 @@ class TestCase85DevManageSelectSetUpWorkCommand(unittest.TestCase):
         self.assertEqual(True, input_value)
 
         # 点击选中设置工作模式
-        self.dev_manage_page.click_select_set_up_work_command()
+        # self.dev_manage_page.click_select_set_up_work_command()
         # 点击关闭设置工作模式
-        self.dev_manage_page.click_close_set_up_work_command()
+        #self.dev_manage_page.click_close_set_up_work_command()
+
+        # 点击选中设置工作模式
+        #　self.dev_manage_page.click_select_set_up_work_command()
+        # 点击关闭设置工作模式
+        # self.dev_manage_page.click_cancel_set_up_work_command()
 
         # 点击选中设置工作模式
         self.dev_manage_page.click_select_set_up_work_command()
-        # 点击关闭设置工作模式
-        self.dev_manage_page.click_cancel_set_up_work_command()
 
-        # 点击选中设置工作模式
-        self.dev_manage_page.click_select_set_up_work_command()
+        try:
+            # 判断数量
+            get_dev_number = self.dev_manage_page.get_dev_number_in_work_command()
+            self.assertEqual(1, get_dev_number)
 
-        # 判断数量
-        get_dev_number = self.dev_manage_page.get_dev_number_in_work_command()
-        self.assertEqual(1, get_dev_number)
+            get_dev_count = self.dev_manage_page.get_dev_count_number_in_work_command()
+            self.assertEqual(str(get_dev_number), get_dev_count)
 
-        get_dev_count = self.dev_manage_page.get_dev_count_number_in_work_command()
-        self.assertEqual(str(get_dev_number), get_dev_count)
+            # 判断 下发工作模式中
+            get_imei = self.dev_manage_page.get_imei_in_set_up_work_command()
+            self.assertEqual(imei_in_list, get_imei)
 
-        # 判断 下发工作模式中
-        get_imei = self.dev_manage_page.get_imei_in_set_up_work_command()
-        self.assertEqual(imei_in_list, get_imei)
+            get_dev_type = self.dev_manage_page.get_dev_type_in_work_command()
+            self.assertEqual(dev_type_in_list, get_dev_type)
 
-        get_dev_type = self.dev_manage_page.get_dev_type_in_work_command()
-        self.assertEqual(dev_type_in_list, get_dev_type)
+            get_dev_user = self.dev_manage_page.get_dev_user_in_work_command()
 
-        get_dev_user = self.dev_manage_page.get_dev_user_in_work_command()
+            connect = self.connect_sql.connect_tuqiang_sql()
+            cursor = connect.cursor()
+            get_account_sql = "select o.account from equipment_mostly e inner join user_info o on e.userId = o.userId where e.imei = '%s';" % imei_in_list
+            cursor.execute(get_account_sql)
+            account_data = cursor.fetchall()
+            account = account_data[0][0]
+            cursor.close()
+            connect.close()
 
-        connect = self.connect_sql.connect_tuqiang_sql()
-        cursor = connect.cursor()
-        get_account_sql = "select o.account from equipment_mostly e inner join user_info o on e.userId = o.userId where e.imei = '%s';" % imei_in_list
-        cursor.execute(get_account_sql)
-        account_data = cursor.fetchall()
-        account = account_data[0][0]
-        cursor.close()
-        connect.close()
+            self.assertEqual(get_dev_user, account)
 
-        self.assertEqual(get_dev_user, account)
+            # 点击删除
+            self.dev_manage_page.delete_dev()
 
-        # 点击删除
-        self.dev_manage_page.delete_dev()
-
-        # 点击发送指令
-        self.dev_manage_page.click_issued_command_button()
+            # 点击发送指令
+            self.dev_manage_page.click_issued_command_button()
+        except:
+            text = self.dev_manage_page.get_text_after_click_issued_work_template()
+            self.assertEqual(self.assert_text.no_dev_to_issued_command(), text)

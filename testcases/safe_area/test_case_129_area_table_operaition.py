@@ -14,7 +14,7 @@ class TestCase129AreaTableOperaition(unittest.TestCase):
 
     # author：邓肖斌
     def setUp(self):
-        self.driver = AutomateDriverServer()
+        self.driver = AutomateDriverServer(choose='chrome')
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
@@ -121,7 +121,7 @@ class TestCase129AreaTableOperaition(unittest.TestCase):
         # 断言
         self.assertEqual(text, "请选择要删除的记录")
         # 关闭
-        self.safe_area_page.click_close_detele_button()
+        self.safe_area_page.click_close_detele_buttons()
 
         cursor.close()
         connect.close()

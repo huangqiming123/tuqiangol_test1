@@ -14,7 +14,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 # 账户中心招呼栏--修改资料
 # author:孙燕妮
 
-class TestCase009AccountCenterModifyInfo(unittest.TestCase):
+class TestCase01AccountCenterModifyInfo(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -25,21 +25,18 @@ class TestCase009AccountCenterModifyInfo(unittest.TestCase):
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
         self.assert_text = AssertText()
         self.driver.set_window_max()
-        self.driver.wait(1)
         self.driver.clear_cookies()
-        self.driver.wait(1)
+        # 打开途强在线首页-登录页
+        self.base_page.open_page()
+        sleep(1)
+        # 登录账号
+        self.log_in_base.log_in()
 
     def tearDown(self):
         self.driver.quit_browser()
 
     def test_account_center_modify_info(self):
         '''通过csv测试修改资料功能'''
-
-        # 打开途强在线首页-登录页
-        self.base_page.open_page()
-        sleep(1)
-        # 登录账号
-        self.log_in_base.log_in()
         self.account_center_page_navi_bar.click_account_center_button()
 
         csv_file = self.account_center_page_read_csv.read_csv('user_to_modify_info.csv')

@@ -57,7 +57,7 @@ class TestCase128DevAdvancedSearchWithDeleteUser(unittest.TestCase):
             self.global_account_search_page.click_add_new_user_button()
             self.global_account_search_page.click_close_add_user_page()
             self.global_account_search_page.click_add_new_user_button()
-            self.global_account_search_page.switch_to_add_user_frame()
+            self.global_dev_search_page.swith_to_search_frame()
             self.global_account_search_page.add_data_to_add_new_user(add_data)
             # 删除
             self.global_account_search_page.search_user_by_account_in_cust_manage(add_data['account'])

@@ -126,7 +126,7 @@ class SafeAreaPage(BasePageServer):
 
     def click_all_select_button_with_mark(self):
         self.driver.click_element(
-            'x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[3]/div[2]/div[1]/table/thead/tr/th[1]/label/div/ins')
+            'x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[3]/div[2]/div[1]/table/thead/tr/th[1]/label/div/ins')
         sleep(2)
 
     def click_detele_button_with_mark(self):
@@ -186,9 +186,9 @@ class SafeAreaPage(BasePageServer):
         sleep(2)
 
     def click_select_fence_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[2]')
         sleep(2)
 
     def get_per_number(self):
@@ -200,9 +200,9 @@ class SafeAreaPage(BasePageServer):
         return text
 
     def click_select_black_address_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[3]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[3]')
         sleep(2)
 
     def get_page(self):
@@ -426,17 +426,17 @@ class SafeAreaPage(BasePageServer):
     def fences_edit_page_search_dev(self, data):
         self.driver.operate_input_element('x,//*[@id="search_text"]', data["account"])
         sleep(2)
-        self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/div/div/div/span[3]')
+        self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[3]/div/div/div/div/span[3]')
         sleep(1)
         if data["search_type"] == 'imei':
-            self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/div/div/div/div/ul/li[1]')
+            self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[3]/div/div/div/div/div/ul/li[1]')
             sleep(1)
             self.driver.operate_input_element('x,//*[@id="searchtext"]', data["search_content"])
             sleep(1)
             self.driver.click_element('x,//*[@id="searchAlarmConfigInfoBtn"]')
             sleep(2)
         if data["search_type"] == '设备名':
-            self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/div/div/div/div/ul/li[2]')
+            self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[3]/div/div/div/div/div/ul/li[2]')
             sleep(2)
             self.driver.operate_input_element('x,//*[@id="searchtext"]', data["search_content"])
             sleep(1)
@@ -463,10 +463,14 @@ class SafeAreaPage(BasePageServer):
 
     # 点击围栏编辑页面关联设备列表中的删除
     def click_del_in_fences_edit_page(self):
-        self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[2]/div/span/div/button[2]')
+        self.driver.click_element('x,//*[@id="alarmconfiginfo"]/div[1]/div/div[3]/div/span/div/button[2]')
         sleep(1)
 
     # 围栏编辑页面关联设备列表点击删除之后的文本获取
     def get_text_in_fence_edit_page_after_click_del(self):
-        text = self.driver.get_text('x,/html/body/div[13]/div[2]')
+        text = self.driver.get_text('x,/html/body/div[12]/div[2]')
         return text
+
+    def click_close_detele_buttons(self):
+        self.driver.click_element('x,/html/body/div[12]/span[1]/a')
+        sleep(2)

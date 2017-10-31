@@ -58,6 +58,7 @@ class TestCase101GlobDevSearch(unittest.TestCase):
             search_data = {
                 'dev_info': row[0]
             }
+            self.global_dev_search_page.swith_to_search_frame()
             self.global_dev_search_page.device_easy_search(search_data['dev_info'])
 
             connect = self.connect_sql.connect_tuqiang_sql()
@@ -105,7 +106,7 @@ class TestCase101GlobDevSearch(unittest.TestCase):
                 web_total = self.global_dev_search_page.easy_search_result()
                 print('本次查询页面的条数是：%s' % web_total)
                 self.assertEqual(total, web_total)
-
+                self.driver.default_frame()
             cur.close()
             connect.close()
 

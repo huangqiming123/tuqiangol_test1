@@ -59,7 +59,7 @@ class TestCase271AccountCenterModifyInfoException(unittest.TestCase):
         # 关闭修改资料框
         self.account_center_page_navi_bar.cancel_modify_user_info()
         # 退出
-        self.account_center_page_navi_bar.usr_logout()
+        # self.account_center_page_navi_bar.usr_logout()
 
     def tearDown(self):
         self.driver.quit_browser()

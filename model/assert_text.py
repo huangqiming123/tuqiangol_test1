@@ -60,13 +60,13 @@ class AssertText(object):
         return '告警详情'
 
     def account_center_page_expiring_text(self):
-        return '即将过期'
+        return '平台即将过期'
 
     def account_center_page_expire_status_text(self):
         return '过期状态'
 
     def account_center_page_expired_text(self):
-        return '已过期'
+        return '平台已过期'
 
     def account_center_page_actived_text(self):
         return '已激活'

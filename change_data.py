@@ -2,7 +2,7 @@ class ChangeData(object):
     # 为了切换测试和线上环境准备
     def switch_tuqiang_url(self):
         # 测试
-        return 'http://172.16.0.116:8690'
+        return 'http://172.16.0.112:8690'
         # return 'http://tujunsat.jimicloud.com'
 
         # 线上

@@ -16,12 +16,12 @@ class AccountCenterRefillCardPage(BasePageServer):
 
     # 点击充值卡
     def click_refill_card(self):
-        self.driver.click_element("x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[5]")
+        self.driver.click_element("x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/ul/li[5]")
         sleep(2)
 
     # 充值卡页面iframe
     def refill_card_page_iframe(self):
-        self.driver.switch_to_frame('x,/html/body/div[1]/div[5]/div/div/div[2]/div[3]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[1]/div[6]/div/div/div[2]/div[3]/iframe')
 
     #获取右上角当前登录账号
     def get_current_login_account(self):
@@ -583,7 +583,7 @@ class AccountCenterRefillCardPage(BasePageServer):
 
     #点击续费按钮
     def click_equipment_refill_button(self):
-        self.driver.click_element('c,layui-layer-btn0')
+        self.driver.click_element('c,layui-layer-ico')
         sleep(2)
 
     #设备充值--充值提示
@@ -673,10 +673,11 @@ class AccountCenterRefillCardPage(BasePageServer):
         print("长度",count)
         if count > 1:
             for i in range(count):
-                self.driver.click_element("x,/html/body/div[7]/div[2]/div/div/form/div[4]/div/table/tbody/tr[1]/td[5]/a")
+                self.driver.click_element(
+                    "x,/html/body/div[8]/div[2]/div/div/form/div[4]/div/table/tbody/tr[1]/td[5]/a")
                 self.driver.wait(2)
         else:
-            self.driver.click_element("x,/html/body/div[7]/div[2]/div/div/form/div[4]/div/table/tbody/tr[1]/td[5]/a")
+            self.driver.click_element("x,/html/body/div[8]/div[2]/div/div/form/div[4]/div/table/tbody/tr[1]/td[5]/a")
             sleep(2)
 
     #重置

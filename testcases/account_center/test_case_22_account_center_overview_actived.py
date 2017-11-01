@@ -34,8 +34,8 @@ class TestCase22AccountCenterOverviewActived(unittest.TestCase):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录账号
-        # self.log_in_base.log_in()
-        self.log_in_base.log_in_with_csv("kankan111", "jimi123")
+        self.log_in_base.log_in()
+        # self.log_in_base.log_in_with_csv("kankan111", "jimi123")
         self.account_center_page_navi_bar.click_account_center_button()
         sleep(2)
         account_center_handle = self.driver.get_current_window_handle()
@@ -77,11 +77,11 @@ class TestCase22AccountCenterOverviewActived(unittest.TestCase):
                 self.assertEqual(self.assert_text.account_center_page_active_status_text(), get_text)
 
                 # 查看控制台告警设置能否打开
-                self.account_center_page_navi_bar.click_alarm_button_in_console()
+                '''self.account_center_page_navi_bar.click_alarm_button_in_console()
                 # 断言
                 get_text = self.account_center_page_navi_bar.get_text_after_click_alarm_button()
                 self.assertEqual(self.assert_text.account_center_page_alarm_manager_text(), get_text)
-                self.account_center_page_navi_bar.close_alarm_in_console()
+                self.account_center_page_navi_bar.close_alarm_in_console()'''
 
                 self.driver.close_current_page()
                 # 回到账户中心窗口

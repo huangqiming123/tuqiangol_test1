@@ -102,4 +102,5 @@ class TestCase124LoginSuccessWithphAppUser(unittest.TestCase):
             self.account_center_page_navi_bar.app_usr_logout()
             # 判断是否成功退出到登录页
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "退出系统失败")
+            break
         csv_file.close()

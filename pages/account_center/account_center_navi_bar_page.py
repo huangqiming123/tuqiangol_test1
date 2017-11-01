@@ -423,7 +423,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     def click_modify_usr_info(self):
         self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
-        sleep(1)
+        sleep(3)
         # 点击招呼栏的修改资料
         self.driver.click_element("p,修改资料")
         sleep(3)

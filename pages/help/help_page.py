@@ -296,7 +296,7 @@ class HelpPage(BasePageServer, NewPaging):
         # 选择业务日志类型
         self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
         self.driver.click_element('x,//*[@id="serviceType"]/div/span[2]')
-        sleep(1)
+        sleep(2)
         if search_data["search_type"] == '设备管理-设备修改':
             self.driver.click_element('x,//*[@id="serviceType"]/div/div/ul/li[1]')
             sleep(2)
@@ -410,7 +410,9 @@ class HelpPage(BasePageServer, NewPaging):
             sleep(1)
 
         # 填写其他的搜索条件
-        self.driver.operate_input_element('x,//*[@id="key"]', search_data['more'])
+        self.driver.operate_input_element('x,//*[@id="createdAccount"]', search_data['more'])
+        self.driver.operate_input_element('x,//*[@id="account"]', search_data['more'])
+        self.driver.operate_input_element('x,//*[@id="imei"]', search_data['more'])
 
         # 点搜索
         self.driver.click_element('x,//*[@id="search_xf"]')

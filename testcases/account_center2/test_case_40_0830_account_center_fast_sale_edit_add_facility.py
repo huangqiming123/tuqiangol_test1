@@ -109,6 +109,5 @@ class TestCase400830AccountCenterFastSaleEditAddFaility(unittest.TestCase):
             self.account_center_page_details.dev_manage_edit_equipment_user_and_sim(data["old_dev_name"],
                                                                                     data["old_sim"])
 
-            sleep(2)
-            self.account_center_page_navi_bar.click_account_center_button()
-            sleep(2)
+            break
+            # self.account_center_page_navi_bar.click_account_center_button()

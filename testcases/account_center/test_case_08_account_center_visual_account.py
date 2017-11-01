@@ -39,6 +39,8 @@ class TestCase08AccountCenterVisualAccount(unittest.TestCase):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         sleep(2)
+        self.log_in_base.log_in()
+        self.account_center_page_navi_bar.click_account_center_button()
 
         csv_file = self.account_center_page_read_csv.read_csv('add_visual_account.csv')
         csv_data = csv.reader(csv_file)
@@ -48,11 +50,8 @@ class TestCase08AccountCenterVisualAccount(unittest.TestCase):
                 "passwd": row[1]
             }
             # 登录
-            self.log_in_base.log_in()
-            self.account_center_page_navi_bar.click_account_center_button()
             # 进入虚拟账户管理
             self.account_center_page_visual_account.enter_visual_account()
-            # 进入iframe
             self.account_center_page_visual_account.visual_account_iframe()
             # 获取虚拟账户管理title
             visual_account_title = self.account_center_page_visual_account.get_visual_account_title()
@@ -75,11 +74,11 @@ class TestCase08AccountCenterVisualAccount(unittest.TestCase):
             self.driver.wait()
 
             # 退出登录验证虚拟账号
-            self.account_center_page_navi_bar.usr_logout()
+            '''self.account_center_page_navi_bar.usr_logout()
             self.log_in_base.log_in_with_csv(acc_to_add["account"], acc_to_add["passwd"])
             sleep(1)
             self.assertEqual(acc_to_add["account"], self.account_center_page_navi_bar.hello_user_account(),
                              "招呼栏登录账号显示不一致")
-            # self.account_center_page_navi_bar.usr_logout()
+            # self.account_center_page_navi_bar.usr_logout()'''
 
         csv_file.close()

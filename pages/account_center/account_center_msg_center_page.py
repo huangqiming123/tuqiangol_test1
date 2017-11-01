@@ -153,7 +153,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
 
         # 基本信息
         device_name = self.get_length("x,//*[@id='device_info_b']/fieldset[1]/div[2]/div[1]/input")
-        sim = self.get_length("x,//*[@id='device_info_a']/fieldset/div[2]/div[2]/input")
+        sim = self.get_length("x,//*[@id='device_info_a']/fieldset[2]/div[1]/div[1]/input")
         remark = self.get_length("reMark")
 
         # 点击客户信息

@@ -492,7 +492,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
 
     def get_actual_text_after_click_command(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[2]/div[5]/div[1]/div/b')
+        return self.driver.get_text('x,/html/body/div[1]/div[6]/div/div/div[2]/div[5]/div[1]/div/b')
 
     def get_actual_text_after_click_set_up_landmark(self):
         return self.driver.get_text('x,//*[@id="marktab"]')
@@ -596,7 +596,7 @@ class AccountCenterDetailsPage(BasePageServer):
             return 0
 
     def click_report_after_text(self):
-        return self.driver.get_text('x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[1]/div')
+        return self.driver.get_text('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[1]/div')
 
     def click_safearea_get_vaule(self):
         return self.driver.get_element('x,//*[@id="safemenu"]/li[1]').get_attribute('class')
@@ -951,7 +951,7 @@ class AccountCenterDetailsPage(BasePageServer):
         for i in range(type_list_len):
             # 获取style状态
             state = self.driver.get_element(
-                "x,/html/body/div[1]/div[7]/div[2]/div/div/form/div[2]/div/div/label[" + str(
+                "x,/html/body/div[1]/div[8]/div[2]/div/div/form/div[2]/div/div/label[" + str(
                     i + 1) + "]").get_attribute('style')
             if state == "display: none;":
                 continue

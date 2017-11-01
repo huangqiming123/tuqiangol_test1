@@ -93,7 +93,7 @@ class TestCase720815CustManageAddUserCommandLimit(unittest.TestCase):
 
             #进入设备管理/指令管理页面，获取功能按钮
             facility_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_facility_manage_page_function_button()
-            sleep(2)
+            sleep(3)
             command_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_command_page_module()
 
             #获取中文，依次是：选中发送指令、本次查询全部发送指令、选中设置工作模式、本次查询全部设置工作模式

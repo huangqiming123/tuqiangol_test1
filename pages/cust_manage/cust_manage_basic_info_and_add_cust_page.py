@@ -717,7 +717,8 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         command_module = []
         all_module = len(self.driver.get_elements("x,//*[@id='insManage_ul']/li"))
         for a in range(all_module):
-            text = self.driver.get_text("x,/html/body/div[1]/div[5]/div/div/div[1]/div/div[2]/ul/li[" + str(a + 1) +"]")
+            text = self.driver.get_text(
+                "x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/ul/li[" + str(a + 1) + "]")
             command_module.append(text)
 
         print("指令管理页面", command_module)

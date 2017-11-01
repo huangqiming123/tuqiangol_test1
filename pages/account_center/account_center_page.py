@@ -303,7 +303,7 @@ class AccountCenterPage(BasePageServer):
     def get_this_week_begin_time(self):
         # 获取本周的开始时间
         today = datetime.date.today()
-        days_count = datetime.timedelta(days=(today.isoweekday() - 1))
+        days_count = datetime.timedelta(days=(today.isoweekday()) - 1)
         week = today - days_count
         return str(week) + ' 00:00'
 
@@ -358,6 +358,122 @@ class AccountCenterPage(BasePageServer):
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
             total = new_paging.get_total_number('x,//*[@id="mileage_paging"]', 'x,//*[@id="mileage_body"]')
+            return total
+        else:
+            return 0
+
+    def clcik_order_manage_button_in_account_info_page(self):
+        self.driver.click_element('x,//*[@id="ordermanager"]/a')
+        sleep(2)
+
+    def switch_to_order_manage_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="ordermanagerFrame"]')
+
+    def add_data_to_search_order_manage_in_bill_list_page(self, search_data):
+        # 输入订单编号
+        self.driver.operate_input_element('x,//*[@id="orderNo"]', search_data['order_id'])
+        # 选择订单查询日期类型
+        if search_data['date_type'] != '':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/span[2]')
+            sleep(2)
+            if search_data['date_type'] == '创建时间':
+                self.driver.click_element(
+                    'x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/ul/li[1]')
+            elif search_data['date_type'] == '支付时间':
+                self.driver.click_element(
+                    'x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/ul/li[2]')
+            sleep(2)
+
+        # 输入商品名称
+        self.driver.operate_input_element('x,//*[@id="productName"]', search_data['goods_name'])
+        # 选择订单类型
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/span[2]')
+        sleep(2)
+        if search_data['order_type'] == '':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[1]')
+
+        elif search_data['order_type'] == '3':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[3]')
+
+        elif search_data['order_type'] == '4':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[2]')
+
+        sleep(2)
+
+        # 选择订单状态
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/span[2]')
+        sleep(2)
+        if search_data['is_order'] == '':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[1]')
+
+        elif search_data['is_order'] == '1':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[3]')
+
+        elif search_data['is_order'] == '0':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[2]')
+        sleep(2)
+
+        # 选择支付方式
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/span[2]')
+        sleep(2)
+        if search_data['is_pay'] == '':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[1]')
+
+        elif search_data['is_pay'] == '0':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[2]')
+
+        elif search_data['is_pay'] == '1':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[3]')
+        sleep(2)
+
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="queryorderinfo"]')
+        sleep(5)
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[3]/button[2]')
+        sleep(1)
+
+    def get_sql_number_after_click_order_manage_search_button(self, account, search_data):
+        conncet_sql = ConnectSql()
+        conncet = conncet_sql.connect_tuqiang_sql()
+        cursor = conncet.cursor()
+
+        sql = "SELECT t.id FROM t_order t INNER JOIN user_info u on t.createBy = u.userId WHERE u.account = '%s'" % account
+
+        if search_data['date_type'] == '创建时间':
+            sql += " and t.createDate BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "'"
+
+        if search_data['date_type'] == '支付时间':
+            sql += " and t.transPayTime BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
+                'end_time'] + "'"
+
+        if search_data['goods_name'] != '':
+            sql += " and t.productName LIKE '%" + search_data['goods_name'] + "%'"
+
+        if search_data['order_id'] != '':
+            sql += " and t.orderNo LIKE '%" + search_data['order_id'] + "%'"
+
+        if search_data['order_type'] != '':
+            sql += " and t.orderType = '%s'" % search_data['order_type']
+
+        if search_data['is_order'] != '':
+            sql += " and t.payStatus = '%s'" % search_data['is_order']
+
+        if search_data['is_pay'] != '':
+            sql += " and t.payType = '%s'" % search_data['is_pay']
+
+        sql += ";"
+        print(sql)
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        cursor.close()
+        conncet.close()
+        return len(data)
+
+    def get_web_number_after_click_order_manage_search_button(self):
+        a = self.driver.get_element('x,//*[@id="order_info_paging"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="order_info_paging"]', 'x,//*[@id="orderinfobody"]')
             return total
         else:
             return 0

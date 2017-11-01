@@ -18,7 +18,7 @@ from pages.login.login_page import LoginPage
 
 class TestCase380821AccountCenterPageMemorizationDefaultOption(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)

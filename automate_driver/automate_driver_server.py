@@ -14,10 +14,10 @@ from change_data import ChangeData
 class AutomateDriverServer(object):
     def __init__(self, choose=None):
         if choose != None:
-            self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+            self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
                                            desired_capabilities=DesiredCapabilities.CHROME)
         else:
-            self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+            self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
                                            desired_capabilities=DesiredCapabilities.FIREFOX)
 
         self.base_url = ChangeData().switch_tuqiang_url()

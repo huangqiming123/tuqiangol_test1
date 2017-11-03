@@ -13,15 +13,13 @@ class AccountCenterPage(BasePageServer):
         sleep(1)
 
     def get_account_in_account_info_page(self):
-        return self.driver.get_text('x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/h4')
+        return self.driver.get_text('x,//*[@id="topusername"]')
 
     def get_account_type_in_account_info_page(self):
-        return self.driver.get_text(
-            'x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/ul/li[1]/span')
+        return self.driver.get_text('x,//*[@id="topusertype"]')
 
     def get_account_telephone_in_account_info_page(self):
-        return self.driver.get_text(
-            'x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/ul/li[2]/span')
+        return self.driver.get_text('x,//*[@id="topuserphone"]')
 
     def get_account_01_in_account_info_page(self):
         return self.driver.get_text('x,//*[@id="userAccount"]')
@@ -33,16 +31,16 @@ class AccountCenterPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="userPhone"]')
 
     def get_telephone_alarm_number_in_account_info_page(self):
-        return self.driver.get_text('x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[2]/div/div[2]/ul/li[1]/span')
+        return self.driver.get_text('x,//*[@id="phoneRecord"]')
 
     def get_massage_alarm_number_in_account_info_page(self):
-        return self.driver.get_text('x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[2]/div/div[2]/ul/li[2]/span')
+        return self.driver.get_text('x,//*[@id="infoRecord"]')
 
     def get_telephone_and_massage_alarm_number_in_mysql(self, account):
         conncet_sql = ConnectSql()
         conncet = conncet_sql.connect_tuqiang_sql()
         cursor = conncet.cursor()
-        sql = "SELECT v.voice,v.sms FROM vs_balance v INNER JOIN user_info u on v.userId = u.userId WHERE u.account = '%s';" % account
+        sql = "SELECT v.phoneRecord,v.infoRecord FROM rc_recharge_card_stock v INNER JOIN user_info u on v.userId = u.userId WHERE u.account = '%s';" % account
         cursor.execute(sql)
         data = cursor.fetchall()
         cursor.close()
@@ -50,10 +48,10 @@ class AccountCenterPage(BasePageServer):
         return data
 
     def get_year_card_number_in_account_info_page(self):
-        return self.driver.get_text('x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[3]/div/div[2]/ul/li[1]/span')
+        return self.driver.get_text('x,//*[@id="yearCard"]')
 
     def get_life_card_number_in_account_info_page(self):
-        return self.driver.get_text('x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[3]/div/div[2]/ul/li[2]/span')
+        return self.driver.get_text('x,//*[@id="lifetimeCard"]')
 
     def get_year_and_life_card_number_in_mysql(self, account):
         conncet_sql = ConnectSql()
@@ -71,20 +69,16 @@ class AccountCenterPage(BasePageServer):
             'x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[4]/div/div[2]/div/div/div[1]/p[1]')
 
     def get_consume_massage_alarm_number_in_account_info_page(self):
-        return self.driver.get_text(
-            'x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[4]/div/div[2]/div/div/div[1]/p[1]')
+        return self.driver.get_text('x,//*[@id="yesterdayinfo"]')
 
     def get_consume_telephone_alarm_number_in_account_info_page(self):
-        return self.driver.get_text(
-            'x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[4]/div/div[2]/div/div/div[1]/p[3]')
+        return self.driver.get_text('x,//*[@id="yesterdayphone"]')
 
     def get_consume_year_card_number_in_account_info_page(self):
-        return self.driver.get_text(
-            'x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[4]/div/div[2]/div/div/div[1]/p[2]')
+        return self.driver.get_text('x,//*[@id="yesterdayyear"]')
 
     def get_consume_life_card_number_in_account_info_page(self):
-        return self.driver.get_text(
-            'x,/html/body/div[1]/div/div[2]/div[1]/div[1]/div[4]/div/div[2]/div/div/div[1]/p[4]')
+        return self.driver.get_text('x,//*[@id="yesterdaylife"]')
 
     def get_bengin_time(self, param):
         if param == '昨天':
@@ -114,10 +108,8 @@ class AccountCenterPage(BasePageServer):
             return second
 
         elif param == '本月':
-            today = datetime.date.today()
-            yes = today - datetime.timedelta(days=1)
-            second = str(yes) + " 23:59"
-            return second
+            current_time = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+            return current_time
 
         elif param == '上月':
             today = datetime.date.today()
@@ -168,7 +160,9 @@ class AccountCenterPage(BasePageServer):
         sleep(1)
 
     def add_data_to_search_bill_list_in_bill_list_page(self, search_data):
-
+        # 点击清空
+        self.driver.click_element('x,//*[@id="clearBtn"]')
+        sleep(2)
         # 选择时间
         self.driver.click_element('x,//*[@id="qryForm"]/div/div[1]/div/div/div/span[2]')
         sleep(2)
@@ -226,9 +220,6 @@ class AccountCenterPage(BasePageServer):
         # 点击搜索
         self.driver.click_element('x,//*[@id="qryBtn"]')
         sleep(5)
-        # 点击清空
-        self.driver.click_element('x,//*[@id="clearBtn"]')
-        sleep(2)
 
     def clcik_bill_button_in_account_info_page(self):
         self.driver.click_element('x,//*[@id="vsBill"]/a')
@@ -370,6 +361,8 @@ class AccountCenterPage(BasePageServer):
         self.driver.switch_to_frame('x,//*[@id="ordermanagerFrame"]')
 
     def add_data_to_search_order_manage_in_bill_list_page(self, search_data):
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[3]/button[2]')
+        sleep(1)
         # 输入订单编号
         self.driver.operate_input_element('x,//*[@id="orderNo"]', search_data['order_id'])
         # 选择订单查询日期类型
@@ -420,17 +413,15 @@ class AccountCenterPage(BasePageServer):
             self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[1]')
 
         elif search_data['is_pay'] == '0':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[2]')
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[3]')
 
         elif search_data['is_pay'] == '1':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[3]')
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[2]')
         sleep(2)
 
         # 点击搜索
         self.driver.click_element('x,//*[@id="queryorderinfo"]')
         sleep(5)
-        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[3]/button[2]')
-        sleep(1)
 
     def get_sql_number_after_click_order_manage_search_button(self, account, search_data):
         conncet_sql = ConnectSql()
@@ -459,7 +450,7 @@ class AccountCenterPage(BasePageServer):
             sql += " and t.payStatus = '%s'" % search_data['is_order']
 
         if search_data['is_pay'] != '':
-            sql += " and t.payType = '%s'" % search_data['is_pay']
+            sql += " and t.payType = '%s' and t.payStatus = '1'" % search_data['is_pay']
 
         sql += ";"
         print(sql)
@@ -477,3 +468,27 @@ class AccountCenterPage(BasePageServer):
             return total
         else:
             return 0
+
+    def get_consume_massage_alarm_number_in_account_info_page_this_month(self):
+        return self.driver.get_text('x,//*[@id="currentinfo"]')
+
+    def get_consume_telephone_alarm_number_in_account_info_page_this_month(self):
+        return self.driver.get_text('x,//*[@id="currentphone"]')
+
+    def get_consume_year_card_number_in_account_info_page_this_month(self):
+        return self.driver.get_text('x,//*[@id="currentyear"]')
+
+    def get_consume_life_card_number_in_account_info_page_this_month(self):
+        return self.driver.get_text('x,//*[@id="currentlife"]')
+
+    def get_consume_massage_alarm_number_in_account_info_page_last_month(self):
+        return self.driver.get_text('x,//*[@id="upinfo"]')
+
+    def get_consume_telephone_alarm_number_in_account_info_page_last_month(self):
+        return self.driver.get_text('x,//*[@id="upphone"]')
+
+    def get_consume_year_card_number_in_account_info_page_last_month(self):
+        return self.driver.get_text('x,//*[@id="upyear"]')
+
+    def get_consume_life_card_number_in_account_info_page_last_month(self):
+        return self.driver.get_text('x,//*[@id="uplife"]')

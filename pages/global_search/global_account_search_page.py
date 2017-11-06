@@ -606,7 +606,7 @@ class GlobalAccountSearchPage(BasePage):
     def search_user_by_account_in_global_search(self, param):
         self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
         sleep(2)
 
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', param)

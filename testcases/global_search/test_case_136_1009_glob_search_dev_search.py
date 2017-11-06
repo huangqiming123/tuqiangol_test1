@@ -44,6 +44,7 @@ class TestCase136GlobSearchDevSearch(unittest.TestCase):
         self.global_dev_search_page.close_search()
         sleep(2)
         self.global_dev_search_page.click_easy_search()
+        self.global_dev_search_page.click_dev_searchs()
         sleep(3)
         self.global_dev_search_page.swith_to_search_frame()
         self.global_dev_search_page.click_advanced_search_button()

@@ -47,6 +47,7 @@ class TestCase109GlobSearchDevOperation(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
 
         # 选择用户搜索
+        self.global_dev_search_page.click_dev_searchs()
         self.global_dev_search_page.click_search_buttons()
 
         # 获取设备信息

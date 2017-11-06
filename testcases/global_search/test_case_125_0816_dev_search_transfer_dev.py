@@ -44,6 +44,7 @@ class TestCase125DevSearchTransferDev(unittest.TestCase):
         self.global_dev_search_page.close_search()
         sleep(2)
         self.global_dev_search_page.click_easy_search()
+        self.global_dev_search_page.click_dev_searchs()
         # 选择设备搜索
         self.global_dev_search_page.click_search_buttons()
         sleep(5)

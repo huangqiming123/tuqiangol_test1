@@ -685,6 +685,30 @@ class GlobalDevSearchPage(BasePage):
         self.swith_to_search_frame()
         self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
+        sleep(5)
+        self.driver.default_frame()
+
+    def click_dev_searchs(self):
+        self.swith_to_search_frame()
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[2]')
+        sleep(5)
+        self.driver.default_frame()
+
+    def click_account_search(self):
+        self.swith_to_search_frame()
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
+        sleep(5)
+        self.driver.default_frame()
+
+    def click_app_accounts_search(self):
+        self.swith_to_search_frame()
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
+        sleep(2)
         self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
         sleep(5)
         self.driver.default_frame()
@@ -699,7 +723,7 @@ class GlobalDevSearchPage(BasePage):
         self.swith_to_search_frame()
         self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
         sleep(2)
         self.driver.default_frame()
 
@@ -720,7 +744,7 @@ class GlobalDevSearchPage(BasePage):
         # self.swith_to_search_frame()
         self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
         sleep(2)
         # self.driver.default_frame()
 
@@ -728,7 +752,7 @@ class GlobalDevSearchPage(BasePage):
         # self.swith_to_search_frame()
         self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[1]')
         sleep(2)
         # self.driver.default_frame()
 
@@ -2126,3 +2150,11 @@ class GlobalDevSearchPage(BasePage):
         self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/span/button')
         sleep(5)
         self.driver.default_frame()
+
+    def select_search_dev(self):
+        # self.swith_to_search_frame()
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[2]')
+        sleep(2)
+        # self.driver.default_frame()

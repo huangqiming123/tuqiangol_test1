@@ -48,7 +48,7 @@ class TestCase102GlobComplexSearchByAllCondi(unittest.TestCase):
         sleep(2)
 
         self.global_dev_search_page.click_easy_search()
-
+        self.global_dev_search_page.click_dev_searchs()
         self.global_dev_search_page.click_senior_search_button()
 
         csv_file = self.global_search_page_read_csv.read_csv('complex_search_data.csv')

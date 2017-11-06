@@ -492,3 +492,64 @@ class AccountCenterPage(BasePageServer):
 
     def get_consume_life_card_number_in_account_info_page_last_month(self):
         return self.driver.get_text('x,//*[@id="uplife"]')
+
+    def clcik_massage_and_telephone_alarm_button_in_account_info_page(self):
+        self.driver.click_element('x,//*[@id="vsAlarmSetList"]/a')
+        sleep(2)
+
+    def switch_to_massage_and_telephone_alarm_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="vsAlarmSetListFrame"]')
+
+    def add_data_to_search_massage_and_telephone_alarm_in_set_page(self, search_data):
+        # 清空
+        self.driver.click_element('x,//*[@id="clearBtn"]')
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="alarmSetName"]', search_data['alarm_name'])
+
+        # 选择告警类型 3：电话 4：短信
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div/div/span[2]')
+        sleep(2)
+
+        if search_data['alarm_type'] == '':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div/div/div/ul/li[1]')
+
+        elif search_data['alarm_type'] == '3':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div/div/div/ul/li[2]')
+
+        elif search_data['alarm_type'] == '4':
+            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div/div/div/ul/li[3]')
+
+        sleep(2)
+
+        self.driver.click_element('x,//*[@id="qryBtn"]')
+        sleep(5)
+
+    def get_sql_number_after_click_massage_and_telephone_alarm_set_search_button(self, account, search_data):
+        conncet_sql = ConnectSql()
+        conncet = conncet_sql.connect_tuqiang_sql()
+        cursor = conncet.cursor()
+
+        sql = "SELECT t.id FROM vs_alarm_set t INNER JOIN user_info u on t.createdBy = u.userId WHERE u.account = '%s'" % account
+
+        if search_data['alarm_name'] != '':
+            sql += " and t.alarmSetName like '%" + search_data['alarm_name'] + "%'"
+
+        if search_data['alarm_type'] != "":
+            sql += " and t.alarmPushType = '%s'" % search_data['alarm_type']
+
+        sql += ";"
+        print(sql)
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        cursor.close()
+        conncet.close()
+        return len(data)
+
+    def get_web_number_after_click_massage_and_telephone_alarm_search_button(self):
+        a = self.driver.get_element('x,//*[@id="alarm_paging"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            total = new_paging.get_total_number('x,//*[@id="alarm_paging"]', 'x,//*[@id="alarm_body"]')
+            return total
+        else:
+            return 0

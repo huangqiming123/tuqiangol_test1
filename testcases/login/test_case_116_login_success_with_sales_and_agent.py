@@ -82,12 +82,12 @@ class TestCase116LoginSuccessWithSalesAndAgent(unittest.TestCase):
             self.assertEqual(type, usr_info_type, "账户总览左下方显示的客户类型错误")
 
             # 用户名
-            usr_info_name = self.account_center_page_navi_bar.usr_info_name()
+            '''usr_info_name = self.account_center_page_navi_bar.usr_info_name()
             expect_usr_info_name = current_user_info[3]
             if expect_usr_info_name == None:
                 self.assertEqual("", usr_info_name, "账户总览左下方显示的用户名错误")
             else:
-                self.assertEqual(expect_usr_info_name, usr_info_name, "账户总览左下方显示的用户名错误")
+                self.assertEqual(expect_usr_info_name, usr_info_name, "账户总览左下方显示的用户名错误")'''
 
             #电话
             usr_info_phone = self.account_center_page_navi_bar.usr_info_phone()

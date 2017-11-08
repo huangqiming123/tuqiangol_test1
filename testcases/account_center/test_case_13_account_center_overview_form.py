@@ -58,8 +58,8 @@ class TestCase13AccountCenterOverviewForm(unittest.TestCase):
                 self.assertEqual(self.assert_text.account_center_page_statistical_form_text(), actual_text)
 
                 # 验证运动统计是否被选中
-                get_value_sport_statistion = self.account_center_page_navi_bar.get_value_sport_statistiacl_value()
-                self.assertEqual('active', get_value_sport_statistion)
+                # get_value_sport_statistion = self.account_center_page_navi_bar.get_value_sport_statistiacl_value()
+                # self.assertEqual('active', get_value_sport_statistion)
 
                 # 验证运动总览
                 get_value_sport_overview = self.account_center_page_navi_bar.get_value_sport_overview_value()

@@ -79,7 +79,7 @@ class TestCase147SportStatisticalAccForm(unittest.TestCase):
             connect_02 = self.connect_sql.connect_tuqiang_form()
             # 创建游标
             cursor_02 = connect_02.cursor()
-            get_total_sql = self.search_sql.search_acc_sql(all_dev, search_data)
+            # get_total_sql = self.search_sql.search_acc_sql(all_dev, search_data)
             get_total_sql_01 = self.search_sql.search_acc_sql_01(all_dev, search_data)
             get_total_sql_02 = self.search_sql.search_acc_sql_02(all_dev, search_data)
             get_total_sql_03 = self.search_sql.search_acc_sql_03(all_dev, search_data)
@@ -88,14 +88,14 @@ class TestCase147SportStatisticalAccForm(unittest.TestCase):
             get_total_sql_06 = self.search_sql.search_acc_sql_06(all_dev, search_data)
             get_total_sql_07 = self.search_sql.search_acc_sql_07(all_dev, search_data)
             get_total_sql_08 = self.search_sql.search_acc_sql_08(all_dev, search_data)
-            get_total_sql_09 = self.search_sql.search_acc_sql_09(all_dev, search_data)
+            # get_total_sql_09 = self.search_sql.search_acc_sql_09(all_dev, search_data)
             get_total_sql_10 = self.search_sql.search_acc_sql_10(all_dev, search_data)
             get_total_sql_11 = self.search_sql.search_acc_sql_11(all_dev, search_data)
             get_total_sql_12 = self.search_sql.search_acc_sql_12(all_dev, search_data)
 
-            print(get_total_sql)
+            print(get_total_sql_01)
 
-            cursor_02.execute(get_total_sql)
+            '''cursor_02.execute(get_total_sql)
             get_total = cursor_02.fetchall()
             total_list = []
             for range1 in get_total:
@@ -114,7 +114,7 @@ class TestCase147SportStatisticalAccForm(unittest.TestCase):
                     elif total_list[n] == 0:
                         acc_close_list.append(total_list[n])
                 elif n % 3 == 2:
-                    all_time_list.append(total_list[n])
+                    all_time_list.append(total_list[n])'''
 
             cursor_02.execute(get_total_sql_01)
             get_total_01 = cursor_02.fetchall()
@@ -284,7 +284,7 @@ class TestCase147SportStatisticalAccForm(unittest.TestCase):
                 elif n % 3 == 2:
                     all_time_list_08.append(total_list_08[n])
 
-            cursor_02.execute(get_total_sql_09)
+            '''cursor_02.execute(get_total_sql_09)
             get_total_09 = cursor_02.fetchall()
             total_list_09 = []
             for range1 in get_total_09:
@@ -303,7 +303,7 @@ class TestCase147SportStatisticalAccForm(unittest.TestCase):
                     elif total_list_09[n] == 0:
                         acc_close_list_09.append(total_list_09[n])
                 elif n % 3 == 2:
-                    all_time_list_09.append(total_list_09[n])
+                    all_time_list_09.append(total_list_09[n])'''
 
             cursor_02.execute(get_total_sql_10)
             get_total_10 = cursor_02.fetchall()
@@ -368,21 +368,21 @@ class TestCase147SportStatisticalAccForm(unittest.TestCase):
                 elif n % 3 == 2:
                     all_time_list_12.append(total_list_12[n])
 
-            total = len(get_total_list) + len(get_total_list_01) + len(get_total_list_02) + len(
+            total = len(get_total_list_01) + len(get_total_list_02) + len(
                 get_total_list_03) + len(get_total_list_04) + len(get_total_list_05) + len(get_total_list_06) + len(
-                get_total_list_07) + len(get_total_list_08) + len(get_total_list_09) + len(get_total_list_10) + len(
+                get_total_list_07) + len(get_total_list_08) + len(get_total_list_10) + len(
                 get_total_list_11) + len(get_total_list_12)
-            total_acc_open = len(acc_open_list) + len(acc_open_list_01) + len(acc_open_list_02) + len(
+            total_acc_open = len(acc_open_list_01) + len(acc_open_list_02) + len(
                 acc_open_list_03) + len(acc_open_list_04) + len(acc_open_list_05) + len(acc_open_list_06) + len(
-                acc_open_list_07) + len(acc_open_list_08) + len(acc_open_list_09) + len(acc_open_list_10) + len(
+                acc_open_list_07) + len(acc_open_list_08) + len(acc_open_list_10) + len(
                 acc_open_list_11) + len(acc_open_list_12)
-            total_acc_close = len(acc_close_list) + len(acc_close_list_01) + len(acc_close_list_02) + len(
+            total_acc_close = len(acc_close_list_01) + len(acc_close_list_02) + len(
                 acc_close_list_03) + len(acc_close_list_04) + len(acc_close_list_05) + len(acc_close_list_06) + len(
-                acc_close_list_07) + len(acc_close_list_08) + len(acc_close_list_09) + len(acc_close_list_10) + len(
+                acc_close_list_07) + len(acc_close_list_08) + len(acc_close_list_10) + len(
                 acc_close_list_11) + len(acc_close_list_12)
-            total_time = sum(all_time_list) + sum(all_time_list_01) + sum(all_time_list_02) + sum(
+            total_time = sum(all_time_list_01) + sum(all_time_list_02) + sum(
                 all_time_list_03) + sum(all_time_list_04) + sum(all_time_list_05) + sum(all_time_list_06) + sum(
-                all_time_list_07) + sum(all_time_list_08) + sum(all_time_list_09) + sum(all_time_list_10) + sum(
+                all_time_list_07) + sum(all_time_list_08) + sum(all_time_list_10) + sum(
                 all_time_list_11) + sum(all_time_list_12)
 
             # 断言总条数

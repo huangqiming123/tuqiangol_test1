@@ -62,11 +62,11 @@ class TestCase01AccountCenterModifyInfo(unittest.TestCase):
 
 
             #获取详情中用户名跟电话
-            name = self.account_center_page_navi_bar.usr_info_name()
+
             phone = self.account_center_page_navi_bar.usr_info_phone()
-            self.assertEqual(user_to_modify_info["username"], name, "用户名称不一致")
             self.assertEqual(user_to_modify_info["phone"], phone, "电话号码不一致")
             self.driver.default_frame()
+            break
 
         csv_file.close()
 

@@ -381,7 +381,7 @@ class AssertText(object):
         return '必须在0 ~ 9999999.99之间'
 
     def dev_type_is_different(self):
-        return '所选设备的设备类型不一致'
+        return '所选设备的设备类型不一致，不能发送指令'
 
     def no_dev_to_issued_command(self):
         return '没有可发送指令的设备'

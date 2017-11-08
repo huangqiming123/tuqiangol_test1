@@ -78,7 +78,7 @@ class TestCase145SportStatisticalStayForm(unittest.TestCase):
             cursor_02 = connect_02.cursor()
 
             # 判断查询条件
-            get_total_sql = self.search_sql.search_sport_stay_sql(all_dev, search_data)
+            # get_total_sql = self.search_sql.search_sport_stay_sql(all_dev, search_data)
             get_total_sql_01 = self.search_sql.search_sport_stay_sql_01(all_dev, search_data)
             get_total_sql_02 = self.search_sql.search_sport_stay_sql_02(all_dev, search_data)
             get_total_sql_03 = self.search_sql.search_sport_stay_sql_03(all_dev, search_data)
@@ -94,7 +94,7 @@ class TestCase145SportStatisticalStayForm(unittest.TestCase):
 
             print(get_total_sql_01)
 
-            cursor_02.execute(get_total_sql)
+            '''cursor_02.execute(get_total_sql)
             get_total = cursor_02.fetchall()
             total_list = []
             for range1 in get_total:
@@ -107,7 +107,7 @@ class TestCase145SportStatisticalStayForm(unittest.TestCase):
                 if n % 2 == 0:
                     total_number_list.append(total_list[n])
                 elif n % 2 == 1:
-                    total_time_list.append(total_list[n])
+                    total_time_list.append(total_list[n])'''
 
             cursor_02.execute(get_total_sql_01)
             get_total_01 = cursor_02.fetchall()
@@ -268,7 +268,7 @@ class TestCase145SportStatisticalStayForm(unittest.TestCase):
             # 拆分列表
             total_number_list_11 = []
             total_time_list_11 = []
-            for n in range(len(total_list_02)):
+            for n in range(len(total_list_11)):
                 if n % 2 == 0:
                     total_number_list_11.append(total_list_11[n])
                 elif n % 2 == 1:
@@ -293,7 +293,7 @@ class TestCase145SportStatisticalStayForm(unittest.TestCase):
             total = len(total_number_list_01) + len(total_number_list_02) + len(total_number_list_03) + len(
                 total_number_list_04) + len(total_number_list_05) + len(total_number_list_06) + len(
                 total_number_list_07) + len(total_number_list_08) + len(total_number_list_09) + len(
-                total_number_list_10) + len(total_number_list_11) + len(total_number_list_12) + len(total_number_list)
+                total_number_list_10) + len(total_number_list_11) + len(total_number_list_12)
             sleep(3)
             self.statistical_form_page.switch_to_stay_report_form_frame()
             web_total = self.statistical_form_page.get_total_search_stay_form_number()
@@ -303,7 +303,7 @@ class TestCase145SportStatisticalStayForm(unittest.TestCase):
             total_time = sum(total_time_list_01) + sum(total_time_list_02) + sum(total_time_list_03) + sum(
                 total_time_list_04) + sum(total_time_list_05) + sum(total_time_list_06) + sum(total_time_list_07) + sum(
                 total_time_list_08) + sum(total_time_list_09) + sum(total_time_list_10) + sum(total_time_list_11) + sum(
-                total_time_list_12) + sum(total_time_list)
+                total_time_list_12)
             chang_total_time_type = self.statistical_form_page.change_sec_time(total_time)
             web_total_time = self.statistical_form_page.get_total_stay_form_time()
             self.assertEqual(chang_total_time_type, web_total_time)

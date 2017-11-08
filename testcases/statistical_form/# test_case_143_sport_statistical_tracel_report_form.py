@@ -82,7 +82,7 @@ class TestCase143SportStatisticalTracelReportForm(unittest.TestCase):
             # 判断查询的条件
 
             # 判断查询条件
-            get_total_sql = self.search_sql.search_sport_mile_sql(all_dev, search_data)
+            # get_total_sql = self.search_sql.search_sport_mile_sql(all_dev, search_data)
             get_total_sql_01 = self.search_sql.search_sport_mile_sql_01(all_dev, search_data)
             get_total_sql_02 = self.search_sql.search_sport_mile_sql_02(all_dev, search_data)
             get_total_sql_03 = self.search_sql.search_sport_mile_sql_03(all_dev, search_data)
@@ -95,17 +95,17 @@ class TestCase143SportStatisticalTracelReportForm(unittest.TestCase):
             get_total_sql_10 = self.search_sql.search_sport_mile_sql_10(all_dev, search_data)
             get_total_sql_11 = self.search_sql.search_sport_mile_sql_11(all_dev, search_data)
             get_total_sql_12 = self.search_sql.search_sport_mile_sql_12(all_dev, search_data)
-            print(get_total_sql)
+            print(get_total_sql_01)
 
             # 判断查询的条件
             if search_data['type'] == 'mile':
                 # 查询的选择里程
-                cursor_02.execute(get_total_sql)
+                '''cursor_02.execute(get_total_sql_01)
                 get_all_mlie_and_time = cursor_02.fetchall()
                 get_all_mlie_and_time_list = []
                 for range1 in get_all_mlie_and_time:
                     for range2 in range1:
-                        get_all_mlie_and_time_list.append(range2)
+                        get_all_mlie_and_time_list.append(range2)'''
 
                 cursor_02.execute(get_total_sql_01)
                 get_all_mlie_and_time_01 = cursor_02.fetchall()
@@ -191,7 +191,7 @@ class TestCase143SportStatisticalTracelReportForm(unittest.TestCase):
                     for range2 in range1:
                         get_all_mlie_and_time_list_12.append(range2)
 
-                total = len(get_all_mlie_and_time_list) / 2 + len(get_all_mlie_and_time_list_01) / 2 + len(
+                total = len(get_all_mlie_and_time_list_01) / 2 + len(
                     get_all_mlie_and_time_list_02) / 2 + len(get_all_mlie_and_time_list_03) / 2 + len(
                     get_all_mlie_and_time_list_04) / 2 + len(get_all_mlie_and_time_list_05) / 2 + len(
                     get_all_mlie_and_time_list_06) / 2 + len(get_all_mlie_and_time_list_07) / 2 + len(
@@ -204,11 +204,11 @@ class TestCase143SportStatisticalTracelReportForm(unittest.TestCase):
                 # 拆分列表
                 all_mile_list = []
                 all_time_list = []
-                for n in range(len(get_all_mlie_and_time_list)):
+                '''for n in range(len(get_all_mlie_and_time_list)):
                     if n % 2 == 0:
                         all_mile_list.append(get_all_mlie_and_time_list[n])
                     elif n % 2 == 1:
-                        all_time_list.append(get_all_mlie_and_time_list[n])
+                        all_time_list.append(get_all_mlie_and_time_list[n])'''
 
                 # 拆分列表
                 all_mile_list_01 = []

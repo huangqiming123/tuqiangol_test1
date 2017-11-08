@@ -361,6 +361,7 @@ class AccountCenterPage(BasePageServer):
         self.driver.switch_to_frame('x,//*[@id="ordermanagerFrame"]')
 
     def add_data_to_search_order_manage_in_bill_list_page(self, search_data):
+        sleep(2)
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[3]/button[2]')
         sleep(1)
         # 输入订单编号
@@ -376,6 +377,8 @@ class AccountCenterPage(BasePageServer):
                 self.driver.click_element(
                     'x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/ul/li[2]')
             sleep(2)
+            self.driver.operate_input_element('x,//*[@id="startTime_order"]', search_data['begin_time'])
+            self.driver.operate_input_element('x,//*[@id="endTime_order"]', search_data['end_time'])
 
         # 输入商品名称
         self.driver.operate_input_element('x,//*[@id="productName"]', search_data['goods_name'])
@@ -424,6 +427,8 @@ class AccountCenterPage(BasePageServer):
         sleep(5)
 
     def get_sql_number_after_click_order_manage_search_button(self, account, search_data):
+        begin_time = self.driver.get_element('x,//*[@id="startTime_order"]').get_attribute('value')
+        end_time = self.driver.get_element('x,//*[@id="endTime_order"]').get_attribute('value')
         conncet_sql = ConnectSql()
         conncet = conncet_sql.connect_tuqiang_sql()
         cursor = conncet.cursor()
@@ -431,11 +436,10 @@ class AccountCenterPage(BasePageServer):
         sql = "SELECT t.id FROM t_order t INNER JOIN user_info u on t.createBy = u.userId WHERE u.account = '%s'" % account
 
         if search_data['date_type'] == '创建时间':
-            sql += " and t.createDate BETWEEN '" + search_data['begin_time'] + "' and '" + search_data['end_time'] + "'"
+            sql += " and t.createDate BETWEEN '" + begin_time + "' and '" + end_time + "'"
 
         if search_data['date_type'] == '支付时间':
-            sql += " and t.transPayTime BETWEEN '" + search_data['begin_time'] + "' and '" + search_data[
-                'end_time'] + "'"
+            sql += " and t.transPayTime BETWEEN '" + begin_time + "' and '" + end_time + "'"
 
         if search_data['goods_name'] != '':
             sql += " and t.productName LIKE '%" + search_data['goods_name'] + "%'"

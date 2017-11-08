@@ -1,5 +1,8 @@
-import re
+def reverse_string(string):
+    if string == '':
+        return string
+    else:
+        return reverse_string(string[1:]) + string[0]
 
-key = r"mat yat uat aat"
-p1 = r"[^y]at"
-print(re.findall(p1, key))
+
+print(reverse_string('abcdefg'))

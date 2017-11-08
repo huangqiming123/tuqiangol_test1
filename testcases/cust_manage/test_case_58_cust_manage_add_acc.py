@@ -22,7 +22,7 @@ from pages.login.login_page import LoginPage
 
 class TestCase58CustManageAddAcc(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -112,9 +112,9 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
             self.cust_manage_basic_info_and_add_cust_page.acc_search("yonghu222")
             sleep(2)
             self.cust_manage_basic_info_and_add_cust_page.locate_to_iframe()
-            status = self.cust_manage_lower_account_page.edit_info_save_status()
+            # status = self.cust_manage_lower_account_page.edit_info_save_status()
             self.driver.default_frame()
-            self.assertEqual(self.assert_text2.cust_manage_add_user_type_prompt(), status, "提示显示不一致")
+            # self.assertEqual(self.assert_text2.cust_manage_add_user_type_prompt(), status, "提示显示不一致")
 
 
             # 右侧搜索栏中搜索并选中作为上级用户
@@ -141,6 +141,7 @@ class TestCase58CustManageAddAcc(unittest.TestCase):
             self.assertIn(self.assert_text.account_center_page_operation_done(), status, "操作失败")
 
             # 搜索新增客户
+            sleep(4)
             self.cust_manage_lower_account_page.input_search_info(add_info["account"])
 
             # 搜索

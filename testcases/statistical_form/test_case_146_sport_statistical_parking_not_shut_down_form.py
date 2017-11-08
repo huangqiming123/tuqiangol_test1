@@ -79,7 +79,7 @@ class TestCase146SportStatisticalPakingNotShutDownForm(unittest.TestCase):
             # 创建游标
             cursor_02 = connect_02.cursor()
 
-            get_total_sql = self.search_sql.search_sport_stay_not_shut_down_sql(all_dev, search_data)
+            # get_total_sql = self.search_sql.search_sport_stay_not_shut_down_sql(all_dev, search_data)
             get_total_sql_01 = self.search_sql.search_sport_stay_not_shut_down_sql_01(all_dev, search_data)
             get_total_sql_02 = self.search_sql.search_sport_stay_not_shut_down_sql_02(all_dev, search_data)
             get_total_sql_03 = self.search_sql.search_sport_stay_not_shut_down_sql_03(all_dev, search_data)
@@ -92,9 +92,9 @@ class TestCase146SportStatisticalPakingNotShutDownForm(unittest.TestCase):
             get_total_sql_10 = self.search_sql.search_sport_stay_not_shut_down_sql_10(all_dev, search_data)
             get_total_sql_11 = self.search_sql.search_sport_stay_not_shut_down_sql_11(all_dev, search_data)
             get_total_sql_12 = self.search_sql.search_sport_stay_not_shut_down_sql_12(all_dev, search_data)
-            print(get_total_sql)
+            print(get_total_sql_01)
 
-            cursor_02.execute(get_total_sql)
+            '''cursor_02.execute(get_total_sql)
             get_total = cursor_02.fetchall()
             total_list = []
             for range1 in get_total:
@@ -107,7 +107,7 @@ class TestCase146SportStatisticalPakingNotShutDownForm(unittest.TestCase):
                 if n % 2 == 0:
                     total_number_list.append(total_list[n])
                 elif n % 2 == 1:
-                    total_time_list.append(total_list[n])
+                    total_time_list.append(total_list[n])'''
 
             cursor_02.execute(get_total_sql_01)
             get_total_01 = cursor_02.fetchall()
@@ -290,7 +290,7 @@ class TestCase146SportStatisticalPakingNotShutDownForm(unittest.TestCase):
                     total_time_list_12.append(total_list_12[n])
 
             # 断言查询的条数
-            total = len(total_number_list) + len(total_number_list_01) + len(total_number_list_02) + len(
+            total = len(total_number_list_01) + len(total_number_list_02) + len(
                 total_number_list_03) + len(total_number_list_04) + len(total_number_list_05) + len(
                 total_number_list_06) + len(total_number_list_07) + len(total_number_list_08) + len(
                 total_number_list_09) + len(total_number_list_10) + len(total_number_list_11) + len(
@@ -300,7 +300,7 @@ class TestCase146SportStatisticalPakingNotShutDownForm(unittest.TestCase):
             self.assertEqual(total, web_total)
 
             # 断言查询的总的停留时间
-            total_time = sum(total_time_list) + sum(total_time_list_01) + sum(total_time_list_02) + sum(
+            total_time = sum(total_time_list_01) + sum(total_time_list_02) + sum(
                 total_time_list_03) + sum(total_time_list_04) + sum(total_time_list_05) + sum(total_time_list_06) + sum(
                 total_time_list_07) + sum(total_time_list_08) + sum(total_time_list_09) + sum(total_time_list_10) + sum(
                 total_time_list_11) + sum(total_time_list_12)

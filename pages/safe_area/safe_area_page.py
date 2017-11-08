@@ -1,4 +1,6 @@
 from time import sleep
+
+from model.connect_sql import ConnectSql
 from pages.base.base_page_server import BasePageServer
 
 
@@ -388,7 +390,7 @@ class SafeAreaPage(BasePageServer):
         text = self.driver.get_element('x,//*[@id="marktbody"]/tr[1]/td[1]').get_attribute('title')
         return text
 
-########################################################################################################################
+    ########################################################################################################################
 
     # 获取围栏关联的设备总数
     def get_total_num_of_dev_relation_fences(self):
@@ -474,3 +476,80 @@ class SafeAreaPage(BasePageServer):
     def click_close_detele_buttons(self):
         self.driver.click_element('x,/html/body/div[12]/span[1]/a')
         sleep(2)
+
+    def click_account_center(self):
+        self.driver.click_element('x,//*[@id="accountCenter"]/a')
+        sleep(2)
+
+    def get_current_account_in_account_center(self):
+        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
+        a = self.driver.get_text('x,//*[@id="userAccount"]')
+        self.driver.default_frame()
+        return a
+
+    def add_data_to_search_defence_in_safe_area(self, data):
+        self.driver.operate_input_element('x,//*[@id="queryareaname"]', data['defence_name'])
+        sleep(1)
+        self.driver.click_element('x,//*[@id="querycondition"]/button')
+        sleep(4)
+
+    def get_web_total_after_click_search(self):
+        total_page = int(self.driver.get_text('x,//*[@id="areapage"]').split('/')[1])
+        if total_page == 0:
+            return 0
+        elif total_page == 1:
+            return len(list(self.driver.get_elements('x,//*[@id="areatbody"]/tr')))
+        else:
+            for n in range(total_page - 1):
+                self.driver.click_element('x,//*[@id="areaTablePage"]/a[3]')
+                sleep(3)
+            return (10 * (total_page - 1) + len(list(self.driver.get_elements('x,//*[@id="areatbody"]/tr'))))
+
+    def get_sql_total_after_click_search(self, data, account):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        sql = "SELECT o.id FROM geozone_info o INNER JOIN user_info u on o.userid = u.userId WHERE u.account = '" + account + "' and o.flag = 0"
+        if data['defence_name'] != '':
+            sql += " and o.geoname like '%" + data['defence_name'] + "%'"
+        sql += ";"
+        print(sql)
+        cursor.execute(sql)
+        sql_data = cursor.fetchall()
+        cursor.close()
+        connect.close()
+        return len(sql_data)
+
+    def click_risk_point_share_button(self):
+        self.driver.click_element('x,//*[@id="sharetab"]')
+        sleep(3)
+
+    def add_data_to_search_risk_point_in_safe_area(self, data):
+        self.driver.operate_input_element('x,//*[@id="queryareaname"]', data['risk_name'])
+        sleep(1)
+        self.driver.click_element('x,//*[@id="querycondition"]/button')
+        sleep(3)
+
+    def get_web_total_after_click_search_risk_share(self):
+        total_page = int(self.driver.get_text('x,//*[@id="sharepage"]').split('/')[1])
+        if total_page == 0:
+            return 0
+        elif total_page == 1:
+            return len(list(self.driver.get_elements('x,//*[@id="sharetbody"]/tr')))
+        else:
+            for n in range(total_page - 1):
+                self.driver.click_element('x,//*[@id="shareTablePage"]/a[3]')
+                sleep(3)
+            return (10 * (total_page - 1) + len(list(self.driver.get_elements('x,//*[@id="sharetbody"]/tr'))))
+
+    def get_sql_total_after_click_search_risk_share(self, data):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        sql = "SELECT t.id FROM t_share_area t WHERE t.name LIKE '%" + data['risk_name'] + "%';"
+        print(sql)
+        cursor.execute(sql)
+        sql_data = cursor.fetchall()
+        cursor.close()
+        connect.close()
+        return len(sql_data)

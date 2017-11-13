@@ -113,4 +113,4 @@ for t in thread_list:
 run_09()
 # 运行后自动关机
 sleep(10)
-# os.system('shutdown -s -f')
+os.system('shutdown -s -f')

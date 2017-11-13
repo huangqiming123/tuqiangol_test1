@@ -346,23 +346,6 @@ class TestCase143SportStatisticalTracelReportForm(unittest.TestCase):
                         total_oil = '%.2f' % get_total_oil
                         self.assertEqual(str(total_oil), self.statistical_form_page.get_mileage_total_oil())
 
-            elif search_data['type'] == 'day':
-                # 如果选择天
-                cursor_02.execute(get_total_sql)
-                get_all_mile_data = cursor_02.fetchall()
-                get_all_mile_list = []
-                for range1 in get_all_mile_data:
-                    for range2 in range1:
-                        get_all_mile_list.append(range2)
-                total = len(get_all_mile_list)
-                web_total = self.statistical_form_page.get_total_search_mileage_form_with_day()
-                self.assertEqual(total, web_total)
-
-                total_mile_with_day = sum(get_all_mile_list)
-                # 断言
-                self.assertAlmostEqual(total_mile_with_day / 1000,
-                                       float(self.statistical_form_page.get_mileage_with_day_total_mile()))
-
             # 点击导出
             self.driver.default_frame()
             cursor_02.close()

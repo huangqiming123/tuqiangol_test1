@@ -73,7 +73,12 @@ class CommandManagementPage(BasePage):
 
     def click_control_after_click_command_management(self):
         # 点击控制台后点击指令管理
+        self.driver.click_element('x,//*[@id="accountCenter"]/a')
+        sleep(4)
+        self.driver.click_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[1]/a')
+        sleep(1)
         self.driver.click_element('p,指令管理')
+        sleep(4)
 
     def actual_url_click_command_management(self):
         # 获取点击指令管理之后的url

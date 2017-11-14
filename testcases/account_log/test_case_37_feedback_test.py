@@ -15,7 +15,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 # author：邓肖斌
 class TestCase37FeedbackTest(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)

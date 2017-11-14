@@ -41,13 +41,11 @@ class TestCase26AccountCenterDefaultHomePageNoSetting(unittest.TestCase):
         # 点击默认首页设置
         self.account_center_page_home_page_setting.click_home_page_setting()
 
-        self.account_center_page_home_page_setting.default_home_page_iframe()
         # 取列表数据
         all_state = self.account_center_page_home_page_setting.get_home_page_list_all_state()
         for i in all_state:
             self.assertEqual(self.assert_text2.account_center_home_page_no_setting_state(), i, "并不是全部为默认设置")
 
-        self.driver.default_frame()
         sleep(2)
         # 退出
         self.account_center_page_navi_bar.usr_logout()

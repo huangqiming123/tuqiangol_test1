@@ -332,7 +332,9 @@ class AccountCenterOperationLogPage(BasePageServer):
             return 0
 
     def click_help_button(self):
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/a[2]')
+        self.driver.click_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[2]/a')
+        sleep(2)
+        self.driver.click_element('p,帮助')
         sleep(2)
 
     def click_business_log(self):

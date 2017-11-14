@@ -4,6 +4,7 @@ from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text2 import AssertText2
+from pages.account_center.account_center_change_page import AccountCenterChangePage
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
@@ -26,6 +27,7 @@ class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
         self.driver.set_window_max()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
+        self.account_center_change_page = AccountCenterChangePage(self.driver, self.base_page)
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -55,9 +57,11 @@ class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
             }
             # 进入快捷销售页面
             sleep(1)
-            self.account_center_page_details.account_center_iframe()
-            self.account_center_page_details.fast_sales()
+            # self.account_center_page_details.account_center_iframe()
+            # self.account_center_page_details.fast_sales()
 
+            self.account_center_change_page.switch_fast_sale_enable()
+            self.account_center_change_page.switch_to_fast_sale_frame()
             # 查找账户
             self.account_center_page_details.fast_sales_find_account(search_account["account"])
             #点取消
@@ -77,7 +81,7 @@ class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
             all_data = self.account_center_page_details.get_prompt_list_data()
             succeed_count = self.account_center_page_details.get_device_prompt_succeed_count()
             self.account_center_page_details.click_prompt_close()
-            self.account_center_page_details.account_center_iframe()
+            self.account_center_change_page.switch_to_fast_sale_frame()
             list_count = self.account_center_page_details.get_list_succeed_count()
             self.assertEqual(succeed_count, list_count, "成功添加的设备数不一致")
 
@@ -100,7 +104,7 @@ class TestCase016AccountCenterFastSaleReset(unittest.TestCase):
             self.account_center_page_details.fast_sales_find_and_add_device(search_account["device_imei"])
             self.driver.default_frame()
             self.account_center_page_details.click_prompt_close()
-            self.account_center_page_details.account_center_iframe()
+            self.account_center_change_page.switch_to_fast_sale_frame()
             self.account_center_page_details.choose_account_expired_time("三个月")
             self.driver.wait(1)
             self.account_center_page_details.reset_device()

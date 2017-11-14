@@ -15,7 +15,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 # author:戴招利
 class TestCase30AccountCenterVisualEditException(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.visual_account_page = AccountCenterVisualAccountPage(self.driver, self.base_url)
@@ -43,9 +43,7 @@ class TestCase30AccountCenterVisualEditException(unittest.TestCase):
         self.visual_account_page.save_add_info()
 
         # 点击编辑
-        self.visual_account_page.visual_account_iframe()
         self.visual_account_page.click_editor()
-        self.driver.default_frame()
 
         # 虚拟账号添加与编辑方法
         # 长度不够
@@ -81,9 +79,7 @@ class TestCase30AccountCenterVisualEditException(unittest.TestCase):
         self.visual_account_page.dis_save_add_info()
         self.driver.wait(1)
         # 删除
-        self.visual_account_page.visual_account_iframe()
         self.visual_account_page.del_visu_account()
-        self.driver.default_frame()
         self.driver.wait()
         # 退出登录
         # self.account_center_page_navi_bar.usr_logout()

@@ -53,7 +53,7 @@ class TestCase07AccountCenterMsgSearch(unittest.TestCase):
         self.driver.wait(10)
 
         # 进入iframe
-        self.account_center_page_msg_center.message_center_iframe()
+        # self.account_center_page_msg_center.message_center_iframe()
         # 获取消息中心title
         msg_center_title = self.account_center_page_msg_center.get_msg_center_title()
         # 验证消息中心title是否正确显示

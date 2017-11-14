@@ -16,7 +16,7 @@ from pages.login.login_page import LoginPage
 
 class TestCase09AccountCenterVisuEditAndDel(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
@@ -64,14 +64,12 @@ class TestCase09AccountCenterVisuEditAndDel(unittest.TestCase):
             self.driver.wait(1)
 
             # 删除列表中的虚拟账户
-            self.account_center_page_visual_account.visual_account_iframe()
             self.account_center_page_visual_account.del_visu_account()
 
             # 验证是否操作成功
             save_status = self.account_center_page_visual_account.get_save_status()
             self.assertIn(self.assert_text.account_center_page_operation_done(), save_status, "操作成功")
             self.driver.wait()
-            self.driver.default_frame()
         csv_file.close()
         # 退出登录
         # self.account_center_page_navi_bar.usr_logout()

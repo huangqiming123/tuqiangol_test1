@@ -26,7 +26,7 @@ class TestCase49IssuedCommandTaskManagementSearch(unittest.TestCase):
     def setUp(self):
         # 前置条件
         # 实例化对象
-        self.driver = AutomateDriver()
+        self.driver = AutomateDriver(choose='firefox')
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
         self.command_management_page = CommandManagementPage(self.driver, self.base_url)
@@ -44,7 +44,7 @@ class TestCase49IssuedCommandTaskManagementSearch(unittest.TestCase):
         self.driver.clear_cookies()
         self.log_in_base.log_in()
         self.log_in_base.click_account_center_button()
-        self.current_account = self.command_management_page.get_user_account_text()
+        self.current_account = self.log_in_base.get_log_in_account()
 
         # 登录之后点击控制台，然后点击指令管理
         self.command_management_page.click_control_after_click_command_management()

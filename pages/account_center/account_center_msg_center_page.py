@@ -16,13 +16,13 @@ class AccountCenterMsgCenterPage(BasePageServer):
 
     # 点击进入“消息中心”
     def enter_msg_center(self):
-        self.driver.click_element('x,//*[@id="usermessage"]')
+        self.driver.click_element('x,//*[@id="systemTools"]/a')
         self.driver.wait()
 
     # 获取“消息中心”title
     def get_msg_center_title(self):
         self.driver.wait(1)
-        msg_center_title = self.driver.get_element('x,/html/body/div/div[1]/div/b').text
+        msg_center_title = self.driver.get_element('x,/html/body/div[6]/div[1]/div/b').text
         return msg_center_title
 
     # 获取左侧栏目-消息中心-x条未读
@@ -143,12 +143,10 @@ class AccountCenterMsgCenterPage(BasePageServer):
     # 消息中心--编辑--获取长度
     def get_message_edit_element_len(self):
         # 点击第一条的imei
-        self.driver.switch_to_frame('x,//*[@id="usermessageFrame"]')
         self.driver.click_element("x,//*[@id='msg_tbody']/tr[1]/td[4]/div/a")
-        self.driver.default_frame()
         self.driver.wait(3)
         # 切换到iframe
-        self.driver.switch_to_iframe('x,/html/body/div[6]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,/html/body/div[9]/div[2]/iframe')
         # self.driver.switch_to_iframe('x,/html/body/div[7]/div[2]/iframe')
 
         # 基本信息

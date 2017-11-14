@@ -22,7 +22,7 @@ class TestCase50IssuedCommandTaskManagementOperation(unittest.TestCase):
     def setUp(self):
         # 前置条件
         # 实例化对象
-        self.driver = AutomateDriver()
+        self.driver = AutomateDriver(choose='firefox')
         self.base_url = self.driver.base_url
         self.base_page = BasePage(self.driver, self.base_url)
         self.command_management_page = CommandManagementPage(self.driver, self.base_url)

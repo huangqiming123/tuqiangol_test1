@@ -1,2 +1,4 @@
-a = "fasdfsa\ggfasdfas"
-print(a.replace('\\', '/'))
+import pygame
+
+pygame.init()
+print(pygame.display.list_modes())

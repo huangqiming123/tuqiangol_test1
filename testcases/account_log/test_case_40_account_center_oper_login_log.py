@@ -2,6 +2,7 @@ import csv
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
+from pages.account_center.account_center_operation_log_page import AccountCenterOperationLogPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
@@ -14,11 +15,12 @@ from pages.login.login_page import LoginPage
 # author:邓肖斌
 class TestCase40AccountCenterOperLoginLog(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.login_page = LoginPage(self.driver, self.base_url)
         self.help_page = HelpPage(self.driver, self.base_url)
+        self.account_center_page_operation_log = AccountCenterOperationLogPage(self.driver, self.base_url)
         self.help_page_sql = HelpPageSql()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.connect_sql = ConnectSql()
@@ -39,7 +41,7 @@ class TestCase40AccountCenterOperLoginLog(unittest.TestCase):
         current_account = self.log_in_base.get_log_in_account()
 
         # 点击招呼栏-业务日志
-        self.help_page.click_help()
+        self.account_center_page_operation_log.click_help_button()
         self.help_page.click_log_in_log()
         # 判断当前页面是否正确跳转至业务日志页面
         expect_url = self.base_url + "/userFeedback/toHelp"

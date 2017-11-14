@@ -87,7 +87,7 @@ class AccountCenterDetailsPage(BasePageServer):
     # 快捷销售-账户查找
     def fast_sales_find_account(self, search_account):
         # 点击“销售给”下拉箭头图标
-        self.driver.click_element("showTree-btn")
+        self.driver.click_element('showTree-btn')
         # 下拉搜索框内输入精确的用户名/账号
         self.driver.operate_input_element("ac_putDevice_globalSearch_SalesName", search_account)
         # 点击搜索按钮
@@ -216,8 +216,7 @@ class AccountCenterDetailsPage(BasePageServer):
                     }
 
             # 点击“添加”按钮
-            self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]"
-                                      "/div[2]/div/div/div/div[3]/button[1]")
+            self.driver.click_element('x,/html/body/div[1]/div/div/div/div[1]/div[2]/div/div/div/div[3]/button[1]')
             self.driver.wait()
             return data
         else:
@@ -242,8 +241,7 @@ class AccountCenterDetailsPage(BasePageServer):
         # 在“追加设备”框内输入存在的设备imei号
         self.driver.operate_input_element("searchIMEI", device_imei)
         # 点击“取消”按钮
-        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/"
-                                  "div[2]/div/div/div/div[3]/button[2]")
+        self.driver.click_element('x,/html/body/div[1]/div/div/div/div[1]/div[2]/div/div/div/div[3]/button[2]')
 
     # 快捷销售-设备列表-删除
     def delete_list_device(self):
@@ -251,8 +249,7 @@ class AccountCenterDetailsPage(BasePageServer):
         print("长度",count)
         if count > 1:
             for i in range(count):
-                self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/"
-                                          "div/div[2]/table/tr[1]/td[6]/a")
+                self.driver.click_element("x,/html/body/div/div/div/div/div[2]/div/div[2]/table/tr/td[6]/a")
                 self.driver.wait(1)
         else:
             self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div/"
@@ -316,31 +313,25 @@ class AccountCenterDetailsPage(BasePageServer):
 
     #点击消息提示的X
     def click_prompt_close(self):
-        self.driver.click_element("x,/html/body/div[1]/div[9]/span[1]/a")
+        self.driver.click_element("c,layui-layer-ico")
 
 
     # 快捷销售-选择用户到期时间
     def choose_account_expired_time(self, account_expired_time):
-        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/span[2]")
+        self.driver.click_element("x,/html/body/div[1]/div/div/div/div[3]/span/div/span[2]")
         self.driver.wait(1)
         if account_expired_time == '一个月':
-            self.driver.click_element(
-                "x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/div/ul/li[2]")
+            self.driver.click_element("x,/html/body/div[1]/div/div/div/div[3]/span/div/div/ul/li[2]")
         elif account_expired_time == '两个月':
-            self.driver.click_element(
-                "x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/div/ul/li[3]")
+            self.driver.click_element("x,/html/body/div[1]/div/div/div/div[3]/span/div/div/ul/li[3]")
         elif account_expired_time == '三个月':
-            self.driver.click_element(
-                "x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/div/ul/li[4]")
+            self.driver.click_element("x,/html/body/div[1]/div/div/div/div[3]/span/div/div/ul/li[4]")
         elif account_expired_time == '半年':
-            self.driver.click_element(
-                "x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/div/ul/li[5]")
+            self.driver.click_element("x,/html/body/div[1]/div/div/div/div[3]/span/div/div/ul/li[5]")
         elif account_expired_time == '一年':
-            self.driver.click_element(
-                "x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/div/ul/li[6]")
+            self.driver.click_element("x,/html/body/div[1]/div/div/div/div[3]/span/div/div/ul/li[6]")
         elif account_expired_time == '不限制':
-            self.driver.click_element(
-                "x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/div/ul/li[7]")
+            self.driver.click_element("x,/html/body/div[1]/div/div/div/div[3]/span/div/div/ul/li[7]")
 
     # 快捷销售-销售按钮
     def sale_button(self):
@@ -362,7 +353,7 @@ class AccountCenterDetailsPage(BasePageServer):
         #self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
         #self.driver.default_frame()
         sleep(2)
-
+        self.switch_to_add_account_in_new_center()
         # 选择客户类型
         if acc_type == '销售':
             self.driver.click_element("x,//*[@id='addRole_userForm']/div[2]/div/div/label[1]")
@@ -401,30 +392,33 @@ class AccountCenterDetailsPage(BasePageServer):
         self.click_add()
         sleep(2)
         #取消
-        self.driver.click_element("x,/html/body/div[1]/div[8]/div[3]/a[2]")
+        self.driver.click_element("c,layui-layer-ico")
         sleep(2)
         self.click_add()
         sleep(2)
-        self.driver.click_element("x,/html/body/div[1]/div[8]/span[1]/a")
+        self.driver.click_element("c,layui-layer-ico")
         sleep(2)
 
     #点击添加按钮
     def click_add(self):
-        self.driver.switch_to_frame('x,//*[@id="usercenterFrame"]')
-        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
+        self.driver.switch_to_frame('x,//*[@id="fastSellFrame"]')
+        self.driver.click_element("x,/html/body/div[1]/div/div/div/div[1]/div[1]/div[2]/button")
         self.driver.default_frame()
 
     # 添加账号--搜索用户
     def add_account_search_user(self, user):
         # 将滚动条滚动至搜索输入框处
-        ele = self.driver.get_element("ac_addRole_globalSearch_SalesName")
-        self.driver.execute_script(ele)
+        self.switch_to_add_account_in_new_center()
         # 输入账号搜索
-        self.driver.operate_input_element("ac_addRole_globalSearch_SalesName", user)
-        self.driver.click_element("ac_addRole_globalSearch_btn")
+        self.driver.operate_input_element('x,//*[@id="treeDemo2_cusTreeKey"]', user)
+        self.driver.click_element('x,//*[@id="treeDemo2_cusTreeSearchBtn"]')
         sleep(3)
         self.driver.click_element("c,autocompleter")
         sleep(2)
+        self.driver.default_frame()
+
+    def switch_to_add_account_in_new_center(self):
+        self.driver.switch_to_frame('x,/html/body/div[9]/div[2]/iframe')
 
 
 
@@ -630,7 +624,7 @@ class AccountCenterDetailsPage(BasePageServer):
 
     # 快捷销售--点击添加按钮
     def click_add_button(self):
-        self.driver.click_element("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div[2]/button")
+        self.driver.click_element('x,/html/body/div[1]/div/div/div/div[1]/div[1]/div[2]/button')
         self.driver.wait(1)
 
     # 快捷销售-新增客户--异常提示
@@ -935,7 +929,7 @@ class AccountCenterDetailsPage(BasePageServer):
 
     #销售销售--获取用户到期文本
     def get_account_expired_time_text(self):
-        text = self.driver.get_text("x,/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]/span/div/span[2]")
+        text = self.driver.get_text("x,/html/body/div[1]/div/div/div/div[3]/span/div/span[2]")
         return text
 
 
@@ -943,6 +937,7 @@ class AccountCenterDetailsPage(BasePageServer):
     def get_fast_sale_acc_user_type_list(self):
 
         #type_list_len = len(self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div"))
+        self.switch_to_add_account_in_new_center()
         type_list_len = len(self.driver.get_elements("x,//*[@id='addRole_userForm']/div[2]/div/div/label"))
         print(type_list_len)
         display_type_list = []
@@ -959,8 +954,8 @@ class AccountCenterDetailsPage(BasePageServer):
                 display_type_list.append(i)
         display_type_len = len(display_type_list)
         if display_type_len == 2:
-            distributor = self.driver.get_text("x,//*[@id='type8']")
-            user = self.driver.get_text("x,//*[@id='type9']")
+            distributor = self.driver.get_text("x,//*[@id='labelSale']")
+            user = self.driver.get_text("x,//*[@id='labelDistributor']")
             type_data = {
                 "distributor": distributor,
                 "user": user,
@@ -970,7 +965,7 @@ class AccountCenterDetailsPage(BasePageServer):
 
             return type_data
         elif display_type_len == 1:
-            user = self.driver.get_text("x,//*[@id='type9']")
+            user = self.driver.get_text("x,//*[@id='labelDistributor']")
             type_data = {"user": user,
                          "length": display_type_len,
 
@@ -980,9 +975,9 @@ class AccountCenterDetailsPage(BasePageServer):
             return type_data
 
         else :
-            sale = self.driver.get_text("x,//*[@id='type11']")
-            distributor = self.driver.get_text("x,//*[@id='type8']")
-            user = self.driver.get_text("x,//*[@id='type9']")
+            sale = self.driver.get_text('x,//*[@id="labelSale"]')
+            distributor = self.driver.get_text("x,//*[@id='labelDistributor']")
+            user = self.driver.get_text("x,//*[@id='labelUser1']")
 
             type_data = {"sale": sale,
                          "distributor": distributor,
@@ -991,5 +986,4 @@ class AccountCenterDetailsPage(BasePageServer):
 
                          }
             print("333", type_data)
-
             return type_data

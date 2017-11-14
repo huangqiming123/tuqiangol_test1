@@ -12,7 +12,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 # author:戴招利
 class TestCase29AccountCenterVisualAccountException(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.visual_account_page = AccountCenterVisualAccountPage(self.driver, self.base_url)

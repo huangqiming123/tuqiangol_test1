@@ -41,14 +41,14 @@ class TestCase06AccountCenterMsgSetRead(unittest.TestCase):
         self.account_center_page_msg_center.enter_msg_center()
         self.driver.wait(8)
         # 进入iframe
-        self.account_center_page_msg_center.message_center_iframe()
+        # self.account_center_page_msg_center.message_center_iframe()
         # 获取消息中心title
         msg_center_title = self.account_center_page_msg_center.get_msg_center_title()
 
         # 验证消息中心title是否正确显示
         self.assertIn(self.assert_text.account_center_page_message_center_text(), msg_center_title, "消息中心title有误!")
         # 退出iframe
-        self.driver.default_frame()
+        # self.driver.default_frame()
 
         # 获取左侧栏目-消息中心-x条未读
         unread_msg_num = int(self.account_center_page_msg_center.get_unread_msg_num())

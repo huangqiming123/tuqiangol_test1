@@ -15,7 +15,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 # author:戴招利
 class TestCase25AccountCenterDefaultHomePageSetting(unittest.TestCase):
     def setUp(self):
-        self.driver = AutomateDriverServer(choose='chrome')
+        self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
         self.base_page = BasePageServer(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
@@ -40,7 +40,6 @@ class TestCase25AccountCenterDefaultHomePageSetting(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         # 点击默认首页设置
         self.account_center_page_home_page_setting.click_home_page_setting()
-        self.account_center_page_home_page_setting.default_home_page_iframe()
         # 取列表数据
         all_state = self.account_center_page_home_page_setting.get_home_page_list_all_state()
         self.driver.default_frame()
@@ -54,7 +53,6 @@ class TestCase25AccountCenterDefaultHomePageSetting(unittest.TestCase):
             # 已默认
             is_default = self.assert_text2.account_center_home_page_setting_state()
 
-            self.account_center_page_home_page_setting.default_home_page_iframe()
             text = self.account_center_page_home_page_setting.get_default_setting_text(i + 1)
             if text["state"] == is_default:
                 self.driver.default_frame()
@@ -91,6 +89,6 @@ class TestCase25AccountCenterDefaultHomePageSetting(unittest.TestCase):
                 expect_url = self.account_center_page_home_page_setting.get_expect_url(setting_text["page_name"])
                 self.assertEqual(expect_url, actual_url, "登录后，默认主页显示错误")
                 sleep(2)
-
+            break
         sleep(2)
         # self.account_center_page_navi_bar.usr_logout()

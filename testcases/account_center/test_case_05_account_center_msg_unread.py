@@ -3,6 +3,7 @@ from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
+from pages.account_center.account_center_change_page import AccountCenterChangePage
 from pages.account_center.account_center_msg_center_page import AccountCenterMsgCenterPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.base.base_page_server import BasePageServer
@@ -22,6 +23,7 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
         self.account_center_page_msg_center = AccountCenterMsgCenterPage(self.driver, self.base_url)
         self.account_center_page_navi_bar = AccountCenterNaviBarPage(self.driver, self.base_url)
         self.log_in_base = LogInBaseServer(self.driver, self.base_url)
+        self.account_center_change_page = AccountCenterChangePage(self.driver, self.base_page)
         self.assert_text = AssertText()
         self.driver.set_window_max()
         self.driver.wait(1)
@@ -39,14 +41,14 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
         self.account_center_page_msg_center.enter_msg_center()
         self.driver.wait(7)
         # 进入iframe
-        self.account_center_page_msg_center.message_center_iframe()
+        # self.account_center_page_msg_center.message_center_iframe()
 
         # 获取消息中心title
         msg_center_title = self.account_center_page_msg_center.get_msg_center_title()
         # 验证消息中心title是否正确显示
         self.assertIn(self.assert_text.account_center_page_message_center_text(), msg_center_title, "消息中心title有误!")
         #退出iframe
-        self.driver.default_frame()
+        # self.driver.default_frame()
 
         # 获取左侧栏目-消息中心-x条未读
         unread_msg_num = int(self.account_center_page_msg_center.get_unread_msg_num())
@@ -59,7 +61,7 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
             count_unread_msg_num = self.account_center_page_msg_center.get_total_unread_logs_num()
             # 判断消息中心左侧栏目的未读消息与搜索结果的未读消息数量是否一致
             self.assertEqual(unread_msg_num, count_unread_msg_num, "消息中心左侧栏目的未读消息与搜索结果的未读消息数量不一致")
-            self.driver.default_frame()
+            # self.driver.default_frame()
             # 退出登录
             # self.account_center_page_navi_bar.usr_logout()
         else:

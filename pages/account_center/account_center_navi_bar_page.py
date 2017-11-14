@@ -80,7 +80,7 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏退出系统
     def usr_logout(self):
         # 点击退出系统
-        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a'))
+        self.driver.float_element(self.driver.get_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[2]/a'))
         sleep(2)
         self.driver.click_element('p,退出系统')
         self.driver.wait()
@@ -150,7 +150,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 招呼栏修改资料
     def modify_usr_info(self, user_name, phone, email):
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        self.driver.click_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[2]/a')
         sleep(1)
         # 点击招呼栏的修改资料
 
@@ -173,7 +173,7 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏修改密码
     def modify_user_passwd(self, old_passwd, new_passwd):
         # 点击招呼栏的修改密码
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        self.driver.click_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[2]/a')
         sleep(1)
         self.driver.click_element('p,修改密码')
         self.driver.wait(1)
@@ -192,7 +192,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 密码修改成功状态框点击确定
     def modify_passwd_success_comfrim(self):
-        self.driver.click_element("x,/html/body/div[7]/div[3]/a")
+        self.driver.click_element("x,/html/body/div[9]/div[3]/a")
         self.driver.wait()
 
     # 招呼栏业务日志
@@ -422,7 +422,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.wait()
 
     def click_modify_usr_info(self):
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        self.driver.click_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[2]/a')
         sleep(3)
         # 点击招呼栏的修改资料
         self.driver.click_element("p,修改资料")
@@ -510,7 +510,7 @@ class AccountCenterNaviBarPage(BasePageServer):
         # 点击招呼栏的修改密码
 
     def click_modify_usr_password(self):
-        self.driver.click_element('x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a')
+        self.driver.click_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[2]/a')
         sleep(2)
         # 点击招呼栏的修改密码
         self.driver.click_element("p,修改密码")

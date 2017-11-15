@@ -68,6 +68,8 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
 
             # 退出登录
             sleep(2)
+            self.log_in_base.click_account_center_button()
+            sleep(2)
             self.account_center_page_navi_bar.usr_logout()
             # 登录（刚添加的下级账号：yonghuzh012,888888）
             self.log_in_base.log_in_with_csv(data[1], data[6])
@@ -125,9 +127,12 @@ class TestCase36AccountCenterEditDefaultPassword(unittest.TestCase):
             self.assertIn(self.assert_text.account_center_page_operation_done(), del_status, "操作失败")
             # 成功退出系统
             sleep(2)
+            self.log_in_base.click_account_center_button()
+            sleep(2)
             self.account_center_page_navi_bar.usr_logout()
 
             # 验证账号是否删除
             self.log_in_base.log_in_with_csv(data[1], data[7])
             sleep(2)
             self.assertEqual(self.assert_text.log_in_page_account_not_exist(), self.login_page.get_exception_text())
+            break

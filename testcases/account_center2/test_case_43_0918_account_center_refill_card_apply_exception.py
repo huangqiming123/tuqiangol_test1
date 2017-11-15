@@ -50,6 +50,7 @@ class TestCase430918AccountCenterRefillCardApplyException(unittest.TestCase):
         self.driver.wait(1)
         self.account_center_page_navi_bar.click_account_center_button()
         # 进入充值卡页面
+        self.account_center_page_navi_bar.switch_to_chongzhi_card()
         self.account_center_page_refill_card.click_refill_card()
         # 点申请充值卡
         self.account_center_page_refill_card.click_apply_refill_card_button()

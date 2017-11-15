@@ -45,6 +45,11 @@ class TestCase410918AccountCenterRefillCardAddApply(unittest.TestCase):
         self.driver.wait(1)
         self.account_center_page_navi_bar.click_account_center_button()
 
+        # 进入充值卡页面
+        self.account_center_page_navi_bar.switch_to_chongzhi_card()
+        self.account_center_page_refill_card.click_refill_card()
+
+
         csv_file = self.account_center_page_read_csv.read_csv('apply_refill_card.csv')
         csv_data = csv.reader(csv_file)
         for row in csv_data:
@@ -56,9 +61,6 @@ class TestCase410918AccountCenterRefillCardAddApply(unittest.TestCase):
                 "payment_account": row[4]
 
             }
-            # 进入充值卡页面
-            self.account_center_page_refill_card.click_refill_card()
-
             #验证页面顶部我的账号
             my_account = self.account_center_page_refill_card.get_title_display_account()
             #取消

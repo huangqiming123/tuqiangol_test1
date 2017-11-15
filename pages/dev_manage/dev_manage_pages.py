@@ -1285,7 +1285,7 @@ class DevManagePages(BasePage):
         return b
 
     def switch_to_dev_edit_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[33]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[34]/div[2]/iframe')
 
     def get_imei_in_detail(self):
         self.switch_to_dev_edit_frame()

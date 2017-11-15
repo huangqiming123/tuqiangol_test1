@@ -606,10 +606,10 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
                 self.driver.click_element("x,/html/body/div[8]/div[3]/a")
                 return prompt
             except:
-                prompt = self.driver.get_text("x,/html/body/div[7]/div[2]")
+                prompt = self.driver.get_text("x,/html/body/div[9]/div[2]")
                 print(prompt)
                 self.driver.wait()
-                self.driver.click_element("x,/html/body/div[7]/div[3]/a")
+                self.driver.click_element("x,/html/body/div[9]/div[3]/a")
                 return prompt
 
 

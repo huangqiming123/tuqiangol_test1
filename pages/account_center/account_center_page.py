@@ -222,7 +222,7 @@ class AccountCenterPage(BasePageServer):
         sleep(5)
 
     def clcik_bill_button_in_account_info_page(self):
-        self.driver.click_element('x,//*[@id="vsBill"]/a')
+        self.driver.click_element('x,//*[@id="billmanagerBtn"]')
         sleep(2)
 
     def get_sql_number_after_click_search_button(self, account, search_data):
@@ -354,7 +354,7 @@ class AccountCenterPage(BasePageServer):
             return 0
 
     def clcik_order_manage_button_in_account_info_page(self):
-        self.driver.click_element('x,//*[@id="ordermanager"]/a')
+        self.driver.click_element('x,//*[@id="ordermanagerBtn"]')
         sleep(2)
 
     def switch_to_order_manage_frame(self):

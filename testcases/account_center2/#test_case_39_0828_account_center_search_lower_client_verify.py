@@ -2,6 +2,7 @@ import csv
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
+from pages.account_center.account_center_change_page import AccountCenterChangePage
 from pages.account_center.account_center_details_page import AccountCenterDetailsPage
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
@@ -25,6 +26,7 @@ class TestCase37AccountCenterSearchLowerClientVerify(unittest.TestCase):
         self.driver.set_window_max()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
+        self.account_center_change_page = AccountCenterChangePage(self.driver, self.base_page)
         self.driver.wait(1)
         self.driver.clear_cookies()
         self.driver.wait(1)
@@ -41,7 +43,8 @@ class TestCase37AccountCenterSearchLowerClientVerify(unittest.TestCase):
         self.log_in_base.log_in()
         self.driver.wait(1)
         self.account_center_page_navi_bar.click_account_center_button()
-        self.account_center_page_details.account_center_iframe()
+        self.account_center_change_page.switch_fast_sale_enable()
+        self.account_center_change_page.switch_to_fast_sale_frame()
 
         csv_file = self.account_center_page_read_csv.read_csv('search_different_account.csv')
         csv_data = csv.reader(csv_file)
@@ -50,8 +53,6 @@ class TestCase37AccountCenterSearchLowerClientVerify(unittest.TestCase):
                 "account": row[0]
 
             }
-            # 进入快捷销售页面
-            self.account_center_page_details.fast_sales()
 
             # 查找账户
             search_result = self.account_center_page_details.subordinate_account_search(search_account["account"])

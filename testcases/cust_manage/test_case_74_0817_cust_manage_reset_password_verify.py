@@ -51,6 +51,8 @@ class TestCase7408171CustManagelResetPasswordVerify(unittest.TestCase):
         self.cust_manage_lower_account_page.click_reset_passwd_dismiss()
 
         # 取消重置密码后的验证
+        self.log_in_base.click_account_center_button()
+        sleep(2)
         self.account_center_page_navi_bar.usr_logout()
         self.log_in_base.log_in_with_csv(account[0], "jimi123")
         hello_usr = self.account_center_page_navi_bar.hello_user_account()
@@ -82,6 +84,8 @@ class TestCase7408171CustManagelResetPasswordVerify(unittest.TestCase):
         self.assertIn(self.assert_text.account_center_page_operation_done(), reset_status, "操作失败")
         # 退出登录
         sleep(1)
+        self.log_in_base.click_account_center_button()
+        sleep(2)
         self.account_center_page_navi_bar.usr_logout()
 
         # 修改用户的默认密码

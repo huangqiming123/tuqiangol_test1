@@ -679,7 +679,7 @@ class GlobalDevSearchPage(BasePage):
         self.driver.click_element('c,layui-layer-ico')
 
     def swith_to_search_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[9]/div[2]/iframe')
 
     def click_dev_search(self):
         self.swith_to_search_frame()

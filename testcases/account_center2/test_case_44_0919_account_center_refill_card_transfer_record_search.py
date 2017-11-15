@@ -52,6 +52,7 @@ class TestCase440919AccountCenterRefillCardTransferRecordSearch(unittest.TestCas
         self.driver.wait(1)
         self.account_center_page_navi_bar.click_account_center_button()
         # 进入充值卡页面
+        self.account_center_page_navi_bar.switch_to_chongzhi_card()
         self.account_center_page_refill_card.click_refill_card()
 
         # 验证页面顶部我的账号
@@ -63,8 +64,6 @@ class TestCase440919AccountCenterRefillCardTransferRecordSearch(unittest.TestCas
                 "transfer_state": row[1],
 
             }
-
-            self.account_center_page_refill_card.refill_card_page_iframe()
             #点击转移记录
             self.account_center_page_refill_card.click_transfer_record()
             #搜索
@@ -93,10 +92,8 @@ class TestCase440919AccountCenterRefillCardTransferRecordSearch(unittest.TestCas
             print('本次查询数据库的条数为：%s' % total)
 
             self.assertEqual(total, page_number, "转移记录中，平台与sql搜索出来的数据条数不一致")
-            self.driver.default_frame()
 
         print("后面那一部分")
-        self.account_center_page_refill_card.refill_card_page_iframe()
         #点击转移记录
         self.account_center_page_refill_card.click_transfer_record()
         # 获取设备有多少个分页
@@ -126,8 +123,6 @@ class TestCase440919AccountCenterRefillCardTransferRecordSearch(unittest.TestCas
                 print(page_number)
                 self.assertEqual(int(total_page[1] / m) + 1, page_number)
 
-
-        self.driver.default_frame()
         csv_file.close()
         # 退出登录
         #self.account_center_page_navi_bar.usr_logout()

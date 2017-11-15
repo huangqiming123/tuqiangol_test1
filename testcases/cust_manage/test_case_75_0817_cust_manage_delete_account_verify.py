@@ -81,10 +81,14 @@ class TestCase7508171CustManagelDeleteAccountVerify(unittest.TestCase):
         #取消删除后的验证
         self.cust_manage_lower_account_page.delete_acc_x()
         #退出
+        self.log_in_base.click_account_center_button()
+        sleep(2)
         self.account_center_page_navi_bar.usr_logout()
         self.log_in_base.log_in_with_csv(account[0], "jimi123")
         self.driver.wait(1)
         hello_usr = self.account_center_page_navi_bar.hello_user_account()
         self.assertIn(account[0], hello_usr, "登录成功后招呼栏账户名显示错误")
         sleep(1)
+        self.log_in_base.click_account_center_button()
+        sleep(2)
         self.account_center_page_navi_bar.usr_logout()

@@ -15,7 +15,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 招呼栏用户名
     def hello_user_account(self):
-        hello_usr = self.driver.get_element("x,/html/body/div[1]/header/div/div[2]/div/div[1]/span/b").text
+        hello_usr = self.driver.get_element("c,user-name").text
         return hello_usr
 
     # 账户总览左下方用户信息
@@ -26,7 +26,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # --账号
     def usr_info_account(self):
-        usr_account = self.driver.get_element("userAccount").text
+        usr_account = self.driver.get_element("c,user-name").text
         return usr_account
 
     # --客户类型
@@ -94,7 +94,7 @@ class AccountCenterNaviBarPage(BasePageServer):
     # app用户退出
     def app_usr_logout(self):
         # 点击退出系统
-        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div/div[2]/span/a'))
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div/div[2]/span[2]/a'))
         sleep(2)
         self.driver.click_element('p,退出系统')
         self.driver.wait()
@@ -137,7 +137,7 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏退出系统-取消
     def usr_logout_dismiss(self):
         # 点击退出系统
-        self.driver.click_element("x,/html/body/div[1]/header/div/div[2]/div[2]/div[2]/span/a")
+        self.driver.click_element("x,/html/body/header/div/div[2]/div[2]/div[2]/span[2]/a")
         sleep(2)
         self.driver.click_element('p,退出系统')
         self.driver.wait()
@@ -410,7 +410,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     def usr_log_out(self):
         # 点击退出系统
-        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div/div[2]/span/a'))
+        self.driver.float_element(self.driver.get_element('x,/html/body/div[1]/header/div/div[2]/div/div[2]/span[2]/a'))
         sleep(2)
         self.driver.click_element('p,退出系统')
         self.driver.wait()
@@ -564,3 +564,7 @@ class AccountCenterNaviBarPage(BasePageServer):
             module.append(text)
         print(module)
         return module
+
+    def switch_to_chongzhi_card(self):
+        self.driver.execute_script(self.driver.get_element('x,/html/body/div[6]/div[2]/div[3]/div/div[1]/b'))
+        sleep(2)

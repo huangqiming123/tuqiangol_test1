@@ -1,5 +1,7 @@
 import csv
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_navi_bar_page import AccountCenterNaviBarPage
@@ -98,6 +100,7 @@ class TestCase117LoginSuccessWithOrdinaryUser(unittest.TestCase):
             self.assertIn(expect_service_provider_phone, service_provider_phone, "电话显示错误")
 
             # 成功退出系统
+            sleep(2)
             self.account_center_page_navi_bar.usr_log_out()
 
             # 判断是否成功退出到登录页

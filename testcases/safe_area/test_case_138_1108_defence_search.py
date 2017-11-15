@@ -37,7 +37,7 @@ class TestCase138DefenceSearch(unittest.TestCase):
         sleep(5)
         self.safe_area_page.click_account_center()
         # 获取登录账号
-        account = self.safe_area_page.get_current_account_in_account_center()
+        account = self.log_in_base.get_log_in_account()
         # 断言url
         self.safe_area_page.click_control_after_click_safe_area()
         expect_url = self.base_url + "/safearea/geozonemap?flag=0"

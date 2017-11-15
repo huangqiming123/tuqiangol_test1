@@ -50,6 +50,8 @@ class TestCase460918AccountCenterRefillCardTransfer(unittest.TestCase):
         # self.log_in_base.log_in_with_csv("kankan111", "jimi123")
         self.driver.wait(1)
         self.account_center_page_navi_bar.click_account_center_button()
+        self.account_center_page_navi_bar.switch_to_chongzhi_card()
+        self.account_center_page_refill_card.click_refill_card()
 
         csv_file = self.account_center_page_read_csv.read_csv('transfer_refill_card.csv')
         csv_data = csv.reader(csv_file)
@@ -59,12 +61,7 @@ class TestCase460918AccountCenterRefillCardTransfer(unittest.TestCase):
                 "year_number": row[1],
                 "lifetime_number": row[2],
                 "username": row[3]
-
-
             }
-            # 进入充值卡页面
-            self.account_center_page_refill_card.click_refill_card()
-            sleep(2)
             #获取头部数量
             top_quantity = self.account_center_page_refill_card.get_refill_card_page_top_quantity()
 

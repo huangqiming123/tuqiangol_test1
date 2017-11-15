@@ -47,10 +47,8 @@ class TestCase50AccountCenterOrderManage(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         account = self.log_in_base.get_log_in_account()
         # 点击订单管理
+        self.account_center_page_navi_bar.switch_to_chongzhi_card()
         self.account_center_page.clcik_order_manage_button_in_account_info_page()
-
-        ## 进入账号详情的frame
-        self.account_center_page.switch_to_order_manage_frame()
 
         csv_file = self.account_center_page_read_csv.read_csv('order_manage.csv')
         csv_data = csv.reader(csv_file)
@@ -79,4 +77,3 @@ class TestCase50AccountCenterOrderManage(unittest.TestCase):
             web_number = self.account_center_page.get_web_number_after_click_order_manage_search_button()
             self.assertEqual(sql_number, web_number)
         csv_file.close()
-        self.driver.default_frame()

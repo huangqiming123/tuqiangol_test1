@@ -2,64 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/account_center/account_center_change_page.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_10_account_center_overview_stock.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_04_account_center_fast_sale_add_cust.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_10_account_center_overview_stock.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_31_account_center_overview_exception.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_34_account_center_jump_page_account_data_verify.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_35_account_center_left_cycle_click_module.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_37_account_center_search_different_account_verify.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_38_0821_account_center_page_memorization_default_option.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_47_0919_account_center_refill_card_transfer_exception.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/login/test_case_123_login_success_with_virtual_user.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testcases/login/test_case_127_login_forget_password_exception.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eee.py" afterPath="$PROJECT_DIR$/eee.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_run.py" afterPath="$PROJECT_DIR$/main_run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/base/lon_in_base.py" afterPath="$PROJECT_DIR$/pages/base/lon_in_base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/base/lon_in_base_server.py" afterPath="$PROJECT_DIR$/pages/base/lon_in_base_server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/command_management/command_management_page.py" afterPath="$PROJECT_DIR$/pages/command_management/command_management_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_05_account_center_msg_unread.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_05_account_center_msg_unread.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_06_account_center_msg_set_read.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_06_account_center_msg_set_read.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_07_account_center_msg_search.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_07_account_center_msg_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_08_account_center_visual_account.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_08_account_center_visual_account.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_09_account_center_visu_edit_and_del.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_09_account_center_visu_edit_and_del.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_26_account_center_default_home_page_no_setting.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_26_account_center_default_home_page_no_setting.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_29_account_center_visual_account_exception.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_29_account_center_visual_account_exception.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_30_account_center_visual_edit_exception.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_30_account_center_visual_edit_exception.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_log/test_case_37_feedback_test.py" afterPath="$PROJECT_DIR$/testcases/account_log/test_case_37_feedback_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_log/test_case_39_account_center_oper_cust_log.py" afterPath="$PROJECT_DIR$/testcases/account_log/test_case_39_account_center_oper_cust_log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_log/test_case_40_account_center_oper_login_log.py" afterPath="$PROJECT_DIR$/testcases/account_log/test_case_40_account_center_oper_login_log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_43_work_type_template_management_creat_template.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_43_work_type_template_management_creat_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_44_work_type_template_management_operation.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_44_work_type_template_management_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_45_issued_work_type_task_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_45_issued_work_type_task_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_46_issued_work_type_task_management_operation.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_46_issued_work_type_task_management_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_47_issued_work_type_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_47_issued_work_type_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_48_issued_work_type_management_operation.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_48_issued_work_type_management_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_49_issued_command_task_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_49_issued_command_task_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_50_issued_command_task_management_operation.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_50_issued_command_task_management_operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_51_issued_command_management_search.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_51_issued_command_management_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_52_command_manage_create_template.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_52_command_manage_create_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_53_command_manage_create_template_week_patterns.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_53_command_manage_create_template_week_patterns.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_54_command_manage_create_template_normal_mode.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_54_command_manage_create_template_normal_mode.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_55_command_manage_create_template_modify_template.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_55_command_manage_create_template_modify_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py" afterPath="$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_11_account_center_overview_total.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_11_account_center_overview_total.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_12_account_center_overview_control.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_12_account_center_overview_control.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_13_account_center_overview_form.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_13_account_center_overview_form.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_14_account_center_overview_alarm.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_14_account_center_overview_alarm.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_15_account_center_overview_next_guest.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_15_account_center_overview_next_guest.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_16_account_center_overview_equipment_manager.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_16_account_center_overview_equipment_manager.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_17_account_center_overview_command.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_17_account_center_overview_command.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_18_account_center_overview_set_up_landmark.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_18_account_center_overview_set_up_landmark.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_19_account_center_overview_alarms.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_19_account_center_overview_alarms.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_20_account_center_overview_coming_overtime.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_20_account_center_overview_coming_overtime.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_21_account_center_overtime.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_21_account_center_overtime.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_22_account_center_overview_actived.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_22_account_center_overview_actived.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_23_account_center_overview_inactive.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_23_account_center_overview_inactive.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_24_account_center_overview_attention.py" afterPath="$PROJECT_DIR$/testcases/account_center/#test_case_24_account_center_overview_attention.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_refill_card_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_refill_card_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" afterPath="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/dev_manage/dev_manage_pages.py" afterPath="$PROJECT_DIR$/pages/dev_manage/dev_manage_pages.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/global_search/global_dev_search_page.py" afterPath="$PROJECT_DIR$/pages/global_search/global_dev_search_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login/login_page.py" afterPath="$PROJECT_DIR$/pages/login/login_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_33_account_center_add_visual_account_exception.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_33_account_center_add_visual_account_exception.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_36_account_center_edit_default_password.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_36_account_center_edit_default_password.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_41_0918_account_center_refill_card_add_apply.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_41_0918_account_center_refill_card_add_apply.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_42_0918_account_center_refill_card_apply_record_search.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_42_0918_account_center_refill_card_apply_record_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_43_0918_account_center_refill_card_apply_exception.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_43_0918_account_center_refill_card_apply_exception.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_44_0919_account_center_refill_card_transfer_record_search.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_44_0919_account_center_refill_card_transfer_record_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_45_0919_account_center_refill_card_refill_record_search.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_45_0919_account_center_refill_card_refill_record_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_46_0919_account_center_refill_card_transfer.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_46_0919_account_center_refill_card_transfer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_49_1031_account_center_bill_list.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_49_1031_account_center_bill_list.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_50_1101_account_center_order_manage.py" afterPath="$PROJECT_DIR$/testcases/account_center2/test_case_50_1101_account_center_order_manage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_71_0814_cust_manage_add_account_web_limit.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_71_0814_cust_manage_add_account_web_limit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_72_0815_cust_manage_add_user_command_limit.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_72_0815_cust_manage_add_user_command_limit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_73_0816_cust_manage_edit_user_command_limit.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_73_0816_cust_manage_edit_user_command_limit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_74_0817_cust_manage_reset_password_verify.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_74_0817_cust_manage_reset_password_verify.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/cust_manage/test_case_75_0817_cust_manage_delete_account_verify.py" afterPath="$PROJECT_DIR$/testcases/cust_manage/test_case_75_0817_cust_manage_delete_account_verify.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/login/test_case_116_login_success_with_sales_and_agent.py" afterPath="$PROJECT_DIR$/testcases/login/test_case_116_login_success_with_sales_and_agent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/login/test_case_117_login_success_with_ordinary_user.py" afterPath="$PROJECT_DIR$/testcases/login/test_case_117_login_success_with_ordinary_user.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/login/test_case_118_login_with_logout_dismiss.py" afterPath="$PROJECT_DIR$/testcases/login/test_case_118_login_with_logout_dismiss.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_138_1108_defence_search.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_138_1108_defence_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/safe_area/test_case_139_1108_risk_point_share.py" afterPath="$PROJECT_DIR$/testcases/safe_area/test_case_139_1108_risk_point_share.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_39_0828_account_center_search_lower_client_verify.py" afterPath="$PROJECT_DIR$/testcases/account_center2/#test_case_39_0828_account_center_search_lower_client_verify.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_40_0830_account_center_fast_sale_edit_add_facility.py" afterPath="$PROJECT_DIR$/testcases/account_center2/#test_case_40_0830_account_center_fast_sale_edit_add_facility.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/account_center2/test_case_51_1103_account_center_manage_and_telephone_alarm.py" afterPath="$PROJECT_DIR$/testcases/account_center2/#test_case_51_1103_account_center_manage_and_telephone_alarm.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,20 +61,7 @@
     <favorites_list name="tuqiangOL" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_56_command_manage_abnormal_state_send_command.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6289753">
-              <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -115,39 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/statistical_form/test_case_147_sport_statistical_acc_form.py" />
-        <option value="$PROJECT_DIR$/data/safe_area/search_defence.csv.py" />
-        <option value="$PROJECT_DIR$/data/safe_area/search_defence.csv" />
-        <option value="$PROJECT_DIR$/testcases/safe_area/test_case_138_1108_defence_search.py" />
-        <option value="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" />
-        <option value="$PROJECT_DIR$/data/safe_area/risk_point_share.csv" />
-        <option value="$PROJECT_DIR$/testcases/safe_area/test_case_139_1108_risk_point_share.py" />
-        <option value="$PROJECT_DIR$/testcases/statistical_form/# test_case_143_sport_statistical_tracel_report_form.py" />
-        <option value="$PROJECT_DIR$/testcases/global_search/test_case_128_0817_dev_advanced_search_with_delete_user.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_04_account_center_fast_sale_add_cust.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_05_account_center_msg_unread.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_06_account_center_msg_set_read.py" />
-        <option value="$PROJECT_DIR$/pages/base/lon_in_base_server.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_07_account_center_msg_search.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_08_account_center_visual_account.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_09_account_center_visu_edit_and_del.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_10_account_center_overview_stock.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_26_account_center_default_home_page_no_setting.py" />
-        <option value="$PROJECT_DIR$/eee.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_29_account_center_visual_account_exception.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_30_account_center_visual_edit_exception.py" />
-        <option value="$PROJECT_DIR$/main_run.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_change_page.py" />
-        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_31_account_center_overview_exception.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py" />
-        <option value="$PROJECT_DIR$/testcases/account_log/test_case_37_feedback_test.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py" />
         <option value="$PROJECT_DIR$/testcases/account_log/test_case_39_account_center_oper_cust_log.py" />
         <option value="$PROJECT_DIR$/testcases/account_log/test_case_40_account_center_oper_login_log.py" />
         <option value="$PROJECT_DIR$/testcases/command_management/test_case_43_work_type_template_management_creat_template.py" />
@@ -166,6 +102,39 @@
         <option value="$PROJECT_DIR$/testcases/command_management/test_case_47_issued_work_type_management_search.py" />
         <option value="$PROJECT_DIR$/testcases/command_management/test_case_49_issued_command_task_management_search.py" />
         <option value="$PROJECT_DIR$/testcases/command_management/test_case_51_issued_command_management_search.py" />
+        <option value="$PROJECT_DIR$/testcases/cust_manage/test_case_71_0814_cust_manage_add_account_web_limit.py" />
+        <option value="$PROJECT_DIR$/testcases/cust_manage/test_case_72_0815_cust_manage_add_user_command_limit.py" />
+        <option value="$PROJECT_DIR$/testcases/cust_manage/test_case_73_0816_cust_manage_edit_user_command_limit.py" />
+        <option value="$PROJECT_DIR$/testcases/cust_manage/test_case_74_0817_cust_manage_reset_password_verify.py" />
+        <option value="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" />
+        <option value="$PROJECT_DIR$/testcases/cust_manage/test_case_75_0817_cust_manage_delete_account_verify.py" />
+        <option value="$PROJECT_DIR$/pages/dev_manage/dev_manage_pages.py" />
+        <option value="$PROJECT_DIR$/pages/global_search/global_dev_search_page.py" />
+        <option value="$PROJECT_DIR$/testcases/safe_area/test_case_138_1108_defence_search.py" />
+        <option value="$PROJECT_DIR$/testcases/safe_area/test_case_139_1108_risk_point_share.py" />
+        <option value="$PROJECT_DIR$/testcases/login/test_case_116_login_success_with_sales_and_agent.py" />
+        <option value="$PROJECT_DIR$/pages/login/login_page.py" />
+        <option value="$PROJECT_DIR$/testcases/login/test_case_117_login_success_with_ordinary_user.py" />
+        <option value="$PROJECT_DIR$/testcases/login/test_case_118_login_with_logout_dismiss.py" />
+        <option value="$PROJECT_DIR$/testcases/login/test_case_127_login_forget_password_exception.py" />
+        <option value="$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_33_account_center_add_visual_account_exception.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_34_account_center_jump_page_account_data_verify.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_35_account_center_left_cycle_click_module.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_36_account_center_edit_default_password.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_39_0828_account_center_search_lower_client_verify.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_41_0918_account_center_refill_card_add_apply.py" />
+        <option value="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_42_0918_account_center_refill_card_apply_record_search.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_43_0918_account_center_refill_card_apply_exception.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_44_0919_account_center_refill_card_transfer_record_search.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_45_0919_account_center_refill_card_refill_record_search.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_46_0919_account_center_refill_card_transfer.py" />
+        <option value="$PROJECT_DIR$/pages/account_center/account_center_refill_card_page.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_49_1031_account_center_bill_list.py" />
+        <option value="$PROJECT_DIR$/pages/account_center/account_center_page.py" />
+        <option value="$PROJECT_DIR$/testcases/account_center2/test_case_50_1101_account_center_order_manage.py" />
+        <option value="$PROJECT_DIR$/main_run.py" />
       </list>
     </option>
   </component>
@@ -244,24 +213,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testcases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="command_management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -276,11 +227,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -333,108 +280,20 @@
       <recent name="E:\git\tuqiangol_test\data\statistical_form" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase56CommandManagerAbnormalStateSendCommand.test_case_command_manage_abnormal_state_send_command">
-    <configuration default="false" name="Unittests in TestCase52CommandManageCreateTemplate" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.main_run">
+    <configuration default="false" name="Unittest TestCase440919AccountCenterRefillCardTransferRecordSearch.test_transfer_record_search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/command_management" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/account_center2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/command_management/test_case_52_command_manage_create_template.py" />
-      <option name="CLASS_NAME" value="TestCase52CommandManageCreateTemplate" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in TestCase53CommandManageCreateTemplateWeekPatterns" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/command_management" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/command_management/test_case_53_command_manage_create_template_week_patterns.py" />
-      <option name="CLASS_NAME" value="TestCase53CommandManageCreateTemplateWeekPatterns" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in TestCase54CommandManageCreateTemplateNormalMode" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/command_management" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/command_management/test_case_54_command_manage_create_template_normal_mode.py" />
-      <option name="CLASS_NAME" value="TestCase54CommandManageCreateTemplateNormalMode" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in TestCase55CommandManageCreateTemplateModifyTemplate" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/command_management" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/command_management/test_case_55_command_manage_create_template_modify_template.py" />
-      <option name="CLASS_NAME" value="TestCase55CommandManageCreateTemplateModifyTemplate" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase56CommandManagerAbnormalStateSendCommand.test_case_command_manage_abnormal_state_send_command" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/command_management" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py" />
-      <option name="CLASS_NAME" value="TestCase56CommandManagerAbnormalStateSendCommand" />
-      <option name="METHOD_NAME" value="test_case_command_manage_abnormal_state_send_command" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/account_center2/test_case_44_0919_account_center_refill_card_transfer_record_search.py" />
+      <option name="CLASS_NAME" value="TestCase440919AccountCenterRefillCardTransferRecordSearch" />
+      <option name="METHOD_NAME" value="test_transfer_record_search" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -442,6 +301,89 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase450919AccountCenterRefillCardRefillRecordSearch.test_refill_record_search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/account_center2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/account_center2/test_case_45_0919_account_center_refill_card_refill_record_search.py" />
+      <option name="CLASS_NAME" value="TestCase450919AccountCenterRefillCardRefillRecordSearch" />
+      <option name="METHOD_NAME" value="test_refill_record_search" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase460918AccountCenterRefillCardTransfer.test_transfer_refill_card_succeed" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/account_center2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/account_center2/test_case_46_0919_account_center_refill_card_transfer.py" />
+      <option name="CLASS_NAME" value="TestCase460918AccountCenterRefillCardTransfer" />
+      <option name="METHOD_NAME" value="test_transfer_refill_card_succeed" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase49AccountCenterBillList.test_case_account_center_bill_list" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/account_center2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/account_center2/test_case_49_1031_account_center_bill_list.py" />
+      <option name="CLASS_NAME" value="TestCase49AccountCenterBillList" />
+      <option name="METHOD_NAME" value="test_case_account_center_bill_list" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -585,19 +527,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase52CommandManageCreateTemplate" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase53CommandManageCreateTemplateWeekPatterns" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase54CommandManageCreateTemplateNormalMode" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase55CommandManageCreateTemplateModifyTemplate" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase56CommandManagerAbnormalStateSendCommand.test_case_command_manage_abnormal_state_send_command" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase440919AccountCenterRefillCardTransferRecordSearch.test_transfer_record_search" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase450919AccountCenterRefillCardRefillRecordSearch.test_refill_record_search" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase460918AccountCenterRefillCardTransfer.test_transfer_refill_card_succeed" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase49AccountCenterBillList.test_case_account_center_bill_list" />
+      <item index="5" class="java.lang.String" itemvalue="Python.main_run" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase56CommandManagerAbnormalStateSendCommand.test_case_command_manage_abnormal_state_send_command" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase55CommandManageCreateTemplateModifyTemplate" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase54CommandManageCreateTemplateNormalMode" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase53CommandManageCreateTemplateWeekPatterns" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase52CommandManageCreateTemplate" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main_run" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase49AccountCenterBillList.test_case_account_center_bill_list" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase460918AccountCenterRefillCardTransfer.test_transfer_refill_card_succeed" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase450919AccountCenterRefillCardRefillRecordSearch.test_refill_record_search" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase440919AccountCenterRefillCardTransferRecordSearch.test_transfer_record_search" />
       </list>
     </recent_temporary>
   </component>
@@ -611,12 +553,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00118" summary="修改代码">
-      <created>1504498925864</created>
-      <option name="number" value="00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1504498925864</updated>
     </task>
     <task id="LOCAL-00119" summary="修改代码">
       <created>1504498953644</created>
@@ -906,39 +842,45 @@
       <option name="project" value="LOCAL" />
       <updated>1510542199681</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="修改代码">
+      <created>1510629912622</created>
+      <option name="number" value="00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1510629912623</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase48IssuedWorkTypeManagementOperation_test_case_issued_work_type_management_operation - 2017.11.14 at 11h 05m 49s.xml">
-      <configuration name="Unittest TestCase48IssuedWorkTypeManagementOperation.test_case_issued_work_type_management_operation" configurationId="tests" />
+    <history-entry file="Unittest_TestCase410918AccountCenterRefillCardAddApply_test_apply_refill_card - 2017.11.14 at 17h 56m 50s.xml">
+      <configuration name="Unittest TestCase410918AccountCenterRefillCardAddApply.test_apply_refill_card" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase56CommandManagerAbnormalStateSendCommand_test_case_command_manage_abnormal_state_send_command - 2017.11.14 at 11h 24m 34s.xml">
-      <configuration name="Unittest TestCase56CommandManagerAbnormalStateSendCommand.test_case_command_manage_abnormal_state_send_command" configurationId="tests" />
+    <history-entry file="Unittest_TestCase410918AccountCenterRefillCardAddApply_test_apply_refill_card - 2017.11.14 at 18h 00m 26s.xml">
+      <configuration name="Unittest TestCase410918AccountCenterRefillCardAddApply.test_apply_refill_card" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase47IssuedWorkTypeManagementSearch - 2017.11.14 at 11h 04m 55s.xml">
-      <configuration name="Unittests in TestCase47IssuedWorkTypeManagementSearch" configurationId="tests" />
+    <history-entry file="Unittest_TestCase410918AccountCenterRefillCardAddApply_test_apply_refill_card - 2017.11.14 at 18h 02m 25s.xml">
+      <configuration name="Unittest TestCase410918AccountCenterRefillCardAddApply.test_apply_refill_card" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase49IssuedCommandTaskManagementSearch - 2017.11.14 at 11h 08m 47s.xml">
-      <configuration name="Unittests in TestCase49IssuedCommandTaskManagementSearch" configurationId="tests" />
+    <history-entry file="Unittest_TestCase420918AccountCenterRefillCardApplyRecordSearch_test_apply_record_search - 2017.11.14 at 18h 07m 32s.xml">
+      <configuration name="Unittest TestCase420918AccountCenterRefillCardApplyRecordSearch.test_apply_record_search" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase50IssuedCommandTaskManagementOperation - 2017.11.14 at 11h 09m 35s.xml">
-      <configuration name="Unittests in TestCase50IssuedCommandTaskManagementOperation" configurationId="tests" />
+    <history-entry file="Unittest_TestCase420918AccountCenterRefillCardApplyRecordSearch_test_apply_record_search - 2017.11.14 at 18h 10m 14s.xml">
+      <configuration name="Unittest TestCase420918AccountCenterRefillCardApplyRecordSearch.test_apply_record_search" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase51IssuedCommandManagementSearch - 2017.11.14 at 11h 16m 44s.xml">
-      <configuration name="Unittests in TestCase51IssuedCommandManagementSearch" configurationId="tests" />
+    <history-entry file="Unittest_TestCase430918AccountCenterRefillCardApplyException_test_apply_refill_card_exception_verify - 2017.11.14 at 18h 15m 15s.xml">
+      <configuration name="Unittest TestCase430918AccountCenterRefillCardApplyException.test_apply_refill_card_exception_verify" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase52CommandManageCreateTemplate - 2017.11.14 at 11h 18m 13s.xml">
-      <configuration name="Unittests in TestCase52CommandManageCreateTemplate" configurationId="tests" />
+    <history-entry file="Unittest_TestCase440919AccountCenterRefillCardTransferRecordSearch_test_transfer_record_search - 2017.11.14 at 18h 19m 33s.xml">
+      <configuration name="Unittest TestCase440919AccountCenterRefillCardTransferRecordSearch.test_transfer_record_search" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase53CommandManageCreateTemplateWeekPatterns - 2017.11.14 at 11h 21m 11s.xml">
-      <configuration name="Unittests in TestCase53CommandManageCreateTemplateWeekPatterns" configurationId="tests" />
+    <history-entry file="Unittest_TestCase450919AccountCenterRefillCardRefillRecordSearch_test_refill_record_search - 2017.11.14 at 18h 32m 12s.xml">
+      <configuration name="Unittest TestCase450919AccountCenterRefillCardRefillRecordSearch.test_refill_record_search" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase54CommandManageCreateTemplateNormalMode - 2017.11.14 at 11h 22m 26s.xml">
-      <configuration name="Unittests in TestCase54CommandManageCreateTemplateNormalMode" configurationId="tests" />
+    <history-entry file="Unittest_TestCase460918AccountCenterRefillCardTransfer_test_transfer_refill_card_succeed - 2017.11.14 at 18h 41m 40s.xml">
+      <configuration name="Unittest TestCase460918AccountCenterRefillCardTransfer.test_transfer_refill_card_succeed" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase55CommandManageCreateTemplateModifyTemplate - 2017.11.14 at 11h 23m 21s.xml">
-      <configuration name="Unittests in TestCase55CommandManageCreateTemplateModifyTemplate" configurationId="tests" />
+    <history-entry file="Unittest_TestCase49AccountCenterBillList_test_case_account_center_bill_list - 2017.11.14 at 18h 46m 40s.xml">
+      <configuration name="Unittest TestCase49AccountCenterBillList.test_case_account_center_bill_list" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -954,24 +896,24 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22497366" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1654373" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2943723" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38961038" sideWeight="0.5089568" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31709957" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29621622" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3560606" sideWeight="0.4910432" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118019" sideWeight="0.50512445" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27272728" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34199134" sideWeight="0.4910432" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26623377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24242425" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1024,455 +966,365 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/#test_case_24_account_center_overview_attention.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form2/test_case_171_moving_overview_statistical.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/assert_text2.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form2/test_case_172_1017_status_statistical.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29013538">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state vertical-scroll-proportion="-2.2123413">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_175_sport_statistical_mile_report_form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326886">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="0.2722323">
+          <caret line="101" column="38" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_176_sport_statistical_tracel_report_form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4904014">
-          <caret line="426" column="20" selection-start-line="426" selection-start-column="20" selection-end-line="426" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="-2.3411977">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_177_sport_statistical_speed_form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="0.49001816">
+          <caret line="102" column="59" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eee.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_178_sport_statistical_stay_form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10471204">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state vertical-scroll-proportion="-1.9056262">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_run.py">
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_180_sport_statistical_acc_form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46651787">
-          <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
-          <folding />
+        <state vertical-scroll-proportion="-4.5735025">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_181_alarm_overview_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59891105">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_182_alarm_detail_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4845736">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_183_0925_obd_mileage_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1034484">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_184_0925_obd_tracel_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1034484">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/statistical_form/sport_statistical_sport_overview_search_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32667875">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_174_sport_statistical_sport_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.504537">
+          <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/login/login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6188748">
+          <caret line="300" column="41" selection-start-line="300" selection-start-column="41" selection-end-line="300" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_116_login_success_with_sales_and_agent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27767694">
+          <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_01_account_center_modify_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36607143">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="0.67332125">
+          <caret line="81" column="48" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_02_account_center_modify_passwd.py">
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_117_login_success_with_ordinary_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43106458">
-          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
-          <folding />
+        <state vertical-scroll-proportion="0.40108892">
+          <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py">
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_118_login_with_logout_dismiss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31762654">
-          <caret line="62" column="69" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
-          <folding />
+        <state vertical-scroll-proportion="0.5099819">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_05_account_center_msg_unread.py">
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_119_login_with_remember_me.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6753927">
-          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
-          <folding />
+        <state vertical-scroll-proportion="0.67332125">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_06_account_center_msg_set_read.py">
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_120_login_forget_passwd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64746946">
-          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-          <folding />
+        <state vertical-scroll-proportion="0.6188748">
+          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_07_account_center_msg_search.py">
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_121_login_change_language.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2774869">
-          <caret line="125" column="24" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="0.49001816">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_08_account_center_visual_account.py">
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_122_login_enter_third_website.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42408377">
-          <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-2.4500906">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_09_account_center_visu_edit_and_del.py">
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_124_login_success_with_app_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6579407">
-          <caret line="58" column="91" selection-start-line="58" selection-start-column="91" selection-end-line="58" selection-end-column="91" />
-          <folding />
+        <state vertical-scroll-proportion="0.45553538">
+          <caret line="96" column="65" selection-start-line="96" selection-start-column="65" selection-end-line="96" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py">
+    <entry file="file://$PROJECT_DIR$/testcases/login/test_case_126_login_exception.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52879584">
-          <caret line="91" column="17" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_26_account_center_default_home_page_no_setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36649215">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_28_account_center_modify_password_exception.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36649215">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_29_account_center_visual_account_exception.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58115184">
-          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_details_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2425829">
-          <caret line="640" column="0" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_change_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68586385">
-          <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
-          <folding />
+        <state vertical-scroll-proportion="0.292196">
+          <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_msg_center_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8272251">
-          <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
-          <folding />
+        <state vertical-scroll-proportion="0.3321234">
+          <caret line="150" column="57" selection-start-line="150" selection-start-column="57" selection-end-line="150" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_32_account_center_msg_edit_exception.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62827224">
-          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.7132486">
+          <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_30_account_center_visual_edit_exception.py">
+    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_visual_account_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.460733">
-          <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.3321234">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_27_account_center_modify_info_exception.py">
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_33_account_center_add_visual_account_exception.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4659686">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="1.2722323">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_page_navi_bar2.py">
+    <entry file="file://$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20942408">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="0.4954628">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_log/test_case_38_account_center_oper_device_log.py">
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_36_account_center_edit_default_password.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0994765">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="4.5934663">
+          <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_log/test_case_37_feedback_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41884816">
-          <caret line="21" column="106" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="106" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_log/test_case_39_account_center_oper_cust_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5235602">
-          <caret line="23" column="106" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="106" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/help/help_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="245" column="8" selection-start-line="245" selection-start-column="8" selection-end-line="245" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_operation_log_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="333" column="8" selection-start-line="333" selection-start-column="8" selection-end-line="333" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43804538">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/account_log/test_case_40_account_center_oper_login_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85689354">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_43_work_type_template_management_creat_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5883392">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_44_work_type_template_management_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42402828">
-          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/base/base_page_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8621907">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/base/lon_in_base.py">
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/#test_case_40_0830_account_center_fast_sale_edit_add_facility.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center/test_case_03_account_center_fast_sale_reset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.103626944">
+          <caret line="29" column="94" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_details_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7137681">
+          <caret line="160" column="26" selection-start-line="160" selection-start-column="26" selection-end-line="160" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/#test_case_39_0828_account_center_search_lower_client_verify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="57" column="67" selection-start-line="57" selection-start-column="67" selection-end-line="57" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/assert_text2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53367877">
+          <caret line="567" column="8" selection-start-line="567" selection-start-column="8" selection-end-line="567" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_42_0918_account_center_refill_card_apply_record_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54058725">
+          <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_41_0918_account_center_refill_card_add_apply.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64421415">
+          <caret line="48" column="67" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_43_0918_account_center_refill_card_apply_exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4300518">
+          <caret line="53" column="64" selection-start-line="52" selection-start-column="8" selection-end-line="53" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_44_0919_account_center_refill_card_transfer_record_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7927461">
+          <caret line="55" column="64" selection-start-line="54" selection-start-column="8" selection-end-line="55" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_45_0919_account_center_refill_card_refill_record_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4818653">
+          <caret line="55" column="64" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_refill_card_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3851468">
+          <caret line="383" column="64" selection-start-line="383" selection-start-column="64" selection-end-line="383" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_46_0919_account_center_refill_card_transfer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6217617">
+          <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_48_1031_account_center_verify_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1865287">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/base/lon_in_base_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75795054">
-          <caret line="27" column="20" selection-start-line="20" selection-start-column="8" selection-end-line="27" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_45_issued_work_type_task_management_search.py">
+    <entry file="file://$PROJECT_DIR$/data/account_center/bill_list.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59717315">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3851468">
+          <caret line="356" column="63" selection-start-line="356" selection-start-column="63" selection-end-line="356" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_49_1031_account_center_bill_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4818653">
+          <caret line="49" column="67" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_50_1101_account_center_order_manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8445596">
+          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/account_center2/#test_case_51_1103_account_center_manage_and_telephone_alarm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03348214">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_46_issued_work_type_task_management_operation.py">
+    <entry file="file://$PROJECT_DIR$/main_run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42402828">
-          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.546875">
+          <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_47_issued_work_type_management_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3180212">
-          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_48_issued_work_type_management_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0600708">
-          <caret line="65" column="72" selection-start-line="65" selection-start-column="72" selection-end-line="65" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_49_issued_command_task_management_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2614841">
-          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_50_issued_command_task_management_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4187279">
-          <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_51_issued_command_management_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4187279">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/command_management/command_management_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33215547">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_52_command_manage_create_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46996465">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_53_command_manage_create_template_week_patterns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5265018">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_54_command_manage_create_template_normal_mode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31448764">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_55_command_manage_create_template_modify_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5229682">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/command_management/test_case_56_command_manage_abnormal_state_send_command.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6289753">
-          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

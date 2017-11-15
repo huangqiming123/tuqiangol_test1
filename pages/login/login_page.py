@@ -290,3 +290,13 @@ class LoginPage(BasePageServer):
             count = len(self.driver.get_elements("x,/html/body/footer/div[2]/a"))
             print("测试个数", count)
             return count
+
+    def switch_to_account_info_enable(self):
+        self.driver.execute_script(self.driver.get_element('x,/html/body/div[6]/div[2]/div[1]/div/div[1]/b'))
+        sleep(2)
+
+    def get_account_user_type(self):
+        return self.driver.get_text('x,//*[@id="topusertype"]')
+
+    def get_account_user_telephone(self):
+        return self.driver.get_text('x,//*[@id="topuserphone"]')

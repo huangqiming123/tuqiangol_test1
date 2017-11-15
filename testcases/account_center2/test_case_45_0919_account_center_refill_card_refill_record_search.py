@@ -52,6 +52,7 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
         self.driver.wait(1)
         self.account_center_page_navi_bar.click_account_center_button()
         # 进入充值卡页面
+        self.account_center_page_navi_bar.switch_to_chongzhi_card()
         self.account_center_page_refill_card.click_refill_card()
 
         # 验证页面顶部我的账号
@@ -64,8 +65,6 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
                 "device_imei": row[1]
 
             }
-
-            self.account_center_page_refill_card.refill_card_page_iframe()
             #点击充值记录
             self.account_center_page_refill_card.click_refill_record()
             #搜索
@@ -100,10 +99,6 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
 
             # 获取数据库条数
             self.assertEqual(total, page_number, "转移记录中，平台与sql搜索出来的数据条数不一致")
-            self.driver.default_frame()
-
-        #分页功能
-        self.account_center_page_refill_card.refill_card_page_iframe()
         #点击充值记录
         self.account_center_page_refill_card.click_refill_record()
         # 获取设备有多少个分页
@@ -130,9 +125,6 @@ class TestCase450919AccountCenterRefillCardRefillRecordSearch(unittest.TestCase)
                 page_number = self.account_center_page_refill_card.get_page_number_in_refill_record_search()
                 print(page_number)
                 self.assertEqual(int(total_page[1] / m) + 1, page_number)
-
-
-        self.driver.default_frame()
 
         csv_file.close()
         # 退出登录

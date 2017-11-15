@@ -1,3 +1,5 @@
+from time import sleep
+
 from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
@@ -144,9 +146,9 @@ class AccountCenterMsgCenterPage(BasePageServer):
     def get_message_edit_element_len(self):
         # 点击第一条的imei
         self.driver.click_element("x,//*[@id='msg_tbody']/tr[1]/td[4]/div/a")
-        self.driver.wait(3)
+        sleep(4)
         # 切换到iframe
-        self.driver.switch_to_iframe('x,/html/body/div[9]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,/html/body/div[11]/div[2]/iframe')
         # self.driver.switch_to_iframe('x,/html/body/div[7]/div[2]/iframe')
 
         # 基本信息

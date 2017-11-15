@@ -157,10 +157,10 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     sleep(30)
                     response = res.json()
                     res_data = response['data']
+                    print(res_data)
                     for data in res_data:
-                        del data['avgFuel'], data['startLat'], data['startLng'], data['endLat'], data['endLng'], data[
-                            'status'], data['lastLat'], data['lastLng'], data['fuel'], data['endAddr'], data[
-                            'startAddr']
+                        del data['endLat'], data['avgFuel'], data['startLat'], data['fuel'], data['endLng'], data[
+                            'startLng'], data['status']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     print(res_data)
@@ -208,9 +208,8 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     response = res.json()
                     res_data = response['data']
                     for data in res_data:
-                        del data['avgFuel'], data['startLat'], data['startLng'], data['endLat'], data['endLng'], data[
-                            'status'], data['lastLat'], data['lastLng'], data['fuel'], data['endAddr'], data[
-                            'startAddr']
+                        del data['endLat'], data['avgFuel'], data['startLat'], data['fuel'], data['endLng'], data[
+                            'startLng'], data['status']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     print(res_data)
@@ -289,11 +288,12 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     sleep(30)
                     response = res.json()
                     res_data = response['data']
+                    print(res_data)
                     for data in res_data:
-                        del data['avgFuel'], data['avgSpeed'], data['endLat'], data['endLng'], data[
-                            'endTime'], data['fuel'], data['lastLat'], data['lastLng'], data['runTimeSecond'], data[
-                            'startLat'], data['startLng'], data['startTime'], data['status'], data['startAddr'], data[
-                            'endAddr']
+                        del data['startTime'], data['runTimeSecond'], data['avgFuel'], data['startLng'], data['fuel'], \
+                        data[
+                            'endLat'], data['avgSpeed'], data['status'], data['endTime'], data[
+                            'startLat'], data['endLng']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     for data in res_data:
@@ -340,10 +340,10 @@ class TestCase176SportStatisticalTracelReportForm(unittest.TestCase):
                     response = res.json()
                     res_data = response['data']
                     for data in res_data:
-                        del data['avgFuel'], data['avgSpeed'], data['endLat'], data['endLng'], data[
-                            'endTime'], data['fuel'], data['lastLat'], data['lastLng'], data['runTimeSecond'], data[
-                            'startLat'], data['startLng'], data['startTime'], data['status'], data['startAddr'], data[
-                            'endAddr']
+                        del data['startTime'], data['runTimeSecond'], data['avgFuel'], data['startLng'], data['fuel'], \
+                        data[
+                            'endLat'], data['avgSpeed'], data['status'], data['endTime'], data[
+                            'startLat'], data['endLng']
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     for data in res_data:

@@ -135,7 +135,7 @@ class TestCase178SportStatisticalStayForm(unittest.TestCase):
                 response = res.json()
                 res_data = response['data']
                 for data in res_data:
-                    del data['acc'], data['durSecond'], data['addr']
+                    del data['acc'], data['durSecond']
                 print("接口数据", res_data)
                 self.assertEqual(web_data, res_data)
             else:
@@ -171,7 +171,7 @@ class TestCase178SportStatisticalStayForm(unittest.TestCase):
                 response = res.json()
                 res_data = response['data']
                 for data in res_data:
-                    del data['acc'], data['durSecond'], data['addr']
+                    del data['acc'], data['durSecond']
                 print("接口数据", res_data)
                 print(len(res_data))
                 self.assertEqual(web_data, res_data)

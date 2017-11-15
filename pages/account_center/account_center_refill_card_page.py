@@ -214,19 +214,19 @@ class AccountCenterRefillCardPage(BasePageServer):
 
     #点击转移记录
     def click_transfer_record(self):
-        self.driver.click_element("x,/html/body/div[6]/div/div[2]/ul/li[3]/a")
+        self.driver.click_element("x,/html/body/div[6]/div/div[2]/ul/li[2]/a")
         sleep(2)
 
     # 搜索转移记录数据(1:转入，-1转出，空全部)
     def search_transfer_record_data(self, state):
-        self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div/div/span[2]")
+        self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[2]/div[1]/div/div/span[2]")
         sleep(2)
         if state == "1":
-            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div/div/div/ul/li[2]")
+            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[2]/div[1]/div/div/div/ul/li[2]")
         if state == "-1":
-            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div/div/div/ul/li[3]")
+            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[2]/div[1]/div/div/div/ul/li[3]")
         if state == "":
-            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div/div/div/ul/li[1]")
+            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[2]/div[1]/div/div/div/ul/li[1]")
         sleep(2)
         #点击搜索按钮
         self.driver.click_element("queryTransferBtn")
@@ -245,20 +245,20 @@ class AccountCenterRefillCardPage(BasePageServer):
 
     #点击充值记录
     def click_refill_record(self):
-        self.driver.click_element("x,/html/body/div[6]/div/div[2]/ul/li[4]/a")
+        self.driver.click_element("x,/html/body/div[6]/div/div[2]/ul/li[3]/a")
         sleep(2)
 
     # 充值记录搜索(1:一年充值卡,2:终身充值卡,空：全部)
     def refill_record_search_data(self, type, device_imei):
-        self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[4]/div[1]/div[1]/div/span[2]")
+        self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div[1]/div/span[2]")
         sleep(2)
         if type == "1":
-            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[4]/div[1]/div[1]/div/div/ul/li[2]")
+            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div[1]/div/div/ul/li[2]")
         elif type == "2":
-            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[4]/div[1]/div[1]/div/div/ul/li[3]")
+            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div[1]/div/div/ul/li[3]")
 
         elif type == "":
-            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[4]/div[1]/div[1]/div/div/ul/li[1]")
+            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div[1]/div/div/ul/li[1]")
         sleep(2)
         #输入imei
         count = self.refill_record_search_imei(device_imei)
@@ -293,7 +293,7 @@ class AccountCenterRefillCardPage(BasePageServer):
                     }
 
             # 点击“添加”按钮
-            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[4]/div[1]/div[2]/div/div/div[2]/button[1]")
+            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div[2]/div/div/div[2]/button[1]")
             self.driver.wait()
             return data
         else:
@@ -310,7 +310,7 @@ class AccountCenterRefillCardPage(BasePageServer):
             data = {"import_count": len(import_imei_count),
                     "add_count": imei_count
                     }
-            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[4]/div[1]/div[2]/div/div/div[2]/button[1]")
+            self.driver.click_element("x,/html/body/div[6]/div/div[3]/div[3]/div[1]/div[2]/div/div/div[2]/button[1]")
             self.driver.wait()
             return data
 
@@ -381,9 +381,9 @@ class AccountCenterRefillCardPage(BasePageServer):
 
     #获取充值卡--转移信息（目标用户+数量）
     def get_refill_card_transfer_data_information(self):
-        user = self.driver.get_text('x,/html/body/div[12]/div[2]/div/form/div[1]/div/label')
-        year_number = self.driver.get_text('x,/html/body/div[12]/div[2]/div/form/div[2]/div/label')
-        lifetime_number = self.driver.get_text('x,/html/body/div[12]/div[2]/div/form/div[3]/div/label')
+        user = self.driver.get_text('x,/html/body/div[11]/div[2]/div/form/div[1]/div/label')
+        year_number = self.driver.get_text('x,/html/body/div[11]/div[2]/div/form/div[2]/div/label')
+        lifetime_number = self.driver.get_text('x,/html/body/div[11]/div[2]/div/form/div[3]/div/label')
         data = {
             "target_user": user,
             "year_number": year_number,

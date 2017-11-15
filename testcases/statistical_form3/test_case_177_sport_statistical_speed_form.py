@@ -109,7 +109,7 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                     web_data.append({
                         'imei': self.statistical_form_page3.get_imei_in_over_speed_form(n),
                         'speed': self.statistical_form_page3.get_speed_in_over_speed_form(n),
-                        'addr': self.statistical_form_page3.get_addr_in_over_speed_form(n),
+                        # 'addr': self.statistical_form_page3.get_addr_in_over_speed_form(n),
                         'time': self.statistical_form_page3.get_time_in_over_speed_form(n),
                         'lat': self.statistical_form_page3.get_lat_in_over_speed_form(n),
                         'lng': self.statistical_form_page3.get_lng_in_over_speed_form(n)
@@ -130,7 +130,7 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                 response = res.json()
                 res_datas = response['data']
                 for data in res_datas:
-                    del data['status'], data['times']
+                    del data['status'], data['times'], data['addr']
                 print(res_datas)
                 self.assertEqual(web_data, res_datas)
             else:
@@ -143,7 +143,7 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                         web_data.append({
                             'imei': self.statistical_form_page3.get_imei_in_over_speed_form(n),
                             'speed': self.statistical_form_page3.get_speed_in_over_speed_form(n),
-                            'addr': self.statistical_form_page3.get_addr_in_over_speed_form(n),
+                            # 'addr': self.statistical_form_page3.get_addr_in_over_speed_form(n),
                             'time': self.statistical_form_page3.get_time_in_over_speed_form(n),
                             'lat': self.statistical_form_page3.get_lat_in_over_speed_form(n),
                             'lng': self.statistical_form_page3.get_lng_in_over_speed_form(n)
@@ -164,7 +164,7 @@ class TestCase177SportStatisticalSpeedForm(unittest.TestCase):
                 response = res.json()
                 res_datas = response['data']
                 for data in res_datas:
-                    del data['status'], data['times']
+                    del data['status'], data['times'], data['addr']
                 print(res_datas)
                 self.assertEqual(web_data, res_datas)
             self.driver.default_frame()

@@ -54,7 +54,6 @@ class TestCase020AccountCenterMsgUnread(unittest.TestCase):
         unread_msg_num = int(self.account_center_page_msg_center.get_unread_msg_num())
         print(unread_msg_num)
         if unread_msg_num > 0:
-            self.account_center_page_msg_center.message_center_iframe()
             # 设置搜索条件-消息状态为“未读”，搜索出结果，统计结果列表中的未读消息共几条
             self.account_center_page_msg_center.set_search_status_unread()
             self.driver.wait(4)

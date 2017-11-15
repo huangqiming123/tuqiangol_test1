@@ -36,7 +36,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # --电话
     def usr_info_phone(self):
-        usr_phone = self.driver.get_element("userPhone").text
+        usr_phone = self.driver.get_element("topuserphone").text
         return usr_phone
 
     # 账户总览下方“我的服务商”信息
@@ -192,7 +192,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 密码修改成功状态框点击确定
     def modify_passwd_success_comfrim(self):
-        self.driver.click_element("x,/html/body/div[9]/div[3]/a")
+        self.driver.click_element("x,/html/body/div[10]/div[3]/a")
         self.driver.wait()
 
     # 招呼栏业务日志

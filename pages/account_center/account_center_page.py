@@ -362,20 +362,20 @@ class AccountCenterPage(BasePageServer):
 
     def add_data_to_search_order_manage_in_bill_list_page(self, search_data):
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[3]/button[2]')
+        self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[3]/button[2]')
         sleep(1)
         # 输入订单编号
         self.driver.operate_input_element('x,//*[@id="orderNo"]', search_data['order_id'])
         # 选择订单查询日期类型
         if search_data['date_type'] != '':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/span[2]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/span[2]')
             sleep(2)
             if search_data['date_type'] == '创建时间':
                 self.driver.click_element(
-                    'x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/ul/li[1]')
+                    'x,/html/body/div[6]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/ul/li[1]')
             elif search_data['date_type'] == '支付时间':
                 self.driver.click_element(
-                    'x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/ul/li[2]')
+                    'x,/html/body/div[6]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/ul/li[2]')
             sleep(2)
             self.driver.operate_input_element('x,//*[@id="startTime_order"]', search_data['begin_time'])
             self.driver.operate_input_element('x,//*[@id="endTime_order"]', search_data['end_time'])
@@ -383,43 +383,43 @@ class AccountCenterPage(BasePageServer):
         # 输入商品名称
         self.driver.operate_input_element('x,//*[@id="productName"]', search_data['goods_name'])
         # 选择订单类型
-        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/span[2]')
         sleep(2)
         if search_data['order_type'] == '':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[1]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[1]')
 
         elif search_data['order_type'] == '3':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[3]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[3]')
 
         elif search_data['order_type'] == '4':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[2]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div/ul/li[2]')
 
         sleep(2)
 
         # 选择订单状态
-        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/span[2]')
         sleep(2)
         if search_data['is_order'] == '':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[1]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[1]')
 
         elif search_data['is_order'] == '1':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[3]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[3]')
 
         elif search_data['is_order'] == '0':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[2]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[3]/div/div/div/div/ul/li[2]')
         sleep(2)
 
         # 选择支付方式
-        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/span[2]')
         sleep(2)
         if search_data['is_pay'] == '':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[1]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[1]')
 
         elif search_data['is_pay'] == '0':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[3]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[3]')
 
         elif search_data['is_pay'] == '1':
-            self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[2]')
+            self.driver.click_element('x,/html/body/div[6]/div[2]/div[1]/form/div[2]/div[4]/div/div/div/div/ul/li[2]')
         sleep(2)
 
         # 点击搜索
@@ -498,7 +498,9 @@ class AccountCenterPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="uplife"]')
 
     def clcik_massage_and_telephone_alarm_button_in_account_info_page(self):
-        self.driver.click_element('x,//*[@id="vsAlarmSetList"]/a')
+        self.driver.click_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[1]/a')
+        sleep(2)
+        self.driver.click_element('p,告警设置')
         sleep(2)
 
     def switch_to_massage_and_telephone_alarm_frame(self):
@@ -557,3 +559,7 @@ class AccountCenterPage(BasePageServer):
             return total
         else:
             return 0
+
+    def click_alarm_massage_set_up_button(self):
+        self.driver.click_element('x,//*[@id="vsAlarmSetList"]/a')
+        sleep(2)

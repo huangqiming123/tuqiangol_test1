@@ -58,16 +58,11 @@ class TestCase01AccountCenterModifyInfo(unittest.TestCase):
             #点击账户中心
             self.account_center_page_navi_bar.click_account_center_button()
             sleep(1)
-            self.account_center_page_details.account_center_iframe()
-
-
             #获取详情中用户名跟电话
 
             phone = self.account_center_page_navi_bar.usr_info_phone()
             self.assertEqual(user_to_modify_info["phone"], phone, "电话号码不一致")
-            self.driver.default_frame()
             break
-
         csv_file.close()
 
         # 点击关闭

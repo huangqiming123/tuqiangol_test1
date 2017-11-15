@@ -188,9 +188,9 @@ class SafeAreaPage(BasePageServer):
         sleep(2)
 
     def click_select_fence_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[2]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[2]/div/div/div/ul/li[2]')
         sleep(2)
 
     def get_per_number(self):
@@ -202,9 +202,9 @@ class SafeAreaPage(BasePageServer):
         return text
 
     def click_select_black_address_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[1]/div/div/span[2]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[2]/div/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[1]/div/div/div/ul/li[3]')
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[2]/div/div/div/ul/li[3]')
         sleep(2)
 
     def get_page(self):
@@ -490,7 +490,7 @@ class SafeAreaPage(BasePageServer):
     def add_data_to_search_defence_in_safe_area(self, data):
         self.driver.operate_input_element('x,//*[@id="queryareaname"]', data['defence_name'])
         sleep(1)
-        self.driver.click_element('x,//*[@id="querycondition"]/button')
+        self.driver.click_element('x,//*[@id="querycondition"]/div/button')
         sleep(4)
 
     def get_web_total_after_click_search(self):
@@ -527,7 +527,7 @@ class SafeAreaPage(BasePageServer):
     def add_data_to_search_risk_point_in_safe_area(self, data):
         self.driver.operate_input_element('x,//*[@id="queryareaname"]', data['risk_name'])
         sleep(1)
-        self.driver.click_element('x,//*[@id="querycondition"]/button')
+        self.driver.click_element('x,//*[@id="querycondition"]/div/button')
         sleep(3)
 
     def get_web_total_after_click_search_risk_share(self):

@@ -16,7 +16,7 @@ class AccountCenterRefillCardPage(BasePageServer):
 
     # 点击充值卡
     def click_refill_card(self):
-        self.driver.click_element('x,//*[@id="buycardbtn"]')
+        self.driver.click_element('x,//*[@id="rechargemanagerbtn"]')
         sleep(2)
 
     # 充值卡页面iframe
@@ -35,7 +35,7 @@ class AccountCenterRefillCardPage(BasePageServer):
 
     #点击申请记录
     def click_apply_record(self):
-        self.driver.click_element("x,/html/body/div[6]/div/div[2]/ul/li[2]/a")
+        self.driver.click_element("x,/html/body/div[6]/div/div[2]/ul/li[1]/a")
         sleep(1)
 
     #点击  /html/body/div[1]/div[3]/div[1]/div[1]/div/div/div/ul/li[3]

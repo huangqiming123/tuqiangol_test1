@@ -46,7 +46,7 @@ class TestCase410918AccountCenterRefillCardAddApply(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
 
         # 进入充值卡页面
-        self.account_center_page_navi_bar.switch_to_chongzhi_card()
+        # self.account_center_page_navi_bar.switch_to_chongzhi_card()
         self.account_center_page_refill_card.click_refill_card()
 
         csv_file = self.account_center_page_read_csv.read_csv('apply_refill_card.csv')

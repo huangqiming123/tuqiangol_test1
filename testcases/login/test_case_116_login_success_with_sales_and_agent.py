@@ -61,7 +61,6 @@ class TestCase116LoginSuccessWithSalesAndAgent(unittest.TestCase):
             self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")
             sleep(1)
             # 断言当前登录账号的用户名
-            self.login_page.switch_to_account_info_enable()
             usr_info_account = self.account_center_page_navi_bar.usr_info_account()
             expect_usr_info_account = user_to_login["account"]
             self.assertIn(expect_usr_info_account, usr_info_account, "账户总览左下方显示的账户错误")

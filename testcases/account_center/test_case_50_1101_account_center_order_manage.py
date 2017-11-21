@@ -47,7 +47,7 @@ class TestCase50AccountCenterOrderManage(unittest.TestCase):
         self.account_center_page_navi_bar.click_account_center_button()
         account = self.log_in_base.get_log_in_account()
         # 点击订单管理
-        self.account_center_page_navi_bar.switch_to_chongzhi_card()
+        # self.account_center_page_navi_bar.switch_to_chongzhi_card()
         self.account_center_page.clcik_order_manage_button_in_account_info_page()
 
         csv_file = self.account_center_page_read_csv.read_csv('order_manage.csv')

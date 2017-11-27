@@ -48,8 +48,7 @@ class TestCase122UserSearchTransferUser(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
 
         # 选择用户搜索
-        self.global_dev_search_page.click_dev_search()
-        self.global_dev_search_page.click_search_buttons()
+        self.global_dev_search_page.click_user_search_buttons()
 
         # 获取列表中第二个用户的账号
         self.global_dev_search_page.swith_to_search_frame()

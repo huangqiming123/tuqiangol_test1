@@ -48,7 +48,7 @@ class TestCase107GlobSearchUserOperation(unittest.TestCase):
 
         # 选择用户搜索
         self.global_dev_search_page.click_account_search()
-        self.global_dev_search_page.click_search_buttons()
+        # self.global_dev_search_page.click_search_buttons()
 
         # 获取客户名称、客户类型、账号、电话、设备数量
         user_name = self.global_dev_search_page.get_user_name_in_user_search()

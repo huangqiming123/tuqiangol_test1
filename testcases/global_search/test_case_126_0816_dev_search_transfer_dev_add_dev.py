@@ -46,7 +46,6 @@ class TestCase126DevSearchTransferDevAddDev(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
         # 选择设备搜索
         self.global_dev_search_page.click_dev_searchs()
-        self.global_dev_search_page.click_search_buttons()
         sleep(5)
         self.global_dev_search_page.swith_to_search_frame()
         get_second_imei = self.global_dev_search_page.get_second_imei_in_dev_detail()

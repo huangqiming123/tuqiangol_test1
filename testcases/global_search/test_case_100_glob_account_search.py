@@ -45,7 +45,7 @@ class TestCase100GlobAccountSearch(unittest.TestCase):
         sleep(2)
 
         self.global_dev_search_page.click_easy_search()
-        self.global_dev_search_page.click_account_search()
+        # self.global_dev_search_page.click_account_search()
 
         # 度数据
         csv_file = self.global_search_page_read_csv.read_csv('global_search_account_data.csv')

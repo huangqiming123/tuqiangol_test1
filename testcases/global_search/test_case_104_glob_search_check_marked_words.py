@@ -43,19 +43,25 @@ class TestCase104GlobSearchCheckMarkedWords(unittest.TestCase):
         # 关闭
         self.global_dev_search_page.close_search()
         sleep(2)
-
         self.global_dev_search_page.click_easy_search()
+
+        search_data = {
+            'account_info': ''
+        }
         self.global_dev_search_page.swith_to_search_frame()
+        self.global_dev_search_page.app_account_easy_search(search_data)
         get_dev_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
         self.assertEqual(self.assert_text.glob_search_page_search_account_texts(), get_dev_search_marked_words)
 
         # 选择搜索用户
-        self.global_dev_search_page.select_search_user()
+        # self.global_dev_search_page.select_search_user()
+        self.global_dev_search_page.account_easy_search(search_data)
         get_user_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
         self.assertEqual(self.assert_text.glob_search_page_search_account_text(), get_user_search_marked_words)
 
         # 选择搜索app用户
-        self.global_dev_search_page.select_search_dev()
+        # self.global_dev_search_page.select_search_dev()
+        self.global_dev_search_page.click_search_dev_button()
         get_user_search_marked_words = self.global_dev_search_page.get_dev_search_marked_words()
         self.assertEqual(self.assert_text.glob_search_page_search_dev_text(), get_user_search_marked_words)
         self.driver.default_frame()

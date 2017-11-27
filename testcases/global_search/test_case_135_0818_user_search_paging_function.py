@@ -46,7 +46,6 @@ class TestCase135UserSearchPagingFunction(unittest.TestCase):
         self.global_dev_search_page.close_search()
         sleep(2)
         self.global_dev_search_page.click_easy_search()
-        self.global_dev_search_page.click_dev_search()
 
         self.global_dev_search_page.swith_to_search_frame()
         ## 点击搜索按钮

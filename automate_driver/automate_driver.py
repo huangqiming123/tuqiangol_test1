@@ -1,9 +1,7 @@
 import os
 import time
 
-from selenium import webdriver
 from selenium.webdriver import ActionChains
-from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.support.select import Select
 
 # webdirver封装

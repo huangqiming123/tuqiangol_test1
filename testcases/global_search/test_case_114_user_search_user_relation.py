@@ -47,8 +47,8 @@ class TestCase114UserSearchUserRelation(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
 
         # 选择用户搜索
-        self.global_dev_search_page.click_dev_search()
-        self.global_dev_search_page.click_search_buttons()
+        # self.global_dev_search_page.click_dev_search()
+        self.global_dev_search_page.click_user_search_buttons()
 
         user_name = self.global_dev_search_page.get_user_name_in_user_search()
         user_type = self.global_dev_search_page.get_user_type_in_user_search()

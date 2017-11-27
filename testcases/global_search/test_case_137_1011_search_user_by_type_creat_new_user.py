@@ -46,8 +46,7 @@ class TestCase137SearchUserByTypeCreatNewUser(unittest.TestCase):
         sleep(2)
         self.global_dev_search_page.click_easy_search()
         # 选择用户搜索
-        self.global_dev_search_page.click_dev_search()
-        self.global_dev_search_page.click_search_buttons()
+        self.global_dev_search_page.click_user_search_buttons()
         self.global_dev_search_page.swith_to_search_frame()
 
         # 获取用户列表有多少页

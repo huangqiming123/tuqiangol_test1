@@ -562,7 +562,7 @@ class GlobalAccountSearchPage(BasePage):
         sleep(2)
 
     def click_add_new_user_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[2]/div/button[1]')
+        self.driver.click_element('x,//*[@id="AddCustomer"]')
         sleep(2)
 
     def switch_to_add_user_frame(self):
@@ -604,13 +604,8 @@ class GlobalAccountSearchPage(BasePage):
         self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
 
     def search_user_by_account_in_global_search(self, param):
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/span[2]')
-        sleep(2)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/div/div/div/div/ul/li[3]')
-        sleep(2)
-
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', param)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/button[1]')
         sleep(3)
 
     def get_text_after_search(self):
@@ -620,7 +615,7 @@ class GlobalAccountSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="complex_user_relation_tbody"]/tr[2]/td[4]')
 
     def click_search_user_button(self):
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/button[1]')
         sleep(4)
 
     def get_total_number_after_click_search_user_button(self):
@@ -688,7 +683,7 @@ class GlobalAccountSearchPage(BasePage):
         a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_numbers('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
+            total = new_paging.get_total_numbers('x,//*[@id="paging-dev"]', 'x,//*[@id="deviceTableContent"]/tbody')
             return total
         else:
             return 0
@@ -839,13 +834,13 @@ class GlobalAccountSearchPage(BasePage):
         sleep(3)
 
     def get_frist_imei_in_dev_manage_page(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[3]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[4]')
 
     def get_second_imei_in_dev_manage_page(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[2]/td[3]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[2]/td[4]')
 
     def get_third_imei_in_dev_manage_page(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[3]/td[3]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[3]/td[4]')
 
     def add_imei_to_sale_dev_in_user_detail(self, imei):
         self.driver.click_element('x,//*[@id="sale_imei_complexSale"]')
@@ -868,7 +863,7 @@ class GlobalAccountSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="sale_tbody_complexSale"]/tr[2]/td[1]')
 
     def get_fourth_imei_in_dev_manage_page(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[4]/td[3]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[4]/td[4]')
 
     def get_second_failure_statue_text_in_user_detail(self):
         return self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr[2]/td[2]/span')
@@ -877,7 +872,7 @@ class GlobalAccountSearchPage(BasePage):
         return self.driver.get_text('x,//*[@id="device_add_result_div"]/div[2]/table/tbody/tr[2]/td[3]')
 
     def get_fifth_imei_in_dev_manage_page(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[5]/td[3]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[5]/td[4]')
 
     def get_total_dev_number_after_add_in_sale_dev(self):
         return len(list(self.driver.get_elements('x,//*[@id="sale_tbody_complexSale"]/tr')))

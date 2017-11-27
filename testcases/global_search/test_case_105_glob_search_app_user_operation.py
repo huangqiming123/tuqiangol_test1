@@ -49,7 +49,7 @@ class TestCase105GlobSearchAppUserOperation(unittest.TestCase):
         self.global_dev_search_page.select_search_app_user()
 
         # 点击搜索
-        self.global_dev_search_page.click_search_button()
+        # self.global_dev_search_page.click_search_button()
 
         # 点击控制台
         current_handle = self.driver.get_current_window_handle()

@@ -57,7 +57,7 @@ class TestCase128DevAdvancedSearchWithDeleteUser(unittest.TestCase):
             self.global_account_search_page.click_add_new_user_button()
             self.global_account_search_page.click_close_add_user_page()
             self.global_account_search_page.click_add_new_user_button()
-            self.global_dev_search_page.swith_to_search_frame()
+            self.global_dev_search_page.swith_to_search_frames()
             self.global_account_search_page.add_data_to_add_new_user(add_data)
             # 删除
             self.global_account_search_page.search_user_by_account_in_cust_manage(add_data['account'])
@@ -68,7 +68,6 @@ class TestCase128DevAdvancedSearchWithDeleteUser(unittest.TestCase):
             self.global_dev_search_page.close_search()
             sleep(2)
             self.global_dev_search_page.click_easy_search()
-            self.global_dev_search_page.click_dev_searchs()
             # 选择设备搜索--高级搜索
             self.global_dev_search_page.swith_to_search_frame()
             self.global_dev_search_page.click_advanced_search_button()

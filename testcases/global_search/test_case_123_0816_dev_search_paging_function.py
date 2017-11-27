@@ -47,7 +47,7 @@ class TestCase123DevSearchPagingFunction(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
         self.global_dev_search_page.click_dev_searchs()
         # 选择设备搜索
-        self.global_dev_search_page.click_search_buttons()
+        # self.global_dev_search_page.click_search_buttons()
         sleep(5)
         self.global_dev_search_page.swith_to_search_frame()
         # 获取设备有多少个分页

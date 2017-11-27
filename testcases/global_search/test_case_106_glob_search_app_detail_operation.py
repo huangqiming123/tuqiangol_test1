@@ -49,7 +49,7 @@ class TestCase106GlobSearchAppDetailOperation(unittest.TestCase):
         self.global_dev_search_page.select_search_app_user()
 
         # 点击搜索
-        self.global_dev_search_page.click_search_button()
+        # self.global_dev_search_page.click_search_button()
         # 点击详情
         self.global_dev_search_page.click_detail_in_app_user_search()
 

@@ -48,7 +48,7 @@ class TestCase110GlobSearchDevDetail(unittest.TestCase):
 
         # 选择用户搜索
         self.global_dev_search_page.click_dev_searchs()
-        self.global_dev_search_page.click_dev_search_button()
+        # self.global_dev_search_page.click_dev_search_button()
         self.global_dev_search_page.click_detail_in_dev_search()
         dev_name_in_detail = self.global_dev_search_page.get_dev_name_in_detail()
         dev_imei_in_detail = self.global_dev_search_page.get_dev_imei_in_detail()

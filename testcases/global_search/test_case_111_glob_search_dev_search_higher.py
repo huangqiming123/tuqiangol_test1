@@ -47,7 +47,7 @@ class TestCase111GlobSearchDevSearchHigher(unittest.TestCase):
         self.global_dev_search_page.click_easy_search()
 
         # 点击高级
-        self.global_dev_search_page.click_dev_searchs()
+        # self.global_dev_search_page.click_dev_searchs()
         self.global_dev_search_page.click_higher_search()
 
         # 验证选择用户

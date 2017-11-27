@@ -2098,7 +2098,7 @@ class GlobalDevSearchPage(BasePage):
 
     def search_user(self, user_account):
         self.driver.operate_input_element('x,/html/body/div[1]/div[1]/div[1]/div/input', user_account)
-        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/span/div/button[1]')
+        self.driver.click_element('x,/html/body/div[1]/div[1]/div[1]/div/button[1]')
         sleep(5)
 
     def click_add_next_user_in_search_user(self):

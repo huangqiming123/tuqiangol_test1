@@ -90,7 +90,7 @@ class DevManagePages(BasePage):
 
     # 获取唯一搜索结果的imei号
     def get_search_result_imei(self):
-        imei = self.driver.get_element("x,//*[@id='markDevTable']/tr/td[3]").text
+        imei = self.driver.get_element("x,//*[@id='deviceTableContent']/tbody/tr[1]/td[4]").text
         return imei
 
     # 获取搜索结果的设备名称
@@ -873,7 +873,7 @@ class DevManagePages(BasePage):
         a = self.driver.get_element('x,//*[@id="paging-dev"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            number = new_paging.get_total_numbers('x,//*[@id="paging-dev"]', 'x,//*[@id="markDevTable"]')
+            number = new_paging.get_total_numbers('x,//*[@id="paging-dev"]', 'x,//*[@id="deviceTableContent"]/tbody')
             return number
 
         elif a == 'display: none;':
@@ -904,7 +904,7 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[1]/input')
         sleep(1)
 
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[12]')
@@ -915,7 +915,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_edit_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[1]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[1]')
         sleep(2)
 
     def click_close_edit_button(self):
@@ -974,10 +974,10 @@ class DevManagePages(BasePage):
     def get_dev_name(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[2]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[3]')
 
     def click_look_place_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[3]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[3]')
         sleep(2)
 
     def get_dev_name_after_click_console(self):
@@ -985,19 +985,19 @@ class DevManagePages(BasePage):
             'x,/html/body/div[1]/div[5]/div/div[1]/div[2]/div[3]/div/div[3]/ul[1]/li/ul/li/div/div[1]/div[3]/div[1]/span[1]')
 
     def click_track_playback_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[4]')
         sleep(2)
         self.driver.click_element('l,轨迹回放')
         sleep(2)
 
     def get_imei_number(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[3]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[4]')
 
     def click_track_playback_get_text(self):
         return self.driver.get_text('x,//*[@id="mapview"]/div[1]/div[1]/div/b')
 
     def click_driving_recond_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[4]')
         sleep(2)
         self.driver.click_element('l,行车记录')
         sleep(2)
@@ -1006,7 +1006,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="mapview"]/div[2]/div/div[1]/b')
 
     def click_street_scape_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[4]')
         sleep(2)
         self.driver.click_element('l,街景')
         sleep(2)
@@ -1024,7 +1024,7 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[1]/input')
         sleep(1)
 
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[10]')
@@ -1040,7 +1040,7 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[1]/input')
         sleep(1)
 
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[12]')
@@ -1056,7 +1056,7 @@ class DevManagePages(BasePage):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[5]/div/button')
         sleep(5)
 
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[1]/input')
         sleep(1)
 
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[10]')
@@ -1076,7 +1076,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_look_alarm_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[4]')
         sleep(2)
         self.driver.click_element('l,查看告警')
         sleep(2)
@@ -1274,13 +1274,13 @@ class DevManagePages(BasePage):
         return a
 
     def get_imei_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[3]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[4]')
 
     def get_active_time_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[5]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[6]')
 
     def get_expire_time_in_list(self):
-        a = self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[7]')
+        a = self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[8]')
         b = a.split(' ')[0]
         return b
 
@@ -1307,16 +1307,16 @@ class DevManagePages(BasePage):
         return a
 
     def get_dev_type_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[4]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[5]')
 
     def get_dev_name_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[2]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[3]')
 
     def get_dev_sim_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[6]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[7]')
 
     def get_dev_group_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[10]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[11]')
 
     def get_dev_type_in_detail(self):
         self.switch_to_dev_edit_frame()
@@ -1343,7 +1343,7 @@ class DevManagePages(BasePage):
         return a
 
     def click_sale_in_list_button(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[2]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[2]')
         sleep(2)
 
     def click_close_sale_in_list_button(self):
@@ -1436,11 +1436,11 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_dev_in_list(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[1]/input')
         sleep(2)
 
     def check_input_value(self):
-        return self.driver.get_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/input').is_selected()
+        return self.driver.get_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[1]/input').is_selected()
 
     def click_select_send_command(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[6]')
@@ -1505,7 +1505,7 @@ class DevManagePages(BasePage):
         return self.driver.get_text('x,//*[@id="checkTbody"]/tr/td[3]')
 
     def get_dev_status_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[9]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[10]')
 
     def click_select_shut_down(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[2]/div/div/button[10]')
@@ -1541,7 +1541,7 @@ class DevManagePages(BasePage):
         return number
 
     def get_text_dev_status(self, m):
-        text = self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[9]' % str(m))
+        text = self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[%s]/td[10]' % str(m))
         return text
 
     def click_select_starting_up(self):
@@ -1576,7 +1576,7 @@ class DevManagePages(BasePage):
         sleep(3)
 
     def click_unbundle_dev(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[4]')
         sleep(2)
         self.driver.click_element('l,解绑')
         sleep(2)
@@ -1696,7 +1696,7 @@ class DevManagePages(BasePage):
         return self.driver.get_element('x,//*[@id="paging-dev"]/ul/li[3]').get_attribute('class')
 
     def get_search_no_dev_name_text(self):
-        return self.driver.get_text('x,//*[@id="dev-noData"]/div/span')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr/td')
 
     def click_per_number(self):
         self.driver.click_element('c,page-select')
@@ -1744,13 +1744,13 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def choose_one_dev_to_search(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[1]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[1]/input')
         sleep(2)
 
     def choose_more_dev_to_search(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[2]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[2]/td[1]/input')
         sleep(2)
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr[3]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[3]/td[1]/input')
         sleep(2)
 
     def get_dev_number_in_sale_dev(self):
@@ -1765,7 +1765,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def get_first_imei_in_list(self):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[1]/td[3]')
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[4]')
 
     def get_batch_sale_imei_in_sale_dev(self):
         return self.driver.get_text('x,//*[@id="sale_tbody_device_sale_id"]/tr[1]/td[1]')
@@ -1777,7 +1777,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def get_platform_time_after_search(self, n):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[7]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[%s]/td[8]' % str(n + 1))
 
     def choose_platform_expire_time(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
@@ -1792,7 +1792,7 @@ class DevManagePages(BasePage):
         sleep(4)
 
     def get_user_time_after_search(self, n):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[8]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[%s]/td[9]' % str(n + 1))
 
     def choose_user_expire_time(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[1]/div/div/span[2]')
@@ -1813,7 +1813,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def get_active_state_after_search(self, n):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[%s]/td[6]' % str(n + 1))
 
     def choose_noactive_dev(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[2]/div/div/span[2]')
@@ -1834,7 +1834,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def get_band_state_after_search(self, n):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[11]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[%s]/td[12]' % str(n + 1))
 
     def choose_no_band_dev(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[3]/div/div/span[2]')
@@ -1859,13 +1859,13 @@ class DevManagePages(BasePage):
             'x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[6]/div[5]/div/div/span[2]').get_attribute('title')
 
     def get_group_name_in_list(self, n):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[10]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[%s]/td[11]' % str(n + 1))
 
     def input_begin_time_to_serach(self, begin_time):
         self.driver.operate_input_element('x,//*[@id="startTime_input"]', begin_time)
 
     def get_active_time_after_search(self, n):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[%s]/td[6]' % str(n + 1))
 
     def input_end_time_to_search(self, end_time):
         self.driver.operate_input_element('x,//*[@id="endTime_input"]', end_time)
@@ -1887,7 +1887,7 @@ class DevManagePages(BasePage):
                                           dev_vehicle_number)
 
     def get_imei_after_search(self, n):
-        return self.driver.get_text('x,//*[@id="markDevTable"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[%s]/td[4]' % str(n + 1))
 
     def input_dev_car_frame_to_search(self, dev_car_frame):
         self.driver.operate_input_element('x,//*[@id="allDev"]/div[2]/div[1]/div/div[6]/div[2]/input', dev_car_frame)
@@ -2007,7 +2007,7 @@ class DevManagePages(BasePage):
         sleep(4)
 
     def click_look_dev_fence_in_dev_page(self):
-        self.driver.click_element('x,//*[@id="markDevTable"]/tr/td[12]/a[4]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[4]')
         sleep(2)
         self.driver.click_element('l,查看围栏')
         sleep(2)

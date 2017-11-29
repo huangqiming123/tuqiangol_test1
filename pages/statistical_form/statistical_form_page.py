@@ -407,7 +407,8 @@ class StatisticalFormPage(BasePage):
         # 计算里程报表查询出来的总条数
         try:
             self.new_paging = NewPaging(self.driver, self.base_url)
-            num = self.new_paging.get_total_number('x,//*[@id="paging-mileage"]', 'x,//*[@id="mileage-tbody"]')
+            num = self.new_paging.get_total_number('x,//*[@id="paging-mileage"]',
+                                                   'x,//*[@id="mileageTableHeader"]/tbody')
             return num
         except:
             return 0
@@ -416,7 +417,7 @@ class StatisticalFormPage(BasePage):
         # 计算里程报表查询出来的总条数
         try:
             self.new_paging = NewPaging(self.driver, self.base_url)
-            num = self.new_paging.get_total_number('x,//*[@id="paging-day"]', 'x,//*[@id="mileage-day-tbody"]')
+            num = self.new_paging.get_total_number('x,//*[@id="paging-day"]', 'x,//*[@id="dayTableHeader"]/tbody')
             return num
         except:
             return 0
@@ -568,15 +569,11 @@ class StatisticalFormPage(BasePage):
 
     def get_total_search_over_speed_number(self):
         # 获取搜索出来的超速的条数
-        try:
-            total = self.total_num(self.get_actual_pages_number(
-                'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/div[1]'),
-                self.last_page_logs_num(
-                    'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/table/tbody',
-                    'x,/html/body/div[2]/div[5]/div/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/div[1]'))
-            return total
-
-        except:
+        a = self.driver.get_element('x,//*[@id="paging-overspeed"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_number('x,//*[@id="paging-overspeed"]', 'x,//*[@id="speedTableContent"]/tbody')
+        else:
             return 0
 
     def click_stay_form_button(self):
@@ -724,7 +721,8 @@ class StatisticalFormPage(BasePage):
         # 获取搜索出来的停留的条数
         try:
             self.new_paging = NewPaging(self.driver, self.base_url)
-            total = self.new_paging.get_total_number('x,//*[@id="paging-stopCar"]', 'x,//*[@id="stopCar-tbody"]')
+            total = self.new_paging.get_total_number('x,//*[@id="paging-stopCar"]',
+                                                     'x,//*[@id="stayTableContent"]/tbody')
             return total
 
         except:
@@ -875,7 +873,8 @@ class StatisticalFormPage(BasePage):
         # 获取停车未熄火查询出的条数
         try:
             self.new_paging = NewPaging(self.driver, self.base_url)
-            num = self.new_paging.get_total_number('x,//*[@id="paging-stopNotOff"]', 'x,//*[@id="stopNotOff-tbody"]')
+            num = self.new_paging.get_total_number('x,//*[@id="paging-stopNotOff"]',
+                                                   'x,//*[@id="stopNotOffTableContent"]/tbody')
             return num
         except:
             return 0
@@ -1061,7 +1060,7 @@ class StatisticalFormPage(BasePage):
         a = self.driver.get_element('x,//*[@id="paging-accReport"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_number('x,//*[@id="paging-accReport"]', 'x,//*[@id="accTable"]')
+            total = new_paging.get_total_number('x,//*[@id="paging-accReport"]', 'x,//*[@id="accTableContent"]/tbody')
             return total
         else:
             return 0
@@ -1124,11 +1123,7 @@ class StatisticalFormPage(BasePage):
 
     def get_total_stay_form_time(self):
         # 获取页面中总的停留时间
-        try:
-            actual = self.driver.get_text('x,//*[@id="stopCar-alltimes"]')
-            return actual
-        except:
-            return 0
+        return self.driver.get_text('x,//*[@id="stopCar-alltimes"]')
 
     def get_total_stay_form_time_with_acc_on(self):
         # 获取停车未熄火的总时间
@@ -1865,7 +1860,8 @@ class StatisticalFormPage(BasePage):
         a = self.driver.get_element('x,//*[@id="paging-electric"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            total = new_paging.get_total_number('x,//*[@id="paging-electric"]', 'x,//*[@id="electricTable"]')
+            total = new_paging.get_total_number('x,//*[@id="paging-electric"]',
+                                                'x,//*[@id="electricTableContent"]/tbody')
             self.driver.default_frame()
             return total
         else:
@@ -2624,3 +2620,12 @@ class StatisticalFormPage(BasePage):
     def click_search_button_in_status_statistical_form(self):
         self.driver.click_element('x,//*[@id="OffLineFrom"]/div[3]/div[4]/button[1]')
         sleep(2)
+
+    def get_total_search_mileage_forms(self):
+        try:
+            self.new_paging = NewPaging(self.driver, self.base_url)
+            num = self.new_paging.get_total_number('x,//*[@id="paging-mileage"]',
+                                                   'x,//*[@id="mileageTableHeader"]/tbody')
+            return num
+        except:
+            return 0

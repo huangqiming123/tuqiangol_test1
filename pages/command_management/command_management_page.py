@@ -362,7 +362,7 @@ class CommandManagementPage(BasePage):
     def click_look_equipment(self):
         # 点击查看设备
         try:
-            self.driver.click_element('x,//*[@id="js-checkEquipment"]')
+            self.driver.click_element('x,//*[@id="issuedTemplateBody"]/tr[1]/td[6]/a')
             sleep(3)
         except:
             print('列表无数据！')
@@ -453,7 +453,7 @@ class CommandManagementPage(BasePage):
 
     def click_look_issued_work_type(self):
         # 点击查看下发工作模式
-        self.driver.click_element('x,//*[@id="js-view-SendWorkMode"]')
+        self.driver.click_element('x,//*[@id="issuedStageBody"]/tr[1]/td[9]/a')
         sleep(3)
 
     def actual_text_after_click_look_issued(self):
@@ -868,7 +868,7 @@ class CommandManagementPage(BasePage):
 
     # 点击下发指令
     def click_send_command(self):
-        self.driver.click_element('x,//*[@id="js-issued-instruction"]')
+        self.driver.click_element('x,//*[@id="templateBody"]/tr[1]/td[5]/a[3]')
         self.driver.wait(1)
 
     # 获取对非正常状态下的设备下发指令后的文本（测试环境）

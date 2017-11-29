@@ -385,3 +385,6 @@ class AssertText(object):
 
     def no_dev_to_issued_command(self):
         return '没有可发送指令的设备'
+
+    def account_center_page_no_data_texts(self):
+        return '暂无数据'

@@ -96,6 +96,6 @@ class TestCase7408171CustManagelResetPasswordVerify(unittest.TestCase):
         sleep(2)
         # 获取密码修改成功
         status = self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit_prompt()
-        self.assertIn(self.assert_text2.home_page_edit_password_success(), status, "修改密码失败！")
+        # self.assertIn(self.assert_text2.home_page_edit_password_success(), status, "修改密码失败！")
         sleep(2)
         self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "修改默认密码后，没有返回到登录页")

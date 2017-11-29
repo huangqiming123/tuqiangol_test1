@@ -43,7 +43,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 platform_time = self.dev_manage_page.get_platform_time_after_search(n)
@@ -66,7 +66,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 platform_time = self.dev_manage_page.get_platform_time_after_search(n)
@@ -79,7 +79,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 user_time = self.dev_manage_page.get_user_time_after_search(n)
@@ -102,7 +102,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 user_time = self.dev_manage_page.get_user_time_after_search(n)
@@ -116,7 +116,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 active_state = self.dev_manage_page.get_active_state_after_search(n)
@@ -129,7 +129,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 active_state = self.dev_manage_page.get_active_state_after_search(n)
@@ -143,7 +143,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 band_state = self.dev_manage_page.get_band_state_after_search(n)
@@ -156,7 +156,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 band_state = self.dev_manage_page.get_band_state_after_search(n)
@@ -170,7 +170,7 @@ class TestCase74DevManageDevSearch(unittest.TestCase):
         number = self.dev_manage_page.get_total_page_number_in_dev_manager()
         if number == 0:
             text = self.dev_manage_page.get_search_no_dev_name_text()
-            self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+            self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
         else:
             for n in range(number):
                 get_choose_group_name = self.dev_manage_page.get_choose_group_name()

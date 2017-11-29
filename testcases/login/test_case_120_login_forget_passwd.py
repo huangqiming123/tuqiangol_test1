@@ -49,10 +49,10 @@ class TestCase120LoginForgetPasswd(unittest.TestCase):
         self.assertEqual(self.assert_text.log_in_page_log_in_text(), login_button_text)
         self.driver.wait()
         # 点体验账号
-        self.login_page.click_experience_account()
+        '''self.login_page.click_experience_account()
         self.driver.wait()
         # 判断登录成功后跳转页面是否正确
         actual_url = self.driver.get_current_url()
         expect_url = self.base_url + "/nomalUserCenter"
         self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")
-        self.account_center_page_navi_bar.taste_usr_logout()
+        self.account_center_page_navi_bar.taste_usr_logout()'''

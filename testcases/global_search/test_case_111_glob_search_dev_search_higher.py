@@ -63,14 +63,14 @@ class TestCase111GlobSearchDevSearchHigher(unittest.TestCase):
 
         # 验证结束日期的格式
         # 点击时间段
-        self.global_dev_search_page.click_time_quantum_button()
+        '''self.global_dev_search_page.click_time_quantum_button()
         get_time_quantum_input_value = self.global_dev_search_page.get_time_quantum_input_value()
         self.assertEqual(True, get_time_quantum_input_value)
         # 输入结束日期
         self.global_dev_search_page.check_end_date_type('2022021551')
         # 获取日期错误的提示
         get_text = self.global_dev_search_page.get_text_after_input_date()
-        self.assertEqual(self.assert_text.glob_search_page_date_formate_error(), get_text)
+        self.assertEqual(self.assert_text.glob_search_page_date_formate_error(), get_text)'''
 
         # 验证欠费、激活的按钮
         self.global_dev_search_page.click_arrearage_button()

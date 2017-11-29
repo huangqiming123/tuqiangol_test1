@@ -115,8 +115,8 @@ class HelpPageSql(object):
             sql += " and l.creation_date <= '%s'" % search_data['end_time']
 
         if search_data['more'] != '':
-            sql += " and (o.account like '%" + search_data['more'] + "%' or l.imei like '%" + search_data[
-                'more'] + "%' or l.account like '%" + search_data['more'] + "%')"
+            sql += " and (o.account = '" + search_data['more'] + "' or l.imei = '" + search_data[
+                'more'] + "' or l.account = '" + search_data['more'] + "')"
 
         sql += ';'
         return sql

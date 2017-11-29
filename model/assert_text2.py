@@ -90,7 +90,7 @@ class AssertText2(object):
         return "请选择"
 
     def account_center_refill_card_apply_succeed(self):
-        return "提交申请成功!"
+        return "提交订单成功!"
 
     def account_center_refill_card_transfer_succeed(self):
         return "转移充值卡成功!"

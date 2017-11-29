@@ -60,12 +60,12 @@ class TestCase126LoginException(unittest.TestCase):
         self.login_page.account_input('fdsafasfd')
         self.login_page.password_input('jimi123')
         self.login_page.login_button_click()
-        sleep(2)
+        sleep(5)
         self.assertEqual(self.assert_text.log_in_page_account_not_exist(), self.login_page.get_exception_text())
 
         # 第四种 密码错误
         self.login_page.account_input('jimitest')
         self.login_page.password_input('jimi123222')
         self.login_page.login_button_click()
-        sleep(2)
+        sleep(5)
         self.assertEqual(self.assert_text.log_in_page_password_error(), self.login_page.get_exception_text())

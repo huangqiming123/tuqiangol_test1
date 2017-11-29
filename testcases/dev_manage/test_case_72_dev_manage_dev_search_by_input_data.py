@@ -59,7 +59,7 @@ class TestCase72DevManageDevSearchByInputData(unittest.TestCase):
         self.dev_manage_page.inpui_dev_vehicle_number_to_search(dev_vehicle_number)
         self.dev_manage_page.click_search_btn()
         text = self.dev_manage_page.get_search_no_dev_name_text()
-        self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+        self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
 
         # 车架号输入框输入选中用户的设备车架号包含的字符，点击搜索，点击导出
         self.dev_manage_page.inpui_dev_vehicle_number_to_search('')
@@ -82,7 +82,7 @@ class TestCase72DevManageDevSearchByInputData(unittest.TestCase):
         self.dev_manage_page.input_dev_car_frame_to_search(dev_vehicle_number)
         self.dev_manage_page.click_search_btn()
         text = self.dev_manage_page.get_search_no_dev_name_text()
-        self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+        self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
 
         # SIM卡号输入框输入选中用户的设备车牌号包含的字符，点击搜索，点击导出
         self.dev_manage_page.input_dev_car_frame_to_search('')
@@ -105,7 +105,7 @@ class TestCase72DevManageDevSearchByInputData(unittest.TestCase):
         self.dev_manage_page.input_dev_sim_to_search(dev_sim_number)
         self.dev_manage_page.click_search_btn()
         text = self.dev_manage_page.get_search_no_dev_name_text()
-        self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+        self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)
 
         # SN码输入框输入选中用户的设备车架号包含的字符，点击搜索，点击导出
         self.dev_manage_page.input_dev_sim_to_search('')
@@ -128,4 +128,4 @@ class TestCase72DevManageDevSearchByInputData(unittest.TestCase):
         self.dev_manage_page.input_dev_sn_to_search(dev_sn_number)
         self.dev_manage_page.click_search_btn()
         text = self.dev_manage_page.get_search_no_dev_name_text()
-        self.assertIn(self.assert_text.account_center_page_no_data_text(), text)
+        self.assertIn(self.assert_text.account_center_page_no_data_texts(), text)

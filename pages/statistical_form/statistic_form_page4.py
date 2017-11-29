@@ -29,11 +29,11 @@ class StatisticFormPage4(BasePage):
 
     # 每页行数
     def get_total_number_per_page_in_over_stay_form(self):
-        return len(list(self.driver.get_elements('x,//*[@id="stopCar-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="stayTableContent"]/tbody/tr')))
 
     # 列表imei
     def get_imei_in_over_stay_form(self, n):
-        return self.driver.get_text('x,//*[@id="stopCar-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     # 列表状态
     def get_state_in_over_stay_form(self, n):
@@ -41,11 +41,11 @@ class StatisticFormPage4(BasePage):
 
     # 开始时间
     def get_start_time_in_over_stay_form(self, n):
-        return self.driver.get_text('x,//*[@id="stopCar-tbody"]/tr[%s]/td[6]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[6]' % str(n + 1))
 
     # 结束时间
     def get_end_time_in_over_stay_form(self, n):
-        return self.driver.get_text('x,//*[@id="stopCar-tbody"]/tr[%s]/td[7]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[7]' % str(n + 1))
 
     # 列表地址
     def get_addr_in_over_stay_form(self, n):
@@ -53,11 +53,13 @@ class StatisticFormPage4(BasePage):
 
     # 经度
     def get_lng_in_over_stay_form(self, n):
-        return float(self.driver.get_text('x,//*[@id="stopCar-tbody"]/tr[%s]/td[9]' % str(n + 1)).split('/')[0])
+        return float(
+            self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[9]' % str(n + 1)).split('/')[0])
 
     # 纬度
     def get_lat_in_over_stay_form(self, n):
-        return float(self.driver.get_text('x,//*[@id="stopCar-tbody"]/tr[%s]/td[9]' % str(n + 1)).split('/')[1])
+        return float(
+            self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[9]' % str(n + 1)).split('/')[1])
 
     # 总计停留时间
     def get_total_stay_time_in_over_stay_form(self):
@@ -93,16 +95,16 @@ class StatisticFormPage4(BasePage):
 
     # 每页行数
     def get_total_number_per_page_in_over_acc_form(self):
-        return len(list(self.driver.get_elements('x,//*[@id="accTable"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="accTableContent"]/tbody/tr')))
 
     # 列表imei
     def get_imei_in_over_acc_form(self, n):
-        return self.driver.get_text('x,//*[@id="accTable"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     # 列表状态
     def get_state_in_over_acc_form(self, n):
         # return self.driver.get_text('x,//*[@id="accTable"]/tr[%s]/td[5]' % str(n + 1))
-        state = self.driver.get_text('x,//*[@id="accTable"]/tr[%s]/td[5]' % str(n + 1))
+        state = self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[5]' % str(n + 1))
         if state == "打开":
             return "1"
         elif state == "关闭":
@@ -110,11 +112,11 @@ class StatisticFormPage4(BasePage):
 
     # 开始时间
     def get_start_time_in_over_acc_form(self, n):
-        return self.driver.get_text('x,//*[@id="accTable"]/tr[%s]/td[6]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[6]' % str(n + 1))
 
     # 结束时间
     def get_end_time_in_over_acc_form(self, n):
-        return self.driver.get_text('x,//*[@id="accTable"]/tr[%s]/td[7]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[7]' % str(n + 1))
 
     # 总用时
     def get_total_time_in_over_acc_form(self):

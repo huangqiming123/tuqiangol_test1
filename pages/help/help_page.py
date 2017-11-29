@@ -385,7 +385,7 @@ class HelpPage(BasePageServer, NewPaging):
         # 填写开始时间，结束时间
         js = 'document.getElementById("createTimeStart_xf").removeAttribute("readonly")'
         self.driver.execute_js(js)
-        if search_data['begin_time'] != '':
+        '''if search_data['begin_time'] != '':
             self.driver.operate_input_element('x,//*[@id="createTimeStart_xf"]', search_data['begin_time'])
             sleep(1)
             self.driver.click_element('x,//*[@id="key"]')
@@ -394,11 +394,12 @@ class HelpPage(BasePageServer, NewPaging):
             self.driver.click_element('x,//*[@id="createTimeStart_xf"]')
             sleep(1)
             self.driver.click_element('x,//*[@id="laydate_clear"]')
-            sleep(1)
+            sleep(1)'''
+        self.driver.operate_input_element('x,//*[@id="createTimeStart_xf"]', search_data['begin_time'])
 
         js = 'document.getElementById("createTimeEnd_xf").removeAttribute("readonly")'
         self.driver.execute_js(js)
-        if search_data['end_time'] != '':
+        '''if search_data['end_time'] != '':
             self.driver.operate_input_element('x,//*[@id="createTimeEnd_xf"]', search_data['end_time'])
             sleep(1)
             self.driver.click_element('x,//*[@id="key"]')
@@ -407,12 +408,22 @@ class HelpPage(BasePageServer, NewPaging):
             self.driver.click_element('x,//*[@id="createTimeEnd_xf"]')
             sleep(1)
             self.driver.click_element('x,//*[@id="laydate_clear"]')
-            sleep(1)
+            sleep(1)'''
+        self.driver.operate_input_element('x,//*[@id="createTimeEnd_xf"]', search_data['end_time'])
 
         # 填写其他的搜索条件
-        self.driver.operate_input_element('x,//*[@id="createdAccount"]', search_data['more'])
-        self.driver.operate_input_element('x,//*[@id="account"]', search_data['more'])
-        self.driver.operate_input_element('x,//*[@id="imei"]', search_data['more'])
+        try:
+            self.driver.operate_input_element('x,//*[@id="createdAccount"]', search_data['more'])
+        except:
+            pass
+        try:
+            self.driver.operate_input_element('x,//*[@id="account"]', search_data['more'])
+        except:
+            pass
+        try:
+            self.driver.operate_input_element('x,//*[@id="imei"]', search_data['more'])
+        except:
+            pass
 
         # 点搜索
         self.driver.click_element('x,//*[@id="search_xf"]')

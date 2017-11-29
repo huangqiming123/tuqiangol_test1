@@ -168,13 +168,13 @@ class ObdFormPage(BasePage):
             return 0
 
     def get_per_page_total_number(self):
-        return len(list(self.driver.get_elements('x,//*[@id="mileage-day-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="travelDayTableContent"]/tbody/tr')))
 
     def get_per_mile_in_obd_mileage_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_per_oil_in_obd_mileage_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[4]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[4]' % str(n + 1))
 
     def click_per_page(self, i):
         self.driver.click_element('l,%s' % str(i + 1))
@@ -201,7 +201,8 @@ class ObdFormPage(BasePage):
         a = self.driver.get_element('x,//*[@id="paging-day"]').get_attribute('style')
         if a == 'display: block;':
             new_page = NewPaging(self.driver, self.base_url)
-            return new_page.get_total_page_and_total_number('x,//*[@id="paging-day"]', 'x,//*[@id="mileage-day-tbody"]')
+            return new_page.get_total_page_and_total_number('x,//*[@id="paging-day"]',
+                                                            'x,//*[@id="travelDayTableContent"]/tbody')
         else:
             return [0, 0]
 
@@ -233,7 +234,8 @@ class ObdFormPage(BasePage):
         a = self.driver.get_element('x,//*[@id="paging-day"]').get_attribute('style')
         if a == 'display: block;':
             new_page = NewPaging(self.driver, self.base_url)
-            return new_page.get_total_page_and_total_number('x,//*[@id="paging-day"]', 'x,//*[@id="mileage-day-tbody"]')
+            return new_page.get_total_page_and_total_number('x,//*[@id="paging-day"]',
+                                                            'x,//*[@id="travelDayTableContent"]/tbody')
         else:
             return [0, 0]
 
@@ -342,7 +344,8 @@ class ObdFormPage(BasePage):
         a = self.driver.get_element('x,//*[@id="paging-day"]').get_attribute('style')
         if a == 'display: block;':
             new_page = NewPaging(self.driver, self.base_url)
-            return new_page.get_total_page_and_total_number('x,//*[@id="paging-day"]', 'x,//*[@id="mileage-day-tbody"]')
+            return new_page.get_total_page_and_total_number('x,//*[@id="paging-day"]',
+                                                            'x,//*[@id="travelDayTableContent"]/tbody')
         else:
             return [0, 0]
 
@@ -442,41 +445,41 @@ class ObdFormPage(BasePage):
         return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[6]' % str(n + 1))
 
     def get_begin_time_in_vehicle_condition_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[2]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(n + 1))
 
     def get_speed_in_vehicle_condition_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_rotating_speed_in_vehicle_condition_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[4]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[4]' % str(n + 1))
 
     def get_water_temperature_in_vehicle_condition_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[5]' % str(n + 1))
 
     def get_battery_voltage_in_vehicle_condition_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[6]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[6]' % str(n + 1))
 
     def get_fuel_in_vehicle_condition_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[7]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[7]' % str(n + 1))
 
     def get_total_mileage_in_vehicle_condition_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[8]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[8]' % str(n + 1))
 
     def click_first_page(self):
         self.driver.click_element('l,1')
         sleep(2)
 
     def get_begin_time_in_trouble_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[2]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(n + 1))
 
     def get_lat_in_trouble_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[4]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[4]' % str(n + 1))
 
     def get_lot_in_trouble_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_error_code_in_trouble_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[5]' % str(n + 1))
 
     def get_begin_time(self):
         return self.driver.get_element('startTime_travel').get_attribute('value') + ':00'
@@ -485,37 +488,37 @@ class ObdFormPage(BasePage):
         return self.driver.get_element('endTime_travel').get_attribute('value') + ':00'
 
     def get_at_day_in_odb_mileage_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[2]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(n + 1))
 
     def get_avg_fuel_consumption_in_obd_mileage_form(self, n):
         return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[5]' % str(n + 1))
 
     def get_start_time_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[2]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(n + 1))
 
     def get_end_time_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_trip_time_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[4]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[4]' % str(n + 1))
 
     def get_mileage_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[5]' % str(n + 1))
 
     def get_total_fuel_consumption_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[6]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[6]' % str(n + 1))
 
     def get_avg_fuel_consumption_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[7]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[7]' % str(n + 1))
 
     def get_rapid_acceleration_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[8]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[8]' % str(n + 1))
 
     def get_rapid_deceleration_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[9]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[9]' % str(n + 1))
 
     def get_gps_time_in_vehicle_condition_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[2]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(n + 1))
 
     def chang_time_formeat(self, param):
         h = int(param / 3600)

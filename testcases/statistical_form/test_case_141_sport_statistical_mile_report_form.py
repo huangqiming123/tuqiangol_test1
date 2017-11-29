@@ -284,7 +284,7 @@ class TestCase141SportStatisticalMileReportForm(unittest.TestCase):
                     total_number_list_06) + len(total_number_list_07) + len(total_number_list_08) + len(
                     total_number_list_09) + len(total_number_list_10) + len(total_number_list_11) + len(
                     total_number_list_12)
-                web_total = self.statistical_form_page.get_total_search_mileage_form()
+                web_total = self.statistical_form_page.get_total_search_mileage_forms()
                 self.assertEqual(total, web_total)
                 # 计算总里程 和 总时间
                 total_mile = sum(get_all_mlie_and_time_list_01) + sum(get_all_mlie_and_time_list_02) + sum(

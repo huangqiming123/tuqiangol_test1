@@ -509,7 +509,7 @@ class SafeAreaPage(BasePageServer):
         connect_sql = ConnectSql()
         connect = connect_sql.connect_tuqiang_sql()
         cursor = connect.cursor()
-        sql = "SELECT o.id FROM geozone_info o INNER JOIN user_info u on o.userid = u.userId WHERE u.account = '" + account + "' and o.flag = 0"
+        sql = "SELECT o.id FROM geozone_info o INNER JOIN user_info u on o.userid = u.userId WHERE u.account = '" + account + "'"
         if data['defence_name'] != '':
             sql += " and o.geoname like '%" + data['defence_name'] + "%'"
         sql += ";"

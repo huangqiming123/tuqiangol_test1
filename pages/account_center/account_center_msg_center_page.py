@@ -148,7 +148,7 @@ class AccountCenterMsgCenterPage(BasePageServer):
         self.driver.click_element("x,//*[@id='msg_tbody']/tr[1]/td[4]/div/a")
         sleep(4)
         # 切换到iframe
-        self.driver.switch_to_iframe('x,/html/body/div[11]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,/html/body/div[8]/div[2]/iframe')
         # self.driver.switch_to_iframe('x,/html/body/div[7]/div[2]/iframe')
 
         # 基本信息

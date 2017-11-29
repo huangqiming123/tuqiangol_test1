@@ -100,8 +100,11 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
             response = res.json()
             res_data = response['data']
             for data in res_data:
-                if data['stopTimes'] != 0 or data['mileage'] != 0 or data['overSpeedTimes'] != 0:
-                    del (data['atDay'])
+                # if data['stopTimes'] != 0 or data['mileage'] != 0 or data['overSpeedTimes'] != 0:
+                try:
+                    del data['atDay']
+                except:
+                    pass
             print(res_data)
             self.assertEqual(data_web, res_data)
             self.driver.default_frame()

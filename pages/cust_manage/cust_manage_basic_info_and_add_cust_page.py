@@ -23,7 +23,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 定位iframe
     def locate_to_iframe(self):
-        self.driver.switch_to_frame('x,/html/body/div[7]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[4]/div[2]/iframe')
 
     def click_left_tree_current_user(self):
         self.driver.click_element("treeDemo_1_span")
@@ -466,15 +466,16 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             's,body > div.wrapper > div.main.oh > div > div > div.customer-leftsidebar > div > div > div.p-tb10.js-side-tree-box.show-userlist > div.tree-search > div.autocompleter-nodata > span')
 
     def click_edit_customer(self):
-        self.driver.click_element('s,#customerlist > tr:nth-child(1) > td:nth-child(8) > a:nth-child(2)')
+        self.driver.click_element(
+            's,#customertablecontent > tbody > tr:nth-child(1) > td:nth-child(9) > a.cp.js-editor-users-btn.editUserFast')
         sleep(2)
 
     def get_cust_type(self):
-        text = self.driver.get_text('s,#customerlist > tr:nth-child(1) > td:nth-child(3)')
+        text = self.driver.get_text('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[4]')
         return text
 
     def get_cust_account(self):
-        text = self.driver.get_text('s,#customerlist > tr:nth-child(1) > td:nth-child(2)')
+        text = self.driver.get_text('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[3]')
         return text
 
     def get_account_after_edit(self):
@@ -524,30 +525,30 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         return text
 
     def click_transfer_customer(self):
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[5]')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[5]')
         sleep(2)
 
     def click_first_account(self):
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[1]/input')
         sleep(2)
 
     def click_batch_transfer_customer(self):
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[5]')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[5]')
         sleep(2)
 
     def click_all_select_button(self):
-        self.driver.click_element('x,//*[@id="customertableheader"]/thead/tr/th[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/thead/tr/th[1]/div[1]/input')
         sleep(2)
 
     def get_all_select_value(self):
-        return self.driver.get_element('x,//*[@id="userAllCheck"]').is_selected()
+        return self.driver.get_element('x,//*[@id="customertablecontent"]/thead/tr/th[1]/div[1]/input').is_selected()
 
     def get_per_account_number(self):
         number = len(list(self.driver.get_elements('x,//*[@id="customerlist"]')))
         return number
 
     def click_cancel_select_list(self):
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[1]/span/div/ins')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/thead/tr/th[1]/div[1]/input')
         sleep(2)
 
     def select_per_page_numbers(self):
@@ -609,7 +610,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
                 prompt = self.driver.get_text("x,/html/body/div[9]/div[2]")
                 print(prompt)
                 self.driver.wait()
-                self.driver.click_element("x,/html/body/div[9]/div[3]/a")
+                self.driver.click_element("x,/html/body/div[14]/div[3]/a")
                 return prompt
 
 

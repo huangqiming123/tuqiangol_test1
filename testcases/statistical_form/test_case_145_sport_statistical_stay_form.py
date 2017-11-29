@@ -306,6 +306,7 @@ class TestCase145SportStatisticalStayForm(unittest.TestCase):
                 total_time_list_12)
             chang_total_time_type = self.statistical_form_page.change_sec_time(total_time)
             web_total_time = self.statistical_form_page.get_total_stay_form_time()
+            print(web_total_time)
             self.assertEqual(chang_total_time_type, web_total_time)
 
             # 点击导出停留报表

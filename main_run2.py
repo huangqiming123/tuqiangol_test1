@@ -68,12 +68,12 @@ def run_09():
     sleep(10)
 
 
-start_time = datetime.datetime(2017, 11, 28, 1, 10, 0)
+start_time = datetime.datetime(2017, 11, 28, 22, 10, 0)
 while datetime.datetime.now() < start_time:
     sleep(5)
 
 # 设置线程
-thread_list = []
+'''thread_list = []
 for i in range(1):
     t1 = threading.Thread(target=run_07)
     t1.setDaemon(True)
@@ -108,9 +108,21 @@ for t in thread_list:
     t.start()
 
 for t in thread_list:
-    t.join()
+    t.join()'''
 
 run_01()
+sleep(5)
+run_02()
+sleep(5)
+run_03()
+sleep(5)
+run_04()
+sleep(5)
+run_05()
+sleep(5)
+run_06()
+sleep(5)
+run_07()
 sleep(5)
 run_09()
 # 运行后自动关机

@@ -58,7 +58,7 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 获取搜索结果账号(一个)
     def get_search_result_account(self):
-        account = self.driver.get_element("x,//*[@id='customerlist']/tr/td[2]").text
+        account = self.driver.get_element("x,//*[@id='customertablecontent']/tbody/tr[1]/td[3]").text
         return account
 
     # 点击不同的客户类型
@@ -161,7 +161,7 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 单个用户操作-编辑
     def click_acc_edit(self):
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[2]')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[2]')
         self.driver.wait()
 
     # 单个用户操作-编辑信息
@@ -205,12 +205,12 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 单个用户操作-控制台
     def enter_console(self):
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[1]')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[1]')
         self.driver.wait()
 
     # 单个用户操作-重置密码
     def acc_reset_passwd(self):
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[4]')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[4]')
         self.driver.wait()
 
     # 单个用户操作-“重置密码”弹框文本内容
@@ -245,7 +245,7 @@ class CustManageLowerAccountPage(BasePageServer):
 
     # 单个用户操作-删除
     def delete_acc(self):
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[3]')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[3]')
         self.driver.wait(1)
 
     # 单个用户操作-删除-确定
@@ -338,7 +338,8 @@ class CustManageLowerAccountPage(BasePageServer):
         a = self.driver.get_element('x,//*[@id="pagingCustomer"]').get_attribute('style')
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
-            number = new_paging.get_total_number('x,//*[@id="pagingCustomer"]', 'x,//*[@id="customerlist"]')
+            number = new_paging.get_total_number('x,//*[@id="pagingCustomer"]',
+                                                 'x,//*[@id="customertablecontent"]/tbody')
             return number
         elif a == 'display: none;':
             return 0

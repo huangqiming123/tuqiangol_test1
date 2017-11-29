@@ -1,9 +1,7 @@
 import unittest
-from time import sleep
 
 from automate_driver.automate_driver import AutomateDriver
 from model.assert_text import AssertText
-from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.dev_manage.dev_manage_page_read_csv import DevManagePageReadCsv

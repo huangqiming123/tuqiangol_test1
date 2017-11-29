@@ -16,7 +16,7 @@ class ClockInPage(BasePage):
 
     def add_data_to_search_click_in_form(self, data):
         # 点击清空
-        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[2]/button')
+        self.driver.click_element('x,//*[@id="PunchTheColockFrom"]/div[1]/div[6]/button')
         sleep(2)
         # 选择时间
         self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
@@ -53,26 +53,26 @@ class ClockInPage(BasePage):
         # 输入设备型号
         self.driver.operate_input_element('x,//*[@id="deviceName"]', data['dev_type'])
         # 选择打卡类型
-        self.driver.click_element('x,//*[@id="TravelFrom"]/div[1]/div[4]/div/div/div/span[2]')
+        self.driver.click_element('x,//*[@id="PunchTheColockFrom"]/div[1]/div[4]/div/div/div/span[2]')
         sleep(1)
         if data['clock_in_type'] == 'all':
-            self.driver.click_element('x,//*[@id="TravelFrom"]/div[1]/div[4]/div/div/div/div/ul/li[1]')
+            self.driver.click_element('x,//*[@id="PunchTheColockFrom"]/div[1]/div[4]/div/div/div/div/ul/li[1]')
 
         elif data['clock_in_type'] == '1':
-            self.driver.click_element('x,//*[@id="TravelFrom"]/div[1]/div[4]/div/div/div/div/ul/li[2]')
+            self.driver.click_element('x,//*[@id="PunchTheColockFrom"]/div[1]/div[4]/div/div/div/div/ul/li[2]')
 
         elif data['clock_in_type'] == '2':
-            self.driver.click_element('x,//*[@id="TravelFrom"]/div[1]/div[4]/div/div/div/div/ul/li[3]')
+            self.driver.click_element('x,//*[@id="PunchTheColockFrom"]/div[1]/div[4]/div/div/div/div/ul/li[3]')
 
         sleep(2)
 
         # 点击搜索
-        self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[1]/button')
+        self.driver.click_element('x,//*[@id="PunchTheColockFrom"]/div[1]/div[5]/button')
         sleep(5)
 
     def get_page_number_after_search_clock_in_form(self):
-        a = self.driver.get_element('x,//*[@id="punchTheClock-day-noData"]').get_attribute('style')
-        if a == 'display: block;':
+        a = self.driver.get_element('x,//*[@id="paging-day"]').get_attribute('style')
+        if a == 'display: none;':
             return 0
         else:
             new_page = NewPaging(self.driver, self.base_url)
@@ -80,7 +80,7 @@ class ClockInPage(BasePage):
             return number
 
     def get_no_data_text_in_clock_form(self):
-        return self.driver.get_text('x,//*[@id="punchTheClock-day-noData"]/div/span')
+        return self.driver.get_text('x,//*[@id="electricTable"]/tr/td')
 
     def get_sql_data_in_clock_in_form(self, data):
         begin_time = self.driver.get_element('startTime_travel').get_attribute('value')
@@ -106,16 +106,16 @@ class ClockInPage(BasePage):
         return data_list
 
     def get_per_page_number_in_clock_in_form(self):
-        return len(list(self.driver.get_elements('x,//*[@id="punchTheClock-day-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="electricTable"]/tr')))
 
     def get_imei_in_clock_in_form(self, n):
-        return self.driver.get_text('x,//*[@id="punchTheClock-day-tbody"]/tr[%s]/td[2]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="electricTable"]/tr[%s]/td[3]' % str(n + 1))
 
     def get_time_in_clock_form(self, n):
-        return self.driver.get_text('x,//*[@id="punchTheClock-day-tbody"]/tr[%s]/td[4]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="electricTable"]/tr[%s]/td[4]' % str(n + 1))
 
     def get_on_off_in_clock_form(self, n):
-        a = self.driver.get_text('x,//*[@id="punchTheClock-day-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        a = self.driver.get_text('x,//*[@id="electricTable"]/tr[%s]/td[5]' % str(n + 1))
         if a == '上班':
             return 1
         elif a == '下班':

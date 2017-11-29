@@ -25,19 +25,19 @@ class StatisticFormPage3(BasePage):
         return end_time + ':00'
 
     def get_web_search_total_number_sport_overview(self):
-        return len(list(self.driver.get_elements('x,//*[@id="run-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="table"]/tbody/tr')))
 
     def get_imei_in_sport_overview(self, n):
-        return self.driver.get_text('x,//*[@id="run-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_mileage_in_sport_overview(self, n):
-        return int(float(self.driver.get_text('x,//*[@id="run-tbody"]/tr[%s]/td[5]' % str(n + 1))) * 1000)
+        return int(float(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[5]' % str(n + 1))) * 1000)
 
     def get_over_speed_times_in_sport_overview(self, n):
-        return int(self.driver.get_text('x,//*[@id="run-tbody"]/tr[%s]/td[6]' % str(n + 1)))
+        return int(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[6]' % str(n + 1)))
 
     def get_stop_times_in_sport_overview(self, n):
-        return int(self.driver.get_text('x,//*[@id="run-tbody"]/tr[%s]/td[7]' % str(n + 1)))
+        return int(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[7]' % str(n + 1)))
 
     def get_mile_report_form_begin_time(self):
         begin_time = self.driver.get_element('x,//*[@id="startTime_mileage"]').get_attribute('value')
@@ -57,19 +57,19 @@ class StatisticFormPage3(BasePage):
             return 0
 
     def get_total_number_per_page_in_mile_report_form(self):
-        return len(list(self.driver.get_elements('x,//*[@id="mileage-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="mileageTableHeader"]/tbody/tr')))
 
     def get_imei_in_mile_report_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_start_time_in_mile_report_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[5]' % str(n + 1))
 
     def get_end_time_in_mile_report_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[6]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[6]' % str(n + 1))
 
     def get_distance_in_mile_report_form(self, n):
-        return float(self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[7]' % str(n + 1)))
+        return float(self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[7]' % str(n + 1)))
 
     def click_per_page_in_mile_report_form(self, i):
         self.driver.click_element('l,%s' % str(i + 1))
@@ -85,16 +85,16 @@ class StatisticFormPage3(BasePage):
             return 0
 
     def get_total_number_per_page_in_mile_report_form_with_day(self):
-        return len(list(self.driver.get_elements('x,//*[@id="mileage-day-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="dayTableHeader"]/tbody/tr')))
 
     def get_imei_in_mile_report_form_with_day(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_distance_in_mile_report_form_with_day(self, n):
-        return float(self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[6]' % str(n + 1)))
+        return float(self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[6]' % str(n + 1)))
 
     def get_at_day_time_in_mile_report_form_with_day(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[5]' % str(n + 1))
 
     def get_total_page_in_tracel_report_form(self):
         a = self.driver.get_element('x,//*[@id="paging-mileage"]').get_attribute('style')
@@ -114,19 +114,19 @@ class StatisticFormPage3(BasePage):
         return end_time + ':00'
 
     def get_total_number_per_page_in_tracel_form(self):
-        return len(list(self.driver.get_elements('x,//*[@id="mileage-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="mileageTableHeader"]/tbody/tr')))
 
     def get_imei_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_distance_in_tracel_form(self, n):
-        return float(self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[9]' % str(n + 1)))
+        return float(self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[9]' % str(n + 1)))
 
     def get_start_time_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[5]' % str(n + 1))
 
     def get_end_time_in_tracel_form(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[6]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[6]' % str(n + 1))
 
     def get_start_addr_in_tracel_form(self, n):
         return self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[7]' % str(n + 1))
@@ -135,10 +135,10 @@ class StatisticFormPage3(BasePage):
         return self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[8]' % str(n + 1))
 
     def get_avg_speed_in_tracel_form(self, n):
-        return float(self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[12]' % str(n + 1)))
+        return float(self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[12]' % str(n + 1)))
 
     def get_run_time_second_in_tracel_form(self, n):
-        a = self.driver.get_text('x,//*[@id="mileage-tbody"]/tr[%s]/td[10]' % str(n + 1))
+        a = self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[10]' % str(n + 1))
         if a == '0':
             return 0
         else:
@@ -160,16 +160,16 @@ class StatisticFormPage3(BasePage):
             return 0
 
     def get_total_number_per_page_in_tracel_report_form_with_day(self):
-        return len(list(self.driver.get_elements('x,//*[@id="mileage-day-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="travelDayTableHeader"]/tbody/tr')))
 
     def get_imei_in_tracel_form_with_day(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_distance_in_tracel_report_form_with_day(self, n):
-        return float(self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[6]' % str(n + 1)))
+        return float(self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[6]' % str(n + 1)))
 
     def get_at_day_time_in_tracel_report_form_with_day(self, n):
-        return self.driver.get_text('x,//*[@id="mileage-day-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[5]' % str(n + 1))
 
     def get_total_page_in_over_speed_form(self):
         a = self.driver.get_element('x,//*[@id="paging-overspeed"]').get_attribute('style')
@@ -187,25 +187,27 @@ class StatisticFormPage3(BasePage):
         return self.driver.get_element('x,//*[@id="endTime_overspeed"]').get_attribute('value') + ':00'
 
     def get_total_number_per_page_in_over_speed_form(self):
-        return len(list(self.driver.get_elements('x,//*[@id="overspeed-tbody"]/tr')))
+        return len(list(self.driver.get_elements('x,//*[@id="speedTableContent"]/tbody/tr')))
 
     def get_imei_in_over_speed_form(self, n):
-        return self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[3]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="speedTableContent"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_speed_in_over_speed_form(self, n):
-        return int(self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[6]' % str(n + 1)))
+        return int(self.driver.get_text('x,//*[@id="speedTableContent"]/tbody/tr[%s]/td[6]' % str(n + 1)))
 
     def get_addr_in_over_speed_form(self, n):
         return self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[7]' % str(n + 1))
 
     def get_time_in_over_speed_form(self, n):
-        return self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[5]' % str(n + 1))
+        return self.driver.get_text('x,//*[@id="speedTableContent"]/tbody/tr[%s]/td[5]' % str(n + 1))
 
     def get_lat_in_over_speed_form(self, n):
-        return float(self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[8]' % str(n + 1)).split('/')[1])
+        return float(
+            self.driver.get_text('x,//*[@id="speedTableContent"]/tbody/tr[%s]/td[8]' % str(n + 1)).split('/')[1])
 
     def get_lng_in_over_speed_form(self, n):
-        return float(self.driver.get_text('x,//*[@id="overspeed-tbody"]/tr[%s]/td[8]' % str(n + 1)).split('/')[0])
+        return float(
+            self.driver.get_text('x,//*[@id="speedTableContent"]/tbody/tr[%s]/td[8]' % str(n + 1)).split('/')[0])
 
     def add_data_to_search_in_alarm_overview(self, data):
         self.driver.switch_to_frame('x,//*[@id="alarmOverviewFrame"]')

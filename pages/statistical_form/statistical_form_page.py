@@ -405,12 +405,11 @@ class StatisticalFormPage(BasePage):
 
     def get_total_search_mileage_form(self):
         # 计算里程报表查询出来的总条数
-        try:
-            self.new_paging = NewPaging(self.driver, self.base_url)
-            num = self.new_paging.get_total_number('x,//*[@id="paging-mileage"]',
-                                                   'x,//*[@id="mileageTableHeader"]/tbody')
-            return num
-        except:
+        a = self.driver.get_element('x,//*[@id="paging-mileage"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_number('x,//*[@id="paging-mileage"]', 'x,//*[@id="mileageTableHeader"]/tbody')
+        else:
             return 0
 
     def get_total_search_mileage_form_with_day(self):

@@ -2628,3 +2628,6 @@ class StatisticalFormPage(BasePage):
             return num
         except:
             return 0
+
+    def switch_to_stay_not_shutdown_report_form_frame(self):
+        self.driver.switch_to_iframe('x,//*[@id="parkingReportFrame"]')

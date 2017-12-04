@@ -204,3 +204,60 @@ class FormPage(BasePage):
 
     def get_display_line_name_number_travel(self):
         return len(list(self.driver.get_elements('x,//*[@id="mileageTableHeader"]/thead/tr/th')))
+
+    def click_display_line_button_status(self):
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/button')
+        sleep(2)
+
+    def get_display_line_number_status(self):
+        return len(list(self.driver.get_elements('x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li')))
+
+    def get_per_display_style_status(self, n):
+        return self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li[%s]/label/input' % str(n + 1)).is_selected()
+
+    def get_per_display_name_status(self, n):
+        return self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li[%s]/label' % str(n + 1)).get_attribute(
+            'title')
+
+    def click_per_display_input_button_status(self, n):
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li[%s]/label/input' % str(n + 1))
+        sleep(1)
+
+    def get_display_line_name_number_status(self):
+        return len(
+            list(self.driver.get_elements('x,/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/table/thead/tr/th')))
+
+    def get_per_display_name_on_line_status(self, m):
+        return self.driver.get_text(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/table/thead/tr/th[%s]/div[1]' % str(m + 1))
+
+    def click_display_line_button_electric(self):
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/button')
+        sleep(2)
+
+    def get_display_line_number_electric(self):
+        return len(list(self.driver.get_elements('x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li')))
+
+    def get_per_display_style_electric(self, n):
+        return self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li[%s]/label/input' % str(n + 1)).is_selected()
+
+    def get_per_display_name_electric(self, n):
+        return self.driver.get_text(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li[%s]/label' % str(n + 1))
+
+    def click_per_display_input_button_electric(self, n):
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li[%s]/label/input' % str(n + 1))
+        sleep(1)
+
+    def get_display_line_name_number_electric(self):
+        return len(
+            list(self.driver.get_elements('x,/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/table/thead/tr/th')))
+
+    def get_per_display_name_on_line_electric(self, m):
+        return self.driver.get_text(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/table/thead/tr/th[%s]/div[1]' % str(m + 1))

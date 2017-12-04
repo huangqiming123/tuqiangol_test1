@@ -2631,3 +2631,14 @@ class StatisticalFormPage(BasePage):
 
     def switch_to_stay_not_shutdown_report_form_frame(self):
         self.driver.switch_to_iframe('x,//*[@id="parkingReportFrame"]')
+
+    def click_status_form_button(self):
+        self.driver.click_element('x,//*[@id="staticReport"]/a')
+        sleep(4)
+
+    def switch_to_status_report_form_frame(self):
+        self.driver.switch_to_iframe('x,//*[@id="staticReportFrame"]')
+
+    def click_electric_form_button(self):
+        self.driver.click_element('x,//*[@id="electricityReport"]/a')
+        sleep(2)

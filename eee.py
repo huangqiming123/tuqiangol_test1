@@ -1,4 +1,8 @@
-h = 1
-if h < 10:
-    h = '0' + str(h)
-    print(type(h))
+for n in range(10):
+    print(n, end=' ')
+print()
+for m in range(2, 10):
+    print(m, end=' ')
+print()
+for m in range(2, 10, 2):
+    print(m, end=' ')

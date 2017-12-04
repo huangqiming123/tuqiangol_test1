@@ -2650,3 +2650,24 @@ class StatisticalFormPage(BasePage):
     def click_alarm_detail_reoport(self):
         self.driver.click_element('x,//*[@id="alarmDdetails"]/a')
         sleep(3)
+
+    def click_obd_mileage_reoport(self):
+        self.driver.click_element('x,//*[@id="OBDmileageReport"]/a')
+        sleep(3)
+
+    def switch_to_obd_mileage_frame(self):
+        self.driver.switch_to_iframe('x,//*[@id="OBDmileageReportFrame"]')
+
+    def click_obd_travel_reoport(self):
+        self.driver.click_element('x,//*[@id="OBDtracelReport"]/a')
+        sleep(3)
+
+    def switch_to_obd_travel_frame(self):
+        self.driver.switch_to_iframe('x,//*[@id="OBDtracelReportFrame"]')
+
+    def click_obd_car_condition_reoport(self):
+        self.driver.click_element('x,//*[@id="OBDcarConditionReport"]/a')
+        sleep(3)
+
+    def switch_to_obd_car_condition_frame(self):
+        self.driver.switch_to_iframe('x,//*[@id="OBDcarConditionReportFrame"]')

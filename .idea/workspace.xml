@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eee.py" afterPath="$PROJECT_DIR$/eee.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form4/test_case_188_sport_overview_verify_the_display_line.py" afterPath="$PROJECT_DIR$/testcases/statistical_form4/test_case_188_sport_overview_verify_the_display_line.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/form_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form4/test_case_190_travel_verify_the_display_line.py" afterPath="$PROJECT_DIR$/testcases/statistical_form4/test_case_190_travel_verify_the_display_line.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,24 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_188_sport_overview_verify_the_display_line.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_188_sport_overview_verify_the_display_line.py">
+      <file leaf-file-name="test_case_190_travel_verify_the_display_line.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_190_travel_verify_the_display_line.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7647059">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.44350758">
+              <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eee.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eee.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -93,14 +83,11 @@
         <option value="$PROJECT_DIR$/change_data.py" />
         <option value="$PROJECT_DIR$/main_run2.py" />
         <option value="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" />
-        <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_189_mileage_verify_the_display_line.py" />
-        <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_190_travel_verify_the_display_line.py" />
         <option value="$PROJECT_DIR$/pages/global_search/search_sql.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_191_overspeed_verify_the_display_line.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_192_stay_verify_the_display_line.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_193_stay_not_shutdown_verify_the_display_line.py" />
-        <option value="$PROJECT_DIR$/pages/statistical_form/form_page.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_194_acc_verify_the_display_line.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/obd_form_page.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_statistical_form4.py" />
@@ -121,6 +108,9 @@
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_account_center.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_188_sport_overview_verify_the_display_line.py" />
         <option value="$PROJECT_DIR$/eee.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_189_mileage_verify_the_display_line.py" />
+        <option value="$PROJECT_DIR$/pages/statistical_form/form_page.py" />
+        <option value="$PROJECT_DIR$/testcases/statistical_form4/test_case_190_travel_verify_the_display_line.py" />
       </list>
     </option>
   </component>
@@ -256,85 +246,19 @@
       <recent name="E:\git\tuqiangol_test\testcases" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.eee">
-    <configuration default="false" name="Unittest TestCase175SportStatisticalMileReportForm.test_case_sport_statistical_mile_report_form" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittest TestCase190TravelVerifyTheDisplayLine.test_case_190_travel_verify_the_display_line">
+    <configuration default="false" name="Unittests in TestCase194AccVerifyTheDisplayLine" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form3/test_case_175_sport_statistical_mile_report_form.py" />
-      <option name="CLASS_NAME" value="TestCase175SportStatisticalMileReportForm" />
-      <option name="METHOD_NAME" value="test_case_sport_statistical_mile_report_form" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase178SportStatisticalStayForm.test_case_sport_statistical_stay_form" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form3/test_case_178_sport_statistical_stay_form.py" />
-      <option name="CLASS_NAME" value="TestCase178SportStatisticalStayForm" />
-      <option name="METHOD_NAME" value="test_case_sport_statistical_stay_form" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase180SportStatisticalAccForm.test_case_sport_statistical_acc_form" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form3/test_case_180_sport_statistical_acc_form.py" />
-      <option name="CLASS_NAME" value="TestCase180SportStatisticalAccForm" />
-      <option name="METHOD_NAME" value="test_case_sport_statistical_acc_form" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in TestCase184ObdTracelForm" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form3/test_case_184_0925_obd_tracel_form.py" />
-      <option name="CLASS_NAME" value="TestCase184ObdTracelForm" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form4/test_case_194_acc_verify_the_display_line.py" />
+      <option name="CLASS_NAME" value="TestCase194AccVerifyTheDisplayLine" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
@@ -345,19 +269,85 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase184ObdTracelForm.test_case_obd_tracel_form" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase193StayNotShutdownVerifyTheDisplayLine" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form3/test_case_184_0925_obd_tracel_form.py" />
-      <option name="CLASS_NAME" value="TestCase184ObdTracelForm" />
-      <option name="METHOD_NAME" value="test_case_obd_tracel_form" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form4/test_case_193_stay_not_shutdown_verify_the_display_line.py" />
+      <option name="CLASS_NAME" value="TestCase193StayNotShutdownVerifyTheDisplayLine" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase189MileageVerifyTheDisplayLine" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form4/test_case_189_mileage_verify_the_display_line.py" />
+      <option name="CLASS_NAME" value="TestCase189MileageVerifyTheDisplayLine" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase189MileageVerifyTheDisplayLine.test_case_189_mileage_verify_the_display_line" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form4/test_case_189_mileage_verify_the_display_line.py" />
+      <option name="CLASS_NAME" value="TestCase189MileageVerifyTheDisplayLine" />
+      <option name="METHOD_NAME" value="test_case_189_mileage_verify_the_display_line" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase190TravelVerifyTheDisplayLine.test_case_190_travel_verify_the_display_line" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/statistical_form4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/statistical_form4/test_case_190_travel_verify_the_display_line.py" />
+      <option name="CLASS_NAME" value="TestCase190TravelVerifyTheDisplayLine" />
+      <option name="METHOD_NAME" value="test_case_190_travel_verify_the_display_line" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -508,19 +498,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase175SportStatisticalMileReportForm.test_case_sport_statistical_mile_report_form" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase178SportStatisticalStayForm.test_case_sport_statistical_stay_form" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase180SportStatisticalAccForm.test_case_sport_statistical_acc_form" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase184ObdTracelForm" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase184ObdTracelForm.test_case_obd_tracel_form" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase194AccVerifyTheDisplayLine" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase193StayNotShutdownVerifyTheDisplayLine" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase189MileageVerifyTheDisplayLine" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase189MileageVerifyTheDisplayLine.test_case_189_mileage_verify_the_display_line" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase190TravelVerifyTheDisplayLine.test_case_190_travel_verify_the_display_line" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase184ObdTracelForm.test_case_obd_tracel_form" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase184ObdTracelForm" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase180SportStatisticalAccForm.test_case_sport_statistical_acc_form" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase178SportStatisticalStayForm.test_case_sport_statistical_stay_form" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase175SportStatisticalMileReportForm.test_case_sport_statistical_mile_report_form" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase190TravelVerifyTheDisplayLine.test_case_190_travel_verify_the_display_line" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase189MileageVerifyTheDisplayLine.test_case_189_mileage_verify_the_display_line" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase189MileageVerifyTheDisplayLine" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase193StayNotShutdownVerifyTheDisplayLine" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase194AccVerifyTheDisplayLine" />
       </list>
     </recent_temporary>
   </component>
@@ -534,12 +524,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00131" summary="修改代码">
-      <created>1504863636990</created>
-      <option name="number" value="00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1504863636990</updated>
     </task>
     <task id="LOCAL-00132" summary="修改代码">
       <created>1505120798726</created>
@@ -829,39 +813,45 @@
       <option name="project" value="LOCAL" />
       <updated>1512349662168</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="修改代码">
+      <created>1512350305449</created>
+      <option name="number" value="00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1512350305449</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase175SportStatisticalMileReportForm_test_case_sport_statistical_mile_report_form - 2017.12.01 at 17h 39m 50s.xml">
-      <configuration name="Unittest TestCase175SportStatisticalMileReportForm.test_case_sport_statistical_mile_report_form" configurationId="tests" />
+    <history-entry file="Unittest_TestCase189MileageVerifyTheDisplayLine_test_case_189_mileage_verify_the_display_line - 2017.12.04 at 10h 16m 23s.xml">
+      <configuration name="Unittest TestCase189MileageVerifyTheDisplayLine.test_case_189_mileage_verify_the_display_line" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase175SportStatisticalMileReportForm_test_case_sport_statistical_mile_report_form - 2017.12.01 at 17h 46m 40s.xml">
-      <configuration name="Unittest TestCase175SportStatisticalMileReportForm.test_case_sport_statistical_mile_report_form" configurationId="tests" />
+    <history-entry file="Unittest_TestCase189MileageVerifyTheDisplayLine_test_case_189_mileage_verify_the_display_line - 2017.12.04 at 10h 20m 22s.xml">
+      <configuration name="Unittest TestCase189MileageVerifyTheDisplayLine.test_case_189_mileage_verify_the_display_line" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase178SportStatisticalStayForm_test_case_sport_statistical_stay_form - 2017.12.01 at 17h 48m 29s.xml">
-      <configuration name="Unittest TestCase178SportStatisticalStayForm.test_case_sport_statistical_stay_form" configurationId="tests" />
+    <history-entry file="Unittest_TestCase190TravelVerifyTheDisplayLine_test_case_190_travel_verify_the_display_line - 2017.12.04 at 09h 57m 11s.xml">
+      <configuration name="Unittest TestCase190TravelVerifyTheDisplayLine.test_case_190_travel_verify_the_display_line" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase180SportStatisticalAccForm_test_case_sport_statistical_acc_form - 2017.12.01 at 17h 49m 51s.xml">
-      <configuration name="Unittest TestCase180SportStatisticalAccForm.test_case_sport_statistical_acc_form" configurationId="tests" />
+    <history-entry file="Unittest_TestCase190TravelVerifyTheDisplayLine_test_case_190_travel_verify_the_display_line - 2017.12.04 at 10h 25m 19s.xml">
+      <configuration name="Unittest TestCase190TravelVerifyTheDisplayLine.test_case_190_travel_verify_the_display_line" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase180SportStatisticalAccForm_test_case_sport_statistical_acc_form - 2017.12.01 at 18h 04m 05s.xml">
-      <configuration name="Unittest TestCase180SportStatisticalAccForm.test_case_sport_statistical_acc_form" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase184ObdTracelForm_test_case_obd_tracel_form - 2017.12.01 at 18h 18m 48s.xml">
-      <configuration name="Unittest TestCase184ObdTracelForm.test_case_obd_tracel_form" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase184ObdTracelForm_test_case_obd_tracel_form - 2017.12.01 at 18h 20m 05s.xml">
-      <configuration name="Unittest TestCase184ObdTracelForm.test_case_obd_tracel_form" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase191OverspeedVerifyTheDisplayLine_test_case_191_overspeed_verify_the_display_line - 2017.12.01 at 17h 22m 41s.xml">
+    <history-entry file="Unittest_TestCase191OverspeedVerifyTheDisplayLine_test_case_191_overspeed_verify_the_display_line - 2017.12.04 at 10h 01m 00s.xml">
       <configuration name="Unittest TestCase191OverspeedVerifyTheDisplayLine.test_case_191_overspeed_verify_the_display_line" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase184ObdTracelForm - 2017.12.01 at 18h 07m 57s.xml">
-      <configuration name="Unittests in TestCase184ObdTracelForm" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase189MileageVerifyTheDisplayLine - 2017.12.04 at 10h 15m 10s.xml">
+      <configuration name="Unittests in TestCase189MileageVerifyTheDisplayLine" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase192StayVerifyTheDisplayLine - 2017.12.01 at 17h 20m 29s.xml">
+    <history-entry file="Unittests_in_TestCase192StayVerifyTheDisplayLine - 2017.12.04 at 10h 03m 44s.xml">
       <configuration name="Unittests in TestCase192StayVerifyTheDisplayLine" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestCase193StayNotShutdownVerifyTheDisplayLine - 2017.12.04 at 10h 12m 42s.xml">
+      <configuration name="Unittests in TestCase193StayNotShutdownVerifyTheDisplayLine" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestCase194AccVerifyTheDisplayLine - 2017.12.04 at 10h 08m 48s.xml">
+      <configuration name="Unittests in TestCase194AccVerifyTheDisplayLine" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_case_193_stay_not_shutdown_verify_the_display_line - 2017.12.04 at 10h 06m 29s.xml">
+      <configuration name="Unittests in test_case_193_stay_not_shutdown_verify_the_display_line" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -883,7 +873,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33441558" sideWeight="0.51317173" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31601733" sideWeight="0.4926238" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29545453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3430736" sideWeight="0.48682824" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32683983" sideWeight="0.48682824" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118019" sideWeight="0.50512445" order="2" side_tool="true" content_ui="tabs" />
@@ -1032,45 +1022,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/form_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53608245">
-          <caret line="202" column="50" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.29850745">
           <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_192_stay_verify_the_display_line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40298507">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_191_overspeed_verify_the_display_line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.104477614">
-          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_189_mileage_verify_the_display_line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5472637">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_190_travel_verify_the_display_line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5522388">
-          <caret line="71" column="72" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1156,23 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.013840831">
           <caret line="97" column="19" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_194_acc_verify_the_display_line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9584775">
-          <caret line="57" column="74" selection-start-line="57" selection-start-column="74" selection-end-line="57" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_193_stay_not_shutdown_verify_the_display_line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8370536">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1342,16 +1283,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eee.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.31019202">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_188_sport_overview_verify_the_display_line.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7647059">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.1302983">
+          <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_191_overspeed_verify_the_display_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7200675">
+          <caret line="52" column="60" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_192_stay_verify_the_display_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2259697">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_194_acc_verify_the_display_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7588533">
+          <caret line="47" column="68" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_193_stay_not_shutdown_verify_the_display_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70826304">
+          <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_189_mileage_verify_the_display_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34232715">
+          <caret line="64" column="75" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/form_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3322091">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_190_travel_verify_the_display_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44350758">
+          <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

@@ -58,12 +58,10 @@ class FormPage(BasePage):
         sleep(2)
 
     def get_display_line_name_number_mileage(self):
-        return len(list(
-            self.driver.get_elements('x,/html/body/div[1]/div[2]/div[2]/div/div[1]/div[2]/div[1]/table/thead/tr/th')))
+        return len(list(self.driver.get_elements('x,//*[@id="mileageTableHeader"]/thead/tr/th')))
 
     def get_per_display_name_on_line_mileage(self, m):
-        return self.driver.get_element(
-            'x,/html/body/div[1]/div[2]/div[2]/div/div[1]/div[2]/div[1]/table/thead/tr/th[%s]/div[1]' % str(m + 1)).text
+        return self.driver.get_element('x,//*[@id="mileageTableHeader"]/thead/tr/th[%s]/div[1]' % str(m + 1)).text
 
     def click_display_line_button_travel(self):
         self.driver.click_element('x,/html/body/div[1]/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/button')
@@ -203,3 +201,6 @@ class FormPage(BasePage):
     def get_per_display_name_on_line_acc(self, m):
         return self.driver.get_text(
             'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/table/thead/tr/th[%s]/div[1]' % str(m + 1))
+
+    def get_display_line_name_number_travel(self):
+        return len(list(self.driver.get_elements('x,//*[@id="mileageTableHeader"]/thead/tr/th')))

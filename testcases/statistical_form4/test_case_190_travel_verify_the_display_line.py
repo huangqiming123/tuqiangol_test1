@@ -62,7 +62,7 @@ class TestCase190TravelVerifyTheDisplayLine(unittest.TestCase):
             self.form_page.click_display_line_button_travel()
             # 获取展示列数量
             display_line_name_list = []
-            display_line_name_number = self.form_page.get_display_line_name_number_mileage()
+            display_line_name_number = self.form_page.get_display_line_name_number_travel()
             for m in range(display_line_name_number):
                 display_name = self.form_page.get_per_display_name_on_line_mileage(m)
                 display_line_name_list.append(display_name)

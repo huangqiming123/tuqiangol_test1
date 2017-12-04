@@ -2671,3 +2671,10 @@ class StatisticalFormPage(BasePage):
 
     def switch_to_obd_car_condition_frame(self):
         self.driver.switch_to_iframe('x,//*[@id="OBDcarConditionReportFrame"]')
+
+    def click_obd_failure_reoport(self):
+        self.driver.click_element('x,//*[@id="OBDfailureReport"]/a')
+        sleep(3)
+
+    def switch_to_obd_failure_frame(self):
+        self.driver.switch_to_iframe('x,//*[@id="OBDfailureReportFrame"]')

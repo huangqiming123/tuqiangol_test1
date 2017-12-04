@@ -2642,3 +2642,11 @@ class StatisticalFormPage(BasePage):
     def click_electric_form_button(self):
         self.driver.click_element('x,//*[@id="electricityReport"]/a')
         sleep(2)
+
+    def click_alarm_overview_reoport(self):
+        self.driver.click_element('x,//*[@id="alarmOverview"]/a')
+        sleep(3)
+
+    def click_alarm_detail_reoport(self):
+        self.driver.click_element('x,//*[@id="alarmDdetails"]/a')
+        sleep(3)

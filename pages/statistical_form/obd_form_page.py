@@ -524,12 +524,12 @@ class ObdFormPage(BasePage):
         h = int(param / 3600)
         m = int(int(param % 3600) / 60)
         s = int(param % 3600) % 60
-        '''if h == 0 and m == 0:
-            return '%s秒' % str(s)
-        elif h == 0 and m != 0:
-            return '%s分钟,%s秒' % (str(m), str(s))
-        else:
-            return '%s小时,%s分钟,%s秒' % (str(h), str(m), str(s))'''
+        if h < 10:
+            h = '0' + str(h)
+        if m < 10:
+            m = '0' + str(m)
+        if s < 10:
+            s = '0' + str(s)
         return '%s:%s:%s' % (str(h), str(m), str(s))
 
     def get_begin_times(self):

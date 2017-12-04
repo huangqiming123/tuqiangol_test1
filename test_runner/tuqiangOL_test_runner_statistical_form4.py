@@ -7,11 +7,12 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 
+from model.send_mail import send_mails
+from test_runner.html_test_runner import HtmlTestRunner
+
 from email.header import Header
 from email.mime.text import MIMEText
 
-from model.send_mail import send_mails
-from test_runner.html_test_runner import HtmlTestRunner
 from test_runner.test_runner_path import TestRunnerPath
 
 '''
@@ -92,10 +93,10 @@ def send_mail(file_new):
 if __name__ == '__main__':
     # 指定测试用例目录
     test_runner_path = TestRunnerPath()
-    test_dir_account_center = test_runner_path.test_cases_path('account_center')
+    test_dir_account_center = test_runner_path.test_cases_path('statistical_form4')
 
     # 指定测试报告目录
-    test_report_account_center = test_runner_path.test_report_path('account_center')
+    test_report_account_center = test_runner_path.test_report_path('statistical_form4')
 
     discover_account_center = unittest.defaultTestLoader.discover(test_dir_account_center, pattern='test*.py')
 
@@ -103,14 +104,14 @@ if __name__ == '__main__':
     now = time.strftime("%Y-%m-%d_%H_%M_%S")
 
     # 定义报告存放路径
-    filename_account_center = test_report_account_center + '\\' + now + 'account_center_result.html'
+    filename_account_center = test_report_account_center + '\\' + now + 'statistical_form4_result.html'
 
     # 以读的方式打开报告文件
     fp_account_center = open(filename_account_center, 'wb')
 
     # 定义测试报告，stream指定测试报告文件，file定义测试报告标题，description定义测试报告副标题
     runner_account_center = HtmlTestRunner(stream=fp_account_center,
-                                           title='账户中心模块测试报告',
+                                           title='统计报表模块测试报告4',
                                            description='用例执行情况：')
 
     runner_account_center.run(discover_account_center)  # 运行测试用例

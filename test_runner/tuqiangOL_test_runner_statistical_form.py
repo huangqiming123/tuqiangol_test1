@@ -104,7 +104,7 @@ if __name__ == '__main__':
     now = time.strftime("%Y-%m-%d_%H_%M_%S")
 
     # 定义报告存放路径
-    filename_account_center = test_report_account_center + '\\' + now + 'result.html'
+    filename_account_center = test_report_account_center + '\\' + now + 'statistical_form_result.html'
 
     # 以读的方式打开报告文件
     fp_account_center = open(filename_account_center, 'wb')

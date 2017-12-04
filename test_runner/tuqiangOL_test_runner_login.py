@@ -100,7 +100,7 @@ if __name__ == '__main__':
     now = time.strftime("%Y-%m-%d_%H_%M_%S")
 
     # 定义报告存放路径
-    filename_login = test_report_login + '\\' + now + 'result.html'
+    filename_login = test_report_login + '\\' + now + 'login_result.html'
 
     # 以读的方式打开报告文件
     fp_login = open(filename_login, 'wb')

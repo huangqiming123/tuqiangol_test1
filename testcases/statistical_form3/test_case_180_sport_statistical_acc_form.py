@@ -149,7 +149,6 @@ class TestCase180SportStatisticalAccForm(unittest.TestCase):
                             'end': self.statistical_form_page4.get_end_time_in_over_acc_form(n),
                             'imei': self.statistical_form_page4.get_imei_in_over_acc_form(n),
                             'acc': int(self.statistical_form_page4.get_state_in_over_acc_form(n)),
-
                         })
                 print("页面数据", web_data)
                 print(len(web_data))

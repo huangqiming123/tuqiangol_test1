@@ -478,3 +478,44 @@ class FormPage(BasePage):
         return self.driver.get_text(
             'x,/html/body/div[1]/div[2]/div[2]/div[2]/div[1]/div/div[1]/div[2]/div[1]/table/thead/tr/th[%s]/div[1]' % str(
                 m + 1))
+
+    def click_display_line_button_mileage_with_day(self):
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/button')
+        sleep(2)
+
+    def get_display_line_number_mileage_with_day(self):
+        return len(
+            list(self.driver.get_elements('x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/ul/li')))
+
+    def get_per_display_style_mileage_with_day(self, n):
+        return self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/ul/li[%s]/label/input' % str(
+                n + 1)).is_selected()
+
+    def click_per_display_input_button_mileage_with_day(self, n):
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/ul/li[%s]/label/input' % str(n + 1))
+        sleep(1)
+
+    def click_per_display_input_button_travel(self, n):
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/ul/li[%s]/label/input' % str(n + 1))
+        sleep(1)
+
+    def click_display_line_button_travel_with_day(self):
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/button')
+        sleep(1)
+
+    def get_display_line_number_travel_with_day(self):
+        return len(
+            list(self.driver.get_elements('x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/ul/li')))
+
+    def get_per_display_style_travel_with_day(self, n):
+        return self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/ul/li[%s]/label/input' % str(
+                n + 1)).is_selected()
+
+    def click_per_display_input_button_travel_with_day(self, n):
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/ul/li[%s]/label/input' % str(n + 1))
+        sleep(1)

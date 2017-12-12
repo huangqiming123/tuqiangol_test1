@@ -1285,7 +1285,7 @@ class DevManagePages(BasePage):
         return b
 
     def switch_to_dev_edit_frame(self):
-        self.driver.switch_to_frame('x,/html/body/div[34]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[36]/div[2]/iframe')
 
     def get_imei_in_detail(self):
         self.switch_to_dev_edit_frame()
@@ -2036,3 +2036,13 @@ class DevManagePages(BasePage):
 
     def get_text_after_click_issued_work_template(self):
         return self.driver.get_text('c,layui-layer-content')
+
+    def get_color_max_len(self):
+        self.switch_to_dev_edit_frame()
+        a = self.driver.get_element('x,//*[@id="vehicleColor"]').get_attribute('maxlength')
+        self.driver.default_frame()
+        return a
+
+    def click_cancels(self):
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(2)

@@ -127,3 +127,6 @@ class TestCase87DevManageEditDev(unittest.TestCase):
 
         dev_install_personnel_max_len = self.dev_manage_page.get_dev_install_personnel_max_len()
         self.assertEqual('50', dev_install_personnel_max_len)
+
+        dev_color_max_len = self.dev_manage_page.get_color_max_len()
+        self.assertEqual('50', dev_color_max_len)

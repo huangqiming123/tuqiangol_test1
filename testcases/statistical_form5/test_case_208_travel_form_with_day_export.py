@@ -58,8 +58,8 @@ class TestCase208TravelFormWithDayExport(unittest.TestCase):
 
         # 切换到里程报表的frame
         self.statistical_form_page.click_mileage_form_button()
-        self.statistical_form_page.switch_to_tracel_report_form_frame() \
-            # 点击天
+        self.statistical_form_page.switch_to_tracel_report_form_frame()
+        # 点击天
         self.form_export_page.click_day_button_in_travel_form()
         # 搜索数据
         self.form_export_page.search_travel_data_with_day()

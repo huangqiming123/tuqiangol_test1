@@ -8,25 +8,25 @@ class SearchSql(StatisticalFormPage):
     def get_today_begin_date(self):
         # 获取今天的开始时间
         current_time = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        return current_time + " 00:00"
+        return current_time + " 00:00:00"
 
     def get_today_end_time(self):
         # 今天的结束时间
-        current_time = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         return current_time
 
     def get_yesterday_begin_time(self):
         # 获取昨天的开始时间
         today = datetime.date.today()
         yes = today - datetime.timedelta(days=1)
-        first = str(yes) + " 00:00"
+        first = str(yes) + " 00:00:00"
         return first
 
     def get_yesterday_end_time(self):
         # 获取昨天的结束时间
         today = datetime.date.today()
         yes = today - datetime.timedelta(days=1)
-        second = str(yes) + " 23:59"
+        second = str(yes) + " 23:59:59"
         return second
 
     def get_this_week_begin_time(self):
@@ -34,11 +34,11 @@ class SearchSql(StatisticalFormPage):
         today = datetime.date.today()
         days_count = datetime.timedelta(days=(today.isoweekday() - 1))
         week = today - days_count
-        return str(week) + ' 00:00'
+        return str(week) + ' 00:00:00'
 
     def get_this_week_end_time(self):
         # 获取本周的结束时间
-        current_time = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         return current_time
 
     def get_last_week_begin_time(self):
@@ -46,25 +46,25 @@ class SearchSql(StatisticalFormPage):
         today = datetime.date.today()
         days_count = datetime.timedelta(days=today.isoweekday())
         week = today - days_count - datetime.timedelta(days=6)
-        return str(week) + ' 00:00'
+        return str(week) + ' 00:00:00'
 
     def get_last_week_end_time(self):
         # 获取上周的结束时间
         today = datetime.date.today()
         days_count = datetime.timedelta(days=today.isoweekday())
         week = today - days_count
-        return str(week) + ' 23:59'
+        return str(week) + ' 23:59:59'
 
     def get_this_month_begin_time(self):
         # 获取本月的开始时间
         today = datetime.date.today()
         days_count = datetime.timedelta(days=(today.day - 1))
         this_month = today - days_count
-        return str(this_month) + " 00:00"
+        return str(this_month) + " 00:00:00"
 
     def get_this_month_end_time(self):
         # 获取本月的开始时间
-        current_time = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         return current_time
 
     def get_last_month_begin_time(self):
@@ -73,14 +73,14 @@ class SearchSql(StatisticalFormPage):
         days_count = datetime.timedelta(days=today.day)
         last_month = today - days_count
         month = datetime.date(last_month.year, last_month.month, 1)
-        return str(month) + " 00:00"
+        return str(month) + " 00:00:00"
 
     def get_last_month_end_time(self):
         # 获取上月的结束
         today = datetime.date.today()
         days_count = datetime.timedelta(days=today.day)
         last_month = today - days_count
-        return str(last_month) + " 23:59"
+        return str(last_month) + " 23:59:59"
 
     def search_current_account_equipment(self, user_account):
         connect_sql = ConnectSql()
@@ -92,7 +92,7 @@ class SearchSql(StatisticalFormPage):
         user_id_list = cursor.fetchall()
         user_id = user_id_list[0][0]
 
-        get_account_dev_sql = "select a.imei from equipment_mostly a LEFT JOIN equipment_expiration e on a.imei = e.imei where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>0 and (e.expiration is NULL OR (e.expiration is not null and DATEDIFF(e.expiration,CURDATE())>0)) and (e.userId is null or (e.userId is not null and e.userId = '%s'));" % (
+        get_account_dev_sql = "select a.imei from equipment_mostly a LEFT JOIN equipment_expiration e on a.imei = e.imei where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>0 and (e.expiration is NULL OR (e.expiration is not null and DATEDIFF(e.expiration,CURDATE())>0)) and (e.userId is null or (e.userId is not null and e.userId = '%s')) and a.activationTime is not null;" % (
             user_id, user_id)
         # get_account_dev_sql = "select a.imei from equipment_mostly a where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>=0;" % user_id
         cursor.execute(get_account_dev_sql)

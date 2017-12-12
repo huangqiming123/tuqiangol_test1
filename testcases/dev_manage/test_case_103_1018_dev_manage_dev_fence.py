@@ -59,6 +59,6 @@ class TestCase103DevManageDevFence(unittest.TestCase):
             self.assertEqual(True, out_fence)
 
         # 点击保存
-        self.dev_manage_page.click_ensure()
+        # self.dev_manage_page.click_ensure()
         # 点击取消
-        self.dev_manage_page.click_cancel()
+        self.dev_manage_page.click_cancels()

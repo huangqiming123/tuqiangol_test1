@@ -23,7 +23,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 定位iframe
     def locate_to_iframe(self):
-        self.driver.switch_to_frame('x,/html/body/div[4]/div[2]/iframe')
+        self.driver.switch_to_frame('x,/html/body/div[5]/div[2]/iframe')
 
     def click_left_tree_current_user(self):
         self.driver.click_element("treeDemo_1_span")
@@ -537,7 +537,8 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         sleep(2)
 
     def click_all_select_button(self):
-        self.driver.click_element('x,//*[@id="customertablecontent"]/thead/tr/th[1]/div[1]/input')
+        self.driver.click_element(
+            'x,/html/body/div[1]/div[6]/div[1]/div/div[2]/div/div[2]/div[3]/div[1]/div[2]/div[1]/table/thead/tr/th[1]/div[1]/input')
         sleep(2)
 
     def get_all_select_value(self):
@@ -548,7 +549,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         return number
 
     def click_cancel_select_list(self):
-        self.driver.click_element('x,//*[@id="customertablecontent"]/thead/tr/th[1]/div[1]/input')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[1]/input')
         sleep(2)
 
     def select_per_page_numbers(self):

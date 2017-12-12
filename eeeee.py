@@ -1,2 +1,15 @@
-a = '2017-11-9'
-print(a.split('-')[0] + '-' + a.split('-')[1] + "-" + '0' + a.split('-')[2])
+a = 100
+
+
+@staticmethod
+def test1():
+    print(a)
+
+
+@staticmethod
+def test2():
+    print(a)
+
+
+test1()
+test2()

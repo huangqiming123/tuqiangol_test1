@@ -46,6 +46,24 @@ class SearchSql(object):
         elif search_data['base_info'] == '设备名称':
             sql += " and m.deviceName like '%" + search_data['info'] + "%'"
 
+        elif search_data['base_info'] == 'iccid':
+            sql += " and d.iccid like '%" + search_data['info'] + "%'"
+
+        elif search_data['base_info'] == '司机名称':
+            sql += " and d.driverName like '%" + search_data['info'] + "%'"
+
+        elif search_data['base_info'] == '电话':
+            sql += " and m.driverPhone like '%" + search_data['info'] + "%'"
+
+        elif search_data['base_info'] == '发动机号':
+            sql += " and d.engineNumber like '%" + search_data['info'] + "%'"
+
+        elif search_data['base_info'] == '身份证号':
+            sql += " and d.idCard like '%" + search_data['info'] + "%'"
+
+        elif search_data['base_info'] == '业务员':
+            sql += " and d.salesMan like '%" + search_data['info'] + "%'"
+
         begin_time = search_data['date'].split('/')[0]
         end_time = search_data['date'].split('/')[1]
         if search_data['is_date'] == '':

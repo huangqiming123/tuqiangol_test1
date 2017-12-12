@@ -79,7 +79,7 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
                     'overSpeedTimes': self.statistical_form_page3.get_over_speed_times_in_sport_overview(n),
                     'stopTimes': self.statistical_form_page3.get_stop_times_in_sport_overview(n)
                 })
-            print(data_web)
+            print('web', data_web)
             # 连接数据库
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
             imeis = self.statistical_form_page3.change_dev_imei_format(all_dev)
@@ -93,7 +93,6 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
                 'imeis': imeis,
                 'startTime': begin_time,
                 'endTime': end_time,
-                'userIds': get_current_userid
             }
             res = requests.post(request_url, data=request_params)
             sleep(30)
@@ -105,7 +104,7 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
                     del data['atDay']
                 except:
                     pass
-            print(res_data)
+            print('res', res_data)
             self.assertEqual(data_web, res_data)
             self.driver.default_frame()
         csv_file.close()

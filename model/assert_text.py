@@ -220,7 +220,7 @@ class AssertText(object):
         return '编辑'
 
     def safe_area_page_geo_fence(self):
-        return '围栏'
+        return '平台围栏'
 
     def safe_area_page_black_car_address_text(self):
         return '黑车地址库'

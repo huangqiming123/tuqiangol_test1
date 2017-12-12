@@ -80,7 +80,7 @@ class ClockInPage(BasePage):
             return number
 
     def get_no_data_text_in_clock_form(self):
-        return self.driver.get_text('x,//*[@id="electricTable"]/tr/td')
+        return self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr/td')
 
     def get_sql_data_in_clock_in_form(self, data):
         begin_time = self.driver.get_element('startTime_travel').get_attribute('value')

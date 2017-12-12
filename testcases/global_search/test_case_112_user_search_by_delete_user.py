@@ -64,7 +64,7 @@ class TestCase112UserSearchByDeleteUser(unittest.TestCase):
             self.global_account_search_page.click_global_search_button()
             self.global_account_search_page.click_close_add_user_page()
             self.global_account_search_page.click_global_search_button()
-            self.global_account_search_page.switch_to_search_user_frame()
+            self.global_dev_search_page.swith_to_search_frames()
 
             self.global_account_search_page.search_user_by_account_in_global_search(add_data['account'])
             get_user_account = self.global_account_search_page.get_user_account_after_search()

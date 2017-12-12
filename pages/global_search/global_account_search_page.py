@@ -592,7 +592,7 @@ class GlobalAccountSearchPage(BasePage):
         self.driver.operate_input_element('x,//*[@id="searchaccount"]', param)
         self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
         sleep(5)
-        self.driver.click_element('x,//*[@id="customerlist"]/tr[1]/td[8]/a[3]')
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr/td[9]/a[3]')
         self.driver.click_element('c,layui-layer-btn0')
         sleep(3)
 

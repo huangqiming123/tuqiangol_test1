@@ -93,11 +93,11 @@ class FormExportPage(BasePage):
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[1]' % str(i + 1))),
-            '所属用户': self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[2]' % str(i + 1)),
+            '所属账号': self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[2]' % str(i + 1)),
             '客户名称': self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[3]' % str(i + 1)),
             '设备名称': self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[4]' % str(i + 1)),
             'IMEI': self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[5]' % str(i + 1)),
-            '设备型号': self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[6]' % str(i + 1)),
+            '型号': self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[6]' % str(i + 1)),
             '设备分组': self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[7]' % str(i + 1)),
             '总里程(KM)': float(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[8]' % str(i + 1))),
             '超速(次)': float(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[9]' % str(i + 1))),
@@ -164,8 +164,9 @@ class FormExportPage(BasePage):
         if oil == '-':
             oil = '-'
         else:
-            oil = '%.3f' % (float(
-                self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[10]' % str(a + 1))) / 100 * 8)
+            '''oil = '%.3f' % (float(
+                self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[10]' % str(a + 1))) / 100 * 8)'''
+            oil = oil
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[1]' % str(a + 1))),
@@ -173,7 +174,7 @@ class FormExportPage(BasePage):
             '客户名称': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[3]' % str(a + 1)),
             '设备名称': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[4]' % str(a + 1)),
             'IMEI': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[5]' % str(a + 1)),
-            '设备型号': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '型号': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[6]' % str(a + 1)),
             '设备分组': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[7]' % str(a + 1)),
             '开始时间': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[8]' % str(a + 1)),
             '结束时间': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[9]' % str(a + 1)),
@@ -218,16 +219,19 @@ class FormExportPage(BasePage):
         driver = self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[15]' % str(a + 1))
         if driver == '-':
             driver = ''
+        day = self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[8]' % str(a + 1))
+        if len(day) == 9:
+            day = day.split('-')[0] + '-' + day.split('-')[1] + "-" + '0' + day.split('-')[2]
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[1]' % str(a + 1))),
-            '所属帐号': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '所属账号': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[2]' % str(a + 1)),
             '客户名称': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[3]' % str(a + 1)),
             '设备名称': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[4]' % str(a + 1)),
             'IMEI': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[5]' % str(a + 1)),
             '型号': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[6]' % str(a + 1)),
             '设备分组': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[7]' % str(a + 1)),
-            '日期': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[8]' % str(a + 1)),
+            '日期': day,
             '总里程(KM)': self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[9]' % str(a + 1)),
             '司机名称': driver_name,
             '电话': driver_phone,
@@ -293,12 +297,13 @@ class FormExportPage(BasePage):
         if oil == '-':
             oil = '-'
         else:
-            oil = '%.3f' % (float(
-                self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[12]' % str(a + 1))) / 100 * 8)
+            '''oil = '%.3f' % (float(
+                self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[12]' % str(a + 1))) / 100 * 8)'''
+            oil = oil
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[1]' % str(a + 1))),
-            '所属用户': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '所属账号': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[2]' % str(a + 1)),
             '客户名称': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[3]' % str(a + 1)),
             '设备名称': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[4]' % str(a + 1)),
             'IMEI': self.driver.get_text('x,//*[@id="mileageTableHeader"]/tbody/tr[%s]/td[5]' % str(a + 1)),
@@ -384,7 +389,7 @@ class FormExportPage(BasePage):
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[1]' % str(a + 1))),
-            '所属用户': self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '所属账号': self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[2]' % str(a + 1)),
             '客户名称': self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[3]' % str(a + 1)),
             '设备名称': self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[4]' % str(a + 1)),
             'IMEI': self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[5]' % str(a + 1)),
@@ -455,7 +460,7 @@ class FormExportPage(BasePage):
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
-            '所属帐号': self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '所属账号': self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
             '客户名称': self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
             '设备名称': self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
             '设备IMEI': self.driver.get_text('x,//*[@id="stayTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),

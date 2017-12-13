@@ -24,6 +24,7 @@ class SearchSql(object):
             sql += " and c.imei = '%s'" % search_data['imei']
 
         sql += ";"
+        print(sql)
         return sql
 
     def search_issued_command_task_management_sql(self, current_user_next, search_data):

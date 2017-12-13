@@ -59,7 +59,7 @@ class TestCase101DevManageBatchSetOverdueTime(unittest.TestCase):
         self.assertEqual(self.assert_text.dev_page_inexistence_text(), fail_reason)
 
         # 点击关闭
-        self.dev_manage_page.click_close_fail_text()
+        self.dev_manage_page.click_close_fails()
 
         # 点击添加imei
         self.dev_manage_page.click_add_imei_to_set_user_overdue_time(imei_in_list)
@@ -71,4 +71,4 @@ class TestCase101DevManageBatchSetOverdueTime(unittest.TestCase):
         self.assertEqual(self.assert_text.dev_page_repetition_text(), fail_reason)
 
         # 点击关闭
-        self.dev_manage_page.click_close_fail_text()
+        self.dev_manage_page.click_close_fails()

@@ -875,7 +875,7 @@ class CommandManagementPage(BasePage):
     def get_text_after_send_command_with_abnormal_dev(self, state):
 
         if state == '停机':
-            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '201705261957003')
+            self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '912325678012360')
         elif state == '用户到期':
             self.driver.operate_input_element('x,//*[@id="searchTemplateIMEI"]', '978456123045612')
         # elif state == '平台到期':

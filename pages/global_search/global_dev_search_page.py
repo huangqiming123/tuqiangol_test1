@@ -2162,7 +2162,7 @@ class GlobalDevSearchPage(BasePage):
         sleep(2)
 
     def swith_to_search_frames(self):
-        self.driver.switch_to_iframe('x,/html/body/div[4]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,/html/body/div[5]/div[2]/iframe')
 
     def click_user_search_buttons(self):
         self.swith_to_search_frame()

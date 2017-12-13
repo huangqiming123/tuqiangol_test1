@@ -590,7 +590,8 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.operate_input_element("x,//*[@id='newPwd_advise']", password)
         self.driver.operate_input_element("x,//*[@id='renewPwd_advise']", password)
         self.driver.wait(1)
-        self.driver.click_element("x,//*[@id='layui-layer1']/div[3]/a")
+        self.driver.click_element("c,layui-layer-btn0")
+        sleep(2)
 
     # 修改密码后的提示
     def user_default_password_edit_prompt(self, user_type=""):

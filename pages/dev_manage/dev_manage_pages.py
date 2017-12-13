@@ -1586,7 +1586,7 @@ class DevManagePages(BasePage):
         sleep(2)
 
     def click_close_fails(self):
-        self.driver.click_element('x,/html/body/div[30]/span[1]/a')
+        self.driver.click_element('x,/html/body/div[31]/span[1]/a')
         sleep(2)
 
     def click_account_center_button(self):
@@ -1734,7 +1734,7 @@ class DevManagePages(BasePage):
         return len(list(self.driver.get_elements('x,//*[@id="sale_tbody_device_sale_id"]/tr')))
 
     def add_dev_after_fail_state(self):
-        return self.driver.get_text('x,//*[@id="device_sale_add_result_div"]/div[2]/table/tbody/tr[1]/td[2]/span')
+        return self.driver.get_text('x,//*[@id="device_sale_add_result_div"]/div[2]/table/tbody/tr/td[2]/span')
 
     def add_dev_after_fail_reason(self):
         return self.driver.get_text('x,//*[@id="device_sale_add_result_div"]/div[2]/table/tbody/tr[1]/td[3]')

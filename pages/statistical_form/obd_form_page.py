@@ -323,6 +323,7 @@ class ObdFormPage(BasePage):
         connect = connect_sql.connect_tuqiang_form()
         cursor = connect.cursor()
         sql = "SELECT GPS_TIME,SPEED,ROTATING_SPEED,WATER_TEMPERATURE,BATTERY_VOLTAGE,FUELCONSUMPTION_1,TOTAL_MILEAGE FROM gt_obd_his WHERE DEVICE_IMEI = '" + self.search_imei() + "' and GPS_TIME BETWEEN '" + begin_time + "' and '" + end_time + "' and ERROR_CODE is NULL and RAPID_ACCELERATION = 0 and RAPID_DECELERATION = 0 ORDER BY CREATE_TIME DESC;"
+        print(sql)
         cursor.execute(sql)
         data = cursor.fetchall()
         data_list = []

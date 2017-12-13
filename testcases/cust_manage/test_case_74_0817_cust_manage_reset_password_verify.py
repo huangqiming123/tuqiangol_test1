@@ -34,7 +34,7 @@ class TestCase7408171CustManagelResetPasswordVerify(unittest.TestCase):
 
     def test_cancel_and_ascertain_reset_password(self):
         '''客户管理-取消和确定重置密码操作'''
-        account = ["jianyigezh1"]
+        account = ["xin_121313"]
 
         # 打开途强在线首页-登录页
         self.base_page.open_page()
@@ -95,7 +95,8 @@ class TestCase7408171CustManagelResetPasswordVerify(unittest.TestCase):
         self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit("jimi123")
         sleep(2)
         # 获取密码修改成功
-        status = self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit_prompt()
+        self.driver.click_element("x,/html/body/div[16]/div[3]/a")
+        # status = self.cust_manage_basic_info_and_add_cust_page.user_default_password_edit_prompt()
         # self.assertIn(self.assert_text2.home_page_edit_password_success(), status, "修改密码失败！")
         sleep(2)
         self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "修改默认密码后，没有返回到登录页")

@@ -470,11 +470,11 @@ class SafeAreaPage(BasePageServer):
 
     # 围栏编辑页面关联设备列表点击删除之后的文本获取
     def get_text_in_fence_edit_page_after_click_del(self):
-        text = self.driver.get_text('x,/html/body/div[12]/div[2]')
+        text = self.driver.get_text('x,/html/body/div[14]/div[2]')
         return text
 
     def click_close_detele_buttons(self):
-        self.driver.click_element('x,/html/body/div[12]/span[1]/a')
+        self.driver.click_element('x,/html/body/div[14]/span[1]/a')
         sleep(2)
 
     def click_account_center(self):

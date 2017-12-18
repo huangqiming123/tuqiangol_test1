@@ -1,3 +1,4 @@
+import datetime
 import os
 from time import sleep
 
@@ -15,7 +16,7 @@ class FormExportPage(BasePage):
         file_new = os.path.join(base_dir, lists[-1])
         return file_new
 
-    def read_excel_file_by_index(self, file, col_name_index=0, by_index=0):
+    def read_excel_file_by_index(self, file, col_name_index=0, by_index=0, n=1):
         excel_file = open_excel(file)
         # table = excel_file.sheets[by_index]
         table = excel_file.sheet_by_index(by_index)
@@ -25,7 +26,7 @@ class FormExportPage(BasePage):
         colnames = table.row_values(col_name_index)
 
         list = []
-        for rownum in range(1, number_rows):
+        for rownum in range(n, number_rows):
 
             row = table.row_values(rownum)
             if row:
@@ -486,10 +487,417 @@ class FormExportPage(BasePage):
         sleep(2)
 
     def switch_export_frame(self):
-        self.driver.switch_to_iframe('x,/html/body/div[5]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,/html/body/div[4]/div[2]/iframe')
 
     def click_create_task_button_in_sport_overview_export_stay(self):
         self.driver.click_element('x,//*[@id="addTaskBtn"]')
         sleep(10)
         self.driver.click_element('x,//*[@id="exportsModal"]/div/div[3]/div[2]/ul/div[1]/li/div[2]/a')
         sleep(10)
+
+    def search_stay_not_shut_down_data(self):
+        # 搜索停留报表数据
+        # 搜索里程报表的数据
+        # 选择本月
+        self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[1]/div[1]/div/div/div/span[2]')
+        sleep(1)
+        self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[1]/div[1]/div/div/div/div/ul/li[6]')
+        sleep(2)
+
+        # 选择全部设备
+        # 选择设备
+        # self.driver.operate_input_element('x,//*[@id="imeiInput_stopCar"]', '867414030000066')
+        self.driver.clear_input('x,//*[@id="imeiInput_stopNotOff"]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(1)
+
+        all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_stopNotOff"]/li'))
+        all_group_num = len(all_group_list)
+        for n in range(1, all_group_num):
+            sleep(1)
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
+        self.driver.click_element('x,//*[@id="treeModal_stopNotOff"]/div[2]/label/div/ins')
+        self.driver.click_element('x,//*[@id="treeModal_stopNotOff"]/div[2]/div/button[1]')
+
+        # 搜索
+        self.driver.click_element('x,//*[@id="stopNotOffFrom"]/div[2]/div[3]/button')
+        sleep(5)
+
+    def get_per_line_data_stay_not_shut_down(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[15]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[16]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[17]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[18]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[19]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '所属账号': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            '设备名称': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '设备IMEI': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '型号': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
+            '状态': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1)),
+            '开始时间': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1)),
+            '结束时间': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
+            '地址': 0.0,
+            '经纬度': 0.0,
+            '停留时间': self.driver.get_text('x,//*[@id="stopNotOffTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data
+
+    def search_acc_data(self):
+        # 搜索停留报表数据
+        # 搜索里程报表的数据
+        # 选择本月
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[1]/div/div/div/span[2]')
+        sleep(1)
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[1]/div[1]/div/div/div/div/ul/li[6]')
+        sleep(2)
+
+        # 选择全部设备
+        # 选择设备
+        # self.driver.operate_input_element('x,//*[@id="imeiInput_stopCar"]', '867414030000066')
+        self.driver.clear_input('x,//*[@id="imeiInput_acc"]')
+        sleep(2)
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[1]/span/button')
+        sleep(1)
+
+        all_group_list = list(self.driver.get_elements('x,//*[@id="dev_tree_acc"]/li'))
+        all_group_num = len(all_group_list)
+        for n in range(1, all_group_num):
+            sleep(1)
+            self.driver.click_element(
+                'x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[2]/div/div/div/div[2]/div[1]/ul/li[%s]/span[1]' % str(
+                    n + 1))
+        self.driver.click_element('x,//*[@id="treeModal_acc"]/div[2]/label/div/ins')
+        self.driver.click_element('x,//*[@id="treeModal_acc"]/div[2]/div/button[1]')
+
+        # 搜索
+        self.driver.click_element('x,/html/body/div[1]/div[2]/div[1]/form/div[2]/div[3]/button')
+        sleep(5)
+
+    def get_per_line_data_acc(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[15]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[16]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[17]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '所属账号': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            '设备名称': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '设备IMEI': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '型号': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
+            '状态': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1)),
+            '开始时间': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1)),
+            '结束时间': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
+            '总用时': self.driver.get_text('x,//*[@id="accTableContent"]/tbody/tr[%s]/td[11]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data
+
+    def search_status_data(self):
+        self.driver.click_element('x,//*[@id="OffLineFrom"]/div[3]/div[5]/button[1]')
+        sleep(5)
+
+    def get_per_line_data_status(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[15]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_number = self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[16]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[17]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[18]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[19]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '设备名称': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            '设备SIM卡号': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '设备型号': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '所属用户': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
+            '联系电话': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1)),
+            '设备状态': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1)),
+            '时间': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
+            '经纬度': 0.0,
+            '地址': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1)),
+            '时长': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="offlineTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1)),
+            '司机名称': driver_name,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data
+
+    def search_electric_data(self):
+        # 点击包含下级、搜索
+        self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[4]/label/div/ins')
+        sleep(1)
+        self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[5]/button[1]')
+        sleep(5)
+
+    def get_per_line_data_electric(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[11]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '设备名称': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            '型号': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '所属帐号': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '剩余电量': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data
+
+    def search_alarm_overview_data(self):
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/span[2]')
+        sleep(1)
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[1]/div/div/div/div/ul/li[7]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[5]/div/label/div/ins')
+        sleep(1)
+        self.driver.click_element('x,//*[@id="alarmForm"]/div/div[6]/button')
+        sleep(6)
+
+    def get_per_line_data_alarm_overview(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[8]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[9]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[10]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[11]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[12]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[13]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '设备名称': self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            '设备型号': self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '所属用户': self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[7]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+            'SOS求救': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[14]' % str(a + 1))),
+            '进卫星盲区报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[15]' % str(a + 1))),
+            '出卫星盲区报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[16]' % str(a + 1))),
+            '开机报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[17]' % str(a + 1))),
+            '后视镜震动报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[18]' % str(a + 1))),
+            '卫星第一次定位报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[19]' % str(a + 1))),
+            '外电低电报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[20]' % str(a + 1))),
+            '外电低电保护报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[21]' % str(a + 1))),
+            '换卡报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[22]' % str(a + 1))),
+            '关机报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[23]' % str(a + 1))),
+            '外电低电保护后飞行模式报警': float(
+                self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[24]' % str(a + 1))),
+            '拆卸报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[25]' % str(a + 1))),
+            '非法移动告警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[26]' % str(a + 1))),
+            '后备电池电量不足告警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[27]' % str(a + 1))),
+            '越界告警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[28]' % str(a + 1))),
+            '断电报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[29]' % str(a + 1))),
+            '门报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[30]' % str(a + 1))),
+            '声控报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[31]' % str(a + 1))),
+            '伪基站报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[32]' % str(a + 1))),
+            '开盖报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[33]' % str(a + 1))),
+            '内部电池低电报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[34]' % str(a + 1))),
+            '震动报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[35]' % str(a + 1))),
+            '进入深度睡眠报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[36]' % str(a + 1))),
+            '进入电子围栏': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[37]' % str(a + 1))),
+            '离开电子围栏': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[38]' % str(a + 1))),
+            '超速报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[39]' % str(a + 1))),
+            '位移报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[40]' % str(a + 1))),
+            '低电报警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[41]' % str(a + 1))),
+            'ACC关闭': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[42]' % str(a + 1))),
+            'ACC开启': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[43]' % str(a + 1))),
+            '进入围栏': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[44]' % str(a + 1))),
+            '离线告警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[45]' % str(a + 1))),
+            '离开围栏': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[46]' % str(a + 1))),
+            '超速报警(平台)': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[47]' % str(a + 1))),
+            '风险点告警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[48]' % str(a + 1))),
+            '黑车围栏告警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[49]' % str(a + 1))),
+            '停留告警': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[50]' % str(a + 1))),
+            '长时间不进': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[51]' % str(a + 1))),
+            '长时间不出': float(self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr[%s]/td[52]' % str(a + 1))),
+        }
+        return data
+
+    def get_last_week_begin_time(self):
+        # 获取上周的开始时间
+        today = datetime.date.today()
+        days_count = datetime.timedelta(days=today.isoweekday())
+        week = today - days_count - datetime.timedelta(days=6)
+        return str(week) + ' 00:00'
+
+    def get_last_week_end_time(self):
+        # 获取上周的结束时间
+        today = datetime.date.today()
+        days_count = datetime.timedelta(days=today.isoweekday())
+        week = today - days_count
+        return str(week) + ' 23:59'
+
+    def search_alarm_detail_data(self):
+        # 输入开始时间结束时间
+        begin_time = self.get_last_week_begin_time()
+        end_time = self.get_last_week_end_time()
+
+        js = 'document.getElementById("startTime_alarmInfo").removeAttribute("readonly")'
+        self.driver.execute_js(js)
+        self.driver.operate_input_element('startTime_alarmInfo', begin_time)
+
+        js = 'document.getElementById("endTime_alarmInfo").removeAttribute("readonly")'
+        self.driver.execute_js(js)
+        self.driver.operate_input_element('endTime_alarmInfo', end_time)
+
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="getAlertInfo_btn"]')
+        sleep(10)
+
+    def get_per_line_data_alarm_detail(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[16]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[17]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[18]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[19]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[20]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[21]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1))),
+            '设备名称': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '型号': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '所属帐号': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '告警类型': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
+            '告警时间': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1)),
+            '定位时间': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1)),
+            '定位状态': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
+            '告警地址': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[11]' % str(a + 1)),
+            '处理状态': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1)),
+            '已读状态': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[15]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data
+
+    def switch_export_framea(self):
+        sleep(5)
+        self.driver.switch_to_iframe('x,/html/body/div[11]/div[2]/iframe')

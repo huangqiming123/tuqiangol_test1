@@ -3,11 +3,11 @@ class ChangeData(object):
     def switch_tuqiang_url(self):
         # 测试
         # return 'http://172.16.0.116:8690'
-        return 'http://tujunsat.jimicloud.com'
+        # return 'http://tujunsat.jimicloud.com'
 
         # 线上
         # return 'http://120.76.232.176:8180'
-        # return 'http://www.tuqiangol.com'
+        return 'http://www.tuqiangol.com'
 
         # 天眼在线测试
         # return 'http://www.skyzaixian.com:8680'

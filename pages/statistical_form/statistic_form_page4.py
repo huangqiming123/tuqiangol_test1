@@ -129,3 +129,70 @@ class StatisticFormPage4(BasePage):
     # 关闭次数
     def get_total_time_in_close_count_acc_form(self):
         return self.driver.get_text('aCCOff')
+
+    def get_total_page_in_over_stay_not_shut_down_form(self):
+        a = self.driver.get_element('x,//*[@id="paging-stopNotOff"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging-stopNotOff"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_over_stay_not_shut_down_form(self):
+        return len(list(self.driver.get_elements('x,//*[@id="stopNotOffTableContent"]/tbody/tr')))
+
+    def get_total_page_in_acc(self):
+        a = self.driver.get_element('x,//*[@id="paging-accReport"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging-accReport"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_acc(self):
+        return len(list(self.driver.get_elements('x,//*[@id="accTableContent"]/tbody/tr')))
+
+    def get_total_page_in_status(self):
+        a = self.driver.get_element('x,//*[@id="paging-offLine"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging-offLine"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_status(self):
+        return len(list(self.driver.get_elements('x,//*[@id="offlineTableContent"]/tbody/tr')))
+
+    def get_total_page_in_electric(self):
+        a = self.driver.get_element('x,//*[@id="paging-electric"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging-electric"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_electric(self):
+        return len(list(self.driver.get_elements('x,//*[@id="electricTableContent"]/tbody/tr')))
+
+    def get_total_number_per_page_in_alarm_overview(self):
+        a = len(list(self.driver.get_elements('x,//*[@id="alarmReportTable"]/tbody/tr')))
+        if 1 == a:
+            try:
+                b = self.driver.get_text('x,//*[@id="alarmReportTable"]/tbody/tr/td')
+                if '暂无数据' == b:
+                    return 0
+            except:
+                return 1
+        else:
+            return a
+
+    def get_total_page_in_alarm_detail(self):
+        a = self.driver.get_element('x,//*[@id="alarm_info_paging"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="alarm_info_paging"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_alarm_detail(self):
+        return len(list(self.driver.get_elements('x,//*[@id="alarmTableContent"]/tbody/tr')))

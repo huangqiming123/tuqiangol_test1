@@ -26,8 +26,12 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # --账号
     def usr_info_account(self):
-        usr_account = self.driver.get_element("c,user-name").text
-        return usr_account
+        usr_account = self.driver.get_element("x,//b[@class='user-name']").get_attribute('title')
+        try:
+            a = usr_account.split("(")[0]
+            return a
+        except:
+            return usr_account
 
     # --客户类型
     def usr_info_type(self):

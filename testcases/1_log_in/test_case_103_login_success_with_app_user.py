@@ -54,22 +54,45 @@ class TestCase103LoginSuccessWithphAppUser(unittest.TestCase):
             expect_url = self.base_url + "/nomalUserCenter"
             self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")
 
+            # 验证模块
+            module = self.account_center_page_navi_bar.get_page_module()
+            self.assertEqual(data, module, "用户账号登录，模块显示错误")
+
             # 判断登录成功后招呼栏的用户名是否正确
             hello_usr = self.account_center_page_navi_bar.hello_user_account()
             expect_usr = user_to_login["account"]
             self.assertEqual(expect_usr, hello_usr, "登录成功后招呼栏账户名显示错误")
 
-            # 验证模块
-            # 验证模块
-            module = self.account_center_page_navi_bar.get_page_module()
-            self.assertEqual(data, module, "用户账号登录，模块显示错误")
+            # 获取登录app用户的信息
+            user_account = self.login_page.get_user_account()
+            user_type = self.login_page.get_user_type()
+            user_phone = self.login_page.get_user_phone()
+            connect = self.connect_sql.connect_tuqiang_sql()
+            cursor = connect.cursor()
+
+            sql = "SELECT o.account,o.type,o.phone,o.companyName FROM user_info o WHERE o.account = '" + user_to_login[
+                "account"] + "';"
+            cursor.execute(sql)
+            user_info = cursor.fetchall()
+            current_user_info = []
+            for range1 in user_info:
+                for range2 in range1:
+                    current_user_info.append(range2)
+            print(current_user_info)
+            # 当前客户类型
+            type = self.assert_text.log_in_page_account_type(current_user_info[1])
+            self.assertEqual(type, user_type)
+            # 当前客户电话
+            if current_user_info[2] == '':
+                self.assertEqual('', user_phone)
+            else:
+                self.assertEqual(current_user_info[2], user_phone)
+
 
             # 获取当前app账号有几个服务商
             service_number = self.account_center_page_details.get_current_account_service_number()
 
             # 获取数据库服务商的个数
-            connect = self.connect_sql.connect_tuqiang_sql()
-            cursor = connect.cursor()
             get_up_account_info_sql = "select userId from user_info where account = '%s';" % user_to_login['account']
 
             cursor.execute(get_up_account_info_sql)

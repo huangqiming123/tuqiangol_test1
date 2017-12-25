@@ -24,7 +24,6 @@ class TestCase105LoginWithRememberMe(unittest.TestCase):
         self.driver.quit_browser()
 
     def test_login_with_remember_me(self):
-        '''测试登录时勾选记住我'''
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         self.log_in_base.log_in()
@@ -43,3 +42,9 @@ class TestCase105LoginWithRememberMe(unittest.TestCase):
         # 验证退出系统后“记住我”是否是已勾选状态
         box_status = self.login_page.check_remember_me()
         self.assertEqual(True, box_status, '记住密码失败')
+
+        # 点击登录按钮
+        self.login_page.click_log_in_button()
+        actual_url = self.driver.get_current_url()
+        expect_url = self.base_url + "/customer/toAccountCenter"
+        self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")

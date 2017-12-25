@@ -4,7 +4,6 @@ from automate_driver.automate_driver import AutomateDriver
 from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page import BasePage
 
-
 # 登录页面的元素及操作
 # author:孙燕妮
 from pages.base.base_page_server import BasePageServer
@@ -74,30 +73,40 @@ class LoginPage(BasePageServer):
     # 语言切换操作
     def change_language(self, language):
         if language == 'English':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[2]/a")
-            sleep(4)
+            self.driver.click_element('x,//a[@title="English"]')
+            sleep(2)
             login_button_text = self.driver.get_element("logins").text
-            return login_button_text
+            account_text = self.driver.get_element('account').get_attribute('placeholder')
+            password_text = self.driver.get_element('password').get_attribute('placeholder')
+            return [login_button_text, account_text, password_text]
         elif language == 'España':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[3]/a")
-            sleep(4)
+            self.driver.click_element('x,//a[@title="España"]')
+            sleep(2)
             login_button_text = self.driver.get_element("logins").text
-            return login_button_text
+            account_text = self.driver.get_element('account').get_attribute('placeholder')
+            password_text = self.driver.get_element('password').get_attribute('placeholder')
+            return [login_button_text, account_text, password_text]
         elif language == 'Portugal':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[4]/a")
-            sleep(4)
+            self.driver.click_element('x,//a[@title="Portugal"]')
+            sleep(2)
             login_button_text = self.driver.get_element("logins").text
-            return login_button_text
+            account_text = self.driver.get_element('account').get_attribute('placeholder')
+            password_text = self.driver.get_element('password').get_attribute('placeholder')
+            return [login_button_text, account_text, password_text]
         elif language == 'Polska':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[5]/a")
-            sleep(4)
+            self.driver.click_element('x,//a[@title="Polska"]')
+            sleep(2)
             login_button_text = self.driver.get_element("logins").text
-            return login_button_text
+            account_text = self.driver.get_element('account').get_attribute('placeholder')
+            password_text = self.driver.get_element('password').get_attribute('placeholder')
+            return [login_button_text, account_text, password_text]
         elif language == 'Deutschland':
-            self.driver.click_element("x,/html/body/footer/div[1]/ul/li[6]/a")
-            sleep(4)
+            self.driver.click_element('x,//a[@title="Deutschland"]')
+            sleep(2)
             login_button_text = self.driver.get_element("logins").text
-            return login_button_text
+            account_text = self.driver.get_element('account').get_attribute('placeholder')
+            password_text = self.driver.get_element('password').get_attribute('placeholder')
+            return [login_button_text, account_text, password_text]
 
     # 底部第三方网站链接点击操作
     def enter_third_party_website(self, web_name, count):
@@ -121,7 +130,6 @@ class LoginPage(BasePageServer):
                 self.driver.click_element('x,/html/body/footer/div[2]/a[3]')
             elif web_name == '不良信息举报中心':
                 self.driver.click_element('x,/html/body/footer/div[2]/a[4]')
-
 
     # 封装登录操作
     def user_login(self, account, password):
@@ -281,7 +289,7 @@ class LoginPage(BasePageServer):
     # 获取底部网站个数 /html/body/footer/div[2]/a[1]  /html/body/footer/div[3]/a[1]
     def get_login_page_website_count(self, url):
         print(url)
-        #线上环境
+        # 线上环境
         if url == "http://www.tuqiangol.com":
             count = len(self.driver.get_elements("x,/html/body/footer/div[3]/a"))
             print("线上个数", count)
@@ -324,4 +332,47 @@ class LoginPage(BasePageServer):
     def click_ensure(self):
         # 点击确定
         self.driver.click_element('c,layui-layer-btn0')
+        sleep(2)
+
+    def get_user_name(self):
+        # 获取登录的账号名称
+        return self.driver.get_text('x,//*[@id="topusername"]')
+
+    def get_company_name(self):
+        # 获取登录之后的公司名c
+        usr_account = self.driver.get_element("x,//b[@class='user-name']").get_attribute('title')
+        try:
+            a = usr_account.split("(")[1].split(')')[0]
+            return a
+        except:
+            return ''
+
+    def get_user_type(self):
+        # 获取用户类型客户的类型
+        return self.driver.get_text('x,//*[@id="userType"]')
+
+    def get_user_account(self):
+        return self.driver.get_text('x,//*[@id="userAccount"]')
+
+    def get_user_phone(self):
+        return self.driver.get_text('x,//*[@id="userPhone"]')
+
+    def get_up_user_account(self):
+        a = self.driver.get_text('x,//ul[@class="lh-2"]/li[1]')
+        return a.split('：')[1]
+
+    def get_up_user_contact(self):
+        a = self.driver.get_text('x,//ul[@class="lh-2"]/li[2]')
+        return a.split('：')[1]
+
+    def get_up_user_phone(self):
+        a = self.driver.get_text('x,//ul[@class="lh-2"]/li[3]')
+        return a.split('：')[1]
+
+    def get_app_user_account(self):
+        return 'x,'
+
+    def click_log_in_button(self):
+        # 点击登录的按钮
+        self.driver.click_element('x,//*[@id="logins"]')
         sleep(2)

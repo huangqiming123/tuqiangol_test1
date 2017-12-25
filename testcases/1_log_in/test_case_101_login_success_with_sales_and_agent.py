@@ -64,7 +64,7 @@ class TestCase101LoginSuccessWithSalesAndAgent(unittest.TestCase):
 
             connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()
-            get_account_user_info_sql = "SELECT o.type,o.phone,o.parentId,o.nickName from user_info o WHERE o.account = '" + \
+            get_account_user_info_sql = "SELECT o.type,o.phone,o.parentId,o.nickName,o.companyName from user_info o WHERE o.account = '" + \
                                         user_to_login['account'] + "';"
             cursor.execute(get_account_user_info_sql)
             get_account_user_info = cursor.fetchall()
@@ -75,6 +75,19 @@ class TestCase101LoginSuccessWithSalesAndAgent(unittest.TestCase):
             cursor.close()
             connect.close()
             print("当前号", current_user_info)
+
+            # 客户名称
+            user_name = self.login_page.get_user_name()
+            self.assertEqual(user_name, current_user_info[3])
+
+            # 获取登录之后用户的公司名称
+            company_name = self.login_page.get_company_name()
+            if current_user_info[4] == '':
+                self.assertEqual('', company_name)
+            else:
+                self.assertEqual(current_user_info[4], company_name)
+
+            # 客户类型
             type = self.assert_text.log_in_page_account_type(current_user_info[0])
             usr_info_type = self.login_page.get_account_user_type()
             self.assertEqual(type, usr_info_type, "账户总览左下方显示的客户类型错误")

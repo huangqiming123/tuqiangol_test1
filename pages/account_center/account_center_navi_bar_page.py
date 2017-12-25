@@ -105,7 +105,6 @@ class AccountCenterNaviBarPage(BasePageServer):
         self.driver.click_element("c,layui-layer-btn0")
         self.driver.wait()
 
-
     # 设备管理-退出系统
     def dev_manage_usr_logout(self):
         self.driver.float_element(self.driver.get_element('x,/html/body/div[2]/header/div/div[2]/div[2]/div[2]/span/a'))
@@ -549,18 +548,18 @@ class AccountCenterNaviBarPage(BasePageServer):
         print(all_prompt)
         return all_prompt
 
-    #点账户中心
+    # 点账户中心
     def click_account_center_button(self):
         sleep(3)
         self.driver.click_element("x,//*[@id='accountCenter']")
         sleep(2)
 
-    #获取头部模块
+    # 获取头部模块
     def get_page_module(self):
         module = []
-        module_len = len(self.driver.get_elements("x,/html/body/div[1]/header/div/div[2]/ul/li"))
+        module_len = len(self.driver.get_elements('x,//*[@id="navMenu"]/li'))
         for i in range(module_len):
-            text = self.driver.get_text("x,/html/body/div/header/div/div[2]/ul/li[" + str(i + 1) + "]/a")
+            text = self.driver.get_text('x,//*[@id="navMenu"]/li[%s]/a' % str(i + 1))
             module.append(text)
         print(module)
         return module
@@ -568,3 +567,12 @@ class AccountCenterNaviBarPage(BasePageServer):
     def switch_to_chongzhi_card(self):
         self.driver.execute_script(self.driver.get_element('x,/html/body/div[6]/div[2]/div[3]/div/div[1]/b'))
         sleep(2)
+
+    def get_set_up_module(self):
+        # 获取用户类型的只有四个选项
+        # 点击设置的按钮
+        self.driver.click_element('x,//*[@id="systemSetting"]')
+        sleep(1)
+
+        # 获取下发有多少个l列
+        get_line_number = self.driver.get_line_number('x,')

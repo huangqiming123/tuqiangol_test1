@@ -102,17 +102,15 @@ class TestCase216AlarmDetailFormExport(unittest.TestCase):
             # 切换到导出的frame中
             self.driver.default_frame()
             self.form_export_page.switch_export_framea()
-            # 判断有多少个div的标签
-            self.driver.click_element('x,/html/body/div[1]/div/div/div/div[6]/div[2]/button')
-            sleep(10)
-            self.driver.click_element('x,//*[@id="exportList"]/div[1]/ul/li/a')
-            sleep(10)
+            self.form_export_page.click_export_button_in_alarm_detail_page()
             # 查找刚刚导出的文件
             file = self.form_export_page.find_expect_file()
             print(file)
             # 读excel文件
             excel_data = self.form_export_page.read_excel_file_by_index(file, n=0)
             del excel_data[0]
+            for per_data in excel_data:
+                del per_data['告警天数']
             print('excel', excel_data)
             print('web', web_data)
 

@@ -873,19 +873,22 @@ class FormExportPage(BasePage):
         driver = self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[21]' % str(a + 1))
         if driver == '-':
             driver = ''
+        handle_status = self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1))
+        if handle_status == '查看处理':
+            handle_status = '已处理'
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1))),
             '设备名称': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
             'IMEI': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
-            '型号': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
-            '所属帐号': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '设备型号': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '所属账号': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
             '告警类型': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
             '告警时间': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1)),
             '定位时间': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1)),
             '定位状态': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
-            '告警地址': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[11]' % str(a + 1)),
-            '处理状态': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1)),
+            '告警地址': 0.0,
+            '处理状态': handle_status,
             '已读状态': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1)),
             '客户名称': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1)),
             '设备分组': self.driver.get_text('x,//*[@id="alarmTableContent"]/tbody/tr[%s]/td[15]' % str(a + 1)),
@@ -901,3 +904,9 @@ class FormExportPage(BasePage):
     def switch_export_framea(self):
         sleep(5)
         self.driver.switch_to_iframe('x,/html/body/div[11]/div[2]/iframe')
+
+    def click_export_button_in_alarm_detail_page(self):
+        self.driver.click_element('x,/html/body/div[1]/div/div/div/div[6]/div[2]/button')
+        sleep(10)
+        self.driver.click_element('x,//*[@id="exportList"]/div[1]/ul/li/a')
+        sleep(10)

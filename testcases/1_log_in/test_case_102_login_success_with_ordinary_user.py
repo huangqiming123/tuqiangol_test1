@@ -32,7 +32,7 @@ class TestCase102LoginSuccessWithOrdinaryUser(unittest.TestCase):
 
     def test_ordinary_user_login_by_csv(self):
         '''通过csv测试普通用户账户成功登录和成功退出功能'''
-        data = [" 首页", " 设备管理", " 控制台", " 统计报表", " 安全区域", " 设备分布"]
+        data = [" 首页", " 设备管理", " 操控台", " 统计报表", " 安全区域", " 设备分布"]
 
         csv_file = self.log_in_page_read_csv.read_csv('login_with_ordinary_user.csv')
         csv_data = csv.reader(csv_file)

@@ -30,14 +30,14 @@ class TestCase106LoginChangeLanguage(unittest.TestCase):
 
         # 通过登录按钮的文本内容判断默认是否为中文
         login_button_text = self.login_page.login_button_text()
-        self.assertEqual(self.assert_text.log_in_page_log_in_text(), login_button_text, "默认语言不是简体中文")
+        self.assertEqual(self.assert_text.log_in_page_log_in_text(), login_button_text)
 
         # 切换语言
         login_button_text = self.login_page.change_language(language[0])
         # 通过登录按钮的文本内容判断默认是否与所切换的语言一致
-        self.assertEqual("Log in", login_button_text[0], "语言与所切换语言不一致")
-        self.assertEqual("Input Account", login_button_text[1], "语言与所切换语言不一致")
-        self.assertEqual("Input password", login_button_text[2], "语言与所切换语言不一致")
+        self.assertEqual("Log in", login_button_text[0])
+        self.assertEqual("Input Account", login_button_text[1])
+        self.assertEqual("Input password", login_button_text[2])
 
         login_button_text = self.login_page.change_language(language[1])
         # 通过登录按钮的文本内容判断默认是否与所切换的语言一致
@@ -55,10 +55,10 @@ class TestCase106LoginChangeLanguage(unittest.TestCase):
         # 通过登录按钮的文本内容判断默认是否与所切换的语言一致
         self.assertEqual("Zaloguj", login_button_text[0])
         self.assertEqual("Wprowadz konto", login_button_text[1])
-        self.assertEqual("Wprowadz haslo", login_button_text[2], "语言与所切换语言不一致")
+        self.assertEqual("Wprowadz haslo", login_button_text[2])
 
         login_button_text = self.login_page.change_language(language[4])
         # 通过登录按钮的文本内容判断默认是否与所切换的语言一致
-        self.assertEqual("Einloggen", login_button_text[0], "语言与所切换语言不一致")
-        self.assertEqual("Konto eingeben", login_button_text[1], "语言与所切换语言不一致")
-        self.assertEqual("Passwort eintragen", login_button_text[2], "语言与所切换语言不一致")
+        self.assertEqual("Einloggen", login_button_text[0])
+        self.assertEqual("Konto eingeben", login_button_text[1])
+        self.assertEqual("Passwort eintragen", login_button_text[2])

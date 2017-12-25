@@ -6,6 +6,8 @@ class AssertText(object):
             self.type = "用户"
         elif types == 11:
             self.type = "销售"
+        elif types == 3:
+            self.type = "用户"
         return self.type
 
     def log_in_page_find_password_text(self):

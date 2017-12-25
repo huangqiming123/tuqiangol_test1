@@ -300,3 +300,28 @@ class LoginPage(BasePageServer):
 
     def get_account_user_telephone(self):
         return self.driver.get_text('x,//*[@id="topuserphone"]')
+
+    def click_tester_button(self):
+        # 点击体验账号
+        self.driver.click_element('x,//a[@title="我要体验"]')
+        sleep(2)
+
+    def get_user_account_tester(self):
+        # 获取登录的账号
+        a = self.driver.get_element('x,//b[@class="user-name"]').get_attribute('title')
+        return a.split('(')[0]
+
+    def click_user_center(self):
+        # 点击个人中心
+        self.driver.click_element('x,//*[@id="userCenter"]')
+        sleep(1)
+
+    def click_log_out_system(self):
+        # 点击退出系统
+        self.driver.click_element('x,//a[@class="js-exit-system"]')
+        sleep(2)
+
+    def click_ensure(self):
+        # 点击确定
+        self.driver.click_element('c,layui-layer-btn0')
+        sleep(2)

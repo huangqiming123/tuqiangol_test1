@@ -34,7 +34,7 @@ class TestCase103LoginSuccessWithphAppUser(unittest.TestCase):
 
     def test_app_user_login_by_csv(self):
         '''通过csv测试app账户成功登录和成功退出功能'''
-        data = ["首页", "设备管理", "控制台", "统计报表", "安全区域", "设备分布"]
+        data = [" 首页", " 设备管理", " 控制台", " 统计报表", " 安全区域", " 设备分布"]
 
         csv_file = self.log_in_read_csv.read_csv('login_with_app_user.csv')
         csv_data = csv.reader(csv_file)
@@ -92,8 +92,7 @@ class TestCase103LoginSuccessWithphAppUser(unittest.TestCase):
             cursor.close()
             connect.close()
             # 断言
-            # self.assertEqual(service_number - 1, service_total)
-            self.assertEqual(service_number, service_total)
+            self.assertEqual(service_number - 1, service_total)
 
             # 成功退出系统
             sleep(2)

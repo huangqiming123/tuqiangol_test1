@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_101_login_success_with_sales_and_agent.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_104_login_exception.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_105_login_with_remember_me.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_106_login_change_language.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_107_login_enter_third_website.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/change_data.py" afterPath="$PROJECT_DIR$/change_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/statistical_form5/test_case_216_alarm_detail_form_export.py" afterPath="$PROJECT_DIR$/testcases/statistical_form5/test_case_216_alarm_detail_form_export.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login/login_page.py" afterPath="$PROJECT_DIR$/pages/login/login_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,25 +27,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_103_login_success_with_app_user.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py">
+      <file leaf-file-name="test_case_108_login_tester.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0853081">
-              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.76303315">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_case_102_login_success_with_ordinary_user.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="59" selection-start-line="61" selection-start-column="12" selection-end-line="63" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,9 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/global_search/test_case_112_user_search_by_delete_user.py" />
-        <option value="$PROJECT_DIR$/pages/global_search/global_account_search_page.py" />
-        <option value="$PROJECT_DIR$/testcases/global_search/test_case_137_1011_search_user_by_type_creat_new_user.py" />
         <option value="$PROJECT_DIR$/data/account_center/user_to_modify_passwd.csv" />
         <option value="$PROJECT_DIR$/testcases/dev_manage/test_case_103_1018_dev_manage_dev_fence.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/clock_in_page.py" />
@@ -131,7 +109,10 @@
         <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_107_login_enter_third_website.py" />
         <option value="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
         <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py" />
+        <option value="$PROJECT_DIR$/pages/account_center/account_center_details_page.py" />
         <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" />
+        <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py" />
+        <option value="$PROJECT_DIR$/pages/login/login_page.py" />
       </list>
     </option>
   </component>
@@ -250,6 +231,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -299,51 +298,7 @@
       <recent name="E:\git\tuqiangol_test\testcases\account_center" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase102LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv">
-    <configuration default="false" name="Unittest TestCase04LoginException.test_case_login_exception" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="E:\git\tuqiangol_test\testcases\1_log_in" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/01_log_in/test_case_04_login_exception.py" />
-      <option name="CLASS_NAME" value="TestCase04LoginException" />
-      <option name="METHOD_NAME" value="test_case_login_exception" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase05LoginWithRememberMe.test_login_with_remember_me" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="E:\git\tuqiangol_test\testcases\1_log_in" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/01_log_in/test_case_05_login_with_remember_me.py" />
-      <option name="CLASS_NAME" value="TestCase05LoginWithRememberMe" />
-      <option name="METHOD_NAME" value="test_login_with_remember_me" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest TestCase108LoginTester.test_log_in_tester">
     <configuration default="false" name="Unittest TestCase101LoginSuccessWithSalesAndAgent.test_sales_and_agent_login_by_csv" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -401,6 +356,50 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py" />
       <option name="CLASS_NAME" value="TestCase102LoginSuccessWithOrdinaryUser" />
       <option name="METHOD_NAME" value="test_ordinary_user_login_by_csv" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase103LoginSuccessWithphAppUser.test_app_user_login_by_csv" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/1_log_in" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" />
+      <option name="CLASS_NAME" value="TestCase103LoginSuccessWithphAppUser" />
+      <option name="METHOD_NAME" value="test_app_user_login_by_csv" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase108LoginTester.test_log_in_tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/1_log_in" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py" />
+      <option name="CLASS_NAME" value="TestCase108LoginTester" />
+      <option name="METHOD_NAME" value="test_log_in_tester" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -551,19 +550,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase04LoginException.test_case_login_exception" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase05LoginWithRememberMe.test_login_with_remember_me" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase101LoginSuccessWithSalesAndAgent.test_sales_and_agent_login_by_csv" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase02LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase102LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase101LoginSuccessWithSalesAndAgent.test_sales_and_agent_login_by_csv" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase02LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase102LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase103LoginSuccessWithphAppUser.test_app_user_login_by_csv" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase108LoginTester.test_log_in_tester" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase102LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase02LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase101LoginSuccessWithSalesAndAgent.test_sales_and_agent_login_by_csv" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase05LoginWithRememberMe.test_login_with_remember_me" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase04LoginException.test_case_login_exception" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase108LoginTester.test_log_in_tester" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase103LoginSuccessWithphAppUser.test_app_user_login_by_csv" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase102LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase02LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase101LoginSuccessWithSalesAndAgent.test_sales_and_agent_login_by_csv" />
       </list>
     </recent_temporary>
   </component>
@@ -577,12 +576,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00141" summary="修改代码">
-      <created>1507515356934</created>
-      <option name="number" value="00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1507515356935</updated>
     </task>
     <task id="LOCAL-00142" summary="修改代码">
       <created>1507516857939</created>
@@ -872,24 +865,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513558829430</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="修改代码">
+      <created>1514181836300</created>
+      <option name="number" value="00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1514181836301</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase01LoginSuccessWithSalesAndAgent_test_sales_and_agent_login_by_csv - 2017.12.25 at 11h 06m 48s.xml">
-      <configuration name="Unittest TestCase01LoginSuccessWithSalesAndAgent.test_sales_and_agent_login_by_csv" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase02LoginSuccessWithOrdinaryUser_test_ordinary_user_login_by_csv - 2017.12.25 at 11h 40m 18s.xml">
       <configuration name="Unittest TestCase02LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase04LoginException_test_case_login_exception - 2017.12.25 at 11h 12m 18s.xml">
-      <configuration name="Unittest TestCase04LoginException.test_case_login_exception" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase05LoginWithRememberMe_test_login_with_remember_me - 2017.12.25 at 11h 13m 42s.xml">
-      <configuration name="Unittest TestCase05LoginWithRememberMe.test_login_with_remember_me" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase101LoginSuccessWithSalesAndAgent_test_sales_and_agent_login_by_csv - 2017.12.25 at 11h 37m 40s.xml">
-      <configuration name="Unittest TestCase101LoginSuccessWithSalesAndAgent.test_sales_and_agent_login_by_csv" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittest_TestCase102LoginSuccessWithOrdinaryUser_test_ordinary_user_login_by_csv - 2017.12.25 at 13h 50m 53s.xml">
       <configuration name="Unittest TestCase102LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" configurationId="tests" />
@@ -900,11 +887,23 @@
     <history-entry file="Unittest_TestCase102LoginSuccessWithOrdinaryUser_test_ordinary_user_login_by_csv - 2017.12.25 at 13h 53m 24s.xml">
       <configuration name="Unittest TestCase102LoginSuccessWithOrdinaryUser.test_ordinary_user_login_by_csv" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase01LoginSuccessWithSalesAndAgent - 2017.12.25 at 11h 01m 43s.xml">
-      <configuration name="Unittests in TestCase01LoginSuccessWithSalesAndAgent" configurationId="tests" />
+    <history-entry file="Unittest_TestCase103LoginSuccessWithphAppUser_test_app_user_login_by_csv - 2017.12.25 at 14h 04m 36s.xml">
+      <configuration name="Unittest TestCase103LoginSuccessWithphAppUser.test_app_user_login_by_csv" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase02LoginSuccessWithOrdinaryUser - 2017.12.25 at 11h 08m 46s.xml">
-      <configuration name="Unittests in TestCase02LoginSuccessWithOrdinaryUser" configurationId="tests" />
+    <history-entry file="Unittest_TestCase103LoginSuccessWithphAppUser_test_app_user_login_by_csv - 2017.12.25 at 14h 05m 07s.xml">
+      <configuration name="Unittest TestCase103LoginSuccessWithphAppUser.test_app_user_login_by_csv" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase103LoginSuccessWithphAppUser_test_app_user_login_by_csv - 2017.12.25 at 14h 07m 57s.xml">
+      <configuration name="Unittest TestCase103LoginSuccessWithphAppUser.test_app_user_login_by_csv" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase103LoginSuccessWithphAppUser_test_app_user_login_by_csv - 2017.12.25 at 14h 10m 59s.xml">
+      <configuration name="Unittest TestCase103LoginSuccessWithphAppUser.test_app_user_login_by_csv" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase108LoginTester_test_log_in_tester - 2017.12.25 at 14h 27m 25s.xml">
+      <configuration name="Unittest TestCase108LoginTester.test_log_in_tester" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase108LoginTester_test_log_in_tester - 2017.12.25 at 14h 28m 26s.xml">
+      <configuration name="Unittest TestCase108LoginTester.test_log_in_tester" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -922,6 +921,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23024236" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25757575" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5237092" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.254329" sideWeight="0.4926238" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29545453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -931,7 +931,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118019" sideWeight="0.50512445" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -990,27 +989,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_184_0925_obd_tracel_form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42386186">
-          <caret line="100" column="44" selection-start-line="100" selection-start-column="44" selection-end-line="100" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form3/test_case_183_0925_obd_mileage_form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27724358">
-          <caret line="76" column="89" selection-start-line="76" selection-start-column="89" selection-end-line="76" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/statistical_form5/test_case_210_stay_form_export.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7676282">
-          <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/statistical_form4/test_case_193_stay_not_shutdown_verify_the_display_line.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47115386">
@@ -1176,6 +1154,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03348214">
           <caret line="96" column="66" selection-start-line="96" selection-start-column="66" selection-end-line="96" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1299,16 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_107_login_enter_third_website.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_106_login_change_language.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1317,40 +1288,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_105_login_with_remember_me.py">
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.521327">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.4265403">
+          <caret line="63" column="59" selection-start-line="61" selection-start-column="12" selection-end-line="63" selection-end-column="59" />
           <folding>
-            <element signature="e#0#15#0" expanded="false" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_104_login_exception.py">
+    <entry file="file://$PROJECT_DIR$/data/login/login_with_app_user.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3364929">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_101_login_success_with_sales_and_agent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.5118484">
-          <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9052133">
-          <caret line="577" column="59" selection-start-line="577" selection-start-column="59" selection-end-line="577" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1358,27 +1309,81 @@
     <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_details_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
-          <caret line="705" column="8" selection-start-line="705" selection-start-column="8" selection-end-line="705" selection-end-column="8" />
+          <caret line="696" column="8" selection-start-line="696" selection-start-column="8" selection-end-line="696" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py">
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="59" selection-start-line="61" selection-start-column="12" selection-end-line="63" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.3364929">
+          <caret line="94" column="63" selection-start-line="94" selection-start-column="63" selection-end-line="94" selection-end-column="63" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py">
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_104_login_exception.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0853081">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.4265403">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_107_login_enter_third_website.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0521327">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_105_login_with_remember_me.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47393364">
+          <caret line="35" column="63" selection-start-line="33" selection-start-column="8" selection-end-line="35" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_101_login_success_with_sales_and_agent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62085307">
+          <caret line="92" column="90" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="90" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/login/login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62085307">
+          <caret line="325" column="55" selection-start-line="325" selection-start-column="55" selection-end-line="325" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76303315">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

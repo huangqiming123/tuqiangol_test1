@@ -12,7 +12,8 @@ from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 
 
-class TestCase201AccountCenterModifyInfo(unittest.TestCase):
+class TestCase201UserCenterModifyInfo(unittest.TestCase):
+    # 测试个人中心修改资料
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -34,7 +35,7 @@ class TestCase201AccountCenterModifyInfo(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_account_center_modify_info(self):
+    def test_user_center_modify_info(self):
         # 通过csv测试修改资料功能
         self.account_center_page_navi_bar.click_account_center_button()
 

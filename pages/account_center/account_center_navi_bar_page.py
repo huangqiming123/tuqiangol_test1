@@ -195,7 +195,7 @@ class AccountCenterNaviBarPage(BasePageServer):
 
     # 密码修改成功状态框点击确定
     def modify_passwd_success_comfrim(self):
-        self.driver.click_element("x,/html/body/div[16]/div[3]/a")
+        self.driver.click_element('x,//a[text()="确定"]')
         self.driver.wait()
 
     # 招呼栏业务日志

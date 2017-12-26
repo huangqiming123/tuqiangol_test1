@@ -390,3 +390,15 @@ class AssertText(object):
 
     def account_center_page_no_data_texts(self):
         return '暂无数据'
+
+    def user_name_not_null(self):
+        return '用户名不能为空'
+
+    def user_name_not_to_long(self):
+        return '用户名称不超过50位'
+
+    def user_email_format_error(self):
+        return '邮箱格式不正确'
+
+    def user_name_not_to_shot(self):
+        return '用户名称至少3位'

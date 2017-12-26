@@ -63,3 +63,27 @@ class UserCenterPage(BasePageServer):
     def click_ensure_button(self):
         self.driver.click_element('c,layui-layer-btn0')
         sleep(2)
+
+    def input_user_name_in_modify_info(self, special_char):
+        self.driver.operate_input_element('x,//*[@id="edit-modal-nickName"]', special_char)
+        sleep(1)
+
+    def input_user_phone_in_modify_info(self, special_char):
+        self.driver.operate_input_element('x,//*[@id="edit-modal-phone"]', special_char)
+        sleep(1)
+
+    def get_user_name_in_main_page(self):
+        return self.driver.get_text('x,//*[@id="topusername"]')
+
+    def get_user_phone_in_main_page(self):
+        return self.driver.get_text('x,//*[@id="topuserphone"]')
+
+    def get_user_name_exception_in_modify_info_page(self):
+        return self.driver.get_text('x,//label[@for="edit-modal-nickName"]')
+
+    def input_user_email_in_modify_info(self, email_format):
+        self.driver.operate_input_element('x,//*[@id="edit-modal-email"]', email_format)
+        sleep(1)
+
+    def get_user_email_exception_in_modify_info_page(self):
+        return self.driver.get_text('x,//label[@for="edit-modal-email"]')

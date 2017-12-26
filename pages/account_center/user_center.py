@@ -287,3 +287,35 @@ class UserCenterPage(BasePageServer):
         sleep(2)
         self.driver.click_element('x,//li[@title="删除关联"]')
         sleep(5)
+
+    def click_set_up_and_alarm_set_up(self):
+        # 点击设置 - 告警设置
+        self.driver.click_element('x,//*[@id="systemSetting"]')
+        sleep(2)
+        self.driver.click_element('x,//a[@href="/alarmPushSet/alarmConfig"]')
+        sleep(3)
+
+    def click_push_set_up(self):
+        # 点击推送设置
+        self.driver.click_element('x,//*[@id="alarmPushSet"]/a')
+        sleep(2)
+
+    def switch_to_alarm_set_up_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="alarmPushSetFrame"]')
+
+    def get_first_alarm_name(self):
+        return self.driver.get_text('x,//*[@id="alarm_appSet_tbody"]/tr[1]/td[2]')
+
+    def get_first_alarm_status(self):
+        a = self.driver.get_element('x,//*[@id="alarm_appSet_tbody"]/tr[1]/td[3]/label/div/input').is_selected()
+        return a
+
+    def click_first_alarm_type(self):
+        self.driver.click_element('x,//*[@id="alarm_appSet_tbody"]/tr[1]/td[3]/label/div/ins')
+        sleep(1)
+
+    def select_alarm_set_up_search(self):
+        self.driver.click_element('x,//*[@id="serviceType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="告警设置"]')
+        sleep(5)

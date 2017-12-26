@@ -87,3 +87,55 @@ class UserCenterPage(BasePageServer):
 
     def get_user_email_exception_in_modify_info_page(self):
         return self.driver.get_text('x,//label[@for="edit-modal-email"]')
+
+    def click_dev_management_button(self):
+        # 点击设备管理按钮
+        self.driver.click_element('x,//*[@id="device"]/a')
+        sleep(2)
+
+    def get_dev_list_first_imei(self):
+        return self.driver.get_text('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[4]')
+
+    def click_edit_dev_button(self):
+        # 点击编辑的按钮
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[1]')
+        sleep(2)
+
+    def click_help_button(self):
+        self.driver.click_element('x,//*[@id="js-toHelp"]')
+        sleep(2)
+
+    def switch_to_business_frame(self):
+        self.driver.switch_to_frame('x,//*[@id="servicelogReportFrame"]')
+
+    def get_operation_in_business_log(self):
+        return self.driver.get_text('x,//*[@id="logslist_xf"]/tr[1]/td[1]')
+
+    def get_target_account_in_business_log(self):
+        return self.driver.get_text('x,//*[@id="logslist_xf"]/tr[1]/td[3]')
+
+    def get_operation_platform_in_business_log(self):
+        return self.driver.get_text('x,//*[@id="logslist_xf"]/tr[1]/td[4]')
+
+    def get_desc_in_business_log(self):
+        return self.driver.get_text('x,//*[@id="logslist_xf"]/tr[1]/td[5]/span')
+
+    def click_sale_button(self):
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[2]')
+        sleep(4)
+        # 点击客户树第一个
+        self.driver.click_element('x,//*[@id="treeDemo_device_sale_id_1_span"]')
+        sleep(2)
+        # 点击销售
+        self.driver.click_element('x,//*[@id="device_sale_id"]/div[3]/div[2]/button[3]')
+        sleep(2)
+
+    def search_dev_sale_in_business_log(self):
+        self.driver.click_element('x,//span[@title="设备修改"]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="设备分配"]')
+        sleep(2)
+
+    def click_search_button_in_business_log(self):
+        self.driver.click_element('x,//*[@id="search_xf"]')
+        sleep(5)

@@ -139,3 +139,151 @@ class UserCenterPage(BasePageServer):
     def click_search_button_in_business_log(self):
         self.driver.click_element('x,//*[@id="search_xf"]')
         sleep(5)
+
+    def click_customer_mangement(self):
+        # 点击客户管理
+        self.driver.click_element('x,//*[@id="customer"]/a')
+        sleep(3)
+
+    def click_add_new_customer_buttons(self):
+        self.driver.click_element('x,//*[@id="AddCustomer"]')
+        sleep(2)
+
+    def switch_to_add_new_customer_frame(self):
+        # 切换到新增客户的frame
+        self.driver.switch_to_frame('x,//*[@id="layui-layer-iframe1"]')
+
+    def add_user_name_and_user_account(self, new_customer_data):
+        self.driver.operate_input_element('x,//*[@id="nickName"]', new_customer_data[0])
+        sleep(1)
+        self.driver.operate_input_element('x,//*[@id="account"]', new_customer_data[1])
+        sleep(1)
+
+    def search_user_in_customer_management(self, param):
+        self.driver.operate_input_element('x,//*[@id="searchaccount"]', param)
+        sleep(1)
+        self.driver.click_element('x,//button[@title="搜索"]')
+        sleep(3)
+
+    def click_edit_customer_button(self):
+        # 点击编辑用户信息
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[2]')
+        sleep(2)
+
+    def click_reset_password_button(self):
+        # 点击重置密码的按钮
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[4]')
+        sleep(2)
+
+    def click_transfer_customer_button(self):
+        # 点击转移客户
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[5]')
+        sleep(2)
+
+    def click_delete_customer_button(self):
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[3]')
+        sleep(2)
+
+    def select_customer_management_condition(self):
+        # 选择客户管理的查询条件
+        self.driver.click_element('x,//*[@id="serviceType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="客户管理"]')
+        sleep(2)
+
+    def select_add_new_customer_log(self):
+        # 选择新增客户的查询添加
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="新增客户"]')
+        sleep(2)
+
+    def select_edit_customer_log(self):
+        # 选择新增客户的查询添加
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="修改用户信息"]')
+        sleep(2)
+
+    def select_delete_customer_log(self):
+        # 选择新增客户的查询添加
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="删除用户信息"]')
+        sleep(2)
+
+    def select_reset_password_log(self):
+        # 选择新增客户的查询添加
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="重置密码"]')
+        sleep(2)
+
+    def select_transfer_customer_log(self):
+        # 选择新增客户的查询添加
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="转移客户"]')
+        sleep(2)
+
+    def click_safe_area_button(self):
+        # 点击安全区域
+        self.driver.click_element('x,//*[@id="geozone"]/a')
+
+    def search_platform_fence(self):
+        sleep(3)
+        self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[1]/div/div[2]/div[2]/div/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="平台围栏"]')
+        sleep(2)
+
+    def get_first_fence_name(self):
+        return self.driver.get_element('x,//*[@id="areatbody"]/tr[1]/td[1]').get_attribute('title')
+
+    def click_edit_fence_button(self):
+        # 点击编辑围栏的按钮
+        self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a')
+        sleep(1)
+        self.driver.click_element('l,编辑')
+        sleep(2)
+
+    def click_relevance_fence_button(self):
+        # 点击编辑围栏的按钮
+        self.driver.click_element('x,//*[@id="areatbody"]/tr[1]/td[3]/a')
+        sleep(1)
+        self.driver.click_element('l,关联')
+        sleep(2)
+
+    def click_dev_relevance_fence(self):
+        self.driver.click_element('x,//*[@id="ud_deviceTree_2_check"]')
+        sleep(1)
+        a = self.driver.get_element('x,//input[@class="geozone-geolist-checkbox inOut"]').is_selected()
+        if a == False:
+            self.driver.click_element('x,//ins[@class="iCheck-helper]"')
+        sleep(1)
+        imei = self.driver.get_text('x,//*[@id="ud_deviceTree_2_span"]')
+        return imei.split('[')[1].split(']')[0]
+
+    def select_safe_area_search(self):
+        self.driver.click_element('x,//*[@id="serviceType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="安全区域"]')
+        sleep(2)
+
+    def select_edit_safe_area_search(self):
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="新增、编辑区域"]')
+        sleep(5)
+
+    def select_relevant_safe_area_search(self):
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="关联设备"]')
+        sleep(5)
+
+    def select_delete_relevant_safe_area_search(self):
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="删除关联"]')
+        sleep(5)

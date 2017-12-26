@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/2_user_center/test_case_205_user_center_business_log_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/2_user_center/test_case_206_user_center_dev_log.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/change_data.py" afterPath="$PROJECT_DIR$/change_data.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/user_center.py" afterPath="$PROJECT_DIR$/pages/account_center/user_center.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py" afterPath="$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_207_user_center_customer_log.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py">
+      <file leaf-file-name="test_case_208_user_center_safe_area_log.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6101695">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.33898306">
+              <caret line="76" column="60" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="60" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -62,7 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pages/global_search/global_dev_search_page.py" />
         <option value="$PROJECT_DIR$/pages/safe_area/safe_area_page.py" />
         <option value="$PROJECT_DIR$/main_run2.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form3/test_case_176_sport_statistical_tracel_report_form.py" />
@@ -99,7 +100,6 @@
         <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py" />
         <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" />
         <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py" />
-        <option value="$PROJECT_DIR$/change_data.py" />
         <option value="$PROJECT_DIR$/model/connect_sql.py" />
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_201_account_center_modify_info.py" />
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_201_user_center_modify_info.py" />
@@ -110,9 +110,11 @@
         <option value="$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py" />
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_204_user_center_modify_password2.py" />
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_205_user_center_business_log_search.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/user_center.py" />
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_206_user_center_dev_log.py" />
+        <option value="$PROJECT_DIR$/change_data.py" />
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py" />
+        <option value="$PROJECT_DIR$/pages/account_center/user_center.py" />
+        <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" />
       </list>
     </option>
   </component>
@@ -176,24 +178,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="testcases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testcases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account_log" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -294,8 +278,8 @@
       <recent name="E:\git\tuqiangol_test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase206UserCenterDevLog.test_user_center_dev_log">
-    <configuration default="false" name="Unittests in TestCase203UserCenterModifyPasswd" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log">
+    <configuration default="false" name="Unittests in test_case_207_user_center_customer_log" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -305,73 +289,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_203_user_center_modify_passwd.py" />
-      <option name="CLASS_NAME" value="TestCase203UserCenterModifyPasswd" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_203_user_center_modify_passwd.py" />
-      <option name="CLASS_NAME" value="TestCase203UserCenterModifyPasswd" />
-      <option name="METHOD_NAME" value="test_user_center_modify_info" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_204_user_center_modify_password2.py" />
-      <option name="CLASS_NAME" value="TestCase204UserCenterModifyPassword2" />
-      <option name="METHOD_NAME" value="test_modify_password_exception" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in test_case_205_user_center_business_log_search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_205_user_center_business_log_search.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
@@ -383,7 +301,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase206UserCenterDevLog.test_user_center_dev_log" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase207UserCenterCustomerLog" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -393,9 +311,75 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_206_user_center_dev_log.py" />
-      <option name="CLASS_NAME" value="TestCase206UserCenterDevLog" />
-      <option name="METHOD_NAME" value="test_user_center_dev_log" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py" />
+      <option name="CLASS_NAME" value="TestCase207UserCenterCustomerLog" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase207UserCenterCustomerLog (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py" />
+      <option name="CLASS_NAME" value="TestCase207UserCenterCustomerLog" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase208UserCenterSafeAreaLog" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" />
+      <option name="CLASS_NAME" value="TestCase208UserCenterSafeAreaLog" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" />
+      <option name="CLASS_NAME" value="TestCase208UserCenterSafeAreaLog" />
+      <option name="METHOD_NAME" value="test_user_center_customer_log" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -546,19 +530,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase203UserCenterModifyPasswd" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_205_user_center_business_log_search" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase206UserCenterDevLog.test_user_center_dev_log" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_207_user_center_customer_log" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase207UserCenterCustomerLog" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase207UserCenterCustomerLog (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase208UserCenterSafeAreaLog" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase206UserCenterDevLog.test_user_center_dev_log" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_205_user_center_business_log_search" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase203UserCenterModifyPasswd" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase208UserCenterSafeAreaLog" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_207_user_center_customer_log" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase207UserCenterCustomerLog (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase207UserCenterCustomerLog" />
       </list>
     </recent_temporary>
   </component>
@@ -572,12 +556,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00147" summary="修改代码">
-      <created>1507724686859</created>
-      <option name="number" value="00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1507724686860</updated>
     </task>
     <task id="LOCAL-00148" summary="修改代码">
       <created>1507725302976</created>
@@ -867,39 +845,45 @@
       <option name="project" value="LOCAL" />
       <updated>1514255579615</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="修改代码">
+      <created>1514259448021</created>
+      <option name="number" value="00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1514259448021</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase203UserCenterModifyPasswd_test_user_center_modify_info - 2017.12.26 at 10h 12m 25s.xml">
-      <configuration name="Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" configurationId="tests" />
+    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 36m 16s.xml">
+      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase203UserCenterModifyPasswd_test_user_center_modify_info - 2017.12.26 at 10h 12m 57s.xml">
-      <configuration name="Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" configurationId="tests" />
+    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 54m 07s.xml">
+      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase203UserCenterModifyPasswd_test_user_center_modify_info - 2017.12.26 at 10h 20m 57s.xml">
-      <configuration name="Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" configurationId="tests" />
+    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 55m 31s.xml">
+      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase204UserCenterModifyPassword2_test_modify_password_exception - 2017.12.26 at 10h 27m 49s.xml">
-      <configuration name="Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" configurationId="tests" />
+    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 56m 51s.xml">
+      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase204UserCenterModifyPassword2_test_modify_password_exception - 2017.12.26 at 10h 29m 52s.xml">
-      <configuration name="Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" configurationId="tests" />
+    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 58m 09s.xml">
+      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase206UserCenterDevLog_test_user_center_dev_log - 2017.12.26 at 11h 09m 11s.xml">
-      <configuration name="Unittest TestCase206UserCenterDevLog.test_user_center_dev_log" configurationId="tests" />
+    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 59m 43s.xml">
+      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase206UserCenterDevLog_test_user_center_dev_log - 2017.12.26 at 11h 10m 22s.xml">
-      <configuration name="Unittest TestCase206UserCenterDevLog.test_user_center_dev_log" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase207UserCenterCustomerLog - 2017.12.26 at 14h 49m 08s.xml">
+      <configuration name="Unittests in TestCase207UserCenterCustomerLog" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase206UserCenterDevLog_test_user_center_dev_log - 2017.12.26 at 11h 23m 26s.xml">
-      <configuration name="Unittest TestCase206UserCenterDevLog.test_user_center_dev_log" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase207UserCenterCustomerLog_(1) - 2017.12.26 at 15h 04m 12s.xml">
+      <configuration name="Unittests in TestCase207UserCenterCustomerLog (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase203UserCenterModifyPasswd - 2017.12.26 at 10h 14m 27s.xml">
-      <configuration name="Unittests in TestCase203UserCenterModifyPasswd" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase208UserCenterSafeAreaLog - 2017.12.26 at 15h 35m 00s.xml">
+      <configuration name="Unittests in TestCase208UserCenterSafeAreaLog" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_case_205_user_center_business_log_search - 2017.12.26 at 10h 40m 51s.xml">
-      <configuration name="Unittests in test_case_205_user_center_business_log_search" configurationId="tests" />
+    <history-entry file="Unittests_in_test_case_207_user_center_customer_log - 2017.12.26 at 15h 06m 36s.xml">
+      <configuration name="Unittests in test_case_207_user_center_customer_log" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -915,13 +899,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25500527" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20442571" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25757575" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5237092" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300866" sideWeight="0.5258166" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.254329" sideWeight="0.4926238" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29545453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3300866" sideWeight="0.47629082" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3300866" sideWeight="0.47418335" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118019" sideWeight="0.50512445" order="2" side_tool="true" content_ui="tabs" />
@@ -985,13 +969,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main_run2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036918137">
-          <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50223213">
@@ -1198,22 +1175,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/change_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24752475">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7293729">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/connect_sql.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3960396">
@@ -1255,7 +1216,7 @@
         <state vertical-scroll-proportion="0.58536583">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1273,7 +1234,7 @@
         <state vertical-scroll-proportion="-0.44462278">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1299,7 +1260,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1317,7 +1278,7 @@
         <state vertical-scroll-proportion="-1.6271186">
           <caret line="46" column="69" selection-start-line="46" selection-start-column="69" selection-end-line="46" selection-end-column="69" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1327,7 +1288,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="65" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1337,7 +1298,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1358,28 +1319,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/account_center/user_center.py">
+    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_206_user_center_dev_log.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7966102">
-          <caret line="140" column="15" selection-start-line="140" selection-start-column="15" selection-end-line="140" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.3898305">
+          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/change_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45762712">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_206_user_center_dev_log.py">
+    <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89830506">
-          <caret line="72" column="52" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.73898304">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6440678">
+          <caret line="95" column="66" selection-start-line="92" selection-start-column="8" selection-end-line="95" selection-end-column="66" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py">
+    <entry file="file://$PROJECT_DIR$/pages/account_center/user_center.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6101695">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.7457627">
+          <caret line="287" column="52" selection-start-line="287" selection-start-column="52" selection-end-line="287" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33898306">
+          <caret line="76" column="60" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="60" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

@@ -12,6 +12,7 @@ from pages.login.login_page import LoginPage
 
 
 class TestCase210UserCenterLoginLog(unittest.TestCase):
+    # 测试登录日志查询
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

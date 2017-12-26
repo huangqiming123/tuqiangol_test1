@@ -11,7 +11,7 @@ from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 
 
-class TestCase25AccountCenterDefaultHomePageSetting(unittest.TestCase):
+class TestCase301SetUpDefaultHomePageSetting(unittest.TestCase):
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

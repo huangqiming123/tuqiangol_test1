@@ -319,3 +319,7 @@ class UserCenterPage(BasePageServer):
         sleep(2)
         self.driver.click_element('x,//li[@title="告警设置"]')
         sleep(5)
+
+    def click_logout_button(self):
+        self.driver.click_element('x,//a[@class="js-exit-system"]')
+        sleep(2)

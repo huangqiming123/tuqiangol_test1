@@ -8,9 +8,8 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
-class TestCase54CommandManageCreateTemplateNormalMode(unittest.TestCase):
-    """ 创建模板的异常操作--上报周期为普通模式 """
-    # author：邓肖斌
+class TestCase314SetUpCommandManageCreateTemplateNormalMode(unittest.TestCase):
+    # 测试 设置 - 指令管理 - 创建模板的异常操作--上报周期为普通模式
     driver = None
     base_url = None
     base_page = None
@@ -42,7 +41,7 @@ class TestCase54CommandManageCreateTemplateNormalMode(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_command_manage_create_template_normal_mode(self):
+    def test_case_set_up_command_manage_create_template_normal_mode(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

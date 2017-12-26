@@ -9,9 +9,8 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
-# author：邓肖斌
-class TestCase53CommandManageCreateTemplateWeekPatterns(unittest.TestCase):
-    """ 创建模板的异常操作--上报周期为星期模式 """
+class TestCase313SetUpCommandManageCreateTemplateWeekPatterns(unittest.TestCase):
+    # 测试 设置 - 指令管理 - 创建模板的异常操作--上报周期为星期模式
     driver = None
     base_url = None
     base_page = None
@@ -43,7 +42,7 @@ class TestCase53CommandManageCreateTemplateWeekPatterns(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_command_manage_create_template_week_patterns(self):
+    def test_case_set_up_command_manage_create_template_week_patterns(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

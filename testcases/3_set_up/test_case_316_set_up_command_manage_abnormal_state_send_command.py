@@ -10,9 +10,7 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 
 
 class TestCase56CommandManagerAbnormalStateSendCommand(unittest.TestCase):
-    """ 异常状态imei下发模板 """
-
-    # author：邓肖斌
+    # 测试 设置 - 指令管理 - 模板管理 - 异常状态imei下发指令
     def setUp(self):
         # 前置条件
         # 实例化对象

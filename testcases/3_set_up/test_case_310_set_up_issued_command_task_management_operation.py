@@ -9,7 +9,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 
 
 class TestCase310SetUpIssuedCommandTaskManagementOperation(unittest.TestCase):
-    # 测试 设置 - 指令管理 - 发工作指令任务的操作
+    # 测试 设置 - 指令管理 - 下发工作指令任务的操作
 
     driver = None
     base_url = None

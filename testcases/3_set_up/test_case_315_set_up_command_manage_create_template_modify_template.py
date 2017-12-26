@@ -8,8 +8,8 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
-# author：邓肖斌
-class TestCase55CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
+class TestCase315SetUpCommandManageCreateTemplateModifyTemplate(unittest.TestCase):
+    # 测试 设置 - 指令管理 - 修改模板异常操作
     driver = None
     base_url = None
     base_page = None
@@ -41,7 +41,7 @@ class TestCase55CommandManageCreateTemplateModifyTemplate(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_command_manage_create_template_modify_template(self):
+    def test_case_set_up_command_manage_create_template_modify_template(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

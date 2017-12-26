@@ -49,7 +49,7 @@ class AccountCenterSettingHomePage(BasePageServer):
         return list_data
 
     def get_expect_url(self, title):
-        if title == "账户中心":
+        if title == "工作台":
             url = self.driver.base_url + "/customer/toAccountCenter"
             return url
         if title == "设备管理":

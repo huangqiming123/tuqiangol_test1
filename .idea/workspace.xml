@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/2_user_center/test_case_211_user_center_logout.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/user_center.py" afterPath="$PROJECT_DIR$/pages/account_center/user_center.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2_user_center/test_case_210_user_center_login_log.py" afterPath="$PROJECT_DIR$/testcases/2_user_center/test_case_210_user_center_login_log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" afterPath="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" afterPath="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py" afterPath="$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py" afterPath="$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_301_set_up_default_home_page_setting.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py">
+      <file leaf-file-name="test_case_302_set_up_default_home_page_no_setting.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2343471">
-              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.53667265">
+              <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -64,7 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/statistical_form5/test_case_211_stay_not_shut_down_form_export.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form5/test_case_212_acc_form_export.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form5/test_case_213_status_form_export.py" />
         <option value="$PROJECT_DIR$/testcases/statistical_form5/test_case_214_electric_form_export.py" />
@@ -114,6 +110,7 @@
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_211_user_center_logout.py" />
         <option value="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" />
         <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py" />
+        <option value="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" />
         <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py" />
       </list>
     </option>
@@ -314,73 +311,7 @@
       <recent name="E:\git\tuqiangol_test\test_runner" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestCase211UserCenterLogout.test_user_center_logout">
-    <configuration default="false" name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" />
-      <option name="CLASS_NAME" value="TestCase208UserCenterSafeAreaLog" />
-      <option name="METHOD_NAME" value="test_user_center_customer_log" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase209UserCenterAlarmSetUpLog.test_user_center_alarm_set_up_log" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_209_user_center_alarm_set_up_log.py" />
-      <option name="CLASS_NAME" value="TestCase209UserCenterAlarmSetUpLog" />
-      <option name="METHOD_NAME" value="test_user_center_alarm_set_up_log" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in test_case_210_user_center_login_log" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_210_user_center_login_log.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests in TestCase302SetUpDefaultHomePageNoSetting">
     <configuration default="false" name="Unittest TestCase210UserCenterLoginLog.test_user_center_login_log" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -418,6 +349,72 @@
       <option name="METHOD_NAME" value="test_user_center_logout" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_case_301_set_up_default_home_page_setting" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/3_set_up" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase301SetUpDefaultHomePageSetting.test_setting_default_home_page_success" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/3_set_up" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py" />
+      <option name="CLASS_NAME" value="TestCase301SetUpDefaultHomePageSetting" />
+      <option name="METHOD_NAME" value="test_setting_default_home_page_success" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase302SetUpDefaultHomePageNoSetting" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/3_set_up" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py" />
+      <option name="CLASS_NAME" value="TestCase302SetUpDefaultHomePageNoSetting" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -566,19 +563,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase209UserCenterAlarmSetUpLog.test_user_center_alarm_set_up_log" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_210_user_center_login_log" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase210UserCenterLoginLog.test_user_center_login_log" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase211UserCenterLogout.test_user_center_logout" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase210UserCenterLoginLog.test_user_center_login_log" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase211UserCenterLogout.test_user_center_logout" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_301_set_up_default_home_page_setting" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase301SetUpDefaultHomePageSetting.test_setting_default_home_page_success" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase302SetUpDefaultHomePageNoSetting" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase211UserCenterLogout.test_user_center_logout" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase210UserCenterLoginLog.test_user_center_login_log" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_210_user_center_login_log" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase209UserCenterAlarmSetUpLog.test_user_center_alarm_set_up_log" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase302SetUpDefaultHomePageNoSetting" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase301SetUpDefaultHomePageSetting.test_setting_default_home_page_success" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_case_301_set_up_default_home_page_setting" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase211UserCenterLogout.test_user_center_logout" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase210UserCenterLoginLog.test_user_center_login_log" />
       </list>
     </recent_temporary>
   </component>
@@ -592,12 +589,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00150" summary="修改代码">
-      <created>1507798046394</created>
-      <option name="number" value="00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1507798046394</updated>
     </task>
     <task id="LOCAL-00151" summary="修改代码">
       <created>1507799425239</created>
@@ -887,19 +878,16 @@
       <option name="project" value="LOCAL" />
       <updated>1514277707789</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="修改代码">
+      <created>1514279442155</created>
+      <option name="number" value="00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1514279442155</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 54m 07s.xml">
-      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 55m 31s.xml">
-      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 56m 51s.xml">
-      <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase208UserCenterSafeAreaLog_test_user_center_customer_log - 2017.12.26 at 15h 58m 09s.xml">
       <configuration name="Unittest TestCase208UserCenterSafeAreaLog.test_user_center_customer_log" configurationId="tests" />
     </history-entry>
@@ -918,8 +906,17 @@
     <history-entry file="Unittest_TestCase211UserCenterLogout_test_user_center_logout - 2017.12.26 at 17h 07m 31s.xml">
       <configuration name="Unittest TestCase211UserCenterLogout.test_user_center_logout" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittest_TestCase301SetUpDefaultHomePageSetting_test_setting_default_home_page_success - 2017.12.26 at 17h 28m 37s.xml">
+      <configuration name="Unittest TestCase301SetUpDefaultHomePageSetting.test_setting_default_home_page_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestCase302SetUpDefaultHomePageNoSetting - 2017.12.26 at 17h 30m 00s.xml">
+      <configuration name="Unittests in TestCase302SetUpDefaultHomePageNoSetting" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_test_case_210_user_center_login_log - 2017.12.26 at 16h 25m 54s.xml">
       <configuration name="Unittests in test_case_210_user_center_login_log" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_case_301_set_up_default_home_page_setting - 2017.12.26 at 17h 22m 17s.xml">
+      <configuration name="Unittests in test_case_301_set_up_default_home_page_setting" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -935,7 +932,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25869337" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23551106" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25757575" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300866" sideWeight="0.5258166" order="7" side_tool="true" content_ui="tabs" />
@@ -1005,13 +1002,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistic_form_page3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325893">
-          <caret line="653" column="8" selection-start-line="653" selection-start-column="8" selection-end-line="653" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325893">
@@ -1406,20 +1396,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py">
+    <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.39534885">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.5474061">
+          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0536673">
+          <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py">
+    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2343471">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.53667265">
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

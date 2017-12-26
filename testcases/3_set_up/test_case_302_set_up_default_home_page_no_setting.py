@@ -12,6 +12,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 
 class TestCase302SetUpDefaultHomePageNoSetting(unittest.TestCase):
+    # 测试未设置过默认首页的账号登录显示的默认首页
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

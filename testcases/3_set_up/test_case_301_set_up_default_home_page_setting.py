@@ -12,6 +12,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 
 
 class TestCase301SetUpDefaultHomePageSetting(unittest.TestCase):
+    # 测试默认首页
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url
@@ -87,6 +88,5 @@ class TestCase301SetUpDefaultHomePageSetting(unittest.TestCase):
                 expect_url = self.account_center_page_home_page_setting.get_expect_url(setting_text["page_name"])
                 self.assertEqual(expect_url, actual_url, "登录后，默认主页显示错误")
                 sleep(2)
-            break
         sleep(2)
         # self.account_center_page_navi_bar.usr_logout()

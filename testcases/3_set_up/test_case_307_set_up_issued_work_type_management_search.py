@@ -11,9 +11,8 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 from pages.command_management.search_sql import SearchSql
 
 
-class TestCase47IssuedWorkTypeManagementSearch(unittest.TestCase):
-    """ 下发工作模式管理页面搜索 """
-    # author：邓肖斌
+class TestCase307SetUpIssuedWorkTypeManagementSearch(unittest.TestCase):
+    # 测试 设置 - 指令管理 - 下发工作模式管理页面搜索
 
     driver = None
     base_url = None
@@ -51,7 +50,7 @@ class TestCase47IssuedWorkTypeManagementSearch(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_issued_work_type_management_search(self):
+    def test_case_set_up_issued_work_type_management_search(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,
@@ -116,3 +115,4 @@ class TestCase47IssuedWorkTypeManagementSearch(unittest.TestCase):
 
             cursor.close()
             connect.close()
+        csv_file.close()

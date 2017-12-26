@@ -12,9 +12,8 @@ from pages.command_management.command_management_page_read_csv import CommandMan
 from pages.command_management.search_sql import SearchSql
 
 
-class TestCase49IssuedCommandTaskManagementSearch(unittest.TestCase):
-    """ 下发指令任务管理的搜索功能"""
-    # author:邓肖斌
+class TestCase309SetUpIssuedCommandTaskManagementSearch(unittest.TestCase):
+    # 测试 设置 - 指令管理 - 下发指令任务管理的搜索功能
 
     driver = None
     base_url = None
@@ -53,7 +52,7 @@ class TestCase49IssuedCommandTaskManagementSearch(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_issued_command_task_management_search(self):
+    def test_case_set_up_issued_command_task_management_search(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,
@@ -133,3 +132,4 @@ class TestCase49IssuedCommandTaskManagementSearch(unittest.TestCase):
 
             cursor.close()
             connect.close()
+        csv_file.close()

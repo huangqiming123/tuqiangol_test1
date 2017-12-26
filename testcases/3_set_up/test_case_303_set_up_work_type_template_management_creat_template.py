@@ -9,7 +9,8 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
 
-class TestCase43WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
+class TestCase303SetUpWorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
+    # 测试设置 - 指令管理 - 模板管理 - 创建模板
     driver = None
     base_url = None
     base_page = None
@@ -41,7 +42,7 @@ class TestCase43WorkTypeTemplateManagementCreatTemplate(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_work_type_template_management_creat_template(self):
+    def test_case_set_up_work_type_template_management_creat_template(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

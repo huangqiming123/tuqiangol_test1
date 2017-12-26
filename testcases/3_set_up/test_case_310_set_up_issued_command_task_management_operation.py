@@ -8,9 +8,8 @@ from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 
 
-class TestCase50IssuedCommandTaskManagementOperation(unittest.TestCase):
-    """ 发工作指令任务的操作 """
-    # author:邓肖斌
+class TestCase310SetUpIssuedCommandTaskManagementOperation(unittest.TestCase):
+    # 测试 设置 - 指令管理 - 发工作指令任务的操作
 
     driver = None
     base_url = None
@@ -44,7 +43,7 @@ class TestCase50IssuedCommandTaskManagementOperation(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_issued_command_task_management_operation(self):
+    def test_case_set_up_issued_command_task_management_operation(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

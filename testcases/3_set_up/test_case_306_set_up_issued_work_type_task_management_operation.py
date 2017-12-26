@@ -7,10 +7,8 @@ from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 
 
-class TestCase46IssuedWorkTaskManagementOperation(unittest.TestCase):
-    """ 下发工作模式任务管理，查看设备 """
-    # author：邓肖斌
-
+class TestCase306SetUpIssuedWorkTaskManagementOperation(unittest.TestCase):
+    # 测试 设置 - 指令管理 - 下发工作模式任务管理 - 查看设备
     driver = None
     base_url = None
     base_page = None
@@ -41,7 +39,7 @@ class TestCase46IssuedWorkTaskManagementOperation(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_case_issued_work_type_task_management_operation(self):
+    def test_case_set_up_issued_work_type_task_management_operation(self):
         # 断言url
         expect_url_after_click_command_management = self.base_url + '/custom/toTemplate'
         self.assertEqual(expect_url_after_click_command_management,

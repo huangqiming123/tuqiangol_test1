@@ -112,16 +112,16 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     # 当前账户-编辑用户-选择客户类型
     def acc_type_choose(self, acc_type, type_id=""):
         if acc_type == '销售':
-            #self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[1]")
+            # self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[1]")
             self.driver.click_element("x,//*[@id='typeRoleRadio1']/label[1]")
 
         elif acc_type == '代理商':
             try:
-                #self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[2]")
+                # self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[2]/label[2]")
                 self.driver.click_element("x,//*[@id='typeRoleRadio1']/label[2]")
             except:
                 self.driver.click_element("x,//*[@id='typeRoleRadio2']/label[1]")
-                #self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[3]/label[1]")
+                # self.driver.click_element("x,/html/body/div/div/form/div[2]/div/div[3]/label[1]")
 
         elif acc_type == '用户':
             if type_id == "typeRoleRadio1":
@@ -132,7 +132,6 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
             if type_id == "typeRoleRadio3":
                 self.driver.click_element("x,//*[@id='typeRoleRadio3']/label")
-
 
     # 当前账户-编辑用户-编辑用户输入框信息
     def acc_input_info_edit(self, acc_name, phone, email, conn, com):
@@ -302,7 +301,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         return self.driver.get_text('x,//*[@id="user_account"]')
 
     def click_monitoring_account_button(self):
-        #self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
+        # self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[1]/div/button')
         self.driver.click_element('x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[1]/div/button')
         sleep(2)
 
@@ -321,7 +320,8 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     def click_close_edit_accunt_button(self):
         self.driver.click_element('c,layui-layer-ico')
         sleep(2)
-    #/html/body/div[7]/div[2]/iframe
+
+    # /html/body/div[7]/div[2]/iframe
     def get_account_name_after_click_edit(self):
         self.locate_to_iframe()
         text = self.driver.get_element('x,//*[@id="topUser"]').get_attribute('value')
@@ -373,6 +373,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     def click_ensure(self):
         self.driver.click_element('c,layui-layer-btn0')
+        sleep(2)
 
     def get_account_max_len(self):
         self.locate_to_iframe()
@@ -433,7 +434,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     def get_text_email_text(self):
         self.locate_to_iframe()
-        text = self.driver.get_text('x,//*[@id="userForm"]/div[7]/div/label')
+        text = self.driver.get_text('x,//label[@for="email"]')
         self.driver.default_frame()
         return text
 
@@ -444,7 +445,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         sleep(4)
         self.driver.default_frame()
 
-    #编辑-搜索--点击查询结果
+    # 编辑-搜索--点击查询结果
     def click_search_user(self):
         self.locate_to_iframe()
         self.driver.click_element("c,autocompleter")
@@ -615,7 +616,6 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
                 self.driver.click_element("x,/html/body/div[14]/div[3]/a")
                 return prompt
 
-
     # 点击设备管理页面的监控用户
     def click_dev_page_monitoring_account_button(self):
         self.driver.click_element('x,//*[@id="allDev"]/div[1]/div[2]/button')
@@ -636,7 +636,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         self.driver.click_element("x,//*[@id='layui-layer1']/div[3]/a")
         self.driver.wait(1)
 
-        #获取提示
+        # 获取提示
         pwd1_prompt = self.driver.get_text("x,//*[@id='editpwd-form_advise']/div[1]/div/label")
         pwd2_prompt = self.driver.get_text("x,//*[@id='editpwd-form_advise']/div[2]/div/label")
         data = {
@@ -697,26 +697,25 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             print(working_mode_status)
             return working_mode_status
 
-
-    #点设备管理
+    # 点设备管理
     def get_facility_manage_page_function_button(self):
         self.driver.click_element("device")
         sleep(2)
-        #获取全部功能按钮
+        # 获取全部功能按钮
         button_list = []
         all_data = len(self.driver.get_elements("x,//*[@id='allDev']/div[2]/div[2]/div/div/button"))
         for a in range(all_data):
-            text = self.driver.get_text("x,//*[@id='allDev']/div[2]/div[2]/div/div/button[" + str(a + 1) +"]")
+            text = self.driver.get_text("x,//*[@id='allDev']/div[2]/div[2]/div/div/button[" + str(a + 1) + "]")
             button_list.append(text)
 
         print("设备管理页面", button_list)
         return button_list
 
-    #获取指令管理页面模块
+    # 获取指令管理页面模块
     def get_command_page_module(self):
         self.driver.click_element("x,/html/body/div[2]/header/div/div[2]/div[2]/div[2]/a[1]")
         sleep(2)
-        #获取指令模块
+        # 获取指令模块
         command_module = []
         all_module = len(self.driver.get_elements("x,//*[@id='insManage_ul']/li"))
         for a in range(all_module):
@@ -727,19 +726,19 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         print("指令管理页面", command_module)
         return command_module
 
-    #转移客户-账户查找
+    # 转移客户-账户查找
     def transfer_import_account_search(self, search_account):
         # 点击下拉箭头图标
         self.search_cust(search_account)
         self.driver.wait(3)
         self.locate_to_iframe()
-        #获取查询结果
+        # 获取查询结果
         list_data = len(self.driver.get_elements("x,/html/body/div/div/form/div/div/div[1]/div/ul/li"))
 
-        if list_data >=1:
+        if list_data >= 1:
             list = []
             for i in range(list_data):
-                text = self.driver.get_text("x,/html/body/div/div/form/div/div/div[1]/div/ul/li[" + str(i + 1) +"]")
+                text = self.driver.get_text("x,/html/body/div/div/form/div/div/div[1]/div/ul/li[" + str(i + 1) + "]")
                 list.append(text)
             self.driver.default_frame()
             print(list)
@@ -750,8 +749,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
             print(no_data)
             return no_data
 
-
-    #获取客户类型列表 /html/body/div[7]/div[2]/iframe
+    # 获取客户类型列表 /html/body/div[7]/div[2]/iframe
     def get_acc_user_type_list(self):
         self.locate_to_iframe()
         type_list_len = len(self.driver.get_elements("x,/html/body/div/div/form/div[2]/div/div"))
@@ -801,8 +799,70 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
                     self.driver.default_frame()
                     return type_data
 
-    #点击编辑-取消--编辑
+    # 点击编辑-取消--编辑
     def click_edit_customer_process(self):
         self.click_edit_customer()
         self.click_cancel_edit()
         self.click_edit_customer()
+
+    def click_web_edit_dev_limit_in_add_new_user(self, param):
+        # 选择够不够选web修改设备权限
+        if param == 'False':
+            self.driver.click_element('x,//label[@title="web修改设备"]/div/ins')
+            sleep(1)
+
+        elif param == "True":
+            pass
+
+    def click_dev_and_edit_dev(self):
+        # 进入设备管理 - 点击编辑设备 - 保存 - 获取 文本
+        self.driver.click_element('x,//*[@id="device"]/a')
+        sleep(2)
+        # 点击编辑设备
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[1]')
+        sleep(2)
+        # 点击确定
+        self.click_ensure()
+
+        # 获取文本
+        return self.driver.get_text('c,layui-layer-content')
+
+    def click_control_button(self):
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[1]')
+        sleep(2)
+
+    def get_user_name_in_customer_page(self):
+        return self.driver.get_text('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[5]')
+
+    def get_user_type_in_customer_page(self):
+        return self.driver.get_text('x,//*[@id="customertablecontent"]/tbody/tr/td[4]')
+
+    def get_user_account_in_customer_page(self):
+        return self.driver.get_text('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[3]')
+
+    def get_user_phone_in_customer_page(self):
+        return self.driver.get_text('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[6]')
+
+    def get_user_contact_in_customer_page(self):
+        return self.driver.get_text('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[7]')
+
+    def add_data_to_edit_user(self, info):
+        # 编辑客户名称
+        self.driver.operate_input_element("nickName", info['user_name'])
+        self.driver.wait(1)
+        # 编辑电话
+        self.driver.operate_input_element("phone", info['phone'])
+        self.driver.wait(1)
+        # 编辑邮箱
+        self.driver.operate_input_element("email", info['email'])
+        self.driver.wait(1)
+        # 编辑联系人
+        self.driver.operate_input_element("contact", info['conn'])
+        self.driver.wait(1)
+        # 编辑公司名
+        self.driver.operate_input_element("companyName", info['com'])
+        self.driver.wait(1)
+
+    def click_edit_account_buttons(self):
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr/td[9]/a[2]')
+        sleep(2)

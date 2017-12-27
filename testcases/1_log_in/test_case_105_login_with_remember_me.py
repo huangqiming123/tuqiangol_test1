@@ -45,6 +45,7 @@ class TestCase105LoginWithRememberMe(unittest.TestCase):
 
         # 点击登录按钮
         self.login_page.click_log_in_button()
+        self.account_center_page_navi_bar.click_account_center_button()
         actual_url = self.driver.get_current_url()
         expect_url = self.base_url + "/customer/toAccountCenter"
         self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")

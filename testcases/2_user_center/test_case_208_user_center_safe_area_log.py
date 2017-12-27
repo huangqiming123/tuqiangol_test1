@@ -34,7 +34,7 @@ class TestCase208UserCenterSafeAreaLog(unittest.TestCase):
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_user_center_customer_log(self):
+    def test_user_center_safe_area_log(self):
         self.base_page.open_page()
         self.log_in_base.log_in()
         user_account = self.log_in_base.get_log_in_account()

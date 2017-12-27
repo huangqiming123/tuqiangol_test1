@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_2_user_center.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_4_customer_management.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ee.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eee.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eeeee.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jdb.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_run.py" afterPath="$PROJECT_DIR$/main_run.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_2_user_center.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_2_user_center.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_4_customer_management.py" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_4_customer_management.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/1_log_in/test_case_105_login_with_remember_me.py" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_105_login_with_remember_me.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py" afterPath="$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" afterPath="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/4_customer_management/test_case_411_customer_management_edit_user_issued_command_limit.py" afterPath="$PROJECT_DIR$/testcases/4_customer_management/test_case_411_customer_management_edit_user_issued_command_limit.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main_run.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main_run.py">
+      <file leaf-file-name="tuqiangOL_test_runner_4_customer_management.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_4_customer_management.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3861607">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.10377359">
+              <caret line="107" column="59" selection-start-line="107" selection-start-column="59" selection-end-line="107" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -65,12 +66,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/account_center/test_case_25_account_center_default_home_page_setting.py" />
-        <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_301_set_up_default_home_page_setting.py" />
-        <option value="$PROJECT_DIR$/pages/account_center/account_center_setting_home_page.py" />
-        <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_302_set_up_default_home_page_no_setting.py" />
-        <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_303_set_up_work_type_template_management_creat_template.py" />
-        <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_304_set_up_work_type_template_management_operation.py" />
         <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_305_set_up_issued_work_type_task_management_search.py" />
         <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_306_set_up_issued_work_type_task_management_operation.py" />
         <option value="$PROJECT_DIR$/testcases/3_set_up/test_case_307_set_up_issued_work_type_management_search.py" />
@@ -102,7 +97,6 @@
         <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_407_customer_management_operation_edit_user.py" />
         <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_408_customer_management_add_user_expection.py" />
         <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_409_customer_management_edit_user_expection.py" />
-        <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_411_customer_management_edit_user_issued_command_limit.py" />
         <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_410_customer_management_edit_user_web_login_limit.py" />
         <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_412_customer_management_edit_user_send_work_template_limit.py" />
         <option value="$PROJECT_DIR$/model/assert_text2.py" />
@@ -111,11 +105,18 @@
         <option value="$PROJECT_DIR$/pages/cust_manage/cust_manage_lower_account_page.py" />
         <option value="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" />
         <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_415_customer_management_edit_user_reset_password.py" />
+        <option value="$PROJECT_DIR$/main_run.py" />
+        <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py" />
+        <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py" />
+        <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_105_login_with_remember_me.py" />
+        <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py" />
+        <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_211_user_center_logout.py" />
+        <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" />
+        <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_411_customer_management_edit_user_issued_command_limit.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_2_user_center.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_4_customer_management.py" />
-        <option value="$PROJECT_DIR$/main_run.py" />
       </list>
     </option>
   </component>
@@ -150,7 +151,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -193,6 +193,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4_customer_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2_user_center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="test_runner" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -214,6 +250,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,58 +298,7 @@
       <recent name="E:\git\tuqiangol_test\testcases\account_center" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main_run">
-    <configuration default="false" name="tuqiangOL_test_runner_1_log_in" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_runner" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="tuqiangOL_test_runner_2_user_center" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_runner" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_2_user_center.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="tuqiangOL_test_runner_3_set_up" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_runner" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.tuqiangOL_test_runner_4_customer_management">
     <configuration default="false" name="tuqiangOL_test_runner_4_customer_management" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -330,21 +316,92 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="main_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="Unittests in TestCase411CustomerManagementEditUserIssuedCommandLimit" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
+      <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/4_customer_management" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/4_customer_management/test_case_411_customer_management_edit_user_issued_command_limit.py" />
+      <option name="CLASS_NAME" value="TestCase411CustomerManagementEditUserIssuedCommandLimit" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase412CustomerManagementEditUserSendWorkTemplateLimit.test_customer_management_edit_user_send_work_template_limit" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/4_customer_management" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/4_customer_management/test_case_412_customer_management_edit_user_send_work_template_limit.py" />
+      <option name="CLASS_NAME" value="TestCase412CustomerManagementEditUserSendWorkTemplateLimit" />
+      <option name="METHOD_NAME" value="test_customer_management_edit_user_send_work_template_limit" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/4_customer_management" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/4_customer_management/test_case_415_customer_management_edit_user_reset_password.py" />
+      <option name="CLASS_NAME" value="TestCase415CustomerManagementEditUserResetPassword" />
+      <option name="METHOD_NAME" value="test_customer_management_edit_user_reset_password" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase407CustomerManagementOperationEditUser" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/4_customer_management" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/4_customer_management/test_case_407_customer_management_operation_edit_user.py" />
+      <option name="CLASS_NAME" value="TestCase407CustomerManagementOperationEditUser" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -488,19 +545,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_1_log_in" />
-      <item index="2" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_2_user_center" />
-      <item index="3" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_3_set_up" />
-      <item index="4" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_4_customer_management" />
-      <item index="5" class="java.lang.String" itemvalue="Python.main_run" />
+      <item index="1" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_4_customer_management" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase411CustomerManagementEditUserIssuedCommandLimit" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase412CustomerManagementEditUserSendWorkTemplateLimit.test_customer_management_edit_user_send_work_template_limit" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase407CustomerManagementOperationEditUser" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main_run" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_4_customer_management" />
-        <item index="2" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_3_set_up" />
-        <item index="3" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_2_user_center" />
-        <item index="4" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_1_log_in" />
+        <item index="0" class="java.lang.String" itemvalue="Python.tuqiangOL_test_runner_4_customer_management" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase407CustomerManagementOperationEditUser" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase412CustomerManagementEditUserSendWorkTemplateLimit.test_customer_management_edit_user_send_work_template_limit" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase411CustomerManagementEditUserIssuedCommandLimit" />
       </list>
     </recent_temporary>
   </component>
@@ -514,12 +571,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00159" summary="修改代码">
-      <created>1508491103500</created>
-      <option name="number" value="00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1508491103501</updated>
     </task>
     <task id="LOCAL-00160" summary="修改代码">
       <created>1509411218085</created>
@@ -809,39 +860,45 @@
       <option name="project" value="LOCAL" />
       <updated>1514369461965</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="修改代码">
+      <created>1514370134481</created>
+      <option name="number" value="00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1514370134483</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 17h 37m 11s.xml">
+    <history-entry file="Unittest_TestCase401CustomerManagementCheckAccount_test_customer_management_check_account - 2017.12.27 at 20h 42m 08s.xml">
+      <configuration name="Unittest TestCase401CustomerManagementCheckAccount.test_customer_management_check_account" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase403CustomerManagementAddUser_test_cust_manage_add_acc - 2017.12.27 at 20h 44m 25s.xml">
+      <configuration name="Unittest TestCase403CustomerManagementAddUser.test_cust_manage_add_acc" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase404CustomerManagementAddAUserWebLimit_test_add_user_web_limit_verify - 2017.12.27 at 21h 08m 52s.xml">
+      <configuration name="Unittest TestCase404CustomerManagementAddAUserWebLimit.test_add_user_web_limit_verify" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase404CustomerManagementAddAUserWebLimit_test_add_user_web_limit_verify - 2017.12.27 at 21h 16m 13s.xml">
+      <configuration name="Unittest TestCase404CustomerManagementAddAUserWebLimit.test_add_user_web_limit_verify" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase412CustomerManagementEditUserSendWorkTemplateLimit_test_customer_management_edit_user_send_work_template_limit - 2017.12.27 at 21h 29m 26s.xml">
+      <configuration name="Unittest TestCase412CustomerManagementEditUserSendWorkTemplateLimit.test_customer_management_edit_user_send_work_template_limit" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 22h 20m 38s.xml">
       <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 17h 39m 10s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase208UserCenterSafeAreaLog - 2017.12.27 at 20h 39m 59s.xml">
+      <configuration name="Unittests in TestCase208UserCenterSafeAreaLog" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 17h 40m 40s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase405CustomerManagementAddUserCommandLimit - 2017.12.27 at 21h 24m 55s.xml">
+      <configuration name="Unittests in TestCase405CustomerManagementAddUserCommandLimit" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 17h 42m 36s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase407CustomerManagementOperationEditUser - 2017.12.27 at 22h 22m 46s.xml">
+      <configuration name="Unittests in TestCase407CustomerManagementOperationEditUser" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 17h 45m 53s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 17h 48m 43s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 17h 53m 18s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 18h 07m 34s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 18h 08m 32s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase415CustomerManagementEditUserResetPassword_test_customer_management_edit_user_reset_password - 2017.12.27 at 18h 10m 39s.xml">
-      <configuration name="Unittest TestCase415CustomerManagementEditUserResetPassword.test_customer_management_edit_user_reset_password" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase411CustomerManagementEditUserIssuedCommandLimit - 2017.12.27 at 21h 27m 36s.xml">
+      <configuration name="Unittests in TestCase411CustomerManagementEditUserIssuedCommandLimit" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -857,24 +914,24 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1975764" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2572973" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21496312" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25108224" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300866" sideWeight="0.5258166" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30627707" sideWeight="0.4926238" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29545453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28030303" sideWeight="0.47418335" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118019" sideWeight="0.50512445" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28030303" sideWeight="0.47418335" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29405406" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -927,69 +984,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_316_set_up_command_manage_abnormal_state_send_command.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5903399">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_303_set_up_work_type_template_management_creat_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_304_set_up_work_type_template_management_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053667262">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_305_set_up_issued_work_type_task_management_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.449016">
-          <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_306_set_up_issued_work_type_task_management_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46332738">
-          <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_307_set_up_issued_work_type_management_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51699466">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_run2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36941963">
-          <caret line="112" column="8" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/cust_manage/test_case_57_cust_manage_check_account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.754464">
-          <caret line="142" column="41" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/change_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26833633">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/automate_driver/automate_driver_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7620751">
@@ -1046,45 +1040,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_401_customer_management_check_account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.0931373">
-          <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_403_customer_management_add_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63398695">
-          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/cust_manage/add_user_web_limit_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/cust_manage/add_user_command_limit_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/base/lon_in_base_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5588235">
           <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/cust_manage/add_user_edit_dev_limit_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04901961">
-          <caret line="1" column="69" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1130,45 +1089,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_406_customer_management_operation_control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.86003375">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/login/login_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3322091">
-          <caret line="163" column="8" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_404_customer_management_add_user_web_limit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5564924">
-          <caret line="98" column="76" selection-start-line="97" selection-start-column="16" selection-end-line="98" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/account_center/account_center_navi_bar_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3322091">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_411_customer_management_edit_user_issued_command_limit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="69" selection-start-line="136" selection-start-column="69" selection-end-line="136" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_412_customer_management_edit_user_send_work_template_limit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.75">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1183,41 +1107,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7063621">
           <caret line="55" column="104" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_407_customer_management_operation_edit_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.685155">
-          <caret line="79" column="111" selection-start-line="75" selection-start-column="12" selection-end-line="79" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_409_customer_management_edit_user_expection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7161501">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_408_customer_management_add_user_expection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6362153">
-          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_405_customer_management_add_user_command_limit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="171" column="58" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_410_customer_management_edit_user_web_login_limit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="50" selection-start-line="125" selection-start-column="12" selection-end-line="126" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1242,45 +1131,221 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_415_customer_management_edit_user_reset_password.py">
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_406_customer_management_operation_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7169811">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_4_customer_management.py">
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_408_customer_management_add_user_expection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4849162">
-          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.5882353">
+          <caret line="16" column="71" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py">
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_409_customer_management_edit_user_expection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033519555">
-          <caret line="86" column="15" selection-start-line="86" selection-start-column="15" selection-end-line="86" selection-end-column="15" />
+        <state vertical-scroll-proportion="1.402715">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_2_user_center.py">
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_103_login_success_with_app_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033519555">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3013393">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py">
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_102_login_success_with_ordinary_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033519555">
-          <caret line="95" column="14" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.33482143">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main_run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3861607">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.66964287">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/login/login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6651786">
+          <caret line="374" column="8" selection-start-line="374" selection-start-column="8" selection-end-line="374" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41758242">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/1_log_in/test_case_105_login_with_remember_me.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9827316">
+          <caret line="47" column="71" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_211_user_center_logout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.663522">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_205_user_center_business_log_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6132075">
+          <caret line="112" column="23" selection-start-line="112" selection-start-column="23" selection-end-line="112" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/account_center/user_center.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_206_user_center_dev_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42767295">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_401_customer_management_check_account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4811321">
+          <caret line="130" column="42" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/cust_manage/add_user_edit_dev_limit_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="26" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_403_customer_management_add_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6132075">
+          <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/cust_manage/add_user_command_limit_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/cust_manage/add_user_web_limit_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_404_customer_management_add_user_web_limit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43396226">
+          <caret line="96" column="24" selection-start-line="96" selection-start-column="24" selection-end-line="96" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_405_customer_management_add_user_command_limit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6132075">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_410_customer_management_edit_user_web_login_limit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.091194965">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_411_customer_management_edit_user_issued_command_limit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4716981">
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_412_customer_management_edit_user_send_work_template_limit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29245284">
+          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_415_customer_management_edit_user_reset_password.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4355346">
+          <caret line="86" column="54" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/4_customer_management/test_case_407_customer_management_operation_edit_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28301886">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="52" selection-start-line="111" selection-start-column="52" selection-end-line="111" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_2_user_center.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="52" selection-start-line="111" selection-start-column="52" selection-end-line="111" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="52" selection-start-line="111" selection-start-column="52" selection-end-line="111" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_4_customer_management.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10377359">
+          <caret line="107" column="59" selection-start-line="107" selection-start-column="59" selection-end-line="107" selection-end-column="59" />
           <folding />
         </state>
       </provider>

@@ -38,7 +38,7 @@ class TestCase411CustomerManagementEditUserIssuedCommandLimit(unittest.TestCase)
     def tearDown(self):
         self.driver.quit_browser()
 
-    def test_customer_management_edit_user_web_login_limit(self):
+    def test_customer_management_edit_user_issued_command_limit(self):
         # 打开途强在线首页-登录页
         self.base_page.open_page()
         # 登录

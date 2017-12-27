@@ -898,3 +898,18 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     def click_delete_user_button(self):
         self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[3]')
         sleep(2)
+
+    def click_reset_password_button(self):
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[4]')
+        sleep(2)
+
+    def click_new_password(self, param):
+        sleep(2)
+        self.driver.operate_input_element('x,//*[@id="newPwd_advise"]', param)
+        sleep(1)
+        self.driver.operate_input_element('x,//*[@id="renewPwd_advise"]', param)
+        sleep(1)
+
+    def click_ensuress(self):
+        self.driver.click_element('x,/html/body/div[15]/div[3]/a')
+        sleep(5)

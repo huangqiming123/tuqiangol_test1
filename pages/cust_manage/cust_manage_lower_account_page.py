@@ -47,7 +47,7 @@ class CustManageLowerAccountPage(BasePageServer):
     # 点击搜索
     def click_search_btn(self):
         # self.driver.click_element('x,/html/body/div[1]/div[4]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button')
-        self.driver.click_element("x,/html/body/div[1]/div[6]/div/div/div[2]/div/div[2]/div[1]/div/div[3]/button")
+        self.driver.click_element('x,//button[@title="搜索"]')
         self.driver.wait()
 
     # 获取搜索结果账号

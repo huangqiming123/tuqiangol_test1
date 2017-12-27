@@ -8,6 +8,7 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 
 from email.header import Header
+from email.mime.text import MIMEText
 
 from model.send_mail import send_mails
 from test_runner.html_test_runner import HtmlTestRunner
@@ -62,7 +63,7 @@ def send_mail(file_new):
     msg['To'] = send_mails()
 
     # 邮件正文是MIMEText
-    # msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
+    msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
 
     # 添加附件就是加上一个MIMEBase,从本地读取测试报告
     mime = MIMEBase('text', 'html', filename=file_new)

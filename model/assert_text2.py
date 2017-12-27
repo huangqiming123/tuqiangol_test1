@@ -110,3 +110,9 @@ class AssertText2(object):
 
     def cust_manage_add_user_type_prompt(self):
         return "用户不能作为上级用户"
+
+    def no_permissions(self):
+        return "没有权限"
+
+    def operation_done(self):
+        return '操作成功'

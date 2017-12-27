@@ -817,9 +817,9 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     def click_dev_and_edit_dev(self):
         # 进入设备管理 - 点击编辑设备 - 保存 - 获取 文本
         self.driver.click_element('x,//*[@id="device"]/a')
-        sleep(2)
+        sleep(4)
         # 点击编辑设备
-        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr[1]/td[13]/a[1]')
+        self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr/td[13]/a[1]')
         sleep(2)
         # 点击确定
         self.click_ensure()
@@ -865,4 +865,36 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     def click_edit_account_buttons(self):
         self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr/td[9]/a[2]')
+        sleep(2)
+
+    def get_web_login_status(self):
+        return self.driver.get_element('x,//*[@id="webLogin"]').is_selected()
+
+    def click_web_login_status_ins(self):
+        self.driver.click_element('x,//*[@id="userForm"]/div[10]/div[1]/label/div/ins')
+        sleep(1)
+
+    def get_issued_command_status(self):
+        return self.driver.get_element('x,//*[@id="isBatchSendIns"]').is_selected()
+
+    def click_issued_command_status_ins(self):
+        self.driver.click_element('x,//*[@id="customer_isBatchSendIns"]/label/div/ins')
+        sleep(1)
+
+    def get_send_work_template_status(self):
+        return self.driver.get_element('x,//*[@id="isBatchSendFM"]').is_selected()
+
+    def click_send_work_template_status_ins(self):
+        self.driver.click_element('x,//*[@id="customer_isBatchSendFM"]/label/div/ins')
+        sleep(1)
+
+    def get_edit_dev_status(self):
+        return self.driver.get_element('x,//*[@id="updateDevFlag"]').is_selected()
+
+    def click_edit_dev_status_ins(self):
+        self.driver.click_element('x,//*[@id="customer_webupdatedev_div"]/label/div/ins')
+        sleep(1)
+
+    def click_delete_user_button(self):
+        self.driver.click_element('x,//*[@id="customertablecontent"]/tbody/tr[1]/td[9]/a[3]')
         sleep(2)

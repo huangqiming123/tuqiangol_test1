@@ -84,9 +84,9 @@ class AccountCenterNaviBarPage(BasePageServer):
     # 招呼栏退出系统
     def usr_logout(self):
         # 点击退出系统
-        self.driver.float_element(self.driver.get_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[2]/a'))
+        self.driver.float_element(self.driver.get_element('x,//*[@id="userCenter"]'))
         sleep(2)
-        self.driver.click_element('p,退出系统')
+        self.driver.click_element('x,//a[@class="js-exit-system"]')
         self.driver.wait()
         # 定位到弹出框内容
         logout_text = self.driver.get_element("c,layui-layer-content").text

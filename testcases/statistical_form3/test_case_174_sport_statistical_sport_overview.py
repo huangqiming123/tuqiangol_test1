@@ -83,6 +83,7 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
             # 连接数据库
             all_dev = self.search_sql.search_current_account_equipment(search_data['search_user'])
             imeis = self.statistical_form_page3.change_dev_imei_format(all_dev)
+            print(imeis)
             begin_time = self.statistical_form_page3.get_sport_overview_form_begin_time()
             end_time = self.statistical_form_page3.get_sport_overview_form_end_time()
             get_current_userid = self.search_sql.search_current_account_user_id(search_data['search_user'])
@@ -105,6 +106,11 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
                 except:
                     pass
             print('res', res_data)
-            self.assertEqual(data_web, res_data)
+            self.assertEqual(len(data_web), len(res_data))
+
+            for datas in data_web:
+                self.assertIn(datas, res_data)
+            for datas2 in res_data:
+                self.assertIn(datas2, data_web)
             self.driver.default_frame()
         csv_file.close()

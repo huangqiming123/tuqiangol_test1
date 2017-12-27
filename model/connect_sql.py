@@ -2,7 +2,8 @@ import pymysql
 
 
 class ConnectSql(object):
-    '''def connect_tuqiang_sql(self):
+    '''
+    def connect_tuqiang_sql(self):
         # 连接图强的第一台数据库
         connect = pymysql.connect(
             host='120.24.75.214',

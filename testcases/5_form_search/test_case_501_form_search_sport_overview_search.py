@@ -16,7 +16,8 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase174SportStatisticalOverview(unittest.TestCase):
+class TestCase501FormSearchSportOverviewSearch(unittest.TestCase):
+    # 测试 报表 运动总览搜索功能
     def setUp(self):
         # 前置条件
         # 实例化对象
@@ -45,7 +46,7 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_sport_statistical_sport_overview(self):
+    def test_case_sport_overview_search(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,
@@ -109,9 +110,10 @@ class TestCase174SportStatisticalOverview(unittest.TestCase):
             print('res', res_data)
             self.assertEqual(len(data_web), len(res_data))
 
-            for datas in data_web:
+            '''for datas in data_web:
                 self.assertIn(datas, res_data)
             for datas2 in res_data:
-                self.assertIn(datas2, data_web)
+                self.assertIn(datas2, data_web)'''
+            self.assertEqual(data_web, res_data)
             self.driver.default_frame()
         csv_file.close()

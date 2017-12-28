@@ -84,7 +84,7 @@ class TestCase208UserCenterSafeAreaLog(unittest.TestCase):
         self.assertEqual(operation_01, ' ' + user_account)
         self.assertEqual(target_account_01, user_account)
         self.assertEqual('网页端', operation_platform_01)
-        web_desc_01 = "%s修改区域%s" % (user_account, fence_name)
+        web_desc_01 = "用户修改了(%s)围栏信息" % (fence_name)
         self.assertEqual(desc_01, web_desc_01)
 
         # 选择关联设备

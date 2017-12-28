@@ -15,7 +15,7 @@ from pages.login.login_page import LoginPage
 
 
 class TestCase412CustomerManagementEditUserSendWorkTemplateLimit(unittest.TestCase):
-    # 测试编辑客户 -- 修改用户 批量下发指令
+    # 测试编辑客户 -- 修改用户 批量下发工作模式
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

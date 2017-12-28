@@ -22,10 +22,6 @@ class TestCase108LoginTester(unittest.TestCase):
         self.base_page.open_page()
         # 点击体验账号
         self.login_page.click_tester_button()
-        # 断言url
-        actual_url = self.driver.get_current_url()
-        expect_url = self.base_url + "/customer/toAccountCenter"
-        self.assertEqual(expect_url, actual_url, "登录成功后页面跳转错误")
 
         # 断言登录的账号
         user_account = self.login_page.get_user_account_tester()

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_714_form_export_guide_machine_form_export.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_715_form_export_clock_form_export.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_5_form_search.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_6_form_port_search.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_7_form_export.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/form_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistic_form_page4.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistic_form_page4.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,14 +26,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_715_form_export_clock_form_export.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_715_form_export_clock_form_export.py">
+      <file leaf-file-name="tuqiangOL_test_runner_7_form_export.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_7_form_export.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9030695">
-              <caret line="93" column="108" selection-start-line="93" selection-start-column="108" selection-end-line="93" selection-end-column="108" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.65108514">
+              <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,9 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py" />
-        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py" />
-        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_4_customer_management.py" />
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_206_user_center_dev_log.py" />
         <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_108_login_tester.py" />
         <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_208_user_center_safe_area_log.py" />
@@ -112,9 +104,12 @@
         <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/form_page.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" />
-        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_715_form_export_clock_form_export.py" />
         <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_714_form_export_guide_machine_form_export.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistic_form_page4.py" />
+        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_715_form_export_clock_form_export.py" />
+        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_5_form_search.py" />
+        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_6_form_port_search.py" />
+        <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_7_form_export.py" />
       </list>
     </option>
   </component>
@@ -180,24 +175,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="testcases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testcases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statistical_form5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,10 +360,10 @@
       <recent name="E:\git\tuqiangol_test\testcases\account_center" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\tuqiangol_test\test_runner" />
       <recent name="E:\git\tuqiangol_test\testcases\7_form_export" />
       <recent name="E:\git\tuqiangol_test\testcases\6_form_port_search" />
       <recent name="E:\git\tuqiangol_test\testcases\5_form_search" />
-      <recent name="E:\git\tuqiangol_test\test_runner" />
       <recent name="E:\git\tuqiangol_test\testcases\4_customer_management" />
     </key>
   </component>
@@ -668,12 +645,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00173" summary="修改代码">
-      <created>1511771681014</created>
-      <option name="number" value="00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1511771681014</updated>
     </task>
     <task id="LOCAL-00174" summary="修改代码">
       <created>1511954745278</created>
@@ -963,13 +934,16 @@
       <option name="project" value="LOCAL" />
       <updated>1514535189789</updated>
     </task>
-    <option name="localTasksCounter" value="222" />
+    <task id="LOCAL-00222" summary="修改代码">
+      <created>1514540032767</created>
+      <option name="number" value="00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1514540032767</updated>
+    </task>
+    <option name="localTasksCounter" value="223" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase714FormExportGuideMachineFormExport_test_case_guide_machine_form_export - 2017.12.29 at 16h 40m 42s.xml">
-      <configuration name="Unittest TestCase714FormExportGuideMachineFormExport.test_case_guide_machine_form_export" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase714FormExportGuideMachineFormExport_test_case_guide_machine_form_export - 2017.12.29 at 16h 42m 28s.xml">
       <configuration name="Unittest TestCase714FormExportGuideMachineFormExport.test_case_guide_machine_form_export" configurationId="tests" />
     </history-entry>
@@ -997,6 +971,9 @@
     <history-entry file="Unittest_TestCase715FormExportClockFormExport_test_case_clock_form_export - 2017.12.29 at 17h 28m 34s.xml">
       <configuration name="Unittest TestCase715FormExportClockFormExport.test_case_clock_form_export" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittest_TestCase715FormExportClockFormExport_test_case_clock_form_export - 2017.12.29 at 18h 05m 05s.xml">
+      <configuration name="Unittest TestCase715FormExportClockFormExport.test_case_clock_form_export" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1011,13 +988,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21812434" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2528978" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25108224" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31385282" sideWeight="0.5279241" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30627707" sideWeight="0.4926238" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29545453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2987013" sideWeight="0.47207588" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32034633" sideWeight="0.47207588" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118019" sideWeight="0.50512445" order="2" side_tool="true" content_ui="tabs" />
@@ -1081,27 +1058,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_210_user_center_login_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49832776">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_205_user_center_business_log_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7341137">
-          <caret line="93" column="57" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_206_user_center_dev_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49832776">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_207_user_center_customer_log.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57233703">
@@ -1473,11 +1429,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_715_form_export_clock_form_export.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9030695">
-          <caret line="93" column="108" selection-start-line="93" selection-start-column="108" selection-end-line="93" selection-end-column="108" />
+        <state vertical-scroll-proportion="4.0567613">
+          <caret line="81" column="74" selection-start-line="81" selection-start-column="74" selection-end-line="81" selection-end-column="74" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_6_form_port_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65108514">
+          <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_5_form_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65108514">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_7_form_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65108514">
+          <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>

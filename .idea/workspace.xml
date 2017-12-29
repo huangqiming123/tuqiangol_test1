@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_710_form_export_obd_mile_form_export.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_711_form_export_obd_travel_form_export.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_712_form_export_obd_car_condition_form_export.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_713_form_export_obd_trouble_form_export.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/form_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistic_form_page4.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistic_form_page4.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/7_form_export/test_case_712_form_export_obd_car_condition_form_export.py" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_712_form_export_obd_car_condition_form_export.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/7_form_export/test_case_713_form_export_obd_trouble_form_export.py" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_713_form_export_obd_trouble_form_export.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_712_form_export_obd_car_condition_form_export.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_712_form_export_obd_car_condition_form_export.py">
+      <file leaf-file-name="test_case_713_form_export_obd_trouble_form_export.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_713_form_export_obd_trouble_form_export.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49586776">
-              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.70247936">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -65,8 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/1_log_in/test_case_105_login_with_remember_me.py" />
-        <option value="$PROJECT_DIR$/testcases/2_user_center/test_case_211_user_center_logout.py" />
         <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_411_customer_management_edit_user_issued_command_limit.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_2_user_center.py" />
         <option value="$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py" />
@@ -113,9 +109,11 @@
         <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_710_form_export_obd_mile_form_export.py" />
         <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_711_form_export_obd_travel_form_export.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/statistic_form_page4.py" />
+        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_712_form_export_obd_car_condition_form_export.py" />
+        <option value="$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/form_page.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" />
-        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_712_form_export_obd_car_condition_form_export.py" />
+        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_713_form_export_obd_trouble_form_export.py" />
       </list>
     </option>
   </component>
@@ -670,12 +668,6 @@
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
     </task>
-    <task id="LOCAL-00171" summary="修改代码">
-      <created>1511243511497</created>
-      <option name="number" value="00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1511243511502</updated>
-    </task>
     <task id="LOCAL-00172" summary="修改代码">
       <created>1511762600694</created>
       <option name="number" value="00172" />
@@ -964,7 +956,13 @@
       <option name="project" value="LOCAL" />
       <updated>1514519011756</updated>
     </task>
-    <option name="localTasksCounter" value="220" />
+    <task id="LOCAL-00220" summary="修改代码">
+      <created>1514532918590</created>
+      <option name="number" value="00220" />
+      <option name="project" value="LOCAL" />
+      <updated>1514532918590</updated>
+    </task>
+    <option name="localTasksCounter" value="221" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1403,14 +1401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="2657" column="8" selection-start-line="2657" selection-start-column="8" selection-end-line="2657" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_710_form_export_obd_mile_form_export.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25619835">
@@ -1431,10 +1421,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistic_form_page4.py">
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_712_form_export_obd_car_condition_form_export.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60330576">
-          <caret line="229" column="61" selection-start-line="229" selection-start-column="61" selection-end-line="229" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.446281">
+          <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistical_form_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.553719">
+          <caret line="2685" column="0" selection-start-line="2685" selection-start-column="0" selection-end-line="2685" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1442,33 +1442,31 @@
     <entry file="file://$PROJECT_DIR$/pages/statistical_form/form_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43140495">
-          <caret line="441" column="92" selection-start-line="441" selection-start-column="92" selection-end-line="441" selection-end-column="92" />
+          <caret line="474" column="92" selection-start-line="474" selection-start-column="92" selection-end-line="474" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/statistic_form_page4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60330576">
+          <caret line="229" column="8" selection-start-line="229" selection-start-column="8" selection-end-line="229" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/statistical_form/form_export_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48099172">
-          <caret line="1070" column="23" selection-start-line="1070" selection-start-column="23" selection-end-line="1070" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.60330576">
+          <caret line="1123" column="92" selection-start-line="1123" selection-start-column="92" selection-end-line="1123" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_713_form_export_obd_trouble_form_export.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_712_form_export_obd_car_condition_form_export.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49586776">
-          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.70247936">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

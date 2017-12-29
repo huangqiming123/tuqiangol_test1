@@ -15,8 +15,8 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 from testcases.total.page import Page
 
 
-class TestCase713FormExportOBDTroubleFormExport(unittest.TestCase):
-    # 测试 obd报表 故障报表 - 导出
+class TestCase712FormExportOBDCarConditionFormExport(unittest.TestCase):
+    # 测试 obd报表 车况报表 - 导出
     def setUp(self):
         # 前置条件
         # 实例化对象
@@ -49,7 +49,7 @@ class TestCase713FormExportOBDTroubleFormExport(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_obd_trouble_form_export(self):
+    def test_case_obd_car_condition_form_export(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,

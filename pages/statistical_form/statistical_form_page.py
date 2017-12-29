@@ -2678,3 +2678,11 @@ class StatisticalFormPage(BasePage):
 
     def switch_to_obd_failure_frame(self):
         self.driver.switch_to_iframe('x,//*[@id="OBDfailureReportFrame"]')
+
+    def click_obd_trouble_form(self):
+        # 点击故障
+        self.driver.click_element('x,//*[@id="OBDfailureReport"]/a')
+        sleep(2)
+
+    def switch_to_obd_trouble_frame(self):
+        self.driver.switch_to_iframe('x,//*[@id="OBDfailureReportFrame"]')

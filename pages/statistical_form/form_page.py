@@ -519,3 +519,33 @@ class FormPage(BasePage):
         self.driver.click_element(
             'x,/html/body/div[1]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div/ul/li[%s]/label/input' % str(n + 1))
         sleep(1)
+
+    def click_display_line_button_guide(self):
+        self.driver.click_element('x,//button[@data-toggle="dropdown"]')
+        sleep(2)
+
+    def get_display_line_name_number_guide(self):
+        return len(list(self.driver.get_elements('x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div/ul/li')))
+
+    def get_per_display_style_guide(self, n):
+        return self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div/ul/li[%s]/label/input' % str(
+                n + 1)).is_selected()
+
+    def click_per_display_input_button_guide(self, n):
+        self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div/ul/li[%s]/label/input' % str(
+                n + 1)).click()
+
+    def get_display_line_name_number_clock(self):
+        return len(list(self.driver.get_elements('x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li')))
+
+    def get_per_display_style_clock(self, n):
+        return self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li[%s]/label/input' % str(
+                n + 1)).is_selected()
+
+    def click_per_display_input_button_clock(self, n):
+        self.driver.get_element(
+            'x,/html/body/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/ul/li[%s]/label/input' % str(
+                n + 1)).click()

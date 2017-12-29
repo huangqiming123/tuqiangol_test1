@@ -1147,3 +1147,91 @@ class FormExportPage(BasePage):
             '电动机／发动机号': driver,
         }
         return data
+
+    def search_guide_manchine_data(self):
+        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="上月"]')
+        sleep(2)
+
+        self.driver.click_element('x,//ins[@class="iCheck-helper"]')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="formGuideMachine"]/div/div[5]/button')
+        sleep(5)
+
+    def get_per_line_data_guide(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[10]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[11]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[12]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[13]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[14]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[15]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '设备名称': self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            '设备型号': self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '所属帐号': self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '可用次数': float(
+                self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[6]' % str(a + 1))),
+            '已使用次数': float(
+                self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[7]' % str(a + 1))),
+            '客户名称': self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[8]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="tableContentGuideMachine"]/tbody/tr[%s]/td[9]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data
+
+    def search_clock_data(self):
+        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="上月"]')
+        sleep(2)
+
+        self.driver.operate_input_element('deviceName', '23001')
+        sleep(2)
+        self.driver.click_element('x,//*[@id="PunchTheColockFrom"]/div[1]/div[5]/button')
+        sleep(5)
+
+    def get_per_line_data_clock(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '设备名称': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            '打卡时间': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '打卡类型': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '位置': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '所属用户': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
+            '客户名称': driver_name,
+            '联系电话': driver_phone,
+            '设备型号': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[11]' % str(a + 1))
+        }
+        return data

@@ -229,3 +229,24 @@ class StatisticFormPage4(BasePage):
 
     def get_total_number_per_page_in_obd_car_condition(self):
         return len(list(self.driver.get_elements('x,//*[@id="travelDayTableContent"]/tbody/tr')))
+
+    def get_total_page_in_guide(self):
+        a = self.driver.get_element('x,//*[@id="paging_guideMachine"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging_guideMachine"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_guide(self):
+        return len(list(self.driver.get_elements('x,//*[@id="tableContentGuideMachine"]/tbody/tr')))
+
+    def get_total_page_in_clock(self):
+        new_paging = NewPaging(self.driver, self.base_url)
+        try:
+            return new_paging.get_total_page('x,//*[@id="paging-day"]')
+        except:
+            return 0
+
+    def get_total_number_per_page_in_clock(self):
+        return len(list(self.driver.get_elements('x,//*[@id="electricTableContent"]/tbody/tr')))

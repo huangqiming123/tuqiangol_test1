@@ -92,7 +92,7 @@ class SearchSql(StatisticalFormPage):
         user_id_list = cursor.fetchall()
         user_id = user_id_list[0][0]
 
-        get_account_dev_sql = "select a.imei from equipment_mostly a LEFT JOIN equipment_expiration e on a.imei = e.imei where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>0 and (e.expiration is NULL OR (e.expiration is not null and DATEDIFF(e.expiration,CURDATE())>0)) and (e.userId is null or (e.userId is not null and e.userId = '%s')) and a.activationTime is not null;" % (
+        get_account_dev_sql = "select a.imei from equipment_mostly a LEFT JOIN equipment_expiration e on a.imei = e.imei where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>=0 and (e.expiration is NULL OR (e.expiration is not null and DATEDIFF(e.expiration,CURDATE())>=0)) and (e.userId is null or (e.userId is not null and e.userId = '%s')) and a.activationTime is not null;" % (
             user_id, user_id)
         # get_account_dev_sql = "select a.imei from equipment_mostly a where a.userId = '%s' and a.status = 'NORMAL' and DATEDIFF(a.expiration,CURDATE())>=0;" % user_id
         cursor.execute(get_account_dev_sql)

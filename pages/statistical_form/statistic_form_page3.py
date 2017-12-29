@@ -169,7 +169,12 @@ class StatisticFormPage3(BasePage):
         return float(self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[6]' % str(n + 1)))
 
     def get_at_day_time_in_tracel_report_form_with_day(self, n):
-        return self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[5]' % str(n + 1))
+        day = self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[5]' % str(n + 1))
+        if len(day) == 9:
+            day = day.split('-')[0] + '-' + day.split('-')[1] + "-" + '0' + day.split('-')[2]
+            return day
+        else:
+            return day
 
     def get_total_page_in_over_speed_form(self):
         a = self.driver.get_element('x,//*[@id="paging-overspeed"]').get_attribute('style')

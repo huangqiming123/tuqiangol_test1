@@ -50,6 +50,7 @@ class TestCase603FormPortSearchStaySearch(unittest.TestCase):
 
     def test_case_stay_search_port(self):
         # 断言url
+
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,
                          self.statistical_form_page.actual_url_after_statistical_form())

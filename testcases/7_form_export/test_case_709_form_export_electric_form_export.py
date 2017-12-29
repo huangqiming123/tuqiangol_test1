@@ -15,8 +15,8 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 from testcases.total.page import Page
 
 
-class TestCase706FormExportStayExport(unittest.TestCase):
-    # 测试 停留报表 - 导出
+class TestCase709FormExportElectricFormExport(unittest.TestCase):
+    # 测试 电量统计 - 导出
     def setUp(self):
         # 前置条件
         # 实例化对象
@@ -49,7 +49,7 @@ class TestCase706FormExportStayExport(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_stay_export(self):
+    def test_case_electric_form_export(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,
@@ -59,39 +59,39 @@ class TestCase706FormExportStayExport(unittest.TestCase):
                          self.statistical_form_page.actual_text_after_click_sport_overview())
 
         # 切换到里程报表的frame
-        self.statistical_form_page.click_stay_form_button()
-        self.statistical_form_page.switch_to_stay_report_form_frame()
+        self.statistical_form_page.click_electric_form_button()
+        self.statistical_form_page.switch_to_electricity_report_frame()
         # 搜索数据
-        self.form_export_page.search_stay_data()
+        self.form_export_page.search_electric_data()
 
         # 让其展示所有列
         # 点击展示列
-        self.form_page.click_display_line_button_stay()
+        self.form_page.click_display_line_button_electric()
         # 获取有多少个展示列
-        display_line_number = self.form_page.get_display_line_number_stay()
+        display_line_number = self.form_page.get_display_line_number_electric()
         for n in range(display_line_number):
             # 获取每一个展示列是否被勾选
-            display_style = self.form_page.get_per_display_style_stay(n)
+            display_style = self.form_page.get_per_display_style_electric(n)
             if display_style == False:
-                self.form_page.click_per_display_input_button_stay(n)
-        self.form_page.click_display_line_button_stay()
+                self.form_page.click_per_display_input_button_electric(n)
+        self.form_page.click_display_line_button_electric()
         # 获取页面中的数据
         web_data = []
-        total_page = self.statistical_form_page4.get_total_page_in_over_stay_form()
+        total_page = self.statistical_form_page4.get_total_page_in_electric()
         if total_page == 0:
             pass
         else:
             if total_page == 1:
-                total_number_per_page = self.statistical_form_page4.get_total_number_per_page_in_over_stay_form()
+                total_number_per_page = self.statistical_form_page4.get_total_number_per_page_in_electric()
                 for a in range(total_number_per_page):
-                    web_data.append(self.form_export_page.get_per_line_data_stay(a))
+                    web_data.append(self.form_export_page.get_per_line_data_electric(a))
 
             else:
                 for x in range(total_page):
                     self.statistical_form_page3.click_per_page_in_mile_report_form(x)
-                    total_number_per_page = self.statistical_form_page4.get_total_number_per_page_in_over_stay_form()
+                    total_number_per_page = self.statistical_form_page4.get_total_number_per_page_in_electric()
                     for a in range(total_number_per_page):
-                        web_data.append(self.form_export_page.get_per_line_data_stay(a))
+                        web_data.append(self.form_export_page.get_per_line_data_electric(a))
 
             # 点击导出所有列
             self.form_export_page.click_export_button_in_mileage()
@@ -110,7 +110,7 @@ class TestCase706FormExportStayExport(unittest.TestCase):
             file = self.form_export_page.find_expect_file()
             print(file)
             # 读excel文件
-            excel_data = self.form_export_page.read_excel_file_by_index(file, col_name_index=1)
+            excel_data = self.form_export_page.read_excel_file_by_index(file, n=0)
             del excel_data[0]
             print('excel', excel_data)
             print('web', web_data)

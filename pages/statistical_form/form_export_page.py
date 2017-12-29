@@ -487,7 +487,7 @@ class FormExportPage(BasePage):
         sleep(2)
 
     def switch_export_frame(self):
-        self.driver.switch_to_iframe('x,/html/body/div[4]/div[2]/iframe')
+        self.driver.switch_to_iframe('x,//*[@id="layui-layer-iframe1"]')
 
     def click_create_task_button_in_sport_overview_export_stay(self):
         self.driver.click_element('x,//*[@id="addTaskBtn"]')

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_704_form_export_travel_form_export.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_705_form_export_travel_form_with_day_export.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_706_form_export_stay_form_export.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_707_form_export_stay_not_shut_down_form_export.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_708_form_export_acc_form_export.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_709_form_export_electric_form_export.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" afterPath="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/7_form_export/test_case_706_form_export_stay_form_export.py" afterPath="$PROJECT_DIR$/testcases/7_form_export/test_case_706_form_export_stay_form_export.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_706_form_export_stay_form_export.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_706_form_export_stay_form_export.py">
+      <file leaf-file-name="test_case_708_form_export_acc_form_export.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_708_form_export_acc_form_export.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28794643">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.5555556">
+              <caret line="101" column="50" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -61,9 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_413_customer_management_edit_user_edit_dev_limit.py" />
-        <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_414_customer_management_edit_user_delete.py" />
-        <option value="$PROJECT_DIR$/pages/cust_manage/cust_manage_lower_account_page.py" />
         <option value="$PROJECT_DIR$/pages/cust_manage/cust_manage_basic_info_and_add_cust_page.py" />
         <option value="$PROJECT_DIR$/testcases/4_customer_management/test_case_415_customer_management_edit_user_reset_password.py" />
         <option value="$PROJECT_DIR$/main_run.py" />
@@ -110,8 +109,11 @@
         <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_703_form_export_mileage_form_with_day_export.py" />
         <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_702_form_export_mileage_form_export.py" />
         <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_705_form_export_travel_form_with_day_export.py" />
+        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_707_form_export_stay_not_shut_down_form_export.py" />
         <option value="$PROJECT_DIR$/pages/statistical_form/form_export_page.py" />
         <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_706_form_export_stay_form_export.py" />
+        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_708_form_export_acc_form_export.py" />
+        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_709_form_export_electric_form_export.py" />
       </list>
     </option>
   </component>
@@ -372,13 +374,6 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\git\tuqiangol_test\testcases\7_form_export" />
-      <recent name="E:\git\tuqiangol_test\testcases\6_form_port_search" />
-      <recent name="E:\git\tuqiangol_test\testcases\5_form_search" />
-      <recent name="E:\git\tuqiangol_test\test_runner" />
-      <recent name="E:\git\tuqiangol_test\testcases\4_customer_management" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git\tuqiangol_test\testcases\2017-05-15" />
       <recent name="E:\git\tuqiangol_test\model" />
@@ -386,74 +381,15 @@
       <recent name="E:\git\tuqiangol_test\testcases\account_log" />
       <recent name="E:\git\tuqiangol_test\testcases\account_center" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\tuqiangol_test\testcases\7_form_export" />
+      <recent name="E:\git\tuqiangol_test\testcases\6_form_port_search" />
+      <recent name="E:\git\tuqiangol_test\testcases\5_form_search" />
+      <recent name="E:\git\tuqiangol_test\test_runner" />
+      <recent name="E:\git\tuqiangol_test\testcases\4_customer_management" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in TestCase706FormExportStayExport">
-    <configuration default="false" name="Unittests in TestCase704FormExportTravelFormExport" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/7_form_export" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/7_form_export/test_case_704_form_export_travel_form_export.py" />
-      <option name="CLASS_NAME" value="TestCase704FormExportTravelFormExport" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in TestCase704FormExportTravelFormExport (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/7_form_export" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/7_form_export/test_case_704_form_export_travel_form_export.py" />
-      <option name="CLASS_NAME" value="TestCase704FormExportTravelFormExport" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCase704FormExportTravelFormExport.test_case_travel_form_export" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/7_form_export" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/7_form_export/test_case_704_form_export_travel_form_export.py" />
-      <option name="CLASS_NAME" value="TestCase704FormExportTravelFormExport" />
-      <option name="METHOD_NAME" value="test_case_travel_form_export" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest TestCase708FormExportAccFormExport.test_case_acc_form_export">
     <configuration default="false" name="Unittest TestCase705FormExportTravelFormWithDayExport.test_case_travel_form_with_day_export" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -491,6 +427,72 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestCase707FormExportStayNotShutDownExport" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/7_form_export" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/7_form_export/test_case_707_form_export_stay_not_shut_down_form_export.py" />
+      <option name="CLASS_NAME" value="TestCase707FormExportStayNotShutDownExport" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase707FormExportStayNotShutDownExport.test_case_stay_not_shut_down_export" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/7_form_export" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/7_form_export/test_case_707_form_export_stay_not_shut_down_form_export.py" />
+      <option name="CLASS_NAME" value="TestCase707FormExportStayNotShutDownExport" />
+      <option name="METHOD_NAME" value="test_case_stay_not_shut_down_export" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase708FormExportAccFormExport.test_case_acc_form_export" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/7_form_export" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/7_form_export/test_case_708_form_export_acc_form_export.py" />
+      <option name="CLASS_NAME" value="TestCase708FormExportAccFormExport" />
+      <option name="METHOD_NAME" value="test_case_acc_form_export" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -639,19 +641,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase704FormExportTravelFormExport" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase704FormExportTravelFormExport (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase704FormExportTravelFormExport.test_case_travel_form_export" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase705FormExportTravelFormWithDayExport.test_case_travel_form_with_day_export" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase706FormExportStayExport" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase705FormExportTravelFormWithDayExport.test_case_travel_form_with_day_export" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase706FormExportStayExport" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase707FormExportStayNotShutDownExport" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase707FormExportStayNotShutDownExport.test_case_stay_not_shut_down_export" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestCase708FormExportAccFormExport.test_case_acc_form_export" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase706FormExportStayExport" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase705FormExportTravelFormWithDayExport.test_case_travel_form_with_day_export" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase704FormExportTravelFormExport.test_case_travel_form_export" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase704FormExportTravelFormExport (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase704FormExportTravelFormExport" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCase708FormExportAccFormExport.test_case_acc_form_export" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase707FormExportStayNotShutDownExport.test_case_stay_not_shut_down_export" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase707FormExportStayNotShutDownExport" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase706FormExportStayExport" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase705FormExportTravelFormWithDayExport.test_case_travel_form_with_day_export" />
       </list>
     </recent_temporary>
   </component>
@@ -665,12 +667,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00169" summary="修改代码">
-      <created>1510716665356</created>
-      <option name="number" value="00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1510716665356</updated>
     </task>
     <task id="LOCAL-00170" summary="修改代码">
       <created>1510747406421</created>
@@ -960,19 +956,16 @@
       <option name="project" value="LOCAL" />
       <updated>1514516246803</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="修改代码">
+      <created>1514517955198</created>
+      <option name="number" value="00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1514517955198</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase702FormExportMileageFormExport_test_case_mileage_form_export - 2017.12.29 at 10h 29m 16s.xml">
-      <configuration name="Unittest TestCase702FormExportMileageFormExport.test_case_mileage_form_export" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase703FromExportMileageFormWithDayExport_test_case_mileage_form_with_day_export - 2017.12.29 at 10h 33m 04s.xml">
-      <configuration name="Unittest TestCase703FromExportMileageFormWithDayExport.test_case_mileage_form_with_day_export" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestCase704FormExportTravelFormExport_test_case_travel_form_export - 2017.12.29 at 10h 41m 09s.xml">
-      <configuration name="Unittest TestCase704FormExportTravelFormExport.test_case_travel_form_export" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestCase704FormExportTravelFormExport_test_case_travel_form_export - 2017.12.29 at 10h 47m 51s.xml">
       <configuration name="Unittest TestCase704FormExportTravelFormExport.test_case_travel_form_export" configurationId="tests" />
     </history-entry>
@@ -981,6 +974,12 @@
     </history-entry>
     <history-entry file="Unittest_TestCase705FormExportTravelFormWithDayExport_test_case_travel_form_with_day_export - 2017.12.29 at 10h 55m 13s.xml">
       <configuration name="Unittest TestCase705FormExportTravelFormWithDayExport.test_case_travel_form_with_day_export" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase707FormExportStayNotShutDownExport_test_case_stay_not_shut_down_export - 2017.12.29 at 11h 36m 52s.xml">
+      <configuration name="Unittest TestCase707FormExportStayNotShutDownExport.test_case_stay_not_shut_down_export" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestCase708FormExportAccFormExport_test_case_acc_form_export - 2017.12.29 at 11h 42m 57s.xml">
+      <configuration name="Unittest TestCase708FormExportAccFormExport.test_case_acc_form_export" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_TestCase701FormExportSportOverviewExport - 2017.12.29 at 10h 25m 13s.xml">
       <configuration name="Unittests in TestCase701FormExportSportOverviewExport" configurationId="tests" />
@@ -993,6 +992,9 @@
     </history-entry>
     <history-entry file="Unittests_in_TestCase706FormExportStayExport - 2017.12.29 at 11h 24m 30s.xml">
       <configuration name="Unittests in TestCase706FormExportStayExport" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestCase707FormExportStayNotShutDownExport - 2017.12.29 at 11h 30m 12s.xml">
+      <configuration name="Unittests in TestCase707FormExportStayNotShutDownExport" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1008,24 +1010,24 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21917808" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20706007" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25108224" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300866" sideWeight="0.5258166" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30627707" sideWeight="0.4926238" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29545453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32575756" sideWeight="0.47418335" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118019" sideWeight="0.50512445" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32575756" sideWeight="0.47418335" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29405406" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1078,27 +1080,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6603774">
-          <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_203_user_center_modify_passwd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6603774">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/2_user_center/test_case_211_user_center_logout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5670103">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/3_set_up/test_case_306_set_up_issued_work_type_task_management_operation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4364261">
@@ -1411,13 +1392,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4040404">
           <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/form_export_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6363636">
-          <caret line="341" column="52" selection-start-line="341" selection-start-column="52" selection-end-line="341" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1425,13 +1402,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="63" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_706_form_export_stay_form_export.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28794643">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.3905724">
+          <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/form_export_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="488" column="8" selection-start-line="488" selection-start-column="8" selection-end-line="488" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_707_form_export_stay_not_shut_down_form_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43434343">
+          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_709_form_export_electric_form_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44444445">
+          <caret line="98" column="55" selection-start-line="98" selection-start-column="55" selection-end-line="98" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_708_form_export_acc_form_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5555556">
+          <caret line="101" column="50" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

@@ -721,7 +721,7 @@ class FormExportPage(BasePage):
             '设备名称': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
             'IMEI': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
             '型号': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
-            '所属帐号': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
+            '所属账号': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1)),
             '剩余电量': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
             '客户名称': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
             '设备分组': self.driver.get_text('x,//*[@id="electricTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1)),
@@ -910,3 +910,183 @@ class FormExportPage(BasePage):
         sleep(10)
         self.driver.click_element('x,//*[@id="exportList"]/div[1]/ul/li/a')
         sleep(10)
+
+    def search_obd_mileage_data(self):
+        # 搜索obd里程报表 数据
+        # 输入日期
+        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="上月"]')
+        sleep(2)
+
+        # 输入imei搜索
+        self.driver.operate_input_element('x,//*[@id="imeiInput_travelReport"]', '868120145148729')
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="MileageFrom"]/div[1]/div[5]/button')
+        sleep(5)
+
+    def get_per_line_data_obd_mileage(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[15]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[16]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[17]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '日期': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '行驶里程(KM)': float(
+                self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1))),
+            '总油耗(L)': float(self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1))),
+            '平均油耗(L/100KM)': float(
+                self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1))),
+            '所属用户': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1)),
+            '设备名称': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1)),
+            '设备型号': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[11]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data
+
+    def search_obd_travel_data(self):
+        # 搜索obd里程报表 数据
+        # 输入日期
+        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="上月"]')
+        sleep(2)
+
+        # 输入imei搜索
+        self.driver.operate_input_element('x,//*[@id="imeiInput_travelReport"]', '868120145148729')
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="TravelFrom"]/div[1]/div[5]/button')
+        sleep(5)
+
+    def get_per_line_data_obd_travel(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[16]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[17]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[18]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[19]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[20]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[21]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '开始时间': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '结束时间': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
+            '行程时长': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1)),
+            '行驶里程(KM)': float(
+                self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1))),
+            '总油耗(L)': float(self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1))),
+            '平均油耗(L/100KM)': float(
+                self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1))),
+            '急加(次)': float(self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1))),
+            '急减(次)': float(self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1))),
+            '所属用户': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[11]' % str(a + 1)),
+            '设备名称': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1)),
+            '设备型号': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[15]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data
+
+    def search_obd_car_condition_data(self):
+        # 搜索obd里程报表 数据
+        # 输入日期
+        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
+        sleep(2)
+        self.driver.click_element('x,//li[@title="上月"]')
+        sleep(2)
+
+        # 输入imei搜索
+        self.driver.operate_input_element('x,//*[@id="imeiInput_travelReport"]', '868120145148729')
+        # 点击搜索
+        self.driver.click_element('x,//*[@id="CarConditionFrom"]/div[1]/div[5]/button')
+        sleep(5)
+
+    def get_per_line_data_obd_car_condition(self, a):
+        # 获取每一列的信息
+        driver_name = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[15]' % str(a + 1))
+        if driver_name == '-':
+            driver_name = ''
+        driver_phone = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[16]' % str(a + 1))
+        if driver_phone == '-':
+            driver_phone = ''
+        driver_number = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[17]' % str(a + 1))
+        if driver_number == '-':
+            driver_number = ''
+        id = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[18]' % str(a + 1))
+        if id == '-':
+            id = ''
+        driver_frame = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[19]' % str(a + 1))
+        if driver_frame == '-':
+            driver_frame = ''
+        driver = self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[20]' % str(a + 1))
+        if driver == '-':
+            driver = ''
+
+        data = {
+            '序号': float(self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
+            '时间': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
+            '速度(KM/H)': float(
+                self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1))),
+            '发动机转速(R/S)': (self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1))),
+            '水温(℃)': (self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1))),
+            '电池电压(V)': (self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1))),
+            '百公里油耗(L)': (self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[7]' % str(a + 1))),
+            '总里程(KM)': (self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[8]' % str(a + 1))),
+            '所属用户': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[9]' % str(a + 1)),
+            '客户名称': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[10]' % str(a + 1)),
+            '设备名称': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[11]' % str(a + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[12]' % str(a + 1)),
+            '设备型号': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[13]' % str(a + 1)),
+            '设备分组': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[14]' % str(a + 1)),
+            '司机名称': driver_name,
+            '电话': driver_phone,
+            '车牌号': driver_number,
+            '身份证号': id,
+            '车架号': driver_frame,
+            '电动机／发动机号': driver,
+        }
+        return data

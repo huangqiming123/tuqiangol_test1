@@ -439,7 +439,7 @@ class FormPage(BasePage):
 
     def get_display_line_name_number_obd_car_condition(self):
         return len(list(self.driver.get_elements(
-            'x,/html/body/div[1]/div[2]/div[2]/div[2]/div[1]/div/div[1]/div[2]/div[1]/table/thead/tr/th')))
+            'x,/html/body/div[1]/div[2]/div[2]/div[2]/div[1]/div/div[1]/div[1]/div/div/ul/li')))
 
     def get_per_display_name_on_line_obd_car_condition(self, m):
         return self.driver.get_text(

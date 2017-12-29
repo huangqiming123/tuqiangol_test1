@@ -196,3 +196,36 @@ class StatisticFormPage4(BasePage):
 
     def get_total_number_per_page_in_alarm_detail(self):
         return len(list(self.driver.get_elements('x,//*[@id="alarmTableContent"]/tbody/tr')))
+
+    def get_total_page_in_obd_mileage(self):
+        a = self.driver.get_element('x,//*[@id="paging-day"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging-day"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_obd_mileage(self):
+        return len(list(self.driver.get_elements('x,//*[@id="travelDayTableContent"]/tbody/tr')))
+
+    def get_total_page_in_obd_travel(self):
+        a = self.driver.get_element('x,//*[@id="paging-day"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging-day"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_obd_travel(self):
+        return len(list(self.driver.get_elements('x,//*[@id="travelDayTableContent"]/tbody/tr')))
+
+    def get_total_page_in_obd_car_condition(self):
+        a = self.driver.get_element('x,//*[@id="paging-day"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging-day"]')
+        else:
+            return 0
+
+    def get_total_number_per_page_in_obd_car_condition(self):
+        return len(list(self.driver.get_elements('x,//*[@id="travelDayTableContent"]/tbody/tr')))

@@ -63,7 +63,7 @@ class FormExportPage(BasePage):
     def click_create_task_button_in_sport_overview_export(self):
         # 点击运动总览页面的生成任务按钮
         self.driver.click_element('x,//*[@id="addTaskBtn"]')
-        sleep(10)
+        sleep(15)
         self.driver.click_element('x,//*[@id="taskList"]/div[1]/ul/li/a')
         sleep(5)
 
@@ -117,7 +117,7 @@ class FormExportPage(BasePage):
         # 选择本月
         self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
         sleep(1)
-        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[6]')
+        self.driver.click_element('x,//li[@title="上月"]')
         sleep(2)
 
         # 选择全部设备
@@ -249,7 +249,7 @@ class FormExportPage(BasePage):
         # 选择本月
         self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
         sleep(1)
-        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[6]')
+        self.driver.click_element('x,//li[@title="上月"]')
         sleep(2)
 
         # 选择全部设备
@@ -271,7 +271,7 @@ class FormExportPage(BasePage):
 
         # 搜索
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[3]/button')
-        sleep(5)
+        sleep(8)
 
     def get_per_line_data_travel(self, a):
         # 获取每一列的信息
@@ -339,7 +339,7 @@ class FormExportPage(BasePage):
         # 选择本月
         self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
         sleep(1)
-        self.driver.click_element('x,//*[@id="dateSelect_div"]/div/div/ul/li[6]')
+        self.driver.click_element('x,//li[@title="上月"]')
         sleep(2)
 
         # 选择全部设备

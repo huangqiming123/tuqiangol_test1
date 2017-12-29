@@ -39,7 +39,7 @@ class TestCase503FormSearchTravelSearch(unittest.TestCase):
         # 退出浏览器
         self.driver.quit_browser()
 
-    def test_case_form_search_travel_search(self):
+    def test_case_travel_search(self):
         # 断言url
         expect_url_after_click_statistical_form = self.base_url + '/deviceReport/statisticalReport'
         self.assertEqual(expect_url_after_click_statistical_form,

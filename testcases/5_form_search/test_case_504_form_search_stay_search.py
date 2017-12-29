@@ -11,7 +11,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
 
-class TestCase145SportStatisticalStayForm(unittest.TestCase):
+class TestCase504FormSearchStaySearch(unittest.TestCase):
     # 测试 报表 停留报表 搜索功能
 
     def setUp(self):

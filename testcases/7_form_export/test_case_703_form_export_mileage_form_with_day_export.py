@@ -114,6 +114,17 @@ class TestCase703FromExportMileageFormWithDayExport(unittest.TestCase):
             print('excel', excel_data)
             print('web', web_data)
 
-            self.assertEqual(web_data, excel_data)
+            # self.assertEqual(web_data, excel_data)
+            # 导出和页面排序问题
+            self.assertEqual(len(web_data), len(excel_data))
+            for data in web_data:
+                del data['序号']
+            for data in excel_data:
+                del data['序号']
+
+            for datas in web_data:
+                self.assertIn(datas, excel_data)
+            for datas2 in excel_data:
+                self.assertIn(datas2, web_data)
 
         self.driver.default_frame()

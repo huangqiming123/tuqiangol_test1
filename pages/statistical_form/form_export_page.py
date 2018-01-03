@@ -271,7 +271,7 @@ class FormExportPage(BasePage):
 
         # 搜索
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[3]/button')
-        sleep(8)
+        sleep(10)
 
     def get_per_line_data_travel(self, a):
         # 获取每一列的信息

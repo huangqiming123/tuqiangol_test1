@@ -1,5 +1,4 @@
 class HelpPageSql(object):
-
     # 搜索设备管理的sql
     def equipment_manager_search_sql(self, lower_account_tuple, search_data):
         sql = "select l.id from operation_log l INNER JOIN user_info o ON l.created_by = o.userId where l.created_by in %s and l.serviceType = '1'" % str(
@@ -52,7 +51,7 @@ class HelpPageSql(object):
     # 搜索登录日志的sql
     def search_log_in_sql(self, lower_account_tuple, search_data):
         # 搜索登录日志的sql
-        sql = "select id from user_login_log where loginUserId = '%s'" % lower_account_tuple
+        sql = "select id from user_login_log where loginUserId in %s" % str(lower_account_tuple)
 
         if search_data['account'] != '':
             sql += " and loginAccount like '%" + search_data['account'] + "%'"
@@ -64,6 +63,7 @@ class HelpPageSql(object):
             sql += " and loginTime <= '%s'" % search_data['end_time']
 
         sql += ";"
+        print(sql)
         return sql
 
     # 业务日志sql
@@ -114,9 +114,14 @@ class HelpPageSql(object):
         if search_data['end_time'] != '':
             sql += " and l.creation_date <= '%s'" % search_data['end_time']
 
-        if search_data['more'] != '':
-            sql += " and (o.account = '" + search_data['more'] + "' or l.imei = '" + search_data[
-                'more'] + "' or l.account = '" + search_data['more'] + "')"
+        if search_data['account'] != '':
+            sql += " and o.account = '" + search_data['account'] + "'"
+
+        if search_data['operation_account'] != "":
+            sql += " and l.account = '" + search_data['operation_account'] + "'"
+
+        if search_data['imei'] != "":
+            sql += " and l.imei = '" + search_data['imei'] + "'"
 
         sql += ';'
         return sql

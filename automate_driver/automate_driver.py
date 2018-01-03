@@ -3,9 +3,6 @@ import time
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
-
-# webdirver封装
-# author:孙燕妮
 from change_data import ChangeData
 from driver.driver_choose import browser
 

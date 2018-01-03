@@ -173,6 +173,9 @@ class StatisticFormPage3(BasePage):
         if len(day) == 9:
             day = day.split('-')[0] + '-' + day.split('-')[1] + "-" + '0' + day.split('-')[2]
             return day
+        if len(day) == 8:
+            day = day.split('-')[0] + '-0' + day.split('-')[1] + "-0" + day.split('-')[2]
+            return day
         else:
             return day
 

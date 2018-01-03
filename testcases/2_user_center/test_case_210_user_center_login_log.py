@@ -1,6 +1,9 @@
 import csv
 import unittest
+from time import sleep
+
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.connect_es import ConnectEs
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_operation_log_page import AccountCenterOperationLogPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
@@ -23,6 +26,7 @@ class TestCase210UserCenterLoginLog(unittest.TestCase):
         self.help_page_sql = HelpPageSql()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.connect_sql = ConnectSql()
+        self.connect_es = ConnectEs()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
         self.driver.set_window_max()
         self.driver.wait(1)
@@ -35,6 +39,7 @@ class TestCase210UserCenterLoginLog(unittest.TestCase):
     def test_user_center_login_log(self):
         self.base_page.open_page()
         self.log_in_base.log_in()
+        sleep(3)
         self.log_in_base.click_account_center_button()
         # 获取登录账号的用户名
         current_account = self.log_in_base.get_log_in_account()
@@ -47,7 +52,6 @@ class TestCase210UserCenterLoginLog(unittest.TestCase):
         self.assertEqual(expect_url, self.driver.get_current_url(), "当前页面跳转错误")
 
         i = 0
-
         csv_file = self.account_center_page_read_csv.read_csv('search_log_in_log_data.csv')
         csv_data = csv.reader(csv_file)
         is_header = True
@@ -62,38 +66,29 @@ class TestCase210UserCenterLoginLog(unittest.TestCase):
             }
             self.help_page.search_login_log(search_data)
 
-            connect = self.connect_sql.connect_tuqiang_sql()
-            # 创建数据库游标
-            cur = connect.cursor()
+            # 获取当前登录账号和下级账号全部的userid
+            all_user_id = self.help_page.get_all_user_id(current_account)
+            print(all_user_id)
 
-            # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = "select o.userId from user_info o where o.account = '" + current_account + "' ;"
-            cur.execute(get_id_sql)
-            # 读取数据
-            user_relation = cur.fetchall()
-            # 遍历数据
-            for row1 in user_relation:
-                user_relation_id = {
-                    "userId": row1[0]
-                }
-                get_total_sql = self.help_page_sql.search_log_in_sql(user_relation_id['userId'], search_data)
-                print(get_total_sql)
-                cur.execute(get_total_sql)
-                # 读取数据
-                total_data = cur.fetchall()
-                # 从数据tuple中获取最终查询记录统计条数
-                total_list = []
-                for range1 in total_data:
-                    for range2 in range1:
-                        total_list.append(range2)
-                total = len(total_list)
-                i += 1
-                print('第%s次查询数据库的条数为：%s' % (i, total))
-                web_total = self.help_page.get_current_login_log()
-                print('第%s次查询页面的条数是：%s' % (i, web_total))
-                self.assertEqual(total, web_total)
-
-            cur.close()
-            connect.close()
+            '''connect = self.connect_sql.connect_tuqiang_sql()
+            cursor = connect.cursor()
+            get_total_sql = self.help_page_sql.search_log_in_sql(all_user_id, search_data)
+            cursor.execute(get_total_sql)
+            total_list = cursor.fetchall()
+            cursor.close()
+            connect.close()'''
+            # 连接Elastic search
+            es = self.connect_es.connect_es()
+            # 搜索的数据
+            query_data = self.help_page.get_search_log_in_log_query_data(all_user_id, search_data)
+            res_01 = es.search(index='userlogin_log_11', body={'query': query_data, 'size': 20000})
+            res_02 = es.search(index='userlogin_log_12', body={'query': query_data, 'size': 20000})
+            res_03 = es.search(index='userlogin_log_1', body={'query': query_data, 'size': 20000})
+            total = len(res_01['hits']['hits']) + len(res_02['hits']['hits']) + len(res_03['hits']['hits'])
+            i += 1
+            print('第%s次查询数据库的条数为：%s' % (i, total))
+            web_total = self.help_page.get_current_login_log()
+            print('第%s次查询页面的条数是：%s' % (i, web_total))
+            self.assertEqual(total, web_total)
 
         csv_file.close()

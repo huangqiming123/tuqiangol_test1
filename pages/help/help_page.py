@@ -1,5 +1,6 @@
 from time import sleep
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.connect_sql import ConnectSql
 from pages.base.base_page_server import BasePageServer
 from pages.base.new_paging import NewPaging
 
@@ -7,7 +8,6 @@ from pages.base.new_paging import NewPaging
 # 帮助页面
 # author：邓肖斌
 class HelpPage(BasePageServer, NewPaging):
-
     def __init__(self, driver: AutomateDriverServer, base_url):
         super().__init__(driver, base_url)
 
@@ -122,7 +122,7 @@ class HelpPage(BasePageServer, NewPaging):
             print(int(pages))
             return total
 
-        # 客户管理###############################################################################################################
+            # 客户管理###############################################################################################################
 
     # 搜索客户管理日志
     def search_customer_manager_log(self, search_data):
@@ -223,7 +223,7 @@ class HelpPage(BasePageServer, NewPaging):
             total = int(pages) * 10 + last_page_number
             return total
 
-        # 登录日志###############################################################################################################
+            # 登录日志###############################################################################################################
 
     # 搜索登录日志
     def search_login_log(self, search_data):
@@ -288,7 +288,7 @@ class HelpPage(BasePageServer, NewPaging):
             print(int(pages))
             return total
 
-        # 业务日志###############################################################################################################
+            # 业务日志###############################################################################################################
 
     # 搜索业务日志
     def search_business_log(self, search_data):
@@ -413,15 +413,15 @@ class HelpPage(BasePageServer, NewPaging):
 
         # 填写其他的搜索条件
         try:
-            self.driver.operate_input_element('x,//*[@id="createdAccount"]', search_data['more'])
+            self.driver.operate_input_element('x,//*[@id="createdAccount"]', search_data['operation_account'])
         except:
             pass
         try:
-            self.driver.operate_input_element('x,//*[@id="account"]', search_data['more'])
+            self.driver.operate_input_element('x,//*[@id="account"]', search_data['account'])
         except:
             pass
         try:
-            self.driver.operate_input_element('x,//*[@id="imei"]', search_data['more'])
+            self.driver.operate_input_element('x,//*[@id="imei"]', search_data['imei'])
         except:
             pass
 
@@ -429,3 +429,360 @@ class HelpPage(BasePageServer, NewPaging):
         self.driver.click_element('x,//*[@id="search_xf"]')
         sleep(5)
         self.driver.default_frame()
+
+    def get_all_user_id(self, current_account):
+        self.connect_sql = ConnectSql()
+        connect = self.connect_sql.connect_tuqiang_sql()
+        # 创建数据库游标
+        cursor = connect.cursor()
+        get_id_sql = "select o.userId,o.fullParentId from user_info o where o.account = '" + current_account + "';"
+        cursor.execute(get_id_sql)
+        current_user_id_data = cursor.fetchall()
+        current_user_id = current_user_id_data[0][0]
+        full_parent_id = current_user_id_data[0][1]
+
+        get_all_user_id_sql = "select o.userId from user_info o where o.fullParentId LIKE '" + full_parent_id + current_user_id + "%';"
+        cursor.execute(get_all_user_id_sql)
+        all_user_id = []
+        data = cursor.fetchall()
+        for range in data:
+            for range1 in range:
+                all_user_id.append(range1)
+        all_user_id.append(current_user_id)
+        cursor.close()
+        connect.close()
+        return tuple(all_user_id)
+
+    def get_search_log_in_log_query_data(self, all_user_id, search_data):
+        should = []
+        for id in all_user_id:
+            should.append({
+                "match": {
+                    "loginUserId": {
+                        "query": id,
+                        "type": "phrase"
+                    }
+                }
+            })
+        must = [{
+            "bool": {
+                "should": should
+            }
+        }]
+        if search_data['begin_time'] != '' and search_data['end_time'] != "":
+            must.append({
+                "range": {
+                    "loginTime": {
+                        "from": search_data['begin_time'] + ":00",
+                        "to": search_data['end_time'] + ":59",
+                        "include_lower": True,
+                        "include_upper": True
+                    }
+                }
+            })
+        if search_data['account'] != "":
+            must.append({
+                "wildcard": {
+                    "loginAccount": "*" + search_data['account'] + "*"
+                }
+            })
+
+        query = {
+            "bool": {
+                "filter": {
+                    "bool": {
+                        "must": {
+                            "bool": {
+                                "must": must
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return query
+
+    def get_search_operation_log_query_data(self, all_user_id, search_data):
+        should = []
+        for id in all_user_id:
+            should.append({
+                "match": {
+                    "createdBy": {
+                        "query": id,
+                        "type": "phrase"
+                    }
+                }
+            })
+        must = [{
+            "bool": {
+                "should": should
+            }
+        }]
+        if search_data['begin_time'] != '' and search_data['end_time'] != "":
+            must.append({
+                "range": {
+                    "creationDate": {
+                        "from": search_data['begin_time'] + ":00",
+                        "to": search_data['end_time'] + ":59",
+                        "include_lower": True,
+                        "include_upper": True
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '设备管理-设备修改':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "1",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "1",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '设备管理-设备分配':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "1",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "5",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '客户管理-新增客户':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "2",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "0",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '客户管理-修改用户信息':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "2",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "1",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '客户管理-删除用户信息':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "2",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "2",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '客户管理-修改密码':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "2",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "3",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '客户管理-重置密码':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "2",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "4",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '客户管理-转移客户':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "2",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "5",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '安全区域-新增、编辑区域':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "3",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "1",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '安全区域-删除区域':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "3",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "2",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '安全区域-关联设备':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "3",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "3",
+                        "type": "phrase"
+                    }
+                }
+            })
+
+        if search_data["search_type"] == '告警设置-推送设置':
+            must.append({
+                "match": {
+                    "serviceType": {
+                        "query": "4",
+                        "type": "phrase"
+                    }
+                }
+            })
+            must.append({
+                "match": {
+                    "operType": {
+                        "query": "1",
+                        "type": "phrase"
+                    }
+                }
+            })
+        if search_data['account'] != "":
+            must.append({
+                "match": {
+                    "account": {
+                        "query": search_data['account'],
+                        "type": "phrase"
+                    }
+                }
+            })
+        if search_data['operation_account'] != "":
+            must.append({
+                "match": {
+                    "account": {
+                        "query": search_data['operation_account'],
+                        "type": "phrase"
+                    }
+                }
+            })
+        if search_data['imei'] != "":
+            must.append({
+                "match": {
+                    "account": {
+                        "query": search_data['imei'],
+                        "type": "phrase"
+                    }
+                }
+            })
+        query = {
+            "bool": {
+                "filter": {
+                    "bool": {
+                        "must": {
+                            "bool": {
+                                "must": must
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return query

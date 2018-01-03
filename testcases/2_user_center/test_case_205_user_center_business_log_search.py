@@ -1,6 +1,7 @@
 import csv
 import unittest
 from automate_driver.automate_driver_server import AutomateDriverServer
+from model.connect_es import ConnectEs
 from model.connect_sql import ConnectSql
 from pages.account_center.account_center_operation_log_page import AccountCenterOperationLogPage
 from pages.account_center.account_center_page_read_csv import AccountCenterPageReadCsv
@@ -21,6 +22,7 @@ class TestCase205UserCenterBusinessLogSearch(unittest.TestCase):
         self.help_page = HelpPage(self.driver, self.base_url)
         self.account_center_page_operation_log = AccountCenterOperationLogPage(self.driver, self.base_url)
         self.help_page_sql = HelpPageSql()
+        self.connect_es = ConnectEs()
         self.account_center_page_read_csv = AccountCenterPageReadCsv()
         self.connect_sql = ConnectSql()
         self.log_in_base = LogInBaseServer(self.driver, self.base_page)
@@ -59,58 +61,36 @@ class TestCase205UserCenterBusinessLogSearch(unittest.TestCase):
                 'search_type': row[0],
                 'begin_time': row[1],
                 'end_time': row[2],
-                'more': row[3]
+                'account': row[3],
+                'operation_account': row[4],
+                'imei': row[5]
             }
+            print(search_data)
             self.help_page.search_business_log(search_data)
 
+            all_user_id = self.help_page.get_all_user_id(current_account)
+            # 连接Elastic search
+            '''es = self.connect_es.connect_es()
+            # 搜索的数据
+            query_data = self.help_page.get_search_operation_log_query_data(all_user_id, search_data)
+            print(query_data)
+
+            res_01 = es.search(index='operation_aop_log_11', body={'query': query_data, 'size': 20000})
+            print(res_01)
+            res_02 = es.search(index='operation_aop_log_12', body={'query': query_data, 'size': 20000})
+            res_03 = es.search(index='operation_aop_log_1', body={'query': query_data, 'size': 20000})
+            total = len(res_01['hits']['hits']) + len(res_02['hits']['hits']) + len(res_03['hits']['hits'])'''
             connect = self.connect_sql.connect_tuqiang_sql()
-            # 创建数据库游标
-            cur = connect.cursor()
-
-            # 执行sql脚本查询当前登录账号的userId,fullParent
-            get_id_sql = \
-                "select o.account,o.userId,o.fullParentId from user_info o where o.account = " \
-                "'" + current_account + "' ;"
-            cur.execute(get_id_sql)
-            # 读取数据
-            user_relation = cur.fetchall()
-            # 遍历数据
-            for row1 in user_relation:
-                user_relation_id = {
-                    "account": row1[0],
-                    "userId": row1[1],
-                    "fullParent": row1[2]
-                }
-
-                # 执行sql脚本，根据当前登录账号的userId,fullParent查询出当前账户的所有下级账户
-                get_lower_account_sql = "select userId from user_info where fullParentId like" + \
-                                        "'" + user_relation_id["fullParent"] + user_relation_id["userId"] + "%'" + ";"
-                cur.execute(get_lower_account_sql)
-                # 读取数据
-                lower_account = cur.fetchall()
-                lower_account_list = [user_relation_id["userId"]]
-                for range1 in lower_account:
-                    for range2 in range1:
-                        lower_account_list.append(range2)
-                lower_account_tuple = tuple(lower_account_list)
-                get_total_sql = self.help_page_sql.business_log_sql(lower_account_tuple, search_data)
-                print(get_total_sql)
-                cur.execute(get_total_sql)
-                # 读取数据
-                total_data = cur.fetchall()
-                # 从数据tuple中获取最终查询记录统计条数
-                total_list = []
-                for range3 in total_data:
-                    for range4 in range3:
-                        total_list.append(range4)
-                total = len(total_list)
-                i += 1
-                print('第%s次查询数据库的条数为：%s' % (i, total))
-                web_total = self.help_page.get_current_customer_log()
-                print('第%s次查询页面的条数是：%s' % (i, web_total))
-                self.assertEqual(total, web_total)
-
-            cur.close()
+            cursor = connect.cursor()
+            sql = self.help_page_sql.business_log_sql(all_user_id, search_data)
+            cursor.execute(sql)
+            total_data = cursor.fetchall()
+            total = len(total_data)
+            cursor.close()
             connect.close()
-
+            i += 1
+            print('第%s次查询数据库的条数为：%s' % (i, total))
+            web_total = self.help_page.get_current_customer_log()
+            print('第%s次查询页面的条数是：%s' % (i, web_total))
+            self.assertEqual(total, web_total)
         csv_file.close()

@@ -166,3 +166,11 @@ class BasePage(object):
     def click_chinese_button(self):
         self.driver.click_element('x,/html/body/footer/div[1]/ul/li[1]/a')
         sleep(2)
+
+    def change_windows_handle(self, current_handle):
+        all_handles = self.driver.get_all_window_handles()
+        for handle in all_handles:
+            if handle != current_handle:
+                self.driver.close_current_page()
+                sleep(1)
+                self.driver.switch_to_window(handle)

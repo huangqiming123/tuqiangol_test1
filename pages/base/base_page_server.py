@@ -167,3 +167,11 @@ class BasePageServer(object):
     def reset_passwd_succ_ensure(self):
         self.driver.click_element("c,layui-layer-btn0")
         self.driver.wait(1)
+
+    def change_windows_handle(self, current_handle):
+        all_handles = self.driver.get_all_window_handles()
+        for handle in all_handles:
+            if handle != current_handle:
+                self.driver.close_current_page()
+                sleep(1)
+                self.driver.switch_to_window(handle)

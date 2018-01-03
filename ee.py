@@ -1,2 +1,7 @@
-a = '2018-1-2'
-print(a.split('-')[0] + '-0' + a.split('-')[1] + "-0" + a.split('-')[2])
+from elasticsearch import Elasticsearch
+
+es = Elasticsearch(
+    ['http://tuqianges.jimicloud.com'],
+    http_auth=('admin', 'jimijimi'),
+    port=9200
+)

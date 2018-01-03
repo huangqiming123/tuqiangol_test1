@@ -39,9 +39,10 @@ class TestCase604FormPortSearchAccSearch(unittest.TestCase):
         self.driver.implicitly_wait(5)
         self.log_in_base.log_in_jimitest()
 
-        # 登录之后点击控制台，然后点击设置
+        current_handle = self.driver.get_current_window_handle()
         self.statistical_form_page.click_control_after_click_statistical_form_page()
         sleep(3)
+        self.base_page.change_windows_handle(current_handle)
 
     def tearDown(self):
         # 退出浏览器

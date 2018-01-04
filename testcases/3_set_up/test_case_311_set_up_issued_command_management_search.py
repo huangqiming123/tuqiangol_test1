@@ -104,7 +104,6 @@ class TestCase311SetUpIssuedCommandManagementSearch(unittest.TestCase):
                 get_sql = self.command_management_page. \
                     search_sql_for_issued_command_management_search(user_info['id'], search_data)
                 # 执行sql
-                print(get_sql)
                 cursor.execute(get_sql)
 
                 current_total = cursor.fetchall()

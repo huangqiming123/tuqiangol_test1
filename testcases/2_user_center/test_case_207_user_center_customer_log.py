@@ -42,7 +42,10 @@ class TestCase207UserCenterCustomerLog(unittest.TestCase):
 
         # 点击客户管理
         new_customer_data = ['新增的客户', 'new_1226']
+
+        current_handle = self.driver.get_current_window_handle()
         self.user_center_page.click_customer_mangement()
+        self.base_page.change_windows_handle(current_handle)
 
         # 新增客户按钮
         self.user_center_page.click_add_new_customer_buttons()

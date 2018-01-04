@@ -36,7 +36,6 @@ class TestCase301SetUpDefaultHomePageSetting(unittest.TestCase):
         '''默认设置首页成功'''
 
         self.log_in_base.log_in_with_csv("dzltest", "jimi123")
-        self.account_center_page_navi_bar.click_account_center_button()
         # 点击默认首页设置
         self.account_center_page_home_page_setting.click_home_page_setting()
         # 取列表数据
@@ -44,9 +43,6 @@ class TestCase301SetUpDefaultHomePageSetting(unittest.TestCase):
         self.driver.default_frame()
 
         for i in range(len(all_state)):
-            # 点击账户中心
-            self.account_center_page_navi_bar.click_account_center_button()
-            self.account_center_page_navi_bar.click_account_center_button()
             # 点击默认首页设置
             self.account_center_page_home_page_setting.click_home_page_setting()
             # 已默认

@@ -61,8 +61,11 @@ class TestCase405CustomerManagementAddUserCommandLimit(unittest.TestCase):
             self.log_in_base.log_in()
 
             # 进入客户管理页面
+            current_handle = self.driver.get_current_window_handle()
             self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
             sleep(1)
+            self.base_page.change_windows_handle(current_handle)
+
             self.cust_manage_basic_info_and_add_cust_page.add_acc()
             self.cust_manage_basic_info_and_add_cust_page.close_add_account()
 
@@ -83,8 +86,6 @@ class TestCase405CustomerManagementAddUserCommandLimit(unittest.TestCase):
             self.cust_manage_basic_info_and_add_cust_page.acc_add_save()
             sleep(1)
             # 退出登录
-            self.log_in_base.click_account_center_button()
-            sleep(2)
             self.account_center_page_navi_bar.usr_logout()
 
             self.log_in_base.log_in_with_csv(info["account"], info["passwd"])
@@ -93,6 +94,10 @@ class TestCase405CustomerManagementAddUserCommandLimit(unittest.TestCase):
             sleep(1)
 
             # 进入设备管理/指令管理页面，获取功能按钮
+            current_handle_02 = self.driver.get_current_window_handle()
+            self.cust_manage_basic_info_and_add_cust_page.click_dev_management_button()
+            self.base_page.change_windows_handle(current_handle_02)
+
             facility_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_facility_manage_page_function_button()
             sleep(3)
             command_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_command_page_module()
@@ -167,12 +172,13 @@ class TestCase405CustomerManagementAddUserCommandLimit(unittest.TestCase):
                 self.assertEqual(working_mode_manage, working_mode_list[4])
 
             sleep(1)
-            self.log_in_base.click_account_center_button()
-            sleep(2)
             self.account_center_page_navi_bar.usr_logout()
 
             self.log_in_base.log_in()
+
+            current_handle_01 = self.driver.get_current_window_handle()
             self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+            self.base_page.change_windows_handle(current_handle_01)
 
             # 搜索新增客户
             self.cust_manage_lower_account_page.input_search_info(info["account"])
@@ -187,7 +193,5 @@ class TestCase405CustomerManagementAddUserCommandLimit(unittest.TestCase):
 
             # 退出登录
             sleep(1)
-            self.log_in_base.click_account_center_button()
-            sleep(2)
             self.account_center_page_navi_bar.usr_logout()
         csv_file.close()

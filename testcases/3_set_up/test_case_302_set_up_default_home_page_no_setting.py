@@ -36,7 +36,6 @@ class TestCase302SetUpDefaultHomePageNoSetting(unittest.TestCase):
         '''没有设置默认首页验证'''
 
         self.log_in_base.log_in_with_csv("zcs001", "jimi123")
-        self.account_center_page_navi_bar.click_account_center_button()
         # 点击默认首页设置
         self.account_center_page_home_page_setting.click_home_page_setting()
 

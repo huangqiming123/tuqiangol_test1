@@ -37,7 +37,11 @@ class TestCase205UserCenterBusinessLogSearch(unittest.TestCase):
     def test_user_center_business_log_search(self):
         self.base_page.open_page()
         self.log_in_base.log_in()
+
+        current_handle = self.driver.get_current_window_handle()
         self.log_in_base.click_account_center_button()
+        self.base_page.change_windows_handle(current_handle)
+
         # 获取登录账号的用户名
         current_account = self.log_in_base.get_log_in_account()
 

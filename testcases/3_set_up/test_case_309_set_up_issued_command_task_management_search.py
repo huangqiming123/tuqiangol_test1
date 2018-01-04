@@ -41,7 +41,7 @@ class TestCase309SetUpIssuedCommandTaskManagementSearch(unittest.TestCase):
         self.driver.set_window_max()
         self.driver.implicitly_wait(5)
         self.driver.clear_cookies()
-        self.log_in_base.log_in_jimitest()
+        self.log_in_base.log_in()
         self.log_in_base.click_account_center_button()
         self.current_account = self.log_in_base.get_log_in_account()
 
@@ -72,7 +72,7 @@ class TestCase309SetUpIssuedCommandTaskManagementSearch(unittest.TestCase):
 
         csv_file = self.command_management_page_read_csv.read_csv('issued_command_task_management_serach_data.csv')
         csv_data = csv.reader(csv_file)
-
+        i = 1
         is_header = True
         for row in csv_data:
             if is_header:
@@ -82,9 +82,10 @@ class TestCase309SetUpIssuedCommandTaskManagementSearch(unittest.TestCase):
                 'batch': row[0],
                 'name': row[1]
             }
+            print(search_data)
             self.command_management_page.issued_command_task_add_data_to_search(search_data)
 
-            # 建立数据库的连接
+            '''# 建立数据库的连接
             connect = self.connect_sql.connect_tuqiang_sql()
             # 建立游标
             cursor = connect.cursor()
@@ -114,22 +115,23 @@ class TestCase309SetUpIssuedCommandTaskManagementSearch(unittest.TestCase):
                 current_user_next = tuple(current_account_list)
                 print(current_user_next)
 
-                # 查询数据库
-                # 执行sql
-                search_sql = self.search_sql.search_issued_command_task_management_sql(current_user_next, search_data)
-                print(search_sql)
-                cursor.execute(search_sql)
-                current_total = cursor.fetchall()
-                total_list = []
-                for range1 in current_total:
-                    for range2 in range1:
-                        total_list.append(range2)
-                total = len(total_list)
-                web_total = self.command_management_page.search_total_number_with_issued_command_task()
-                sleep(3)
-                # 断言
-                self.assertEqual(total, web_total)
-
+                # 查询数据库'''
+            # 执行sql
+            user_info = self.command_management_page.get_current_user_id(self.current_account)
+            all_user_id = self.command_management_page.get_all_user_id(user_info)
+            connect = self.connect_sql.connect_tuqiang_sql()
+            cursor = connect.cursor()
+            search_sql = self.search_sql.search_issued_command_task_management_sql(all_user_id, search_data)
+            print(search_sql)
+            cursor.execute(search_sql)
+            current_total = cursor.fetchall()
             cursor.close()
             connect.close()
+            total = len(current_total)
+            web_total = self.command_management_page.search_total_number_with_issued_command_task()
+            # 断言
+            print('第%s次sql查询的结果是%s' % (i, total))
+            print('第%s次web查询的结果是%s' % (i, web_total))
+            i += 1
+            self.assertEqual(total, web_total)
         csv_file.close()

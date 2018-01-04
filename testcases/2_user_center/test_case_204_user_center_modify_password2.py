@@ -23,7 +23,9 @@ class TestCase204UserCenterModifyPassword2(unittest.TestCase):
     def test_modify_password_exception(self):
 
         self.log_in_base.log_in()
+        current_handle = self.driver.get_current_window_handle()
         self.account_center_page_navi_bar.click_account_center_button()
+        self.base_page.change_windows_handle(current_handle)
         self.driver.wait(1)
         # 点击招呼栏的修改密码
         self.account_center_page_navi_bar.click_modify_usr_password()

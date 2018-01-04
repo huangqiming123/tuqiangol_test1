@@ -38,6 +38,7 @@ class TestCase401CustomerManagementCheckAccount(unittest.TestCase):
         self.driver.wait(1)
 
     def tearDown(self):
+        self.driver.close_window()
         self.driver.quit_browser()
 
     def test_customer_management_check_account(self):
@@ -49,7 +50,9 @@ class TestCase401CustomerManagementCheckAccount(unittest.TestCase):
         self.log_in_base.log_in()
 
         # 进入客户管理页面
+        current_handle = self.driver.get_current_window_handle()
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+        self.base_page.change_windows_handle(current_handle)
 
         csv_file = self.cust_manage_page_read_csv.read_csv('check_account_data.csv')
         csv_data = csv.reader(csv_file)

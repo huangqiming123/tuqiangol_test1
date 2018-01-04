@@ -318,6 +318,8 @@ class UserCenterPage(BasePageServer):
         self.driver.click_element('x,//*[@id="serviceType"]/div/span[2]')
         sleep(2)
         self.driver.click_element('x,//li[@title="告警设置"]')
+        sleep(1)
+        self.driver.click_element('search_xf')
         sleep(5)
 
     def click_logout_button(self):

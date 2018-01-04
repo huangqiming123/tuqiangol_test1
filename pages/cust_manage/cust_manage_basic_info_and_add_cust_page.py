@@ -699,8 +699,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
 
     # 点设备管理
     def get_facility_manage_page_function_button(self):
-        self.driver.click_element("device")
-        sleep(2)
+
         # 获取全部功能按钮
         button_list = []
         all_data = len(self.driver.get_elements("x,//*[@id='allDev']/div[2]/div[2]/div/div/button"))
@@ -913,3 +912,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
     def click_ensuress(self):
         self.driver.click_element('x,/html/body/div[15]/div[3]/a')
         sleep(5)
+
+    def click_dev_management_button(self):
+        self.driver.click_element('x,//*[@id="device"]/a')
+        sleep(2)

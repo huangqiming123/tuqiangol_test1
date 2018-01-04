@@ -51,7 +51,11 @@ class TestCase101LoginSuccessWithSalesAndAgent(unittest.TestCase):
             # 输入用户信息进行登录
             self.login_page.user_login(user_to_login["account"], user_to_login["passwd"])
             # 点账户中心
+            current_handle = self.driver.get_current_window_handle()
+            print('handle', current_handle)
             self.account_center_page_navi_bar.click_account_center_button()
+            self.base_page.change_windows_handle(current_handle)
+
             # 判断登录成功后跳转页面是否正确
             actual_url = self.driver.get_current_url()
             expect_url = self.base_url + "/customer/toAccountCenter"

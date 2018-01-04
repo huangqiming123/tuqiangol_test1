@@ -580,3 +580,8 @@ class AccountCenterNaviBarPage(BasePageServer):
 
         # 获取下发有多少个l列
         get_line_number = self.driver.get_line_number('x,')
+
+    def click_remember_me_button(self):
+        # 点击记住我按钮
+        self.driver.click_element('checkbox')
+        sleep(1)

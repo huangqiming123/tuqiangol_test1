@@ -13,7 +13,7 @@ class AccountCenterSettingHomePage(BasePageServer):
 
     # 点击默认首页设置
     def click_home_page_setting(self):
-        self.driver.click_element('x,/html/body/header/div/div[2]/div[2]/div[2]/span[1]/a')
+        self.driver.click_element('x,//*[@id="systemSetting"]')
         sleep(1)
         self.driver.click_element('p,默认首页')
         self.driver.wait()

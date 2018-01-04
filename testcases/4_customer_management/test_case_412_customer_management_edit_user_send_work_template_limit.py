@@ -45,7 +45,9 @@ class TestCase412CustomerManagementEditUserSendWorkTemplateLimit(unittest.TestCa
         self.log_in_base.log_in()
 
         # 进入客户管理页面
+        current_handle = self.driver.get_current_window_handle()
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+        self.base_page.change_windows_handle(current_handle)
 
         # 搜索一个客户
         self.cust_manage_lower_account_page.input_search_info('abc12344')
@@ -80,6 +82,10 @@ class TestCase412CustomerManagementEditUserSendWorkTemplateLimit(unittest.TestCa
             # 登录刚刚的账号
             self.log_in_base.log_in_with_csv(user_account, 'jimi123')
             # 进入设备管理 获取设备管理页面操的文本
+            current_handle_01 = self.driver.get_current_window_handle()
+            self.cust_manage_basic_info_and_add_cust_page.click_dev_management_button()
+            self.base_page.change_windows_handle(current_handle_01)
+
             dev_operation_text = self.cust_manage_basic_info_and_add_cust_page.get_facility_manage_page_function_button()
 
             working_mode = self.assert_text2.dev_manage_setting_working_mode()
@@ -89,7 +95,11 @@ class TestCase412CustomerManagementEditUserSendWorkTemplateLimit(unittest.TestCa
 
             # 登录
             self.log_in_base.log_in()
+
+            current_handle_02 = self.driver.get_current_window_handle()
             self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+            self.base_page.change_windows_handle(current_handle_02)
+
             # 搜索一个客户
             self.cust_manage_lower_account_page.input_search_info('abc12344')
             # 搜索
@@ -118,6 +128,10 @@ class TestCase412CustomerManagementEditUserSendWorkTemplateLimit(unittest.TestCa
             self.assertIn(user_account, hello_usr)
 
             # 进入设备管理 获取设备管理页面操的文本
+            current_handle_03 = self.driver.get_current_window_handle()
+            self.cust_manage_basic_info_and_add_cust_page.click_dev_management_button()
+            self.base_page.change_windows_handle(current_handle_03)
+
             dev_operation_text = self.cust_manage_basic_info_and_add_cust_page.get_facility_manage_page_function_button()
 
             working_mode = self.assert_text2.dev_manage_setting_working_mode()
@@ -138,6 +152,10 @@ class TestCase412CustomerManagementEditUserSendWorkTemplateLimit(unittest.TestCa
             hello_usr = self.account_center_page_navi_bar.usr_info_account()
             self.assertIn(user_account, hello_usr)
             # 进入设备管理 获取设备管理页面操的文本
+            current_handle_04 = self.driver.get_current_window_handle()
+            self.cust_manage_basic_info_and_add_cust_page.click_dev_management_button()
+            self.base_page.change_windows_handle(current_handle_04)
+
             dev_operation_text = self.cust_manage_basic_info_and_add_cust_page.get_facility_manage_page_function_button()
 
             working_mode = self.assert_text2.dev_manage_setting_working_mode()
@@ -148,7 +166,9 @@ class TestCase412CustomerManagementEditUserSendWorkTemplateLimit(unittest.TestCa
             # 退出登录
             self.account_center_page_navi_bar.usr_logout()
             self.log_in_base.log_in()
+            current_handle_05 = self.driver.get_current_window_handle()
             self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+            self.base_page.change_windows_handle(current_handle_05)
             # 搜索一个客户
             self.cust_manage_lower_account_page.input_search_info('abc12344')
             # 搜索
@@ -173,6 +193,10 @@ class TestCase412CustomerManagementEditUserSendWorkTemplateLimit(unittest.TestCa
             self.log_in_base.log_in_with_csv(user_account, 'jimi123')
 
             # 进入设备管理 获取设备管理页面操的文本
+            current_handle_06 = self.driver.get_current_window_handle()
+            self.cust_manage_basic_info_and_add_cust_page.click_dev_management_button()
+            self.base_page.change_windows_handle(current_handle_06)
+
             dev_operation_text = self.cust_manage_basic_info_and_add_cust_page.get_facility_manage_page_function_button()
 
             working_mode = self.assert_text2.dev_manage_setting_working_mode()

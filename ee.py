@@ -1,7 +1,7 @@
-from elasticsearch import Elasticsearch
+from sympy import *
 
-es = Elasticsearch(
-    ['http://tuqianges.jimicloud.com'],
-    http_auth=('admin', 'jimijimi'),
-    port=9200
-)
+x = Symbol('x')
+y = Symbol('y')
+z = Symbol('z')
+
+print(solve([2 * x - y, 3 * x + y - 7, x + z - 5], [x, y, z]))

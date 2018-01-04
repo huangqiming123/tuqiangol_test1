@@ -36,7 +36,9 @@ class TestCase202UserCenterModifyInfo2(unittest.TestCase):
 
     def test_user_center_modify_info2(self):
         # 通过csv测试修改资料功能
+        current_handle = self.driver.get_current_window_handle()
         self.account_center_page_navi_bar.click_account_center_button()
+        self.base_page.change_windows_handle(current_handle)
         # 点击个人中心 - 修改资料
         self.user_center_page.click_user_center_button()
         self.user_center_page.click_modify_user_info()

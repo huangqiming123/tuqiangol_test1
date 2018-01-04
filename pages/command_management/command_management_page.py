@@ -1,4 +1,6 @@
 from time import sleep
+
+from model.connect_sql import ConnectSql
 from pages.base.base_page import BasePage
 from pages.base.base_paging_function import BasePagingFunction
 from pages.base.new_paging import NewPaging
@@ -908,6 +910,7 @@ class CommandManagementPage(BasePage):
         text = self.driver.get_text('x,//*[@id="failedList"]/tr/td[3]')
         print(text)
         return text
+
     '''
 
     # 获取对非正常状态下的设备下发指令后的文本(线上环境)
@@ -1006,4 +1009,32 @@ class CommandManagementPage(BasePage):
                 sql_02 += " and l.IsExecute = '%s'" % search_data['statue']
 
         sql = sql_01 + sql_02 + ";"
+        print(sql)
         return sql
+
+    def get_current_user_id(self, current_account):
+        self.connect_sql = ConnectSql()
+        connect = self.connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        search_sql = "SELECT u.userId,u.fullParentId FROM user_info u WHERE u.account = '%s';" % current_account
+        cursor.execute(search_sql)
+        id = cursor.fetchall()
+        cursor.close()
+        connect.close()
+        return [id[0][0], id[0][1]]
+
+    def get_all_user_id(self, user_info):
+        self.connect_sql = ConnectSql()
+        connect = self.connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+        search_sql = "select userId from user_info where fullParentId like" + "'" + user_info[1] + user_info[
+            0] + "%'" + ";"
+        cursor.execute(search_sql)
+        id = cursor.fetchall()
+        data = [user_info[0]]
+        for range in id:
+            for range1 in range:
+                data.append(range1)
+        cursor.close()
+        connect.close()
+        return tuple(data)

@@ -45,7 +45,9 @@ class TestCase408CustomerManagementAddUserExpection(unittest.TestCase):
         self.log_in_base.log_in()
 
         # 进入客户管理页面
+        current_handle = self.driver.get_current_window_handle()
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+        self.base_page.change_windows_handle(current_handle)
 
         self.cust_manage_basic_info_and_add_cust_page.add_acc()
         self.cust_manage_basic_info_and_add_cust_page.cancel_add_account()

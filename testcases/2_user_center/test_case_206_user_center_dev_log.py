@@ -41,9 +41,12 @@ class TestCase206UserCenterDevLog(unittest.TestCase):
         user_account = self.log_in_base.get_log_in_account()
 
         # 点击设备管理
+        current_handle = self.driver.get_current_window_handle()
         self.user_center_page.click_dev_management_button()
         sleep(3)
+        self.base_page.change_windows_handle(current_handle)
         # 获取列表第一个imei号
+        sleep(3)
         imei = self.user_center_page.get_dev_list_first_imei()
         # 点击编辑
         self.user_center_page.click_edit_dev_button()
@@ -54,7 +57,9 @@ class TestCase206UserCenterDevLog(unittest.TestCase):
         self.user_center_page.click_sale_button()
 
         # 进入帮助 - 业务日志页面
+        current_handle_01 = self.driver.get_current_window_handle()
         self.user_center_page.click_user_center_button()
+        self.base_page.change_windows_handle(current_handle_01)
         # 点击帮助
         self.user_center_page.click_help_button()
         # 切换到业务日志的frame里面

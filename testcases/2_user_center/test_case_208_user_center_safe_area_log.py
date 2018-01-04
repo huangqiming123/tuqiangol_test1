@@ -40,7 +40,10 @@ class TestCase208UserCenterSafeAreaLog(unittest.TestCase):
         user_account = self.log_in_base.get_log_in_account()
 
         # 点击安全区域
+        current_handle = self.driver.get_current_window_handle()
         self.user_center_page.click_safe_area_button()
+        self.base_page.change_windows_handle(current_handle)
+
         # 搜索平台围栏
         self.user_center_page.search_platform_fence()
         # 获取第一个围栏的名称

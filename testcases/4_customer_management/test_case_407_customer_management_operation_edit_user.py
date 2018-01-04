@@ -38,7 +38,10 @@ class TestCase407CustomerManagementOperationEditUser(unittest.TestCase):
         self.base_page.open_page()
 
         self.log_in_base.log_in()
+
+        current_handle = self.driver.get_current_window_handle()
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+        self.base_page.change_windows_handle(current_handle)
 
         csv_file = self.cust_manage_page_read_csv.read_csv('edit_user_data.csv')
         csv_data = csv.reader(csv_file)

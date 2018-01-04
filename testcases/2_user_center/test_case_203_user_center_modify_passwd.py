@@ -44,7 +44,9 @@ class TestCase203UserCenterModifyPasswd(unittest.TestCase):
             self.login_page.user_login(user_to_modify_passwd["account"],
                                        user_to_modify_passwd["old_passwd"])
             self.driver.wait()
+            current_handle_01 = self.driver.get_current_window_handle()
             self.account_center_page_navi_bar.click_account_center_button()
+            self.base_page.change_windows_handle(current_handle_01)
             # 招呼栏修改资料
             modify_status = self.account_center_page_navi_bar.modify_user_passwd(user_to_modify_passwd["old_passwd"],
                                                                                  user_to_modify_passwd["new_passwd"])
@@ -62,7 +64,9 @@ class TestCase203UserCenterModifyPasswd(unittest.TestCase):
                                        user_to_modify_passwd["new_passwd"])
 
             self.driver.wait()
+            current_handle_02 = self.driver.get_current_window_handle()
             self.account_center_page_navi_bar.click_account_center_button()
+            self.base_page.change_windows_handle(current_handle_02)
             # 招呼栏修改资料
             modify_status = self.account_center_page_navi_bar.modify_user_passwd(user_to_modify_passwd["new_passwd"],
                                                                                  user_to_modify_passwd["old_passwd"])

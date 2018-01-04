@@ -54,7 +54,9 @@ class TestCase402CustomerManageMentLowerUserSearch(unittest.TestCase):
         # current_account = self.log_in_base.get_log_in_account()
 
         # 进入客户管理页面
+        current_handle = self.driver.get_current_window_handle()
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+        self.base_page.change_windows_handle(current_handle)
 
         csv_file = self.cust_manage_page_read_csv.read_csv('acc_search.csv')
         csv_data = csv.reader(csv_file)

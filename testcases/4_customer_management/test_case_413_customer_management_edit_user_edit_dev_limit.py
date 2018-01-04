@@ -47,7 +47,9 @@ class TestCase413CustomerManagementEditUserEditDevLimit(unittest.TestCase):
         self.log_in_base.log_in()
 
         # 进入客户管理页面
+        current_handle = self.driver.get_current_window_handle()
         self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+        self.base_page.change_windows_handle(current_handle)
 
         # 搜索一个客户
         self.cust_manage_lower_account_page.input_search_info('abc12344')
@@ -88,7 +90,9 @@ class TestCase413CustomerManagementEditUserEditDevLimit(unittest.TestCase):
             self.account_center_page_navi_bar.usr_logout()
             # 登录
             self.log_in_base.log_in()
+            current_handle_01 = self.driver.get_current_window_handle()
             self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+            self.base_page.change_windows_handle(current_handle_01)
             # 搜索一个客户
             self.cust_manage_lower_account_page.input_search_info('abc12344')
             # 搜索
@@ -139,7 +143,11 @@ class TestCase413CustomerManagementEditUserEditDevLimit(unittest.TestCase):
             # 退出登录
             self.account_center_page_navi_bar.usr_logout()
             self.log_in_base.log_in()
+
+            current_handle_02 = self.driver.get_current_window_handle()
             self.cust_manage_basic_info_and_add_cust_page.enter_cust_manage()
+            self.base_page.change_windows_handle(current_handle_02)
+
             # 搜索一个客户
             self.cust_manage_lower_account_page.input_search_info('abc12344')
             # 搜索

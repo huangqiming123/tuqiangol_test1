@@ -102,5 +102,6 @@ class TestCase415CustomerManagementEditUserResetPassword(unittest.TestCase):
         hello_usr = self.account_center_page_navi_bar.usr_info_account()
 
         self.assertIn(account, hello_usr)
+
         # 退出登录
         self.account_center_page_navi_bar.usr_logout()

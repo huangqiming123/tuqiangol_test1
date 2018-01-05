@@ -325,3 +325,41 @@ class UserCenterPage(BasePageServer):
     def click_logout_button(self):
         self.driver.click_element('x,//a[@class="js-exit-system"]')
         sleep(2)
+
+    def click_set_up_and_command_set_up(self):
+        # 点击设置 - 指令设置
+        self.driver.click_element('x,//*[@id="systemSetting"]')
+        sleep(2)
+        self.driver.click_element('x,//a[@href="/custom/toTemplate"]')
+        sleep(3)
+
+    def click_issued_command_management(self):
+        self.driver.click_element('x,//*[@id="batchInsList_a"]')
+        sleep(2)
+
+    def search_to_be_sent_command(self):
+        self.driver.click_element('x,//*[@id="batchInsLogs-form"]/div[3]/div/span/div/span[2]')
+        sleep(1)
+        self.driver.click_element('x,//*[@id="batchInsLogs-form"]/div[3]/div/span/div/div/ul/li[7]')
+        sleep(2)
+        self.driver.click_element('x,//button[@onclick="searchBatchInsLogs();"]')
+        sleep(8)
+
+    def get_command_info_first_command_record(self):
+        return self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[1]/td[5]')
+
+    def get_command_imei_first_command_record(self):
+        return self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[1]/td[7]')
+
+    def select_first_command_record_and_cancel(self):
+        self.driver.click_element('x,//*[@id="batchIns-tbody"]/tr[1]/td[1]/span/div/ins')
+        sleep(1)
+        self.driver.click_element('x,//button[@onclick="selectCancelIns();"]')
+        sleep(2)
+
+    def select_cancel_command_log(self):
+        # 搜索取消指令的日志
+        self.driver.click_element('x,//*[@id="logType"]/div/span[2]')
+        sleep(1)
+        self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[4]')
+        sleep(1)

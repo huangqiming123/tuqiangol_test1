@@ -31,7 +31,8 @@ class StatisticFormPage3(BasePage):
         return self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[3]' % str(n + 1))
 
     def get_mileage_in_sport_overview(self, n):
-        return int(float(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[5]' % str(n + 1))) * 1000)
+        a = float(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[5]' % str(n + 1))) * 1000
+        return int('%.0f' % a)
 
     def get_over_speed_times_in_sport_overview(self, n):
         return int(self.driver.get_text('x,//*[@id="table"]/tbody/tr[%s]/td[6]' % str(n + 1)))

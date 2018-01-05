@@ -45,7 +45,9 @@ class TestCase708FormExportAccFormExport(unittest.TestCase):
         self.statistical_form_page.click_control_after_click_statistical_form_page()
         sleep(3)
         self.base_page.change_windows_handle(current_handle)
+
     def tearDown(self):
+        self.driver.close_window()
         # 退出浏览器
         self.driver.quit_browser()
 

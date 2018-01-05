@@ -48,7 +48,9 @@ class TestCase103LoginSuccessWithphAppUser(unittest.TestCase):
             # 输入用户信息进行登录
             self.login_page.user_login(user_to_login["account"], user_to_login["passwd"])
             # 点首页
-            # self.login_page.click_home_page()
+            current_handle = self.driver.get_current_window_handle()
+            self.login_page.click_home_page()
+            self.base_page.change_windows_handle(current_handle)
             # 判断登录成功后跳转页面是否正确
             actual_url = self.driver.get_current_url()
             expect_url = self.base_url + "/nomalUserCenter"

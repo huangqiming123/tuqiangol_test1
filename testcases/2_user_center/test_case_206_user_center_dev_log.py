@@ -65,6 +65,8 @@ class TestCase206UserCenterDevLog(unittest.TestCase):
         # 切换到业务日志的frame里面
         self.user_center_page.switch_to_business_frame()
 
+        self.user_center_page.click_search_button_in_business_log()
+
         # 获取第一条数据的操作人、目标账号、操作平台、描述
         sleep(3)
         operation = self.user_center_page.get_operation_in_business_log()

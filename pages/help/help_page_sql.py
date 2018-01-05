@@ -75,6 +75,9 @@ class HelpPageSql(object):
         if search_data["search_type"] == '设备管理-设备修改':
             sql += " and l.serviceType = 1 and l.operType = 1"
 
+        if search_data["search_type"] == '设备管理-取消指令':
+            sql += " and l.serviceType = 1 and l.operType = 3"
+
         if search_data["search_type"] == '设备管理-设备分配':
             sql += " and l.serviceType = 1 and l.operType = 5"
 

@@ -38,6 +38,7 @@ class TestCase504FormSearchStaySearch(unittest.TestCase):
         self.base_page.change_windows_handle(current_handle)
 
     def tearDown(self):
+        self.driver.close_window()
         # 退出浏览器
         self.driver.quit_browser()
 

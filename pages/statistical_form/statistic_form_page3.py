@@ -99,6 +99,7 @@ class StatisticFormPage3(BasePage):
 
     def get_total_page_in_tracel_report_form(self):
         a = self.driver.get_element('x,//*[@id="paging-mileage"]').get_attribute('style')
+        print(a)
         if a == 'display: block;':
             new_paging = NewPaging(self.driver, self.base_url)
             total = new_paging.get_total_page('x,//*[@id="paging-mileage"]')

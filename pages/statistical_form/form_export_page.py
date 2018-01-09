@@ -1151,7 +1151,7 @@ class FormExportPage(BasePage):
     def search_guide_manchine_data(self):
         self.driver.click_element('x,//*[@id="dateSelect_div"]/div/span[2]')
         sleep(2)
-        self.driver.click_element('x,//li[@title="上月"]')
+        self.driver.click_element('x,//li[@title="本月"]')
         sleep(2)
 
         self.driver.click_element('x,//ins[@class="iCheck-helper"]')

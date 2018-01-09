@@ -70,6 +70,7 @@ class TestCase402CustomerManageMentLowerUserSearch(unittest.TestCase):
                 "account_type": row[1],
                 "info": row[2]
             }
+            print(search_data)
             sleep(1)
             self.cust_manage_lower_account_page.add_data_to_search_account(search_data)
             connect = self.connect_sql.connect_tuqiang_sql()

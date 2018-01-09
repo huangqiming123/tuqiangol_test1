@@ -94,6 +94,6 @@ class TestCase206UserCenterDevLog(unittest.TestCase):
         self.assertEqual(target_account_01, user_account)
         self.assertEqual('网页端', operation_platform_01)
 
-        web_desc_01 = "%s将设备%s分配给%s" % (user_account, imei, user_account)
+        web_desc_01 = "%s将设备%s从%s分配给%s" % (user_account, imei, user_account, user_account)
         self.assertEqual(web_desc_01, desc_01)
         self.driver.default_frame()

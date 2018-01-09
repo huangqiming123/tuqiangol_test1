@@ -84,6 +84,10 @@ class TestCase413CustomerManagementEditUserEditDevLimit(unittest.TestCase):
             # 登录刚刚的账号
             self.log_in_base.log_in_with_csv(user_account, 'jimi123')
             # 进入设备管理 获取设备管理页面操的文本
+            current_handle_03 = self.driver.get_current_window_handle()
+            self.cust_manage_basic_info_and_add_cust_page.click_dev_management_button()
+            self.base_page.change_windows_handle(current_handle_03)
+
             text = self.cust_manage_basic_info_and_add_cust_page.click_dev_and_edit_dev()
             self.assertEqual(self.assert_text2.no_permissions(), text)
 
@@ -137,6 +141,10 @@ class TestCase413CustomerManagementEditUserEditDevLimit(unittest.TestCase):
             hello_usr = self.account_center_page_navi_bar.usr_info_account()
             self.assertIn(user_account, hello_usr)
             # 进入设备管理 获取设备管理页面操的文本
+            current_handle_04 = self.driver.get_current_window_handle()
+            self.cust_manage_basic_info_and_add_cust_page.click_dev_management_button()
+            self.base_page.change_windows_handle(current_handle_04)
+
             text = self.cust_manage_basic_info_and_add_cust_page.click_dev_and_edit_dev()
             self.assertEqual(self.assert_text2.operation_done(), text)
 
@@ -172,5 +180,8 @@ class TestCase413CustomerManagementEditUserEditDevLimit(unittest.TestCase):
             self.log_in_base.log_in_with_csv(user_account, 'jimi123')
             sleep(3)
             # 进入设备管理 获取设备管理页面操的文本
+            current_handle_05 = self.driver.get_current_window_handle()
+            self.cust_manage_basic_info_and_add_cust_page.click_dev_management_button()
+            self.base_page.change_windows_handle(current_handle_05)
             text = self.cust_manage_basic_info_and_add_cust_page.click_dev_and_edit_dev()
             # self.assertEqual(self.assert_text2.no_permissions(), text)

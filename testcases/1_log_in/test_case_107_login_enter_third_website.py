@@ -17,7 +17,7 @@ class TestCase107LoginEnterThirdWebsite(unittest.TestCase):
         self.driver.quit_browser()
 
     def test_third_website(self):
-        '''测试登录页底部第三方链接'''
+        # 测试登录页底部第三方链接
 
         websites = ["可信网站", "网络警察", "公共信息网络安全监察", "不良信息举报中心", "工商网监"]
 

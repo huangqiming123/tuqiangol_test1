@@ -870,12 +870,12 @@ class StatisticalFormPage(BasePage):
 
     def get_total_search_paking_not_shut_down_number(self):
         # 获取停车未熄火查询出的条数
-        try:
-            self.new_paging = NewPaging(self.driver, self.base_url)
-            num = self.new_paging.get_total_number('x,//*[@id="paging-stopNotOff"]',
-                                                   'x,//*[@id="stopNotOffTableContent"]/tbody')
-            return num
-        except:
+        a = self.driver.get_element('x,//*[@id="paging-stopNotOff"]').get_attribute('style')
+        if a == "display: block;":
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_number('x,//*[@id="paging-stopNotOff"]',
+                                               'x,//*[@id="stopNotOffTableContent"]/tbody')
+        else:
             return 0
 
     def click_acc_form_button(self):

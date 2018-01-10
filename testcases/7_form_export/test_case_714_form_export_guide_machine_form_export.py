@@ -118,6 +118,15 @@ class TestCase714FormExportGuideMachineFormExport(unittest.TestCase):
             print('excel', excel_data)
             print('web', web_data)
 
+            '''for data in web_data:
+                del data['序号']
+            for data in excel_data:
+                del data['序号']
+
+            for data in web_data:
+                self.assertIn(data, excel_data)
+            for data in excel_data:
+                self.assertIn(data, web_data)'''
             self.assertEqual(web_data, excel_data)
 
         self.driver.default_frame()

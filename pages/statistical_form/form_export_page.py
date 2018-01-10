@@ -1128,8 +1128,7 @@ class FormExportPage(BasePage):
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[1]' % str(a + 1))),
             '时间': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[2]' % str(a + 1)),
-            '经度': float(
-                self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1))),
+            '经度': self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[3]' % str(a + 1)),
             '纬度': (self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[4]' % str(a + 1))),
             '故障代码': (self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[5]' % str(a + 1))),
             '故障类型': (self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[6]' % str(a + 1))),

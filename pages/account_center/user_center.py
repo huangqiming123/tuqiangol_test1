@@ -363,3 +363,16 @@ class UserCenterPage(BasePageServer):
         sleep(1)
         self.driver.click_element('x,//*[@id="logType"]/div/div/ul/li[4]')
         sleep(1)
+
+    def get_command_imei_user_account(self, command_imei):
+        connect_sql = ConnectSql()
+        connect = connect_sql.connect_tuqiang_sql()
+        cursor = connect.cursor()
+
+        sql = "SELECT e.account FROM equipment_mostly e WHERE e.imei = '%s';" % command_imei
+        cursor.execute(sql)
+        data = cursor.fetchall()
+
+        cursor.close()
+        connect.close()
+        return data[0][0]

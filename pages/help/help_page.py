@@ -427,7 +427,7 @@ class HelpPage(BasePageServer, NewPaging):
 
         # 点搜索
         self.driver.click_element('x,//*[@id="search_xf"]')
-        sleep(5)
+        sleep(15)
         self.driver.default_frame()
 
     def get_all_user_id(self, current_account):

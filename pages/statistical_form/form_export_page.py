@@ -8,6 +8,7 @@ from pages.base.base_page import BasePage
 
 class FormExportPage(BasePage):
     def find_expect_file(self):
+        # C:\Users\Administrator\Downloads
         base_dir = "C:\\Users\\Administrator\\Downloads"
         lists = os.listdir(base_dir)
         # 重新按时间对目录下的文件进行排序
@@ -361,7 +362,7 @@ class FormExportPage(BasePage):
 
         # 搜索
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[3]/button')
-        sleep(5)
+        sleep(8)
 
     def get_per_line_data_travel_with_day(self, a):
         # 获取每一列的信息
@@ -418,8 +419,8 @@ class FormExportPage(BasePage):
 
         # 选择全部设备
         # 选择设备
-        self.driver.operate_input_element('x,//*[@id="imeiInput_stopCar"]', '867414030000066')
-        '''self.driver.clear_input('x,//*[@id="imeiInput_stopCar"]')
+        # self.driver.operate_input_element('x,//*[@id="imeiInput_stopCar"]', '867414030000066')
+        self.driver.clear_input('x,//*[@id="imeiInput_stopCar"]')
         sleep(2)
         self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[2]/div/div/div/div[1]/span/button')
         sleep(1)
@@ -433,7 +434,7 @@ class FormExportPage(BasePage):
                     n + 1))
         self.driver.click_element('x,//*[@id="treeModal_stopCar"]/div[2]/label/div/ins')
         self.driver.click_element('x,//*[@id="treeModal_stopCar"]/div[2]/div/button[1]')
-        '''
+
         # 搜索
         self.driver.click_element('x,//*[@id="StopCarFrom"]/div[2]/div[3]/button')
         sleep(5)
@@ -693,7 +694,7 @@ class FormExportPage(BasePage):
         self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[4]/label/div/ins')
         sleep(1)
         self.driver.click_element('x,//*[@id="ElectricFrom"]/div/div[5]/button[1]')
-        sleep(5)
+        sleep(10)
 
     def get_per_line_data_electric(self, a):
         # 获取每一列的信息

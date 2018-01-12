@@ -97,6 +97,7 @@ class TestCase709FormExportElectricFormExport(unittest.TestCase):
 
             # 点击导出所有列
             self.form_export_page.click_export_button_in_mileage()
+            sleep(4)
             # 切换到导出的frame中
             self.form_export_page.switch_export_frame()
             # 判断有多少个div的标签

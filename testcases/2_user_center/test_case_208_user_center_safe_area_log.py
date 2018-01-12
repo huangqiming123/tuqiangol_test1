@@ -1,4 +1,5 @@
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.connect_sql import ConnectSql
@@ -78,6 +79,7 @@ class TestCase208UserCenterSafeAreaLog(unittest.TestCase):
         # 选择安全区域查询 - 新增、编辑
         self.user_center_page.select_safe_area_search()
         self.user_center_page.select_edit_safe_area_search()
+        sleep(5)
 
         operation_01 = self.user_center_page.get_operation_in_business_log()
         target_account_01 = self.user_center_page.get_target_account_in_business_log()
@@ -92,6 +94,7 @@ class TestCase208UserCenterSafeAreaLog(unittest.TestCase):
 
         # 选择关联设备
         self.user_center_page.select_relevant_safe_area_search()
+        sleep(5)
 
         operation_02 = self.user_center_page.get_operation_in_business_log()
         target_account_02 = self.user_center_page.get_target_account_in_business_log()

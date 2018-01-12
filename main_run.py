@@ -32,7 +32,7 @@ def run_07():
     os.system('python -m test_runner.tuqiangOL_test_runner_7_form_export')
 
 
-start_time = datetime.datetime(2018, 1, 10, 1, 10, 0)
+start_time = datetime.datetime(2018, 1, 11, 2, 0, 0)
 while datetime.datetime.now() < start_time:
     sleep(25)
 

@@ -52,6 +52,8 @@ class TestCase212UserCenterCancelCommandLog(unittest.TestCase):
         command_info = self.user_center_page.get_command_info_first_command_record()
         command_imei = self.user_center_page.get_command_imei_first_command_record()
 
+        command_imei_user_account = self.user_center_page.get_command_imei_user_account(command_imei)
+
         # 选择第一条记录，选中取消指令
         self.user_center_page.select_first_command_record_and_cancel()
 
@@ -65,6 +67,7 @@ class TestCase212UserCenterCancelCommandLog(unittest.TestCase):
         self.user_center_page.select_cancel_command_log()
         # 点击搜索
         self.user_center_page.click_search_button_in_business_log()
+        sleep(5)
 
         # 获取第一条日志的记录
         operation = self.user_center_page.get_operation_in_business_log()
@@ -74,7 +77,7 @@ class TestCase212UserCenterCancelCommandLog(unittest.TestCase):
 
         # 断言
         self.assertEqual(operation + " ", ' ' + user_account)
-        self.assertEqual(target_account + ' ', user_account)
+        self.assertEqual(target_account, command_imei_user_account)
         self.assertEqual('网页端', operation_platform)
 
         desc_01 = "%s取消设备%s 指令%s" % (operation, command_imei, command_info)

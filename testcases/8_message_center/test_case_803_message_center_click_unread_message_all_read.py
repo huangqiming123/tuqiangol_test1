@@ -8,9 +8,9 @@ from pages.help.help_page import HelpPage
 from pages.message_center.message_center_page import MessageCenterPage
 
 
-class TestCase802MessageCenterClickUnreadMessage(unittest.TestCase):
+class TestCase803MessageCenterClickUnreadMessageAllRead(unittest.TestCase):
     ###############################################################
-    # # 测试 消息中心 标记未读消息为已读
+    # # 测试 消息中心 全部标记为已读
     ###############################################################
     def setUp(self):
         self.driver = AutomateDriverServer()
@@ -29,31 +29,15 @@ class TestCase802MessageCenterClickUnreadMessage(unittest.TestCase):
         self.driver.close_window()
         self.driver.quit_browser()
 
-    def test_case_802_message_center_click_unread_message(self):
+    def test_case_803_message_center_click_unread_message_all_read(self):
         # 获取未读消息的总数
         unread_message_total_number = self.message_center_page.get_unread_message_total_number()
         print(unread_message_total_number)
         # 点击消息中心
         self.message_center_page.click_message_center_button()
-        data = {
-            'imei': '',
-            'massage_type': '',
-            'is_read': '未读'
-        }
-        self.message_center_page.add_data_search_message_data(data)
-        # 获取搜索出来的未读消息的总数
-        search_unread_message_total_number = self.message_center_page.get_web_total_search_center_massage()
 
-        self.assertEqual(unread_message_total_number, str(search_unread_message_total_number))
-
-        if unread_message_total_number == '0':
-            pass
-        else:
-            # 点击其中一条未读消息
-            self.message_center_page.click_anyone_unread_message()
-            # 点击标为已读按钮
-            self.message_center_page.click_set_unread_message_read()
-
-            # 重新获取抬头上的未读消息数量
-            unread_message_total_number_01 = self.message_center_page.get_unread_message_total_number()
-            self.assertEqual(int(unread_message_total_number), int(unread_message_total_number_01) - 1)
+        # 点击全部标记为已读
+        self.message_center_page.click_set_unread_message_all_read()
+        unread_message_total_number_01 = self.message_center_page.get_unread_message_total_number()
+        print(unread_message_total_number_01)
+        self.assertEqual('0', unread_message_total_number_01)

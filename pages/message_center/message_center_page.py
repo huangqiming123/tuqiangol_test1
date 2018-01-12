@@ -108,3 +108,8 @@ class MessageCenterPage(BasePageServer):
         # 点击标为已读按钮
         self.driver.click_element('x,//button[@title="标为已读"]')
         sleep(2)
+
+    def click_set_unread_message_all_read(self):
+        # 点击全部标记为已读
+        self.driver.click_element('x,//button[@title="全部标为已读"]')
+        sleep(10)

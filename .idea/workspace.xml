@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f288cefb-8a8d-4c39-8f2c-f8d16db8e55d" name="Default" comment="修改代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/account_center/massage_center_search.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/massage_center/massage_center_page.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/8_message_center/test_case_802_message_center_click_unread_message.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/base/new_paging.py" afterPath="$PROJECT_DIR$/pages/base/new_paging.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/data/account_center/massage_center_search.csv" afterPath="$PROJECT_DIR$/data/account_center/message_center_search.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/massage_center/massage_center_page.py" afterPath="$PROJECT_DIR$/pages/message_center/message_center_page.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py" afterPath="$PROJECT_DIR$/testcases/8_message_center/test_case_801_message_center_search_massage.py" />
     </list>
     <ignored path="tuqiangOL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,13 +28,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_case_801_massage_center_search_massage.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py">
+      <file leaf-file-name="test_case_802_message_center_click_unread_message.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/8_message_center/test_case_802_message_center_click_unread_message.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.289389">
-              <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.39814815">
+              <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="message_center_page.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/message_center/message_center_page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="108" column="62" selection-start-line="108" selection-start-column="62" selection-end-line="108" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,10 +75,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_713_form_export_obd_trouble_form_export.py" />
-        <option value="$PROJECT_DIR$/testcases/7_form_export/test_case_715_form_export_clock_form_export.py" />
-        <option value="$PROJECT_DIR$/testcases/6_form_port_search/test_case_601_form_port_search_mile_search.py" />
-        <option value="$PROJECT_DIR$/testcases/6_form_port_search/test_case_603_form_port_search_stay_search.py" />
         <option value="$PROJECT_DIR$/testcases/6_form_port_search/test_case_604_form_port_search_acc_search.py" />
         <option value="$PROJECT_DIR$/testcases/6_form_port_search/test_case_605_form_port_search_obd_mileage_search.py" />
         <option value="$PROJECT_DIR$/testcases/6_form_port_search/test_case_606_form_port_search_obd_travel_search.py" />
@@ -110,8 +120,12 @@
         <option value="$PROJECT_DIR$/model/send_mail.py" />
         <option value="$PROJECT_DIR$/change_data.py" />
         <option value="$PROJECT_DIR$/data/account_center/massage_center_search.csv" />
-        <option value="$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py" />
         <option value="$PROJECT_DIR$/pages/massage_center/massage_center_page.py" />
+        <option value="$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py" />
+        <option value="$PROJECT_DIR$/testcases/8_message_center/test_case_801_message_center_search_massage.py" />
+        <option value="$PROJECT_DIR$/pages/base/new_paging.py" />
+        <option value="$PROJECT_DIR$/pages/message_center/message_center_page.py" />
+        <option value="$PROJECT_DIR$/testcases/8_message_center/test_case_802_message_center_click_unread_message.py" />
       </list>
     </option>
   </component>
@@ -192,7 +206,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="account_center2" />
+              <option name="myItemId" value="8_message_center" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -210,7 +224,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="account_center" />
+              <option name="myItemId" value="7_form_export" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -228,7 +242,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="8_massage_center" />
+              <option name="myItemId" value="6_form_port_search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="5_form_search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4_customer_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuqiangol_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3_set_up" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,7 +364,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="massage_center" />
+              <option name="myItemId" value="message_center" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,24 +393,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tuqiangol_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account_center" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -411,19 +461,19 @@
       <recent name="E:\git\tuqiangol_test\testcases\5_form_search" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in TestCase801MassageCenterSearchMassage">
-    <configuration default="false" name="Unittests in TestCase202UserCenterModifyInfo2" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in TestCase802MessageCenterClickUnreadMessage (1)">
+    <configuration default="false" name="Unittests in TestCase801MassageCenterSearchMassage" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
+      <option name="WORKING_DIRECTORY" value="E:\git\tuqiangol_test\testcases\8_message_center" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_202_user_center_modify_info2.py" />
-      <option name="CLASS_NAME" value="TestCase202UserCenterModifyInfo2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py" />
+      <option name="CLASS_NAME" value="TestCase801MassageCenterSearchMassage" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
@@ -434,19 +484,41 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase801MessageCenterSearchMassage" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/8_message_center" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_203_user_center_modify_passwd.py" />
-      <option name="CLASS_NAME" value="TestCase203UserCenterModifyPasswd" />
-      <option name="METHOD_NAME" value="test_user_center_modify_info" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/8_message_center/test_case_801_message_center_search_massage.py" />
+      <option name="CLASS_NAME" value="TestCase801MessageCenterSearchMassage" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestCase802MessageCenterClickUnreadMessage.test_case_802_message_center_click_unread_message" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/8_message_center" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuqiangol_test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/8_message_center/test_case_802_message_center_click_unread_message.py" />
+      <option name="CLASS_NAME" value="TestCase802MessageCenterClickUnreadMessage" />
+      <option name="METHOD_NAME" value="test_case_802_message_center_click_unread_message" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -456,21 +528,21 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase802MessageCenterClickUnreadMessage" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/2_user_center" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/8_message_center" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/2_user_center/test_case_204_user_center_modify_password2.py" />
-      <option name="CLASS_NAME" value="TestCase204UserCenterModifyPassword2" />
-      <option name="METHOD_NAME" value="test_modify_password_exception" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/8_message_center/test_case_802_message_center_click_unread_message.py" />
+      <option name="CLASS_NAME" value="TestCase802MessageCenterClickUnreadMessage" />
+      <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -478,40 +550,18 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestCase801MassageCenterSearchMassage.test_case_801_massage_center_search_massage" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestCase802MessageCenterClickUnreadMessage (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/8_massage_center" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/8_message_center" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py" />
-      <option name="CLASS_NAME" value="TestCase801MassageCenterSearchMassage" />
-      <option name="METHOD_NAME" value="test_case_801_massage_center_search_massage" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in TestCase801MassageCenterSearchMassage" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases/8_massage_center" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuqiangol_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py" />
-      <option name="CLASS_NAME" value="TestCase801MassageCenterSearchMassage" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcases/8_message_center/test_case_802_message_center_click_unread_message.py" />
+      <option name="CLASS_NAME" value="TestCase802MessageCenterClickUnreadMessage" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
@@ -663,19 +713,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.eee" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase202UserCenterModifyInfo2" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCase801MassageCenterSearchMassage.test_case_801_massage_center_search_massage" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase801MassageCenterSearchMassage" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase801MassageCenterSearchMassage" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase801MessageCenterSearchMassage" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase802MessageCenterClickUnreadMessage.test_case_802_message_center_click_unread_message" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase802MessageCenterClickUnreadMessage" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase802MessageCenterClickUnreadMessage (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase801MassageCenterSearchMassage" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase801MassageCenterSearchMassage.test_case_801_massage_center_search_massage" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase202UserCenterModifyInfo2" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase802MessageCenterClickUnreadMessage (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCase802MessageCenterClickUnreadMessage.test_case_802_message_center_click_unread_message" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase802MessageCenterClickUnreadMessage" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase801MessageCenterSearchMassage" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCase801MassageCenterSearchMassage" />
       </list>
     </recent_temporary>
   </component>
@@ -689,12 +739,6 @@
       <created>1490260177513</created>
       <option name="number" value="Default" />
       <updated>1490260177513</updated>
-    </task>
-    <task id="LOCAL-00190" summary="修改代码">
-      <created>1514181836300</created>
-      <option name="number" value="00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1514181836301</updated>
     </task>
     <task id="LOCAL-00191" summary="修改代码">
       <created>1514183333953</created>
@@ -984,39 +1028,45 @@
       <option name="project" value="LOCAL" />
       <updated>1515720634537</updated>
     </task>
-    <option name="localTasksCounter" value="239" />
+    <task id="LOCAL-00239" summary="修改代码">
+      <created>1515735584336</created>
+      <option name="number" value="00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1515735584336</updated>
+    </task>
+    <option name="localTasksCounter" value="240" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestCase203UserCenterModifyPasswd_test_user_center_modify_info - 2018.01.12 at 10h 00m 00s.xml">
-      <configuration name="Unittest TestCase203UserCenterModifyPasswd.test_user_center_modify_info" configurationId="tests" />
+    <history-entry file="Unittest_TestCase802MessageCenterClickUnreadMessage_test_case_802_message_center_click_unread_message - 2018.01.12 at 14h 49m 26s.xml">
+      <configuration name="Unittest TestCase802MessageCenterClickUnreadMessage.test_case_802_message_center_click_unread_message" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase204UserCenterModifyPassword2_test_modify_password_exception - 2018.01.12 at 10h 03m 16s.xml">
-      <configuration name="Unittest TestCase204UserCenterModifyPassword2.test_modify_password_exception" configurationId="tests" />
+    <history-entry file="Unittest_TestCase802MessageCenterClickUnreadMessage_test_case_802_message_center_click_unread_message - 2018.01.12 at 14h 51m 17s.xml">
+      <configuration name="Unittest TestCase802MessageCenterClickUnreadMessage.test_case_802_message_center_click_unread_message" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase801MassageCenterSearchMassage_test_case_801_massage_center_search_massage - 2018.01.12 at 11h 42m 14s.xml">
-      <configuration name="Unittest TestCase801MassageCenterSearchMassage.test_case_801_massage_center_search_massage" configurationId="tests" />
+    <history-entry file="Unittest_TestCase802MessageCenterClickUnreadMessage_test_case_802_message_center_click_unread_message - 2018.01.12 at 15h 06m 52s.xml">
+      <configuration name="Unittest TestCase802MessageCenterClickUnreadMessage.test_case_802_message_center_click_unread_message" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase801MassageCenterSearchMassage_test_case_801_massage_center_search_massage - 2018.01.12 at 11h 43m 34s.xml">
-      <configuration name="Unittest TestCase801MassageCenterSearchMassage.test_case_801_massage_center_search_massage" configurationId="tests" />
+    <history-entry file="Unittest_TestCase802MessageCenterClickUnreadMessage_test_case_802_message_center_click_unread_message - 2018.01.12 at 15h 08m 53s.xml">
+      <configuration name="Unittest TestCase802MessageCenterClickUnreadMessage.test_case_802_message_center_click_unread_message" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase801MassageCenterSearchMassage_test_case_801_massage_center_search_massage - 2018.01.12 at 11h 45m 51s.xml">
-      <configuration name="Unittest TestCase801MassageCenterSearchMassage.test_case_801_massage_center_search_massage" configurationId="tests" />
+    <history-entry file="Unittest_TestCase802MessageCenterClickUnreadMessage_test_case_802_message_center_click_unread_message - 2018.01.12 at 15h 10m 40s.xml">
+      <configuration name="Unittest TestCase802MessageCenterClickUnreadMessage.test_case_802_message_center_click_unread_message" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestCase801MassageCenterSearchMassage_test_case_801_massage_center_search_massage - 2018.01.12 at 13h 37m 38s.xml">
-      <configuration name="Unittest TestCase801MassageCenterSearchMassage.test_case_801_massage_center_search_massage" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_TestCase202UserCenterModifyInfo2 - 2018.01.12 at 09h 58m 46s.xml">
-      <configuration name="Unittests in TestCase202UserCenterModifyInfo2" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_TestCase801MassageCenterSearchMassage - 2018.01.12 at 11h 47m 08s.xml">
+    <history-entry file="Unittests_in_TestCase801MassageCenterSearchMassage - 2018.01.12 at 14h 20m 24s.xml">
       <configuration name="Unittests in TestCase801MassageCenterSearchMassage" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase801MassageCenterSearchMassage - 2018.01.12 at 13h 38m 31s.xml">
-      <configuration name="Unittests in TestCase801MassageCenterSearchMassage" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase801MessageCenterSearchMassage - 2018.01.12 at 14h 28m 26s.xml">
+      <configuration name="Unittests in TestCase801MessageCenterSearchMassage" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestCase801MassageCenterSearchMassage - 2018.01.12 at 13h 39m 22s.xml">
-      <configuration name="Unittests in TestCase801MassageCenterSearchMassage" configurationId="tests" />
+    <history-entry file="Unittests_in_TestCase802MessageCenterClickUnreadMessage - 2018.01.12 at 14h 53m 08s.xml">
+      <configuration name="Unittests in TestCase802MessageCenterClickUnreadMessage" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestCase802MessageCenterClickUnreadMessage - 2018.01.12 at 14h 56m 45s.xml">
+      <configuration name="Unittests in TestCase802MessageCenterClickUnreadMessage" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestCase802MessageCenterClickUnreadMessage_(1) - 2018.01.12 at 15h 14m 06s.xml">
+      <configuration name="Unittests in TestCase802MessageCenterClickUnreadMessage (1)" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1029,17 +1079,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22918862" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21759747" sideWeight="0.49487555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835498" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31385282" sideWeight="0.5279241" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25324675" sideWeight="0.4926238" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29545453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29545453" sideWeight="0.47207588" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.267316" sideWeight="0.47207588" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24891774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118019" sideWeight="0.50512445" order="2" side_tool="true" content_ui="tabs" />
@@ -1102,41 +1152,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_3_set_up.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7646177">
-          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_runner/tuqiangOL_test_runner_1_log_in.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.844078">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_715_form_export_clock_form_export.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7646177">
-          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_714_form_export_guide_machine_form_export.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3043478">
-          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/ntpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.826087">
-          <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_713_form_export_obd_trouble_form_export.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7196402">
@@ -1148,16 +1163,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3328336">
           <caret line="439" column="8" selection-start-line="439" selection-start-column="8" selection-end-line="439" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/statistical_form/form_export_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1186,13 +1191,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0">
           <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_704_form_export_travel_form_export.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7196402">
-          <caret line="97" column="66" selection-start-line="97" selection-start-column="66" selection-end-line="97" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -1429,16 +1427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_701_form_export_sport_overview_export.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1270125">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/account_center2/test_case_32_account_center_msg_edit_exception.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5957067">
@@ -1481,7 +1469,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/account_center/massage_center_search.csv">
+    <entry file="file://$PROJECT_DIR$/data/account_center/message_center_search.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26833633">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
@@ -1505,22 +1493,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/massage_center/massage_center_page.py">
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_701_form_export_sport_overview_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18518518">
+          <caret line="40" column="64" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_702_form_export_mileage_form_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41666666">
+          <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_703_form_export_mileage_form_with_day_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5092593">
+          <caret line="77" column="81" selection-start-line="77" selection-start-column="81" selection-end-line="77" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_704_form_export_travel_form_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1851852">
+          <caret line="114" column="34" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/statistical_form/form_export_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1203704">
+          <caret line="195" column="56" selection-start-line="195" selection-start-column="56" selection-end-line="195" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/7_form_export/test_case_715_form_export_clock_form_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5833333">
+          <caret line="100" column="49" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/base/new_paging.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
-          <caret line="54" column="64" selection-start-line="54" selection-start-column="64" selection-end-line="54" selection-end-column="64" />
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/8_message_center/test_case_801_message_center_search_massage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39814815">
+          <caret line="57" column="86" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/message_center/message_center_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="62" selection-start-line="108" selection-start-column="62" selection-end-line="108" selection-end-column="62" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/8_massage_center/test_case_801_massage_center_search_massage.py">
+    <entry file="file://$PROJECT_DIR$/testcases/8_message_center/test_case_802_message_center_click_unread_message.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.289389">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.39814815">
+          <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -5,13 +5,13 @@ from pages.base.base_page_server import BasePageServer
 from pages.base.new_paging import NewPaging
 
 
-class MassageCenterPage(BasePageServer):
-    def click_massage_center_button(self):
+class MessageCenterPage(BasePageServer):
+    def click_message_center_button(self):
         # 点击消息中心的按钮
         self.driver.click_element('x,//a[@href="/customer/sendUserMessage"]')
         sleep(3)
 
-    def add_data_search_massage_data(self, search_data):
+    def add_data_search_message_data(self, search_data):
         # 填写imei
         self.driver.operate_input_element('x,//*[@id="remainSearchDeviceInput"]', search_data['imei'])
         # 选择消息类型
@@ -95,3 +95,16 @@ class MassageCenterPage(BasePageServer):
             return new_paging.get_total_number('x,//*[@id="msg_paging"]', 'x,//*[@id="msg_tbody"]')
         else:
             return 0
+
+    def get_unread_message_total_number(self):
+        return self.driver.get_text('x,//*[@id="unReadTotal"]')
+
+    def click_anyone_unread_message(self):
+        # 点击其中一条未读消息
+        self.driver.click_element('x,//*[@id="msg_tbody"]/tr[1]/td[1]/label/div/ins')
+        sleep(2)
+
+    def click_set_unread_message_read(self):
+        # 点击标为已读按钮
+        self.driver.click_element('x,//button[@title="标为已读"]')
+        sleep(2)

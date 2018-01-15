@@ -11,7 +11,9 @@ from pages.message_center.message_center_page import MessageCenterPage
 
 
 class TestCase801MessageCenterSearchMassage(unittest.TestCase):
-    # 测试 801 消息中心  搜索消息
+    ###############################################################
+    # # 测试 消息中心 消息搜索
+    ###############################################################
     def setUp(self):
         self.driver = AutomateDriverServer()
         self.base_url = self.driver.base_url

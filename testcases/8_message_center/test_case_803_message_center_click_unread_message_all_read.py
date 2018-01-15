@@ -41,3 +41,14 @@ class TestCase803MessageCenterClickUnreadMessageAllRead(unittest.TestCase):
         unread_message_total_number_01 = self.message_center_page.get_unread_message_total_number()
         print(unread_message_total_number_01)
         self.assertEqual('0', unread_message_total_number_01)
+
+        # 搜索未读消息数量
+        data = {
+            'imei': '',
+            'massage_type': '',
+            'is_read': '未读'
+        }
+        self.message_center_page.add_data_search_message_data(data)
+        # 获取搜索出来的未读消息的总数
+        search_unread_message_total_number = self.message_center_page.get_web_total_search_center_massage()
+        self.assertEqual(0, search_unread_message_total_number)

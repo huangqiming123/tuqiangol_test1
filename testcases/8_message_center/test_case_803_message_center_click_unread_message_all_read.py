@@ -1,4 +1,5 @@
 import unittest
+from time import sleep
 
 from automate_driver.automate_driver_server import AutomateDriverServer
 from model.assert_text import AssertText
@@ -35,6 +36,7 @@ class TestCase803MessageCenterClickUnreadMessageAllRead(unittest.TestCase):
         print(unread_message_total_number)
         # 点击消息中心
         self.message_center_page.click_message_center_button()
+        sleep(10)
 
         # 点击全部标记为已读
         self.message_center_page.click_set_unread_message_all_read()

@@ -1,24 +1,14 @@
-def call(i):
-    return i * 2
-
-
-def test_yield(n):
-    for i in range(n):
-        yield call(i)
-        print("i = ", i)
-    print('do anything')
-
-
-for n in test_yield(3):
-    print(n)
-
-for m in range(10):
-    print(m, end=' ')
-print()
-for m in range(1, 10):
-    print(m, end=' ')
-print()
-for m in range(1, 10, 2):
-    print(m, end=' ')
-
-# range(start,end,step)
+day = '2018-1-12'
+print(len(day))
+if len(day) == 9:
+    if len(day.split('-')[2]) == 1:
+        day = day.split('-')[0] + '-' + day.split('-')[1] + "-" + '0' + day.split('-')[2]
+        print(day)
+    elif len(day.split('-')[1]) == 1:
+        day = day.split('-')[0] + '-' + "0" + day.split('-')[1] + "-" + day.split('-')[2]
+        print(day)
+elif len(day) == 8:
+    day = day.split('-')[0] + '-0' + day.split('-')[1] + "-0" + day.split('-')[2]
+    print(day)
+else:
+    print(day)

@@ -173,9 +173,13 @@ class StatisticFormPage3(BasePage):
     def get_at_day_time_in_tracel_report_form_with_day(self, n):
         day = self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[5]' % str(n + 1))
         if len(day) == 9:
-            day = day.split('-')[0] + '-' + day.split('-')[1] + "-" + '0' + day.split('-')[2]
-            return day
-        if len(day) == 8:
+            if len(day.split('-')[2]) == 1:
+                day = day.split('-')[0] + '-' + day.split('-')[1] + "-" + '0' + day.split('-')[2]
+                return day
+            elif len(day.split('-')[1]) == 1:
+                day = day.split('-')[0] + '-' + "0" + day.split('-')[1] + "-" + day.split('-')[2]
+                return day
+        elif len(day) == 8:
             day = day.split('-')[0] + '-0' + day.split('-')[1] + "-0" + day.split('-')[2]
             return day
         else:

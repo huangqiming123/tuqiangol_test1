@@ -32,6 +32,7 @@ class TestCase407CustomerManagementOperationEditUser(unittest.TestCase):
         self.driver.wait(1)
 
     def tearDown(self):
+        self.driver.close_window()
         self.driver.quit_browser()
 
     def test_user_operation_edit_user(self):

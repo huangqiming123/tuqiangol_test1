@@ -31,6 +31,7 @@ class TestCase406CustomerManagementOperationControl(unittest.TestCase):
         self.driver.wait(1)
 
     def tearDown(self):
+        self.driver.close_window()
         self.driver.quit_browser()
 
     def test_user_operation_control(self):

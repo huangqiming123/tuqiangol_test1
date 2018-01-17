@@ -40,6 +40,7 @@ class TestCase803MessageCenterClickUnreadMessageAllRead(unittest.TestCase):
 
         # 点击全部标记为已读
         self.message_center_page.click_set_unread_message_all_read()
+        sleep(10)
         unread_message_total_number_01 = self.message_center_page.get_unread_message_total_number()
         print(unread_message_total_number_01)
         self.assertEqual('0', unread_message_total_number_01)

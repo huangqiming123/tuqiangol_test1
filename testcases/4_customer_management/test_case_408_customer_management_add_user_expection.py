@@ -36,6 +36,7 @@ class TestCase408CustomerManagementAddUserExpection(unittest.TestCase):
         self.driver.wait(1)
 
     def tearDown(self):
+        self.driver.close_window()
         self.driver.quit_browser()
 
     def test_customer_management_add_user_exception(self):

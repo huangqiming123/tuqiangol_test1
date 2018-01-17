@@ -37,6 +37,7 @@ class TestCase410CustomerManagementEditUserWebLoginLimit(unittest.TestCase):
         self.driver.wait(1)
 
     def tearDown(self):
+        self.driver.close_window()
         self.driver.quit_browser()
 
     def test_customer_management_edit_user_web_login_limit(self):

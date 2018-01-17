@@ -56,4 +56,4 @@ class TestCase802MessageCenterClickUnreadMessage(unittest.TestCase):
 
             # 重新获取抬头上的未读消息数量
             unread_message_total_number_01 = self.message_center_page.get_unread_message_total_number()
-            self.assertEqual(int(unread_message_total_number), int(unread_message_total_number_01) - 1)
+            self.assertEqual(int(unread_message_total_number) - 1, int(unread_message_total_number_01))

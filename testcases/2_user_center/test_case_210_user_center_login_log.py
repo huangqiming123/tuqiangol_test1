@@ -92,6 +92,8 @@ class TestCase210UserCenterLoginLog(unittest.TestCase):
             print('第%s次查询数据库的条数为：%s' % (i, total))
             web_total = self.help_page.get_current_login_log()
             print('第%s次查询页面的条数是：%s' % (i, web_total))
+            if total != 0:
+                total += 10
             self.assertEqual(total, web_total)
 
         csv_file.close()

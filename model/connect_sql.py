@@ -44,7 +44,7 @@ class ConnectSql(object):
     def connect_tuqiang_form(self):
         # 链接图强在线第二台数据库，主要查报表、告警
         connect = pymysql.connect(
-            host='172.16.0.105',
+            host='172.16.10.105',
             port=8066,
             user='jimi',
             passwd='jimi',

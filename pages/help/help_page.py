@@ -480,6 +480,28 @@ class HelpPage(BasePageServer, NewPaging):
                     }
                 }
             })
+        elif search_data['begin_time'] != '' and search_data['end_time'] == "":
+            must.append({
+                "range": {
+                    "loginTime": {
+                        "from": search_data['begin_time'] + ":00",
+                        "to": None,
+                        "include_lower": True,
+                        "include_upper": True
+                    }
+                }
+            })
+        elif search_data['begin_time'] == '' and search_data['end_time'] != "":
+            must.append({
+                "range": {
+                    "loginTime": {
+                        "from": None,
+                        "to": search_data['end_time'] + ":59",
+                        "include_lower": True,
+                        "include_upper": True
+                    }
+                }
+            })
         if search_data['account'] != "":
             must.append({
                 "wildcard": {

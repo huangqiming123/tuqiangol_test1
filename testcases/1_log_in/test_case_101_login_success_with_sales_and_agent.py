@@ -105,6 +105,7 @@ class TestCase101LoginSuccessWithSalesAndAgent(unittest.TestCase):
                 self.assertEqual(expect_usr_info_phone, usr_info_phone, "账户总览左下方显示的客户电话错误")
             # 成功退出系统
             sleep(2)
+
             self.account_center_page_navi_bar.usr_logout()
             # 判断是否成功退出到登录页
             self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "退出系统失败")

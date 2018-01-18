@@ -18,7 +18,7 @@ from pages.cust_manage.search_sql import SearchSql
 from pages.login.login_page import LoginPage
 
 
-class TestCase402CustomerManageMentLowerUserSearch(unittest.TestCase):
+class TestCase402CustomerManagementLowerUserSearch(unittest.TestCase):
     # 测试客户管理 搜索 客户
     def setUp(self):
         self.driver = AutomateDriverServer(choose='chrome')

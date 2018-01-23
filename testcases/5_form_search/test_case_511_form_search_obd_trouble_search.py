@@ -11,6 +11,7 @@ from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
+__author__ = ''
 
 class TestCase511FormSearchObdTroubleSearch(unittest.TestCase):
     # 测试 报表搜索 obd报表 故障报表搜索

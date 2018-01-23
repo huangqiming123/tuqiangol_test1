@@ -10,6 +10,7 @@ from pages.account_center.user_center import UserCenterPage
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 
+__author__ = ''
 
 class TestCase202UserCenterModifyInfo2(unittest.TestCase):
     # 测试个人中心修改资料，包括特殊符号、异常

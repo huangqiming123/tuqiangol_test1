@@ -14,9 +14,9 @@ from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAcco
 from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
 from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.cust_manage.search_sql import SearchSql
-
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase402CustomerManagementLowerUserSearch(unittest.TestCase):
     # 测试客户管理 搜索 客户

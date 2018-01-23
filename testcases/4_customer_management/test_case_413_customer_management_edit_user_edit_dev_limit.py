@@ -12,9 +12,9 @@ from pages.cust_manage.cust_manage_cust_list_page import CustManageCustListPage
 from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAccountPage
 from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
 from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
-
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase413CustomerManagementEditUserEditDevLimit(unittest.TestCase):
     # 测试编辑客户 -- 修改用户 编辑设备

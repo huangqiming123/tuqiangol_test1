@@ -6,6 +6,7 @@ from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 import csv
 
+__author__ = ''
 
 class TestCase204UserCenterModifyPassword2(unittest.TestCase):
     # 测试个人中心 - 修改密码异常

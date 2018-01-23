@@ -16,6 +16,7 @@ from pages.statistical_form.statistic_form_page4 import StatisticFormPage4
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
+__author__ = ''
 
 class TestCase604FormPortSearchAccSearch(unittest.TestCase):
     # 测试 报表 接口搜索 acc报表

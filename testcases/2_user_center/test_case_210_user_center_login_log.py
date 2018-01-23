@@ -13,6 +13,7 @@ from pages.help.help_page import HelpPage
 from pages.help.help_page_sql import HelpPageSql
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase210UserCenterLoginLog(unittest.TestCase):
     # 测试登录日志查询

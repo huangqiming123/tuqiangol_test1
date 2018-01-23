@@ -12,6 +12,7 @@ from pages.help.help_page import HelpPage
 from pages.help.help_page_sql import HelpPageSql
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase207UserCenterCustomerLog(unittest.TestCase):
     # 测试个人中心 - 帮助 - 业务日志 - 客户管理日志（新增客户、修改客户信息、删除客户、修改密码、重置密码、转移客户）

@@ -10,6 +10,7 @@ from pages.account_center.account_center_setting_home_page import AccountCenterS
 from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 
+__author__ = ''
 
 class TestCase302SetUpDefaultHomePageNoSetting(unittest.TestCase):
     # 测试未设置过默认首页的账号登录显示的默认首页

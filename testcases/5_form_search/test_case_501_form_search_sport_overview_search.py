@@ -15,6 +15,7 @@ from pages.statistical_form.statistic_form_page3 import StatisticFormPage3
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
+__author__ = ''
 
 class TestCase501FormSearchSportOverviewSearch(unittest.TestCase):
     # 测试 报表 运动总览搜索功能

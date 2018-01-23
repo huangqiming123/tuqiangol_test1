@@ -11,6 +11,7 @@ from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAcco
 from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase407CustomerManagementOperationEditUser(unittest.TestCase):
     # 测试客户管理 - 用户操作 - 编辑

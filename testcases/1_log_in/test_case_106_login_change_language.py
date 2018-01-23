@@ -4,6 +4,7 @@ from model.assert_text import AssertText
 from pages.base.base_page_server import BasePageServer
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase106LoginChangeLanguage(unittest.TestCase):
     # 切换语言

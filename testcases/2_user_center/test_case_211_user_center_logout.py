@@ -5,6 +5,7 @@ from pages.base.base_page_server import BasePageServer
 from pages.base.lon_in_base_server import LogInBaseServer
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase211UserCenterLogout(unittest.TestCase):
     # 测试退出登录

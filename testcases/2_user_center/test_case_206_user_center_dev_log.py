@@ -12,6 +12,7 @@ from pages.help.help_page import HelpPage
 from pages.help.help_page_sql import HelpPageSql
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase206UserCenterDevLog(unittest.TestCase):
     # 测试个人中心 - 帮助 - 业务日志 - 设备管理日志（设备修改和设备分配）

@@ -3,6 +3,7 @@ from automate_driver.automate_driver_server import AutomateDriverServer
 from pages.base.base_page_server import BasePageServer
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase107LoginEnterThirdWebsite(unittest.TestCase):
     def setUp(self):

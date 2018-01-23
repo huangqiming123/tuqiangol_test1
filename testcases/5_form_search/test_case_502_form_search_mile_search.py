@@ -10,6 +10,7 @@ from pages.statistical_form.search_sql import SearchSql
 from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 
+__author__ = ''
 
 class TestCase502FormSearchMileSearch(unittest.TestCase):
     # 测试 报表 测试里程报表搜索功能

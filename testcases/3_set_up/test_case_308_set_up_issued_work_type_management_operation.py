@@ -6,6 +6,7 @@ from pages.base.base_page import BasePage
 from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 
+__author__ = ''
 
 class TestCase308SetUpIssuedWorkTypeManagementOperation(unittest.TestCase):
     # 测试 设置 - 指令管理 - 下发工作模式管理的操作

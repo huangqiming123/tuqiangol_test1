@@ -16,6 +16,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 from model.send_mail import request_base_url
 
+__author__ = ''
 
 class TestCase603FormPortSearchStaySearch(unittest.TestCase):
     # 测试 报表 接口搜索 停留

@@ -16,6 +16,7 @@ from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.cust_manage.search_sql import SearchSql
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase403CustomerManagementAddUser(unittest.TestCase):
     # 测试 客户管理 新增客户

@@ -12,6 +12,7 @@ from pages.cust_manage.cust_manage_lower_account_page import CustManageLowerAcco
 from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase404CustomerManagementAddAUserWebLimit(unittest.TestCase):
     # 测试客户管理-新增用户-验证web登陆权限

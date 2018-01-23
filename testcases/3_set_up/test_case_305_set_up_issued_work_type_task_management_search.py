@@ -10,6 +10,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 from pages.command_management.search_sql import SearchSql
 
+__author__ = ''
 
 class TestCase305SetUpIssuedWorkTypetTaskManagementSearch(unittest.TestCase):
     # 测试 设置 - 指令管理 - 下发工作模式任务管理搜索功能

@@ -8,6 +8,7 @@ from pages.account_center.account_center_page_read_csv import AccountCenterPageR
 from pages.base.base_page_server import BasePageServer
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase203UserCenterModifyPasswd(unittest.TestCase):
     # 测试个人中心-修改密码

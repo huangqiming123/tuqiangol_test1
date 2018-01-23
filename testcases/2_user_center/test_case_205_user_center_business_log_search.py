@@ -11,6 +11,7 @@ from pages.help.help_page import HelpPage
 from pages.help.help_page_sql import HelpPageSql
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase205UserCenterBusinessLogSearch(unittest.TestCase):
     # 测试个人中心 - 帮助 - 业务日志查询

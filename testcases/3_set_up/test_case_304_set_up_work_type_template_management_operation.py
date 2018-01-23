@@ -7,6 +7,7 @@ from pages.base.lon_in_base import LogInBase
 from pages.command_management.command_management_page import CommandManagementPage
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 
+__author__ = ''
 
 class TestCase304SetUpWorkTypeTemplateManagementOperation(unittest.TestCase):
     # 测试 设置 - 指令管理 - 模板管理 - 模板操作

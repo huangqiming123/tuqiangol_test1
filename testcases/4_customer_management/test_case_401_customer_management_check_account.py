@@ -15,6 +15,7 @@ from pages.cust_manage.cust_manage_my_dev_page import CustManageMyDevPage
 from pages.cust_manage.cust_manage_page_read_csv import CustManagePageReadCsv
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase401CustomerManagementCheckAccount(unittest.TestCase):
     # 测试 客户管理 检查客户管理抬头用户信息

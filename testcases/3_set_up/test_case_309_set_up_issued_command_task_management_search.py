@@ -11,6 +11,7 @@ from pages.command_management.command_management_page import CommandManagementPa
 from pages.command_management.command_management_page_read_csv import CommandManagementPageReadCsv
 from pages.command_management.search_sql import SearchSql
 
+__author__ = ''
 
 class TestCase309SetUpIssuedCommandTaskManagementSearch(unittest.TestCase):
     # 测试 设置 - 指令管理 - 下发指令任务管理的搜索功能

@@ -11,6 +11,7 @@ from pages.base.base_page_server import BasePageServer
 from pages.login.log_in_page_read_csv import LogInPageReadCsv
 from pages.login.login_page import LoginPage
 
+__author__ = ''
 
 class TestCase101LoginSuccessWithSalesAndAgent(unittest.TestCase):
     # 测试登录代理商和销售类型的客户

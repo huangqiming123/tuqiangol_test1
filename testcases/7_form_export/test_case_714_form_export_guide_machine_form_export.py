@@ -14,6 +14,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 from testcases.total.page import Page
 
+__author__ = ''
 
 class TestCase714FormExportGuideMachineFormExport(unittest.TestCase):
     # 测试 导游设备播报报表 - 导出

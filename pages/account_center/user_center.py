@@ -376,3 +376,15 @@ class UserCenterPage(BasePageServer):
         cursor.close()
         connect.close()
         return data[0][0]
+
+    def get_operation_in_business_log_02(self):
+        return self.driver.get_text('x,//*[@id="logslist_xf"]/tr[2]/td[1]')
+
+    def get_target_account_in_business_log_02(self):
+        return self.driver.get_text('x,//*[@id="logslist_xf"]/tr[2]/td[3]')
+
+    def get_operation_platform_in_business_log_02(self):
+        return self.driver.get_text('x,//*[@id="logslist_xf"]/tr[2]/td[4]')
+
+    def get_desc_in_business_log_02(self):
+        return self.driver.get_text('x,//*[@id="logslist_xf"]/tr[2]/td[5]/span')

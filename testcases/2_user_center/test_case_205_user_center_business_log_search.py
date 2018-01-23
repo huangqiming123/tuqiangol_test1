@@ -87,6 +87,7 @@ class TestCase205UserCenterBusinessLogSearch(unittest.TestCase):
             connect = self.connect_sql.connect_tuqiang_sql()
             cursor = connect.cursor()
             sql = self.help_page_sql.business_log_sql(all_user_id, search_data)
+            print(sql)
             cursor.execute(sql)
             total_data = cursor.fetchall()
             total = len(total_data)

@@ -96,10 +96,10 @@ class TestCase208UserCenterSafeAreaLog(unittest.TestCase):
         self.user_center_page.select_relevant_safe_area_search()
         sleep(5)
 
-        operation_02 = self.user_center_page.get_operation_in_business_log()
-        target_account_02 = self.user_center_page.get_target_account_in_business_log()
-        operation_platform_02 = self.user_center_page.get_operation_platform_in_business_log()
-        desc_02 = self.user_center_page.get_desc_in_business_log()
+        operation_02 = self.user_center_page.get_operation_in_business_log_02()
+        target_account_02 = self.user_center_page.get_target_account_in_business_log_02()
+        operation_platform_02 = self.user_center_page.get_operation_platform_in_business_log_02()
+        desc_02 = self.user_center_page.get_desc_in_business_log_02()
 
         self.assertEqual(operation_02, ' ' + user_account)
         self.assertEqual(target_account_02, user_account)

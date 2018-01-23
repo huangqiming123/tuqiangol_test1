@@ -9,6 +9,7 @@ from pages.base.lon_in_base_server import LogInBaseServer
 from pages.help.help_page import HelpPage
 from pages.message_center.message_center_page import MessageCenterPage
 
+__author__ = ''
 
 class TestCase801MessageCenterSearchMassage(unittest.TestCase):
     ###############################################################

@@ -64,7 +64,7 @@ class FormExportPage(BasePage):
     def click_create_task_button_in_sport_overview_export(self):
         # 点击运动总览页面的生成任务按钮
         self.driver.click_element('x,//*[@id="addTaskBtn"]')
-        sleep(15)
+        sleep(20)
         self.driver.click_element('x,//*[@id="taskList"]/div[1]/ul/li/a')
         sleep(5)
 

@@ -3302,11 +3302,11 @@ class SearchSql(StatisticalFormPage):
         if search_data['next'] == '':
             sql += " where e.imei in %s" % str(all_dev)
             if search_data['electric'] != '':
-                sql += " and e.electricity < '%s'" % search_data['electric']
+                sql += " and e.electricity <= '%s'" % search_data['electric']
         elif search_data['next'] == '1':
             sql += " where e.imei in %s" % str(all_user_dev)
             if search_data['electric'] != '':
-                sql += " and e.electricity < '%s'" % search_data['electric']
+                sql += " and e.electricity <= '%s'" % search_data['electric']
         sql += ";"
         return sql
 

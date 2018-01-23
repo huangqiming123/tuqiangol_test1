@@ -13,6 +13,7 @@ from pages.statistical_form.statistical_form_page import StatisticalFormPage
 from pages.statistical_form.statistical_form_page_read_csv import StatisticalFormPageReadCsv
 from testcases.total.page import Page
 
+__author__ = ''
 
 class TestCase705FormExportTravelFormWithDayExport(unittest.TestCase):
     # 测试 报表 行程报表-按天

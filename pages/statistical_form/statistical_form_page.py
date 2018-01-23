@@ -331,7 +331,7 @@ class StatisticalFormPage(BasePage):
 
         # 点击搜索
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[3]/button')
-        sleep(5)
+        sleep(15)
         self.driver.default_frame()
         '''
         # 填写要搜索的数据去搜索里程报表

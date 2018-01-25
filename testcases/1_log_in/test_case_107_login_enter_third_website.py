@@ -115,7 +115,7 @@ class TestCase107LoginEnterThirdWebsite(unittest.TestCase):
         self.driver.switch_to_window(tuqiang_handle)
         self.assertEqual(self.base_url + "/", self.driver.get_current_url(), "回到原窗口失败")
 
-        expect_url_04 = "http://szcert.ebs.org.cn/2a950f00-00fb-495c-8e30-5a04100f9b17"
+        expect_url_04 = "https://szcert.ebs.org.cn/2a950f00-00fb-495c-8e30-5a04100f9b17"
         self.login_page.enter_third_party_website(websites[4], count)
         self.driver.wait()
         # 获取当前所有窗口句柄

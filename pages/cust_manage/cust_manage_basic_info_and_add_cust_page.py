@@ -817,7 +817,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         # 进入设备管理 - 点击编辑设备 - 保存 - 获取 文本
         # 点击编辑设备
         self.driver.click_element('x,//*[@id="deviceTableContent"]/tbody/tr/td[13]/a[1]')
-        sleep(2)
+        sleep(8)
         # 点击确定
         self.click_ensure()
 
@@ -908,7 +908,7 @@ class CustManageBasicInfoAndAddCustPage(BasePageServer):
         sleep(1)
 
     def click_ensuress(self):
-        self.driver.click_element('x,/html/body/div[16]/div[3]/a')
+        self.driver.click_element('x,/html/body/div[15]/div[3]/a')
         sleep(5)
 
     def click_dev_management_button(self):

@@ -695,7 +695,7 @@ class AccountCenterDetailsPage(BasePageServer):
 
     # 获取app账号的服务商个数
     def get_current_account_service_number(self):
-        count = len(self.driver.get_elements("x,//div[@class='media-body']/ul"))
+        count = len(self.driver.get_elements("x,//div[@class='media-body w150']/ul"))
         print("服务商个数", count)
         return count
 

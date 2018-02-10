@@ -118,7 +118,7 @@ class TestCase103LoginSuccessWithphAppUser(unittest.TestCase):
             cursor.close()
             connect.close()
             # 断言
-            self.assertEqual(service_number - 1, service_total)
+            self.assertEqual(service_number, service_total)
 
             # 成功退出系统
             sleep(2)

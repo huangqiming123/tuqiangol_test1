@@ -1038,3 +1038,42 @@ class CommandManagementPage(BasePage):
         cursor.close()
         connect.close()
         return tuple(data)
+
+    def click_search_button_in_command_log_page(self):
+        # 点击搜索按钮
+        self.driver.click_element('x,//button[@onclick="searchBatchInsLogs();"]')
+        sleep(30)
+
+    def get_per_page_number_in_command_log_page(self):
+        return len(list(self.driver.get_elements('x,//*[@id="batchIns-tbody"]/tr')))
+
+    def get_per_line_data_in_command_log_page(self, n):
+        data = {
+            '序号': self.driver.get_element('x,//*[@id="batchIns-tbody"]/tr[%s]/td[1]' % str(n + 1)).get_attribute(
+                'title'),
+            '批次号': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[2]' % str(n + 1)),
+            '指令名称': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[3]' % str(n + 1)),
+            '发送类型': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[4]' % str(n + 1)),
+            '指令': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[5]' % str(n + 1)),
+            '发送时间': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[6]' % str(n + 1)),
+            'IMEI': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[7]' % str(n + 1)),
+            '状态': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[8]' % str(n + 1)),
+            '内容/结果': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[9]' % str(n + 1)),
+            '平台': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[10]' % str(n + 1)),
+            '下发人': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[11]' % str(n + 1)),
+            '创建时间': self.driver.get_text('x,//*[@id="batchIns-tbody"]/tr[%s]/td[12]' % str(n + 1)),
+
+        }
+        return data
+
+    def click_per_page_number(self, m):
+        self.driver.click_element('l,%s' % str(m + 1))
+        sleep(3)
+
+    def search_total_page_issued_command_management(self):
+        a = self.driver.get_element('x,//*[@id="paging-batchInsLogs"]').get_attribute('style')
+        if a == 'display: block;':
+            new_paging = NewPaging(self.driver, self.base_url)
+            return new_paging.get_total_page('x,//*[@id="paging-batchInsLogs"]')
+        else:
+            return 0

@@ -102,7 +102,7 @@ class TestCase405CustomerManagementAddUserCommandLimit(unittest.TestCase):
 
             facility_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_facility_manage_page_function_button()
             sleep(3)
-            command_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_command_page_module()
+            # command_manage_data = self.cust_manage_basic_info_and_add_cust_page.get_command_page_module()
 
             # 获取中文，依次是：选中发送指令、本次查询全部发送指令、选中设置工作模式、本次查询全部设置工作模式
             # 工作模式模板管理, 下发工作模式任务管理, 下发工作模式管理, 下发指令任务管理, 下发指令管理
@@ -128,13 +128,13 @@ class TestCase405CustomerManagementAddUserCommandLimit(unittest.TestCase):
                     working_mode_list.append(b)
 
             # 循环指令管理页面的数据
-            for c in command_manage_data:
+            '''for c in command_manage_data:
                 # 下发指令任务管理 和 下发指令管理
                 if task_manage in c or comm_manager in c:
                     command_list.append(c)
                 # 工作模式模板管理, 下发工作模式任务管理, 下发工作模式管理
                 elif template_manage in c or working_mode_task_manage in c or working_mode_manage in c:
-                    working_mode_list.append(c)
+                    working_mode_list.append(c)'''
 
             print("指令", command_list)
             print("工作模式", working_mode_list)

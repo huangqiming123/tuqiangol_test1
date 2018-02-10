@@ -22,4 +22,4 @@ def write_excel(sheet_name, l_data):
     for i, p in enumerate(l_data):
         for j, q in enumerate(p):
             table.write(i, j, q)
-    file.save('abc.xlsx')
+    file.save(sheet_name + '.xlsx')

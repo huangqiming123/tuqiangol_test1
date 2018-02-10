@@ -17,6 +17,7 @@ from pages.statistical_form.statistical_form_page_read_csv import StatisticalFor
 
 __author__ = ''
 
+
 class TestCase601FormPortSearchMileSearch(unittest.TestCase):
     # 测试 报表 接口搜索 里程
     def setUp(self):
@@ -159,7 +160,11 @@ class TestCase601FormPortSearchMileSearch(unittest.TestCase):
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     print('res', res_data)
-                    self.assertEqual(web_data, res_data)
+                    self.assertEqual(len(web_data), len(res_data))
+                    for data in web_data:
+                        self.assertIn(data, res_data)
+                    for data in res_data:
+                        self.assertIn(data, web_data)
                 else:
                     web_data = []
                     for i in range(total_page):
@@ -205,7 +210,12 @@ class TestCase601FormPortSearchMileSearch(unittest.TestCase):
                     for data in res_data:
                         data['distance'] = float('%.3f' % (data['distance'] / 1000))
                     print(res_data)
-                    self.assertEqual(web_data, res_data)
+                    # self.assertEqual(web_data, res_data)
+                    self.assertEqual(len(web_data), len(res_data))
+                    for data in web_data:
+                        self.assertIn(data, res_data)
+                    for data in res_data:
+                        self.assertIn(data, web_data)
 
             elif search_data['type'] == 'day':
                 # 获取页面总共得到的总页数

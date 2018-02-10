@@ -59,7 +59,7 @@ class FormExportPage(BasePage):
     def click_search_button_in_sport_overview(self):
         # 点击运动总览页面的搜索按钮
         self.driver.click_element('x,//*[@id="runForm"]/div[4]/button')
-        sleep(5)
+        sleep(15)
 
     def click_create_task_button_in_sport_overview_export(self):
         # 点击运动总览页面的生成任务按钮

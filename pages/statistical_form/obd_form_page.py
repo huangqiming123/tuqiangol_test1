@@ -538,3 +538,15 @@ class ObdFormPage(BasePage):
 
     def get_end_times(self):
         return self.driver.get_element('endTime_travel').get_attribute('value') + ' 23:59:00'
+
+    def get_per_water_temp_in_obd_vehicel_condition_forms(self, n):
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[5]' % str(n + 1))
+
+    def get_battery_voltage_in_obd_vehicel_condition_forms(self, n):
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[6]' % str(n + 1))
+
+    def get_fuel_in_vehicle_condition_forms(self, n):
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[7]' % str(n + 1))
+
+    def get_total_mileage_in_vehicle_condition_forms(self, n):
+        return self.driver.get_text('x,//*[@id="travelDayTableContent"]/tbody/tr[%s]/td[8]' % str(n + 1))

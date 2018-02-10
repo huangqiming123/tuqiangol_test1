@@ -110,10 +110,10 @@ class TestCase607FormPortSearchObdVehicleConditionSearch(unittest.TestCase):
                         'speed': float(self.obd_form_page.get_speed_in_vehicle_condition_form(n)),
                         'rotatingSpeed': float(self.obd_form_page.get_rotating_speed_in_vehicle_condition_form(n)),
                         'waterTemperature': float(
-                            self.obd_form_page.get_per_water_temp_in_obd_vehicel_condition_form(n)),
+                            self.obd_form_page.get_per_water_temp_in_obd_vehicel_condition_forms(n)),
                         'batteryVoltage': float(
-                            self.obd_form_page.get_battery_voltage_in_obd_vehicel_condition_form(n)),
-                        'fuelConsumption1': float(self.obd_form_page.get_fuel_in_vehicle_condition_form(n)),
+                            self.obd_form_page.get_battery_voltage_in_obd_vehicel_condition_forms(n)),
+                        'fuelConsumption1': float(self.obd_form_page.get_fuel_in_vehicle_condition_forms(n)),
                         "totalMileage": int(self.obd_form_page.get_total_mileage_in_vehicle_condition_form(n))
                     })
 
@@ -139,10 +139,10 @@ class TestCase607FormPortSearchObdVehicleConditionSearch(unittest.TestCase):
                             'speed': float(self.obd_form_page.get_speed_in_vehicle_condition_form(n)),
                             'rotatingSpeed': float(self.obd_form_page.get_rotating_speed_in_vehicle_condition_form(n)),
                             'waterTemperature': float(
-                                self.obd_form_page.get_per_water_temp_in_obd_vehicel_condition_form(n)),
+                                self.obd_form_page.get_per_water_temp_in_obd_vehicel_condition_forms(n)),
                             'batteryVoltage': float(
-                                self.obd_form_page.get_battery_voltage_in_obd_vehicel_condition_form(n)),
-                            'fuelConsumption1': float(self.obd_form_page.get_fuel_in_vehicle_condition_form(n)),
+                                self.obd_form_page.get_battery_voltage_in_obd_vehicel_condition_forms(n)),
+                            'fuelConsumption1': float(self.obd_form_page.get_fuel_in_vehicle_condition_forms(n)),
                             "totalMileage": int(self.obd_form_page.get_total_mileage_in_vehicle_condition_form(n))
                         })
 

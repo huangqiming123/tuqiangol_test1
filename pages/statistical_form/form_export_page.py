@@ -222,8 +222,15 @@ class FormExportPage(BasePage):
         if driver == '-':
             driver = ''
         day = self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[8]' % str(a + 1))
-        if len(day) == 9:
-            day = day.split('-')[0] + '-' + day.split('-')[1] + "-" + '0' + day.split('-')[2]
+        if len(day) == 10:
+            day = day
+        elif len(day) == 8:
+            day = day.split('-')[0] + "-0" + day.split('-')[1] + "-0" + day.split('-')[2]
+        elif len(day) == 9:
+            if len(day.split('-')[1]) == 1:
+                day = day.split('-')[0] + '-0' + day.split('-')[1] + "-" + day.split('-')[2]
+            elif len(day.split('-')[2]) == 1:
+                day = day.split('-')[0] + '-' + day.split('-')[1] + "-0" + day.split('-')[2]
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="dayTableHeader"]/tbody/tr[%s]/td[1]' % str(a + 1))),
@@ -272,7 +279,7 @@ class FormExportPage(BasePage):
 
         # 搜索
         self.driver.click_element('x,//*[@id="TravelFrom"]/div[2]/div[3]/button')
-        sleep(20)
+        sleep(30)
 
     def get_per_line_data_travel(self, a):
         # 获取每一列的信息
@@ -386,8 +393,15 @@ class FormExportPage(BasePage):
             driver = ''
 
         day = self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[8]' % str(a + 1))
-        if len(day) == 9:
-            day = day.split('-')[0] + '-' + day.split('-')[1] + "-" + '0' + day.split('-')[2]
+        if len(day) == 10:
+            day = day
+        elif len(day) == 8:
+            day = day.split('-')[0] + "-0" + day.split('-')[1] + "-0" + day.split('-')[2]
+        elif len(day) == 9:
+            if len(day.split('-')[1]) == 1:
+                day = day.split('-')[0] + '-0' + day.split('-')[1] + "-" + day.split('-')[2]
+            elif len(day.split('-')[2]) == 1:
+                day = day.split('-')[0] + '-' + day.split('-')[1] + "-0" + day.split('-')[2]
 
         data = {
             '序号': float(self.driver.get_text('x,//*[@id="travelDayTableHeader"]/tbody/tr[%s]/td[1]' % str(a + 1))),

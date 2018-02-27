@@ -1,3 +1,4 @@
+# --*-- coding:utf-8 --*--
 import os
 import smtplib
 import unittest
@@ -10,7 +11,6 @@ from email.mime.multipart import MIMEMultipart
 from email.header import Header
 from email.mime.text import MIMEText
 
-from model.send_mail import send_mails
 from test_runner.html_test_runner import HtmlTestRunner
 from test_runner.test_runner_path import TestRunnerPath
 
@@ -60,7 +60,7 @@ def send_mail(file_new):
     msg['Subject'] = Header("自动化测试报告", 'utf-8')
 
     msg['From'] = "646642287@qq.com"
-    msg['To'] = send_mails()
+    msg['To'] = 'zhangao@jimi360.cn'
 
     # 邮件正文是MIMEText
     msg.attach(MIMEText(mail_body, 'html', 'utf-8'))
@@ -84,7 +84,7 @@ def send_mail(file_new):
     smtp = smtplib.SMTP_SSL("smtp.qq.com", 465)
     smtp.set_debuglevel(1)
     smtp.login("646642287@qq.com", "vtetgtsfhygcbehg")
-    smtp.sendmail("646642287@qq.com", send_mails(), msg.as_string())
+    smtp.sendmail("646642287@qq.com", 'zhangao@jimi360.cn', msg.as_string())
     smtp.quit()
     print('email has send out !')
 

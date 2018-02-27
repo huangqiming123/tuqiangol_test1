@@ -36,7 +36,7 @@ class TestCase301SetUpDefaultHomePageSetting(unittest.TestCase):
     def test_setting_default_home_page_success(self):
         '''默认设置首页成功'''
 
-        self.log_in_base.log_in_with_csv("dzltest", "jimi123")
+        self.log_in_base.log_in()
         # 点击默认首页设置
         self.account_center_page_home_page_setting.click_home_page_setting()
         # 取列表数据
@@ -79,7 +79,7 @@ class TestCase301SetUpDefaultHomePageSetting(unittest.TestCase):
                 sleep(2)
                 self.account_center_page_navi_bar.usr_logout()
                 # 登录
-                self.log_in_base.log_in_with_csv("dzltest", "jimi123")
+                self.log_in_base.log_in()
                 actual_url = self.driver.get_current_url()
                 # 获取默认设置的首页地址
                 expect_url = self.account_center_page_home_page_setting.get_expect_url(setting_text["page_name"])

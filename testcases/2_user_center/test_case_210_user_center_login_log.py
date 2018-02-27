@@ -85,7 +85,7 @@ class TestCase210UserCenterLoginLog(unittest.TestCase):
             es = self.connect_es.connect_es()
             # 搜索的数据
             query_data = self.help_page.get_search_log_in_log_query_data(all_user_id, search_data)
-            res_01 = es.search(index='userlogin_log_11', body={'query': query_data, 'size': 20000})
+            res_01 = es.search(index='userlogin_log_2', body={'query': query_data, 'size': 20000})
             res_02 = es.search(index='userlogin_log_12', body={'query': query_data, 'size': 20000})
             res_03 = es.search(index='userlogin_log_1', body={'query': query_data, 'size': 20000})
             total = len(res_01['hits']['hits']) + len(res_02['hits']['hits']) + len(res_03['hits']['hits'])

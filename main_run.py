@@ -1,3 +1,4 @@
+# --*-- coding:utf-8 --*--
 import os
 import threading
 from time import sleep
@@ -36,7 +37,7 @@ def run_08():
     os.system('python -m test_runner.tuqiangOL_test_runner_8_message_center')
 
 
-start_time = datetime.datetime(2018, 1, 31, 1, 0, 0)
+start_time = datetime.datetime(2018, 2, 28, 1, 0, 0)
 while datetime.datetime.now() < start_time:
     sleep(25)
 

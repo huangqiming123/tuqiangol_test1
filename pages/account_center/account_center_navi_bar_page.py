@@ -92,7 +92,8 @@ class AccountCenterNaviBarPage(BasePageServer):
         logout_text = self.driver.get_element("c,layui-layer-content").text
         print(logout_text)
         # 点击确定
-        self.driver.click_element("c,layui-layer-btn0")
+        sleep(2)
+        self.driver.click_element('x,//a[@class="layui-layer-btn0"]')
         self.driver.wait()
 
     # app用户退出

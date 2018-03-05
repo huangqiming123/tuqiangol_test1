@@ -7,7 +7,7 @@ def browser(browser_name):
         driver = webdriver.Chrome()
         return driver
     elif browser_name == 'ie':
-        driver = webdriver.Ie()
+        driver = webdriver.PhantomJS()
         return driver
     elif browser_name == 'firefox':
         driver = webdriver.Firefox()

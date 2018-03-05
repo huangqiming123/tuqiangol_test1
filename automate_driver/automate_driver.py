@@ -235,3 +235,6 @@ class AutomateDriver(object):
     def clear(self, selector):
         element = self.get_element(selector)
         element.clear()
+
+    def get_screen(self, filename):
+        self.driver.get_screenshot_as_file(filename)

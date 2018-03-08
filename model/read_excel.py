@@ -6,8 +6,8 @@ def open_excel(file):
     try:
         excel_file = xlrd.open_workbook(file)
         return excel_file
-    except:
-        print('找不到文件')
+    except IOError as e:
+        print(e)
 
 
 def read_excel_file_by_index(file, col_name_index=0, by_index=0):
